@@ -16,8 +16,8 @@
     --secondary-foreground: 240 5.9% 10%;
     --muted: 240 4.8% 95.9%;
     --muted-foreground: 240 3.8% 46.1%;
-    --accent: 58 100% 25%; /* Olive green accent #817f01 */
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 45%; /* Dark gray accent for monochrome elegance */
+    --accent-foreground: 0 0% 100%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
@@ -39,8 +39,8 @@
     --secondary-foreground: 0 0% 98%;
     --muted: 240 3.7% 15.9%;
     --muted-foreground: 240 5% 64.9%;
-    --accent: 58 100% 35%; /* Lighter olive green for dark mode */
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 0 0% 65%; /* Light gray accent for dark mode */
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;

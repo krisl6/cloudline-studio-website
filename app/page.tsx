@@ -104,33 +104,34 @@ export default function HomePage() {
       <header
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg bg-background/90 shadow-sm border-b border-border' : 'bg-transparent'}`} role="banner"
       >
-        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-          <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
-            <div className="size-8 rounded-lg overflow-hidden">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
-                alt="CloudLine Studio"
-                width={32}
-                height={32}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="text-foreground">CloudLine Studio</span>
-          </Link>
-          <nav className="sm:ml-auto flex gap-4 sm:gap-6" role="navigation" aria-label="Main navigation">
-            <Link href="/services" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Services
-            </Link>
-            <Link href="/case-studies" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Case Studies
-            </Link>
-            <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Pricing
-            </Link>
-            <Link href="/contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Contact
-            </Link>
-          </nav>
+        <div className="container flex h-16 items-center px-4 md:px-6">
+          <div className="flex-1 flex items-center justify-center">
+            <nav className="flex gap-4 sm:gap-8" role="navigation" aria-label="Main navigation">
+              <Link href="/services" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Services
+              </Link>
+              <Link href="/case-studies" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Case Studies
+              </Link>
+              <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
+                <div className="size-8 rounded-lg overflow-hidden">
+                  <Image
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
+                    alt="CloudLine Studio"
+                    width={32}
+                    height={32}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </Link>
+              <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Pricing
+              </Link>
+              <Link href="/contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
+                Contact
+              </Link>
+            </nav>
+          </div>
           <div className="hidden md:flex gap-6 items-center">
             <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
               <ThemeToggle />
@@ -259,36 +260,6 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-full py-8 md:py-12 border-y border-border bg-muted">
-          <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <Link className="text-xs hover:underline underline-offset-4 text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" href="#">Platforms we specialize in</Link>
-              <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
-                {[
-                  { name: "Google", logo: "/google_logo.png" },
-                  { name: "META", logo: "/meta-logo.png" },
-                  { name: "TikTok", logo: "/tiktok-logo.png" },
-                  { name: "XHS", logo: "/xiaohongshu_logo.png" }
-                ].map((platform) => (
-                  <motion.div
-                    key={platform.name}
-                    className="flex items-center gap-3 px-4 py-3 bg-card rounded-lg border border-border shadow-sm hover:shadow-md transition-all"
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <Image
-                      src={platform.logo}
-                      alt={`${platform.name} logo`}
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 object-contain"
-                    />
-                    <span className="text-sm font-medium text-foreground">{platform.name}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
 
         <section className="w-full py-16 md:py-24 bg-background" aria-label="Our services">
           <div className="container px-4 md:px-6">
