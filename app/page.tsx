@@ -105,7 +105,7 @@ export default function HomePage() {
         className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg bg-background/90 shadow-sm border-b border-border' : 'bg-transparent'}`} role="banner"
       >
         <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-          <div className="flex items-center gap-2 font-bold">
+          <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
             <div className="size-8 rounded-lg overflow-hidden">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
@@ -116,7 +116,7 @@ export default function HomePage() {
               />
             </div>
             <span className="text-foreground">CloudLine Studio</span>
-          </div>
+          </Link>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6" role="navigation" aria-label="Main navigation">
             <Link href="/services" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Services
@@ -254,19 +254,23 @@ export default function HomePage() {
               <Link className="text-xs hover:underline underline-offset-4 text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" href="#">Platforms we specialize in</Link>
               <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
                 {[
-                  { name: "Google", icon: "🔍", color: "bg-blue-500" },
-                  { name: "META", icon: "📘", color: "bg-blue-600" },
-                  { name: "TikTok", icon: "🎵", color: "bg-black" },
-                  { name: "LinkedIn", icon: "💼", color: "bg-blue-700" }
+                  { name: "Google", logo: "/google_logo.png" },
+                  { name: "META", logo: "/meta-logo.png" },
+                  { name: "TikTok", logo: "/tiktok-logo.png" },
+                  { name: "XHS", logo: "/xiaohongshu_logo.png" }
                 ].map((platform) => (
                   <motion.div
                     key={platform.name}
                     className="flex items-center gap-3 px-4 py-3 bg-card rounded-lg border border-border shadow-sm hover:shadow-md transition-all"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className={`w-6 h-6 ${platform.color} rounded flex items-center justify-center text-white text-sm`}>
-                      {platform.icon}
-                    </div>
+                    <Image
+                      src={platform.logo}
+                      alt={`${platform.name} logo`}
+                      width={24}
+                      height={24}
+                      className="w-6 h-6 object-contain"
+                    />
                     <span className="text-sm font-medium text-foreground">{platform.name}</span>
                   </motion.div>
                 ))}

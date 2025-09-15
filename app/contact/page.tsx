@@ -71,7 +71,7 @@ export default function ContactPage() {
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <header className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/90 shadow-sm border-b border-border" role="banner">
         <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2 font-bold">
+          <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
             <div className="size-8 rounded-lg overflow-hidden">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
@@ -82,7 +82,7 @@ export default function ContactPage() {
               />
             </div>
             <span className="text-foreground">CloudLine Studio</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex gap-6 lg:gap-8" role="navigation" aria-label="Main navigation">
             <Link href="/" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Home
@@ -111,14 +111,6 @@ export default function ContactPage() {
       <main className="flex-1" role="main">
         <section className="w-full py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-background to-muted" aria-label="Contact overview">
           <div className="container px-4 md:px-6">
-            <div className="flex items-center gap-4 mb-12">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/" className="flex items-center gap-2 text-muted-foreground hover:text-foreground" aria-label="CloudLine Studio - Home">
-                  <ArrowLeft className="size-4" />
-                  Back to Home
-                </Link>
-              </Button>
-            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -410,6 +402,50 @@ export default function ContactPage() {
                 >
                   <Link href="/services">Explore Our Services</Link>
                 </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24 bg-muted" aria-label="Contact form">
+          <div className="container px-4 md:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center max-w-4xl mx-auto mb-12"
+            >
+              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20 mb-4">
+                Get Started Today
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
+                Tell Us About Your Project
+              </h2>
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+                Fill out this quick form and we'll get back to you within 24 hours with a customized strategy for your business.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="max-w-4xl mx-auto"
+            >
+              <div className="bg-card border border-border rounded-lg shadow-lg overflow-hidden">
+                <iframe
+                  data-tally-src="https://tally.so/embed/mYaDLz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  loading="lazy"
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="CloudLine Studio Contact Form"
+                  className="w-full min-h-[600px]"
+                ></iframe>
               </div>
             </motion.div>
           </div>

@@ -121,7 +121,7 @@ export default function CaseStudiesPage() {
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <header className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/90 shadow-sm border-b border-border" role="banner">
         <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2 font-bold">
+          <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
             <div className="size-8 rounded-lg overflow-hidden">
               <Image
                 src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
@@ -132,7 +132,7 @@ export default function CaseStudiesPage() {
               />
             </div>
             <span className="text-foreground">CloudLine Studio</span>
-          </div>
+          </Link>
           <nav className="hidden md:flex gap-6 lg:gap-8" role="navigation" aria-label="Main navigation">
             <Link href="/" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Home
@@ -161,14 +161,6 @@ export default function CaseStudiesPage() {
       <main className="flex-1" role="main">
         <section className="w-full py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-background to-muted" aria-label="Case studies overview">
           <div className="container px-4 md:px-6">
-            <div className="flex items-center gap-4 mb-12">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/" className="flex items-center gap-2 text-muted-foreground hover:text-foreground" aria-label="CloudLine Studio - Home">
-                  <ArrowLeft className="size-4" />
-                  Back to Home
-                </Link>
-              </Button>
-            </div>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }}
