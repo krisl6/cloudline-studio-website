@@ -86,7 +86,6 @@ export default function HomePage() {
     { name: "ConnectDr", logo: "/connectdr-logo.png" },
     { name: "Hootsuite", logo: "/hootsuite-logo.png" },
     { name: "Tanium", logo: "/tanium-logo.png" },
-    { name: "Aslion", logo: "/aslion-logo.png" },
     { name: "Bateriku.com", logo: "/bateriku-logo.png" },
     { name: "The Flour Whisperer", logo: "/flour-whisperer-logo.png" },
     { name: "MIL Design & Construction", logo: "/mil-logo.png" },
