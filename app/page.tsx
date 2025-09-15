@@ -176,7 +176,7 @@ export default function HomePage() {
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
                 <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2" asChild>
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Let's Chat →
+                    Chat With Us →
                   </Link>
                 </Button>
               </div>
@@ -224,7 +224,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Get My Free Revenue Audit →
+                    Book a Call Now - 15% Off First Month →
                   </Link>
                 </Button>
                 <Button
@@ -414,10 +414,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-gradient-to-br from-accent to-accent/90 text-accent-foreground relative overflow-hidden">
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
+        <section className="w-full py-16 md:py-24 bg-background text-foreground relative overflow-hidden border-t border-border">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]"></div>
+          <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
 
           <div className="container px-4 md:px-6 relative z-10">
             <motion.div
@@ -430,16 +430,16 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
                 Your Competitors Are Getting Ahead While You Wait
               </h2>
-              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl" aria-describedby="main-heading">
+              <p className="mx-auto max-w-[700px] text-foreground/90 md:text-xl" aria-describedby="main-heading">
                 Every month you delay costs you thousands in lost revenue. Our clients see results in 30 days or less. 
                 Stop losing customers to competitors who invested in growth.
               </p>
               
-              <div className="bg-card/10 backdrop-blur-sm border border-border/20 rounded-lg p-6 mb-6 max-w-md mx-auto">
+              <div className="bg-foreground/5 border border-border rounded-lg p-6 mb-6 max-w-md mx-auto">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">Limited Time</div>
-                  <div className="text-sm text-muted-foreground">Free Revenue Audit (Worth $2,500)</div>
-                  <div className="text-xs text-muted-foreground mt-2">Only 3 spots left this month</div>
+                  <div className="text-2xl font-bold text-primary mb-1">Limited Time Offer</div>
+                  <div className="text-sm text-foreground/90">15% Off Your First Month</div>
+                  <div className="text-xs text-foreground/80 mt-2">Only 3 spots left this month</div>
                 </div>
               </div>
 
@@ -450,21 +450,21 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Claim My Free Audit Now →
+                    Book a Call - 15% Off First Month →
                   </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-2 border-accent-foreground text-accent-foreground hover:bg-accent-foreground hover:text-accent transition-all"
+                  className="rounded-full h-12 px-8 text-base bg-transparent border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all"
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Schedule a Free Consultation
+Schedule a Free Strategy Call
                   </Link>
                 </Button>
               </div>
-              <p className="text-sm text-accent-foreground/80 mt-4">
+              <p className="text-sm text-foreground/80 mt-4">
                 Join 120+ successful businesses that trust CloudLine Studio for their digital growth.
               </p>
             </motion.div>
@@ -473,12 +473,12 @@ export default function HomePage() {
       </main>
 
       <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-border bg-background" role="contentinfo">
-        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} CloudLine Studio. All rights reserved.</p>
-          <p>SSM: KT0595857-A</p>
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs">
+          <p className="text-foreground/90">&copy; {new Date().getFullYear()} CloudLine Studio. All rights reserved.</p>
+          <p className="text-foreground/90">SSM: KT0595857-A</p>
         </div>
         <div className="flex gap-4">
-          <p className="text-xs text-muted-foreground" role="text">Connecting the right people to the right products</p>
+          <p className="text-xs text-foreground/90" role="text">Connecting the right people to the right products</p>
         </div>
       </footer>
       <WhatsAppFloat />
