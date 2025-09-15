@@ -194,13 +194,28 @@ export default function HomePage() {
               className="text-center max-w-4xl mx-auto mb-12"
             >
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground" id="main-heading">
-                Transform Your Business with
-                <span className="text-primary"> Strategic Digital Marketing</span>
+                Stop Losing Sales to Your Competitors.
+                <span className="text-primary"> Start Converting More Today.</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto" aria-describedby="clients-heading">
-                CloudLine Studio specializes in performance marketing, website creation, and influencer collaboration
-                across Google, META, TikTok, and LinkedIn platforms.
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" aria-describedby="clients-heading">
+                Your customers are searching for your products right now. But they're buying from competitors who show up first. 
+                We've helped 50+ businesses increase their revenue by 3-5x through strategic digital marketing that actually converts.
               </p>
+              
+              <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mb-8">
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span className="text-primary">✓</span> Average 300% ROI in 90 days
+                </div>
+                <div className="hidden sm:block text-muted-foreground">•</div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span className="text-primary">✓</span> 7+ years proven results
+                </div>
+                <div className="hidden sm:block text-muted-foreground">•</div>
+                <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                  <span className="text-primary">✓</span> No long-term contracts
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
@@ -208,7 +223,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Start Your Growth Journey →
+                    Get My Free Revenue Audit →
                   </Link>
                 </Button>
                 <Button
@@ -217,18 +232,10 @@ export default function HomePage() {
                   className="rounded-full h-12 px-8 text-base border-border text-foreground hover:bg-muted bg-transparent"
                   asChild
                 >
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Schedule a Consultation
+                  <Link href="/case-studies">
+                    See Client Results
                   </Link>
                 </Button>
-              </div>
-              <div className="flex items-center justify-center gap-6 mt-8 text-sm text-muted-foreground">
-                <Link href="/" className="flex items-center gap-2" aria-label="CloudLine Studio - Home">
-                  <div className="size-12 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-bold text-lg">
-                    120+
-                  </div>
-                  <span>Successful Projects</span>
-                </Link>
               </div>
             </motion.div>
 
@@ -293,11 +300,14 @@ export default function HomePage() {
               className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
             >
               <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-accent/10 text-accent border-accent/20">
-                Our Services
+                Revenue Growth Solutions
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                Comprehensive Digital Marketing Solutions
+                Stop Wasting Money on Marketing That Doesn't Convert
               </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Every day you delay is revenue lost to competitors. Our proven system turns your marketing spend into predictable profit.
+              </p>
             </motion.div>
 
             <motion.div
@@ -446,13 +456,22 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="flex flex-col items-center justify-center space-y-6 text-center"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-accent-foreground">
-                Ready to Transform Your Digital Presence?
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
+                Your Competitors Are Getting Ahead While You Wait
               </h2>
               <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl" aria-describedby="main-heading">
-                Let's connect the right people to your products and services. Every interaction should drive growth, and
-                we're here to make that happen for your business.
+                Every month you delay costs you thousands in lost revenue. Our clients see results in 30 days or less. 
+                Stop losing customers to competitors who invested in growth.
               </p>
+              
+              <div className="bg-card/10 backdrop-blur-sm border border-border/20 rounded-lg p-6 mb-6 max-w-md mx-auto">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-primary mb-1">Limited Time</div>
+                  <div className="text-sm text-muted-foreground">Free Revenue Audit (Worth $2,500)</div>
+                  <div className="text-xs text-muted-foreground mt-2">Only 3 spots left this month</div>
+                </div>
+              </div>
+
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
                 <Button
                   size="lg"
@@ -460,7 +479,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Start Your Project Today →
+                    Claim My Free Audit Now →
                   </Link>
                 </Button>
                 <Button
