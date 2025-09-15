@@ -74,9 +74,9 @@ export default function HomePage() {
   ]
 
   const clients = [
-    { name: "Celcom", logo: "/celcom-logo.png" },
-    { name: "Axiata", logo: "/axiata-logo.png" },
-    { name: "ClearSK", logo: "/clearsk-logo.png" },
+    { name: "Celcom", logo: "/celcom_logo.png" },
+    { name: "Axiata", logo: "/axiata_logo.png" },
+    { name: "ClearSK", logo: "/clearsk_logo.png" },
     { name: "Agroz", logo: "/agroz-logo.png" },
     { name: "Circle DNA", logo: "/circle-dna-logo.png" },
     { name: "Prenetics", logo: "/prenetics-logo.png" },
@@ -131,8 +131,10 @@ export default function HomePage() {
               Contact
             </Link>
           </nav>
-          <div className="hidden md:flex gap-4 items-center">
-            <ThemeToggle />
+          <div className="hidden md:flex gap-6 items-center">
+            <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
+              <ThemeToggle />
+            </div>
             <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2" asChild>
               <Link href="https://wa.link/fwi8af" target="_blank">
                 Let's Chat →
@@ -140,7 +142,9 @@ export default function HomePage() {
             </Button>
           </div>
           <div className="flex items-center gap-4 md:hidden">
-            <ThemeToggle />
+            <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
+              <ThemeToggle />
+            </div>
             <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
               {mobileMenuOpen ? "✕" : "☰"}
               <span className="sr-only">Toggle menu</span>
