@@ -45,7 +45,7 @@ export default function HomePage() {
   const services = [
     {
       title: "Performance Marketing",
-      description: "Data-driven campaigns across Google, Meta, TikTok, and XHS (Xiaohongshu)",
+      description: "Data-driven campaigns across Google, Meta, TikTok, and LinkedIn platforms",
       icon: "📊",
       features: [
         "Multi-platform campaign management",
@@ -102,11 +102,9 @@ export default function HomePage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <header
-        className={`sticky top-0 z-50 w-full backdrop-blur-lg transition-all duration-300 ${
-          isScrolled ? "bg-background/90 shadow-sm border-b border-border" : "bg-transparent"
-        }`}
+        className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg bg-background/90 shadow-sm border-b border-border' : 'bg-transparent'}`} role="banner"
       >
-        <div className="container flex h-16 items-center justify-between">
+        <div className="container flex h-16 items-center justify-between px-4 md:px-6">
           <div className="flex items-center gap-2 font-bold">
             <div className="size-8 rounded-lg overflow-hidden">
               <Image
@@ -119,23 +117,23 @@ export default function HomePage() {
             </div>
             <span className="text-foreground">CloudLine Studio</span>
           </div>
-          <nav className="hidden md:flex gap-8">
-            <Link href="/services" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+          <nav className="sm:ml-auto flex gap-4 sm:gap-6" role="navigation" aria-label="Main navigation">
+            <Link href="/services" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Services
             </Link>
-            <Link href="/case-studies" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+            <Link href="/case-studies" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Case Studies
             </Link>
-            <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+            <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Pricing
             </Link>
-            <Link href="/contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground">
+            <Link href="/contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Contact
             </Link>
           </nav>
           <div className="hidden md:flex gap-4 items-center">
             <ThemeToggle />
-            <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2" asChild>
               <Link href="https://wa.link/fwi8af" target="_blank">
                 Let's Chat →
               </Link>
@@ -171,7 +169,7 @@ export default function HomePage() {
                 Contact
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
-                <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2" asChild>
                   <Link href="https://wa.link/fwi8af" target="_blank">
                     Let's Chat →
                   </Link>
@@ -182,8 +180,8 @@ export default function HomePage() {
         )}
       </header>
 
-      <main className="flex-1">
-        <section className="w-full py-20 md:py-32 lg:py-40 overflow-hidden bg-gradient-to-br from-background to-muted">
+      <main className="flex-1" role="main">
+        <section className="w-full py-12 md:py-20 lg:py-24 xl:py-32 bg-gradient-to-br from-background via-background to-muted" aria-label="Hero section">
           <div className="container px-4 md:px-6 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -191,13 +189,13 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-4xl mx-auto mb-12"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground" id="main-heading">
                 Transform Your Business with
                 <span className="text-primary"> Strategic Digital Marketing</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto" aria-describedby="clients-heading">
                 CloudLine Studio specializes in performance marketing, website creation, and influencer collaboration
-                across Google, META, TikTok, and XHS (Xiaohongshu). We connect the right people to your products.
+                across Google, META, TikTok, and LinkedIn platforms.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
@@ -221,20 +219,12 @@ export default function HomePage() {
                 </Button>
               </div>
               <div className="flex items-center justify-center gap-6 mt-8 text-sm text-muted-foreground">
-                <div className="flex items-center gap-2">
+                <Link href="/" className="flex items-center gap-2" aria-label="CloudLine Studio - Home">
                   <div className="size-12 rounded-full bg-accent flex items-center justify-center text-accent-foreground font-bold text-lg">
                     120+
                   </div>
                   <span>Successful Projects</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <span className="text-accent">✓</span>
-                  <span>7+ Years Experience</span>
-                </div>
-                <div className="flex items-center gap-1">
-                  <span className="text-primary">★</span>
-                  <span>Proven Results</span>
-                </div>
+                </Link>
               </div>
             </motion.div>
 
@@ -258,42 +248,34 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-full py-12 border-y border-border bg-muted">
+        <section className="w-full py-8 md:py-12 border-y border-border bg-muted">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <p className="text-sm font-medium text-muted-foreground">Platforms we specialize in</p>
+              <Link className="text-xs hover:underline underline-offset-4 text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" href="#">Platforms we specialize in</Link>
               <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 lg:gap-16">
                 {[
-                  { name: "Google", logo: "/google-logo.png" },
-                  { name: "META", logo: "/meta-logo.png" },
-                  { name: "TikTok", logo: "/tiktok-logo.png" },
-                  { name: "XHS", logo: "/xhs-logo.png" },
-                  { name: "LinkedIn", logo: "/linkedin-logo.png" }
+                  { name: "Google", icon: "🔍", color: "bg-blue-500" },
+                  { name: "META", icon: "📘", color: "bg-blue-600" },
+                  { name: "TikTok", icon: "🎵", color: "bg-black" },
+                  { name: "LinkedIn", icon: "💼", color: "bg-blue-700" }
                 ].map((platform) => (
                   <motion.div
                     key={platform.name}
                     className="flex items-center gap-3 px-4 py-3 bg-card rounded-lg border border-border shadow-sm hover:shadow-md transition-all"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <Image
-                      src={platform.logo}
-                      alt={`${platform.name} logo`}
-                      width={24}
-                      height={24}
-                      className="w-6 h-6 object-contain"
-                    />
+                    <div className={`w-6 h-6 ${platform.color} rounded flex items-center justify-center text-white text-sm`}>
+                      {platform.icon}
+                    </div>
                     <span className="text-sm font-medium text-foreground">{platform.name}</span>
                   </motion.div>
                 ))}
-              </div>
-              <div className="mt-4 text-xs text-muted-foreground">
-                <p>XHS specializes in carousel posts, static images, KOL collaborations, and long-form copywriting</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="w-full py-20 md:py-32 bg-background">
+        <section className="w-full py-16 md:py-24 bg-background" aria-label="Our services">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -347,7 +329,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-full py-20 md:py-32 bg-muted">
+        <section className="w-full py-16 md:py-24 bg-muted" aria-label="Client testimonials">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -443,7 +425,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-full py-20 md:py-32 bg-gradient-to-br from-accent to-accent/80 text-accent-foreground relative overflow-hidden">
+        <section className="w-full py-16 md:py-24 bg-gradient-to-br from-accent to-accent/90 text-accent-foreground relative overflow-hidden">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff10_1px,transparent_1px),linear-gradient(to_bottom,#ffffff10_1px,transparent_1px)] bg-[size:4rem_4rem]"></div>
           <div className="absolute -top-24 -left-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
@@ -459,7 +441,7 @@ export default function HomePage() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-accent-foreground">
                 Ready to Transform Your Digital Presence?
               </h2>
-              <p className="mx-auto max-w-[700px] text-accent-foreground/90 md:text-xl">
+              <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl" aria-describedby="main-heading">
                 Let's connect the right people to your products and services. Every interaction should drive growth, and
                 we're here to make that happen for your business.
               </p>
@@ -492,116 +474,13 @@ export default function HomePage() {
         </section>
       </main>
 
-      <footer className="w-full border-t border-border bg-background">
-        <div className="container flex flex-col gap-8 px-4 py-10 md:px-6 lg:py-16">
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 font-bold">
-                <div className="size-8 rounded-lg overflow-hidden">
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
-                    alt="CloudLine Studio"
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-foreground">CloudLine Studio</span>
-              </div>
-              <p className="text-sm text-muted-foreground">
-                Digital marketing agency specializing in performance marketing, website creation, and influencer
-                collaboration across Google, META, TikTok, and XHS platforms.
-              </p>
-              <div className="flex gap-4">
-                <Link
-                  href="https://wa.link/fwi8af"
-                  target="_blank"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  💬<span className="sr-only">WhatsApp</span>
-                </Link>
-                <Link
-                  href="https://linkedin.com/company/cloudlinestudio"
-                  target="_blank"
-                  className="text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  💼<span className="sr-only">LinkedIn</span>
-                </Link>
-              </div>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-sm font-bold text-foreground">Services</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Performance Marketing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Website Creation & SEO
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Influencer Collaboration
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-sm font-bold text-foreground">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/case-studies" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Case Studies
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-sm font-bold text-foreground">Contact</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link
-                    href="https://wa.link/fwi8af"
-                    target="_blank"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    WhatsApp Chat
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://linkedin.com/company/cloudlinestudio"
-                    target="_blank"
-                    className="text-muted-foreground hover:text-foreground transition-colors"
-                  >
-                    LinkedIn
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4 sm:flex-row justify-between items-center border-t border-border pt-8">
-            <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs text-muted-foreground">
-              <p>&copy; {new Date().getFullYear()} CloudLine Studio. All rights reserved.</p>
-              <p>SSM: KT0595857-A</p>
-            </div>
-            <div className="flex gap-4">
-              <span className="text-xs text-muted-foreground">Connecting the right people to the right products</span>
-            </div>
-          </div>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-border bg-background" role="contentinfo">
+        <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 text-xs text-muted-foreground">
+          <p>&copy; {new Date().getFullYear()} CloudLine Studio. All rights reserved.</p>
+          <p>SSM: KT0595857-A</p>
+        </div>
+        <div className="flex gap-4">
+          <p className="text-xs text-muted-foreground" role="text">Connecting the right people to the right products</p>
         </div>
       </footer>
       <WhatsAppFloat />

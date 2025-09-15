@@ -118,8 +118,8 @@ export default function CaseStudiesPage() {
     selectedPlatform === "all" ? caseStudies : caseStudies.filter((study) => study.platforms.includes(selectedPlatform))
 
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-white text-black">
-      <header className="sticky top-0 z-50 w-full backdrop-blur-lg bg-white/90 shadow-sm border-b border-gray-200">
+    <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
+      <header className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/90 shadow-sm border-b border-border" role="banner">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2 font-bold">
             <div className="size-8 rounded-lg overflow-hidden">
@@ -131,26 +131,26 @@ export default function CaseStudiesPage() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <span className="text-black">CloudLine Studio</span>
+            <span className="text-foreground">CloudLine Studio</span>
           </div>
-          <nav className="hidden md:flex gap-8">
-            <Link href="/" className="text-sm font-medium text-gray-600 transition-colors hover:text-black">
+          <nav className="hidden md:flex gap-6 lg:gap-8" role="navigation" aria-label="Main navigation">
+            <Link href="/" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Home
             </Link>
-            <Link href="/services" className="text-sm font-medium text-gray-600 transition-colors hover:text-black">
+            <Link href="/services" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Services
             </Link>
-            <Link href="/case-studies" className="text-sm font-medium text-black">
+            <Link href="/case-studies" className="text-sm font-medium text-foreground">
               Case Studies
             </Link>
-            <Link href="/pricing" className="text-sm font-medium text-gray-600 transition-colors hover:text-black">
+            <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Pricing
             </Link>
-            <Link href="/contact" className="text-sm font-medium text-gray-600 transition-colors hover:text-black">
+            <Link href="/contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
               Contact
             </Link>
           </nav>
-          <Button className="rounded-full bg-orange-500 hover:bg-orange-600 text-white" asChild>
+          <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
             <Link href="https://wa.link/fwi8af" target="_blank">
               Let's Chat
             </Link>
@@ -158,12 +158,12 @@ export default function CaseStudiesPage() {
         </div>
       </header>
 
-      <main className="flex-1">
-        <section className="w-full py-20 md:py-32 bg-gradient-to-br from-white to-gray-50">
+      <main className="flex-1" role="main">
+        <section className="w-full py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-background to-muted" aria-label="Case studies overview">
           <div className="container px-4 md:px-6">
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-4 mb-12">
               <Button variant="ghost" size="sm" asChild>
-                <Link href="/" className="flex items-center gap-2 text-gray-600 hover:text-black">
+                <Link href="/" className="flex items-center gap-2 text-muted-foreground hover:text-foreground" aria-label="CloudLine Studio - Home">
                   <ArrowLeft className="size-4" />
                   Back to Home
                 </Link>
@@ -176,11 +176,11 @@ export default function CaseStudiesPage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-4xl mx-auto mb-12"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-black">
+              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground" id="case-studies-main-heading">
                 Proven Results Across
-                <span className="text-orange-500"> Industries & Platforms</span>
+                <span className="text-primary"> Industries & Platforms</span>
               </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" aria-describedby="case-studies-main-heading">
                 Real success stories from clients who have transformed their businesses with our strategic digital
                 marketing approach across Google, META, TikTok, and XHS platforms.
               </p>
@@ -188,16 +188,16 @@ export default function CaseStudiesPage() {
           </div>
         </section>
 
-        <section className="w-full py-12 border-y border-gray-200 bg-gray-50">
+        <section className="w-full py-8 md:py-12 border-y border-border bg-muted" aria-label="Platform specialists">
           <div className="container px-4 md:px-6">
             <div className="flex flex-col items-center justify-center space-y-6">
-              <h2 className="text-2xl font-bold text-black">Our Platform Specialists</h2>
-              <p className="text-gray-600 text-center max-w-2xl">
+              <h2 className="text-2xl font-bold text-foreground">Our Platform Specialists</h2>
+              <p className="text-muted-foreground text-center max-w-2xl">
                 Each platform requires unique expertise. Our specialized teams track performance and ensure success
                 across all channels.
               </p>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-6xl">
                 {platforms.map((platform, i) => (
                   <motion.div
                     key={platform.name}
@@ -206,17 +206,17 @@ export default function CaseStudiesPage() {
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                   >
                     <Card
-                      className="h-full border-gray-200 bg-white hover:shadow-lg transition-all duration-300 group cursor-pointer"
+                      className="h-full border-border bg-card hover:shadow-lg transition-all duration-300 group cursor-pointer"
                       onClick={() => setSelectedPlatform(platform.name)}
                     >
-                      <CardContent className="p-6">
-                        <div className="flex items-center gap-3 mb-4">
-                          <div className={`size-10 rounded-full flex items-center justify-center ${platform.color}`}>
+                      <CardContent className="p-4 md:p-6">
+                        <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
+                          <div className={`size-8 md:size-10 rounded-full flex items-center justify-center ${platform.color}`}>
                             {platform.icon}
                           </div>
-                          <h3 className="text-lg font-bold text-black">{platform.name}</h3>
+                          <h3 className="text-base md:text-lg font-bold text-foreground">{platform.name}</h3>
                         </div>
-                        <p className="text-sm text-gray-600">{platform.description}</p>
+                        <p className="text-xs md:text-sm text-muted-foreground">{platform.description}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -228,7 +228,7 @@ export default function CaseStudiesPage() {
                   variant={selectedPlatform === "all" ? "default" : "outline"}
                   size="sm"
                   onClick={() => setSelectedPlatform("all")}
-                  className={selectedPlatform === "all" ? "bg-olive-600 hover:bg-olive-700 text-white" : ""}
+                  className={selectedPlatform === "all" ? "bg-accent hover:bg-accent/90 text-accent-foreground" : ""}
                 >
                   All Platforms
                 </Button>
@@ -238,7 +238,7 @@ export default function CaseStudiesPage() {
                     variant={selectedPlatform === platform.name ? "default" : "outline"}
                     size="sm"
                     onClick={() => setSelectedPlatform(platform.name)}
-                    className={selectedPlatform === platform.name ? "bg-olive-600 hover:bg-olive-700 text-white" : ""}
+                    className={selectedPlatform === platform.name ? "bg-accent hover:bg-accent/90 text-accent-foreground" : ""}
                   >
                     {platform.name}
                   </Button>
@@ -248,7 +248,7 @@ export default function CaseStudiesPage() {
           </div>
         </section>
 
-        <section className="w-full py-20 md:py-32 bg-white">
+        <section className="w-full py-16 md:py-24 bg-background" aria-label="Case study results">
           <div className="container px-4 md:px-6">
             <div className="grid gap-12">
               {filteredStudies.map((study, i) => (
@@ -259,10 +259,10 @@ export default function CaseStudiesPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
-                  <Card className="overflow-hidden border-gray-200 bg-white shadow-lg hover:shadow-xl transition-all duration-300">
+                  <Card className="overflow-hidden border-border bg-card shadow-lg hover:shadow-xl transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="grid lg:grid-cols-2 gap-0">
-                        <div className="relative h-64 lg:h-auto">
+                        <div className="relative h-48 md:h-64 lg:h-auto">
                           <Image
                             src={study.image || "/placeholder.svg"}
                             alt={study.title}
@@ -271,47 +271,47 @@ export default function CaseStudiesPage() {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                         </div>
-                        <div className="p-8 flex flex-col justify-center">
+                        <div className="p-4 md:p-6 lg:p-8 flex flex-col justify-center">
                           <div className="flex flex-wrap gap-2 mb-4">
-                            <Badge className="bg-olive-100 text-olive-800 border-olive-200">{study.industry}</Badge>
+                            <Badge className="bg-accent/10 text-accent border-accent/20">{study.industry}</Badge>
                             {study.platforms.map((platform) => (
                               <Badge key={platform} variant="outline" className="text-xs">
                                 {platform}
                               </Badge>
                             ))}
                           </div>
-                          <h3 className="text-2xl font-bold mb-4 text-black">{study.title}</h3>
+                          <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-foreground">{study.title}</h3>
 
-                          <div className="grid grid-cols-3 gap-4 mb-6">
+                          <div className="grid grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
                             {study.metrics.map((metric, j) => (
                               <div key={j} className="text-center">
-                                <div className="text-2xl font-bold text-orange-500">{metric.value}</div>
-                                <div className="text-xs text-gray-600">{metric.label}</div>
+                                <div className="text-lg md:text-2xl font-bold text-primary">{metric.value}</div>
+                                <div className="text-xs md:text-sm text-muted-foreground">{metric.label}</div>
                               </div>
                             ))}
                           </div>
 
-                          <div className="space-y-4">
+                          <div className="space-y-3 md:space-y-4">
                             <div>
-                              <h4 className="font-semibold text-sm text-gray-500 uppercase tracking-wide mb-2">
+                              <h4 className="font-semibold text-xs md:text-sm text-muted-foreground uppercase tracking-wide mb-2">
                                 Challenge
                               </h4>
-                              <p className="text-sm text-gray-700">{study.challenge}</p>
+                              <p className="text-xs md:text-sm text-foreground/80">{study.challenge}</p>
                             </div>
                             <div>
-                              <h4 className="font-semibold text-sm text-gray-500 uppercase tracking-wide mb-2">
+                              <h4 className="font-semibold text-xs md:text-sm text-muted-foreground uppercase tracking-wide mb-2">
                                 Our Solution
                               </h4>
-                              <p className="text-sm text-gray-700">{study.solution}</p>
+                              <p className="text-xs md:text-sm text-foreground/80">{study.solution}</p>
                             </div>
                             <div>
-                              <h4 className="font-semibold text-sm text-gray-500 uppercase tracking-wide mb-2">
+                              <h4 className="font-semibold text-xs md:text-sm text-muted-foreground uppercase tracking-wide mb-2">
                                 Results Achieved
                               </h4>
-                              <p className="text-sm font-medium text-olive-600">{study.results}</p>
+                              <p className="text-xs md:text-sm font-medium text-accent">{study.results}</p>
                             </div>
                           </div>
-                          <Button className="mt-6 w-fit bg-orange-500 hover:bg-orange-600 text-white" asChild>
+                          <Button className="mt-4 md:mt-6 w-fit bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
                             <Link href="https://wa.link/fwi8af" target="_blank">
                               Discuss Your Project
                               <ArrowRight className="ml-2 size-4" />
@@ -327,7 +327,7 @@ export default function CaseStudiesPage() {
           </div>
         </section>
 
-        <section className="w-full py-20 md:py-32 bg-gradient-to-br from-olive-600 to-olive-700 text-white">
+        <section className="w-full py-16 md:py-24 bg-gradient-to-br from-accent to-accent/90 text-accent-foreground">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -339,14 +339,14 @@ export default function CaseStudiesPage() {
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
                 Ready to Become Our Next Success Story?
               </h2>
-              <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl mx-auto">
+              <p className="text-lg md:text-xl text-accent-foreground/90 mb-8 max-w-3xl mx-auto">
                 Join the growing list of businesses that have transformed their digital presence with CloudLine Studio's
                 proven strategies.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
-                  className="rounded-full h-12 px-8 text-base bg-orange-500 hover:bg-orange-600 text-white"
+                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground"
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
@@ -357,7 +357,7 @@ export default function CaseStudiesPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-white text-white hover:bg-white/10"
+                  className="rounded-full h-12 px-8 text-base bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10"
                   asChild
                 >
                   <Link href="/services">Explore Our Services</Link>
@@ -368,88 +368,10 @@ export default function CaseStudiesPage() {
         </section>
       </main>
 
-      <footer className="w-full border-t border-gray-200 bg-white">
-        <div className="container flex flex-col gap-8 px-4 py-10 md:px-6 lg:py-16">
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
-            <div className="space-y-4">
-              <div className="flex items-center gap-2 font-bold">
-                <div className="size-8 rounded-lg overflow-hidden">
-                  <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
-                    alt="CloudLine Studio"
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <span className="text-black">CloudLine Studio</span>
-              </div>
-              <p className="text-sm text-gray-600">
-                Digital marketing agency specializing in performance marketing, website creation, and influencer
-                collaboration.
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-sm font-bold text-black">Services</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/services" className="text-gray-600 hover:text-black transition-colors">
-                    Performance Marketing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="text-gray-600 hover:text-black transition-colors">
-                    Website Creation & SEO
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services" className="text-gray-600 hover:text-black transition-colors">
-                    Influencer Collaboration
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-sm font-bold text-black">Company</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link href="/case-studies" className="text-gray-600 hover:text-black transition-colors">
-                    Case Studies
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/pricing" className="text-gray-600 hover:text-black transition-colors">
-                    Pricing
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/contact" className="text-gray-600 hover:text-black transition-colors">
-                    Contact
-                  </Link>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-4">
-              <h4 className="text-sm font-bold text-black">Contact</h4>
-              <ul className="space-y-2 text-sm">
-                <li>
-                  <Link
-                    href="https://wa.link/fwi8af"
-                    target="_blank"
-                    className="text-gray-600 hover:text-black transition-colors"
-                  >
-                    WhatsApp Chat
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className="flex flex-col gap-4 sm:flex-row justify-between items-center border-t border-gray-200 pt-8">
-            <p className="text-xs text-gray-600">
-              &copy; {new Date().getFullYear()} CloudLine Studio. All rights reserved.
-            </p>
-          </div>
-        </div>
+      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-border bg-background" role="contentinfo">
+        <p className="text-xs text-muted-foreground">
+          &copy; {new Date().getFullYear()} CloudLine Studio. All rights reserved.
+        </p>
       </footer>
     </div>
   )

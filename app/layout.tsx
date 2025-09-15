@@ -10,7 +10,12 @@ export const metadata: Metadata = {
   title: "CloudLine Studio - Digital Marketing Agency | Performance Marketing & Website Creation",
   description:
     "7+ years experience in performance marketing, website creation, and influencer collaboration across Google, META, TikTok, and XHS. Helping businesses scale with data-driven marketing solutions.",
-  generator: 'v0.app'
+  generator: 'v0.app',
+  icons: {
+    icon: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png',
+    shortcut: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png',
+    apple: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png',
+  }
 }
 
 export default function RootLayout({
