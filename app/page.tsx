@@ -74,16 +74,30 @@ export default function HomePage() {
   ]
 
   const clients = [
-    { name: "ClearSK", logo: "/clearsk-logo.jpg" },
-    { name: "Celcom", logo: "/celcom-logo.jpg" },
-    { name: "Prenetics", logo: "/prenetics-logo.jpg" },
-    { name: "Monstarlab", logo: "/monstarlab-logo.jpg" },
-    { name: "Mukarami Coffee", logo: "/mukarami-logo.jpg" },
-    { name: "Easy Eats", logo: "/easy-eats-logo.jpg" },
-    { name: "Wellnite", logo: "/wellnite-logo.jpg" },
-    { name: "Circle DNA", logo: "/circle-dna-logo.jpg" },
-    { name: "Stive", logo: "/stive-logo.jpg" },
-    { name: "MIL.D", logo: "/mild-logo.jpg" },
+    { name: "Celcom", logo: "/celcom-logo.png" },
+    { name: "Axiata", logo: "/axiata-logo.png" },
+    { name: "ClearSK", logo: "/clearsk-logo.png" },
+    { name: "Agroz", logo: "/agroz-logo.png" },
+    { name: "Circle DNA", logo: "/circle-dna-logo.png" },
+    { name: "Prenetics", logo: "/prenetics-logo.png" },
+    { name: "Woodfire Gourmet Burger", logo: "/woodfire-logo.png" },
+    { name: "Surge", logo: "/surge-logo.png" },
+    { name: "Wellnite", logo: "/wellnite-logo.png" },
+    { name: "ConnectDr", logo: "/connectdr-logo.png" },
+    { name: "Hootsuite", logo: "/hootsuite-logo.png" },
+    { name: "Tanium", logo: "/tanium-logo.png" },
+    { name: "Aslion", logo: "/aslion-logo.png" },
+    { name: "Bateriku.com", logo: "/bateriku-logo.png" },
+    { name: "The Flour Whisperer", logo: "/flour-whisperer-logo.png" },
+    { name: "MIL Design & Construction", logo: "/mil-logo.png" },
+    { name: "Mukarami Coffee", logo: "/mukarami-logo.png" },
+    { name: "eSIMM Roam", logo: "/esimm-logo.png" },
+    { name: "Cigna Healthcare", logo: "/cigna-logo.png" },
+    { name: "Manulife", logo: "/manulife-logo.png" },
+    { name: "Darlie", logo: "/darlie-logo.png" },
+    { name: "Premier Clinic", logo: "/premier-clinic-logo.png" },
+    { name: "SmartCity Kitchens", logo: "/smartcity-kitchens-logo.png" },
+    { name: "Vyne", logo: "/vyne-logo.png" },
   ]
 
   return (
@@ -354,7 +368,8 @@ export default function HomePage() {
               </p>
             </motion.div>
 
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden space-y-6">
+              {/* First Row - Left to Right */}
               <motion.div
                 className="flex gap-8 items-center"
                 animate={{
@@ -364,14 +379,46 @@ export default function HomePage() {
                   x: {
                     repeat: Number.POSITIVE_INFINITY,
                     repeatType: "loop",
-                    duration: 20,
+                    duration: 25,
                     ease: "linear",
                   },
                 }}
               >
-                {[...clients, ...clients].map((client, i) => (
+                {[...clients.slice(0, 12), ...clients.slice(0, 12)].map((client, i) => (
                   <motion.div
-                    key={i}
+                    key={`row1-${i}`}
+                    className="flex-shrink-0 w-40 h-20 bg-card rounded-lg border border-border shadow-sm flex items-center justify-center hover:shadow-md transition-shadow"
+                    whileHover={{ scale: 1.05 }}
+                  >
+                    <Image
+                      src={client.logo || "/placeholder.svg"}
+                      alt={client.name}
+                      width={120}
+                      height={60}
+                      className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity"
+                    />
+                  </motion.div>
+                ))}
+              </motion.div>
+
+              {/* Second Row - Right to Left */}
+              <motion.div
+                className="flex gap-8 items-center"
+                animate={{
+                  x: [-1920, 0],
+                }}
+                transition={{
+                  x: {
+                    repeat: Number.POSITIVE_INFINITY,
+                    repeatType: "loop",
+                    duration: 25,
+                    ease: "linear",
+                  },
+                }}
+              >
+                {[...clients.slice(12, 24), ...clients.slice(12, 24)].map((client, i) => (
+                  <motion.div
+                    key={`row2-${i}`}
                     className="flex-shrink-0 w-40 h-20 bg-card rounded-lg border border-border shadow-sm flex items-center justify-center hover:shadow-md transition-shadow"
                     whileHover={{ scale: 1.05 }}
                   >
