@@ -338,7 +338,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Book a Call Now - 15% Off First Month →
+                    Chat with us here →
                   </Link>
                 </Button>
                 <Button
@@ -565,7 +565,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Book a Call - 15% Off First Month →
+                    Chat with us here →
                   </Link>
                 </Button>
                 <Button
@@ -575,8 +575,8 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-Schedule a Free Strategy Call
-                  </Link>
+                  Schedule a Free Strategy Call
+                </Link>
                 </Button>
               </div>
               <p className="text-sm text-foreground/80 mt-4">

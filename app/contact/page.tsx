@@ -10,40 +10,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { useEffect } from "react"
 
 export default function ContactPage() {
-  useEffect(() => {
-    // Add Tally script to body as per their documentation
-    const script = document.createElement('script')
-    // @ts-ignore - We're using Tally's exact script
-    script.innerHTML = `
-      var d=document,w="https://tally.so/widgets/embed.js",v=function(){
-        if(typeof Tally!=='undefined'){
-          // @ts-ignore - Tally is loaded from the script
-          Tally.loadEmbeds()
-        }else{
-          d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){
-            e.src=e.dataset.tallySrc
-          })
-        }
-      };
-      if(typeof Tally!=='undefined'){
-        v();
-      }else if(!d.querySelector('script[src="'+w+'"]')){
-        var s=d.createElement("script");
-        s.src=w;
-        s.onload=v;
-        s.onerror=v;
-        d.body.appendChild(s);
-      }
-    `
-    document.body.appendChild(script)
-
-    return () => {
-      // Cleanup script when component unmounts
-      if (document.body.contains(script)) {
-        document.body.removeChild(script)
-      }
-    }
-  }, [])
+  // Tally form will be loaded via the script in layout.tsx
 
   const contactMethods = [
     {
@@ -196,18 +163,18 @@ export default function ContactPage() {
               className="max-w-4xl mx-auto"
             >
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Send Us a Message</h2>
-              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-                <iframe 
-                  data-tally-src="https://tally.so/embed/wbagA7?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
-                  loading="lazy" 
-                  width="100%" 
-                  height={807}
-                  frameBorder="0" 
-                  marginHeight={0}
-                  marginWidth={0}
-                  title="Let's Talk"
-                  className="w-full border-0"
-                ></iframe>
+              <div className="text-center py-12">
+                <h3 className="text-xl font-medium text-foreground mb-6">Ready to get started?</h3>
+                <p className="text-muted-foreground mb-8">Click the button below to open our contact form in a new window.</p>
+                <Button 
+                  data-tally-open="wbagA7"
+                  data-tally-emoji-text="👋"
+                  data-tally-emoji-animation="wave"
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg font-medium transition-colors"
+                >
+                  Open Contact Form
+                </Button>
               </div>
             </motion.div>
           </div>
