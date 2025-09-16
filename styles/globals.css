@@ -4,48 +4,48 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --background: 0 0% 98%; /* Slightly off-white for warmth */
+    --foreground: 220 17% 20%; /* Dark blue-gray for better readability */
+    --card: 0 0% 100%; /* Pure white cards for content */
+    --card-foreground: 220 17% 20%; 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
-    --primary: 25 95% 53%; /* Orange primary */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 0 0% 45%; /* Dark gray accent for monochrome elegance */
+    --popover-foreground: 220 17% 20%;
+    --primary: 212 71% 42%; /* Deep blue primary color */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 32 100% 50%; /* Warm orange accent */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 210 20% 98%; /* Very light blue-gray */
+    --muted-foreground: 215 16% 47%; /* Muted blue-gray */
+    --accent: 32 100% 50%; /* Warm orange accent */
     --accent-foreground: 0 0% 100%;
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 25 95% 53%;
-    --radius: 1rem;
+    --border: 214 32% 91%; /* Soft blue-gray border */
+    --input: 214 32% 91%; 
+    --ring: 212 71% 52%; /* Slightly brighter blue for focus rings */
+    --radius: 0.5rem; /* Slightly smaller border radius for modern look */
   }
 
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
-    --card: 240 10% 3.9%;
+    --background: 220 17% 10%; /* Dark blue-gray */
+    --foreground: 0 0% 95%;
+    --card: 220 17% 12%; /* Slightly lighter than background */
     --card-foreground: 0 0% 98%;
-    --popover: 240 10% 3.9%;
+    --popover: 220 17% 12%;
     --popover-foreground: 0 0% 98%;
-    --primary: 25 95% 53%; /* Orange primary */
-    --primary-foreground: 240 5.9% 10%;
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
-    --accent: 0 0% 65%; /* Light gray accent for dark mode */
-    --accent-foreground: 0 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 25 95% 53%;
+    --primary: 210 89% 60%; /* Brighter blue for dark mode */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 32 100% 50%; /* Same warm orange accent */
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 10% 20%; 
+    --muted-foreground: 220 5% 65%;
+    --accent: 32 100% 50%; /* Warm orange accent */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 63% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 10% 20%; 
+    --input: 220 10% 20%;
+    --ring: 210 89% 60%;
   }
 }
 

@@ -3,6 +3,7 @@ import "@/styles/globals.css"
 import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
+import { SiteLayout } from "@/components/layout/SiteLayout"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -12,10 +13,19 @@ export const metadata: Metadata = {
     "7+ years experience in performance marketing, website creation, and influencer collaboration across Google, META, TikTok, and XHS. Helping businesses scale with data-driven marketing solutions.",
   generator: 'v0.app',
   icons: {
-    icon: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png',
-    shortcut: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png',
-    apple: 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png',
-  }
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/logo.svg', type: 'image/svg+xml' },
+    ],
+    apple: [
+      { url: '/logo.svg', type: 'image/svg+xml' },
+    ],
+  },
+  manifest: '/site.webmanifest',
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+  ],
 }
 
 export default function RootLayout({
@@ -25,20 +35,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <script async src="https://tally.so/widgets/embed.js"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `window.TallyConfig = { "formId": "wbagA7", "popup": { "emoji": { "text": "👋🏻", "animation": "wave" }, "open": { "trigger": "time", "ms": 5000 }, "overlay": true, "autoClose": 2000, "doNotShowAfterSubmit": true, "formEventsForwarding": true }};`
-        }} />
-      </head>
-      <body className={inter.className}>
+      <head />
+      <body className={`${inter.className} bg-background`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <SiteLayout>
+            {children}
+          </SiteLayout>
         </ThemeProvider>
       </body>
     </html>

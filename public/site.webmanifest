@@ -1,0 +1,21 @@
+{
+  "name": "CloudLine Studio",
+  "short_name": "CloudLine",
+  "description": "Digital Marketing Agency | Performance Marketing & Website Creation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    }
+  ]
+}
