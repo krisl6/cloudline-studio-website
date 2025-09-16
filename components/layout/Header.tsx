@@ -64,11 +64,11 @@ export function Header() {
             <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
               <ThemeToggle />
               <Button 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
                 asChild
               >
                 <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
-                  Free Consultation
+                  Chat with us now
                 </Link>
               </Button>
             </div>
@@ -110,9 +110,9 @@ export function Header() {
                       </Link>
                     ))}
                     <div className="pt-4 border-t border-border mt-4">
-                      <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300" asChild>
+                      <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold" asChild>
                         <Link href="https://wa.link/fwi8af" target="_blank">
-                          Free Consultation
+                          Chat with us now
                         </Link>
                       </Button>
                     </div>

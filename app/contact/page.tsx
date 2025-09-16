@@ -3,12 +3,33 @@
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowLeft, MessageSquare, Clock, Globe, Users } from "lucide-react"
+import { MessageSquare, Clock, Globe, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
+import { useEffect } from "react"
 
 export default function ContactPage() {
+  useEffect(() => {
+    // Add Tally script to head
+    const script = document.createElement('script')
+    script.src = 'https://tally.so/widgets/embed.js'
+    script.async = true
+    script.onload = () => {
+      // @ts-ignore - Tally is loaded from the script
+      if (window.Tally) {
+        // @ts-ignore
+        window.Tally.loadEmbeds()
+      }
+    }
+    document.head.appendChild(script)
+
+    return () => {
+      // Cleanup script when component unmounts
+      document.head.removeChild(script)
+    }
+  }, [])
+
   const contactMethods = [
     {
       title: "WhatsApp Chat",
@@ -100,9 +121,9 @@ export default function ContactPage() {
               Contact
             </Link>
           </nav>
-          <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+          <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold" asChild>
             <Link href="https://wa.link/fwi8af" target="_blank">
-              Let's Chat
+              Chat with us now
             </Link>
           </Button>
         </div>
@@ -111,7 +132,6 @@ export default function ContactPage() {
       <main className="flex-1" role="main">
         <section className="w-full py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-background to-muted" aria-label="Contact overview">
           <div className="container px-4 md:px-6">
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -126,11 +146,59 @@ export default function ContactPage() {
                 Ready to transform your business with strategic digital marketing? Get in touch with our team and let's
                 discuss how we can help you achieve your goals.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
+                  asChild
+                >
+                  <Link href="https://wa.link/fwi8af" target="_blank">
+                    Chat Now
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
+                  asChild
+                >
+                  <Link href="/services">
+                    View Services
+                  </Link>
+                </Button>
+              </div>
             </motion.div>
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-background" aria-label="Contact methods">
+        <section className="w-full py-16 md:py-24 bg-background" aria-label="Contact Form">
+          <div className="container px-4 md:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-4xl mx-auto"
+            >
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Send Us a Message</h2>
+              <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+                <iframe 
+                  data-tally-src="https://tally.so/embed/wbagA7?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+                  loading="lazy"
+                  width="100%"
+                  height="600"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                  title="Let's Talk"
+                  className="w-full min-h-[500px] border-0"
+                ></iframe>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section className="w-full py-16 md:py-24 bg-muted" aria-label="Contact methods">
           <div className="container px-4 md:px-6">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
               <div>
@@ -247,58 +315,6 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-muted" aria-label="Why choose us">
-          <div className="container px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto mb-12"
-            >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20 mb-4">
-                Why Choose CloudLine Studio
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">What Makes Us Different</h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {[
-                {
-                  title: "7+ Years Experience",
-                  description:
-                    "Proven track record with 120+ successful projects across various industries and international markets.",
-                },
-                {
-                  title: "Transparent Approach",
-                  description:
-                    "All dashboards, data, and performance metrics belong to you. Complete transparency in every campaign.",
-                },
-                {
-                  title: "Multi-Platform Expertise",
-                  description:
-                    "Specialists in Google, META, TikTok, and XHS (Xiaohongshu) with deep understanding of each platform's unique requirements.",
-                },
-              ].map((benefit, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <Card className="h-full border-border bg-card hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-4 md:p-6 text-center">
-                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
-                      <p className="text-sm md:text-base text-muted-foreground">{benefit.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="w-full py-16 md:py-24 bg-background" aria-label="Client reviews">
           <div className="container px-4 md:px-6">
             <motion.div
@@ -308,18 +324,16 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-4xl mx-auto mb-12"
             >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-accent/10 text-accent border-accent/20 mb-4">
-                Client Success Stories
+              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20 mb-4">
+                Client Testimonials
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
-                Hear from Past Clients
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Real feedback from Malaysian businesses who have transformed their digital presence with CloudLine Studio.
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">What Our Clients Say</h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Don't just take our word for it. Here's what our clients have to say about working with us.
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {clientReviews.map((review, i) => (
                 <motion.div
                   key={i}
@@ -328,42 +342,21 @@ export default function ContactPage() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                 >
-                  <Card className="h-full border-border bg-card hover:shadow-lg transition-all duration-300 relative">
-                    <CardContent className="p-6">
-                      <div className="absolute top-4 left-4 text-4xl text-accent/20">
-                        "
+                  <Card className="h-full border-border bg-card hover:shadow-lg transition-all duration-300">
+                    <CardContent className="p-6 h-full flex flex-col">
+                      <div className="flex-1">
+                        <div className="text-4xl mb-4">{review.avatar}</div>
+                        <p className="text-muted-foreground mb-6 italic">"{review.review}"</p>
                       </div>
-                      <div className="pt-6">
-                        <p className="text-sm md:text-base text-foreground/80 mb-6 leading-relaxed">
-                          {review.review}
-                        </p>
-                        <div className="flex items-center gap-3">
-                          <div className="text-3xl">
-                            {review.avatar}
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-foreground">{review.name}</h4>
-                            <p className="text-xs text-muted-foreground uppercase tracking-wide">
-                              {review.role}
-                            </p>
-                            <p className="text-sm font-medium text-accent">
-                              {review.company}
-                            </p>
-                          </div>
-                        </div>
+                      <div>
+                        <h4 className="font-bold text-foreground">{review.name}</h4>
+                        <p className="text-sm text-muted-foreground">{review.role}</p>
+                        <p className="text-sm font-medium text-primary">{review.company}</p>
                       </div>
                     </CardContent>
                   </Card>
                 </motion.div>
               ))}
-            </div>
-
-            <div className="text-center mt-12">
-              <div className="inline-flex items-center gap-2 bg-card rounded-full px-6 py-3 border border-border shadow-sm">
-                <span className="text-accent text-lg">⭐⭐⭐⭐⭐</span>
-                <span className="text-sm font-medium text-foreground">4.9/5 Client Satisfaction</span>
-                <span className="text-sm text-muted-foreground">• 120+ Projects Completed</span>
-              </div>
             </div>
           </div>
         </section>
@@ -375,77 +368,23 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto"
+              className="max-w-4xl mx-auto text-center"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-                Ready to Transform Your Business?
-              </h2>
-              <p className="text-lg md:text-xl text-accent-foreground/90 mb-8 max-w-3xl mx-auto">
-                Don't wait to start your digital growth journey. Contact us today and let's discuss how we can help you
-                achieve your business goals.
+              <h2 className="text-2xl md:text-3xl font-bold mb-6">Ready to grow your business?</h2>
+              <p className="text-lg mb-8 max-w-2xl mx-auto">
+                Let's discuss how we can help you achieve your digital marketing goals and drive real results.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground"
-                  asChild
-                >
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button size="lg" className="bg-background text-foreground hover:bg-background/90" asChild>
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Start Conversation Now
+                    Start Your Journey
                   </Link>
                 </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10"
-                  asChild
-                >
-                  <Link href="/services">Explore Our Services</Link>
+                <Button size="lg" variant="outline" className="border-background text-background hover:bg-background/10" asChild>
+                  <Link href="/services">
+                    Explore Services
+                  </Link>
                 </Button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="w-full py-16 md:py-24 bg-muted" aria-label="Contact form">
-          <div className="container px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto mb-12"
-            >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20 mb-4">
-                Get Started Today
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
-                Tell Us About Your Project
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Fill out this quick form and we'll get back to you within 24 hours with a customized strategy for your business.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="max-w-4xl mx-auto"
-            >
-              <div className="bg-card border border-border rounded-lg shadow-lg overflow-hidden">
-                <iframe
-                  data-tally-src="https://tally.so/embed/mYaDLz?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                  loading="lazy"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                  title="CloudLine Studio Contact Form"
-                  className="w-full min-h-[600px]"
-                ></iframe>
               </div>
             </motion.div>
           </div>

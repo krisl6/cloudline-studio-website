@@ -194,9 +194,9 @@ export default function ServicesPage() {
               Contact
             </Link>
           </nav>
-          <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+          <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold" asChild>
             <Link href="https://wa.link/fwi8af" target="_blank">
-              Let's Chat
+              Chat with us now
             </Link>
           </Button>
         </div>
@@ -220,6 +220,27 @@ export default function ServicesPage() {
                 From performance marketing to influencer collaboration, we provide end-to-end digital marketing
                 solutions that drive measurable results for your business.
               </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
+                  asChild
+                >
+                  <Link href="https://wa.link/fwi8af" target="_blank">
+                    Chat Now
+                  </Link>
+                </Button>
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
+                  asChild
+                >
+                  <Link href="#faq">
+                    Any Questions?
+                  </Link>
+                </Button>
+              </div>
             </motion.div>
           </div>
         </section>
