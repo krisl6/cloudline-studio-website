@@ -183,7 +183,7 @@ export default function CaseStudiesPage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Chat Now
+                    Get My Free Revenue Audit
                   </Link>
                 </Button>
                 <Button 
@@ -192,8 +192,8 @@ export default function CaseStudiesPage() {
                   className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
                   asChild
                 >
-                  <Link href="/contact">
-                    Any Questions?
+                  <Link href="/services">
+                    View All Services
                   </Link>
                 </Button>
               </div>

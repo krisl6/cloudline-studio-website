@@ -11,22 +11,42 @@ import { useEffect } from "react"
 
 export default function ContactPage() {
   useEffect(() => {
-    // Add Tally script to head
+    // Add Tally script to body as per their documentation
     const script = document.createElement('script')
-    script.src = 'https://tally.so/widgets/embed.js'
-    script.async = true
-    script.onload = () => {
+    script.innerHTML = `
+      var d=document,
+          w="https://tally.so/widgets/embed.js",
+          v=function(){
+            // @ts-ignore - Tally is loaded from the script
+            if (typeof Tally !== 'undefined') {
+              // @ts-ignore
+              Tally.loadEmbeds()
+            } else {
+              d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((e) => {
+                // @ts-ignore - We know this element has this property
+                e.src = e.dataset.tallySrc
+              })
+            }
+          };
+      
       // @ts-ignore - Tally is loaded from the script
-      if (window.Tally) {
-        // @ts-ignore
-        window.Tally.loadEmbeds()
+      if (typeof Tally !== 'undefined') {
+        v()
+      } else if (!d.querySelector('script[src="' + w + '"]')) {
+        var s = d.createElement("script")
+        s.src = w
+        s.onload = v
+        s.onerror = v
+        d.body.appendChild(s)
       }
-    }
-    document.head.appendChild(script)
+    `
+    document.body.appendChild(script)
 
     return () => {
       // Cleanup script when component unmounts
-      document.head.removeChild(script)
+      if (document.body.contains(script)) {
+        document.body.removeChild(script)
+      }
     }
   }, [])
 
@@ -183,15 +203,15 @@ export default function ContactPage() {
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Send Us a Message</h2>
               <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                 <iframe 
-                  data-tally-src="https://tally.so/embed/wbagA7?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                  loading="lazy"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
+                  data-tally-src="https://tally.so/embed/wbagA7?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" 
+                  loading="lazy" 
+                  width="100%" 
+                  height={807}
+                  frameBorder="0" 
                   marginHeight={0}
                   marginWidth={0}
                   title="Let's Talk"
-                  className="w-full min-h-[500px] border-0"
+                  className="w-full border-0"
                 ></iframe>
               </div>
             </motion.div>
