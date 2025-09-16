@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Remove 'output: export' to enable server-side rendering
+  output: 'export',
   trailingSlash: true,
   eslint: {
     ignoreDuringBuilds: true,
@@ -9,15 +9,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
+    unoptimized: true,
     domains: ['images.unsplash.com', 'source.unsplash.com'],
-    formats: ['image/avif', 'image/webp'],
   },
-  // Enable React Strict Mode
   reactStrictMode: true,
-  // Enable server components
-  experimental: {
-    serverActions: true,
-  },
 }
 
 export default nextConfig
