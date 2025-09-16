@@ -13,31 +13,26 @@ export default function ContactPage() {
   useEffect(() => {
     // Add Tally script to body as per their documentation
     const script = document.createElement('script')
+    // @ts-ignore - We're using Tally's exact script
     script.innerHTML = `
-      var d=document,
-          w="https://tally.so/widgets/embed.js",
-          v=function(){
-            // @ts-ignore - Tally is loaded from the script
-            if (typeof Tally !== 'undefined') {
-              // @ts-ignore
-              Tally.loadEmbeds()
-            } else {
-              d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((e) => {
-                // @ts-ignore - We know this element has this property
-                e.src = e.dataset.tallySrc
-              })
-            }
-          };
-      
-      // @ts-ignore - Tally is loaded from the script
-      if (typeof Tally !== 'undefined') {
-        v()
-      } else if (!d.querySelector('script[src="' + w + '"]')) {
-        var s = d.createElement("script")
-        s.src = w
-        s.onload = v
-        s.onerror = v
-        d.body.appendChild(s)
+      var d=document,w="https://tally.so/widgets/embed.js",v=function(){
+        if(typeof Tally!=='undefined'){
+          // @ts-ignore - Tally is loaded from the script
+          Tally.loadEmbeds()
+        }else{
+          d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){
+            e.src=e.dataset.tallySrc
+          })
+        }
+      };
+      if(typeof Tally!=='undefined'){
+        v();
+      }else if(!d.querySelector('script[src="'+w+'"]')){
+        var s=d.createElement("script");
+        s.src=w;
+        s.onload=v;
+        s.onerror=v;
+        d.body.appendChild(s);
       }
     `
     document.body.appendChild(script)
