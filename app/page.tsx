@@ -153,11 +153,13 @@ export default function HomePage() {
                     variant="outline" 
                     size="lg" 
                     className="border-2 hover:bg-muted/50 hover:scale-105 transition-all duration-300 font-medium"
-                    asChild
+                    onClick={() => {
+                      if (typeof window !== 'undefined' && (window as any).Tally) {
+                        (window as any).Tally.openPopup('wbagA7');
+                      }
+                    }}
                   >
-                    <Link href="#faq">
-                      Any Questions?
-                    </Link>
+                    Any Questions?
                   </Button>
                 </motion.div>
                 
