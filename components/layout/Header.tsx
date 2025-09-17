@@ -5,7 +5,7 @@ import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { Menu, X } from "lucide-react"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -20,10 +20,10 @@ export function Header() {
   }, [])
 
   const navItems = [
-    { name: "Services", href: "/#services" },
-    { name: "Results", href: "/case-studies" },
-    { name: "Pricing", href: "/#pricing" },
-    { name: "Contact", href: "#contact" },
+    { name: "Services", href: "/services" },
+    { name: "Case Studies", href: "/case-studies" },
+    { name: "Pricing", href: "/pricing" },
+    { name: "Contact", href: "/contact" },
   ]
 
   return (
@@ -63,68 +63,64 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <div className="hidden md:flex items-center gap-4">
-            <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
-              <ThemeToggle />
-              <Button 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
-                asChild
-              >
-                <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
-                  Chat with us now
-                </Link>
-              </Button>
-            </div>
-            
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            <Button 
+              className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300"
+              asChild
             >
-              {mobileMenuOpen ? (
-                <span className="text-2xl">✕</span>
-              ) : (
-                <span className="text-2xl">☰</span>
-              )}
-              <span className="sr-only">Toggle menu</span>
+              <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                Chat with Us Now →
+              </Link>
             </Button>
           </div>
           
-          <AnimatePresence>
-            {mobileMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2 }}
-                className="md:hidden overflow-hidden"
-              >
-                <div className="bg-background/95 backdrop-blur-lg border-t border-border">
-                  <div className="container px-4 py-4 space-y-4">
-                    {navItems.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:underline underline-offset-4"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                    <div className="pt-4 border-t border-border mt-4">
-                      <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold" asChild>
-                        <Link href="https://wa.link/fwi8af" target="_blank">
-                          Chat with us now
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <X className="h-4 w-4" />
+            ) : (
+              <Menu className="h-4 w-4" />
             )}
-          </AnimatePresence>
+            <span className="sr-only">Toggle menu</span>
+          </Button>
         </div>
       </div>
+      
+      {/* Mobile menu */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden absolute top-16 inset-x-0 bg-background/95 backdrop-blur-lg border-b border-border"
+          >
+            <div className="container py-4 flex flex-col gap-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className="py-2 text-sm font-medium"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              ))}
+              <div className="flex flex-col gap-2 pt-2 border-t border-border">
+                <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300" asChild>
+                  <Link href="https://wa.link/fwi8af" target="_blank">
+                    Chat with Us Now →
+                  </Link>
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

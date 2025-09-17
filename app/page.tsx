@@ -1,18 +1,14 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { WhatsAppFloat } from "@/components/whatsapp-float"
-import { Menu, X, ArrowRight, CheckCircle, Star, TrendingUp, Users, Zap } from "lucide-react"
+import { TrendingUp, Users, Zap } from "lucide-react"
 
 export default function HomePage() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -92,85 +88,6 @@ export default function HomePage() {
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
-      <WhatsAppFloat />
-      <header
-        className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/90 shadow-sm border-b border-border transition-all duration-300" role="banner"
-      >
-        <div className="container flex h-16 items-center px-4 md:px-6">
-          <div className="flex-1 flex items-center justify-center">
-            <nav className="flex gap-4 sm:gap-8" role="navigation" aria-label="Main navigation">
-              <Link href="/services" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Services
-              </Link>
-              <Link href="/case-studies" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Case Studies
-              </Link>
-              <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
-                <div className="size-8 rounded-lg overflow-hidden">
-                  <Image
-                    src="/logo.svg"
-                    alt="CloudLine Studio"
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </Link>
-              <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Pricing
-              </Link>
-              <Link href="/contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Contact
-              </Link>
-            </nav>
-          </div>
-          <div className="hidden md:flex gap-6 items-center">
-            <Button className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300" asChild>
-              <Link href="https://wa.link/fwi8af" target="_blank">
-                Chat with Us Now →
-              </Link>
-            </Button>
-          </div>
-          <div className="flex items-center gap-4 md:hidden">
-            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </div>
-        </div>
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-16 inset-x-0 bg-background/95 backdrop-blur-lg border-b border-border"
-          >
-            <div className="container py-4 flex flex-col gap-4">
-              <Link href="/services" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Services
-              </Link>
-              <Link href="/case-studies" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Case Studies
-              </Link>
-              <Link href="/pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Pricing
-              </Link>
-              <Link href="/contact" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Contact
-              </Link>
-              <div className="flex flex-col gap-2 pt-2 border-t border-border">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300" asChild>
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Chat with Us Now →
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </header>
-
       <main className="flex-1" role="main">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background/95 to-muted/50" aria-label="Hero section">
@@ -581,7 +498,6 @@ export default function HomePage() {
           <p className="text-xs text-foreground/90" role="text">Connecting the right people to the right products</p>
         </div>
       </footer>
-      <WhatsAppFloat />
     </div>
   )
 }
