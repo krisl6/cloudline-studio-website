@@ -77,7 +77,7 @@ export default function ContactPage() {
           <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
             <div className="size-8 rounded-lg overflow-hidden">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
+                src="/logo.svg"
                 alt="CloudLine Studio"
                 width={32}
                 height={32}
