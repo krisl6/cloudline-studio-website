@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import { SiteLayout } from "@/components/layout/SiteLayout"
+import { PostHogProvider } from "@/components/PostHogProvider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -45,9 +46,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SiteLayout>
-            {children}
-          </SiteLayout>
+          <PostHogProvider>
+            <SiteLayout>
+              {children}
+            </SiteLayout>
+          </PostHogProvider>
         </ThemeProvider>
       </body>
     </html>

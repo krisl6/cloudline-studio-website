@@ -2,13 +2,50 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { TrendingUp, Users, Zap } from "lucide-react"
+import { posthog } from "posthog-js"
+import { useRef } from "react"
 
 export default function HomePage() {
+  const containerRef = useRef(null)
+  const heroRef = useRef(null)
+  const servicesRef = useRef(null)
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"]
+  })
+  
+  const { scrollYProgress: heroProgress } = useScroll({
+    target: heroRef,
+    offset: ["start end", "end start"]
+  })
+  
+  const { scrollYProgress: servicesProgress } = useScroll({
+    target: servicesRef,
+    offset: ["start end", "end start"]
+  })
+  
+  // Smooth spring animations
+  const smoothProgress = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 })
+  
+  // Parallax transforms
+  const heroY = useTransform(heroProgress, [0, 1], ["0%", "-50%"])
+  const heroScale = useTransform(heroProgress, [0, 0.5, 1], [1, 1.1, 1.2])
+  const heroOpacity = useTransform(heroProgress, [0, 0.3, 0.7, 1], [1, 1, 0.8, 0.6])
+  
+  const servicesY = useTransform(servicesProgress, [0, 1], ["100px", "-100px"])
+  const servicesRotate = useTransform(servicesProgress, [0, 1], [5, -5])
+  
+  // Background elements
+  const bgY1 = useTransform(smoothProgress, [0, 1], ["0%", "-100%"])
+  const bgY2 = useTransform(smoothProgress, [0, 1], ["0%", "-150%"])
+  const bgRotate = useTransform(smoothProgress, [0, 1], [0, 360])
+
   const container = {
     hidden: { opacity: 0 },
     show: {
@@ -143,13 +180,13 @@ export default function HomePage() {
   ]
 
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
+    <div className="flex min-h-[100dvh] flex-col bg-background text-foreground" ref={containerRef}>
       <main className="flex-1" role="main">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background/95 to-muted/50" aria-label="Hero section">
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background/95 to-muted/50" aria-label="Hero section" ref={heroRef}>
           {/* Background elements */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#f5f5f5_1px,transparent_1px),linear-gradient(to_bottom,#f5f5f5_1px,transparent_1px)] bg-[size:4rem_4rem] dark:bg-[linear-gradient(to_right,#1e1e1e_1px,transparent_1px),linear-gradient(to_bottom,#1e1e1e_1px,transparent_1px)]"></div>
-          <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+          <motion.div className="absolute inset-0 bg-[linear-gradient(to_right,#f5f5f5_1px,transparent_1px),linear-gradient(to_bottom,#f5f5f5_1px,transparent_1px)] bg-[size:4rem_4rem] dark:bg-[linear-gradient(to_right,#1e1e1e_1px,transparent_1px),linear-gradient(to_bottom,#1e1e1e_1px,transparent_1px)]" style={{ y: bgY1, rotate: bgRotate }}></motion.div>
+          <motion.div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl" style={{ y: bgY2 }}></motion.div>
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
 
           <div className="container relative z-10 py-20 md:py-28 lg:py-36">
@@ -173,6 +210,7 @@ export default function HomePage() {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
+                  style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
                 >
                   3x Your Revenue.
                   <span className="block bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
@@ -212,6 +250,11 @@ export default function HomePage() {
                     onClick={() => {
                       if (typeof window !== 'undefined' && (window as any).Tally) {
                         (window as any).Tally.openPopup('wbagA7');
+                        posthog?.capture('contact_form_opened', {
+                          trigger: 'any_questions_button',
+                          location: 'hero_section',
+                          page: 'homepage'
+                        })
                       }
                     }}
                   >
@@ -245,8 +288,37 @@ export default function HomePage() {
                 initial="hidden"
                 animate="show"
                 className="relative"
+                style={{ y: heroY, scale: heroScale, opacity: heroOpacity }}
               >
+                {/* Floating natural elements */}
+                <motion.div
+                  className="absolute -top-10 -right-10 w-20 h-20 opacity-20"
+                  style={{ 
+                    y: useTransform(heroProgress, [0, 1], [0, -100]),
+                    rotate: useTransform(heroProgress, [0, 1], [0, 180])
+                  }}
+                >
+                  <div className="w-full h-full bg-gradient-to-br from-blue-400 to-purple-400 rounded-full blur-sm"></div>
+                </motion.div>
+                
+                <motion.div
+                  className="absolute -bottom-5 -left-5 w-16 h-16 opacity-30"
+                  style={{ 
+                    y: useTransform(heroProgress, [0, 1], [0, 50]),
+                    x: useTransform(heroProgress, [0, 1], [0, 30])
+                  }}
+                >
+                  <div className="w-full h-full bg-gradient-to-br from-green-400 to-blue-400 rounded-full blur-sm"></div>
+                </motion.div>
+
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-primary/10 to-secondary/10"
+                    style={{ 
+                      scale: useTransform(heroProgress, [0, 1], [1, 1.1]),
+                      opacity: useTransform(heroProgress, [0, 0.5, 1], [0, 0.3, 0.6])
+                    }}
+                  />
                   <Image
                     src="/aesthetic-clinic-marketing-dashboard-with-patient-.jpg"
                     alt="Marketing dashboard showing growth metrics"
@@ -255,7 +327,29 @@ export default function HomePage() {
                     className="w-full h-auto"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/30 to-transparent"></div>
+                  
+                  {/* Floating stats that appear on scroll */}
+                  <motion.div
+                    className="absolute top-4 right-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-3 shadow-lg"
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ delay: 0.5, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-sm font-semibold text-green-600">+300% ROI</div>
+                    <div className="text-xs text-gray-600">This Quarter</div>
+                  </motion.div>
+                  
+                  <motion.div
+                    className="absolute bottom-4 left-4 bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm rounded-lg p-3 shadow-lg"
+                    initial={{ opacity: 0, scale: 0.8, y: 20 }}
+                    whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                    transition={{ delay: 0.8, duration: 0.6 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="text-sm font-semibold text-blue-600">1.2M Reach</div>
+                    <div className="text-xs text-gray-600">Monthly</div>
+                  </motion.div>
                 </div>
                 
                 {/* Floating stats */}
@@ -335,8 +429,66 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Natural floating elements section */}
+        <section className="relative py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-purple-50/20 to-green-50/30 dark:from-blue-950/20 dark:via-purple-950/10 dark:to-green-950/20"></div>
+          
+          {/* Floating natural elements */}
+          <motion.div
+            className="absolute top-10 left-10 w-32 h-32 opacity-10"
+            style={{ 
+              y: useTransform(scrollYProgress, [0, 1], [0, -200]),
+              rotate: useTransform(scrollYProgress, [0, 1], [0, 360])
+            }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-blue-400 to-cyan-400 rounded-full blur-xl"></div>
+          </motion.div>
+          
+          <motion.div
+            className="absolute top-1/2 right-20 w-24 h-24 opacity-15"
+            style={{ 
+              y: useTransform(scrollYProgress, [0, 1], [0, 150]),
+              x: useTransform(scrollYProgress, [0, 1], [0, -50])
+            }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-purple-400 to-pink-400 rounded-full blur-lg"></div>
+          </motion.div>
+          
+          <motion.div
+            className="absolute bottom-20 left-1/3 w-40 h-40 opacity-8"
+            style={{ 
+              y: useTransform(scrollYProgress, [0, 1], [0, -100]),
+              scale: useTransform(scrollYProgress, [0, 0.5, 1], [1, 1.2, 0.8])
+            }}
+          >
+            <div className="w-full h-full bg-gradient-to-br from-green-400 to-blue-400 rounded-full blur-2xl"></div>
+          </motion.div>
+          
+          {/* Animated particles */}
+          {[...Array(6)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-2 h-2 bg-primary/20 rounded-full"
+              style={{
+                left: `${20 + i * 15}%`,
+                top: `${30 + (i % 3) * 20}%`,
+                y: useTransform(scrollYProgress, [0, 1], [0, -300 - i * 50]),
+                opacity: useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
+              }}
+              animate={{
+                scale: [1, 1.5, 1],
+                opacity: [0.2, 0.8, 0.2]
+              }}
+              transition={{
+                duration: 3 + i * 0.5,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+          ))}
+        </section>
 
-        <section className="w-full py-16 md:py-24 bg-background" aria-label="Our services">
+        <section className="w-full py-16 md:py-24 bg-background" aria-label="Our services" ref={servicesRef}>
           <div className="container px-4 md:px-6">
             <motion.div
               variants={fadeInUp}
@@ -371,22 +523,82 @@ export default function HomePage() {
                     scale: 1.05,
                     transition: { duration: 0.2 }
                   }}
+                  onClick={() => {
+                    posthog?.capture('service_card_clicked', {
+                      service_name: service.title,
+                      service_position: i + 1,
+                      page: 'homepage'
+                    })
+                  }}
+                  style={{ y: servicesY, rotate: servicesRotate }}
                 >
-                  <Card className="h-full overflow-hidden border-border bg-card hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
+                  <Card className="h-full overflow-hidden border-border bg-card hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer relative">
+                    {/* Natural background elements for each card */}
+                    <motion.div
+                      className="absolute top-0 right-0 w-20 h-20 opacity-5"
+                      initial={{ scale: 0, rotate: -180 }}
+                      whileInView={{ scale: 1, rotate: 0 }}
+                      transition={{ delay: i * 0.2, duration: 1 }}
+                      viewport={{ once: true }}
+                    >
+                      <div className={`w-full h-full rounded-full blur-lg ${
+                        i === 0 ? 'bg-gradient-to-br from-blue-400 to-cyan-400' :
+                        i === 1 ? 'bg-gradient-to-br from-purple-400 to-pink-400' :
+                        'bg-gradient-to-br from-green-400 to-blue-400'
+                      }`}></div>
+                    </motion.div>
+                    
+                    <CardContent className="p-6 flex flex-col h-full relative z-10">
+                      <motion.div 
+                        className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300"
+                        whileInView={{ 
+                          rotate: [0, 360],
+                          scale: [0.8, 1.1, 1]
+                        }}
+                        transition={{ 
+                          delay: i * 0.1,
+                          duration: 0.8,
+                          ease: "easeOut"
+                        }}
+                        viewport={{ once: true }}
+                      >
                         <service.icon className="h-6 w-6" />
-                      </div>
-                      <h3 className="text-xl font-bold mb-2 text-foreground">{service.title}</h3>
-                      <p className="text-muted-foreground mb-4">{service.description}</p>
-                      <ul className="space-y-2 flex-grow">
+                      </motion.div>
+                      
+                      <motion.h3 
+                        className="text-xl font-bold mb-2 text-foreground"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1 + 0.2, duration: 0.6 }}
+                        viewport={{ once: true }}
+                      >
+                        {service.title}
+                      </motion.h3>
+                      
+                      <motion.p 
+                        className="text-muted-foreground mb-4"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: i * 0.1 + 0.3, duration: 0.6 }}
+                        viewport={{ once: true }}
+                      >
+                        {service.description}
+                      </motion.p>
+                      
+                      <motion.ul 
+                        className="space-y-2 flex-grow"
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        transition={{ delay: i * 0.1 + 0.4, duration: 0.6 }}
+                        viewport={{ once: true }}
+                      >
                         {service.features.map((feature, j) => (
                           <li key={j} className="flex items-center text-sm text-muted-foreground">
                             <span className="mr-2 text-accent">✓</span>
                             {feature}
                           </li>
                         ))}
-                      </ul>
+                      </motion.ul>
                       <Button className="mt-4 w-full bg-accent hover:bg-accent/90 hover:scale-105 text-accent-foreground transition-all duration-300" asChild>
                         <Link href="https://wa.link/fwi8af" target="_blank">
                           Chat with Us Now
