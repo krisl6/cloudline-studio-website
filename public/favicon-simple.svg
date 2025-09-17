@@ -1,0 +1,10 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular container -->
+  <circle cx="16" cy="16" r="15" fill="#6366F1" stroke="#4F46E5" stroke-width="2"/>
+  
+  <!-- Cloud icon - simplified for favicon -->
+  <path d="M22 17.5C22 18.881 20.881 20 19.5 20H12.5C11.119 20 10 18.881 10 17.5C10 16.119 11.119 15 12.5 15C12.5 13.619 13.619 12.5 15 12.5C16.381 12.5 17.5 13.619 17.5 15H19.5C20.881 15 22 16.119 22 17.5Z" fill="white"/>
+  
+  <!-- Small underline -->
+  <rect x="13" y="22" width="6" height="1.5" rx="0.75" fill="white"/>
+</svg>

@@ -1,0 +1,18 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Circular background with gradient -->
+  <circle cx="16" cy="16" r="16" fill="url(#gradient)"/>
+  
+  <!-- Cloud icon -->
+  <path d="M24.5 18.5C24.5 20.433 22.933 22 21 22H11C9.067 22 7.5 20.433 7.5 18.5C7.5 16.567 9.067 15 11 15C11.133 13.067 12.567 11.5 14.5 11.5C16.433 11.5 17.867 13.067 18 15H21C22.933 15 24.5 16.567 24.5 18.5Z" stroke="#6B46C1" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="rgba(255,255,255,0.9)"/>
+  
+  <!-- Underline -->
+  <line x1="12" y1="25" x2="20" y2="25" stroke="#6B46C1" stroke-width="1.5" stroke-linecap="round"/>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E0E7FF;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#C7D2FE;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A5B4FC;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+</svg>
