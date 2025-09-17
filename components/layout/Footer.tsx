@@ -52,7 +52,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold mb-4">Contact</h3>
             <ul className="space-y-2">
               <li className="text-sm text-muted-foreground">hello@cloudlinestudio.com</li>
-              <li className="text-sm text-muted-foreground">+60 12-345 6789</li>
+              <li className="text-sm text-muted-foreground">+601127755215</li>
               <li className="text-sm text-muted-foreground">Kuala Lumpur, Malaysia</li>
               <li className="pt-2">
                 <Button size="sm" asChild>

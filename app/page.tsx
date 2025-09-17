@@ -14,19 +14,75 @@ export default function HomePage() {
     show: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.15,
+        delayChildren: 0.1,
       },
     },
   }
 
   const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 30 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    },
+  }
+
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 60 },
+    show: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  }
+
+  const scaleIn = {
+    hidden: { opacity: 0, scale: 0.8 },
+    show: { 
+      opacity: 1, 
+      scale: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  }
+
+  const slideInLeft = {
+    hidden: { opacity: 0, x: -60 },
+    show: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
+  }
+
+  const slideInRight = {
+    hidden: { opacity: 0, x: 60 },
+    show: { 
+      opacity: 1, 
+      x: 0,
+      transition: {
+        duration: 0.8,
+        ease: [0.25, 0.46, 0.45, 0.94]
+      }
+    }
   }
 
   const services = [
     {
-      title: "Performance Marketing",
+      title: "Google/META Advertisements",
       description: "3x ROI across Google, Meta, TikTok & LinkedIn",
       icon: TrendingUp,
       features: [
@@ -99,9 +155,9 @@ export default function HomePage() {
           <div className="container relative z-10 py-20 md:py-28 lg:py-36">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
+                variants={slideInLeft}
+                initial="hidden"
+                animate="show"
               >
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -185,9 +241,9 @@ export default function HomePage() {
               </motion.div>
               
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                variants={slideInRight}
+                initial="hidden"
+                animate="show"
                 className="relative"
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
@@ -218,12 +274,12 @@ export default function HomePage() {
             <div className="mt-16 text-center">
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" aria-describedby="clients-heading">
                 Your customers are buying from competitors right now. 
-                We've helped 50+ businesses 3x their revenue in 90 days.
+                We've helped 150+ businesses 3x their revenue in 90 days.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mb-8">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-primary">✓</span> Average 300% ROI in 90 days
+                  <span className="text-primary">✓</span> Average 150% ROI in 90 days
                 </div>
                 <div className="hidden sm:block text-muted-foreground">•</div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -231,7 +287,7 @@ export default function HomePage() {
                 </div>
                 <div className="hidden sm:block text-muted-foreground">•</div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-primary">✓</span> No long-term contracts
+                  <span className="text-primary">✓</span> Zero hassle, A-Z Service
                 </div>
               </div>
 
@@ -283,10 +339,10 @@ export default function HomePage() {
         <section className="w-full py-16 md:py-24 bg-background" aria-label="Our services">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
+              variants={fadeInUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true, amount: 0.3 }}
               className="flex flex-col items-center justify-center space-y-4 text-center mb-12"
             >
               <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-accent/10 text-accent border-accent/20">
@@ -296,7 +352,7 @@ export default function HomePage() {
                 Stop Wasting Money on Ads
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Turn ad spend into predictable profit. 300% ROI guaranteed.
+                Turn ad spend into predictable profit. 150% ROI guaranteed.
               </p>
             </motion.div>
 
@@ -304,11 +360,18 @@ export default function HomePage() {
               variants={container}
               initial="hidden"
               whileInView="show"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0.2 }}
               className="grid gap-6 sm:grid-cols-1 lg:grid-cols-3"
             >
               {services.map((service, i) => (
-                <motion.div key={i} variants={item}>
+                <motion.div 
+                  key={i} 
+                  variants={scaleIn}
+                  whileHover={{ 
+                    scale: 1.05,
+                    transition: { duration: 0.2 }
+                  }}
+                >
                   <Card className="h-full overflow-hidden border-border bg-card hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer">
                     <CardContent className="p-6 flex flex-col h-full">
                       <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
@@ -350,7 +413,7 @@ export default function HomePage() {
                 Trusted Partners
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                Trusted by 50+ Brands
+                Trusted by 150+ Brands
               </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
                 Leading brands trust us to 3x their revenue.
@@ -427,7 +490,7 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 bg-card rounded-full px-4 py-2 border border-border shadow-sm">
                 <span className="text-primary">★</span>
                 <span className="text-sm font-medium text-foreground">4.9/5 Client Satisfaction</span>
-                <span className="text-sm text-muted-foreground">• 120+ Projects Completed</span>
+                <span className="text-sm text-muted-foreground">• 320+ Projects Completed</span>
               </div>
             </div>
           </div>
