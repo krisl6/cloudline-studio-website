@@ -7,25 +7,11 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
+import { Menu, X, ArrowRight, CheckCircle, Star, TrendingUp, Users, Zap } from "lucide-react"
 
 export default function HomePage() {
-  const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   const container = {
     hidden: { opacity: 0 },
@@ -46,7 +32,7 @@ export default function HomePage() {
     {
       title: "Performance Marketing",
       description: "3x ROI across Google, Meta, TikTok & LinkedIn",
-      icon: "📊",
+      icon: TrendingUp,
       features: [
         "Multi-platform campaigns",
         "ROI tracking & optimization",
@@ -57,13 +43,18 @@ export default function HomePage() {
     {
       title: "Website & SEO",
       description: "Convert-focused websites in 14 days",
-      icon: "🌐",
-      features: ["Mobile-responsive", "SEO-optimized", "Speed optimized", "14-day delivery"],
+      icon: Zap,
+      features: [
+        "Mobile-responsive",
+        "SEO-optimized",
+        "Speed optimized",
+        "14-day delivery",
+      ],
     },
     {
       title: "Influencer Marketing",
       description: "KOL partnerships that convert",
-      icon: "👥",
+      icon: Users,
       features: [
         "Strategic influencer pairing",
         "Content creation",
@@ -103,7 +94,7 @@ export default function HomePage() {
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <WhatsAppFloat />
       <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg bg-background/90 shadow-sm border-b border-border' : 'bg-transparent'}`} role="banner"
+        className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/90 shadow-sm border-b border-border transition-all duration-300" role="banner"
       >
         <div className="container flex h-16 items-center px-4 md:px-6">
           <div className="flex-1 flex items-center justify-center">
@@ -134,21 +125,15 @@ export default function HomePage() {
             </nav>
           </div>
           <div className="hidden md:flex gap-6 items-center">
-            <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
-              <ThemeToggle />
-            </div>
-            <Button className="w-full bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300" asChild>
+            <Button className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300" asChild>
               <Link href="https://wa.link/fwi8af" target="_blank">
                 Chat with Us Now →
               </Link>
             </Button>
           </div>
           <div className="flex items-center gap-4 md:hidden">
-            <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
-              <ThemeToggle />
-            </div>
             <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? "✕" : "☰"}
+              {mobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
               <span className="sr-only">Toggle menu</span>
             </Button>
           </div>
@@ -407,8 +392,8 @@ export default function HomePage() {
                 <motion.div key={i} variants={item}>
                   <Card className="h-full overflow-hidden border-border bg-card hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer">
                     <CardContent className="p-6 flex flex-col h-full">
-                      <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300 text-2xl">
-                        {service.icon}
+                      <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300">
+                        <service.icon className="h-6 w-6" />
                       </div>
                       <h3 className="text-xl font-bold mb-2 text-foreground">{service.title}</h3>
                       <p className="text-muted-foreground mb-4">{service.description}</p>
