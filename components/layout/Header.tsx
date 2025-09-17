@@ -6,6 +6,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -36,17 +37,17 @@ export function Header() {
       role="banner"
     >
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
-          <div className="size-8 rounded-lg overflow-hidden">
+        <Link href="/" className="flex items-center gap-3 font-bold" aria-label="CloudLine Studio - Home">
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-gradient-to-br from-purple-100 to-blue-100 dark:from-purple-900/30 dark:to-blue-900/30 p-1 flex items-center justify-center">
             <Image
-              src="/logo.svg"
+              src="/cloudline-logo.svg"
               alt="CloudLine Studio"
               width={32}
               height={32}
-              className="w-full h-full object-cover"
+              className="w-8 h-8 object-contain"
             />
           </div>
-          <span className="text-foreground">CloudLine Studio</span>
+          <span className="text-foreground text-lg">CloudLine Studio</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6" role="navigation" aria-label="Main navigation">
@@ -63,6 +64,7 @@ export function Header() {
 
         <div className="flex items-center gap-4">
           <div className="hidden md:flex items-center gap-4">
+            <ThemeToggle />
             <Button 
               className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300"
               asChild
@@ -111,6 +113,9 @@ export function Header() {
                 </Link>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
+                <div className="flex justify-center pb-2">
+                  <ThemeToggle />
+                </div>
                 <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300" asChild>
                   <Link href="https://wa.link/fwi8af" target="_blank">
                     Chat with Us Now →

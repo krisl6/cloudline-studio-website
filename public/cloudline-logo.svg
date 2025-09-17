@@ -1,0 +1,25 @@
+<svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="backgroundGradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#E0E7FF"/>
+      <stop offset="25%" stop-color="#C7D2FE"/>
+      <stop offset="50%" stop-color="#A5B4FC"/>
+      <stop offset="75%" stop-color="#8B5CF6"/>
+      <stop offset="100%" stop-color="#7C3AED"/>
+    </radialGradient>
+    <linearGradient id="cloudGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E8FF"/>
+      <stop offset="50%" stop-color="#E9D5FF"/>
+      <stop offset="100%" stop-color="#DDD6FE"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="250" cy="250" r="250" fill="url(#backgroundGradient)"/>
+  
+  <!-- Cloud Shape -->
+  <path d="M160 220C160 195.147 180.147 175 205 175C215.609 175 225.391 178.609 233.125 184.688C243.281 165.781 264.219 152.5 288 152.5C324.421 152.5 354 182.079 354 218.5C354 220.172 353.906 221.828 353.734 223.453C368.547 230.328 379 245.328 379 262.5C379 285.196 360.696 303.5 338 303.5H185C162.304 303.5 144 285.196 144 262.5C144 245.328 154.453 230.328 169.266 223.453C169.094 221.828 169 220.172 169 218.5C169 218.5 160 220 160 220Z" fill="url(#cloudGradient)" stroke="#8B5A8C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Underline -->
+  <rect x="190" y="345" width="120" height="6" rx="3" fill="#8B5A8C"/>
+</svg>
