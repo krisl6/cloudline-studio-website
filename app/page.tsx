@@ -45,30 +45,30 @@ export default function HomePage() {
   const services = [
     {
       title: "Performance Marketing",
-      description: "Data-driven campaigns across Google, Meta, TikTok, and LinkedIn platforms",
+      description: "3x ROI across Google, Meta, TikTok & LinkedIn",
       icon: "📊",
       features: [
-        "Multi-platform campaign management",
+        "Multi-platform campaigns",
         "ROI tracking & optimization",
         "Sales funnel enhancement",
-        "Lead qualification systems",
+        "Lead qualification",
       ],
     },
     {
-      title: "Website Creation & SEO",
-      description: "Professional websites with conversion-focused design and SEO optimization",
+      title: "Website & SEO",
+      description: "Convert-focused websites in 14 days",
       icon: "🌐",
-      features: ["Mobile-responsive design", "SEO-optimized content", "Speed optimization", "14-day completion"],
+      features: ["Mobile-responsive", "SEO-optimized", "Speed optimized", "14-day delivery"],
     },
     {
-      title: "Influencer Collaboration",
-      description: "End-to-end campaign management with KOL partnerships and content creation",
+      title: "Influencer Marketing",
+      description: "KOL partnerships that convert",
       icon: "👥",
       features: [
         "Strategic influencer pairing",
-        "Content creation & scripting",
+        "Content creation",
         "Campaign coordination",
-        "Performance monitoring",
+        "Performance tracking",
       ],
     },
   ]
@@ -137,9 +137,9 @@ export default function HomePage() {
             <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
               <ThemeToggle />
             </div>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2" asChild>
+            <Button className="w-full bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300" asChild>
               <Link href="https://wa.link/fwi8af" target="_blank">
-                Let's Chat →
+                Chat with Us Now →
               </Link>
             </Button>
           </div>
@@ -175,9 +175,9 @@ export default function HomePage() {
                 Contact
               </Link>
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2" asChild>
+                <Button size="lg" className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all duration-300" asChild>
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Chat With Us →
+                    Chat with Us Now →
                   </Link>
                 </Button>
               </div>
@@ -216,9 +216,9 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                  Outperform Competitors.
+                  3x Your Revenue.
                   <span className="block bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
-                    Convert More Today.
+                    Convert More.
                   </span>
                 </motion.h1>
                 
@@ -228,7 +228,7 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
                 >
-                  3-5x revenue growth through data-driven marketing. 
+                  300% ROI guaranteed or money back. 
                   Pay only for results.
                 </motion.p>
                 
@@ -240,17 +240,17 @@ export default function HomePage() {
                 >
                   <Button 
                     size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
+                    className="bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
                     asChild
                   >
                     <Link href="https://wa.link/fwi8af" target="_blank">
-                      Chat Now
+                      Chat with Us Now
                     </Link>
                   </Button>
                   <Button 
                     variant="outline" 
                     size="lg" 
-                    className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
+                    className="border-2 hover:bg-muted/50 hover:scale-105 transition-all duration-300 font-medium"
                     asChild
                   >
                     <Link href="#faq">
@@ -313,8 +313,8 @@ export default function HomePage() {
             
             <div className="mt-16 text-center">
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" aria-describedby="clients-heading">
-                Your customers are searching for your products right now. But they're buying from competitors who show up first. 
-                We've helped 50+ businesses increase their revenue by 3-5x through strategic digital marketing that actually converts.
+                Your customers are buying from competitors right now. 
+                We've helped 50+ businesses 3x their revenue in 90 days.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mb-8">
@@ -334,17 +334,17 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
-                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground"
+                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground transition-all duration-300"
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Chat with us here →
+                    Chat with Us Now →
                   </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full h-12 px-8 text-base border-border text-foreground hover:bg-muted bg-transparent"
+                  className="rounded-full h-12 px-8 text-base border-border text-foreground hover:bg-muted hover:scale-105 bg-transparent transition-all duration-300"
                   asChild
                 >
                   <Link href="/case-studies">
@@ -389,10 +389,10 @@ export default function HomePage() {
                 Revenue Growth Solutions
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                Stop Wasting Money on Marketing That Doesn't Convert
+                Stop Wasting Money on Ads
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Every day you delay is revenue lost to competitors. Our proven system turns your marketing spend into predictable profit.
+                Turn ad spend into predictable profit. 300% ROI guaranteed.
               </p>
             </motion.div>
 
@@ -405,9 +405,9 @@ export default function HomePage() {
             >
               {services.map((service, i) => (
                 <motion.div key={i} variants={item}>
-                  <Card className="h-full overflow-hidden border-border bg-card hover:shadow-lg transition-all duration-300 group">
+                  <Card className="h-full overflow-hidden border-border bg-card hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer">
                     <CardContent className="p-6 flex flex-col h-full">
-                      <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-2xl">
+                      <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300 text-2xl">
                         {service.icon}
                       </div>
                       <h3 className="text-xl font-bold mb-2 text-foreground">{service.title}</h3>
@@ -420,9 +420,9 @@ export default function HomePage() {
                           </li>
                         ))}
                       </ul>
-                      <Button className="mt-4 w-full bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
+                      <Button className="mt-4 w-full bg-accent hover:bg-accent/90 hover:scale-105 text-accent-foreground transition-all duration-300" asChild>
                         <Link href="https://wa.link/fwi8af" target="_blank">
-                          Learn More
+                          Chat with Us Now
                         </Link>
                       </Button>
                     </CardContent>
@@ -446,10 +446,10 @@ export default function HomePage() {
                 Trusted Partners
               </Badge>
               <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
-                Previous Clients We've Worked With
+                Trusted by 50+ Brands
               </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                Trusted by leading brands across various industries to drive their digital growth.
+                Leading brands trust us to 3x their revenue.
               </p>
             </motion.div>
 
@@ -543,11 +543,11 @@ export default function HomePage() {
               className="flex flex-col items-center justify-center space-y-6 text-center"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-                Your Competitors Are Getting Ahead While You Wait
+                Ready to 3x Your Revenue?
               </h2>
               <p className="mx-auto max-w-[700px] text-foreground/90 md:text-xl" aria-describedby="main-heading">
-                Every month you delay costs you thousands in lost revenue. Our clients see results in 30 days or less. 
-                Stop losing customers to competitors who invested in growth.
+                Results in 30 days or money back. 
+                Stop losing to competitors.
               </p>
               
               <div className="bg-foreground/5 border border-border rounded-lg p-6 mb-6 max-w-md mx-auto">
@@ -561,21 +561,21 @@ export default function HomePage() {
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
                 <Button
                   size="lg"
-                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground border-0"
+                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 hover:scale-105 text-primary-foreground border-0 transition-all duration-300"
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Chat with us here →
+                    Chat with Us Now →
                   </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all"
+                  className="rounded-full h-12 px-8 text-base bg-transparent border-2 border-foreground text-foreground hover:bg-foreground hover:text-background hover:scale-105 transition-all duration-300"
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                  Schedule a Free Strategy Call
+                  Chat with Us Now
                 </Link>
                 </Button>
               </div>
