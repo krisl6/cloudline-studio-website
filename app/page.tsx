@@ -123,33 +123,39 @@ export default function HomePage() {
       description: "3x ROI across Google, Meta, TikTok & LinkedIn",
       icon: TrendingUp,
       features: [
-        "Multi-platform campaigns",
+        "Multi-platform campaigns across Asia",
         "ROI tracking & optimization",
         "Sales funnel enhancement",
-        "Lead qualification",
+        "Lead qualification & nurturing",
       ],
+      bgGradient: "from-blue-400 to-cyan-400",
+      results: "+347% average ROI",
     },
     {
       title: "Website & SEO",
       description: "Convert-focused websites in 14 days",
       icon: Zap,
       features: [
-        "Mobile-responsive",
-        "SEO-optimized",
-        "Speed optimized",
-        "14-day delivery",
+        "Mobile-responsive design",
+        "SEO-optimized for Asian markets",
+        "Speed optimized (Core Web Vitals)",
+        "14-day delivery guarantee",
       ],
+      bgGradient: "from-purple-400 to-pink-400",
+      results: "92% faster load times",
     },
     {
       title: "Influencer Marketing",
       description: "KOL partnerships that convert",
       icon: Users,
       features: [
-        "Strategic influencer pairing",
-        "Content creation",
+        "Strategic Asian KOL pairing",
+        "Viral content creation",
         "Campaign coordination",
-        "Performance tracking",
+        "Performance tracking & ROI",
       ],
+      bgGradient: "from-green-400 to-blue-400",
+      results: "50M+ organic reach",
     },
   ]
 
@@ -319,14 +325,33 @@ export default function HomePage() {
                       opacity: useTransform(heroProgress, [0, 0.5, 1], [0, 0.3, 0.6])
                     }}
                   />
-                  <Image
-                    src="/aesthetic-clinic-marketing-dashboard-with-patient-.jpg"
-                    alt="Marketing dashboard showing growth metrics"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto"
-                    priority
-                  />
+                  {/* Asian business team collaboration image */}
+                  <div className="relative w-full h-[400px] bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950 dark:to-purple-950">
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="text-center p-8">
+                        <div className="w-24 h-24 mx-auto mb-4 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center">
+                          <TrendingUp className="w-12 h-12 text-white" />
+                        </div>
+                        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">300% ROI Guaranteed</h3>
+                        <p className="text-gray-600 dark:text-gray-400">Real results from real campaigns</p>
+                      </div>
+                    </div>
+                    {/* Floating elements to simulate Asian business environment */}
+                    <motion.div
+                      className="absolute top-4 left-4 w-16 h-16 bg-white/80 dark:bg-gray-800/80 rounded-full flex items-center justify-center shadow-lg"
+                      animate={{ y: [0, -10, 0] }}
+                      transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <Users className="w-8 h-8 text-primary" />
+                    </motion.div>
+                    <motion.div
+                      className="absolute top-4 right-4 w-16 h-16 bg-white/80 dark:bg-gray-800/80 rounded-full flex items-center justify-center shadow-lg"
+                      animate={{ y: [0, 10, 0] }}
+                      transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                      <Zap className="w-8 h-8 text-secondary" />
+                    </motion.div>
+                  </div>
                   
                   {/* Floating stats that appear on scroll */}
                   <motion.div
@@ -408,32 +433,249 @@ export default function HomePage() {
               </div>
             </div>
 
+            {/* USP-focused results section */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="relative mx-auto max-w-5xl mt-16"
+              className="relative mx-auto max-w-6xl mt-16"
             >
-              <div className="rounded-xl overflow-hidden shadow-2xl border border-border bg-card">
-                <Image
-                  src="/analytics-dashboard.png"
-                  width={1280}
-                  height={720}
-                  alt="Analytics Dashboard"
-                  className="w-full h-auto"
-                  priority
-                />
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {/* E-commerce Results */}
+                <motion.div
+                  className="bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-950 dark:to-cyan-950 rounded-xl p-6 border border-blue-200 dark:border-blue-800"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-blue-500 rounded-full flex items-center justify-center">
+                      <TrendingUp className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-blue-800 dark:text-blue-200 mb-2">E-commerce Growth</h3>
+                    <div className="text-3xl font-bold text-blue-600 mb-2">+450%</div>
+                    <p className="text-sm text-blue-700 dark:text-blue-300">Average revenue increase for e-commerce clients</p>
+                  </div>
+                </motion.div>
+
+                {/* B2B Lead Generation */}
+                <motion.div
+                  className="bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-950 dark:to-pink-950 rounded-xl p-6 border border-purple-200 dark:border-purple-800"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3, delay: 0.1 }}
+                >
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-purple-500 rounded-full flex items-center justify-center">
+                      <Users className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-purple-800 dark:text-purple-200 mb-2">B2B Lead Gen</h3>
+                    <div className="text-3xl font-bold text-purple-600 mb-2">85%</div>
+                    <p className="text-sm text-purple-700 dark:text-purple-300">Qualified lead conversion rate improvement</p>
+                  </div>
+                </motion.div>
+
+                {/* Content Strategy */}
+                <motion.div
+                  className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950 dark:to-emerald-950 rounded-xl p-6 border border-green-200 dark:border-green-800"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3, delay: 0.2 }}
+                >
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto mb-4 bg-green-500 rounded-full flex items-center justify-center">
+                      <Zap className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-green-800 dark:text-green-200 mb-2">Content Strategy</h3>
+                    <div className="text-3xl font-bold text-green-600 mb-2">12x</div>
+                    <p className="text-sm text-green-700 dark:text-green-300">Organic reach amplification through strategic content</p>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
         </section>
 
-        {/* Natural floating elements section */}
-        <section className="relative py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-purple-50/20 to-green-50/30 dark:from-blue-950/20 dark:via-purple-950/10 dark:to-green-950/20"></div>
+        {/* Asian Business Team Success Stories Section */}
+        <section className="relative py-20 overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-950 dark:via-blue-950 dark:to-purple-950">
+          <div className="container px-4 md:px-6 relative z-10">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="text-center mb-16"
+            >
+              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-accent/10 text-accent border-accent/20 mb-4">
+                Success Stories
+              </Badge>
+              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+                Real Results from Real Asian Businesses
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                See how we've helped businesses across Asia achieve remarkable growth through strategic digital marketing.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              {/* Left side - Asian business team visual */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8 }}
+                className="relative"
+              >
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
+                  {/* Simulated Asian business team collaboration scene */}
+                  <div className="relative w-full h-[400px] bg-gradient-to-br from-indigo-100 via-purple-50 to-pink-100 dark:from-indigo-900 dark:via-purple-900 dark:to-pink-900">
+                    <div className="absolute inset-0 p-8">
+                      {/* Team collaboration elements */}
+                      <div className="grid grid-cols-2 gap-4 h-full">
+                        <div className="space-y-4">
+                          <motion.div
+                            className="bg-white/90 dark:bg-gray-800/90 rounded-lg p-4 shadow-lg"
+                            animate={{ y: [0, -5, 0] }}
+                            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                          >
+                            <div className="flex items-center gap-3 mb-2">
+                              <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
+                                <TrendingUp className="w-4 h-4 text-white" />
+                              </div>
+                              <div>
+                                <div className="text-sm font-semibold text-gray-800 dark:text-gray-200">Revenue Growth</div>
+                                <div className="text-xs text-gray-600 dark:text-gray-400">Q4 2024</div>
+                              </div>
+                            </div>
+                            <div className="text-2xl font-bold text-blue-600">+347%</div>
+                          </motion.div>
+                          
+                          <motion.div
+                            className="bg-white/90 dark:bg-gray-800/90 rounded-lg p-4 shadow-lg"
+                            animate={{ y: [0, 5, 0] }}
+                            transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
+                          >
+                            <div className="flex items-center gap-3 mb-2">
+                              <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
+                                <Users className="w-4 h-4 text-white" />
+                              </div>
+                              <div>
+                                <div className="text-sm font-semibold text-gray-800 dark:text-gray-200">Lead Quality</div>
+                                <div className="text-xs text-gray-600 dark:text-gray-400">This Month</div>
+                              </div>
+                            </div>
+                            <div className="text-2xl font-bold text-green-600">92%</div>
+                          </motion.div>
+                        </div>
+                        
+                        <div className="space-y-4">
+                          <motion.div
+                            className="bg-white/90 dark:bg-gray-800/90 rounded-lg p-4 shadow-lg"
+                            animate={{ y: [0, -3, 0] }}
+                            transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                          >
+                            <div className="flex items-center gap-3 mb-2">
+                              <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
+                                <Zap className="w-4 h-4 text-white" />
+                              </div>
+                              <div>
+                                <div className="text-sm font-semibold text-gray-800 dark:text-gray-200">Conversion Rate</div>
+                                <div className="text-xs text-gray-600 dark:text-gray-400">Campaign Avg</div>
+                              </div>
+                            </div>
+                            <div className="text-2xl font-bold text-purple-600">8.4%</div>
+                          </motion.div>
+                          
+                          <motion.div
+                            className="bg-white/90 dark:bg-gray-800/90 rounded-lg p-3 shadow-lg"
+                            animate={{ scale: [1, 1.02, 1] }}
+                            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                          >
+                            <div className="text-center">
+                              <div className="text-lg font-bold text-orange-600 mb-1">🎯</div>
+                              <div className="text-xs font-semibold text-gray-800 dark:text-gray-200">Target Achieved</div>
+                              <div className="text-xs text-gray-600 dark:text-gray-400">Ahead of Schedule</div>
+                            </div>
+                          </motion.div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+
+              {/* Right side - Success metrics */}
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="space-y-8"
+              >
+                <div className="space-y-6">
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <TrendingUp className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">E-commerce Domination</h3>
+                      <p className="text-muted-foreground mb-3">
+                        Helped 50+ Asian e-commerce brands scale from 6-figures to 7-figures through strategic paid advertising and conversion optimization.
+                      </p>
+                      <div className="flex gap-4 text-sm">
+                        <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">+450% Revenue</span>
+                        <span className="bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 px-3 py-1 rounded-full">3.2x ROAS</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Users className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">B2B Lead Generation</h3>
+                      <p className="text-muted-foreground mb-3">
+                        Generated over 10,000 qualified leads for B2B companies across Singapore, Malaysia, and Hong Kong with 85% conversion rates.
+                      </p>
+                      <div className="flex gap-4 text-sm">
+                        <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">85% Conversion</span>
+                        <span className="bg-purple-100 dark:bg-purple-900 text-purple-800 dark:text-purple-200 px-3 py-1 rounded-full">$2.1M Pipeline</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Zap className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-2">Content Strategy Excellence</h3>
+                      <p className="text-muted-foreground mb-3">
+                        Created viral content strategies that generated 50M+ organic impressions and built thought leadership for Asian brands.
+                      </p>
+                      <div className="flex gap-4 text-sm">
+                        <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">50M+ Reach</span>
+                        <span className="bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 px-3 py-1 rounded-full">12x Engagement</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-6 border border-primary/20">
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-primary mb-2">Ready to Join Them?</div>
+                    <p className="text-muted-foreground mb-4">Get your free strategy session and see how we can 3x your revenue in 90 days.</p>
+                    <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
+                      <Link href="https://wa.link/fwi8af" target="_blank">
+                        Get Your Free Strategy Session →
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
           
-          {/* Floating natural elements */}
+          {/* Floating background elements */}
           <motion.div
             className="absolute top-10 left-10 w-32 h-32 opacity-10"
             style={{ 
@@ -465,22 +707,22 @@ export default function HomePage() {
           </motion.div>
           
           {/* Animated particles */}
-          {[...Array(6)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <motion.div
               key={i}
-              className="absolute w-2 h-2 bg-primary/20 rounded-full"
+              className="absolute w-3 h-3 bg-primary/20 rounded-full"
               style={{
-                left: `${20 + i * 15}%`,
-                top: `${30 + (i % 3) * 20}%`,
-                y: useTransform(scrollYProgress, [0, 1], [0, -300 - i * 50]),
+                left: `${15 + i * 12}%`,
+                top: `${25 + (i % 4) * 15}%`,
+                y: useTransform(scrollYProgress, [0, 1], [0, -400 - i * 60]),
                 opacity: useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0, 1, 1, 0])
               }}
               animate={{
-                scale: [1, 1.5, 1],
-                opacity: [0.2, 0.8, 0.2]
+                scale: [1, 1.8, 1],
+                opacity: [0.3, 0.9, 0.3]
               }}
               transition={{
-                duration: 3 + i * 0.5,
+                duration: 4 + i * 0.7,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
@@ -533,20 +775,39 @@ export default function HomePage() {
                   style={{ y: servicesY, rotate: servicesRotate }}
                 >
                   <Card className="h-full overflow-hidden border-border bg-card hover:shadow-xl hover:scale-105 transition-all duration-300 group cursor-pointer relative">
-                    {/* Natural background elements for each card */}
+                    {/* Enhanced background elements for each card */}
                     <motion.div
-                      className="absolute top-0 right-0 w-20 h-20 opacity-5"
+                      className="absolute top-0 right-0 w-24 h-24 opacity-8"
                       initial={{ scale: 0, rotate: -180 }}
                       whileInView={{ scale: 1, rotate: 0 }}
                       transition={{ delay: i * 0.2, duration: 1 }}
                       viewport={{ once: true }}
                     >
-                      <div className={`w-full h-full rounded-full blur-lg ${
-                        i === 0 ? 'bg-gradient-to-br from-blue-400 to-cyan-400' :
-                        i === 1 ? 'bg-gradient-to-br from-purple-400 to-pink-400' :
-                        'bg-gradient-to-br from-green-400 to-blue-400'
-                      }`}></div>
+                      <div className={`w-full h-full rounded-full blur-xl bg-gradient-to-br ${service.bgGradient}`}></div>
                     </motion.div>
+                    
+                    {/* Floating particles for each card */}
+                    {[...Array(3)].map((_, particleIndex) => (
+                      <motion.div
+                        key={particleIndex}
+                        className="absolute w-2 h-2 bg-primary/30 rounded-full"
+                        style={{
+                          left: `${20 + particleIndex * 25}%`,
+                          top: `${15 + particleIndex * 20}%`,
+                        }}
+                        animate={{
+                          y: [0, -20, 0],
+                          opacity: [0.3, 0.8, 0.3],
+                          scale: [1, 1.5, 1]
+                        }}
+                        transition={{
+                          duration: 3 + particleIndex * 0.5,
+                          repeat: Infinity,
+                          ease: "easeInOut",
+                          delay: i * 0.3 + particleIndex * 0.2
+                        }}
+                      />
+                    ))}
                     
                     <CardContent className="p-6 flex flex-col h-full relative z-10">
                       <motion.div 
@@ -586,22 +847,56 @@ export default function HomePage() {
                       </motion.p>
                       
                       <motion.ul 
-                        className="space-y-2 flex-grow"
+                        className="space-y-2 flex-grow mb-4"
                         initial={{ opacity: 0 }}
                         whileInView={{ opacity: 1 }}
                         transition={{ delay: i * 0.1 + 0.4, duration: 0.6 }}
                         viewport={{ once: true }}
                       >
                         {service.features.map((feature, j) => (
-                          <li key={j} className="flex items-center text-sm text-muted-foreground">
-                            <span className="mr-2 text-accent">✓</span>
+                          <motion.li 
+                            key={j} 
+                            className="flex items-center text-sm text-muted-foreground"
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ delay: i * 0.1 + 0.5 + j * 0.1, duration: 0.4 }}
+                            viewport={{ once: true }}
+                          >
+                            <motion.span 
+                              className="mr-2 text-accent"
+                              animate={{ scale: [1, 1.2, 1] }}
+                              transition={{ duration: 2, repeat: Infinity, delay: j * 0.3 }}
+                            >
+                              ✓
+                            </motion.span>
                             {feature}
-                          </li>
+                          </motion.li>
                         ))}
                       </motion.ul>
-                      <Button className="mt-4 w-full bg-accent hover:bg-accent/90 hover:scale-105 text-accent-foreground transition-all duration-300" asChild>
+                      
+                      {/* Results badge */}
+                      <motion.div
+                        className="mb-4 p-2 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-lg border border-primary/20"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ delay: i * 0.1 + 0.7, duration: 0.5 }}
+                        viewport={{ once: true }}
+                      >
+                        <div className="text-center">
+                          <div className="text-sm font-bold text-primary">{service.results}</div>
+                          <div className="text-xs text-muted-foreground">Average Client Result</div>
+                        </div>
+                      </motion.div>
+                      
+                      <Button className="mt-4 w-full bg-accent hover:bg-accent/90 hover:scale-105 text-accent-foreground transition-all duration-300 relative overflow-hidden group" asChild>
                         <Link href="https://wa.link/fwi8af" target="_blank">
-                          Chat with Us Now
+                          <motion.div
+                            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"
+                            initial={{ x: '-100%' }}
+                            whileHover={{ x: '100%' }}
+                            transition={{ duration: 0.6 }}
+                          />
+                          <span className="relative z-10">Get Started Now</span>
                         </Link>
                       </Button>
                     </CardContent>
