@@ -207,7 +207,7 @@ export default function HomePage() {
                   transition={{ delay: 0.2, duration: 0.5 }}
                   className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground/80 mb-6 shadow-sm"
                 >
-                  🚀 300% ROI or Money Back
+                  🚀 300% ROI in 90 Days
                 </motion.div>
                 
                 <motion.h1 

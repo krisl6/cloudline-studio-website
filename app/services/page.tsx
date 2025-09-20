@@ -17,28 +17,32 @@ export default function ServicesPage() {
     {
       id: "performance",
       title: "Performance Marketing",
-      subtitle: "Data-driven campaigns across Google, Meta, TikTok, and XHS",
+      subtitle: "Stop Wasting Money on Ads That Don't Convert",
       icon: <BarChart className="size-8" />,
       description:
-        "Maximize your marketing ROI with our comprehensive performance marketing strategies. We create, manage, and optimize campaigns across all major platforms to drive qualified leads and conversions.",
-      features: [
-        "Data-driven ad campaigns across Google, Meta, and TikTok",
-        "Transparent ROI tracking with clear performance reports",
-        "Sales funnel optimization to increase conversions",
-        "Lead qualification systems to filter high-quality prospects",
-        "Expertise in both B2B and e-commerce growth strategies",
-        "Campaigns designed to maximize your marketing budget",
+        "Transform your ad spend into predictable revenue with our data-driven performance marketing. We don't just run ads - we build growth engines that consistently deliver 3-5x ROAS for our clients.",
+      painPoints: [
+        "❌ Burning cash on ads that don't convert",
+        "❌ Inconsistent lead quality and high customer acquisition costs",
+        "❌ No clear ROI from your marketing spend",
+        "❌ Stagnant growth despite increasing ad budgets"
       ],
-      pricing: "Starts From RM 1,200/month",
-      deliverables: [
-        "Campaign setup and optimization",
-        "Weekly performance reports",
-        "A/B testing and creative optimization",
-        "Landing page recommendations",
-        "Conversion tracking setup",
-        "Monthly strategy consultations",
+      solutions: [
+        "✅ Data-optimized campaigns across Google, Meta, and TikTok",
+        "✅ Transparent ROI tracking with weekly performance reports",
+        "✅ Sales funnel optimization to maximize conversions",
+        "✅ Lead qualification systems that filter for high-value customers",
+        "✅ A/B testing to continuously improve performance"
       ],
-      timeline: "Results visible within 2-4 weeks",
+      results: [
+        "📈 3-5x average return on ad spend (ROAS)",
+        "⬇️ 30-50% lower customer acquisition costs",
+        "🔄 Consistent, scalable lead generation",
+        "📊 Clear, actionable performance insights"
+      ],
+      pricing: "Starts From RM 1,200/month (Pay for performance - no long-term contracts)",
+      cta: "Get My Free Ad Audit →",
+      timeline: "See first results in 2-4 weeks",
       platforms: ["Google Ads", "Meta Ads", "TikTok Ads", "XHS Advertising"],
     },
     {

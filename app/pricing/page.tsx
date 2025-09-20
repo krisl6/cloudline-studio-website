@@ -318,8 +318,7 @@ export default function PricingPage() {
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Ready to Get Started?</h2>
               <p className="text-lg md:text-xl text-accent-foreground/90 mb-8 max-w-3xl mx-auto">
-                Choose your package and start transforming your digital presence today. All packages come with our
-                satisfaction guarantee.
+                Choose your package and start transforming your digital presence today. No long-term contracts required.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
