@@ -8,17 +8,17 @@ import { SiteLayout } from "@/components/layout/SiteLayout"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "CloudLine Studio - Digital Marketing Agency | Performance Marketing & Website Creation",
+  title: "CloudLine Studio - B2B Data Analytics & Customer Insights | HR, Ecommerce & SaaS Solutions",
   description:
-    "7+ years experience in performance marketing, website creation, and influencer collaboration across Google, META, TikTok, and XHS. Helping businesses scale with data-driven marketing solutions.",
+    "Transform your business with data-driven customer behavior insights. Specialized analytics solutions for HR companies, ecommerce platforms, and SaaS businesses. Turn data into actionable growth strategies.",
   generator: 'v0.app',
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/logo.svg', type: 'image/svg+xml' },
+      { url: '/cloudline_logo.png' },
+      { url: '/cloudline_logo.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/logo.svg', type: 'image/svg+xml' },
+      { url: '/cloudline_logo.png', type: 'image/png' },
     ],
   },
   manifest: '/site.webmanifest',
@@ -37,6 +37,9 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <script async src="https://tally.so/widgets/embed.js"></script>
+        <script dangerouslySetInnerHTML={{
+          __html: `window.TallyConfig = { "formId": "wbagA7", "popup": { "emoji": { "text": "👋🏻", "animation": "wave" }, "open": { "trigger": "time", "ms": 5000 }, "overlay": true, "autoClose": 2000, "doNotShowAfterSubmit": true, "formEventsForwarding": true }};`
+        }} />
       </head>
       <body className={`${inter.className} bg-background`}>
         <ThemeProvider

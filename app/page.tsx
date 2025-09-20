@@ -44,31 +44,31 @@ export default function HomePage() {
 
   const services = [
     {
-      title: "Performance Marketing",
-      description: "Data-driven campaigns across Google, Meta, TikTok, and LinkedIn platforms",
-      icon: "📊",
+      title: "Customer Behavior Analytics",
+      description: "Deep insights into user journeys, conversion patterns, and behavioral triggers for HR, ecommerce, and SaaS platforms",
+      icon: "🧠",
       features: [
-        "Multi-platform campaign management",
-        "ROI tracking & optimization",
-        "Sales funnel enhancement",
-        "Lead qualification systems",
+        "User journey mapping & analysis",
+        "Conversion funnel optimization",
+        "Behavioral segmentation",
+        "Predictive customer modeling",
       ],
     },
     {
-      title: "Website Creation & SEO",
-      description: "Professional websites with conversion-focused design and SEO optimization",
-      icon: "🌐",
-      features: ["Mobile-responsive design", "SEO-optimized content", "Speed optimization", "14-day completion"],
+      title: "Data-Driven Growth Strategy",
+      description: "Transform raw data into actionable growth strategies with real-time dashboards and performance tracking",
+      icon: "📈",
+      features: ["Real-time analytics dashboards", "KPI tracking & reporting", "Growth opportunity identification", "ROI optimization"],
     },
     {
-      title: "Influencer Collaboration",
-      description: "End-to-end campaign management with KOL partnerships and content creation",
-      icon: "👥",
+      title: "B2B Performance Marketing",
+      description: "Specialized campaigns for HR tech, ecommerce platforms, and SaaS companies with focus on qualified lead generation",
+      icon: "🎯",
       features: [
-        "Strategic influencer pairing",
-        "Content creation & scripting",
-        "Campaign coordination",
-        "Performance monitoring",
+        "B2B lead qualification systems",
+        "Industry-specific targeting",
+        "Multi-touch attribution",
+        "Sales pipeline optimization",
       ],
     },
   ]
@@ -117,7 +117,7 @@ export default function HomePage() {
               <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
                 <div className="size-8 rounded-lg overflow-hidden">
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
+                    src="/cloudline_logo.png"
                     alt="CloudLine Studio"
                     width={32}
                     height={32}
@@ -201,13 +201,28 @@ export default function HomePage() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2, duration: 0.5 }}
-                  className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground/80 mb-6 shadow-sm"
-                >
-                  🚀 300% ROI in 90 Days
+                <motion.div className="text-center mb-12">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground/80 mb-6 shadow-sm"
+                  >
+                    🏆 B2B Success Stories
+                  </motion.div>
+                  <motion.h2 
+                    className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-foreground"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.1 }}
+                  >
+                    Powering Growth for HR, Ecommerce & SaaS
+                  </motion.h2>
+                  <p className="max-w-[800px] text-muted-foreground md:text-lg">
+                    From Fortune 500 HR platforms to fast-growing SaaS startups - we help B2B companies unlock revenue through data insights.
+                  </p>
                 </motion.div>
                 
                 <motion.h1 
@@ -216,9 +231,9 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                  Outperform Competitors.
+                  Stop Losing Customers to
                   <span className="block bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
-                    Convert More Today.
+                    Data-Blind Competitors
                   </span>
                 </motion.h1>
                 
@@ -228,8 +243,7 @@ export default function HomePage() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
                 >
-                  3-5x revenue growth through data-driven marketing. 
-                  Pay only for results.
+                  Unlock hidden revenue in your customer data. Our B2B analytics solutions help HR companies, ecommerce platforms, and SaaS businesses increase conversions by 300% through behavioral insights.
                 </motion.p>
                 
                 <motion.div 
@@ -244,7 +258,7 @@ export default function HomePage() {
                     asChild
                   >
                     <Link href="https://wa.link/fwi8af" target="_blank">
-                      Chat Now
+                      Get Free Data Audit
                     </Link>
                   </Button>
                   <Button 
@@ -253,8 +267,8 @@ export default function HomePage() {
                     className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
                     asChild
                   >
-                    <Link href="#faq">
-                      Any Questions?
+                    <Link href="/case-studies">
+                      See B2B Results
                     </Link>
                   </Button>
                 </motion.div>
@@ -267,15 +281,15 @@ export default function HomePage() {
                 >
                   <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full">
                     <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span>300% ROI</span>
+                    <span>300% Conversion Increase</span>
                   </div>
                   <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full">
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                    <span>8+ Years Experience</span>
+                    <span>B2B Data Specialists</span>
                   </div>
                   <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full">
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                    <span>No Lock-in</span>
+                    <span>HR • Ecommerce • SaaS</span>
                   </div>
                 </motion.div>
               </motion.div>
@@ -313,21 +327,21 @@ export default function HomePage() {
             
             <div className="mt-16 text-center">
               <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" aria-describedby="clients-heading">
-                Your customers are searching for your products right now. But they're buying from competitors who show up first. 
-                We've helped 50+ businesses increase their revenue by 3-5x through strategic digital marketing that actually converts.
+                Your competitors are using customer data to steal your best prospects. While you're guessing, they're converting. 
+                We've helped 50+ B2B companies unlock hidden revenue patterns in their data to outperform competitors by 300%.
               </p>
               
               <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mb-8">
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-primary">✓</span> Average 300% ROI in 90 days
+                  <span className="text-primary">✓</span> 300% conversion increase in 90 days
                 </div>
                 <div className="hidden sm:block text-muted-foreground">•</div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-primary">✓</span> 7+ years proven results
+                  <span className="text-primary">✓</span> B2B data analytics specialists
                 </div>
                 <div className="hidden sm:block text-muted-foreground">•</div>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-primary">✓</span> No long-term contracts
+                  <span className="text-primary">✓</span> HR • Ecommerce • SaaS focused
                 </div>
               </div>
 
@@ -338,7 +352,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Chat with us here →
+                    Get Free Data Audit →
                   </Link>
                 </Button>
                 <Button
@@ -348,7 +362,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="/case-studies">
-                    See Client Results
+                    See B2B Case Studies
                   </Link>
                 </Button>
               </div>
@@ -392,7 +406,7 @@ export default function HomePage() {
                 Stop Wasting Money on Marketing That Doesn't Convert
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Every day you delay is revenue lost to competitors. Our proven system turns your marketing spend into predictable profit.
+                Every day you delay is revenue lost to competitors. Our B2B analytics solutions help HR companies, ecommerce platforms, and SaaS businesses identify exactly where they're losing customers and how to fix it.
               </p>
             </motion.div>
 
@@ -410,7 +424,7 @@ export default function HomePage() {
                       <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-2xl">
                         {service.icon}
                       </div>
-                      <h3 className="text-xl font-bold mb-2 text-foreground">{service.title}</h3>
+                      <h3 className="text-2xl font-bold mb-4 text-foreground">{service.title}</h3>
                       <p className="text-muted-foreground mb-4">{service.description}</p>
                       <ul className="space-y-2 flex-grow">
                         {service.features.map((feature, j) => (
@@ -445,7 +459,7 @@ export default function HomePage() {
               <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-accent/10 text-accent border-accent/20">
                 Trusted Partners
               </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-foreground">
                 Previous Clients We've Worked With
               </h2>
               <p className="max-w-[800px] text-muted-foreground md:text-lg">
@@ -543,17 +557,16 @@ export default function HomePage() {
               className="flex flex-col items-center justify-center space-y-6 text-center"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-                Your Competitors Are Getting Ahead While You Wait
+                Your Competitors Are Using Data While You're Guessing
               </h2>
               <p className="mx-auto max-w-[700px] text-foreground/90 md:text-xl" aria-describedby="main-heading">
-                Every month you delay costs you thousands in lost revenue. Our clients see results in 30 days or less. 
-                Stop losing customers to competitors who invested in growth.
+                Every day you delay, competitors steal your best prospects using customer behavior insights. Our B2B clients increase conversions by 300% in 90 days through data-driven optimization.
               </p>
               
               <div className="bg-foreground/5 border border-border rounded-lg p-6 mb-6 max-w-md mx-auto">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">Limited Time Offer</div>
-                  <div className="text-sm text-foreground/90">15% Off Your First Month</div>
+                  <div className="text-2xl font-bold text-primary mb-1">Free Revenue Audit</div>
+                  <div className="text-sm text-foreground/90">Worth $2,500 - Completely Free</div>
                   <div className="text-xs text-foreground/80 mt-2">Only 3 spots left this month</div>
                 </div>
               </div>
@@ -565,7 +578,7 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Chat with us here →
+                    Get Free Data Audit →
                   </Link>
                 </Button>
                 <Button
@@ -575,12 +588,12 @@ export default function HomePage() {
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                  Schedule a Free Strategy Call
+                  Claim My Free Audit Now
                 </Link>
                 </Button>
               </div>
               <p className="text-sm text-foreground/80 mt-4">
-                Join 120+ successful businesses that trust CloudLine Studio for their digital growth.
+                Join 120+ B2B companies using data insights to outperform their competitors.
               </p>
             </motion.div>
           </div>
