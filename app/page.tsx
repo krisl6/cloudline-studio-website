@@ -1,31 +1,14 @@
 "use client"
 
-import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { ThemeToggle } from "@/components/theme-toggle"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
 
 export default function HomePage() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true)
-      } else {
-        setIsScrolled(false)
-      }
-    }
-
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
 
   const container = {
     hidden: { opacity: 0 },
@@ -44,31 +27,31 @@ export default function HomePage() {
 
   const services = [
     {
-      title: "Customer Behavior Analytics",
-      description: "Deep insights into user journeys, conversion patterns, and behavioral triggers for HR, ecommerce, and SaaS platforms",
-      icon: "🧠",
+      title: "Revenue-Driven Ads",
+      description: "Stop burning money on ads that don't convert. Our performance marketing delivers 300% average ROI through data-driven campaigns.",
+      icon: "🎯",
       features: [
-        "User journey mapping & analysis",
-        "Conversion funnel optimization",
-        "Behavioral segmentation",
-        "Predictive customer modeling",
+        "300% average ROI guaranteed",
+        "5x higher conversion rates",
+        "Lead qualification systems",
+        "Weekly performance reports",
       ],
     },
     {
-      title: "Data-Driven Growth Strategy",
-      description: "Transform raw data into actionable growth strategies with real-time dashboards and performance tracking",
-      icon: "📈",
-      features: ["Real-time analytics dashboards", "KPI tracking & reporting", "Growth opportunity identification", "ROI optimization"],
+      title: "High-Converting Websites",
+      description: "Transform your website into a sales machine. Our conversion-optimized designs turn visitors into paying customers.",
+      icon: "🚀",
+      features: ["Conversion-focused design", "Mobile-optimized layouts", "A/B tested elements", "14-day completion"],
     },
     {
-      title: "B2B Performance Marketing",
-      description: "Specialized campaigns for HR tech, ecommerce platforms, and SaaS companies with focus on qualified lead generation",
-      icon: "🎯",
+      title: "Influencer Sales Campaigns",
+      description: "Leverage trusted voices to drive sales. Our influencer partnerships deliver guaranteed engagement rates and measurable ROI.",
+      icon: "👥",
       features: [
-        "B2B lead qualification systems",
-        "Industry-specific targeting",
-        "Multi-touch attribution",
-        "Sales pipeline optimization",
+        "Guaranteed engagement rates",
+        "ROI-focused partnerships",
+        "End-to-end management",
+        "Performance tracking",
       ],
     },
   ]
@@ -102,138 +85,39 @@ export default function HomePage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <WhatsAppFloat />
-      <header
-        className={`sticky top-0 z-50 w-full transition-all duration-300 ${isScrolled ? 'backdrop-blur-lg bg-background/90 shadow-sm border-b border-border' : 'bg-transparent'}`} role="banner"
-      >
-        <div className="container flex h-16 items-center px-4 md:px-6">
-          <div className="flex-1 flex items-center justify-center">
-            <nav className="flex gap-4 sm:gap-8" role="navigation" aria-label="Main navigation">
-              <Link href="/services" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Services
-              </Link>
-              <Link href="/case-studies" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Case Studies
-              </Link>
-              <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
-                <div className="size-8 rounded-lg overflow-hidden">
-                  <Image
-                    src="/cloudline_logo.png"
-                    alt="CloudLine Studio"
-                    width={32}
-                    height={32}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </Link>
-              <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Pricing
-              </Link>
-              <Link href="/contact" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-                Contact
-              </Link>
-            </nav>
-          </div>
-          <div className="hidden md:flex gap-6 items-center">
-            <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
-              <ThemeToggle />
-            </div>
-            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2" asChild>
-              <Link href="https://wa.link/fwi8af" target="_blank">
-                Let's Chat →
-              </Link>
-            </Button>
-          </div>
-          <div className="flex items-center gap-4 md:hidden">
-            <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
-              <ThemeToggle />
-            </div>
-            <Button variant="ghost" size="icon" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-              {mobileMenuOpen ? "✕" : "☰"}
-              <span className="sr-only">Toggle menu</span>
-            </Button>
-          </div>
-        </div>
-        {/* Mobile menu */}
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="md:hidden absolute top-16 inset-x-0 bg-background/95 backdrop-blur-lg border-b border-border"
-          >
-            <div className="container py-4 flex flex-col gap-4">
-              <Link href="/services" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Services
-              </Link>
-              <Link href="/case-studies" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Case Studies
-              </Link>
-              <Link href="/pricing" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Pricing
-              </Link>
-              <Link href="/contact" className="py-2 text-sm font-medium" onClick={() => setMobileMenuOpen(false)}>
-                Contact
-              </Link>
-              <div className="flex flex-col gap-2 pt-2 border-t border-border">
-                <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground focus:ring-2 focus:ring-primary focus:ring-offset-2" asChild>
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Chat With Us →
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </motion.div>
-        )}
-      </header>
-
       <main className="flex-1" role="main">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background/95 to-muted/50" aria-label="Hero section">
+        <section className="relative overflow-hidden bg-gradient-to-br from-background via-background/95 to-muted/50 py-20 md:py-28 lg:py-36" aria-label="Hero section">
           {/* Background elements */}
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#f5f5f5_1px,transparent_1px),linear-gradient(to_bottom,#f5f5f5_1px,transparent_1px)] bg-[size:4rem_4rem] dark:bg-[linear-gradient(to_right,#1e1e1e_1px,transparent_1px),linear-gradient(to_bottom,#1e1e1e_1px,transparent_1px)]"></div>
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
           <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"></div>
 
-          <div className="container relative z-10 py-20 md:py-28 lg:py-36">
+          <div className="container relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
               >
-                <motion.div className="text-center mb-12">
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground/80 mb-6 shadow-sm"
-                  >
-                    🏆 B2B Success Stories
-                  </motion.div>
-                  <motion.h2 
-                    className="text-3xl font-bold tracking-tight sm:text-4xl mb-4 text-foreground"
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                  >
-                    Powering Growth for HR, Ecommerce & SaaS
-                  </motion.h2>
-                  <p className="max-w-[800px] text-muted-foreground md:text-lg">
-                    From Fortune 500 HR platforms to fast-growing SaaS startups - we help B2B companies unlock revenue through data insights.
-                  </p>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="inline-flex items-center rounded-full border border-border bg-card px-4 py-1.5 text-sm font-medium text-foreground/80 mb-6 shadow-sm"
+                >
+                  🏆 7+ Years Proven Results
                 </motion.div>
                 
                 <motion.h1 
                   className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.5 }}
+                  transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                  Stop Losing Customers to
+                  Stop Losing Sales to Your Competitors.
                   <span className="block bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
-                    Data-Blind Competitors
+                    Start Converting More Today.
                   </span>
                 </motion.h1>
                 
@@ -241,16 +125,16 @@ export default function HomePage() {
                   className="text-lg text-foreground/80 mb-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4, duration: 0.5 }}
+                  transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                  Unlock hidden revenue in your customer data. Our B2B analytics solutions help HR companies, ecommerce platforms, and SaaS businesses increase conversions by 300% through behavioral insights.
+                  Your competitors are stealing customers while you struggle with low conversions. We help businesses increase revenue by 3-5x through proven digital marketing strategies that actually work.
                 </motion.p>
                 
                 <motion.div 
                   className="flex flex-col sm:flex-row gap-4 mb-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5, duration: 0.5 }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
                 >
                   <Button 
                     size="lg" 
@@ -258,7 +142,7 @@ export default function HomePage() {
                     asChild
                   >
                     <Link href="https://wa.link/fwi8af" target="_blank">
-                      Get Free Data Audit
+                      Get My Free Revenue Audit
                     </Link>
                   </Button>
                   <Button 
@@ -268,28 +152,28 @@ export default function HomePage() {
                     asChild
                   >
                     <Link href="/case-studies">
-                      See B2B Results
+                      See Client Results
                     </Link>
                   </Button>
                 </motion.div>
                 
                 <motion.div 
-                  className="flex flex-wrap gap-6 text-sm text-muted-foreground"
+                  className="flex flex-wrap gap-4 text-sm text-muted-foreground"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6, duration: 0.5 }}
+                  transition={{ delay: 0.5, duration: 0.5 }}
                 >
                   <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full">
                     <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span>300% Conversion Increase</span>
+                    <span>300% ROI in 90 days</span>
                   </div>
                   <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full">
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                    <span>B2B Data Specialists</span>
+                    <span>7+ years proven results</span>
                   </div>
                   <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full">
                     <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                    <span>HR • Ecommerce • SaaS</span>
+                    <span>No long-term contracts</span>
                   </div>
                 </motion.div>
               </motion.div>
@@ -302,8 +186,8 @@ export default function HomePage() {
               >
                 <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-border bg-card">
                   <Image
-                    src="/aesthetic-clinic-marketing-dashboard-with-patient-.jpg"
-                    alt="Marketing dashboard showing growth metrics"
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                    alt="Digital marketing analytics dashboard showing business growth"
                     width={800}
                     height={600}
                     className="w-full h-auto"
@@ -314,78 +198,16 @@ export default function HomePage() {
                 
                 {/* Floating stats */}
                 <div className="absolute -bottom-4 -left-4 bg-card p-4 rounded-xl shadow-lg border border-border">
-                  <div className="text-2xl font-bold text-primary">87%</div>
-                  <div className="text-xs text-muted-foreground">Client Retention</div>
+                  <div className="text-2xl font-bold text-primary">300%</div>
+                  <div className="text-xs text-muted-foreground">ROI Increase</div>
                 </div>
                 
                 <div className="absolute -top-4 -right-4 bg-card p-4 rounded-xl shadow-lg border border-border">
-                  <div className="text-2xl font-bold text-secondary">5x</div>
-                  <div className="text-xs text-muted-foreground">ROI Average</div>
+                  <div className="text-2xl font-bold text-secondary">90</div>
+                  <div className="text-xs text-muted-foreground">Days Results</div>
                 </div>
               </motion.div>
             </div>
-            
-            <div className="mt-16 text-center">
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" aria-describedby="clients-heading">
-                Your competitors are using customer data to steal your best prospects. While you're guessing, they're converting. 
-                We've helped 50+ B2B companies unlock hidden revenue patterns in their data to outperform competitors by 300%.
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-2 justify-center items-center mb-8">
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-primary">✓</span> 300% conversion increase in 90 days
-                </div>
-                <div className="hidden sm:block text-muted-foreground">•</div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-primary">✓</span> B2B data analytics specialists
-                </div>
-                <div className="hidden sm:block text-muted-foreground">•</div>
-                <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                  <span className="text-primary">✓</span> HR • Ecommerce • SaaS focused
-                </div>
-              </div>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground"
-                  asChild
-                >
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Get Free Data Audit →
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full h-12 px-8 text-base border-border text-foreground hover:bg-muted bg-transparent"
-                  asChild
-                >
-                  <Link href="/case-studies">
-                    See B2B Case Studies
-                  </Link>
-                </Button>
-              </div>
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="relative mx-auto max-w-5xl mt-16"
-            >
-              <div className="rounded-xl overflow-hidden shadow-2xl border border-border bg-card">
-                <Image
-                  src="/analytics-dashboard.png"
-                  width={1280}
-                  height={720}
-                  alt="Analytics Dashboard"
-                  className="w-full h-auto"
-                  priority
-                />
-              </div>
-            </motion.div>
           </div>
         </section>
 
@@ -406,7 +228,7 @@ export default function HomePage() {
                 Stop Wasting Money on Marketing That Doesn't Convert
               </h2>
               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                Every day you delay is revenue lost to competitors. Our B2B analytics solutions help HR companies, ecommerce platforms, and SaaS businesses identify exactly where they're losing customers and how to fix it.
+                Every day you delay is revenue lost to competitors. Our proven strategies help businesses increase conversions by 300% and turn marketing spend into predictable revenue growth.
               </p>
             </motion.div>
 
@@ -543,10 +365,10 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-background text-foreground relative overflow-hidden border-t border-border">
+        <section className="w-full py-16 md:py-24 bg-gradient-to-br from-primary/5 to-secondary/5 text-foreground relative overflow-hidden border-t border-border">
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#00000005_1px,transparent_1px),linear-gradient(to_bottom,#00000005_1px,transparent_1px)] bg-[size:4rem_4rem] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]"></div>
-          <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+          <div className="absolute -top-24 -left-24 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+          <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
 
           <div className="container px-4 md:px-6 relative z-10">
             <motion.div
@@ -557,43 +379,46 @@ export default function HomePage() {
               className="flex flex-col items-center justify-center space-y-6 text-center"
             >
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
-                Your Competitors Are Using Data While You're Guessing
+                Your Competitors Are Getting Ahead While You Wait
               </h2>
-              <p className="mx-auto max-w-[700px] text-foreground/90 md:text-xl" aria-describedby="main-heading">
-                Every day you delay, competitors steal your best prospects using customer behavior insights. Our B2B clients increase conversions by 300% in 90 days through data-driven optimization.
+              <p className="mx-auto max-w-[700px] text-foreground/90 md:text-xl">
+                Every day you delay is revenue lost to competitors who are already using proven strategies to convert more customers. Don't let them steal your market share.
               </p>
               
-              <div className="bg-foreground/5 border border-border rounded-lg p-6 mb-6 max-w-md mx-auto">
+              <div className="bg-card border-2 border-primary/20 rounded-xl p-6 mb-6 max-w-md mx-auto shadow-lg">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-primary mb-1">Free Revenue Audit</div>
-                  <div className="text-sm text-foreground/90">Worth $2,500 - Completely Free</div>
-                  <div className="text-xs text-foreground/80 mt-2">Only 3 spots left this month</div>
+                  <div className="text-sm text-primary font-semibold mb-2">⚡ LIMITED TIME</div>
+                  <div className="text-2xl font-bold text-foreground mb-1">Free Revenue Audit</div>
+                  <div className="text-sm text-foreground/90 mb-2">Worth $2,500 - Completely Free</div>
+                  <div className="text-xs text-red-600 font-medium bg-red-50 dark:bg-red-900/20 px-3 py-1 rounded-full inline-block">
+                    Only 3 spots left this month
+                  </div>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 mt-4">
                 <Button
                   size="lg"
-                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground border-0"
+                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground border-0 shadow-lg shadow-primary/20"
                   asChild
                 >
                   <Link href="https://wa.link/fwi8af" target="_blank">
-                    Get Free Data Audit →
+                    Claim My Free Audit Now
                   </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-2 border-foreground text-foreground hover:bg-foreground hover:text-background transition-all"
+                  className="rounded-full h-12 px-8 text-base bg-transparent border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all"
                   asChild
                 >
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                  Claim My Free Audit Now
-                </Link>
+                  <Link href="/case-studies">
+                    See Client Results First
+                  </Link>
                 </Button>
               </div>
               <p className="text-sm text-foreground/80 mt-4">
-                Join 120+ B2B companies using data insights to outperform their competitors.
+                Join 50+ businesses who've increased revenue by 300% in 90 days
               </p>
             </motion.div>
           </div>
