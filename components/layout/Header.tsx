@@ -65,66 +65,66 @@ export function Header() {
           <div className="hidden md:flex items-center gap-4">
             <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
               <ThemeToggle />
-              <Button 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
-                asChild
-              >
-                <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
-                  Chat with us now
-                </Link>
-              </Button>
             </div>
-            
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
+              asChild
             >
-              {mobileMenuOpen ? (
-                <span className="text-2xl">✕</span>
-              ) : (
-                <span className="text-2xl">☰</span>
-              )}
-              <span className="sr-only">Toggle menu</span>
+              <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                Chat with us now
+              </Link>
             </Button>
           </div>
           
-          <AnimatePresence>
-            {mobileMenuOpen && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.2 }}
-                className="md:hidden overflow-hidden"
-              >
-                <div className="bg-background/95 backdrop-blur-lg border-t border-border">
-                  <div className="container px-4 py-4 space-y-4">
-                    {navItems.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:underline underline-offset-4"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                    <div className="pt-4 border-t border-border mt-4">
-                      <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold" asChild>
-                        <Link href="https://wa.link/fwi8af" target="_blank">
-                          Chat with us now
-                        </Link>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? (
+              <span className="text-2xl">✕</span>
+            ) : (
+              <span className="text-2xl">☰</span>
             )}
-          </AnimatePresence>
+            <span className="sr-only">Toggle menu</span>
+          </Button>
         </div>
       </div>
+      
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
+            className="md:hidden overflow-hidden"
+          >
+            <div className="bg-background/95 backdrop-blur-lg border-t border-border">
+              <div className="container px-4 py-4 space-y-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:underline underline-offset-4"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+                <div className="pt-4 border-t border-border mt-4">
+                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold" asChild>
+                    <Link href="https://wa.link/fwi8af" target="_blank">
+                      Chat with us now
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

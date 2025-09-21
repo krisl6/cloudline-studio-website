@@ -28,7 +28,9 @@ export default function HomePage() {
   const services = [
     {
       title: "Revenue-Driven Ads",
+      shortTitle: "💰 Profit Ads",
       description: "Stop burning money on ads that don't convert. Our performance marketing delivers 300% average ROI through data-driven campaigns.",
+      shortDescription: "300% ROI guaranteed. Stop wasting ad spend.",
       icon: "🎯",
       features: [
         "300% average ROI guaranteed",
@@ -36,16 +38,22 @@ export default function HomePage() {
         "Lead qualification systems",
         "Weekly performance reports",
       ],
+      shortFeatures: ["300% ROI", "5x conversions", "Qualified leads", "Weekly reports"],
     },
     {
       title: "High-Converting Websites",
+      shortTitle: "🚀 Sales Websites",
       description: "Transform your website into a sales machine. Our conversion-optimized designs turn visitors into paying customers.",
+      shortDescription: "Turn visitors into customers. 14-day delivery.",
       icon: "🚀",
       features: ["Conversion-focused design", "Mobile-optimized layouts", "A/B tested elements", "14-day completion"],
+      shortFeatures: ["Sales-focused", "Mobile-first", "A/B tested", "14-day delivery"],
     },
     {
       title: "Influencer Sales Campaigns",
+      shortTitle: "👥 Influencer ROI",
       description: "Leverage trusted voices to drive sales. Our influencer partnerships deliver guaranteed engagement rates and measurable ROI.",
+      shortDescription: "Guaranteed engagement. Measurable sales results.",
       icon: "👥",
       features: [
         "Guaranteed engagement rates",
@@ -53,6 +61,7 @@ export default function HomePage() {
         "End-to-end management",
         "Performance tracking",
       ],
+      shortFeatures: ["Guaranteed engagement", "ROI-focused", "Full management", "Performance tracking"],
     },
   ]
 
@@ -109,71 +118,107 @@ export default function HomePage() {
                 </motion.div>
                 
                 <motion.h1 
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground"
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 text-foreground"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.2, duration: 0.5 }}
                 >
-                  Stop Losing Sales to Your Competitors.
+                  <span className="block sm:inline">Stop Losing Sales.</span>
                   <span className="block bg-gradient-to-r from-primary via-primary/80 to-secondary bg-clip-text text-transparent">
-                    Start Converting More Today.
+                    Start Converting 3x More.
                   </span>
                 </motion.h1>
                 
                 <motion.p 
-                  className="text-lg text-foreground/80 mb-8"
+                  className="text-base sm:text-lg text-foreground/80 mb-6 sm:mb-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.5 }}
                 >
-                  Your competitors are stealing customers while you struggle with low conversions. We help businesses increase revenue by 3-5x through proven digital marketing strategies that actually work.
+                  <span className="hidden sm:inline">Your competitors are stealing customers while you struggle with low conversions. We help businesses increase revenue by 3-5x through proven digital marketing strategies that actually work.</span>
+                  <span className="sm:hidden">Turn your website into a sales machine. Get 300% more conversions in 90 days.</span>
                 </motion.p>
                 
                 <motion.div 
-                  className="flex flex-col sm:flex-row gap-4 mb-8"
+                  className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.4, duration: 0.5 }}
                 >
-                  <Button 
-                    size="lg" 
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
-                    asChild
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full sm:w-auto"
                   >
-                    <Link href="https://wa.link/fwi8af" target="_blank">
-                      Get My Free Revenue Audit
-                    </Link>
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
-                    className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
-                    asChild
+                    <Button 
+                      size="lg" 
+                      className="w-full sm:w-auto bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold animate-pulse hover:animate-none"
+                      asChild
+                    >
+                      <Link href="https://wa.link/fwi8af" target="_blank">
+                        <span className="sm:hidden">💰 Get Free Audit</span>
+                        <span className="hidden sm:inline">Get My Free Revenue Audit</span>
+                      </Link>
+                    </Button>
+                  </motion.div>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full sm:w-auto"
                   >
-                    <Link href="/case-studies">
-                      See Client Results
-                    </Link>
-                  </Button>
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="w-full sm:w-auto border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
+                      asChild
+                    >
+                      <Link href="/case-studies">
+                        <span className="sm:hidden">📈 See Results</span>
+                        <span className="hidden sm:inline">See Client Results</span>
+                      </Link>
+                    </Button>
+                  </motion.div>
                 </motion.div>
                 
                 <motion.div 
-                  className="flex flex-wrap gap-4 text-sm text-muted-foreground"
+                  className="grid grid-cols-1 sm:flex sm:flex-wrap gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5, duration: 0.5 }}
                 >
-                  <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full">
+                  <motion.div 
+                    className="flex items-center gap-2 bg-gradient-to-r from-green-500/10 to-primary/10 px-3 py-2 rounded-full border border-green-500/20"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
                     <div className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span>300% ROI in 90 days</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full">
-                    <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                    <span>7+ years proven results</span>
-                  </div>
-                  <div className="flex items-center gap-2 bg-muted/30 px-3 py-1.5 rounded-full">
-                    <div className="h-2 w-2 rounded-full bg-green-500"></div>
-                    <span>No long-term contracts</span>
-                  </div>
+                    <span className="font-medium">
+                      <span className="sm:hidden">💰 300% ROI</span>
+                      <span className="hidden sm:inline">300% ROI in 90 days</span>
+                    </span>
+                  </motion.div>
+                  <motion.div 
+                    className="flex items-center gap-2 bg-gradient-to-r from-blue-500/10 to-secondary/10 px-3 py-2 rounded-full border border-blue-500/20"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+                    <span className="font-medium">
+                      <span className="sm:hidden">🏆 7+ Years</span>
+                      <span className="hidden sm:inline">7+ years proven results</span>
+                    </span>
+                  </motion.div>
+                  <motion.div 
+                    className="flex items-center gap-2 bg-gradient-to-r from-purple-500/10 to-primary/10 px-3 py-2 rounded-full border border-purple-500/20"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+                    <span className="font-medium">
+                      <span className="sm:hidden">✅ No Contracts</span>
+                      <span className="hidden sm:inline">No long-term contracts</span>
+                    </span>
+                  </motion.div>
                 </motion.div>
               </motion.div>
               
@@ -240,28 +285,73 @@ export default function HomePage() {
             >
               {services.map((service, i) => (
                 <motion.div key={i} variants={item}>
-                  <Card className="h-full overflow-hidden border-border bg-card hover:shadow-lg transition-all duration-300 group">
-                    <CardContent className="p-6 flex flex-col h-full">
-                      <div className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-2xl">
-                        {service.icon}
-                      </div>
-                      <h3 className="text-2xl font-bold mb-4 text-foreground">{service.title}</h3>
-                      <p className="text-muted-foreground mb-4">{service.description}</p>
-                      <ul className="space-y-2 flex-grow">
-                        {service.features.map((feature, j) => (
-                          <li key={j} className="flex items-center text-sm text-muted-foreground">
-                            <span className="mr-2 text-accent">✓</span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                      <Button className="mt-4 w-full bg-accent hover:bg-accent/90 text-accent-foreground" asChild>
-                        <Link href="https://wa.link/fwi8af" target="_blank">
-                          Learn More
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
+                  <motion.div
+                    whileHover={{ scale: 1.02, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    <Card className="h-full overflow-hidden border-border bg-card hover:shadow-lg transition-all duration-300 group">
+                      <CardContent className="p-4 sm:p-6 flex flex-col h-full">
+                        <motion.div 
+                          className="size-12 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-3 sm:mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors text-2xl"
+                          whileHover={{ rotate: 360 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          {service.icon}
+                        </motion.div>
+                        <h3 className="text-lg sm:text-2xl font-bold mb-2 sm:mb-4 text-foreground">
+                          <span className="sm:hidden">{service.shortTitle}</span>
+                          <span className="hidden sm:inline">{service.title}</span>
+                        </h3>
+                        <p className="text-sm sm:text-base text-muted-foreground mb-3 sm:mb-4">
+                          <span className="sm:hidden">{service.shortDescription}</span>
+                          <span className="hidden sm:inline">{service.description}</span>
+                        </p>
+                        <ul className="space-y-1 sm:space-y-2 flex-grow">
+                          {/* Mobile features */}
+                          <div className="sm:hidden">
+                            {service.shortFeatures.map((feature, j) => (
+                              <motion.li 
+                                key={j} 
+                                className="flex items-center text-xs text-muted-foreground"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: j * 0.1 }}
+                              >
+                                <span className="mr-2 text-accent">✓</span>
+                                {feature}
+                              </motion.li>
+                            ))}
+                          </div>
+                          {/* Desktop features */}
+                          <div className="hidden sm:block">
+                            {service.features.map((feature, j) => (
+                              <motion.li 
+                                key={j} 
+                                className="flex items-center text-sm text-muted-foreground"
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: j * 0.1 }}
+                              >
+                                <span className="mr-2 text-accent">✓</span>
+                                {feature}
+                              </motion.li>
+                            ))}
+                          </div>
+                        </ul>
+                        <motion.div
+                          whileHover={{ scale: 1.05 }}
+                          whileTap={{ scale: 0.95 }}
+                        >
+                          <Button className="mt-4 w-full bg-accent hover:bg-accent/90 text-accent-foreground animate-pulse hover:animate-none" asChild>
+                            <Link href="https://wa.link/fwi8af" target="_blank">
+                              <span className="sm:hidden">💬 Get Started</span>
+                              <span className="hidden sm:inline">Learn More</span>
+                            </Link>
+                          </Button>
+                        </motion.div>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
                 </motion.div>
               ))}
             </motion.div>
