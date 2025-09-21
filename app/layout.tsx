@@ -23,8 +23,8 @@ export const metadata: Metadata = {
   },
   manifest: '/site.webmanifest',
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
     { media: '(prefers-color-scheme: dark)', color: '#0f172a' },
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
   ],
 }
 
@@ -44,7 +44,7 @@ export default function RootLayout({
       <body className={`${inter.className} bg-background`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >
