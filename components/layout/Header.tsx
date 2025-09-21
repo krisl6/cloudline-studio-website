@@ -102,23 +102,31 @@ export function Header() {
             className="md:hidden overflow-hidden"
           >
             <div className="bg-background/95 backdrop-blur-lg border-t border-border">
-              <div className="container px-4 py-4 space-y-4">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.href}
-                    className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:underline underline-offset-4"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-                <div className="pt-4 border-t border-border mt-4">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold" asChild>
-                    <Link href="https://wa.link/fwi8af" target="_blank">
-                      Chat with us now
-                    </Link>
-                  </Button>
+              <div className="container px-4 py-4">
+                <div className="flex flex-col space-y-2">
+                  {navItems.map((item, index) => (
+                    <motion.div
+                      key={item.name}
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.1, duration: 0.3 }}
+                    >
+                      <Link
+                        href={item.href}
+                        className="block py-3 px-4 text-base font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-muted/50 rounded-lg border border-transparent hover:border-border"
+                        onClick={() => setMobileMenuOpen(false)}
+                      >
+                        {item.name}
+                      </Link>
+                    </motion.div>
+                  ))}
+                  <div className="pt-4 border-t border-border mt-4">
+                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold" asChild>
+                      <Link href="https://wa.link/fwi8af" target="_blank">
+                        Chat with us now
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
