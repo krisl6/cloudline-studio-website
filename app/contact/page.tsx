@@ -72,45 +72,6 @@ export default function ContactPage() {
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
-      <header className="sticky top-0 z-50 w-full backdrop-blur-lg bg-background/90 shadow-sm border-b border-border" role="banner">
-        <div className="container flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
-            <div className="size-8 rounded-lg overflow-hidden">
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CloudLine%20Logo-16f6W22iHGRNtQ9Ahj0pSsWuwfWHiO.png"
-                alt="CloudLine Studio"
-                width={32}
-                height={32}
-                className="w-full h-full object-cover"
-              />
-            </div>
-            <span className="text-foreground">CloudLine Studio</span>
-          </Link>
-          <nav className="hidden md:flex gap-6 lg:gap-8" role="navigation" aria-label="Main navigation">
-            <Link href="/" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Home
-            </Link>
-            <Link href="/services" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Services
-            </Link>
-            <Link href="/case-studies" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Case Studies
-            </Link>
-            <Link href="/pricing" className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus:text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2">
-              Pricing
-            </Link>
-            <Link href="/contact" className="text-sm font-medium text-foreground">
-              Contact
-            </Link>
-          </nav>
-          <Button className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold" asChild>
-            <Link href="https://wa.link/fwi8af" target="_blank">
-              Chat with us now
-            </Link>
-          </Button>
-        </div>
-      </header>
-
       <main className="flex-1" role="main">
         <section className="w-full py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-background to-muted" aria-label="Contact overview">
           <div className="container px-4 md:px-6">
