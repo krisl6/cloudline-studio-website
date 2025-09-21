@@ -84,7 +84,6 @@ export default function HomePage() {
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
-      <WhatsAppFloat />
       <main className="flex-1" role="main">
         {/* Hero Section */}
         <section className="relative overflow-hidden bg-gradient-to-br from-background via-background/95 to-muted/50 py-20 md:py-28 lg:py-36" aria-label="Hero section">
@@ -434,7 +433,6 @@ export default function HomePage() {
           <p className="text-xs text-foreground/90" role="text">Connecting the right people to the right products</p>
         </div>
       </footer>
-      <WhatsAppFloat />
     </div>
   )
 }
