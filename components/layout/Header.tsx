@@ -1,3 +1,5 @@
+"use client"
+
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
@@ -37,7 +39,7 @@ export function Header() {
         <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
           <div className="size-8 rounded-lg overflow-hidden">
             <Image
-              src="/logo.svg"
+              src="/cloudline_logo.png"
               alt="CloudLine Studio"
               width={32}
               height={32}

@@ -310,7 +310,7 @@ export default function ServicesPage() {
                         <div>
                           <h4 className="text-sm md:text-base font-bold text-foreground mb-3 md:mb-4">What's Included:</h4>
                           <ul className="space-y-2">
-                            {currentService.features.map((feature, i) => (
+                            {(currentService.features || currentService.solutions || []).map((feature, i) => (
                               <li key={i} className="flex items-start gap-2 text-sm">
                                 <Check className="size-4 text-accent mt-0.5 flex-shrink-0" />
                                 <span className="text-foreground/80">{feature}</span>
@@ -322,7 +322,7 @@ export default function ServicesPage() {
                         <div>
                           <h4 className="text-sm md:text-base font-bold text-foreground mb-3 md:mb-4">Deliverables:</h4>
                           <ul className="space-y-2">
-                            {currentService.deliverables.map((deliverable, i) => (
+                            {(currentService.deliverables || currentService.results || []).map((deliverable, i) => (
                               <li key={i} className="flex items-start gap-2 text-sm">
                                 <Check className="size-4 text-primary mt-0.5 flex-shrink-0" />
                                 <span className="text-foreground/80">{deliverable}</span>
