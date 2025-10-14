@@ -20,8 +20,9 @@ export function Header() {
   }, [])
 
   const navItems = [
+    { name: "About", href: "/about" },
     { name: "Services", href: "/#services" },
-    { name: "Results", href: "/case-studies" },
+    { name: "Client Results", href: "/client-results" },
     { name: "Pricing", href: "/#pricing" },
     { name: "Contact", href: "/contact" },
   ]

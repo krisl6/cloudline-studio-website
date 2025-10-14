@@ -27,42 +27,67 @@ export default function HomePage() {
 
   const services = [
     {
-      title: "Revenue-Driven Ads",
-      shortTitle: "💰 Profit Ads",
-      description: "Stop burning money on ads that don't convert. Our performance marketing delivers 300% average ROI through data-driven campaigns.",
-      shortDescription: "300% ROI guaranteed. Stop wasting ad spend.",
+      title: "Brand Strategy & Positioning",
+      shortTitle: "🎯 Strategic Foundation",
+      description: "Most businesses compete on price because they lack strategic positioning. We help you become the obvious choice in your market through deep strategic work that uncovers your unique competitive advantage and builds unshakeable market position.",
+      shortDescription: "Become the obvious choice. Strategic positioning that commands premium pricing.",
       icon: "🎯",
       features: [
-        "300% average ROI guaranteed",
-        "5x higher conversion rates",
-        "Lead qualification systems",
-        "Weekly performance reports",
+        "Comprehensive market analysis and competitive intelligence",
+        "Unique value proposition development that differentiates you",
+        "Brand architecture that scales with your business growth",
+        "Positioning strategy that commands premium pricing",
+        "Customer persona development with psychological insights",
+        "Brand messaging framework for consistent communication"
       ],
-      shortFeatures: ["300% ROI", "5x conversions", "Qualified leads", "Weekly reports"],
+      shortFeatures: ["Market analysis", "Unique positioning", "Premium pricing", "Scalable architecture"],
+      benefits: [
+        "Stop competing on price and start commanding premium rates",
+        "Become the go-to choice in your industry or niche",
+        "Attract higher-quality customers who value what you offer",
+        "Build a foundation for sustainable, profitable growth"
+      ],
+      story: "A luxury interior design firm was struggling to differentiate from competitors and constantly losing projects to lower-priced alternatives. After our strategic positioning work, they repositioned as 'wellness-focused luxury design' and increased their project values by 180% while reducing sales cycles by 60%."
     },
     {
-      title: "High-Converting Websites",
-      shortTitle: "🚀 Sales Websites",
-      description: "Transform your website into a sales machine. Our conversion-optimized designs turn visitors into paying customers.",
-      shortDescription: "Turn visitors into customers. 14-day delivery.",
-      icon: "🚀",
-      features: ["Conversion-focused design", "Mobile-optimized layouts", "A/B tested elements", "14-day completion"],
-      shortFeatures: ["Sales-focused", "Mobile-first", "A/B tested", "14-day delivery"],
+      title: "Visual Identity & Brand Design",
+      shortTitle: "🎨 Memorable Identity",
+      description: "Your visual identity is your silent salesperson, working 24/7 to communicate your value. We create sophisticated brand systems that instantly communicate quality, build trust, and make your business unforgettable in a crowded marketplace.",
+      shortDescription: "Visual systems that sell before you speak. Memorable, professional, strategic.",
+      icon: "🎨",
+      features: ["Logo design rooted in strategic thinking, not just aesthetics", "Complete brand guidelines for consistent application", "Color psychology and typography systems that influence behavior", "Business card, letterhead, and marketing material design", "Digital asset creation for web and social media", "Brand application across all customer touchpoints"],
+      shortFeatures: ["Strategic logos", "Brand guidelines", "Psychology-based design", "Complete systems"],
+      benefits: [
+        "Make a powerful first impression that builds instant credibility",
+        "Stand out in a crowded market with distinctive visual presence",
+        "Communicate professionalism and quality without saying a word",
+        "Create emotional connections that drive customer loyalty"
+      ],
+      story: "A tech startup was being overlooked by enterprise clients despite having superior technology. After redesigning their visual identity to reflect enterprise-grade professionalism, they secured 3 major corporate contracts worth $2.4M in the first 6 months."
     },
     {
-      title: "Influencer Sales Campaigns",
-      shortTitle: "👥 Influencer ROI",
-      description: "Leverage trusted voices to drive sales. Our influencer partnerships deliver guaranteed engagement rates and measurable ROI.",
-      shortDescription: "Guaranteed engagement. Measurable sales results.",
-      icon: "👥",
+      title: "Digital Brand Experience",
+      shortTitle: "💻 Digital Presence",
+      description: "Your digital presence is often the first interaction customers have with your brand. We create cohesive digital experiences that build trust, communicate value, and guide visitors toward becoming customers through strategic design and psychology.",
+      shortDescription: "Digital experiences that convert visitors into customers. Strategic, beautiful, effective.",
+      icon: "💻",
       features: [
-        "Guaranteed engagement rates",
-        "ROI-focused partnerships",
-        "End-to-end management",
-        "Performance tracking",
+        "Website design that reflects your brand strategy and converts visitors",
+        "Social media presence that builds authority and engagement",
+        "Digital marketing materials that maintain brand consistency",
+        "User experience optimization based on customer psychology",
+        "Mobile-first design that works perfectly on all devices",
+        "SEO-optimized structure that helps customers find you"
       ],
-      shortFeatures: ["Guaranteed engagement", "ROI-focused", "Full management", "Performance tracking"],
-    },
+      shortFeatures: ["Converting websites", "Social presence", "UX optimization", "Mobile-first"],
+      benefits: [
+        "Convert more website visitors into paying customers",
+        "Build trust and credibility through professional digital presence",
+        "Reach customers where they spend their time online",
+        "Create seamless experiences that encourage repeat business"
+      ],
+      story: "A consulting firm's outdated website was losing 80% of visitors within 10 seconds. After redesigning their digital experience with clear value propositions and strategic user flow, their consultation bookings increased by 340% and average project value grew by 65%."
+    }
   ]
 
   const clients = [
@@ -450,6 +475,168 @@ export default function HomePage() {
                 <span className="text-sm font-medium text-foreground">4.9/5 Client Satisfaction</span>
                 <span className="text-sm text-muted-foreground">• 120+ Projects Completed</span>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* What You Can Achieve Section */}
+        <section className="w-full py-20 md:py-28 bg-muted/30">
+          <div className="container px-4 md:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="text-center mb-16"
+            >
+              <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">What You Can Achieve</Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
+                Transform Your Business in 90 Days
+              </h2>
+              <p className="mx-auto max-w-4xl text-muted-foreground md:text-lg">
+                Stop wondering "what if" and start seeing real results. Here's exactly what our clients achieve when they work with us.
+              </p>
+            </motion.div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: "💰",
+                  title: "Premium Pricing Power",
+                  description: "Stop competing on price. Our strategic positioning helps you command 40-80% higher rates than competitors.",
+                  example: "Interior design firm increased project values by 180% after repositioning as 'wellness-focused luxury design'"
+                },
+                {
+                  icon: "🎯",
+                  title: "Attract Dream Clients",
+                  description: "Work with clients who value quality over price. Build a business around customers you actually want to serve.",
+                  example: "Tech consultant went from $50/hour gigs to $15,000 monthly retainers with Fortune 500 companies"
+                },
+                {
+                  icon: "📈",
+                  title: "Predictable Growth",
+                  description: "Replace feast-or-famine cycles with consistent, sustainable business growth that compounds over time.",
+                  example: "Marketing agency built a 6-month waiting list and 98% client retention rate through strategic brand positioning"
+                },
+                {
+                  icon: "⚡",
+                  title: "Faster Sales Cycles",
+                  description: "When your brand clearly communicates value, prospects make decisions faster and with more confidence.",
+                  example: "B2B software company reduced sales cycle from 9 months to 3 months with clearer value proposition"
+                },
+                {
+                  icon: "🏆",
+                  title: "Industry Recognition",
+                  description: "Become the go-to expert in your field. Get featured in media, speak at events, and build thought leadership.",
+                  example: "Consulting firm founder became industry keynote speaker and published thought leadership in Harvard Business Review"
+                },
+                {
+                  icon: "🚀",
+                  title: "Effortless Referrals",
+                  description: "When your brand is memorable and valuable, customers can't help but recommend you to others.",
+                  example: "Professional services firm gets 70% of new business through referrals without asking for them"
+                }
+              ].map((achievement, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <Card className="h-full hover:shadow-lg transition-shadow duration-300">
+                    <CardContent className="p-8">
+                      <div className="text-4xl mb-4">{achievement.icon}</div>
+                      <h3 className="text-xl font-bold mb-3">{achievement.title}</h3>
+                      <p className="text-muted-foreground mb-4">{achievement.description}</p>
+                      <div className="p-3 bg-primary/5 rounded-lg border-l-4 border-primary">
+                        <p className="text-sm text-primary font-medium">Real Example:</p>
+                        <p className="text-sm text-muted-foreground mt-1">{achievement.example}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* The Cost of Waiting Section */}
+        <section className="w-full py-20 md:py-28">
+          <div className="container px-4 md:px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+              >
+                <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">The Cost of Waiting</Badge>
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Every Month You Wait Costs You More Than Our Entire Investment
+                </h2>
+                <div className="space-y-6">
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-red-600 font-bold">1</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-2">Lost Revenue Opportunities</h4>
+                      <p className="text-muted-foreground">Without clear positioning, you're leaving 30-50% of potential revenue on the table. That's $10,000-50,000+ monthly for most businesses.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-red-600 font-bold">2</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-2">Competitor Advantage</h4>
+                      <p className="text-muted-foreground">While you hesitate, competitors are building stronger market positions. Every day they get harder to catch.</p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-red-600 font-bold">3</span>
+                    </div>
+                    <div>
+                      <h4 className="font-bold mb-2">Wasted Marketing Spend</h4>
+                      <p className="text-muted-foreground">Marketing without strategic brand foundation is like building a house without a foundation. You're burning money on tactics that don't work.</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+              >
+                <Card className="p-8 bg-gradient-to-br from-green-50 to-blue-50 dark:from-green-950/20 dark:to-blue-950/20 border-green-200 dark:border-green-800">
+                  <h3 className="text-2xl font-bold mb-6 text-green-800 dark:text-green-200">The Investment vs. Return Reality</h3>
+                  <div className="space-y-4">
+                    <div className="flex justify-between items-center p-3 bg-white dark:bg-slate-800 rounded-lg">
+                      <span className="font-medium">Our Brand Strategy Investment:</span>
+                      <span className="font-bold text-green-600">$15,000 - $25,000</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-white dark:bg-slate-800 rounded-lg">
+                      <span className="font-medium">Average Monthly Revenue Increase:</span>
+                      <span className="font-bold text-green-600">$25,000 - $75,000</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-white dark:bg-slate-800 rounded-lg">
+                      <span className="font-medium">Payback Period:</span>
+                      <span className="font-bold text-green-600">30-60 days</span>
+                    </div>
+                    <div className="flex justify-between items-center p-3 bg-green-100 dark:bg-green-900/30 rounded-lg border border-green-300 dark:border-green-700">
+                      <span className="font-medium">12-Month ROI:</span>
+                      <span className="font-bold text-green-700 dark:text-green-300 text-lg">400% - 1,200%</span>
+                    </div>
+                  </div>
+                  <p className="text-sm text-green-700 dark:text-green-300 mt-4 italic">
+                    "The question isn't whether you can afford to invest in strategic branding. The question is whether you can afford NOT to."
+                  </p>
+                </Card>
+              </motion.div>
             </div>
           </div>
         </section>
