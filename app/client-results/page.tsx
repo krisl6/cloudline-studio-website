@@ -465,9 +465,9 @@ export default function ClientResultsPage() {
               <p className="text-muted-foreground">All revenue and conversion data verified through Google Analytics, Facebook Analytics, and platform reporting.</p>
             </Card>
             <Card className="text-center p-8">
-              <div className="text-4xl mb-4">🏦</div>
-              <h3 className="text-xl font-bold mb-3">Bank Statement Proof</h3>
-              <p className="text-muted-foreground">Revenue increases confirmed through client bank statements and payment processor data.</p>
+              <div className="text-4xl mb-4">💰</div>
+              <h3 className="text-xl font-bold mb-3">Sales Verified</h3>
+              <p className="text-muted-foreground">Conversion numbers and sales increases verified through direct client reporting and CRM data tracking.</p>
             </Card>
             <Card className="text-center p-8">
               <div className="text-4xl mb-4">🔍</div>
