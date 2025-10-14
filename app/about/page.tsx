@@ -148,20 +148,20 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              We Don't Just Build Brands.{" "}
+              The Story Behind{" "}
               <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">
-                We Build Legacies
+                Your Success
               </span>
             </motion.h1>
             <motion.p 
-              className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
+              className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              We started CloudLine Studio because we kept seeing the same heartbreaking story: amazing businesses with incredible products or services, 
-              but nobody knew they existed. We're here to change that. We help you become <strong>memorable, meaningful, and profitable</strong> through 
-              strategic brand development that actually works.
+              Every great brand has a story. Ours started with a simple observation: too many brilliant businesses were invisible 
+              in their markets. We founded CloudLine Studio to change that—to help ambitious entrepreneurs and established companies 
+              build brands that don't just compete, but dominate. Meet the team that turns vision into reality.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center"

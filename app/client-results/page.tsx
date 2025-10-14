@@ -106,19 +106,20 @@ export default function ClientResultsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              Don't Take Our Word for It.{" "}
+              Real Stories.{" "}
               <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">
-                See the Numbers
+                Real Results.
               </span>
             </motion.h1>
             <motion.p 
-              className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+              className="text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              While your competitors are still figuring out digital marketing, our clients are already counting their profits. 
-              Here's proof that our strategies deliver <strong>real, measurable results</strong>.
+              Behind every number is a business owner who took a leap of faith. These are their stories—real transformations 
+              from real people who trusted us to help them grow. From struggling startups to thriving enterprises, 
+              see how strategic branding changed everything.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -126,7 +127,7 @@ export default function ClientResultsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white shadow-lg shadow-red-600/25 hover:shadow-red-600/40 transition-all duration-300" asChild>
+              <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300" asChild>
                 <Link href="/contact">💰 Get My FREE Revenue Audit</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>

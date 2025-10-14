@@ -61,10 +61,15 @@ export default function ContactPage() {
               className="text-center max-w-4xl mx-auto"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
-                Let's Build Something Great Together
+                Ready to Transform{" "}
+                <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">
+                  Your Brand?
+                </span>
               </h1>
-              <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-3xl mx-auto">
-                We help brands scale with creative marketing, data-driven campaigns, and strategies that actually work.
+              <p className="text-lg md:text-xl text-foreground/80 mb-8 max-w-4xl mx-auto leading-relaxed">
+                Every great transformation starts with a conversation. Whether you're launching a new brand or scaling an existing business, 
+                we're here to help you build something extraordinary. Let's discuss your vision and create a strategy that turns your 
+                goals into reality.
               </p>
               <motion.div
                 whileHover={{ scale: 1.05 }}

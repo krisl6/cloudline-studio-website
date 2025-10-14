@@ -130,12 +130,13 @@ export default function CaseStudiesPage() {
               className="text-center max-w-4xl mx-auto mb-12"
             >
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground" id="case-studies-main-heading">
-                Proven Results Across
-                <span className="text-primary"> Industries & Platforms</span>
+                From Challenge to{" "}
+                <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">Champion</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" aria-describedby="case-studies-main-heading">
-                Real success stories from clients who have transformed their businesses with our strategic digital
-                marketing approach across Google, META, TikTok, and XHS platforms.
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed" aria-describedby="case-studies-main-heading">
+                Every business faces unique challenges. See how we've helped companies across different industries overcome 
+                their obstacles and achieve remarkable growth through strategic digital marketing. These detailed case studies 
+                show our methodology, execution, and the measurable results we delivered.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                 <Button 

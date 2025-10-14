@@ -101,12 +101,13 @@ export default function PricingPage() {
               className="text-center max-w-4xl mx-auto mb-12"
             >
               <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground" id="pricing-main-heading">
-                Transparent Pricing for
-                <span className="text-primary"> Real Results</span>
+                Investment in{" "}
+                <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">Your Growth</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" aria-describedby="pricing-main-heading">
-                Choose the service that fits your business needs. All packages include transparent reporting, dedicated
-                support, and measurable results.
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed" aria-describedby="pricing-main-heading">
+                Great brands aren't built overnight, but they're built with the right investment. Our transparent pricing reflects 
+                the strategic value we deliver—no hidden fees, no surprises, just clear packages designed to transform your business. 
+                Choose the partnership level that matches your ambition.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                 <Button 
