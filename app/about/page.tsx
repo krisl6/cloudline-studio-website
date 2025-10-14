@@ -321,8 +321,8 @@ export default function AboutPage() {
                 <div className="space-y-4">
                   <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-orange-100">
                     <Image
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
-                      alt="Asian business professional"
+                      src="https://images.unsplash.com/photo-1556157382-97eda2d62296?w=300&h=300&fit=crop&crop=face"
+                      alt="Asian business professional in office"
                       width={300}
                       height={300}
                       className="w-full h-full object-cover"
@@ -330,8 +330,8 @@ export default function AboutPage() {
                   </div>
                   <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-blue-100">
                     <Image
-                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face"
-                      alt="Asian creative professional"
+                      src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=face"
+                      alt="Asian creative professional working"
                       width={300}
                       height={300}
                       className="w-full h-full object-cover"
@@ -341,8 +341,8 @@ export default function AboutPage() {
                 <div className="space-y-4 pt-8">
                   <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-orange-100">
                     <Image
-                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
-                      alt="Asian strategy consultant"
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+                      alt="Asian strategy consultant in meeting"
                       width={300}
                       height={300}
                       className="w-full h-full object-cover"
@@ -350,8 +350,8 @@ export default function AboutPage() {
                   </div>
                   <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-blue-100">
                     <Image
-                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face"
-                      alt="Asian brand consultant"
+                      src="https://images.unsplash.com/photo-1551836022-deb4988cc6c0?w=300&h=300&fit=crop&crop=face"
+                      alt="Asian team collaborating in office"
                       width={300}
                       height={300}
                       className="w-full h-full object-cover"

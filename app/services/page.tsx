@@ -178,12 +178,47 @@ export default function ServicesPage() {
               className="text-center max-w-4xl mx-auto mb-12"
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
-                Comprehensive Digital Marketing
-                <span className="text-primary"> Services</span>
+                Complete Brand Growth
+                <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent"> Solutions</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto" aria-describedby="services-main-heading">
-                From performance marketing to influencer collaboration, we provide end-to-end digital marketing
-                solutions that drive measurable results for your business.
+              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed" aria-describedby="services-main-heading">
+                From strategic brand consultation to high-converting marketing campaigns, we're your complete growth partner. 
+                We help ambitious businesses build powerful brands through strategic positioning, targeted SEM campaigns, 
+                compelling advertisements, impactful press releases, and comprehensive marketing solutions that drive real results.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 max-w-5xl mx-auto">
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-blue-600 font-bold">📋</span>
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Brand Consultation</h3>
+                  <p className="text-sm text-muted-foreground">Strategic positioning & market analysis</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-orange-600 font-bold">🎯</span>
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">SEM & Advertising</h3>
+                  <p className="text-sm text-muted-foreground">Google Ads, social media & targeted campaigns</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-blue-600 font-bold">📰</span>
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Press & PR</h3>
+                  <p className="text-sm text-muted-foreground">Media coverage & thought leadership</p>
+                </div>
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <span className="text-orange-600 font-bold">📈</span>
+                  </div>
+                  <h3 className="font-semibold text-foreground mb-2">Growth Marketing</h3>
+                  <p className="text-sm text-muted-foreground">End-to-end marketing solutions</p>
+                </div>
+              </div>
+              <p className="text-base text-muted-foreground mb-8 max-w-3xl mx-auto">
+                Whether you're launching a new brand or scaling an existing business, we combine strategic thinking with proven execution 
+                to help you stand out in crowded markets, attract premium clients, and build sustainable competitive advantages.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
                 <Button 
@@ -191,8 +226,8 @@ export default function ServicesPage() {
                   className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
                   asChild
                 >
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Get My Free Revenue Audit
+                  <Link href="/contact">
+                    Start Your Brand Journey
                   </Link>
                 </Button>
                 <Button 
@@ -201,8 +236,8 @@ export default function ServicesPage() {
                   className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
                   asChild
                 >
-                  <Link href="/case-studies">
-                    See Client Results
+                  <Link href="/client-results">
+                    View Our Portfolio
                   </Link>
                 </Button>
               </div>

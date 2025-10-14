@@ -32,14 +32,14 @@ export default function CaseStudiesPage() {
       icon: <TrendingUp className="size-5" />,
       description:
         "Our TikTok specialists analyze viral trends, engagement rates, and content performance to maximize brand visibility and user interaction.",
-      color: "bg-pink-100 text-pink-800 border-pink-200",
+      color: "bg-orange-100 text-orange-800 border-orange-200",
     },
     {
       name: "XHS",
       icon: <Globe className="size-5" />,
       description:
         "Our XHS team specializes in carousel posts, static images, KOL collaborations, and long-form copywriting that drives user sharing and highlights unique selling propositions.",
-      color: "bg-red-100 text-red-800 border-red-200",
+      color: "bg-blue-100 text-blue-800 border-blue-200",
     },
   ]
 
