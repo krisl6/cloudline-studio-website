@@ -60,7 +60,7 @@ export default function AboutPage() {
       phase: "Consideration", 
       title: "Brand Connection",
       description: "Prospects connect emotionally with your brand story, values, and authentic messaging that speaks to their needs.",
-      color: "bg-purple-100 text-purple-800 border-purple-200",
+      color: "bg-orange-100 text-orange-800 border-orange-200",
       details: [
         "Authentic brand storytelling that builds emotional connection",
         "Consistent messaging that reinforces your unique value",
@@ -72,7 +72,7 @@ export default function AboutPage() {
       phase: "Decision",
       title: "Brand Trust",
       description: "Customers choose your brand confidently based on the trust, credibility, and professional image we've established.",
-      color: "bg-green-100 text-green-800 border-green-200",
+      color: "bg-blue-100 text-blue-800 border-blue-200",
       details: [
         "Professional brand presentation that instills confidence",
         "Clear communication of benefits and outcomes",
@@ -136,10 +136,10 @@ export default function AboutPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-purple-50 to-rose-50 dark:from-slate-950/20 dark:via-purple-950/20 dark:to-rose-950/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-blue-50 to-orange-50 dark:from-slate-950/20 dark:via-blue-950/20 dark:to-orange-950/20" />
         <div className="container relative px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <Badge className="mb-6 bg-purple-100 text-purple-800 border-purple-200 hover:bg-purple-200 px-4 py-2">
+            <Badge className="mb-6 bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200 px-4 py-2">
               ✨ Boutique Brand Agency
             </Badge>
             <motion.h1 
@@ -149,18 +149,19 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
             >
               We Don't Just Build Brands.{" "}
-              <span className="bg-gradient-to-r from-purple-600 via-rose-600 to-orange-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">
                 We Build Legacies
               </span>
             </motion.h1>
             <motion.p 
-              className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto"
+              className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
             >
-              CloudLine Studio exists because too many brands lack authentic identity and strategic direction. 
-              We help businesses become <strong>memorable, meaningful, and profitable</strong> through strategic brand development.
+              We started CloudLine Studio because we kept seeing the same heartbreaking story: amazing businesses with incredible products or services, 
+              but nobody knew they existed. We're here to change that. We help you become <strong>memorable, meaningful, and profitable</strong> through 
+              strategic brand development that actually works.
             </motion.p>
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center"
@@ -168,7 +169,7 @@ export default function AboutPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <Button size="lg" className="bg-purple-600 hover:bg-purple-700 text-white shadow-lg shadow-purple-600/25 hover:shadow-purple-600/40 transition-all duration-300" asChild>
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white shadow-lg shadow-blue-600/25 hover:shadow-blue-600/40 transition-all duration-300" asChild>
                 <Link href="/contact">🎨 Start Your Brand Journey</Link>
               </Button>
               <Button size="lg" variant="outline" asChild>
@@ -212,7 +213,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-6xl">
             <div className="text-center mb-16">
-              <Badge className="mb-4 bg-rose-100 text-rose-800 border-rose-200">Why CloudLine Exists</Badge>
+              <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200">Why CloudLine Exists</Badge>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                 We Saw a Problem. We Built the Solution.
               </h2>
@@ -274,6 +275,95 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* Team Image Section */}
+      <section className="py-16">
+        <div className="container px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold mb-4">Meet Our Strategic Team</h3>
+              <p className="text-muted-foreground mb-6">
+                Our diverse, experienced team brings together strategic thinking from top consultancies, 
+                creative excellence from award-winning agencies, and deep understanding of Asian markets.
+              </p>
+              <div className="grid grid-cols-2 gap-4 text-sm">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <span>Ex-McKinsey Strategy</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                  <span>Award-Winning Design</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <span>15+ Years Experience</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-orange-600 rounded-full"></div>
+                  <span>Asian Market Expertise</span>
+                </div>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4">
+                  <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-orange-100">
+                    <Image
+                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+                      alt="Asian business professional"
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-blue-100">
+                    <Image
+                      src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face"
+                      alt="Asian creative professional"
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-4 pt-8">
+                  <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-orange-100">
+                    <Image
+                      src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop&crop=face"
+                      alt="Asian strategy consultant"
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-blue-100">
+                    <Image
+                      src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&h=300&fit=crop&crop=face"
+                      alt="Asian brand consultant"
+                      width={300}
+                      height={300}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* What We Do Section */}
       <section className="py-20">
         <div className="container px-4 md:px-6">
@@ -320,7 +410,7 @@ export default function AboutPage() {
       <section className="py-20 bg-muted/30">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-purple-100 text-purple-800 border-purple-200">How We Work</Badge>
+            <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">How We Work</Badge>
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               Our Proven 4-Step Process
             </h2>
@@ -357,10 +447,10 @@ export default function AboutPage() {
       </section>
 
       {/* Customer Journey Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-50 to-purple-50 dark:from-slate-950/20 dark:to-purple-950/20">
+      <section className="py-24 bg-gradient-to-br from-slate-50 to-blue-50 dark:from-slate-950/20 dark:to-blue-950/20">
         <div className="container px-4 md:px-6">
           <div className="text-center mb-20">
-            <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">Customer Journey</Badge>
+            <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200">Customer Journey</Badge>
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
               The Journey from Stranger to Brand Advocate
             </h2>
@@ -486,7 +576,7 @@ export default function AboutPage() {
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-6xl">
             <div className="text-center mb-16">
-              <Badge className="mb-4 bg-indigo-100 text-indigo-800 border-indigo-200">Your First Consultation</Badge>
+              <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">Your First Consultation</Badge>
               <h2 className="text-3xl lg:text-4xl font-bold mb-6">
                 What to Expect When We Meet
               </h2>
@@ -611,7 +701,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-purple-600 via-rose-600 to-orange-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center text-white">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
@@ -621,10 +711,10 @@ export default function AboutPage() {
               Let's create a brand that doesn't just compete—it dominates. Your transformation starts with a conversation.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
                 <Link href="/contact">🎨 Book Your Strategy Session</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600" asChild>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" asChild>
                 <Link href="/client-results">📚 View Our Portfolio</Link>
               </Button>
             </div>

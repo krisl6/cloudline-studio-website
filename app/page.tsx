@@ -479,6 +479,95 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Success Stories Image Section */}
+        <section className="w-full py-16 bg-gradient-to-br from-blue-50 to-orange-50 dark:from-blue-950/20 dark:to-orange-950/20">
+          <div className="container px-4 md:px-6">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+              >
+                <h3 className="text-3xl font-bold mb-6">Our Clients Are Industry Leaders</h3>
+                <p className="text-muted-foreground mb-6 text-lg">
+                  From healthcare professionals to tech entrepreneurs, our clients represent the best in their industries. 
+                  See how strategic branding has transformed their businesses and positioned them as market leaders.
+                </p>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                    <span>Healthcare & Wellness</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-orange-600 rounded-full"></div>
+                    <span>Technology & SaaS</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-blue-600 rounded-full"></div>
+                    <span>Professional Services</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 bg-orange-600 rounded-full"></div>
+                    <span>F&B & Hospitality</span>
+                  </div>
+                </div>
+              </motion.div>
+              
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="space-y-4">
+                    <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-orange-100">
+                      <Image
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=500&fit=crop&crop=face"
+                        alt="Asian healthcare professional"
+                        width={400}
+                        height={500}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-blue-100">
+                      <Image
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=face"
+                        alt="Asian business executive"
+                        width={300}
+                        height={300}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-4 pt-8">
+                    <div className="aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-blue-100 to-orange-100">
+                      <Image
+                        src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=300&h=300&fit=crop&crop=face"
+                        alt="Asian tech entrepreneur"
+                        width={300}
+                        height={300}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-orange-100 to-blue-100">
+                      <Image
+                        src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=500&fit=crop&crop=face"
+                        alt="Asian creative director"
+                        width={400}
+                        height={500}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* What You Can Achieve Section */}
         <section className="w-full py-20 md:py-28 bg-muted/30">
           <div className="container px-4 md:px-6">
@@ -489,12 +578,13 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="text-center mb-16"
             >
-              <Badge className="mb-4 bg-green-100 text-green-800 border-green-200">What You Can Achieve</Badge>
+              <Badge className="mb-4 bg-blue-100 text-blue-800 border-blue-200">What You Can Achieve</Badge>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
                 Transform Your Business in 90 Days
               </h2>
-              <p className="mx-auto max-w-4xl text-muted-foreground md:text-lg">
-                Stop wondering "what if" and start seeing real results. Here's exactly what our clients achieve when they work with us.
+              <p className="mx-auto max-w-4xl text-muted-foreground md:text-lg leading-relaxed">
+                We know you're tired of wondering "what if." You want to see real results, not just pretty promises. 
+                Here's exactly what happens when you work with us—real transformations from real businesses just like yours.
               </p>
             </motion.div>
 
@@ -571,14 +661,14 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <Badge className="mb-4 bg-red-100 text-red-800 border-red-200">The Cost of Waiting</Badge>
+                <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200">The Cost of Waiting</Badge>
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   Every Month You Wait Costs You More Than Our Entire Investment
                 </h2>
                 <div className="space-y-6">
                   <div className="flex gap-4">
-                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-red-600 font-bold">1</span>
+                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-blue-600 font-bold">1</span>
                     </div>
                     <div>
                       <h4 className="font-bold mb-2">Lost Revenue Opportunities</h4>
@@ -586,8 +676,8 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-red-600 font-bold">2</span>
+                    <div className="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-orange-600 font-bold">2</span>
                     </div>
                     <div>
                       <h4 className="font-bold mb-2">Competitor Advantage</h4>
@@ -595,8 +685,8 @@ export default function HomePage() {
                     </div>
                   </div>
                   <div className="flex gap-4">
-                    <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <span className="text-red-600 font-bold">3</span>
+                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                      <span className="text-blue-600 font-bold">3</span>
                     </div>
                     <div>
                       <h4 className="font-bold mb-2">Wasted Marketing Spend</h4>

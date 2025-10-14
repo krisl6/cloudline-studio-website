@@ -28,7 +28,7 @@ export default function ClientResultsPage() {
       category: "healthcare",
       imageId: "1559839734-2b71ea197ec2",
       rating: 5,
-      quote: "Before working with CloudLine, our clinic was stuck in a frustrating cycle. We were spending $8,000 monthly on Google Ads and Facebook campaigns, getting plenty of clicks and website visits, but our phone barely rang with actual appointment requests. We had no idea which campaigns were working or why people weren't converting. CloudLine came in and completely transformed our approach. They rebuilt our landing pages with clear value propositions, rewrote our ad copy to address real patient concerns rather than just listing services, and implemented proper tracking systems so we could see the entire patient journey from click to appointment. But what impressed me most was how they helped us understand our patients' psychology — the fears, questions, and motivations that drive healthcare decisions. Within 2 months, our appointment bookings doubled, our cost per acquisition dropped by 45%, and we finally had complete clarity on what was working. They didn't just 'fix our ads'; they gave us a systematic approach to patient acquisition that we could understand and optimize ourselves. Now we're expanding to a second location with confidence.",
+      quote: "I'll be honest—before CloudLine, I was ready to give up on digital marketing entirely. We were throwing $8,000 a month at Google and Facebook ads, getting tons of clicks, but our phone just wasn't ringing. It was so frustrating because I knew people needed our services, but something wasn't clicking. Then CloudLine stepped in, and everything changed. They didn't just tweak our ads—they completely reimagined how we talked to our patients. They rebuilt our landing pages to actually address what people were worried about, not just list our services. Most importantly, they helped me understand the psychology behind healthcare decisions. People aren't just buying a treatment; they're buying peace of mind. Within two months, we doubled our bookings and cut our costs by almost half. But the best part? I finally understood my own marketing. Now we're confidently expanding to a second location because we know exactly what works and why.",
       results: "2x appointment bookings, 45% lower acquisition costs, systematic patient acquisition process",
       challenge: "High ad spend with low conversion rates and no visibility into what was working",
       solution: "Complete patient journey optimization with psychology-based messaging and tracking systems",
@@ -94,10 +94,10 @@ export default function ClientResultsPage() {
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 dark:from-green-950/20 dark:via-blue-950/20 dark:to-purple-950/20" />
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-orange-50 to-blue-50 dark:from-blue-950/20 dark:via-orange-950/20 dark:to-blue-950/20" />
         <div className="container relative px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center">
-            <Badge className="mb-6 bg-green-100 text-green-800 border-green-200 hover:bg-green-200 px-4 py-2">
+            <Badge className="mb-6 bg-blue-100 text-blue-800 border-blue-200 hover:bg-blue-200 px-4 py-2">
               🏆 Real Results from Real Clients
             </Badge>
             <motion.h1 
@@ -107,7 +107,7 @@ export default function ClientResultsPage() {
               transition={{ duration: 0.5 }}
             >
               Don't Take Our Word for It.{" "}
-              <span className="bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">
                 See the Numbers
               </span>
             </motion.h1>
@@ -295,6 +295,154 @@ export default function ClientResultsPage() {
         </div>
       </section>
 
+      {/* Case Studies Section */}
+      <section className="py-20">
+        <div className="container px-4 md:px-6">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 bg-orange-100 text-orange-800 border-orange-200">Detailed Case Studies</Badge>
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
+              Proven Results Across Industries & Platforms
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              These aren't just numbers on a screen—they're real businesses, run by real people, who trusted us with their dreams. 
+              Here are their stories of transformation, growth, and success.
+            </p>
+          </div>
+
+          <div className="grid gap-12">
+            {[
+              {
+                title: "How We Helped a Malaysian Interior Design Firm Go from Struggling to Thriving",
+                industry: "Interior Design",
+                platforms: ["Google", "META"],
+                challenge: "Like many interior design firms, our client was caught in a frustrating cycle. Their work was beautiful, but finding new projects was a constant struggle. The sales cycle was painfully long—people would browse, get excited, then disappear for months. And since they only got paid when projects were completed, cash flow was always tight.",
+                solution: "We knew we had to play the long game here. Our Google team built a comprehensive SEO strategy that would capture people at every stage of their home renovation journey—from 'just browsing' to 'ready to hire.' Meanwhile, our META team created nurturing campaigns that stayed top-of-mind during those long decision periods. We tracked everything obsessively, constantly tweaking and optimizing to squeeze every bit of value from their budget.",
+                results: "The transformation was incredible: over 6000% increase in relevant website traffic, 300% more qualified leads coming through the door, and they cut their cost per lead by nearly half. Most importantly? They finally had predictable growth.",
+                image: "/analytics-dashboard.png",
+                metrics: [
+                  { label: "Traffic Increase", value: "6000%" },
+                  { label: "Lead Quality", value: "+300%" },
+                  { label: "Cost Reduction", value: "45%" },
+                ],
+              },
+              {
+                title: "From Burnout to Breakthrough: How We Scaled an Aesthetic Clinic",
+                industry: "Healthcare/Aesthetics",
+                platforms: ["Google", "META", "TikTok"],
+                challenge: "Our client was a talented aesthetic doctor, but she was exhausted. Building her practice meant being 'always on'—constantly posting on social media, networking, and trying to build her personal brand. The problem? She became a doctor to help people, not to be a full-time content creator. Word of mouth was slow, and she was burning out fast.",
+                solution: "We took the marketing burden off her shoulders completely. Our Google team got her clinic showing up when people searched for treatments. Our META team automated her social presence with engaging content that built trust without her having to be glued to her phone. And our TikTok specialists created educational content that showcased her expertise while she focused on what she loved—treating patients.",
+                results: "Within months, she had 250% more new patients booking appointments, her profit margins jumped 180%, and best of all? She got her life back. She cut her personal branding time by 90% while achieving better results than ever.",
+                image: "/aesthetic-clinic-marketing-dashboard-with-patient-.jpg",
+                metrics: [
+                  { label: "New Patients", value: "+250%" },
+                  { label: "Profit Margins", value: "+180%" },
+                  { label: "ROAS", value: "4.2x" },
+                ],
+              },
+              {
+                title: "Mental Health SaaS Platform Strategy & Consultation",
+                industry: "Healthcare SaaS",
+                platforms: ["Google", "META"],
+                challenge: "Wellnite is a virtual platform with the vision of making mental health accessible whenever, and wherever you are. Based in US, now expanding internationally with complex regulatory requirements and cultural sensitivities.",
+                solution: "Our Google Marketing specialists developed comprehensive international SEO and PPC strategies tailored to different markets and regulations. Our META team created culturally-sensitive social campaigns that addressed mental health stigma in various regions. Our team monitored performance across multiple markets, ensuring successful platform growth and user acquisition while maintaining compliance with healthcare regulations in each territory.",
+                results: "Successful expansion to 5 international markets, 400% increase in platform registrations, 85% improvement in user retention rates, and establishment of trusted healthcare partnerships in new territories.",
+                image: "/mental-health-app-interface-with-global-reach-anal.jpg",
+                metrics: [
+                  { label: "Market Expansion", value: "5 Countries" },
+                  { label: "Registrations", value: "+400%" },
+                  { label: "Retention", value: "+85%" },
+                ],
+              },
+              {
+                title: "AI SEO Content Writing Platform Growth Marketing",
+                industry: "AI/SaaS",
+                platforms: ["Google", "META", "XHS"],
+                challenge: "Based in Malaysia, with the majority of their traffic and clients from US and AU, they are keen on making SEO AI-enabled, with minimal human efforts. The challenge was competing with established SEO tools while demonstrating AI superiority.",
+                solution: "Our growth marketing team executed comprehensive strategies across email marketing, community building, and Google marketing. Our Google specialists focused on high-intent keywords and competitor analysis. Our META team built engaged communities around AI and SEO topics. Our XHS specialists created detailed long-form content showcasing AI capabilities and user success stories, driving organic sharing and establishing thought leadership in the AI-SEO space.",
+                results: "Successful market penetration in US and AU markets with 500% increase in trial signups, 320% improvement in user adoption of AI-enabled SEO tools, and establishment as a leading voice in AI-powered content creation.",
+                image: "/ai-seo-platform-dashboard-with-global-user-analyti.jpg",
+                metrics: [
+                  { label: "Trial Signups", value: "+500%" },
+                  { label: "Tool Adoption", value: "+320%" },
+                  { label: "Market Position", value: "Top 3" },
+                ],
+              }
+            ].map((study, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card className="overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                  <CardContent className="p-0">
+                    <div className="grid lg:grid-cols-2 gap-0">
+                      <div className="relative h-48 md:h-64 lg:h-auto">
+                        <Image
+                          src={study.image || "/placeholder.svg"}
+                          alt={study.title}
+                          fill
+                          className="object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                      </div>
+                      <div className="p-6 lg:p-8 flex flex-col justify-center">
+                        <div className="flex flex-wrap gap-2 mb-4">
+                          <Badge className="bg-blue-100 text-blue-800 border-blue-200">{study.industry}</Badge>
+                          {study.platforms.map((platform) => (
+                            <Badge key={platform} className="bg-orange-100 text-orange-800 border-orange-200 text-xs">
+                              {platform}
+                            </Badge>
+                          ))}
+                        </div>
+                        <h3 className="text-xl md:text-2xl font-bold mb-4">{study.title}</h3>
+
+                        <div className="grid grid-cols-3 gap-4 mb-6">
+                          {study.metrics.map((metric, j) => (
+                            <div key={j} className="text-center">
+                              <div className="text-lg md:text-2xl font-bold text-blue-600">{metric.value}</div>
+                              <div className="text-xs md:text-sm text-muted-foreground">{metric.label}</div>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="space-y-6">
+                          <div className="p-4 bg-red-50 dark:bg-red-950/20 rounded-lg border-l-4 border-red-500">
+                            <h4 className="font-bold text-red-700 dark:text-red-300 mb-3 text-base">
+                              The Challenge
+                            </h4>
+                            <p className="text-base text-muted-foreground leading-relaxed">{study.challenge}</p>
+                          </div>
+                          <div className="p-4 bg-blue-50 dark:bg-blue-950/20 rounded-lg border-l-4 border-blue-500">
+                            <h4 className="font-bold text-blue-700 dark:text-blue-300 mb-3 text-base">
+                              How We Helped
+                            </h4>
+                            <p className="text-base text-muted-foreground leading-relaxed">{study.solution}</p>
+                          </div>
+                          <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg border-l-4 border-green-500">
+                            <h4 className="font-bold text-green-700 dark:text-green-300 mb-3 text-base">
+                              The Results
+                            </h4>
+                            <p className="text-base font-medium text-green-700 dark:text-green-300 leading-relaxed">{study.results}</p>
+                          </div>
+                        </div>
+                        <Button className="mt-6 w-fit bg-blue-600 hover:bg-blue-700 text-white" asChild>
+                          <Link href="/contact">
+                            Discuss Your Project
+                            <ArrowRight className="ml-2 size-4" />
+                          </Link>
+                        </Button>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Social Proof Section */}
       <section className="py-20 bg-muted/30">
         <div className="container px-4 md:px-6">
@@ -330,7 +478,7 @@ export default function ClientResultsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-green-600 via-blue-600 to-purple-600">
+      <section className="py-20 bg-gradient-to-r from-blue-600 via-blue-700 to-orange-600">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center text-white">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6">
@@ -340,10 +488,10 @@ export default function ClientResultsPage() {
               Every day you delay is revenue lost to competitors. Get your FREE Revenue Audit and join our success stories.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-white text-purple-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100 shadow-lg hover:shadow-xl transition-all duration-300" asChild>
                 <Link href="/contact">💰 Claim My FREE $2,500 Audit</Link>
               </Button>
-              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600" asChild>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600" asChild>
                 <Link href="/case-studies">📊 See Detailed Case Studies</Link>
               </Button>
             </div>
