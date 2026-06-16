@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { DoodleMegaphone, DoodleBolt, DoodleTarget } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
+import { LeadForm } from "@/components/lead-form"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -177,35 +178,7 @@ export default function ContactPage() {
                 <p className="text-muted-foreground md:text-lg">{tt.form.intro}</p>
               </div>
 
-              <div className="rounded-2xl border border-border bg-card p-1">
-                <iframe
-                  data-tally-src="https://tally.so/embed/wbagA7?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                  loading="lazy"
-                  width="100%"
-                  height="600"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                  title="Contact Form - Tell Us About Your Project"
-                  className="rounded-xl"
-                ></iframe>
-                <script dangerouslySetInnerHTML={{
-                  __html: `var d=document,w="https://tally.so/widgets/embed.js",v=function(){"undefined"!=typeof Tally?Tally.loadEmbeds():d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach((function(e){e.src=e.dataset.tallySrc}))};if("undefined"!=typeof Tally)v();else if(d.querySelector('script[src="'+w+'"]')==null){var s=d.createElement("script");s.src=w,s.onload=v,s.onerror=v,d.head.appendChild(s);}`
-                }} />
-              </div>
-
-              {/* Fallback CTA button for mobile or if form doesn't load */}
-              <div className="text-center mt-8 lg:hidden">
-                <Button
-                  data-tally-open="wbagA7"
-                  data-tally-emoji-text="📝"
-                  data-tally-emoji-animation="bounce"
-                  size="lg"
-                  className="rounded-full h-12 px-7 text-base font-medium"
-                >
-                  {tt.form.openForm}
-                </Button>
-              </div>
+              <LeadForm />
             </motion.div>
           </div>
         </section>
