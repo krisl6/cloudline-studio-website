@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     description: SITE_DESCRIPTION,
     url: "/",
     locale: "en_MY",
-    images: [{ url: "/cloudline_logo.png", width: 512, height: 512, alt: SITE_NAME }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "CloudLine Studio — We help businesses grow, transform, and run better." }],
   },
   twitter: {
     card: "summary_large_image",
     title: "CloudLine Studio — Digital Marketing, Transformation & Operations Consultancy",
     description: SITE_DESCRIPTION,
-    images: ["/cloudline_logo.png"],
+    images: ["/og.png"],
   },
   robots: {
     index: true,

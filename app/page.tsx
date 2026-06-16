@@ -319,7 +319,7 @@ export default function HomePage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="grid grid-cols-2 gap-4"
+                className="grid grid-cols-2 gap-4 items-center"
               >
                 <div>
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border">

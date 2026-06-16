@@ -17,10 +17,10 @@ export const translations = {
       chat: "Chat with us now",
     },
     hero: {
-      eyebrow: "Digital Marketing · Transformation · AI Automations",
+      eyebrow: "Digital Marketing · Transformation",
       headline: "We help businesses grow, transform, and run better.",
       subcopy:
-        "CloudLine Studio is a consultancy partnering with ambitious teams across Singapore and Malaysia. We improve your marketing and sales efficiency by 300% with AI — then build the operations to sustain it.",
+        "CloudLine Studio is a marketing & digitalization agency with ambitious teams across Singapore and Malaysia. We improve your marketing and sales efficiency and ROI, then build the operations to sustain it.",
       ctaPrimary: "Book a consultation",
       ctaSecondary: "See our work",
       stat1: "marketing & sales efficiency",
@@ -134,7 +134,7 @@ export const translations = {
       eyebrow: "Pemasaran Digital · Transformasi · Automasi AI",
       headline: "Kami bantu perniagaan berkembang, bertransformasi dan beroperasi dengan lebih baik.",
       subcopy:
-        "CloudLine Studio ialah firma perunding yang bekerjasama dengan pasukan berdaya saing di Singapura dan Malaysia. Kami tingkatkan kecekapan pemasaran dan jualan anda sebanyak 300% dengan AI — kemudian membina operasi untuk mengekalkannya.",
+        "CloudLine Studio ialah agensi pemasaran & pendigitalan dengan pasukan berdaya saing di Singapura dan Malaysia. Kami tingkatkan kecekapan pemasaran dan jualan serta ROI anda, kemudian membina operasi untuk mengekalkannya.",
       ctaPrimary: "Tempah perundingan",
       ctaSecondary: "Lihat hasil kerja kami",
       stat1: "kecekapan pemasaran & jualan",
@@ -248,7 +248,7 @@ export const translations = {
       eyebrow: "数字营销 · 业务转型 · AI 自动化",
       headline: "我们助力企业成长、转型，并更高效地运营。",
       subcopy:
-        "CloudLine Studio 是一家咨询公司，与新加坡和马来西亚富有雄心的团队携手合作。我们运用 AI 将您的营销与销售效率提升 300%，并建立可持续的运营体系。",
+        "CloudLine Studio 是一家营销与数字化机构，拥有遍布新加坡和马来西亚的进取团队。我们提升您的营销与销售效率及投资回报，并建立可持续的运营体系。",
       ctaPrimary: "预约咨询",
       ctaSecondary: "查看我们的案例",
       stat1: "营销与销售效率",
