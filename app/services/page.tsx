@@ -2,507 +2,370 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowLeft, ArrowRight, BarChart, Users, Globe, Check, TrendingUp, Target, Zap, Search } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { useLanguage } from "@/components/language-provider"
+import { translations } from "./translations"
+import {
+  DoodleSearch,
+  DoodleTransform,
+  DoodleGear,
+  DoodleMegaphone,
+  DoodleCheck,
+  DoodleRocket,
+  DoodlePen,
+} from "@/components/doodles"
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0 },
+}
+
+const stagger = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.12 } },
+}
+
+const serviceIcons = [DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone]
+const processIcons = [DoodleSearch, DoodlePen, DoodleRocket]
+
+const serviceIds = ["consultation", "transformation", "synchronization", "branding"] as const
 
 export default function ServicesPage() {
-  const [activeService, setActiveService] = useState("performance")
+  const { lang } = useLanguage()
+  const tt = translations[lang]
+  const [activeService, setActiveService] = useState<(typeof serviceIds)[number]>("consultation")
 
-  const services = [
-    {
-      id: "performance",
-      title: "Performance Marketing",
-      subtitle: "Stop Wasting Money on Ads That Don't Convert",
-      icon: <BarChart className="size-8" />,
-      description:
-        "Transform your ad spend into predictable revenue with our data-driven performance marketing. We don't just run ads - we build growth engines that consistently deliver 3-5x ROAS for our clients.",
-      painPoints: [
-        "❌ Burning cash on ads that don't convert",
-        "❌ Inconsistent lead quality and high customer acquisition costs",
-        "❌ No clear ROI from your marketing spend",
-        "❌ Stagnant growth despite increasing ad budgets"
-      ],
-      solutions: [
-        "✅ Data-optimized campaigns across Google, Meta, and TikTok",
-        "✅ Transparent ROI tracking with weekly performance reports",
-        "✅ Sales funnel optimization to maximize conversions",
-        "✅ Lead qualification systems that filter for high-value customers",
-        "✅ A/B testing to continuously improve performance"
-      ],
-      results: [
-        "📈 3-5x average return on ad spend (ROAS)",
-        "⬇️ 30-50% lower customer acquisition costs",
-        "🔄 Consistent, scalable lead generation",
-        "📊 Clear, actionable performance insights"
-      ],
-      pricing: "Starts From RM 1,200/month (Pay for performance - no long-term contracts)",
-      cta: "Get My Free Ad Audit →",
-      timeline: "See first results in 2-4 weeks",
-      platforms: ["Google Ads", "Meta Ads", "TikTok Ads", "XHS Advertising"],
-    },
-    {
-      id: "website",
-      title: "Website Creation & SEO",
-      subtitle: "Professional websites with conversion-focused design",
-      icon: <Globe className="size-8" />,
-      description:
-        "Build a powerful online presence with our custom website creation and SEO optimization services. We create websites that not only look great but also drive business results.",
-      features: [
-        "Professional, mobile-friendly websites designed for credibility",
-        "Conversion-focused layouts with persuasive CTAs",
-        "SEO-optimized copywriting to attract and engage customers",
-        "Custom brand kits (colors, fonts, visuals) for consistency",
-        "Hosting setup & speed optimization for smooth performance",
-        "Websites built to drive leads and measurable business growth",
-        "14-day Completion deadline",
-        "Customer Journey Testing included",
-      ],
-      pricing: "Starts From RM 2,560",
-      deliverables: [
-        "Custom website design and development",
-        "Mobile-responsive implementation",
-        "SEO optimization and content creation",
-        "Brand kit development",
-        "Hosting setup and configuration",
-        "Performance optimization",
-        "User journey testing",
-        "Training and handover",
-      ],
-      timeline: "14 days from project start",
-      platforms: ["WordPress", "Custom Development", "SEO Tools", "Analytics"],
-    },
-    {
-      id: "influencer",
-      title: "Influencer Collaboration",
-      subtitle: "End-to-end campaign management with KOL partnerships",
-      icon: <Users className="size-8" />,
-      description:
-        "Leverage the power of influencer marketing with our comprehensive collaboration management. We handle everything from influencer selection to campaign execution and performance tracking.",
-      features: [
-        "End-to-end campaign management, from outreach to execution",
-        "Strategic influencer pairing to align with your brand values",
-        "Scriptwriting and caption creation for authentic storytelling",
-        "Scheduling and coordination to keep campaigns on track",
-        "Performance monitoring to ensure impact and ROI",
-        "Partnerships that deliver trust, visibility, and sales growth",
-        "5 reels and 10 stories per month included",
-      ],
-      pricing: "Starts From RM 6,000/month",
-      deliverables: [
-        "Influencer research and outreach",
-        "Campaign strategy development",
-        "Content creation and scripting",
-        "Campaign coordination and management",
-        "Performance tracking and reporting",
-        "5 reels and 10 stories monthly",
-        "ROI analysis and optimization",
-      ],
-      timeline: "Campaign launch within 1-2 weeks",
-      platforms: ["Instagram", "TikTok", "XHS", "YouTube"],
-    },
-  ]
-
-  const processSteps = [
-    {
-      step: "01",
-      title: "Discovery & Strategy",
-      description: "We analyze your business, competitors, and target audience to develop a customized strategy.",
-      icon: <Search className="size-6" />,
-    },
-    {
-      step: "02",
-      title: "Implementation & Launch",
-      description:
-        "Our specialists execute the strategy across chosen platforms with precision and attention to detail.",
-      icon: <Zap className="size-6" />,
-    },
-    {
-      step: "03",
-      title: "Monitor & Optimize",
-      description: "Continuous monitoring and optimization to ensure maximum performance and ROI.",
-      icon: <TrendingUp className="size-6" />,
-    },
-    {
-      step: "04",
-      title: "Scale & Grow",
-      description: "Scale successful campaigns and strategies to drive sustained business growth.",
-      icon: <Target className="size-6" />,
-    },
-  ]
-
-  const faqs = [
-    {
-      question: "How do you determine which platforms are best for my business?",
-      answer:
-        "We conduct thorough market research and competitor analysis to identify where your target audience is most active. Our team evaluates factors like demographics, behavior patterns, and industry trends to recommend the optimal platform mix for your specific business goals.",
-    },
-    {
-      question: "What makes your XHS (Xiaohongshu) strategy different?",
-      answer:
-        "Our XHS specialists focus on carousel posts, static images, KOL collaborations, and long-form copywriting that drives user sharing. We understand the platform's unique culture and create content that highlights your USPs while encouraging organic sharing and engagement.",
-    },
-    {
-      question: "How quickly can I expect to see results?",
-      answer:
-        "Performance marketing typically shows initial results within 2-4 weeks, with significant improvements by month 2-3. Website projects are completed within 14 days. Influencer campaigns can launch within 1-2 weeks depending on influencer availability and content requirements.",
-    },
-    {
-      question: "Do you provide transparent reporting?",
-      answer:
-        "Absolutely. All dashboards, data, and performance metrics belong to you. We provide detailed weekly and monthly reports with clear insights, recommendations, and next steps. You'll always know exactly how your campaigns are performing.",
-    },
-    {
-      question: "Can you work with businesses outside Malaysia?",
-      answer:
-        "Yes, we work with clients globally. We have experience with businesses in the US, Australia, and other international markets. Our strategies are adapted to local market conditions, cultural nuances, and regulatory requirements.",
-    },
-  ]
+  const services = tt.services.map((service, i) => ({ id: serviceIds[i], ...service }))
+  const processSteps = tt.processSteps
+  const faqs = tt.faqs
 
   const currentService = services.find((service) => service.id === activeService) || services[0]
+  const CurrentIcon = serviceIcons[services.findIndex((s) => s.id === currentService.id)] || DoodleSearch
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <main className="flex-1" role="main">
-        <section className="w-full py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-background to-muted" aria-label="Services overview">
-          <div className="container px-4 md:px-6">
-
+        {/* Hero */}
+        <section className="relative overflow-hidden" aria-label="Services overview">
+          <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-24 2xl:pt-36 2xl:pb-32">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto mb-12"
+              variants={stagger}
+              initial="hidden"
+              animate="show"
+              className="mx-auto max-w-3xl 2xl:max-w-4xl text-center"
             >
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 text-foreground">
-                Complete Brand Growth
-                <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent"> Solutions</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed" aria-describedby="services-main-heading">
-                From strategic brand consultation to high-converting marketing campaigns, we're your complete growth partner. 
-                We help ambitious businesses build powerful brands through strategic positioning, targeted SEM campaigns, 
-                compelling advertisements, impactful press releases, and comprehensive marketing solutions that drive real results.
-              </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 max-w-5xl mx-auto">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-blue-600 font-bold">📋</span>
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">Brand Consultation</h3>
-                  <p className="text-sm text-muted-foreground">Strategic positioning & market analysis</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-600 font-bold">🎯</span>
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">SEM & Advertising</h3>
-                  <p className="text-sm text-muted-foreground">Google Ads, social media & targeted campaigns</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-blue-600 font-bold">📰</span>
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">Press & PR</h3>
-                  <p className="text-sm text-muted-foreground">Media coverage & thought leadership</p>
-                </div>
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <span className="text-orange-600 font-bold">📈</span>
-                  </div>
-                  <h3 className="font-semibold text-foreground mb-2">Growth Marketing</h3>
-                  <p className="text-sm text-muted-foreground">End-to-end marketing solutions</p>
-                </div>
-              </div>
-              <p className="text-base text-muted-foreground mb-8 max-w-3xl mx-auto">
-                Whether you're launching a new brand or scaling an existing business, we combine strategic thinking with proven execution 
-                to help you stand out in crowded markets, attract premium clients, and build sustainable competitive advantages.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
-                  asChild
-                >
+              <motion.p
+                variants={fadeUp}
+                className="text-xs sm:text-sm 2xl:text-base font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6"
+              >
+                {tt.hero.eyebrow}
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                className="font-display text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
+              >
+                {tt.hero.title}
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                className="mx-auto max-w-2xl 2xl:max-w-3xl text-base sm:text-lg 2xl:text-xl text-muted-foreground leading-relaxed mb-9"
+              >
+                {tt.hero.intro}
+              </motion.p>
+              <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Button size="lg" className="rounded-full h-12 2xl:h-14 px-7 2xl:px-9 text-base 2xl:text-lg font-medium" asChild>
                   <Link href="/contact">
-                    Start Your Brand Journey
+                    {tt.hero.ctaPrimary}
+                    <ArrowRight className="ml-1.5 size-4" />
                   </Link>
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full h-12 2xl:h-14 px-7 2xl:px-9 text-base 2xl:text-lg font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/client-results">
-                    View Our Portfolio
-                  </Link>
+                  <Link href="/client-results">{tt.hero.ctaSecondary}</Link>
                 </Button>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </section>
 
-        <section className="w-full py-6 md:py-10 border-y border-border bg-muted">
+        {/* Service overview grid */}
+        <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Our services">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
-              <div className="lg:w-1/3 mb-6 lg:mb-0">
-                <h2 className="text-2xl font-bold text-foreground mb-6">Our Services</h2>
-                <div className="space-y-3 md:space-y-4">
-                  {services.map((service) => (
-                    <Card
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-3xl mb-14"
+            >
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.overview.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
+                {tt.overview.title}
+              </h2>
+              <p className="text-muted-foreground md:text-lg leading-relaxed">
+                {tt.overview.intro}
+              </p>
+            </motion.div>
+
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid gap-6 md:grid-cols-2"
+            >
+              {services.map((service, i) => {
+                const Icon = serviceIcons[i]
+                return (
+                  <motion.div
+                    key={service.id}
+                    variants={fadeUp}
+                    className="group flex flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                  >
+                    <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                      <Icon className="size-7" />
+                    </span>
+                    <h3 className="font-display text-xl font-semibold mt-6 mb-1">{service.title}</h3>
+                    <p className="text-xs font-medium tracking-[0.12em] uppercase text-muted-foreground mb-3">
+                      {service.subtitle}
+                    </p>
+                    <p className="text-sm text-muted-foreground leading-relaxed mb-6">{service.description}</p>
+                    <ul className="mt-auto space-y-2.5">
+                      {service.included.map((point) => (
+                        <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
+                          <DoodleCheck className="size-4 shrink-0 text-primary" />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Deep dive — interactive selector */}
+        <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Service details">
+          <div className="container px-4 md:px-6">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-3xl mb-12"
+            >
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.deepDive.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
+                {tt.deepDive.title}
+              </h2>
+            </motion.div>
+
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+              <div className="lg:w-1/3 space-y-3">
+                {services.map((service, i) => {
+                  const Icon = serviceIcons[i]
+                  const isActive = activeService === service.id
+                  return (
+                    <button
                       key={service.id}
-                      className={`cursor-pointer transition-all duration-300 ${
-                        activeService === service.id
-                          ? "border-primary bg-primary/10 shadow-md"
-                          : "border-border bg-card hover:shadow-md"
-                      }`}
+                      type="button"
                       onClick={() => setActiveService(service.id)}
+                      aria-pressed={isActive}
+                      className={`w-full text-left flex items-center gap-3 rounded-2xl border p-4 transition-all duration-300 ${
+                        isActive
+                          ? "border-primary/30 bg-primary/8"
+                          : "border-border bg-card hover:bg-muted"
+                      }`}
                     >
-                      <CardContent className="p-3 md:p-4">
-                        <div className="flex items-center gap-2 md:gap-3">
-                          <div
-                            className={`size-10 md:size-12 rounded-full flex items-center justify-center ${
-                              activeService === service.id ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"
-                            }`}
-                          >
-                            {service.icon}
-                          </div>
-                          <div>
-                            <h3 className="text-sm md:text-base font-bold text-foreground">{service.title}</h3>
-                            <p className="text-xs md:text-sm text-muted-foreground">{service.subtitle}</p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
+                      <span
+                        className={`inline-flex size-10 shrink-0 items-center justify-center rounded-xl ${
+                          isActive ? "bg-primary text-primary-foreground" : "bg-primary/8 text-primary"
+                        }`}
+                      >
+                        <Icon className="size-6" />
+                      </span>
+                      <span>
+                        <span className="block font-display text-sm font-semibold">{service.title}</span>
+                        <span className="block text-xs text-muted-foreground">{service.subtitle}</span>
+                      </span>
+                    </button>
+                  )
+                })}
               </div>
 
               <div className="lg:w-2/3">
                 <motion.div
                   key={activeService}
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.3 }}
+                  className="rounded-2xl border border-border bg-card p-8 md:p-10"
                 >
-                  <Card className="border-border bg-card shadow-lg">
-                    <CardContent className="p-4 md:p-6 lg:p-8">
-                      <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-                        <div className="size-12 md:size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                          {currentService.icon}
-                        </div>
-                        <div>
-                          <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground" id="services-main-heading">{currentService.title}</h1>
-                          <p className="text-muted-foreground">{currentService.subtitle}</p>
-                        </div>
-                      </div>
+                  <div className="flex items-center gap-4 mb-6">
+                    <span className="inline-flex size-14 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                      <CurrentIcon className="size-8" />
+                    </span>
+                    <div>
+                      <h3 className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
+                        {currentService.title}
+                      </h3>
+                      <p className="text-sm text-muted-foreground">{currentService.subtitle}</p>
+                    </div>
+                  </div>
 
-                      <p className="text-sm md:text-base text-foreground/80 mb-4 md:mb-6">{currentService.description}</p>
+                  <p className="text-muted-foreground md:text-lg leading-relaxed mb-8">{currentService.description}</p>
 
-                      <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-6 md:mb-8">
-                        <div>
-                          <h4 className="text-sm md:text-base font-bold text-foreground mb-3 md:mb-4">What's Included:</h4>
-                          <ul className="space-y-2">
-                            {(currentService.features || currentService.solutions || []).map((feature, i) => (
-                              <li key={i} className="flex items-start gap-2 text-sm">
-                                <Check className="size-4 text-accent mt-0.5 flex-shrink-0" />
-                                <span className="text-foreground/80">{feature}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
+                  <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
+                    {tt.deepDive.included}
+                  </p>
+                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mb-8">
+                    {currentService.included.map((point) => (
+                      <li key={point} className="flex items-start gap-2.5 text-sm text-foreground/85">
+                        <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
 
-                        <div>
-                          <h4 className="text-sm md:text-base font-bold text-foreground mb-3 md:mb-4">Deliverables:</h4>
-                          <ul className="space-y-2">
-                            {(currentService.deliverables || currentService.results || []).map((deliverable, i) => (
-                              <li key={i} className="flex items-start gap-2 text-sm">
-                                <Check className="size-4 text-primary mt-0.5 flex-shrink-0" />
-                                <span className="text-foreground/80">{deliverable}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div className="grid grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
-                        <div className="text-center p-2 md:p-4 bg-muted rounded-lg">
-                          <div className="text-lg md:text-2xl font-bold text-primary">{currentService.pricing}</div>
-                          <div className="text-xs md:text-sm text-muted-foreground">Investment</div>
-                        </div>
-                        <div className="text-center p-2 md:p-4 bg-muted rounded-lg">
-                          <div className="text-base md:text-lg font-bold text-accent">{currentService.timeline}</div>
-                          <div className="text-xs md:text-sm text-muted-foreground">Timeline</div>
-                        </div>
-                        <div className="text-center p-2 md:p-4 bg-muted rounded-lg">
-                          <div className="text-base md:text-lg font-bold text-foreground">{currentService.platforms.length}+</div>
-                          <div className="text-xs md:text-sm text-muted-foreground">Platforms</div>
-                        </div>
-                      </div>
-
-                      <div className="mb-6">
-                        <h4 className="text-sm md:text-base font-bold text-foreground mb-3">Platforms We Use:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {currentService.platforms.map((platform, i) => (
-                            <Badge key={i} variant="outline" className="text-xs">
-                              {platform}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-
-                      <Button aria-pressed={activeService === currentService.id ? 'true' : 'false'} className="w-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-                        <Link href="https://wa.link/fwi8af" target="_blank">
-                          Get Started with {currentService.title}
-                          <ArrowRight className="ml-2 size-4" />
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
+                  <Button className="rounded-full font-medium" asChild>
+                    <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                      {tt.deepDive.getStarted} {currentService.title}
+                      <ArrowRight className="ml-1.5 size-4" />
+                    </Link>
+                  </Button>
                 </motion.div>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-background" aria-label="Service selection">
+        {/* How we work */}
+        <section className="w-full py-20 md:py-28 border-t border-border" aria-label="How we work">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto mb-12"
+              className="max-w-3xl mb-14"
             >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-accent/10 text-accent border-accent/20 mb-4">
-                Our Process
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">How We Deliver Results</h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Our proven 4-step process ensures transparent communication, measurable results, and sustained growth
-                for every project.
-              </p>
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.process.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
+                {tt.process.title}
+              </h2>
             </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
-              {processSteps.map((step, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <Card className="h-full border-border bg-card hover:shadow-lg transition-all duration-300 group">
-                    <CardContent className="p-4 md:p-6 text-center">
-                      <div className="size-12 md:size-16 rounded-full bg-gradient-to-br from-primary to-primary/80 text-primary-foreground flex items-center justify-center text-lg md:text-xl font-bold mx-auto mb-3 md:mb-4 group-hover:scale-110 transition-transform">
-                        {step.step}
-                      </div>
-                      <div className="size-10 md:size-12 rounded-full bg-accent/10 flex items-center justify-center text-accent mx-auto mb-3 md:mb-4">
-                        {step.icon}
-                      </div>
-                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-2 md:mb-3">{step.title}</h3>
-                      <p className="text-muted-foreground text-xs md:text-sm">{step.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
+            <div className="grid gap-10 md:grid-cols-3">
+              {processSteps.map((stage, i) => {
+                const Icon = processIcons[i]
+                return (
+                  <motion.div
+                    key={stage.title}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <div className="flex items-center gap-4 mb-5">
+                      <span className="inline-flex size-12 items-center justify-center rounded-xl border border-border text-primary">
+                        <Icon className="size-7" />
+                      </span>
+                      <span className="font-display text-sm font-medium tracking-widest text-muted-foreground">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                    </div>
+                    <h3 className="font-display text-xl font-semibold mb-3">{stage.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{stage.description}</p>
+                  </motion.div>
+                )
+              })}
             </div>
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-muted">
+        {/* FAQ */}
+        <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Frequently asked questions">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto mb-12"
+              className="text-center max-w-2xl mx-auto mb-12"
             >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-primary/10 text-primary border-primary/20 mb-4">
-                FAQ
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
-                Frequently Asked Questions
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.faqSection.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
+                {tt.faqSection.title}
               </h2>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-                Common questions about our services and approach to digital marketing.
+              <p className="text-muted-foreground md:text-lg">
+                {tt.faqSection.intro}
               </p>
             </motion.div>
 
             <div className="max-w-3xl mx-auto">
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.3, delay: i * 0.05 }}
-                  >
-                    <AccordionItem value={`item-${i}`} className="border-b border-border py-2">
-                      <AccordionTrigger className="text-left font-medium hover:no-underline text-foreground">
-                        {faq.question}
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">{faq.answer}</AccordionContent>
-                    </AccordionItem>
-                  </motion.div>
+                  <AccordionItem key={i} value={`item-${i}`} className="border-b border-border py-2">
+                    <AccordionTrigger className="text-left font-medium hover:no-underline text-foreground">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
+                  </AccordionItem>
                 ))}
               </Accordion>
             </div>
           </div>
         </section>
 
-        <section className="w-full py-20 md:py-32 bg-gradient-to-br from-accent to-accent/90 text-accent-foreground">
+        {/* Contact CTA */}
+        <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Contact">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto"
+              transition={{ duration: 0.6 }}
+              className="mx-auto max-w-2xl text-center"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-                Ready to Transform Your Digital Presence?
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-balance mb-5">
+                {tt.cta.title}
               </h2>
-              <p className="text-lg md:text-xl text-accent-foreground/90 mb-8 max-w-3xl mx-auto">
-                Choose the service that fits your business needs and start your journey to digital success with
-                CloudLine Studio.
+              <p className="text-muted-foreground md:text-lg leading-relaxed mb-9">
+                {tt.cta.intro}
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground"
-                  asChild
-                >
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Discuss Your Project
-                    <ArrowRight className="ml-2 size-4" />
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
+                  <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                    {tt.cta.ctaPrimary}
+                    <ArrowRight className="ml-1.5 size-4" />
                   </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10"
+                  className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/case-studies">View Our Results</Link>
+                  <Link href="/case-studies">{tt.cta.ctaSecondary}</Link>
                 </Button>
               </div>
             </motion.div>
           </div>
         </section>
       </main>
-
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-border bg-background" role="contentinfo">
-        <p className="text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} CloudLine Studio. All rights reserved.
-        </p>
-      </footer>
     </div>
   )
 }

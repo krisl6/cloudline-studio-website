@@ -1,317 +1,273 @@
 "use client"
 
 import Link from "next/link"
-import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowLeft, ArrowRight, Check } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+import { DoodleCheck, DoodleGrowth, DoodleHeart, DoodleTrophy } from "@/components/doodles"
+import { useLanguage } from "@/components/language-provider"
+import { translations } from "./translations"
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  show: { opacity: 1, y: 0 },
+}
+
+const stagger = {
+  hidden: { opacity: 0 },
+  show: { opacity: 1, transition: { staggerChildren: 0.12 } },
+}
 
 export default function PricingPage() {
-  const pricingPlans = [
-    {
-      name: "Performance Marketing",
-      price: "Starts From RM 1,200",
-      period: "/month",
-      description: "Data-driven campaigns across Google, Meta, and TikTok.",
-      features: [
-        "Data-driven ad campaigns across Google, Meta, and TikTok",
-        "Transparent ROI tracking with clear performance reports",
-        "Sales funnel optimization to increase conversions",
-        "Lead qualification systems to filter high-quality prospects",
-        "Expertise in both B2B and e-commerce growth strategies",
-        "Campaigns designed to maximize your marketing budget",
-        "Weekly performance reports",
-        "Monthly strategy consultations",
-      ],
-      cta: "Start Campaign",
-      link: "https://wa.link/fwi8af",
-      popular: false,
-    },
-    {
-      name: "Website Design",
-      price: "Starts From RM 2,560",
-      period: "",
-      description: "Professional websites designed for credibility and conversions.",
-      features: [
-        "Professional, mobile-friendly websites designed for credibility",
-        "Conversion-focused layouts with persuasive CTAs",
-        "SEO-optimized copywriting to attract and engage customers",
-        "Custom brand kits (colors, fonts, visuals) for consistency",
-        "Hosting setup & speed optimization for smooth performance",
-        "Websites built to drive leads and measurable business growth",
-        "14-day Completion deadline",
-        "Customer Journey Testing included",
-      ],
-      cta: "Start Project",
-      link: "https://wa.link/fwi8af",
-      popular: false,
-    },
-    {
-      name: "Social Media Marketing",
-      price: "Starts From RM 2,080",
-      period: "/month",
-      description: "Complete social media management and performance marketing.",
-      features: [
-        "Content Strategy and production",
-        "Performance Marketing on FB & IG",
-        "Scheduling and posting on a consistent schedule",
-        "Ebooks and Communication Template unlimited",
-        "Data Reports monthly",
-        "12-Hour Support System included",
-        "Brand consistency across platforms",
-        "Community management and engagement",
-      ],
-      cta: "Get Started",
-      popular: true,
-      link: "https://wa.link/fwi8af",
-    },
-    {
-      name: "Influencer Collaboration",
-      price: "Starts From RM 6,000",
-      period: "/month",
-      description: "End-to-end influencer campaign management for 5 reels and 10 stories.",
-      features: [
-        "End-to-end campaign management, from outreach to execution",
-        "Strategic influencer pairing to align with your brand values",
-        "Scriptwriting and caption creation for authentic storytelling",
-        "Scheduling and coordination to keep campaigns on track",
-        "Performance monitoring to ensure impact and ROI",
-        "Partnerships that deliver trust, visibility, and sales growth",
-        "5 reels and 10 stories per month included",
-        "XHS (Xiaohongshu) KOL collaborations available",
-      ],
-      cta: "Launch Campaign",
-      link: "https://wa.link/fwi8af",
-      popular: false,
-    },
+  const { lang } = useLanguage()
+  const tt = translations[lang]
+
+  const planMeta = [
+    { price: "Starts From RM 1,200", period: "/month", link: "https://wa.link/fwi8af", popular: false },
+    { price: "Starts From RM 2,560", period: "", link: "https://wa.link/fwi8af", popular: false },
+    { price: "Starts From RM 2,080", period: "/month", link: "https://wa.link/fwi8af", popular: true },
+    { price: "Starts From RM 6,000", period: "/month", link: "https://wa.link/fwi8af", popular: false },
   ]
+
+  const pricingPlans = tt.plans.items.map((plan, i) => ({
+    name: plan.name,
+    description: plan.description,
+    features: plan.features,
+    cta: plan.cta,
+    price: planMeta[i].price,
+    period: planMeta[i].period,
+    link: planMeta[i].link,
+    popular: planMeta[i].popular,
+  }))
+
+  const benefitIcons = [DoodleGrowth, DoodleHeart, DoodleTrophy]
+  const benefits = tt.benefitsSection.items.map((benefit, i) => ({
+    icon: benefitIcons[i],
+    title: benefit.title,
+    description: benefit.description,
+  }))
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <main className="flex-1" role="main">
-        <section className="w-full py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-background to-muted" aria-label="Pricing overview">
-          <div className="container px-4 md:px-6">
-
+        {/* Hero */}
+        <section className="relative overflow-hidden" aria-label="Pricing overview">
+          <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-20 2xl:pt-36">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto mb-12"
+              variants={stagger}
+              initial="hidden"
+              animate="show"
+              className="mx-auto max-w-3xl 2xl:max-w-4xl text-center"
             >
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground" id="pricing-main-heading">
-                Investment in{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">Your Growth</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed" aria-describedby="pricing-main-heading">
-                Great brands aren't built overnight, but they're built with the right investment. Our transparent pricing reflects 
-                the strategic value we deliver—no hidden fees, no surprises, just clear packages designed to transform your business. 
-                Choose the partnership level that matches your ambition.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
-                  asChild
-                >
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Get My Free Revenue Audit
-                  </Link>
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
-                  asChild
-                >
-                  <Link href="/case-studies">
-                    See Client Results
-                  </Link>
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="w-full py-16 md:py-24 bg-background" aria-label="Pricing plans">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 md:gap-6 lg:gap-8">
-              {pricingPlans.map((plan, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <Card
-                    className={`relative overflow-hidden h-full ${
-                      plan.popular
-                        ? "border-primary shadow-lg ring-2 ring-primary/20"
-                        : "border-border shadow-md hover:shadow-lg"
-                    } bg-card transition-all duration-300`}
-                  >
-                    {plan.popular && (
-                      <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-3 py-1 text-xs font-medium rounded-bl-lg">
-                        Most Popular
-                      </div>
-                    )}
-                    <CardContent className="p-4 md:p-6 flex flex-col h-full">
-                      <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">{plan.name}</h3>
-                      <div className="flex items-baseline mb-2">
-                        <span className="text-2xl md:text-3xl font-bold text-foreground">{plan.price}</span>
-                        <span className="text-muted-foreground ml-1">{plan.period}</span>
-                      </div>
-                      <p className="text-sm md:text-base text-muted-foreground mb-4 md:mb-6">{plan.description}</p>
-                      <ul className="space-y-2 md:space-y-3 mb-6 md:mb-8 flex-grow">
-                        {plan.features.map((feature, j) => (
-                          <li key={j} className="flex items-start">
-                            <Check className="mr-2 size-4 text-accent mt-0.5 flex-shrink-0" />
-                            <span className="text-sm text-foreground/80">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <Button
-                        className={`w-full mt-auto rounded-full ${
-                          plan.popular
-                            ? "bg-primary hover:bg-primary/90 text-primary-foreground"
-                            : "bg-accent hover:bg-accent/90 text-accent-foreground"
-                        }`}
-                        asChild
-                      >
-                        <Link href={plan.link} target="_blank">
-                          {plan.cta}
-                        </Link>
-                      </Button>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="text-center mt-12"
-            >
-              <p className="text-muted-foreground mb-6">
-                All prices are in Malaysian Ringgit (MYR). Custom packages available for enterprise clients.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Discuss Custom Package
-                    <ArrowRight className="ml-2 size-4" />
-                  </Link>
-                </Button>
-                <Button size="lg" variant="outline" className="rounded-full bg-transparent" asChild>
-                  <Link href="/services">Learn More About Services</Link>
-                </Button>
-              </div>
-            </motion.div>
-          </div>
-        </section>
-
-        <section className="w-full py-16 md:py-24 bg-muted" aria-label="Package benefits">
-          <div className="container px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto mb-12"
-            >
-              <Badge className="rounded-full px-4 py-1.5 text-sm font-medium bg-accent/10 text-accent border-accent/20 mb-4">
-                Why Choose Us
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-6">
-                What's Included in Every Package
-              </h2>
-            </motion.div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-              {[
-                {
-                  title: "Transparent Reporting",
-                  description:
-                    "All dashboards, data, and performance metrics belong to you. Complete transparency in every campaign.",
-                },
-                {
-                  title: "Dedicated Support",
-                  description:
-                    "Direct access to our specialists with response times ranging from 12 hours to immediate support.",
-                },
-                {
-                  title: "Proven Results",
-                  description:
-                    "7+ years of experience with 120+ successful projects across various industries and markets.",
-                },
-              ].map((benefit, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: i * 0.1 }}
-                >
-                  <Card className="h-full border-border bg-card hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-4 md:p-6 text-center">
-                      <h3 className="text-lg md:text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
-                      <p className="text-sm md:text-base text-muted-foreground">{benefit.description}</p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="w-full py-16 md:py-24 bg-gradient-to-br from-accent to-accent/90 text-accent-foreground">
-          <div className="container px-4 md:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto"
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">Ready to Get Started?</h2>
-              <p className="text-lg md:text-xl text-accent-foreground/90 mb-8 max-w-3xl mx-auto">
-                Choose your package and start transforming your digital presence today. No long-term contracts required.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground"
-                  asChild
-                >
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Start Your Project Today
-                    <ArrowRight className="ml-2 size-4" />
+              <motion.p
+                variants={fadeUp}
+                className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6"
+              >
+                {tt.hero.eyebrow}
+              </motion.p>
+              <motion.h1
+                variants={fadeUp}
+                className="font-display text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
+                id="pricing-main-heading"
+              >
+                {tt.hero.heading}
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                className="mx-auto max-w-2xl text-base sm:text-lg 2xl:text-xl text-muted-foreground leading-relaxed mb-9"
+                aria-describedby="pricing-main-heading"
+              >
+                {tt.hero.intro}
+              </motion.p>
+              <motion.div
+                variants={fadeUp}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
+              >
+                <Button size="lg" className="rounded-full h-12 2xl:h-14 px-7 2xl:px-9 text-base 2xl:text-lg font-medium" asChild>
+                  <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                    {tt.hero.primaryCta}
+                    <ArrowRight className="ml-1.5 size-4" />
                   </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10"
+                  className="rounded-full h-12 2xl:h-14 px-7 2xl:px-9 text-base 2xl:text-lg font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/contact">Schedule a Consultation</Link>
+                  <Link href="/case-studies">{tt.hero.secondaryCta}</Link>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Pricing plans */}
+        <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Pricing plans">
+          <div className="container px-4 md:px-6">
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+            >
+              {pricingPlans.map((plan) => (
+                <motion.div
+                  key={plan.name}
+                  variants={fadeUp}
+                  className={`group relative flex h-full flex-col rounded-2xl border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)] ${
+                    plan.popular ? "border-primary ring-1 ring-primary/20" : "border-border"
+                  }`}
+                >
+                  {plan.popular && (
+                    <span className="absolute -top-3 left-7 inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                      {tt.plans.mostPopular}
+                    </span>
+                  )}
+                  <h3 className="font-display text-xl font-semibold tracking-tight mb-3">{plan.name}</h3>
+                  <div className="flex items-baseline gap-1 mb-3">
+                    <span className="font-display text-2xl font-semibold tracking-tight text-foreground">{plan.price}</span>
+                    {plan.period && <span className="text-sm text-muted-foreground">{plan.period}</span>}
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{plan.description}</p>
+                  <ul className="space-y-2.5 mb-8 flex-grow">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                        <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Button
+                    className="mt-auto w-full rounded-full font-medium"
+                    variant={plan.popular ? "default" : "outline"}
+                    asChild
+                  >
+                    <Link
+                      href={plan.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={plan.popular ? "" : "border-border bg-transparent hover:bg-muted"}
+                    >
+                      {plan.cta}
+                    </Link>
+                  </Button>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-center mt-14"
+            >
+              <p className="text-sm text-muted-foreground mb-6">
+                {tt.plans.note}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
+                  <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                    {tt.plans.customCta}
+                    <ArrowRight className="ml-1.5 size-4" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
+                  asChild
+                >
+                  <Link href="/services">{tt.plans.servicesCta}</Link>
+                </Button>
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Package benefits */}
+        <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Package benefits">
+          <div className="container px-4 md:px-6">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-2xl mb-14"
+            >
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.benefitsSection.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
+                {tt.benefitsSection.heading}
+              </h2>
+            </motion.div>
+
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid gap-6 md:grid-cols-3"
+            >
+              {benefits.map((benefit) => {
+                const Icon = benefit.icon
+                return (
+                  <motion.div
+                    key={benefit.title}
+                    variants={fadeUp}
+                    className="flex flex-col rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                  >
+                    <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                      <Icon className="size-6" />
+                    </span>
+                    <h3 className="font-display text-lg font-semibold mt-5 mb-2">{benefit.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Contact CTA */}
+        <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Contact">
+          <div className="container px-4 md:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto max-w-2xl text-center"
+            >
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-balance mb-5">
+                {tt.contact.heading}
+              </h2>
+              <p className="text-muted-foreground md:text-lg leading-relaxed mb-9">
+                {tt.contact.intro}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
+                  <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                    {tt.contact.primaryCta}
+                    <ArrowRight className="ml-1.5 size-4" />
+                  </Link>
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
+                  asChild
+                >
+                  <Link href="/contact">{tt.contact.secondaryCta}</Link>
                 </Button>
               </div>
             </motion.div>
           </div>
         </section>
       </main>
-
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-border bg-background" role="contentinfo">
-        <p className="text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} CloudLine Studio. All rights reserved.
-        </p>
-      </footer>
     </div>
   )
 }

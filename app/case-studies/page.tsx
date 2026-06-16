@@ -4,90 +4,129 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import { ArrowLeft, ArrowRight, BarChart, Users, Globe, TrendingUp } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
+import { DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone } from "@/components/doodles"
+import { useLanguage } from "@/components/language-provider"
+import { translations } from "./translations"
 
 export default function CaseStudiesPage() {
+  const { lang } = useLanguage()
+  const tt = translations[lang]
   const [selectedPlatform, setSelectedPlatform] = useState("all")
+
+  type ServiceKey = keyof typeof tt.serviceLabels
 
   const platforms = [
     {
-      name: "Google",
-      icon: <BarChart className="size-5" />,
+      name: "Consultation",
+      icon: <DoodleSearch className="size-5" />,
       description:
-        "Our Google specialists track search performance, keyword rankings, and PPC campaigns with precision analytics to ensure maximum ROI and visibility.",
-      color: "bg-blue-100 text-blue-800 border-blue-200",
+        "We diagnose your funnel, tooling, and operations, then advise on the highest-impact moves — and coach your team so the gains keep compounding.",
+      color: "bg-primary/10 text-primary border-primary/20",
     },
     {
-      name: "META",
-      icon: <Users className="size-5" />,
+      name: "Marketing & Sales Digital Transformation",
+      icon: <DoodleTransform className="size-5" />,
       description:
-        "Our META team monitors social engagement, ad performance, and audience insights across Facebook and Instagram to optimize reach and conversions.",
-      color: "bg-blue-100 text-blue-800 border-blue-200",
+        "We digitise and automate your marketing and sales — consolidating tools, unifying data, and adding AI so the whole revenue engine runs faster.",
+      color: "bg-primary/10 text-primary border-primary/20",
     },
     {
-      name: "TikTok",
-      icon: <TrendingUp className="size-5" />,
+      name: "Interdepartmental Synchronization",
+      icon: <DoodleGear className="size-5" />,
       description:
-        "Our TikTok specialists analyze viral trends, engagement rates, and content performance to maximize brand visibility and user interaction.",
-      color: "bg-orange-100 text-orange-800 border-orange-200",
+        "We connect siloed teams onto shared systems and real-time dashboards so marketing, sales, and operations finally move as one.",
+      color: "bg-primary/10 text-primary border-primary/20",
     },
     {
-      name: "XHS",
-      icon: <Globe className="size-5" />,
+      name: "Digital Marketing & Branding",
+      icon: <DoodleMegaphone className="size-5" />,
       description:
-        "Our XHS team specializes in carousel posts, static images, KOL collaborations, and long-form copywriting that drives user sharing and highlights unique selling propositions.",
-      color: "bg-blue-100 text-blue-800 border-blue-200",
+        "We build distinctive brands and performance-driven campaigns across search, social, and content that turn attention into revenue.",
+      color: "bg-primary/10 text-primary border-primary/20",
     },
   ]
 
   const caseStudies = [
     {
-      title: "Interior Design SEO, Website Revamp & Performance Malaysia",
-      industry: "Interior Design",
-      platforms: ["Google", "META"],
+      title: "AI Operations Overhaul & Revenue Growth — ClearSK Aesthetic Clinic, Singapore",
+      industry: "Aesthetics · Singapore",
+      platforms: ["Marketing & Sales Digital Transformation", "Interdepartmental Synchronization"],
       challenge:
-        "Interior Design firms require many ongoing projects, as their sales cycle is exceptionally long. New users, although interested, are often not ready to purchase or begin their projects, and the firm only gets paid when the job is done.",
+        "ClearSK was running on a patchwork of disconnected platforms — separate CRM, booking, marketing, and sales tools that didn't talk to each other. Departments worked in silos with no shared visibility, the same data was entered multiple times, and a stack of overlapping subscriptions was quietly draining six figures every month.",
       solution:
-        "Our Google specialists implemented comprehensive SEO strategies and Performance marketing campaigns to guarantee a steady flow of high-quality leads. Our META team developed targeted social campaigns to nurture prospects through the long sales cycle. Our team tracked performance across search campaigns and organic rankings, ensuring continuous optimization for maximum ROI.",
+        "Our team consolidated their fragmented stack into a single AI-powered operations layer. We unified CRM, sales, and booking data into one source of truth, automated cross-department handoffs, and built live transparency dashboards so marketing, sales, and clinical teams could finally see the same numbers in real time. AI-driven lead scoring and automated follow-ups replaced manual chasing and a pile of redundant tooling.",
       results:
-        ">6000% increase in relevant traffic and keyword queries, significant improvement in keyword rankings, 300% increase in qualified leads, and 45% reduction in cost per acquisition.",
-      image: "/analytics-dashboard.png",
-      metrics: [
-        { label: "Traffic Increase", value: "6000%" },
-        { label: "Lead Quality", value: "+300%" },
-        { label: "Cost Reduction", value: "45%" },
-      ],
-    },
-    {
-      title: "Aesthetic Clinic SEO, SEM, Performance & EDM",
-      industry: "Healthcare/Aesthetics",
-      platforms: ["Google", "META", "TikTok"],
-      challenge:
-        "Aesthetic Clinics depend mostly on personal branding, which brings two problems: 1) Time - Word of mouth is slow, 2) Personal branding strategies require significant energy and time that healthcare workers don't have.",
-      solution:
-        "Our Google specialists developed comprehensive SEM strategies for immediate visibility while building long-term SEO authority. Our META team created corporate AND personal branding strategies that automated social presence. Our TikTok specialists leveraged trending content to showcase treatments and build trust. Our team managed multi-platform campaigns, tracking performance across paid social and PPC to ensure optimal budget allocation and maximum patient acquisition.",
-      results:
-        "250% increase in new patient bookings, 180% improvement in gross profit margins, successful scaling of paid social campaigns with 4.2x ROAS, and 90% reduction in personal branding time investment.",
+        "Interdepartmental transparency improved dramatically, the clinic cut over S$100K per month in excess platform, CRM, and sales subscriptions, and appointment bookings and sales revenue grew 40% within 3 months.",
       image: "/aesthetic-clinic-marketing-dashboard-with-patient-.jpg",
       metrics: [
-        { label: "New Patients", value: "+250%" },
-        { label: "Profit Margins", value: "+180%" },
-        { label: "ROAS", value: "4.2x" },
+        { label: "Monthly Savings", value: "S$100K" },
+        { label: "Bookings & Revenue", value: "+40%" },
+        { label: "Timeframe", value: "3 Months" },
       ],
     },
     {
-      title: "Mental Health SaaS Platform Strategy & Consultation",
-      industry: "Healthcare SaaS",
-      platforms: ["Google", "META"],
+      title: "AI CRM Consolidation & Booking Growth — Lasus Plastic Surgery Clinic, Malaysia",
+      industry: "Aesthetics · Malaysia",
+      platforms: ["Interdepartmental Synchronization", "Marketing & Sales Digital Transformation"],
       challenge:
-        "Wellnite is a virtual platform with the vision of making mental health accessible whenever, and wherever you are. Based in US, now expanding internationally with complex regulatory requirements and cultural sensitivities.",
+        "Lasus was juggling multiple overlapping marketing, CRM, and sales subscriptions with little visibility between the front desk, marketing, and surgical teams. Leads slipped through the cracks between platforms, and no one had a clear picture of what was actually driving bookings.",
       solution:
-        "Our Google Marketing specialists developed comprehensive international SEO and PPC strategies tailored to different markets and regulations. Our META team created culturally-sensitive social campaigns that addressed mental health stigma in various regions. Our team monitored performance across multiple markets, ensuring successful platform growth and user acquisition while maintaining compliance with healthcare regulations in each territory.",
+        "We deployed the same AI operations playbook, localized for the Malaysian market — consolidating their tooling onto one unified CRM and sales platform, automating lead routing and appointment reminders, and giving every department a shared, real-time view of the pipeline. AI handled the repetitive follow-ups so the team could focus on patient care.",
       results:
-        "Successful expansion to 5 international markets, 400% increase in platform registrations, 85% improvement in user retention rates, and establishment of trusted healthcare partnerships in new territories.",
+        "The clinic eliminated redundant subscriptions to save roughly RM 250K per month, unified previously siloed departments under one transparent dashboard, and lifted appointment bookings and sales revenue by 35% in under 4 months.",
+      image: "/digital-marketing-dashboard-with-analytics-charts-.jpg",
+      metrics: [
+        { label: "Monthly Savings", value: "RM 250K" },
+        { label: "Bookings & Revenue", value: "+35%" },
+        { label: "Timeframe", value: "<4 Months" },
+      ],
+    },
+    {
+      title: "End-to-End Marketing & Sales Digitalisation — ConnectDR",
+      industry: "Healthcare Platform",
+      platforms: ["Marketing & Sales Digital Transformation"],
+      challenge:
+        "ConnectDR's patient-acquisition process was spread across disconnected tools with no visibility from first touch to booking. Marketing and clinic-partner handoffs were manual, and the team spent hours on data entry instead of growth.",
+      solution:
+        "We mapped the full acquisition funnel and digitised it end to end — automating lead capture, partner handoffs, and follow-up. A unified pipeline gave the team a single, real-time view from lead to booking, with AI handling repetitive routing.",
+      results:
+        "An automated lead-to-booking funnel, faster partner onboarding, materially higher conversion, and the elimination of manual data entry across the team.",
+      image: "/analytics-dashboard.png",
+      metrics: [
+        { label: "Funnel", value: "Automated" },
+        { label: "Manual Entry", value: "Eliminated" },
+        { label: "Conversion", value: "Higher" },
+      ],
+    },
+    {
+      title: "Unified Analytics & Attributable Growth — CircleDNA",
+      industry: "Consumer Genomics",
+      platforms: ["Marketing & Sales Digital Transformation", "Digital Marketing & Branding"],
+      challenge:
+        "CircleDNA had a complex, data-heavy product but fragmented analytics and unclear marketing ROI, making it hard to know which spend actually drove revenue.",
+      solution:
+        "We turned a complex product into a clean digital sales journey — unifying analytics, automating campaigns, and tightening the loop between marketing spend and revenue so every dollar was attributable.",
+      results:
+        "Unified analytics across channels, automated and attributable campaigns, and a clear line of sight from marketing spend to revenue.",
+      image: "/ai-seo-platform-dashboard-with-global-user-analyti.jpg",
+      metrics: [
+        { label: "Analytics", value: "Unified" },
+        { label: "Campaigns", value: "Automated" },
+        { label: "Attribution", value: "Clear" },
+      ],
+    },
+    {
+      title: "International Market-Entry Strategy & Growth — Wellnite",
+      industry: "Mental Health SaaS",
+      platforms: ["Consultation"],
+      challenge:
+        "Wellnite makes mental health accessible anywhere. Based in the US and expanding internationally, they faced complex regulatory requirements and cultural sensitivities in each new market.",
+      solution:
+        "We consulted on market-entry and growth strategy, then built compliant, culturally-sensitive campaigns and guided the team market by market — balancing speed with regulatory care.",
+      results:
+        "Expansion into 5 international markets, a 400% increase in platform registrations, an 85% improvement in retention, and trusted healthcare partnerships in new territories.",
       image: "/mental-health-app-interface-with-global-reach-anal.jpg",
       metrics: [
         { label: "Market Expansion", value: "5 Countries" },
@@ -96,20 +135,105 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "AI SEO Content Writing Platform Growth Marketing",
-      industry: "AI/SaaS",
-      platforms: ["Google", "META", "XHS"],
+      title: "Growth Strategy Consultation & Channel Prioritisation — Prenetics",
+      industry: "Health & Genomics",
+      platforms: ["Consultation"],
       challenge:
-        "Based in Malaysia, with the majority of their traffic and clients from US and AU, they are keen on making SEO AI-enabled, with minimal human efforts. The challenge was competing with established SEO tools while demonstrating AI superiority.",
+        "Prenetics was spread thin across too many channels with unclear priorities, making it hard to focus budget on what actually moved the needle.",
       solution:
-        "Our growth marketing team executed comprehensive strategies across email marketing, community building, and Google marketing. Our Google specialists focused on high-intent keywords and competitor analysis. Our META team built engaged communities around AI and SEO topics. Our XHS specialists created detailed long-form content showcasing AI capabilities and user success stories, driving organic sharing and establishing thought leadership in the AI-SEO space.",
+        "We audited the funnel, prioritised the highest-impact channels, and coached the internal team on execution so gains kept compounding after the engagement ended.",
       results:
-        "Successful market penetration in US and AU markets with 500% increase in trial signups, 320% improvement in user adoption of AI-enabled SEO tools, and establishment as a leading voice in AI-powered content creation.",
+        "A sharper channel strategy, a prioritised growth roadmap, and an upskilled internal team able to execute independently.",
+      image: "/digital-marketing-dashboard-with-analytics-charts-.jpg",
+      metrics: [
+        { label: "Strategy", value: "Focused" },
+        { label: "Roadmap", value: "Prioritised" },
+        { label: "Team", value: "Upskilled" },
+      ],
+    },
+    {
+      title: "Early-Stage Positioning & Go-to-Market Consultation — Fokuslah",
+      industry: "Startup · Malaysia",
+      platforms: ["Consultation"],
+      challenge:
+        "As an early-stage Malaysian startup with a limited budget, Fokuslah needed clear direction more than vanity metrics — and a way to measure what was working.",
+      solution:
+        "We ran founder-level consultation to sharpen positioning, choose the right channels, and stand up a simple measurement system the team could actually understand and run.",
+      results:
+        "Clear positioning, a focused channel strategy, and a lightweight measurement framework the founders use to make decisions.",
+      image: "/interior-design-website-analytics-dashboard-showin.jpg",
+      metrics: [
+        { label: "Positioning", value: "Clear" },
+        { label: "Channels", value: "Focused" },
+        { label: "Measurement", value: "In place" },
+      ],
+    },
+    {
+      title: "F&B Operations Sync & POS Optimisation — Warung Ambo",
+      industry: "F&B · Malaysia",
+      platforms: ["Interdepartmental Synchronization"],
+      challenge:
+        "At peak hours Warung Ambo had long queues, orders slipping through the cracks, and front-of-house and kitchen operations that were constantly out of step.",
+      solution:
+        "We optimised the POS specifically for F&B, ensured no orders were missed, and synced front-of-house and kitchen operations in real time through their devices.",
+      results:
+        "Queue speed improved 30% almost immediately, zero missed orders, synced kitchen and counter operations, and a direct lift in sales.",
+      image: "/digital-marketing-dashboard-with-analytics-charts-.jpg",
+      metrics: [
+        { label: "Queue Speed", value: "+30%" },
+        { label: "Missed Orders", value: "Zero" },
+        { label: "Sales", value: "Up" },
+      ],
+    },
+    {
+      title: "Brand Refresh & Performance Campaigns — Oxwhite",
+      industry: "D2C Apparel",
+      platforms: ["Digital Marketing & Branding"],
+      challenge:
+        "Oxwhite had an inconsistent brand presence and rising customer acquisition costs that were squeezing margins as they scaled.",
+      solution:
+        "We refreshed their digital brand identity and built performance-driven campaigns whose content finally looked and sounded like them — focused on conversion, not just reach.",
+      results:
+        "A refreshed brand identity, higher-converting campaigns, lower customer acquisition cost, and growing order volume.",
       image: "/ai-seo-platform-dashboard-with-global-user-analyti.jpg",
       metrics: [
-        { label: "Trial Signups", value: "+500%" },
-        { label: "Tool Adoption", value: "+320%" },
-        { label: "Market Position", value: "Top 3" },
+        { label: "Brand", value: "Refreshed" },
+        { label: "Acquisition Cost", value: "Lower" },
+        { label: "Orders", value: "Up" },
+      ],
+    },
+    {
+      title: "Digital Identity & Local Demand Funnel — Woodfire Gourmet Burger",
+      industry: "F&B",
+      platforms: ["Digital Marketing & Branding"],
+      challenge:
+        "Woodfire had great food but a weak, inconsistent online brand presence that didn't bring people through the door.",
+      solution:
+        "We gave the brand a proper digital identity — photography, social content, and a local demand funnel that turns online attention into covers.",
+      results:
+        "A distinctive digital brand, a stronger social presence, more weekend covers, and a steadily growing base of regulars.",
+      image: "/aesthetic-clinic-marketing-dashboard-with-patient-.jpg",
+      metrics: [
+        { label: "Brand", value: "Distinctive" },
+        { label: "Social", value: "Stronger" },
+        { label: "Covers", value: "Up" },
+      ],
+    },
+    {
+      title: "Engagement-Led Creative & Team Enablement — Celcom",
+      industry: "Telecommunications",
+      platforms: ["Digital Marketing & Branding"],
+      challenge:
+        "Celcom's campaigns performed decently, but there was a gap between awareness and real engagement — and the in-house team wanted to learn what worked and why.",
+      solution:
+        "We tested new visual formats, shortened load times, and built mini-landing experiences that kept users interacting longer, while upskilling the in-house team along the way.",
+      results:
+        "Reduced churn, improved user retention, longer engagement, and a more capable in-house marketing team.",
+      image: "/analytics-dashboard.png",
+      metrics: [
+        { label: "Churn", value: "Reduced" },
+        { label: "Retention", value: "Improved" },
+        { label: "Team", value: "Upskilled" },
       ],
     },
   ]
@@ -120,234 +244,229 @@ export default function CaseStudiesPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <main className="flex-1" role="main">
-        <section className="w-full py-12 md:py-20 lg:py-24 bg-gradient-to-br from-background via-background to-muted" aria-label="Case studies overview">
-          <div className="container px-4 md:px-6">
-
+        <section className="relative overflow-hidden" aria-label="Case studies overview">
+          <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-20 2xl:pt-36">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto mb-12"
+              className="text-center max-w-3xl 2xl:max-w-4xl mx-auto"
             >
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none text-foreground" id="case-studies-main-heading">
-                From Challenge to{" "}
-                <span className="bg-gradient-to-r from-blue-600 via-orange-500 to-orange-600 bg-clip-text text-transparent">Champion</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-4xl mx-auto leading-relaxed" aria-describedby="case-studies-main-heading">
-                Every business faces unique challenges. See how we've helped companies across different industries overcome 
-                their obstacles and achieve remarkable growth through strategic digital marketing. These detailed case studies 
-                show our methodology, execution, and the measurable results we delivered.
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6">
+                {tt.hero.eyebrow}
               </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4 mt-8">
-                <Button 
-                  size="lg" 
-                  className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
-                  asChild
-                >
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Get My Free Revenue Audit
+              <h1
+                className="font-display text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
+                id="case-studies-main-heading"
+              >
+                {tt.hero.title}
+              </h1>
+              <p
+                className="mx-auto max-w-2xl 2xl:max-w-3xl text-base sm:text-lg 2xl:text-xl text-muted-foreground leading-relaxed mb-9"
+                aria-describedby="case-studies-main-heading"
+              >
+                {tt.hero.intro}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
+                  <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                    {tt.hero.ctaPrimary}
+                    <ArrowRight className="ml-1.5 size-4" />
                   </Link>
                 </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="border-2 hover:bg-muted/50 transition-all duration-300 font-medium"
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/services">
-                    View All Services
-                  </Link>
+                  <Link href="/services">{tt.hero.ctaSecondary}</Link>
                 </Button>
               </div>
             </motion.div>
           </div>
         </section>
 
-        <section className="w-full py-8 md:py-12 border-y border-border bg-muted" aria-label="Platform specialists">
+        <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Platform specialists">
           <div className="container px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-6">
-              <h2 className="text-2xl font-bold text-foreground">Our Platform Specialists</h2>
-              <p className="text-muted-foreground text-center max-w-2xl">
-                Each platform requires unique expertise. Our specialized teams track performance and ensure success
-                across all channels.
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
+                {tt.services.eyebrow}
               </p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+                {tt.services.title}
+              </h2>
+              <p className="text-muted-foreground md:text-lg">{tt.services.intro}</p>
+            </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 w-full max-w-6xl">
-                {platforms.map((platform, i) => (
-                  <motion.div
-                    key={platform.name}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                  >
-                    <Card
-                      className="h-full border-border bg-card hover:shadow-lg transition-all duration-300 group cursor-pointer"
-                      onClick={() => setSelectedPlatform(platform.name)}
-                    >
-                      <CardContent className="p-4 md:p-6">
-                        <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-4">
-                          <div className={`size-8 md:size-10 rounded-full flex items-center justify-center ${platform.color}`}>
-                            {platform.icon}
-                          </div>
-                          <h3 className="text-base md:text-lg font-bold text-foreground">{platform.name}</h3>
-                        </div>
-                        <p className="text-xs md:text-sm text-muted-foreground">{platform.description}</p>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-2 mt-6">
-                <Button
-                  variant={selectedPlatform === "all" ? "default" : "outline"}
-                  size="sm"
-                  onClick={() => setSelectedPlatform("all")}
-                  className={selectedPlatform === "all" ? "bg-accent hover:bg-accent/90 text-accent-foreground" : ""}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+              {platforms.map((platform, i) => (
+                <motion.button
+                  key={platform.name}
+                  type="button"
+                  onClick={() => setSelectedPlatform(platform.name)}
+                  initial={{ opacity: 0, y: 24 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className={`group flex h-full flex-col rounded-2xl border bg-card p-6 text-left transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)] ${
+                    selectedPlatform === platform.name ? "border-primary/40 ring-1 ring-primary/20" : "border-border"
+                  }`}
                 >
-                  All Platforms
+                  <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                    {platform.icon}
+                  </span>
+                  <h3 className="font-display text-base md:text-lg font-semibold mt-5 mb-2">
+                    {tt.serviceLabels[platform.name as ServiceKey]}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    {tt.serviceDescriptions[platform.name as ServiceKey]}
+                  </p>
+                </motion.button>
+              ))}
+            </div>
+
+            <div className="flex flex-wrap justify-center gap-2">
+              <Button
+                variant={selectedPlatform === "all" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedPlatform("all")}
+                className={`rounded-full font-medium ${
+                  selectedPlatform === "all" ? "" : "border-border bg-transparent hover:bg-muted"
+                }`}
+              >
+                {tt.services.all}
+              </Button>
+              {platforms.map((platform) => (
+                <Button
+                  key={platform.name}
+                  variant={selectedPlatform === platform.name ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setSelectedPlatform(platform.name)}
+                  className={`rounded-full font-medium ${
+                    selectedPlatform === platform.name ? "" : "border-border bg-transparent hover:bg-muted"
+                  }`}
+                >
+                  {tt.serviceLabels[platform.name as ServiceKey]}
                 </Button>
-                {platforms.map((platform) => (
-                  <Button
-                    key={platform.name}
-                    variant={selectedPlatform === platform.name ? "default" : "outline"}
-                    size="sm"
-                    onClick={() => setSelectedPlatform(platform.name)}
-                    className={selectedPlatform === platform.name ? "bg-accent hover:bg-accent/90 text-accent-foreground" : ""}
-                  >
-                    {platform.name}
-                  </Button>
-                ))}
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-background" aria-label="Case study results">
+        <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Case study results">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-12">
+            <div className="grid gap-8 md:gap-10">
               {filteredStudies.map((study, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 24 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
+                  className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
                 >
-                  <Card className="overflow-hidden border-border bg-card shadow-lg hover:shadow-xl transition-all duration-300">
-                    <CardContent className="p-0">
-                      <div className="grid lg:grid-cols-2 gap-0">
-                        <div className="relative h-48 md:h-64 lg:h-auto">
-                          <Image
-                            src={study.image || "/placeholder.svg"}
-                            alt={study.title}
-                            fill
-                            className="object-cover"
-                          />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                  <div className="grid lg:grid-cols-2 gap-0">
+                    <div className="relative h-52 md:h-72 lg:h-auto lg:min-h-full">
+                      <Image
+                        src={study.image || "/placeholder.svg"}
+                        alt={study.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+                      <div className="flex flex-wrap gap-2 mb-5">
+                        <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+                          {study.industry}
+                        </span>
+                        {study.platforms.map((platform) => (
+                          <span
+                            key={platform}
+                            className="inline-flex items-center rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground"
+                          >
+                            {tt.serviceLabels[platform as ServiceKey]}
+                          </span>
+                        ))}
+                      </div>
+                      <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight mb-5">{study.title}</h3>
+
+                      <div className="grid grid-cols-3 gap-3 md:gap-4 mb-6 rounded-2xl border border-border bg-muted/40 p-4">
+                        {study.metrics.map((metric, j) => (
+                          <div key={j} className="text-center">
+                            <div className="font-display text-lg md:text-2xl font-semibold text-primary">{metric.value}</div>
+                            <div className="text-xs md:text-sm text-muted-foreground">{metric.label}</div>
+                          </div>
+                        ))}
+                      </div>
+
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-2">
+                            {tt.study.challenge}
+                          </h4>
+                          <p className="text-sm text-foreground/80 leading-relaxed">{study.challenge}</p>
                         </div>
-                        <div className="p-4 md:p-6 lg:p-8 flex flex-col justify-center">
-                          <div className="flex flex-wrap gap-2 mb-4">
-                            <Badge className="bg-accent/10 text-accent border-accent/20">{study.industry}</Badge>
-                            {study.platforms.map((platform) => (
-                              <Badge key={platform} variant="outline" className="text-xs">
-                                {platform}
-                              </Badge>
-                            ))}
-                          </div>
-                          <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-foreground">{study.title}</h3>
-
-                          <div className="grid grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
-                            {study.metrics.map((metric, j) => (
-                              <div key={j} className="text-center">
-                                <div className="text-lg md:text-2xl font-bold text-primary">{metric.value}</div>
-                                <div className="text-xs md:text-sm text-muted-foreground">{metric.label}</div>
-                              </div>
-                            ))}
-                          </div>
-
-                          <div className="space-y-3 md:space-y-4">
-                            <div>
-                              <h4 className="font-semibold text-xs md:text-sm text-muted-foreground uppercase tracking-wide mb-2">
-                                Challenge
-                              </h4>
-                              <p className="text-xs md:text-sm text-foreground/80">{study.challenge}</p>
-                            </div>
-                            <div>
-                              <h4 className="font-semibold text-xs md:text-sm text-muted-foreground uppercase tracking-wide mb-2">
-                                Our Solution
-                              </h4>
-                              <p className="text-xs md:text-sm text-foreground/80">{study.solution}</p>
-                            </div>
-                            <div>
-                              <h4 className="font-semibold text-xs md:text-sm text-muted-foreground uppercase tracking-wide mb-2">
-                                Results Achieved
-                              </h4>
-                              <p className="text-xs md:text-sm font-medium text-accent">{study.results}</p>
-                            </div>
-                          </div>
-                          <Button className="mt-4 md:mt-6 w-fit bg-primary hover:bg-primary/90 text-primary-foreground" asChild>
-                            <Link href="https://wa.link/fwi8af" target="_blank">
-                              Discuss Your Project
-                              <ArrowRight className="ml-2 size-4" />
-                            </Link>
-                          </Button>
+                        <div>
+                          <h4 className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-2">
+                            {tt.study.solution}
+                          </h4>
+                          <p className="text-sm text-foreground/80 leading-relaxed">{study.solution}</p>
+                        </div>
+                        <div>
+                          <h4 className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-2">
+                            {tt.study.results}
+                          </h4>
+                          <p className="text-sm font-medium text-primary leading-relaxed">{study.results}</p>
                         </div>
                       </div>
-                    </CardContent>
-                  </Card>
+                      <Button className="mt-6 w-fit rounded-full font-medium" asChild>
+                        <Link href="https://wa.link/fwi8af" target="_blank">
+                          {tt.study.cta}
+                          <ArrowRight className="ml-1.5 size-4" />
+                        </Link>
+                      </Button>
+                    </div>
+                  </div>
                 </motion.div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="w-full py-16 md:py-24 bg-gradient-to-br from-accent to-accent/90 text-accent-foreground">
+        <section className="w-full py-20 md:py-28 border-t border-border bg-muted/50" aria-label="Contact">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-center max-w-4xl mx-auto"
+              transition={{ duration: 0.6 }}
+              className="mx-auto max-w-2xl text-center"
             >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight mb-6">
-                Ready to Become Our Next Success Story?
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-semibold tracking-tight text-balance mb-5">
+                {tt.contact.title}
               </h2>
-              <p className="text-lg md:text-xl text-accent-foreground/90 mb-8 max-w-3xl mx-auto">
-                Join the growing list of businesses that have transformed their digital presence with CloudLine Studio's
-                proven strategies.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  size="lg"
-                  className="rounded-full h-12 px-8 text-base bg-primary hover:bg-primary/90 text-primary-foreground"
-                  asChild
-                >
-                  <Link href="https://wa.link/fwi8af" target="_blank">
-                    Start Your Success Story
-                    <ArrowRight className="ml-2 size-4" />
+              <p className="text-muted-foreground md:text-lg leading-relaxed mb-9">{tt.contact.intro}</p>
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
+                  <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                    {tt.contact.ctaPrimary}
+                    <ArrowRight className="ml-1.5 size-4" />
                   </Link>
                 </Button>
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full h-12 px-8 text-base bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10"
+                  className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/services">Explore Our Services</Link>
+                  <Link href="/services">{tt.contact.ctaSecondary}</Link>
                 </Button>
               </div>
             </motion.div>
           </div>
         </section>
       </main>
-
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t border-border bg-background" role="contentinfo">
-        <p className="text-xs text-muted-foreground">
-          &copy; {new Date().getFullYear()} CloudLine Studio. All rights reserved.
-        </p>
-      </footer>
     </div>
   )
 }

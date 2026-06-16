@@ -4,12 +4,16 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
+import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { LanguageToggle } from "@/components/language-toggle"
+import { useLanguage } from "@/components/language-provider"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,11 +24,10 @@ export function Header() {
   }, [])
 
   const navItems = [
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/#services" },
-    { name: "Client Results", href: "/client-results" },
-    { name: "Pricing", href: "/#pricing" },
-    { name: "Contact", href: "/contact" },
+    { name: t.nav.about, href: "/about" },
+    { name: t.nav.services, href: "/#services" },
+    { name: t.nav.clientResults, href: "/client-results" },
+    { name: t.nav.contact, href: "/contact" },
   ]
 
   return (
@@ -47,7 +50,7 @@ export function Header() {
               className="w-full h-full object-cover"
             />
           </div>
-          <span className="bg-gradient-to-r from-blue-600 via-blue-500 to-orange-500 bg-clip-text text-transparent font-bold">CloudLine Studio</span>
+          <span className="font-display font-semibold tracking-tight text-foreground">CloudLine Studio</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6" role="navigation" aria-label="Main navigation">
@@ -62,17 +65,16 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-4">
-          <div className="hidden md:flex items-center gap-4">
-            <div className="p-1 rounded-lg border border-border bg-card shadow-sm">
-              <ThemeToggle />
-            </div>
-            <Button 
-              className="bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold"
+        <div className="flex items-center gap-3">
+          <div className="hidden md:flex items-center gap-3">
+            <LanguageToggle />
+            <ThemeToggle />
+            <Button
+              className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
               asChild
             >
               <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
-                Chat with us now
+                {t.nav.chat}
               </Link>
             </Button>
           </div>
@@ -84,9 +86,9 @@ export function Header() {
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
-              <span className="text-2xl">✕</span>
+              <X className="size-6" />
             ) : (
-              <span className="text-2xl">☰</span>
+              <Menu className="size-6" />
             )}
             <span className="sr-only">Toggle menu</span>
           </Button>
@@ -121,10 +123,14 @@ export function Header() {
                       </Link>
                     </motion.div>
                   ))}
-                  <div className="pt-4 border-t border-border mt-4">
-                    <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all duration-300 font-semibold" asChild>
+                  <div className="pt-4 border-t border-border mt-4 space-y-4">
+                    <div className="flex items-center justify-between">
+                      <LanguageToggle />
+                      <ThemeToggle />
+                    </div>
+                    <Button className="w-full rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium" asChild>
                       <Link href="https://wa.link/fwi8af" target="_blank">
-                        Chat with us now
+                        {t.nav.chat}
                       </Link>
                     </Button>
                   </div>

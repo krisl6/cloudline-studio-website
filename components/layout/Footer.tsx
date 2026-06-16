@@ -1,22 +1,27 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { useLanguage } from "@/components/language-provider"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
-  
+  const { t } = useLanguage()
+
+  const serviceLinks = ["/services#performance-marketing", "/services#website-creation", "/services#seo", "/services#influencer"]
+  const companyLinks = ["/about", "/case-studies", "/pricing", "/blog", "/careers"]
+
   return (
     <footer className="border-t border-border bg-background/50 backdrop-blur-lg" role="contentinfo">
       <div className="container px-4 md:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2 font-bold">
-              <span className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+              <span className="font-display text-xl font-semibold tracking-tight text-foreground">
                 CloudLine Studio
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground">
-              Data-driven marketing solutions that deliver measurable results and drive business growth.
-            </p>
+            <p className="text-sm text-muted-foreground">{t.footer.tagline}</p>
             <div className="flex items-center gap-2">
               <Button variant="outline" size="icon" className="rounded-full" asChild>
                 <Link href="https://wa.link/fwi8af" target="_blank" aria-label="WhatsApp">
@@ -29,34 +34,40 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold mb-4">Services</h3>
+            <h3 className="text-sm font-semibold mb-4">{t.footer.servicesTitle}</h3>
             <ul className="space-y-2">
-              <li><Link href="/services#performance-marketing" className="text-sm text-muted-foreground hover:text-primary transition-colors">Performance Marketing</Link></li>
-              <li><Link href="/services#website-creation" className="text-sm text-muted-foreground hover:text-primary transition-colors">Website Creation</Link></li>
-              <li><Link href="/services#seo" className="text-sm text-muted-foreground hover:text-primary transition-colors">SEO Optimization</Link></li>
-              <li><Link href="/services#influencer" className="text-sm text-muted-foreground hover:text-primary transition-colors">Influencer Marketing</Link></li>
+              {t.footer.services.map((label, i) => (
+                <li key={label}>
+                  <Link href={serviceLinks[i]} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold mb-4">Company</h3>
+            <h3 className="text-sm font-semibold mb-4">{t.footer.companyTitle}</h3>
             <ul className="space-y-2">
-              <li><Link href="/about" className="text-sm text-muted-foreground hover:text-primary transition-colors">About Us</Link></li>
-              <li><Link href="/case-studies" className="text-sm text-muted-foreground hover:text-primary transition-colors">Case Studies</Link></li>
-              <li><Link href="/blog" className="text-sm text-muted-foreground hover:text-primary transition-colors">Blog</Link></li>
-              <li><Link href="/careers" className="text-sm text-muted-foreground hover:text-primary transition-colors">Careers</Link></li>
+              {t.footer.company.map((label, i) => (
+                <li key={label}>
+                  <Link href={companyLinks[i]} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold mb-4">Contact</h3>
+            <h3 className="text-sm font-semibold mb-4">{t.footer.contactTitle}</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground">hello@cloudlinestudio.com</li>
-              <li className="text-sm text-muted-foreground">+60 12-345 6789</li>
-              <li className="text-sm text-muted-foreground">Kuala Lumpur, Malaysia</li>
+              <li className="text-sm text-muted-foreground">hello@cloudline-studio.com</li>
+              <li className="text-sm text-muted-foreground">+01127755215</li>
+              <li className="text-sm text-muted-foreground">{t.footer.location}</li>
               <li className="pt-2">
-                <Button size="sm" asChild>
-                  <Link href="/contact">Get in Touch</Link>
+                <Button size="sm" className="rounded-full" asChild>
+                  <Link href="/contact">{t.footer.getInTouch}</Link>
                 </Button>
               </li>
             </ul>
@@ -65,11 +76,11 @@ export function Footer() {
 
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} CloudLine Studio. All rights reserved.
+            &copy; {currentYear} CloudLine Studio. {t.footer.rights}
           </p>
           <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t.footer.privacy}</Link>
+            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t.footer.terms}</Link>
           </div>
         </div>
       </div>
