@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
+import { FunnelTimeline } from "@/components/funnel-timeline"
 import {
   DoodleSearch,
   DoodleTransform,
@@ -294,6 +295,9 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+
+        {/* Customer funnels — B2B / B2C timeline */}
+        <FunnelTimeline />
 
         {/* FAQ */}
         <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Frequently asked questions">
