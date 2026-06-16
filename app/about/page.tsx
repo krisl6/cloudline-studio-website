@@ -7,6 +7,7 @@ import { ArrowRight, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
+import { TeamGallery } from "@/components/team-gallery"
 import {
   DoodleTrophy,
   DoodlePen,
@@ -188,8 +189,11 @@ export default function AboutPage() {
           </div>
         </section>
 
+        {/* Team / culture gallery */}
+        <TeamGallery />
+
         {/* Stats */}
-        <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="By the numbers">
+        <section className="w-full py-20 md:py-28 bg-background border-t border-border" aria-label="By the numbers">
           <div className="container px-4 md:px-6">
             <motion.div
               variants={stagger}
