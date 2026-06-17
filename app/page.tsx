@@ -321,13 +321,22 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: 0.15 }}
                 className="grid grid-cols-2 gap-4 items-center"
               >
-                <div>
+                <div className="space-y-4">
                   <div className="aspect-[4/5] rounded-2xl overflow-hidden border border-border">
                     <Image
                       src="/img-8536.jpg"
                       alt="CloudLine Studio presenting at a build-without-coding workshop"
                       width={480}
                       height={600}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border">
+                    <Image
+                      src="/team-retreat.jpg"
+                      alt="The CloudLine Studio team at a retreat"
+                      width={480}
+                      height={360}
                       className="w-full h-full object-cover"
                     />
                   </div>
