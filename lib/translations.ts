@@ -11,6 +11,7 @@ export const translations = {
     nav: {
       about: "About",
       services: "Services",
+      events: "Events",
       clientResults: "Client Results",
       pricing: "Pricing",
       contact: "Contact",
@@ -125,6 +126,7 @@ export const translations = {
     nav: {
       about: "Tentang",
       services: "Perkhidmatan",
+      events: "Acara",
       clientResults: "Hasil Klien",
       pricing: "Harga",
       contact: "Hubungi",
@@ -239,6 +241,7 @@ export const translations = {
     nav: {
       about: "关于我们",
       services: "服务",
+      events: "活动",
       clientResults: "客户成果",
       pricing: "价格",
       contact: "联系我们",
