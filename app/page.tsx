@@ -333,8 +333,8 @@ export default function HomePage() {
                   </div>
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-border">
                     <Image
-                      src="/team-retreat.jpg"
-                      alt="The CloudLine Studio team at a retreat"
+                      src="/project6-group.png"
+                      alt="The CloudLine Studio team"
                       width={480}
                       height={360}
                       className="w-full h-full object-cover"

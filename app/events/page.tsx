@@ -28,7 +28,7 @@ const EVENTS = [
     desc: "Hands-on AI app-building — the basics of prompting, creating, and third-party connectors.",
     people: "35",
     outcome: "Attendees built apps live",
-    image: "/vibe-coding-workshop.webp",
+    image: "/group-picture.jpg",
   },
   {
     name: "LSIGraph / SurgeGraph",
@@ -36,7 +36,7 @@ const EVENTS = [
     desc: "SEO/AEO workshop — why traffic matters, reaching the right people, and ranking your site fast.",
     people: "50",
     outcome: "50 marketers learned to rank faster",
-    image: "/pikom-iwd.webp",
+    image: "/vibe-coding-workshop.webp",
   },
   {
     name: "SheSeen",
@@ -44,7 +44,7 @@ const EVENTS = [
     desc: "Pre-loved premium designer fashion pop-up at Publika, for a specially curated audience.",
     people: "—",
     outcome: "High, well-matched foot traffic",
-    image: "/group-picture.jpg",
+    image: "/iwd-stage-portrait.webp",
   },
   {
     name: "Prouvers Sdn Bhd",
@@ -52,7 +52,7 @@ const EVENTS = [
     desc: "Prompt engineering & automation — content creation, 24/7 replies, auto-quotations, and live interdepartmental reports.",
     people: "—",
     outcome: "Teams automated content, replies & reporting",
-    image: "/iwd-stage-portrait.webp",
+    image: "/pikom-iwd.webp",
   },
 ]
 
