@@ -4,21 +4,45 @@ import * as React from "react"
 import { Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 
-import { Button } from "@/components/ui/button"
-
 export function ThemeToggle() {
-  const { setTheme, theme } = useTheme()
+  const { setTheme, resolvedTheme } = useTheme()
+  const [mounted, setMounted] = React.useState(false)
+
+  React.useEffect(() => setMounted(true), [])
+
+  const isDark = resolvedTheme === "dark"
+
+  // Avoid hydration mismatch — render a neutral placeholder until mounted.
+  if (!mounted) {
+    return <div className="h-7 w-[3.25rem] rounded-full border border-border bg-muted" aria-hidden />
+  }
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      className="h-9 w-9"
+    <button
+      type="button"
+      role="switch"
+      aria-checked={isDark}
+      aria-label="Toggle dark mode"
+      onClick={() => setTheme(isDark ? "light" : "dark")}
+      className="relative inline-flex h-7 w-[3.25rem] items-center rounded-full border border-border bg-muted transition-colors duration-300 hover:bg-muted/70 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
     >
-      <Sun className="h-4 w-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-      <Moon className="absolute h-4 w-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-      <span className="sr-only">Toggle theme</span>
-    </Button>
+      <Sun
+        className={`absolute left-1.5 size-3.5 transition-opacity duration-300 ${
+          isDark ? "opacity-40 text-muted-foreground" : "opacity-0"
+        }`}
+      />
+      <Moon
+        className={`absolute right-1.5 size-3.5 transition-opacity duration-300 ${
+          isDark ? "opacity-0" : "opacity-40 text-muted-foreground"
+        }`}
+      />
+      <span
+        className={`relative z-10 flex size-6 items-center justify-center rounded-full bg-card text-primary shadow-sm transition-transform duration-300 ease-out ${
+          isDark ? "translate-x-[1.625rem]" : "translate-x-0.5"
+        }`}
+      >
+        {isDark ? <Moon className="size-3.5" /> : <Sun className="size-3.5" />}
+      </span>
+    </button>
   )
 }
