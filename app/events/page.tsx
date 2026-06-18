@@ -36,7 +36,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
     desc: "SEO/AEO workshop — why traffic matters, reaching the right people, and ranking your site fast.",
     people: "50",
     outcome: "50 marketers learned to rank faster",
-    image: "/vibe-coding-workshop.webp",
+    image: "/team-retreat.jpg",
   },
   {
     name: "SheSeen",
@@ -53,7 +53,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
     desc: "Prompt engineering & automation — content creation, 24/7 replies, auto-quotations, and live interdepartmental reports.",
     people: "—",
     outcome: "Teams automated content, replies & reporting",
-    image: "/pikom-iwd.webp",
+    image: "/iwd-stage-portrait.webp",
   },
 ]
 
