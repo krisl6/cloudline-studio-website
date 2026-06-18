@@ -44,34 +44,42 @@ const T = {
 
 type Status = "idle" | "submitting" | "success" | "error"
 
+const Req = () => <span className="text-red-500">*</span>
+
 export function EventForm() {
   const { lang } = useLanguage()
   const tt = T[lang]
-  const [form, setForm] = useState({
-    name: "", email: "", phone: "", business: "", participants: "", audience: "", goal: "",
-    dateType: "single" as "single" | "multi", date: "", startDate: "", endDate: "",
-  })
+  const [dateType, setDateType] = useState<"single" | "multi">("single")
   const [status, setStatus] = useState<Status>("idle")
   const [error, setError] = useState("")
 
-  const set = (k: keyof typeof form) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-    setForm((f) => ({ ...f, [k]: e.target.value }))
-
-  const onSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setError("")
-    if (!form.email.includes("@")) { setError(tt.errEmail); return }
+    // Read straight from the DOM so browser autofill is captured accurately.
+    const fd = new FormData(e.currentTarget)
+    const get = (k: string) => String(fd.get(k) ?? "").trim()
+
+    const email = get("email")
+    if (!email.includes("@")) { setError(tt.errEmail); return }
+
+    const event_dates = dateType === "single" ? get("date") : [get("startDate"), get("endDate")].filter(Boolean).join(" to ")
+
     setStatus("submitting")
-    const event_dates =
-      form.dateType === "single" ? form.date : [form.startDate, form.endDate].filter(Boolean).join(" to ")
     try {
       const res = await fetch("/api/event-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: form.name, email: form.email, phone: form.phone, business: form.business,
-          participants: form.participants, target_audience: form.audience, goal: form.goal,
-          date_type: form.dateType, event_dates,
+          name: get("name"),
+          email,
+          phone: get("phone"),
+          business: get("business"),
+          participants: get("participants"),
+          target_audience: get("audience"),
+          goal: get("goal"),
+          date_type: dateType,
+          event_dates,
         }),
       })
       const data = await res.json().catch(() => ({}))
@@ -103,60 +111,60 @@ export function EventForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="text-sm font-medium">{tt.name}</span>
-          <input type="text" value={form.name} onChange={set("name")} className={inputCls} placeholder={tt.namePh} />
+          <input type="text" name="name" autoComplete="name" className={inputCls} placeholder={tt.namePh} />
         </label>
         <label className="block">
           <span className="text-sm font-medium">{tt.phone}</span>
-          <input type="tel" value={form.phone} onChange={set("phone")} className={inputCls} placeholder={tt.phonePh} />
+          <input type="tel" name="phone" autoComplete="tel" className={inputCls} placeholder={tt.phonePh} />
         </label>
       </div>
       <label className="block">
-        <span className="text-sm font-medium">{tt.email} <span className="text-primary">*</span></span>
-        <input type="email" required value={form.email} onChange={set("email")} className={inputCls} placeholder={tt.emailPh} />
+        <span className="text-sm font-medium">{tt.email} <Req /></span>
+        <input type="email" name="email" required autoComplete="email" className={inputCls} placeholder={tt.emailPh} />
       </label>
       <label className="block">
         <span className="text-sm font-medium">{tt.business}</span>
-        <input type="text" value={form.business} onChange={set("business")} className={inputCls} placeholder={tt.businessPh} />
+        <input type="text" name="business" autoComplete="organization" className={inputCls} placeholder={tt.businessPh} />
       </label>
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="text-sm font-medium">{tt.participants}</span>
-          <input type="number" min={1} value={form.participants} onChange={set("participants")} className={inputCls} placeholder={tt.participantsPh} />
+          <span className="text-sm font-medium">{tt.participants} <Req /></span>
+          <input type="number" name="participants" min={1} required autoComplete="off" className={inputCls} placeholder={tt.participantsPh} />
         </label>
         <label className="block">
           <span className="text-sm font-medium">{tt.audience}</span>
-          <input type="text" value={form.audience} onChange={set("audience")} className={inputCls} placeholder={tt.audiencePh} />
+          <input type="text" name="audience" autoComplete="off" className={inputCls} placeholder={tt.audiencePh} />
         </label>
       </div>
 
       {/* Date of event */}
       <div>
-        <span className="text-sm font-medium">{tt.date}</span>
+        <span className="text-sm font-medium">{tt.date} <Req /></span>
         <div className="mt-1.5 inline-flex items-center rounded-full border border-border bg-muted p-0.5 text-sm font-medium">
           {(["single", "multi"] as const).map((d) => (
             <button
               key={d}
               type="button"
-              onClick={() => setForm((f) => ({ ...f, dateType: d }))}
-              aria-pressed={form.dateType === d}
-              className={`rounded-full px-4 py-1.5 transition-colors ${form.dateType === d ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
+              onClick={() => setDateType(d)}
+              aria-pressed={dateType === d}
+              className={`rounded-full px-4 py-1.5 transition-colors ${dateType === d ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
             >
               {d === "single" ? tt.single : tt.multi}
             </button>
           ))}
         </div>
-        {form.dateType === "single" ? (
-          <input type="date" value={form.date} onChange={set("date")} className={inputCls} />
+        {dateType === "single" ? (
+          <input type="date" name="date" required autoComplete="off" className={inputCls} />
         ) : (
           <div className="mt-1.5 grid gap-4 sm:grid-cols-2">
             <label className="block">
               <span className="text-xs text-muted-foreground">{tt.start}</span>
-              <input type="date" value={form.startDate} onChange={set("startDate")} className={inputCls} />
+              <input type="date" name="startDate" required autoComplete="off" className={inputCls} />
             </label>
             <label className="block">
               <span className="text-xs text-muted-foreground">{tt.end}</span>
-              <input type="date" value={form.endDate} onChange={set("endDate")} className={inputCls} />
+              <input type="date" name="endDate" required autoComplete="off" className={inputCls} />
             </label>
           </div>
         )}
@@ -164,7 +172,7 @@ export function EventForm() {
 
       <label className="block">
         <span className="text-sm font-medium">{tt.goal}</span>
-        <textarea value={form.goal} onChange={set("goal")} rows={3} className={inputCls} placeholder={tt.goalPh} />
+        <textarea name="goal" rows={3} autoComplete="off" className={inputCls} placeholder={tt.goalPh} />
       </label>
 
       {error && <p className="text-sm text-destructive">{error}</p>}

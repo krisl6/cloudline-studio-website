@@ -32,6 +32,7 @@ const heroImages = [
   { src: "/pikom-iwd.webp", alt: "CloudLine Studio speaking at the PIKOM International Women's Day event" },
   { src: "/group-picture.jpg", alt: "The CloudLine Studio workshop group" },
   { src: "/vibe-coding-workshop.webp", alt: "CloudLine Studio running a vibe coding workshop" },
+  { src: "/project6-group.png", alt: "The CloudLine Studio team" },
 ]
 
 const clients = [

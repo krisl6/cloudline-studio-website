@@ -38,26 +38,23 @@ type Status = "idle" | "submitting" | "success" | "error"
 export function ContactForm() {
   const { lang } = useLanguage()
   const tt = T[lang]
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [phone, setPhone] = useState("")
-  const [message, setMessage] = useState("")
   const [status, setStatus] = useState<Status>("idle")
   const [error, setError] = useState("")
 
-  const onSubmit = async (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setError("")
-    if (!email.includes("@")) {
-      setError(tt.errEmail)
-      return
-    }
+    // Read from the DOM so browser autofill is captured accurately.
+    const fd = new FormData(e.currentTarget)
+    const get = (k: string) => String(fd.get(k) ?? "").trim()
+    const email = get("email")
+    if (!email.includes("@")) { setError(tt.errEmail); return }
     setStatus("submitting")
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, phone, message }),
+        body: JSON.stringify({ name: get("name"), email, phone: get("phone"), message: get("message") }),
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok || !data.ok) throw new Error(data.error || tt.errGeneric)
@@ -88,20 +85,20 @@ export function ContactForm() {
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="text-sm font-medium">{tt.name}</span>
-          <input type="text" value={name} onChange={(e) => setName(e.target.value)} className={inputCls} placeholder={tt.namePh} />
+          <input type="text" name="name" autoComplete="name" className={inputCls} placeholder={tt.namePh} />
         </label>
         <label className="block">
           <span className="text-sm font-medium">{tt.phone}</span>
-          <input type="tel" value={phone} onChange={(e) => setPhone(e.target.value)} className={inputCls} placeholder={tt.phonePh} />
+          <input type="tel" name="phone" autoComplete="tel" className={inputCls} placeholder={tt.phonePh} />
         </label>
       </div>
       <label className="block">
-        <span className="text-sm font-medium">{tt.email} <span className="text-primary">*</span></span>
-        <input type="email" required value={email} onChange={(e) => setEmail(e.target.value)} className={inputCls} placeholder={tt.emailPh} />
+        <span className="text-sm font-medium">{tt.email} <span className="text-red-500">*</span></span>
+        <input type="email" name="email" required autoComplete="email" className={inputCls} placeholder={tt.emailPh} />
       </label>
       <label className="block">
         <span className="text-sm font-medium">{tt.message}</span>
-        <textarea value={message} onChange={(e) => setMessage(e.target.value)} rows={4} className={inputCls} placeholder={tt.messagePh} />
+        <textarea name="message" rows={4} autoComplete="off" className={inputCls} placeholder={tt.messagePh} />
       </label>
 
       {error && <p className="text-sm text-destructive">{error}</p>}
