@@ -13,7 +13,7 @@ import { DoodleCheck, DoodleSearch, DoodlePen, DoodleRocket } from "@/components
 const stepIcons = [DoodleSearch, DoodlePen, DoodleRocket]
 
 // Language-neutral event data (names + specifics are real).
-const EVENTS: { name: string; tag: string; desc: string; people: string; outcome: string; image: string; video?: string }[] = [
+const EVENTS: { name: string; tag: string; desc: string; people: string; outcome: string; image: string; video?: string; image2?: string }[] = [
   {
     name: "Vyne Wine",
     tag: "F&B · Wine tasting",
@@ -54,6 +54,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
     people: "—",
     outcome: "Teams automated content, replies & reporting",
     image: "/prouvers.jpg",
+    image2: "/prouvers-team-bonding.jpg",
   },
 ]
 
@@ -176,6 +177,11 @@ export default function EventsPage() {
                         <p className="font-medium leading-snug">{ev.outcome}</p>
                       </div>
                     </div>
+                    {ev.image2 && (
+                      <div className="relative mt-4 aspect-[4/3] overflow-hidden rounded-xl border border-border">
+                        <Image src={ev.image2} alt={`${ev.name} team`} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
+                      </div>
+                    )}
                   </div>
                 </motion.div>
               ))}
