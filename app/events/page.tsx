@@ -199,6 +199,25 @@ export default function EventsPage() {
           </div>
         </section>
 
+        {/* What you'll need to book */}
+        <section className="w-full py-20 md:py-28 border-t border-border" aria-label="What you'll need to book">
+          <div className="container px-4 md:px-6">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.requirements.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">{tt.requirements.heading}</h2>
+              <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.requirements.subcopy}</p>
+            </motion.div>
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-3 sm:grid-cols-2 max-w-3xl">
+              {tt.requirements.items.map((item) => (
+                <motion.div key={item} variants={fadeUp} className="flex items-start gap-3 rounded-xl border border-border bg-card px-4 py-3.5">
+                  <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <span className="text-sm font-medium">{item}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
         {/* CTA + form */}
         <section id="event-form" className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Plan your event">
           <div className="container px-4 md:px-6">

@@ -47,6 +47,17 @@ export const translations = {
       note: "*Starting price — final fee depends on scale and format.",
       cta: "Get a quote",
     },
+    requirements: {
+      eyebrow: "Before we start",
+      heading: "What you'll need to make a booking",
+      subcopy: "To curate the right event, please have these ready:",
+      items: [
+        "Business deck — including your USPs and a product/service explanation",
+        "Ideal Customer Profile / target audience demographic",
+        "Timeline & expectations",
+        "Event budget",
+      ],
+    },
     cta: {
       heading: "Have a product worth experiencing?",
       subcopy: "Tell us what you're launching and we'll design an event that gets it into the right hands.",
@@ -101,6 +112,17 @@ export const translations = {
       note: "*Harga permulaan — bayaran akhir bergantung pada skala dan format.",
       cta: "Dapatkan sebut harga",
     },
+    requirements: {
+      eyebrow: "Sebelum kita mula",
+      heading: "Apa yang anda perlukan untuk membuat tempahan",
+      subcopy: "Untuk menyusun acara yang tepat, sila sediakan perkara berikut:",
+      items: [
+        "Deck perniagaan — termasuk USP dan penerangan produk/perkhidmatan",
+        "Profil Pelanggan Ideal / demografi audiens sasaran",
+        "Garis masa & jangkaan",
+        "Bajet acara",
+      ],
+    },
     cta: {
       heading: "Ada produk yang berbaloi dialami?",
       subcopy: "Beritahu kami apa yang anda lancarkan dan kami akan reka acara yang menyampaikannya ke tangan yang tepat.",
@@ -145,6 +167,17 @@ export const translations = {
       price: "USD2,500 起",
       note: "*起步价——最终费用视规模与形式而定。",
       cta: "获取报价",
+    },
+    requirements: {
+      eyebrow: "开始之前",
+      heading: "预订前您需要准备的",
+      subcopy: "为了策划合适的活动，请准备好以下内容：",
+      items: [
+        "企业介绍 — 包含独特卖点（USP）与产品/服务说明",
+        "理想客户画像 / 目标受众人群",
+        "时间线与预期",
+        "活动预算",
+      ],
     },
     cta: {
       heading: "有值得被体验的产品吗？",
