@@ -2,111 +2,125 @@ export const translations = {
   en: {
     hero: {
       eyebrow: "Our Story",
-      heading: "The story behind your success",
+      heading: "We believe AI belongs in every workplace",
       subcopy:
-        "Every great brand has a story. Ours started with a simple observation: too many brilliant businesses were invisible in their markets. We founded CloudLine Studio to change that — to help ambitious teams build brands that don't just compete, but compound.",
-      ctaPrimary: "Start your brand journey",
-      ctaSecondary: "View our work",
+        "CloudLine Studio was built on one conviction: AI and modern growth systems shouldn't be a privilege reserved for tech giants. We create the bridge — through events, hands-on education, and AI-powered marketing — that makes these tools practical and profitable for every business in Malaysia and beyond.",
+      ctaPrimary: "Work with us",
+      ctaSecondary: "See our work",
+    },
+    mission: {
+      eyebrow: "Our Mission",
+      heading: "Increasing AI adoption across Malaysia's workforce",
+      body: "We aim to increase the adoption of AI within the workforce in Malaysia by educating those who are eager to learn. Through our events and workshops, we showcase the capabilities of AI — making it sustainable for everyday professionals to embed into their day-to-day lives.",
+      pillars: [
+        { title: "Educate", desc: "Hands-on AI workshops that build real skills, not just awareness." },
+        { title: "Showcase", desc: "Live product demos and events that make AI capabilities tangible." },
+        { title: "Sustain", desc: "Systems that keep working long after our engagement ends." },
+      ],
     },
     founder: {
       eyebrow: "Founder",
       heading: "Meet the person behind CloudLine",
       name: "Kristine Ling",
-      title: "Founder & Digital Marketing / AI Automation Specialist",
+      title: "Founder & Managing Director — Digital Marketing & AI Automation Specialist",
       bio: "Kristine Ling is the founder of CloudLine Studio and a digital marketing and AI automation specialist with nine years of experience driving growth across five markets (Malaysia, Indonesia, Singapore, Australia, and China). She helps e-commerce, high-ticket B2B, and SaaS teams turn wasted ad spend, high cost-per-lead, and manual workflows into AI-powered systems that compound revenue. Her work spans growth strategy, performance marketing, conversion rate optimization, data and systems, and product and AI, delivering leaner operations and measurable year-over-year growth.",
       highlights: [
         "9 years in digital strategy across 5 markets (Malaysia, Indonesia, Singapore, Australia, and China)",
         "Drove a peak revenue lift of 300% and a 40% manpower reduction through AI-powered automation",
         "Led cross-functional teams of up to 20 people",
         "Speaker at International Women's Day conferences and industry events",
-        "Trilingual: native English, professional Mandarin, and professional Malay, with expertise across growth, data & systems, product & AI, leadership, performance marketing, brand, CRO, and content",
+        "Trilingual: native English, professional Mandarin, and professional Malay",
       ],
       linkLabel: "kristinelingg.com",
     },
     stats: {
       eyebrow: "By the numbers",
       items: [
-        { number: "7+", label: "Years of Experience" },
-        { number: "200+", label: "Brands Transformed" },
-        { number: "50+", label: "Awards & Recognition" },
-        { number: "98%", label: "Client Retention Rate" },
+        { number: "9+", label: "Years of Experience" },
+        { number: "5", label: "Markets" },
+        { number: "500+", label: "Professionals Reached" },
+        { number: "10+", label: "Events Hosted" },
       ],
     },
     whyExist: {
       eyebrow: "Why CloudLine Exists",
-      heading: "We saw a problem. We built the solution.",
-      problemTitle: "The problem we witnessed",
+      heading: "AI is transforming work. Malaysia's workforce deserves a seat at the table.",
+      problemTitle: "The gap we saw",
       problem: {
-        p1Strong: "Businesses were drowning in generic branding.",
-        p1: " Cookie-cutter logos, forgettable messaging, and visual identities that looked like everyone else's. Companies were spending thousands on \"brand design\" but getting templates with their name slapped on.",
-        p2Strong: "Agencies were focused on quick deliverables, not lasting impact.",
-        p2: " They'd create a logo, build a website, and disappear — leaving businesses with pretty assets but no strategic foundation, no brand story, and no competitive differentiation.",
+        p1Strong: "AI adoption in Malaysia's workforce is still in its early stages.",
+        p1: " Most business owners have heard of AI, tried it once, and moved on. The tools are available, but the know-how, habits, and systems are not — especially outside the tech sector.",
+        p2Strong: "Agencies sell campaigns, not capability.",
+        p2: " Most marketing and growth agencies focus on delivering ads and content. Nobody builds the internal capacity of the businesses they serve — no training, no automation, no sustainable AI habits.",
         p3Strong: "The result?",
-        p3: " Brands that blend into the background. Businesses competing solely on price. Marketing that feels hollow because there's no authentic brand foundation to build upon.",
+        p3: " Businesses dependent on external agencies, duplicating manual work that AI could handle in seconds, and missing the compounding ROI that comes from AI-powered operations.",
       },
-      solutionTitle: "Our solution",
+      solutionTitle: "Our answer",
       solution: {
-        p1Strong: "We became the strategic partner businesses actually need.",
-        p1: " Not just designers or marketers, but brand architects who understand that great brands are built on strategy, authenticity, and deep market understanding.",
-        p2Strong: "We dig deeper than surface-level aesthetics.",
-        p2: " Before we design anything, we uncover your unique value proposition, understand your audience's deepest motivations, and identify the emotional connections that drive purchase decisions.",
-        p3Strong: "We build brands that don't just look different — they ARE different.",
-        p3: " Brands with clear positioning, compelling stories, and visual systems that command premium pricing and inspire customer loyalty.",
+        p1Strong: "We bring AI and growth to where business actually happens.",
+        p1: " Our Business Events put real products in front of real people — generating sales, feedback, and community in one afternoon. Our AI workshops teach teams to use AI in their actual work, not just in theory.",
+        p2Strong: "We build the systems and the people together.",
+        p2: " A great AI system is only as good as the team using it. Every engagement combines system-building with education so your team can sustain and grow what we build.",
+        p3Strong: "We measure outcomes, not outputs.",
+        p3: " Every event, campaign, and automation is measured by real business metrics: sales made, hours saved, leads generated, and revenue compounded.",
       },
     },
     whatWeDo: {
       eyebrow: "What We Do",
-      heading: "We help brands become unforgettable",
+      heading: "Three ways we grow your business",
       subcopy:
-        "From strategy to execution, we build comprehensive brand experiences that drive recognition, trust, and growth.",
+        "From live events that generate same-day sales to AI systems that run while you sleep — everything we build compounds.",
       services: [
         {
+          title: "Business Events & Product Demos",
+          description:
+            "Curated experiential events that put your product in real hands — generating sales, honest feedback, and a community of advocates in a single afternoon.",
+          features: ["Event Concept & Curation", "Venue & Logistics", "Curated Guest Lists", "Feedback Capture"],
+        },
+        {
+          title: "AI Workshops & Education",
+          description:
+            "Hands-on sessions that teach teams to use AI tools in their actual day-to-day work — from prompting and automation to content creation and reporting.",
+          features: ["Prompting & AI Tools", "Workflow Automation", "Content & Reporting", "Team Upskilling"],
+        },
+        {
+          title: "Digital Marketing & Growth",
+          description:
+            "Performance marketing, AI-powered automation, and conversion rate optimization that compounds revenue across five markets.",
+          features: ["Performance Campaigns", "AI Automation Systems", "Conversion Optimisation", "Cross-Market Growth"],
+        },
+        {
           title: "Brand Strategy & Positioning",
-          description: "Define your unique market position and competitive advantage",
-          features: ["Market Research", "Competitive Analysis", "Brand Architecture", "Positioning Strategy"],
-        },
-        {
-          title: "Visual Identity Design",
-          description: "Create memorable visual systems that communicate your brand essence",
-          features: ["Logo Design", "Brand Guidelines", "Typography Systems", "Color Palettes"],
-        },
-        {
-          title: "Digital Brand Experience",
-          description: "Bring your brand to life across digital touchpoints",
-          features: ["Website Design", "Social Media Assets", "Digital Campaigns", "User Experience"],
-        },
-        {
-          title: "Brand Implementation",
-          description: "Ensure consistent brand application across all channels",
-          features: ["Marketing Materials", "Brand Training", "Guidelines Implementation", "Quality Control"],
+          description:
+            "Clarifying your story, defining your ideal customer, and building a market position that commands premium pricing and loyalty.",
+          features: ["ICP Definition", "Brand Messaging", "Market Positioning", "Competitive Differentiation"],
         },
       ],
     },
     howWeWork: {
       eyebrow: "How We Work",
-      heading: "Our proven 4-step process",
+      heading: "Our process — from first call to compounding results",
       subcopy:
-        "Every successful brand follows the same journey. We've perfected the process to get you there faster.",
+        "Every engagement follows the same rhythm. We understand before we build, and we measure before we scale.",
       steps: [
         {
-          title: "Discovery & Strategy",
+          title: "Understand",
           description:
-            "We dive deep into your brand, market, and audience to uncover unique opportunities and develop a strategic foundation.",
+            "We start by deeply understanding your business model, your audience, and the specific outcome you want — whether that's sales, market feedback, or AI adoption across your team.",
         },
         {
-          title: "Creative Development",
+          title: "Design",
           description:
-            "Our team crafts compelling visual identities and messaging that authentically represent your brand and resonate with your audience.",
+            "We design the event, campaign, or system around what moves the needle for your specific goal. No templates, no copy-paste playbooks.",
         },
         {
-          title: "Implementation & Launch",
+          title: "Execute",
           description:
-            "We bring your brand to life across all touchpoints, ensuring consistency and maximum impact in the market.",
+            "We handle end-to-end delivery — from venue and logistics to live execution and data capture. You show up. We run it.",
         },
         {
-          title: "Growth & Optimization",
+          title: "Compound",
           description:
-            "We continuously monitor, analyze, and optimize your brand performance to drive sustainable growth and market success.",
+            "We measure results, learn from real-world data, and build on what works — so every engagement gets smarter and more effective than the last.",
         },
       ],
     },
@@ -120,11 +134,11 @@ export const translations = {
           phase: "Awareness",
           title: "Brand Discovery",
           description:
-            "Your audience discovers your brand through strategic positioning and compelling visual identity that cuts through market noise.",
+            "Your audience discovers your brand through strategic positioning and compelling storytelling that cuts through market noise.",
           details: [
             "Strategic market positioning that differentiates you from competitors",
-            "Compelling visual identity that captures attention instantly",
-            "Consistent brand presence across all discovery channels",
+            "Compelling brand story that captures attention instantly",
+            "Consistent presence across all discovery channels",
             "Clear value proposition that resonates with target audience",
           ],
         },
@@ -132,24 +146,24 @@ export const translations = {
           phase: "Consideration",
           title: "Brand Connection",
           description:
-            "Prospects connect emotionally with your brand story, values, and authentic messaging that speaks to their needs.",
+            "Prospects connect emotionally with your brand story, values, and authentic messaging that speaks directly to their needs.",
           details: [
             "Authentic brand storytelling that builds emotional connection",
             "Consistent messaging that reinforces your unique value",
             "Social proof and testimonials that build credibility",
-            "Content that educates and demonstrates expertise",
+            "Content that educates and demonstrates real expertise",
           ],
         },
         {
           phase: "Decision",
           title: "Brand Trust",
           description:
-            "Customers choose your brand confidently based on the trust, credibility, and professional image we've established.",
+            "Customers choose your brand confidently — driven by the trust, credibility, and professional impression we've built together.",
           details: [
-            "Professional brand presentation that instills confidence",
+            "Professional brand presentation that instils confidence",
             "Clear communication of benefits and outcomes",
             "Seamless customer experience across all touchpoints",
-            "Risk-reducing elements that make the decision easier",
+            "Risk-reducing elements that make the decision easy",
           ],
         },
         {
@@ -175,18 +189,19 @@ export const translations = {
       subcopy: "These principles guide every decision, every project, and every relationship we build.",
       items: [
         {
-          title: "Authenticity Over Trends",
+          title: "AI for Everyone",
           description:
-            "We believe in creating timeless brands that reflect genuine values rather than chasing fleeting trends.",
+            "We believe AI capability shouldn't be limited to large corporations. We build and teach systems that any business — in any industry — can use sustainably.",
         },
         {
-          title: "Strategy-Led Creativity",
+          title: "Education Over Dependency",
           description:
-            "Every creative decision is backed by strategic thinking and market insights to ensure business impact.",
+            "We'd rather teach your team to run with AI than have them rely on us forever. Sustainable adoption beats impressive deliverables every time.",
         },
         {
-          title: "Partnership Mindset",
-          description: "We become an extension of your team, invested in your long-term success and growth.",
+          title: "Results That Compound",
+          description:
+            "Every event, system, and campaign is designed with compounding in mind — so the value grows long after our engagement ends.",
         },
       ],
     },
@@ -194,175 +209,189 @@ export const translations = {
       eyebrow: "Your First Consultation",
       heading: "What to expect when we meet",
       subcopy:
-        "Your first consultation isn't a sales pitch — it's a strategic discovery session where we uncover opportunities, identify challenges, and map out a clear path to brand transformation.",
+        "Your first consultation isn't a sales pitch — it's a strategic discovery session where we uncover opportunities, identify challenges, and map out a clear path forward.",
       coverTitle: "What we'll cover together",
       cover: [
         {
-          title: "Brand Health Assessment",
+          title: "Business Model & ICP Alignment",
           description:
-            "We'll evaluate your current brand positioning, visual identity, and market perception to identify strengths and gaps.",
+            "We'll map your business model and Ideal Customer Profile to understand exactly who you're trying to reach and what they need to see before they buy.",
         },
         {
-          title: "Competitive Landscape Analysis",
+          title: "Growth & AI Opportunity Mapping",
           description:
-            "Together, we'll map your competitive environment and uncover opportunities for differentiation.",
+            "Together, we'll identify where AI and growth systems can have the highest immediate impact in your operations and marketing.",
         },
         {
-          title: "Target Audience Deep Dive",
+          title: "Event or Campaign Fit Assessment",
           description:
-            "We'll explore who your ideal customers really are, what motivates them, and how they make decisions.",
+            "We'll assess whether a Business Event, AI workshop, digital campaign, or a combination is the right starting point for your goals.",
         },
         {
-          title: "Growth Opportunity Mapping",
+          title: "First 90-Day Roadmap",
           description:
-            "We'll identify specific areas where strategic branding can drive measurable business growth.",
+            "We'll outline a practical action plan for the first 90 days — starting with what moves the needle fastest.",
         },
       ],
       outcomesTitle: "What you'll walk away with",
       outcomes: [
         {
-          title: "Clear Brand Strategy Roadmap",
-          description: "A detailed action plan outlining exactly what needs to be done to achieve your brand goals.",
+          title: "Clear Growth Roadmap",
+          description: "A detailed action plan outlining exactly what needs to happen to achieve your business goals.",
         },
         {
-          title: "Competitive Advantage Insights",
-          description: "Specific opportunities to differentiate your brand and capture market share.",
+          title: "AI Adoption Opportunities",
+          description: "Specific areas where AI can save time, reduce cost, or compound your marketing efforts.",
         },
         {
-          title: "Growth Potential Assessment",
-          description: "Quantified projections of how strategic branding can impact your business metrics.",
+          title: "Event or Campaign Concept",
+          description: "A rough concept for your first event or campaign, tailored to your product and audience.",
         },
         {
-          title: "Immediate Action Items",
-          description: "Quick wins you can implement right away to start improving your brand perception.",
+          title: "Immediate Quick Wins",
+          description: "Actions you can take today to start improving results — no waiting for a full engagement.",
         },
         {
-          title: "Custom Brand Audit Report",
-          description: "A comprehensive document detailing our findings and recommendations (yours to keep).",
+          title: "Honest Assessment",
+          description: "A straight answer on whether we're the right fit, and what success realistically looks like.",
         },
       ],
       promiseTitle: "Our promise",
       promiseBody:
-        "Even if we don't work together, you'll leave with valuable insights and actionable strategies that will help your business. That's our commitment to every consultation.",
+        "Even if we don't work together, you'll leave with valuable insights and actionable strategies. That's our commitment to every consultation.",
     },
     cta: {
-      heading: "Ready to build your brand legacy?",
+      heading: "Ready to put AI and growth to work?",
       subcopy:
-        "Let's create a brand that doesn't just compete — it compounds. Your transformation starts with a conversation.",
-      ctaPrimary: "Book your strategy session",
-      ctaSecondary: "View our portfolio",
-      footnote: "Complimentary consultation • No obligations • Immediate value",
+        "Whether you're launching a product, building an AI-ready team, or scaling your marketing — let's figure out what moves the needle first.",
+      ctaPrimary: "Book a strategy call",
+      ctaSecondary: "See our events",
+      footnote: "Complimentary consultation · No obligations · Immediate value",
     },
   },
 
   ms: {
     hero: {
       eyebrow: "Kisah Kami",
-      heading: "Kisah di sebalik kejayaan anda",
+      heading: "Kami percaya AI sepatutnya ada di setiap tempat kerja",
       subcopy:
-        "Setiap jenama hebat mempunyai kisahnya. Kisah kami bermula dengan satu pemerhatian mudah: terlalu banyak perniagaan cemerlang yang tidak kelihatan dalam pasaran mereka. Kami menubuhkan CloudLine Studio untuk mengubahnya — untuk membantu pasukan yang bercita-cita tinggi membina jenama yang bukan sekadar bersaing, tetapi berkembang pesat.",
-      ctaPrimary: "Mulakan perjalanan jenama anda",
+        "CloudLine Studio dibina atas satu keyakinan: AI dan sistem pertumbuhan moden tidak seharusnya menjadi keistimewaan syarikat gergasi teknologi. Kami menjadi jambatan — melalui acara, pendidikan langsung, dan pemasaran berkuasa AI — yang menjadikan alat-alat ini praktikal dan menguntungkan bagi setiap perniagaan di Malaysia dan merentasi sempadan.",
+      ctaPrimary: "Bekerjasama dengan kami",
       ctaSecondary: "Lihat hasil kerja kami",
+    },
+    mission: {
+      eyebrow: "Misi Kami",
+      heading: "Meningkatkan penggunaan AI dalam tenaga kerja Malaysia",
+      body: "Kami berhasrat meningkatkan penggunaan AI dalam tenaga kerja Malaysia dengan mendidik mereka yang ingin belajar. Melalui acara dan bengkel kami, kami mempamerkan keupayaan AI — menjadikannya mampan untuk digunakan oleh profesional setiap hari dalam kehidupan kerja mereka.",
+      pillars: [
+        { title: "Didik", desc: "Bengkel AI praktikal yang membina kemahiran sebenar, bukan sekadar kesedaran." },
+        { title: "Pamerkan", desc: "Demo produk dan acara langsung yang menjadikan keupayaan AI dapat dirasai." },
+        { title: "Kekalkan", desc: "Sistem yang terus berfungsi lama selepas penglibatan kami tamat." },
+      ],
     },
     founder: {
       eyebrow: "Pengasas",
       heading: "Kenali insan di sebalik CloudLine",
       name: "Kristine Ling",
-      title: "Founder & Digital Marketing / AI Automation Specialist",
-      bio: "Kristine Ling ialah pengasas CloudLine Studio dan pakar pemasaran digital serta automasi AI dengan pengalaman sembilan tahun memacu pertumbuhan merentasi lima pasaran (Malaysia, Indonesia, Singapura, Australia, dan China). Beliau membantu pasukan e-dagang, B2B bernilai tinggi, dan SaaS menukar perbelanjaan iklan yang membazir, kos per petunjuk yang tinggi, dan aliran kerja manual kepada sistem berkuasa AI yang menggandakan hasil. Kerjayanya merangkumi strategi pertumbuhan, pemasaran prestasi, pengoptimuman kadar penukaran, data dan sistem, serta produk dan AI, menghasilkan operasi yang lebih cekap dan pertumbuhan tahun ke tahun yang boleh diukur.",
+      title: "Pengasas & Pengarah Urusan — Pakar Pemasaran Digital & Automasi AI",
+      bio: "Kristine Ling ialah pengasas CloudLine Studio dan pakar pemasaran digital serta automasi AI dengan pengalaman sembilan tahun memacu pertumbuhan merentasi lima pasaran (Malaysia, Indonesia, Singapura, Australia, dan China). Beliau membantu pasukan e-dagang, B2B bernilai tinggi, dan SaaS menukar perbelanjaan iklan yang membazir, kos per petunjuk yang tinggi, dan aliran kerja manual kepada sistem berkuasa AI yang menggandakan hasil. Kerjayanya merangkumi strategi pertumbuhan, pemasaran prestasi, pengoptimuman kadar penukaran, data dan sistem, serta produk dan AI.",
       highlights: [
         "9 tahun dalam strategi digital merentasi 5 pasaran (Malaysia, Indonesia, Singapura, Australia, dan China)",
         "Memacu peningkatan hasil puncak sebanyak 300% dan pengurangan tenaga kerja 40% melalui automasi berkuasa AI",
         "Mengetuai pasukan pelbagai fungsi sehingga 20 orang",
         "Penceramah di persidangan Hari Wanita Antarabangsa dan acara industri",
-        "Menguasai tiga bahasa: Inggeris natif, Mandarin profesional, dan Melayu profesional, dengan kepakaran dalam pertumbuhan, data & sistem, produk & AI, kepimpinan, pemasaran prestasi, jenama, CRO, dan kandungan",
+        "Menguasai tiga bahasa: Inggeris natif, Mandarin profesional, dan Melayu profesional",
       ],
       linkLabel: "kristinelingg.com",
     },
     stats: {
       eyebrow: "Dalam angka",
       items: [
-        { number: "7+", label: "Tahun Pengalaman" },
-        { number: "200+", label: "Jenama Diubah" },
-        { number: "50+", label: "Anugerah & Pengiktirafan" },
-        { number: "98%", label: "Kadar Pengekalan Pelanggan" },
+        { number: "9+", label: "Tahun Pengalaman" },
+        { number: "5", label: "Pasaran" },
+        { number: "500+", label: "Profesional Dicapai" },
+        { number: "10+", label: "Acara Dianjurkan" },
       ],
     },
     whyExist: {
       eyebrow: "Mengapa CloudLine Wujud",
-      heading: "Kami melihat masalah. Kami membina penyelesaiannya.",
-      problemTitle: "Masalah yang kami saksikan",
+      heading: "AI sedang mengubah dunia kerja. Tenaga kerja Malaysia berhak duduk di meja yang sama.",
+      problemTitle: "Jurang yang kami lihat",
       problem: {
-        p1Strong: "Perniagaan lemas dalam penjenamaan generik.",
-        p1: " Logo seragam, mesej yang mudah dilupakan, dan identiti visual yang kelihatan sama seperti orang lain. Syarikat membelanjakan ribuan ringgit untuk \"reka bentuk jenama\" tetapi hanya menerima templat dengan nama mereka ditampal.",
-        p2Strong: "Agensi tertumpu pada penghantaran pantas, bukan kesan yang berkekalan.",
-        p2: " Mereka mencipta logo, membina laman web, dan menghilang — meninggalkan perniagaan dengan aset yang cantik tetapi tanpa asas strategik, tiada kisah jenama, dan tiada pembezaan persaingan.",
+        p1Strong: "Penggunaan AI dalam tenaga kerja Malaysia masih di peringkat awal.",
+        p1: " Kebanyakan pemilik perniagaan pernah mendengar tentang AI, mencubanya sekali, lalu beralih. Alat-alatnya ada, tetapi ilmu, tabiat, dan sistemnya tidak — terutamanya di luar sektor teknologi.",
+        p2Strong: "Agensi menjual kempen, bukan keupayaan.",
+        p2: " Kebanyakan agensi pemasaran dan pertumbuhan fokus pada penghantaran iklan dan kandungan. Tiada siapa membina kapasiti dalaman perniagaan yang mereka layani — tiada latihan, tiada automasi, tiada tabiat AI yang mampan.",
         p3Strong: "Hasilnya?",
-        p3: " Jenama yang lebur ke latar belakang. Perniagaan yang bersaing semata-mata atas harga. Pemasaran yang terasa kosong kerana tiada asas jenama yang tulen untuk dibina.",
+        p3: " Perniagaan bergantung pada agensi luar, menduplikasi kerja manual yang boleh dikendalikan AI dalam beberapa saat, dan terlepas ROI berganda yang datang daripada operasi berkuasa AI.",
       },
-      solutionTitle: "Penyelesaian kami",
+      solutionTitle: "Jawapan kami",
       solution: {
-        p1Strong: "Kami menjadi rakan strategik yang sebenarnya diperlukan perniagaan.",
-        p1: " Bukan sekadar pereka atau pemasar, tetapi arkitek jenama yang memahami bahawa jenama hebat dibina atas strategi, ketulenan, dan pemahaman pasaran yang mendalam.",
-        p2Strong: "Kami menggali lebih dalam daripada estetika permukaan.",
-        p2: " Sebelum kami mereka apa-apa, kami menemukan cadangan nilai unik anda, memahami motivasi terdalam khalayak anda, dan mengenal pasti hubungan emosi yang memacu keputusan pembelian.",
-        p3Strong: "Kami membina jenama yang bukan sekadar kelihatan berbeza — tetapi MEMANG berbeza.",
-        p3: " Jenama dengan kedudukan yang jelas, kisah yang menarik, dan sistem visual yang mewajarkan harga premium serta memberi inspirasi kesetiaan pelanggan.",
+        p1Strong: "Kami membawa AI dan pertumbuhan ke tempat perniagaan sebenarnya berlaku.",
+        p1: " Acara Perniagaan kami meletakkan produk sebenar di tangan orang sebenar — menjana jualan, maklum balas, dan komuniti dalam satu petang. Bengkel AI kami mengajar pasukan menggunakan AI dalam kerja sebenar mereka, bukan hanya teori.",
+        p2Strong: "Kami membina sistem dan orang secara serentak.",
+        p2: " Sistem AI yang hebat hanya sebagus pasukan yang menggunakannya. Setiap penglibatan menggabungkan pembinaan sistem dengan pendidikan supaya pasukan anda boleh mengekalkan dan mengembangkan apa yang kami bina.",
+        p3Strong: "Kami mengukur hasil, bukan output.",
+        p3: " Setiap acara, kempen, dan automasi diukur dengan metrik perniagaan sebenar: jualan dibuat, masa dijimatkan, petunjuk dijana, dan hasil digandakan.",
       },
     },
     whatWeDo: {
       eyebrow: "Apa Yang Kami Lakukan",
-      heading: "Kami membantu jenama menjadi tidak dilupakan",
+      heading: "Tiga cara kami mengembangkan perniagaan anda",
       subcopy:
-        "Daripada strategi hingga pelaksanaan, kami membina pengalaman jenama menyeluruh yang memacu pengiktirafan, kepercayaan, dan pertumbuhan.",
+        "Daripada acara langsung yang menjana jualan hari yang sama hingga sistem AI yang beroperasi semasa anda tidur — semuanya yang kami bina berganda.",
       services: [
         {
+          title: "Acara Perniagaan & Demo Produk",
+          description:
+            "Acara pengalaman yang meletakkan produk anda di tangan sebenar — menjana jualan, maklum balas jujur, dan komuniti penyokong dalam satu petang.",
+          features: ["Konsep & Kurasi Acara", "Tempat & Logistik", "Senarai Tetamu Terpilih", "Pengumpulan Maklum Balas"],
+        },
+        {
+          title: "Bengkel AI & Pendidikan",
+          description:
+            "Sesi praktikal yang mengajar pasukan menggunakan alat AI dalam kerja harian sebenar mereka — dari prompting dan automasi hingga penciptaan kandungan dan pelaporan.",
+          features: ["Prompting & Alat AI", "Automasi Aliran Kerja", "Kandungan & Pelaporan", "Peningkatan Kemahiran Pasukan"],
+        },
+        {
+          title: "Pemasaran Digital & Pertumbuhan",
+          description:
+            "Pemasaran prestasi, automasi berkuasa AI, dan pengoptimuman kadar penukaran yang menggandakan hasil merentasi lima pasaran.",
+          features: ["Kempen Prestasi", "Sistem Automasi AI", "Pengoptimuman Penukaran", "Pertumbuhan Merentasi Pasaran"],
+        },
+        {
           title: "Strategi & Kedudukan Jenama",
-          description: "Tentukan kedudukan pasaran unik dan kelebihan persaingan anda",
-          features: ["Penyelidikan Pasaran", "Analisis Persaingan", "Seni Bina Jenama", "Strategi Kedudukan"],
-        },
-        {
-          title: "Reka Bentuk Identiti Visual",
-          description: "Cipta sistem visual yang mudah diingat yang menyampaikan intipati jenama anda",
-          features: ["Reka Bentuk Logo", "Garis Panduan Jenama", "Sistem Tipografi", "Palet Warna"],
-        },
-        {
-          title: "Pengalaman Jenama Digital",
-          description: "Hidupkan jenama anda merentasi titik sentuh digital",
-          features: ["Reka Bentuk Laman Web", "Aset Media Sosial", "Kempen Digital", "Pengalaman Pengguna"],
-        },
-        {
-          title: "Pelaksanaan Jenama",
-          description: "Pastikan penggunaan jenama yang konsisten merentasi semua saluran",
-          features: ["Bahan Pemasaran", "Latihan Jenama", "Pelaksanaan Garis Panduan", "Kawalan Kualiti"],
+          description:
+            "Memperjelas kisah anda, mentakrifkan pelanggan ideal anda, dan membina kedudukan pasaran yang mewajarkan harga premium dan kesetiaan.",
+          features: ["Takrifan ICP", "Mesej Jenama", "Kedudukan Pasaran", "Pembezaan Persaingan"],
         },
       ],
     },
     howWeWork: {
       eyebrow: "Cara Kami Bekerja",
-      heading: "Proses 4 langkah terbukti kami",
+      heading: "Proses kami — dari panggilan pertama hingga hasil berganda",
       subcopy:
-        "Setiap jenama yang berjaya mengikuti perjalanan yang sama. Kami telah menyempurnakan proses untuk membawa anda ke sana dengan lebih pantas.",
+        "Setiap penglibatan mengikuti rentak yang sama. Kami faham sebelum membina, dan kami ukur sebelum skala.",
       steps: [
         {
-          title: "Penemuan & Strategi",
+          title: "Fahami",
           description:
-            "Kami mendalami jenama, pasaran, dan khalayak anda untuk menemukan peluang unik dan membangunkan asas strategik.",
+            "Kami mulakan dengan memahami model perniagaan, khalayak, dan hasil spesifik yang anda mahu — sama ada jualan, maklum balas pasaran, atau penggunaan AI merentasi pasukan anda.",
         },
         {
-          title: "Pembangunan Kreatif",
+          title: "Reka",
           description:
-            "Pasukan kami menyusun identiti visual dan mesej menarik yang mewakili jenama anda secara tulen dan bergema dengan khalayak anda.",
+            "Kami mereka acara, kempen, atau sistem di sekitar apa yang menggerakkan jarum untuk matlamat spesifik anda. Tiada templat, tiada buku panduan copy-paste.",
         },
         {
-          title: "Pelaksanaan & Pelancaran",
+          title: "Laksana",
           description:
-            "Kami menghidupkan jenama anda merentasi semua titik sentuh, memastikan konsistensi dan kesan maksimum dalam pasaran.",
+            "Kami mengendalikan penghantaran dari hujung ke hujung — dari tempat dan logistik hingga pelaksanaan langsung dan pengambilan data. Anda hadir. Kami jalankan.",
         },
         {
-          title: "Pertumbuhan & Pengoptimuman",
+          title: "Gandakan",
           description:
-            "Kami sentiasa memantau, menganalisis, dan mengoptimumkan prestasi jenama anda untuk memacu pertumbuhan mampan dan kejayaan pasaran.",
+            "Kami mengukur keputusan, belajar daripada data dunia sebenar, dan membina atas apa yang berjaya — supaya setiap penglibatan lebih pintar dan berkesan daripada yang sebelumnya.",
         },
       ],
     },
@@ -370,17 +399,17 @@ export const translations = {
       eyebrow: "Perjalanan Pelanggan",
       heading: "Daripada orang asing kepada penyokong jenama",
       subcopy:
-        "Setiap interaksi penting. Kami mereka setiap titik sentuh secara strategik untuk menggerakkan khalayak anda melalui perjalanan yang disusun rapi yang membina kepercayaan, menunjukkan nilai, dan mencipta hubungan yang berkekalan.",
+        "Setiap interaksi penting. Kami mereka setiap titik sentuh secara strategik untuk menggerakkan khalayak anda melalui perjalanan yang dibina dengan teliti.",
       phases: [
         {
           phase: "Kesedaran",
           title: "Penemuan Jenama",
           description:
-            "Khalayak anda menemukan jenama anda melalui kedudukan strategik dan identiti visual menarik yang menembusi kebisingan pasaran.",
+            "Khalayak anda menemukan jenama anda melalui kedudukan strategik dan penceritaan menarik yang menembusi kebisingan pasaran.",
           details: [
             "Kedudukan pasaran strategik yang membezakan anda daripada pesaing",
-            "Identiti visual menarik yang menangkap perhatian dengan segera",
-            "Kehadiran jenama yang konsisten merentasi semua saluran penemuan",
+            "Kisah jenama menarik yang menangkap perhatian dengan segera",
+            "Kehadiran konsisten merentasi semua saluran penemuan",
             "Cadangan nilai jelas yang bergema dengan khalayak sasaran",
           ],
         },
@@ -393,14 +422,14 @@ export const translations = {
             "Penceritaan jenama tulen yang membina hubungan emosi",
             "Mesej konsisten yang mengukuhkan nilai unik anda",
             "Bukti sosial dan testimoni yang membina kredibiliti",
-            "Kandungan yang mendidik dan menunjukkan kepakaran",
+            "Kandungan yang mendidik dan menunjukkan kepakaran sebenar",
           ],
         },
         {
           phase: "Keputusan",
           title: "Kepercayaan Jenama",
           description:
-            "Pelanggan memilih jenama anda dengan yakin berdasarkan kepercayaan, kredibiliti, dan imej profesional yang kami bina.",
+            "Pelanggan memilih jenama anda dengan yakin — didorong oleh kepercayaan, kredibiliti, dan tanggapan profesional yang kami bina bersama.",
           details: [
             "Persembahan jenama profesional yang menyemai keyakinan",
             "Komunikasi jelas mengenai manfaat dan hasil",
@@ -423,7 +452,7 @@ export const translations = {
       ],
       resultTitle: "Hasilnya: jenama yang berkembang dengan sendirinya",
       resultBody:
-        "Apabila setiap titik sentuh direka secara strategik dan bergema secara emosi, pelanggan anda bukan sekadar membeli daripada anda — mereka menjadi saluran pemasaran paling berkuasa anda, memacu pertumbuhan organik melalui dari mulut ke mulut dan rujukan.",
+        "Apabila setiap titik sentuh direka secara strategik dan bergema secara emosi, pelanggan anda bukan sekadar membeli daripada anda — mereka menjadi saluran pemasaran paling berkuasa anda, memacu pertumbuhan organik.",
     },
     values: {
       eyebrow: "Nilai Kami",
@@ -431,18 +460,19 @@ export const translations = {
       subcopy: "Prinsip-prinsip ini memandu setiap keputusan, setiap projek, dan setiap hubungan yang kami bina.",
       items: [
         {
-          title: "Ketulenan Mengatasi Trend",
+          title: "AI untuk Semua",
           description:
-            "Kami percaya dalam mencipta jenama abadi yang mencerminkan nilai tulen berbanding mengejar trend sementara.",
+            "Kami percaya keupayaan AI tidak seharusnya terhad kepada syarikat besar. Kami membina dan mengajar sistem yang mana-mana perniagaan — dalam mana-mana industri — boleh gunakan secara mampan.",
         },
         {
-          title: "Kreativiti Dipandu Strategi",
+          title: "Pendidikan Mengatasi Kebergantungan",
           description:
-            "Setiap keputusan kreatif disokong oleh pemikiran strategik dan pandangan pasaran untuk memastikan kesan perniagaan.",
+            "Kami lebih suka mengajar pasukan anda berlari dengan AI daripada membiarkan mereka bergantung pada kami selama-lamanya. Penggunaan mampan mengatasi hasil kerja yang mengagumkan.",
         },
         {
-          title: "Minda Perkongsian",
-          description: "Kami menjadi lanjutan pasukan anda, komited terhadap kejayaan dan pertumbuhan jangka panjang anda.",
+          title: "Hasil yang Berganda",
+          description:
+            "Setiap acara, sistem, dan kempen direka dengan pengggandaan dalam fikiran — supaya nilainya bertumbuh lama selepas penglibatan kami tamat.",
         },
       ],
     },
@@ -450,175 +480,189 @@ export const translations = {
       eyebrow: "Konsultasi Pertama Anda",
       heading: "Apa yang dijangka apabila kita bertemu",
       subcopy:
-        "Konsultasi pertama anda bukan tawaran jualan — ia sesi penemuan strategik di mana kami menemukan peluang, mengenal pasti cabaran, dan merancang laluan jelas ke arah transformasi jenama.",
+        "Konsultasi pertama anda bukan tawaran jualan — ia sesi penemuan strategik di mana kami menemukan peluang, mengenal pasti cabaran, dan merancang laluan jelas ke hadapan.",
       coverTitle: "Apa yang akan kita bincangkan bersama",
       cover: [
         {
-          title: "Penilaian Kesihatan Jenama",
+          title: "Penjajaran Model Perniagaan & ICP",
           description:
-            "Kami akan menilai kedudukan jenama semasa, identiti visual, dan persepsi pasaran anda untuk mengenal pasti kekuatan dan jurang.",
+            "Kami akan memetakan model perniagaan dan Profil Pelanggan Ideal anda untuk memahami tepat siapa yang anda cuba capai.",
         },
         {
-          title: "Analisis Landskap Persaingan",
+          title: "Pemetaan Peluang Pertumbuhan & AI",
           description:
-            "Bersama-sama, kami akan memetakan persekitaran persaingan anda dan menemukan peluang untuk pembezaan.",
+            "Bersama-sama, kami akan mengenal pasti di mana AI dan sistem pertumbuhan boleh memberi impak segera tertinggi.",
         },
         {
-          title: "Pendalaman Khalayak Sasaran",
+          title: "Penilaian Kesesuaian Acara atau Kempen",
           description:
-            "Kami akan meneroka siapa pelanggan ideal anda sebenarnya, apa yang memotivasikan mereka, dan bagaimana mereka membuat keputusan.",
+            "Kami akan menilai sama ada Acara Perniagaan, bengkel AI, kempen digital, atau gabungan adalah titik permulaan yang tepat.",
         },
         {
-          title: "Pemetaan Peluang Pertumbuhan",
+          title: "Peta Jalan 90 Hari Pertama",
           description:
-            "Kami akan mengenal pasti bidang khusus di mana penjenamaan strategik boleh memacu pertumbuhan perniagaan yang boleh diukur.",
+            "Kami akan menggariskan pelan tindakan praktikal untuk 90 hari pertama — bermula dengan apa yang menggerakkan jarum dengan paling pantas.",
         },
       ],
       outcomesTitle: "Apa yang akan anda bawa pulang",
       outcomes: [
         {
-          title: "Peta Jalan Strategi Jenama yang Jelas",
-          description: "Pelan tindakan terperinci yang menggariskan dengan tepat apa yang perlu dilakukan untuk mencapai matlamat jenama anda.",
+          title: "Peta Jalan Pertumbuhan yang Jelas",
+          description: "Pelan tindakan terperinci yang menggariskan dengan tepat apa yang perlu berlaku untuk mencapai matlamat perniagaan anda.",
         },
         {
-          title: "Pandangan Kelebihan Persaingan",
-          description: "Peluang khusus untuk membezakan jenama anda dan merebut bahagian pasaran.",
+          title: "Peluang Penggunaan AI",
+          description: "Bidang khusus di mana AI boleh menjimatkan masa, mengurangkan kos, atau menggandakan usaha pemasaran anda.",
         },
         {
-          title: "Penilaian Potensi Pertumbuhan",
-          description: "Unjuran berkuantiti tentang bagaimana penjenamaan strategik boleh mempengaruhi metrik perniagaan anda.",
+          title: "Konsep Acara atau Kempen",
+          description: "Konsep kasar untuk acara atau kempen pertama anda, disesuaikan dengan produk dan khalayak anda.",
         },
         {
-          title: "Item Tindakan Segera",
-          description: "Kemenangan pantas yang boleh anda laksanakan serta-merta untuk mula menambah baik persepsi jenama anda.",
+          title: "Kemenangan Cepat Segera",
+          description: "Tindakan yang boleh anda ambil hari ini untuk mula menambah baik keputusan — tanpa perlu menunggu penglibatan penuh.",
         },
         {
-          title: "Laporan Audit Jenama Tersuai",
-          description: "Dokumen menyeluruh yang memperincikan penemuan dan saranan kami (milik anda untuk disimpan).",
+          title: "Penilaian Jujur",
+          description: "Jawapan terus tentang sama ada kami sesuai, dan seperti apa kejayaan secara realistik.",
         },
       ],
       promiseTitle: "Janji kami",
       promiseBody:
-        "Walaupun kita tidak bekerjasama, anda akan pulang dengan pandangan berharga dan strategi boleh dilaksanakan yang akan membantu perniagaan anda. Itulah komitmen kami untuk setiap konsultasi.",
+        "Walaupun kita tidak bekerjasama, anda akan pulang dengan pandangan berharga dan strategi boleh dilaksanakan. Itulah komitmen kami untuk setiap konsultasi.",
     },
     cta: {
-      heading: "Bersedia untuk membina legasi jenama anda?",
+      heading: "Bersedia menjadikan AI dan pertumbuhan bekerja untuk anda?",
       subcopy:
-        "Mari cipta jenama yang bukan sekadar bersaing — tetapi berkembang pesat. Transformasi anda bermula dengan satu perbualan.",
-      ctaPrimary: "Tempah sesi strategi anda",
-      ctaSecondary: "Lihat portfolio kami",
-      footnote: "Konsultasi percuma • Tiada obligasi • Nilai segera",
+        "Sama ada anda melancarkan produk, membina pasukan sedia AI, atau menskalakan pemasaran anda — mari kita tentukan apa yang menggerakkan jarum terlebih dahulu.",
+      ctaPrimary: "Tempah panggilan strategi",
+      ctaSecondary: "Lihat acara kami",
+      footnote: "Konsultasi percuma · Tiada obligasi · Nilai segera",
     },
   },
 
   zh: {
     hero: {
       eyebrow: "我们的故事",
-      heading: "成就你背后的故事",
+      heading: "我们相信 AI 属于每一个职场",
       subcopy:
-        "每个出色的品牌都有自己的故事。我们的故事始于一个简单的观察：太多优秀的企业在市场中默默无闻。我们创立 CloudLine Studio 就是为了改变这一点——帮助雄心勃勃的团队打造不仅能竞争、更能持续增值的品牌。",
-      ctaPrimary: "开启你的品牌之旅",
+        "CloudLine Studio 建立于一个信念：AI 和现代增长系统不应该是科技巨头的专属特权。我们搭建桥梁——通过活动、实战教育和 AI 驱动的营销——让这些工具对马来西亚及更广泛地区的每一家企业都切实可用、有利可图。",
+      ctaPrimary: "与我们合作",
       ctaSecondary: "查看我们的作品",
+    },
+    mission: {
+      eyebrow: "我们的使命",
+      heading: "推动 AI 在马来西亚劳动力中的普及",
+      body: "我们致力于通过教育有意学习的人，推动 AI 在马来西亚职场中的广泛应用。通过我们的活动和工作坊，我们展示 AI 的实际能力——让每位专业人士都能将其融入日常工作，持续可行地使用。",
+      pillars: [
+        { title: "教育", desc: "实战 AI 工作坊，培养真实技能，而非停留于认知层面。" },
+        { title: "展示", desc: "产品演示和线下活动，让 AI 能力变得可感可知。" },
+        { title: "持续", desc: "我们参与结束后依然持续运作的系统。" },
+      ],
     },
     founder: {
       eyebrow: "创始人",
       heading: "认识 CloudLine 背后的人",
       name: "Kristine Ling",
-      title: "Founder & Digital Marketing / AI Automation Specialist",
-      bio: "Kristine Ling 是 CloudLine Studio 的创始人，也是一位数字营销与 AI 自动化专家，拥有九年经验，曾在五个市场（马来西亚、印度尼西亚、新加坡、澳大利亚和中国）推动增长。她帮助电商、高单价 B2B 和 SaaS 团队将浪费的广告支出、过高的每线索成本和手动工作流程转化为持续创造收入的 AI 驱动系统。她的工作涵盖增长策略、效果营销、转化率优化、数据与系统以及产品与 AI，打造更精简的运营和可衡量的同比增长。",
+      title: "创始人兼董事总经理 — 数字营销与 AI 自动化专家",
+      bio: "Kristine Ling 是 CloudLine Studio 的创始人，也是一位数字营销与 AI 自动化专家，拥有九年经验，曾在五个市场（马来西亚、印度尼西亚、新加坡、澳大利亚和中国）推动增长。她帮助电商、高单价 B2B 和 SaaS 团队将浪费的广告支出、过高的每线索成本和手动工作流程转化为持续创造收入的 AI 驱动系统。她的工作涵盖增长策略、效果营销、转化率优化、数据与系统以及产品与 AI。",
       highlights: [
         "在 5 个市场（马来西亚、印度尼西亚、新加坡、澳大利亚和中国）拥有 9 年数字策略经验",
         "通过 AI 驱动的自动化实现高达 300% 的收入提升和 40% 的人力削减",
         "领导多达 20 人的跨职能团队",
         "国际妇女节大会及行业活动的演讲嘉宾",
-        "精通三语：母语英语、专业普通话和专业马来语，专长涵盖增长、数据与系统、产品与 AI、领导力、效果营销、品牌、CRO 和内容",
+        "精通三语：母语英语、专业普通话和专业马来语",
       ],
       linkLabel: "kristinelingg.com",
     },
     stats: {
       eyebrow: "数据一览",
       items: [
-        { number: "7+", label: "年经验" },
-        { number: "200+", label: "品牌焕新" },
-        { number: "50+", label: "奖项与认可" },
-        { number: "98%", label: "客户保留率" },
+        { number: "9+", label: "年经验" },
+        { number: "5", label: "市场" },
+        { number: "500+", label: "触达专业人士" },
+        { number: "10+", label: "活动已举办" },
       ],
     },
     whyExist: {
       eyebrow: "CloudLine 为何存在",
-      heading: "我们看到了问题，并打造了解决方案。",
-      problemTitle: "我们目睹的问题",
+      heading: "AI 正在改变工作方式。马来西亚的劳动力理应在牌桌上占据一席之地。",
+      problemTitle: "我们看到的差距",
       problem: {
-        p1Strong: "企业被千篇一律的品牌设计淹没。",
-        p1: " 模板化的标志、令人难忘的信息，以及与别人毫无二致的视觉形象。企业花费数千元做“品牌设计”，却只得到贴上自己名字的模板。",
-        p2Strong: "代理机构专注于快速交付，而非持久影响。",
-        p2: " 他们做个标志、建个网站，然后消失——留给企业漂亮的素材，却没有战略根基、没有品牌故事，也没有竞争差异化。",
+        p1Strong: "AI 在马来西亚劳动力中的应用仍处于早期阶段。",
+        p1: " 大多数企业主听说过 AI，试用过一次，然后就搁置了。工具是有的，但知识、习惯和系统却没有——尤其是在科技行业之外。",
+        p2Strong: "代理机构出售的是活动，而不是能力。",
+        p2: " 大多数营销和增长代理机构专注于投放广告和生产内容。没有人在培养他们所服务企业的内部能力——没有培训、没有自动化、没有可持续的 AI 使用习惯。",
         p3Strong: "结果呢？",
-        p3: " 品牌融入背景、无人注意。企业只能靠价格竞争。营销显得空洞，因为根本没有真实的品牌根基可以依托。",
+        p3: " 企业依赖外部代理机构，重复着 AI 几秒就能完成的手动工作，错过了 AI 驱动运营所带来的复利式 ROI。",
       },
-      solutionTitle: "我们的解决方案",
+      solutionTitle: "我们的答案",
       solution: {
-        p1Strong: "我们成为企业真正需要的战略伙伴。",
-        p1: " 不仅是设计师或营销人员，而是品牌架构师，深知出色的品牌建立在战略、真实性和深刻的市场理解之上。",
-        p2Strong: "我们深入挖掘，而不止于表面美学。",
-        p2: " 在设计任何东西之前，我们先发掘你独特的价值主张，理解受众最深层的动机，并找出驱动购买决策的情感联结。",
-        p3Strong: "我们打造的品牌不仅看起来不同——它们本质上就是不同。",
-        p3: " 拥有清晰定位、引人入胜的故事，以及能支撑高端定价、激发客户忠诚的视觉系统。",
+        p1Strong: "我们把 AI 和增长带到业务真正发生的地方。",
+        p1: " 我们的商业活动把真实产品放进真实的人手中——在一个下午就能产生销售、反馈和社群。我们的 AI 工作坊教团队在实际工作中使用 AI，而不只是停留在理论层面。",
+        p2Strong: "我们同步构建系统与培养人才。",
+        p2: " 一个再好的 AI 系统，也取决于使用它的团队。每次参与都将系统构建与教育结合，让你的团队能够持续运营并发展我们所搭建的一切。",
+        p3Strong: "我们衡量成果，而非产出。",
+        p3: " 每一场活动、每一个活动、每一套自动化系统，都以真实的业务指标来衡量：成交量、节省的时间、产生的线索，以及复利式的收入增长。",
       },
     },
     whatWeDo: {
       eyebrow: "我们的服务",
-      heading: "我们帮助品牌变得令人难忘",
+      heading: "三种方式，助力你的业务增长",
       subcopy:
-        "从战略到执行，我们打造全面的品牌体验，推动认知度、信任度和增长。",
+        "从当天即可产生销售的线下活动，到在你休眠时依然运转的 AI 系统——我们构建的一切都在持续复利。",
       services: [
         {
+          title: "商业活动与产品演示",
+          description:
+            "精心策划的体验式活动，让你的产品真正进入目标客户手中——在一个下午内产生销售、真实反馈和一批品牌拥护者。",
+          features: ["活动概念与策划", "场地与统筹", "精选嘉宾名单", "反馈收集"],
+        },
+        {
+          title: "AI 工作坊与教育",
+          description:
+            "实战培训，教团队在日常工作中真正使用 AI 工具——从提示词工程和自动化，到内容创作和报告生成。",
+          features: ["提示词与 AI 工具", "工作流自动化", "内容与报告", "团队技能提升"],
+        },
+        {
+          title: "数字营销与增长",
+          description:
+            "效果营销、AI 驱动的自动化系统和转化率优化，跨越五个市场持续复利式增长收入。",
+          features: ["效果广告投放", "AI 自动化系统", "转化率优化", "跨市场增长"],
+        },
+        {
           title: "品牌战略与定位",
-          description: "明确你独特的市场定位和竞争优势",
-          features: ["市场调研", "竞争分析", "品牌架构", "定位策略"],
-        },
-        {
-          title: "视觉形象设计",
-          description: "打造令人难忘、传递品牌精髓的视觉系统",
-          features: ["标志设计", "品牌指南", "字体系统", "配色方案"],
-        },
-        {
-          title: "数字品牌体验",
-          description: "让你的品牌在各数字触点上鲜活呈现",
-          features: ["网站设计", "社交媒体素材", "数字活动", "用户体验"],
-        },
-        {
-          title: "品牌落地执行",
-          description: "确保品牌在所有渠道上的一致应用",
-          features: ["营销物料", "品牌培训", "指南执行", "质量把控"],
+          description:
+            "厘清你的品牌故事，定义理想客户，建立能够支撑高端定价和客户忠诚的市场定位。",
+          features: ["ICP 定义", "品牌信息", "市场定位", "竞争差异化"],
         },
       ],
     },
     howWeWork: {
       eyebrow: "我们的工作方式",
-      heading: "经过验证的四步流程",
+      heading: "从第一次通话到持续复利——我们的流程",
       subcopy:
-        "每个成功的品牌都遵循同样的旅程。我们已将流程打磨完善，让你更快抵达目标。",
+        "每次参与都遵循同样的节奏。我们先理解，再构建；先衡量，再扩展。",
       steps: [
         {
-          title: "探索与策略",
+          title: "理解",
           description:
-            "我们深入了解你的品牌、市场和受众，发掘独特机会并建立战略根基。",
+            "我们从深入理解你的商业模式、目标受众和具体预期成果开始——无论是销售、市场反馈，还是团队的 AI 普及。",
         },
         {
-          title: "创意开发",
+          title: "设计",
           description:
-            "我们的团队打造引人入胜的视觉形象和信息，真实代表你的品牌并与受众产生共鸣。",
+            "我们围绕最能推动你具体目标的因素来设计活动、活动或系统。没有模板，没有照搬的剧本。",
         },
         {
-          title: "执行与上线",
+          title: "执行",
           description:
-            "我们让你的品牌在所有触点上鲜活呈现，确保一致性并在市场中实现最大影响力。",
+            "我们全程负责端到端交付——从场地和统筹到现场执行和数据采集。你只需出现，我们来运作。",
         },
         {
-          title: "增长与优化",
+          title: "复利",
           description:
-            "我们持续监测、分析并优化你的品牌表现，推动可持续增长和市场成功。",
+            "我们衡量结果，从真实数据中学习，并在有效的基础上继续构建——让每一次参与都比上一次更智能、更有成效。",
         },
       ],
     },
@@ -626,16 +670,16 @@ export const translations = {
       eyebrow: "客户旅程",
       heading: "从陌生人到品牌拥护者",
       subcopy:
-        "每一次互动都至关重要。我们战略性地设计每个触点，引导你的受众走过精心打造的旅程，建立信任、展现价值并创造持久的联结。",
+        "每一次互动都至关重要。我们战略性地设计每个触点，引导你的受众走过精心打造的旅程。",
       phases: [
         {
           phase: "认知",
           title: "品牌发现",
           description:
-            "你的受众通过战略定位和引人注目的视觉形象发现你的品牌，从市场噪音中脱颖而出。",
+            "你的受众通过战略定位和引人入胜的品牌叙事发现你的品牌，从市场噪音中脱颖而出。",
           details: [
             "战略性的市场定位，让你区别于竞争对手",
-            "引人注目的视觉形象，瞬间抓住注意力",
+            "引人注目的品牌故事，瞬间抓住注意力",
             "在所有发现渠道上保持一致的品牌呈现",
             "与目标受众产生共鸣的清晰价值主张",
           ],
@@ -649,14 +693,14 @@ export const translations = {
             "真实的品牌叙事，建立情感联结",
             "一致的信息，强化你的独特价值",
             "社会证明和客户评价，建立可信度",
-            "教育性内容，展现专业能力",
+            "教育性内容，展现真实的专业能力",
           ],
         },
         {
           phase: "决策",
           title: "品牌信任",
           description:
-            "客户基于我们建立的信任、可信度和专业形象，自信地选择你的品牌。",
+            "客户自信地选择你的品牌——由我们共同建立的信任、可信度和专业形象所驱动。",
           details: [
             "专业的品牌呈现，注入信心",
             "清晰传达利益与成果",
@@ -687,18 +731,19 @@ export const translations = {
       subcopy: "这些原则指引我们的每一个决策、每一个项目以及我们建立的每一段关系。",
       items: [
         {
-          title: "真实胜于潮流",
+          title: "AI 为所有人",
           description:
-            "我们相信打造反映真实价值的永恒品牌，而非追逐转瞬即逝的潮流。",
+            "我们相信 AI 能力不应局限于大型企业。我们构建并教授任何行业的任何企业都能可持续使用的系统。",
         },
         {
-          title: "战略引领的创意",
+          title: "教育胜于依赖",
           description:
-            "每一个创意决策都以战略思维和市场洞察为支撑，确保产生商业影响。",
+            "我们宁愿教你的团队独立运用 AI，也不愿让他们永远依赖我们。可持续的普及远比令人印象深刻的交付物更有价值。",
         },
         {
-          title: "伙伴心态",
-          description: "我们成为你团队的延伸，致力于你的长期成功与增长。",
+          title: "持续复利的成果",
+          description:
+            "每一场活动、每个系统和每个活动都以复利为目标来设计——让价值在我们的参与结束后继续增长。",
         },
       ],
     },
@@ -706,64 +751,64 @@ export const translations = {
       eyebrow: "你的首次咨询",
       heading: "见面时你可以期待什么",
       subcopy:
-        "你的首次咨询不是推销——而是一场战略性的探索会谈，我们会发掘机会、识别挑战，并为品牌转型规划清晰的路径。",
+        "你的首次咨询不是推销——而是一场战略性的探索会谈，我们发掘机会、识别挑战，并规划清晰的前进路径。",
       coverTitle: "我们将一起探讨的内容",
       cover: [
         {
-          title: "品牌健康评估",
+          title: "商业模式与 ICP 对齐",
           description:
-            "我们将评估你当前的品牌定位、视觉形象和市场认知，以识别优势与差距。",
+            "我们将梳理你的商业模式和理想客户画像，精准理解你想触达的人群以及他们在购买前需要看到什么。",
         },
         {
-          title: "竞争格局分析",
+          title: "增长与 AI 机会梳理",
           description:
-            "我们将一起梳理你的竞争环境，发掘差异化的机会。",
+            "我们将共同识别 AI 和增长系统能在你的运营和营销中产生最高即时影响的领域。",
         },
         {
-          title: "目标受众深度剖析",
+          title: "活动或活动适配评估",
           description:
-            "我们将探究你的理想客户究竟是谁、是什么驱动他们，以及他们如何做决策。",
+            "我们将评估商业活动、AI 工作坊、数字活动，还是组合方案，哪个是最适合你目标的起点。",
         },
         {
-          title: "增长机会梳理",
+          title: "前 90 天路线图",
           description:
-            "我们将识别战略性品牌建设能够推动可衡量业务增长的具体领域。",
+            "我们将为前 90 天制定实操行动计划——从最能快速推动结果的事项入手。",
         },
       ],
       outcomesTitle: "你将带走什么",
       outcomes: [
         {
-          title: "清晰的品牌战略路线图",
-          description: "一份详细的行动计划，准确列出实现品牌目标所需采取的步骤。",
+          title: "清晰的增长路线图",
+          description: "一份详细的行动计划，准确列出实现业务目标所需采取的步骤。",
         },
         {
-          title: "竞争优势洞察",
-          description: "区别你的品牌并抢占市场份额的具体机会。",
+          title: "AI 应用机会",
+          description: "AI 能够节省时间、降低成本或放大营销效果的具体领域。",
         },
         {
-          title: "增长潜力评估",
-          description: "量化预测战略性品牌建设如何影响你的业务指标。",
+          title: "活动或活动概念",
+          description: "针对你的产品和受众量身定制的首场活动或活动初步概念。",
         },
         {
-          title: "即时行动项",
-          description: "你可以立即实施的快速成效，开始提升品牌认知。",
+          title: "即时可行的快速成效",
+          description: "你今天就可以采取的行动，无需等待完整参与即可开始改善结果。",
         },
         {
-          title: "定制品牌审计报告",
-          description: "一份详尽的文件，记录我们的发现与建议（归你所有）。",
+          title: "坦诚评估",
+          description: "关于我们是否合适、成功现实上看起来如何的直接答案。",
         },
       ],
       promiseTitle: "我们的承诺",
       promiseBody:
-        "即使我们没有合作，你也会带走有价值的洞察和可付诸实践的策略，帮助你的业务。这是我们对每一次咨询的承诺。",
+        "即使我们没有合作，你也会带走有价值的洞察和可付诸实践的策略。这是我们对每一次咨询的承诺。",
     },
     cta: {
-      heading: "准备好打造你的品牌传奇了吗？",
+      heading: "准备好让 AI 和增长系统为你工作了吗？",
       subcopy:
-        "让我们打造一个不仅能竞争、更能持续增值的品牌。你的转型从一次对话开始。",
-      ctaPrimary: "预约你的战略会谈",
-      ctaSecondary: "查看我们的作品集",
-      footnote: "免费咨询 • 无任何义务 • 即刻获得价值",
+        "无论你是在推出产品、打造 AI 就绪团队，还是扩展营销规模——让我们先找出最能推动结果的那一件事。",
+      ctaPrimary: "预约战略通话",
+      ctaSecondary: "查看我们的活动",
+      footnote: "免费咨询 · 无任何义务 · 即刻获得价值",
     },
   },
 } as const

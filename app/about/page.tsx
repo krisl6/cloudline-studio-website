@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { TeamGallery } from "@/components/team-gallery"
+import { AudioPlayer } from "@/components/audio-player"
 import {
   DoodleTrophy,
   DoodlePen,
@@ -35,7 +36,7 @@ const stagger = {
 const founder = {
   name: "Kristine Ling",
   website: "https://kristinelingg.com",
-  photoUrl: "https://kristinelingg.com/_next/image?url=%2Fdisplay-picture.png&w=3840&q=75",
+  photoUrl: "/team-kristine.jpg",
 }
 
 const founderInitials = founder.name
@@ -101,6 +102,33 @@ export default function AboutPage() {
                   <Link href="/client-results">{tt.hero.ctaSecondary}</Link>
                 </Button>
               </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Mission banner */}
+        <section className="w-full border-t border-primary/20 bg-primary/[0.04]" aria-label="Our mission">
+          <div className="container px-4 md:px-6 py-12 md:py-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto max-w-4xl"
+            >
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-4">{tt.mission.eyebrow}</p>
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-balance mb-5 max-w-2xl">
+                {tt.mission.heading}
+              </h2>
+              <p className="text-muted-foreground md:text-lg leading-relaxed max-w-2xl mb-10">{tt.mission.body}</p>
+              <div className="flex flex-wrap gap-6 md:gap-10">
+                {tt.mission.pillars.map((p) => (
+                  <div key={p.title} className="rounded-xl border border-primary/20 bg-background/60 px-5 py-4 max-w-[220px]">
+                    <p className="font-display font-semibold text-primary mb-1">{p.title}</p>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{p.desc}</p>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
@@ -186,6 +214,41 @@ export default function AboutPage() {
                 </Button>
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Core team */}
+        <section className="w-full py-16 md:py-20 border-t border-border bg-muted/30" aria-label="Our team">
+          <div className="container px-4 md:px-6">
+            <motion.p
+              variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }}
+              className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-8"
+            >
+              Core Team
+            </motion.p>
+            <motion.div
+              variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }}
+              className="grid gap-6 sm:grid-cols-2 max-w-2xl"
+            >
+              {[
+                { name: "Chan Eu Vin", title: "Head of Operations", img: "/team-euvin.jpg" },
+                { name: "Megan Lim", title: "Business Executive", img: "/team-megan.jpg" },
+              ].map((member) => (
+                <motion.div
+                  key={member.name}
+                  variants={fadeUp}
+                  className="flex items-center gap-5 rounded-2xl border border-border bg-card p-5"
+                >
+                  <div className="relative size-16 shrink-0 overflow-hidden rounded-full border border-border">
+                    <Image src={member.img} alt={member.name} fill sizes="64px" className="object-cover" />
+                  </div>
+                  <div>
+                    <p className="font-display font-semibold">{member.name}</p>
+                    <p className="text-sm text-primary">{member.title}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
@@ -622,6 +685,7 @@ export default function AboutPage() {
           </div>
         </section>
       </main>
+      <AudioPlayer src="/background-music.mp3" />
     </div>
   )
 }

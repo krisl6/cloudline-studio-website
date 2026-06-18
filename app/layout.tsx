@@ -62,11 +62,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/cloudline_logo.png' },
-      { url: '/cloudline_logo.png', type: 'image/png' },
+      { url: '/cloudline_logo_navy.png' },
+      { url: '/cloudline_logo_navy.png', type: 'image/png' },
     ],
     apple: [
-      { url: '/cloudline_logo.png', type: 'image/png' },
+      { url: '/cloudline_logo_navy.png', type: 'image/png' },
     ],
   },
   manifest: '/site.webmanifest',

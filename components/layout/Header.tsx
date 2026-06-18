@@ -43,12 +43,21 @@ export function Header() {
       <div className="container flex h-16 items-center justify-between px-4 md:px-6">
         <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
           <div className="size-8 rounded-lg overflow-hidden">
+            {/* Light mode: white-bg mark (bg blends with header) */}
             <Image
               src="/cloudline_logo.png"
               alt="CloudLine Studio"
               width={32}
               height={32}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover dark:hidden"
+            />
+            {/* Dark mode: navy icon (self-contained, readable on dark bg) */}
+            <Image
+              src="/cloudline_logo_navy.png"
+              alt="CloudLine Studio"
+              width={32}
+              height={32}
+              className="w-full h-full object-cover hidden dark:block"
             />
           </div>
           <span className="font-display font-semibold tracking-tight text-foreground">CloudLine Studio</span>

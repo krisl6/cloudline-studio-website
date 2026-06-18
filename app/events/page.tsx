@@ -10,6 +10,7 @@ import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { EventForm } from "@/components/event-form"
 import { DoodleCheck, DoodleSearch, DoodlePen, DoodleRocket } from "@/components/doodles"
+import { AudioPlayer } from "@/components/audio-player"
 
 const stepIcons = [DoodleSearch, DoodlePen, DoodleRocket]
 
@@ -115,6 +116,37 @@ export default function EventsPage() {
                   <Link href="#events">{tt.hero.secondary}</Link>
                 </Button>
               </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* AI Mission banner */}
+        <section className="w-full border-t border-primary/20 bg-primary/[0.04]" aria-label="Our mission">
+          <div className="container px-4 md:px-6 py-12 md:py-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mx-auto max-w-4xl"
+            >
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-4">{tt.mission.eyebrow}</p>
+              <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-balance mb-5 max-w-2xl">
+                {tt.mission.heading}
+              </h2>
+              <p className="text-muted-foreground md:text-lg leading-relaxed max-w-2xl mb-10">
+                {tt.mission.body}
+              </p>
+              <div className="flex flex-wrap gap-8 md:gap-12">
+                {[tt.mission.stat1, tt.mission.stat2, tt.mission.stat3].map((stat) => (
+                  <div key={stat.label}>
+                    <div className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-primary mb-1">
+                      {stat.number}
+                    </div>
+                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
             </motion.div>
           </div>
         </section>
@@ -304,6 +336,7 @@ export default function EventsPage() {
           </div>
         </section>
       </main>
+      <AudioPlayer src="/background-music.mp3" />
     </div>
   )
 }

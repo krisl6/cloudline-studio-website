@@ -58,6 +58,14 @@ export const translations = {
         "Event budget",
       ],
     },
+    mission: {
+      eyebrow: "Our Mission",
+      heading: "Increasing AI adoption across Malaysia's workforce",
+      body: "We aim to increase the adoption of AI within the workforce in Malaysia by educating those who are eager to learn. Through our events, we showcase the capabilities of AI — making it practical and sustainable for everyday professionals to use in their day-to-day lives.",
+      stat1: { number: "500+", label: "Professionals reached" },
+      stat2: { number: "5", label: "Industries" },
+      stat3: { number: "10+", label: "Workshops hosted" },
+    },
     roadmap: {
       eyebrow: "How we start together",
       heading: "Four steps to your event day",
@@ -149,6 +157,14 @@ export const translations = {
         "Bajet acara",
       ],
     },
+    mission: {
+      eyebrow: "Misi Kami",
+      heading: "Meningkatkan penggunaan AI dalam tenaga kerja Malaysia",
+      body: "Kami berhasrat meningkatkan penggunaan AI dalam tenaga kerja Malaysia dengan mendidik mereka yang ingin belajar. Melalui acara kami, kami mempamerkan keupayaan AI — menjadikannya praktikal dan mampan untuk digunakan oleh profesional setiap hari dalam kehidupan kerja mereka.",
+      stat1: { number: "500+", label: "Profesional dicapai" },
+      stat2: { number: "5", label: "Industri" },
+      stat3: { number: "10+", label: "Bengkel dianjurkan" },
+    },
     roadmap: {
       eyebrow: "Cara kami bermula bersama",
       heading: "Empat langkah ke hari acara anda",
@@ -230,6 +246,14 @@ export const translations = {
         "时间线与预期",
         "活动预算",
       ],
+    },
+    mission: {
+      eyebrow: "我们的使命",
+      heading: "推动 AI 在马来西亚劳动力中的普及",
+      body: "我们致力于通过教育有意学习的人，推动 AI 在马来西亚职场中的广泛应用。通过我们的活动，我们展示 AI 的实际能力——让 AI 成为每位专业人士日常工作中切实可用的工具。",
+      stat1: { number: "500+", label: "触达专业人士" },
+      stat2: { number: "5", label: "行业" },
+      stat3: { number: "10+", label: "工作坊已举办" },
     },
     roadmap: {
       eyebrow: "我们如何一起开始",
