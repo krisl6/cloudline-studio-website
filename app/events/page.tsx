@@ -22,6 +22,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
     people: "45",
     outcome: "RM10,000 in sales in one day",
     image: "/vyne-wine.jpg",
+    images: ["/vyne-wine-1.jpg", "/vyne-wine-2.jpg", "/vyne-wine-3.jpg", "/vyne-wine-4.jpg"],
   },
   {
     name: "MonstarX",
@@ -30,6 +31,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
     people: "35",
     outcome: "Attendees built apps live",
     image: "/group-picture.jpg",
+    images: ["/group-picture.jpg", "/monstarx-group-2.jpeg"],
   },
   {
     name: "LSIGraph / SurgeGraph",
