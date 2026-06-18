@@ -13,7 +13,7 @@ import { DoodleCheck, DoodleSearch, DoodlePen, DoodleRocket } from "@/components
 const stepIcons = [DoodleSearch, DoodlePen, DoodleRocket]
 
 // Language-neutral event data (names + specifics are real).
-const EVENTS = [
+const EVENTS: { name: string; tag: string; desc: string; people: string; outcome: string; image: string; video?: string }[] = [
   {
     name: "Vyne Wine",
     tag: "F&B · Wine tasting",
@@ -44,7 +44,8 @@ const EVENTS = [
     desc: "Pre-loved premium designer fashion pop-up at Publika, for a specially curated audience.",
     people: "—",
     outcome: "High, well-matched foot traffic",
-    image: "/iwd-stage-portrait.webp",
+    image: "/sheseen-poster.jpg",
+    video: "/sheseen.mp4",
   },
   {
     name: "Prouvers Sdn Bhd",
@@ -147,7 +148,19 @@ export default function EventsPage() {
               {EVENTS.map((ev) => (
                 <motion.div key={ev.name} variants={fadeUp} className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
                   <div className="relative aspect-[4/3] overflow-hidden">
-                    <Image src={ev.image} alt={ev.name} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
+                    {ev.video ? (
+                      <video
+                        src={ev.video}
+                        poster={ev.image}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="absolute inset-0 h-full w-full object-cover"
+                      />
+                    ) : (
+                      <Image src={ev.image} alt={ev.name} fill sizes="(max-width: 1024px) 100vw, 33vw" className="object-cover" />
+                    )}
                   </div>
                   <div className="flex flex-1 flex-col p-6">
                     <p className="text-xs font-medium uppercase tracking-wide text-primary mb-1.5">{ev.tag}</p>
