@@ -8,27 +8,36 @@ import { useLanguage } from "@/components/language-provider"
 
 const T = {
   en: {
-    name: "Name", email: "Email", phone: "Phone / WhatsApp", business: "Business / product", goal: "What's your event goal?",
+    name: "Name", email: "Email", phone: "Phone / WhatsApp", business: "Business / product",
+    participants: "Number of participants", audience: "Target audience", date: "Date of event", goal: "What's your event goal?",
+    single: "Single day", multi: "Multi-day", start: "Start date", end: "End date",
     namePh: "Your name", emailPh: "you@company.com", phonePh: "+60…", businessPh: "e.g. Vyne Wine — premium wines",
+    participantsPh: "e.g. 30", audiencePh: "e.g. Young professionals who enjoy wine",
     goalPh: "e.g. Let 30 people taste our wines and drive same-day sales",
-    send: "Request my event", sending: "Sending…",
-    successTitle: "Thank you — we've got it.", successBody: "We'll be in touch within 24 hours to design your event.",
+    send: "Get Quote Now", sending: "Sending…",
+    successTitle: "Thank you — we've got it.", successBody: "We'll be in touch within 24 hours with your quote.",
     errEmail: "Please enter a valid email.", errGeneric: "Something went wrong. Please try again.",
   },
   ms: {
-    name: "Nama", email: "E-mel", phone: "Telefon / WhatsApp", business: "Perniagaan / produk", goal: "Apakah matlamat acara anda?",
+    name: "Nama", email: "E-mel", phone: "Telefon / WhatsApp", business: "Perniagaan / produk",
+    participants: "Bilangan peserta", audience: "Audiens sasaran", date: "Tarikh acara", goal: "Apakah matlamat acara anda?",
+    single: "Satu hari", multi: "Berbilang hari", start: "Tarikh mula", end: "Tarikh tamat",
     namePh: "Nama anda", emailPh: "anda@syarikat.com", phonePh: "+60…", businessPh: "cth. Vyne Wine — wain premium",
+    participantsPh: "cth. 30", audiencePh: "cth. Profesional muda yang gemar wain",
     goalPh: "cth. Biar 30 orang mencuba wain kami dan dorong jualan hari sama",
-    send: "Mohon acara saya", sending: "Menghantar…",
-    successTitle: "Terima kasih — kami telah menerimanya.", successBody: "Kami akan menghubungi anda dalam 24 jam untuk mereka acara anda.",
+    send: "Dapatkan Sebut Harga", sending: "Menghantar…",
+    successTitle: "Terima kasih — kami telah menerimanya.", successBody: "Kami akan menghubungi anda dalam 24 jam dengan sebut harga.",
     errEmail: "Sila masukkan e-mel yang sah.", errGeneric: "Ada masalah. Sila cuba lagi.",
   },
   zh: {
-    name: "姓名", email: "邮箱", phone: "电话 / WhatsApp", business: "企业 / 产品", goal: "您的活动目标是什么？",
+    name: "姓名", email: "邮箱", phone: "电话 / WhatsApp", business: "企业 / 产品",
+    participants: "参与人数", audience: "目标受众", date: "活动日期", goal: "您的活动目标是什么？",
+    single: "单日", multi: "多日", start: "开始日期", end: "结束日期",
     namePh: "您的姓名", emailPh: "you@company.com", phonePh: "+60…", businessPh: "例如：Vyne Wine — 高端葡萄酒",
+    participantsPh: "例如：30", audiencePh: "例如：喜爱葡萄酒的年轻专业人士",
     goalPh: "例如：让 30 位客人试饮我们的葡萄酒并带动当天销售",
-    send: "申请活动", sending: "发送中…",
-    successTitle: "谢谢 — 我们已收到。", successBody: "我们将在 24 小时内与您联系，为您策划活动。",
+    send: "立即获取报价", sending: "发送中…",
+    successTitle: "谢谢 — 我们已收到。", successBody: "我们将在 24 小时内向您提供报价。",
     errEmail: "请输入有效的邮箱。", errGeneric: "出了点问题，请重试。",
   },
 } as const
@@ -38,7 +47,10 @@ type Status = "idle" | "submitting" | "success" | "error"
 export function EventForm() {
   const { lang } = useLanguage()
   const tt = T[lang]
-  const [form, setForm] = useState({ name: "", email: "", phone: "", business: "", goal: "" })
+  const [form, setForm] = useState({
+    name: "", email: "", phone: "", business: "", participants: "", audience: "", goal: "",
+    dateType: "single" as "single" | "multi", date: "", startDate: "", endDate: "",
+  })
   const [status, setStatus] = useState<Status>("idle")
   const [error, setError] = useState("")
 
@@ -50,11 +62,17 @@ export function EventForm() {
     setError("")
     if (!form.email.includes("@")) { setError(tt.errEmail); return }
     setStatus("submitting")
+    const event_dates =
+      form.dateType === "single" ? form.date : [form.startDate, form.endDate].filter(Boolean).join(" to ")
     try {
       const res = await fetch("/api/event-request", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+          name: form.name, email: form.email, phone: form.phone, business: form.business,
+          participants: form.participants, target_audience: form.audience, goal: form.goal,
+          date_type: form.dateType, event_dates,
+        }),
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok || !data.ok) throw new Error(data.error || tt.errGeneric)
@@ -100,6 +118,50 @@ export function EventForm() {
         <span className="text-sm font-medium">{tt.business}</span>
         <input type="text" value={form.business} onChange={set("business")} className={inputCls} placeholder={tt.businessPh} />
       </label>
+
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="block">
+          <span className="text-sm font-medium">{tt.participants}</span>
+          <input type="number" min={1} value={form.participants} onChange={set("participants")} className={inputCls} placeholder={tt.participantsPh} />
+        </label>
+        <label className="block">
+          <span className="text-sm font-medium">{tt.audience}</span>
+          <input type="text" value={form.audience} onChange={set("audience")} className={inputCls} placeholder={tt.audiencePh} />
+        </label>
+      </div>
+
+      {/* Date of event */}
+      <div>
+        <span className="text-sm font-medium">{tt.date}</span>
+        <div className="mt-1.5 inline-flex items-center rounded-full border border-border bg-muted p-0.5 text-sm font-medium">
+          {(["single", "multi"] as const).map((d) => (
+            <button
+              key={d}
+              type="button"
+              onClick={() => setForm((f) => ({ ...f, dateType: d }))}
+              aria-pressed={form.dateType === d}
+              className={`rounded-full px-4 py-1.5 transition-colors ${form.dateType === d ? "bg-card text-foreground shadow-sm" : "text-muted-foreground hover:text-foreground"}`}
+            >
+              {d === "single" ? tt.single : tt.multi}
+            </button>
+          ))}
+        </div>
+        {form.dateType === "single" ? (
+          <input type="date" value={form.date} onChange={set("date")} className={inputCls} />
+        ) : (
+          <div className="mt-1.5 grid gap-4 sm:grid-cols-2">
+            <label className="block">
+              <span className="text-xs text-muted-foreground">{tt.start}</span>
+              <input type="date" value={form.startDate} onChange={set("startDate")} className={inputCls} />
+            </label>
+            <label className="block">
+              <span className="text-xs text-muted-foreground">{tt.end}</span>
+              <input type="date" value={form.endDate} onChange={set("endDate")} className={inputCls} />
+            </label>
+          </div>
+        )}
+      </div>
+
       <label className="block">
         <span className="text-sm font-medium">{tt.goal}</span>
         <textarea value={form.goal} onChange={set("goal")} rows={3} className={inputCls} placeholder={tt.goalPh} />

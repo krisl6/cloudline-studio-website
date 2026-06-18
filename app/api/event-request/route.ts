@@ -10,6 +10,10 @@ export async function POST(request: Request) {
     const phone = (body.phone || "").trim()
     const business = (body.business || "").trim()
     const goal = (body.goal || "").trim()
+    const participants = String(body.participants ?? "").trim()
+    const target_audience = (body.target_audience || "").trim()
+    const date_type = (body.date_type || "").trim()
+    const event_dates = (body.event_dates || "").trim()
 
     if (!email.includes("@") || !email.includes(".")) {
       return NextResponse.json({ ok: false, error: "A valid email is required." }, { status: 400 })
@@ -29,6 +33,10 @@ export async function POST(request: Request) {
       email,
       phone,
       business,
+      participants,
+      event_dates,
+      date_type,
+      target_audience,
       goal,
       submitted_at: new Date().toISOString(),
     })

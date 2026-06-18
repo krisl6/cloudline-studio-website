@@ -53,7 +53,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
     desc: "Prompt engineering & automation — content creation, 24/7 replies, auto-quotations, and live interdepartmental reports.",
     people: "—",
     outcome: "Teams automated content, replies & reporting",
-    image: "/iwd-stage-portrait.webp",
+    image: "/prouvers.jpg",
   },
 ]
 
@@ -179,22 +179,6 @@ export default function EventsPage() {
                   </div>
                 </motion.div>
               ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Pricing">
-          <div className="container px-4 md:px-6">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mx-auto max-w-2xl text-center">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.pricing.eyebrow}</p>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">{tt.pricing.heading}</h2>
-              <p className="text-muted-foreground md:text-lg leading-relaxed mb-6">{tt.pricing.body}</p>
-              <p className="font-display text-4xl sm:text-5xl font-semibold text-primary">{tt.pricing.price}</p>
-              <p className="text-xs text-muted-foreground mt-2 mb-8">{tt.pricing.note}</p>
-              <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                <Link href="#event-form">{tt.pricing.cta}<ArrowRight className="ml-1.5 size-4" /></Link>
-              </Button>
             </motion.div>
           </div>
         </section>
