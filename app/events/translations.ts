@@ -58,6 +58,32 @@ export const translations = {
         "Event budget",
       ],
     },
+    roadmap: {
+      eyebrow: "How we start together",
+      heading: "Four steps to your event day",
+      steps: [
+        {
+          num: "01",
+          title: "Identify your business model & ICP",
+          desc: "We pin down your business model and Ideal Customer Profile — the exact people we need in the room.",
+        },
+        {
+          num: "02",
+          title: "Choose your format",
+          desc: "A dedicated Business Event, or a Product Feature inside an existing CloudLine workshop — pick what fits.",
+        },
+        {
+          num: "03",
+          title: "Set budget, goals & timeline",
+          desc: "We define what a win looks like, agree on the budget, and lock in a date that works.",
+        },
+        {
+          num: "04",
+          title: "Confirm support & tracking",
+          desc: "We finalise marketing & sales support, and set up data tracking: promo codes, UTMs, and more.",
+        },
+      ],
+    },
     cta: {
       heading: "Have a product worth experiencing?",
       subcopy: "Tell us what you're launching and we'll design an event that gets it into the right hands.",
@@ -123,6 +149,32 @@ export const translations = {
         "Bajet acara",
       ],
     },
+    roadmap: {
+      eyebrow: "Cara kami bermula bersama",
+      heading: "Empat langkah ke hari acara anda",
+      steps: [
+        {
+          num: "01",
+          title: "Kenal pasti model perniagaan & ICP anda",
+          desc: "Kami tentukan model perniagaan dan Profil Pelanggan Ideal anda — orang yang tepat yang kami perlukan dalam bilik.",
+        },
+        {
+          num: "02",
+          title: "Pilih format anda",
+          desc: "Acara Perniagaan khusus, atau Ciri Produk dalam bengkel CloudLine sedia ada — pilih yang sesuai.",
+        },
+        {
+          num: "03",
+          title: "Tetapkan bajet, matlamat & garis masa",
+          desc: "Kami tentukan apa yang dikira sebagai kejayaan, setuju bajet, dan kunci tarikh yang sesuai.",
+        },
+        {
+          num: "04",
+          title: "Sahkan sokongan & penjejakan",
+          desc: "Kami muktamadkan sokongan pemasaran & jualan, dan sediakan penjejakan data: kod promo, UTM, dan banyak lagi.",
+        },
+      ],
+    },
     cta: {
       heading: "Ada produk yang berbaloi dialami?",
       subcopy: "Beritahu kami apa yang anda lancarkan dan kami akan reka acara yang menyampaikannya ke tangan yang tepat.",
@@ -177,6 +229,32 @@ export const translations = {
         "理想客户画像 / 目标受众人群",
         "时间线与预期",
         "活动预算",
+      ],
+    },
+    roadmap: {
+      eyebrow: "我们如何一起开始",
+      heading: "迈向活动日的四个步骤",
+      steps: [
+        {
+          num: "01",
+          title: "确定商业模式与理想客户画像",
+          desc: "我们梳理您的商业模式和理想客户画像——确定需要进入活动现场的准确人群。",
+        },
+        {
+          num: "02",
+          title: "选择活动形式",
+          desc: "专属商业活动，或在现有 CloudLine 工作坊中进行产品展示——选择适合您的方式。",
+        },
+        {
+          num: "03",
+          title: "设定预算、目标与时间线",
+          desc: "我们定义成功标准，商定预算，并锁定一个合适的日期。",
+        },
+        {
+          num: "04",
+          title: "确认支持与数据追踪",
+          desc: "我们敲定营销与销售支持，并配置数据追踪：专属优惠码、UTM 参数等。",
+        },
       ],
     },
     cta: {

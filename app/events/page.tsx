@@ -163,8 +163,63 @@ export default function EventsPage() {
           </div>
         </section>
 
+        {/* Roadmap timeline */}
+        <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="How we start together">
+          <div className="container px-4 md:px-6">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-16">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.roadmap.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">{tt.roadmap.heading}</h2>
+            </motion.div>
+
+            <div className="relative">
+              {/* Curved SVG connector — desktop only */}
+              <div className="hidden lg:block absolute top-7 pointer-events-none" style={{ left: "12.5%", right: "12.5%" }}>
+                <svg
+                  className="w-full"
+                  height="56"
+                  viewBox="0 0 750 56"
+                  preserveAspectRatio="none"
+                  fill="none"
+                  aria-hidden="true"
+                >
+                  {/* Wave path threading through each circle centre (x=0, 250, 500, 750 at y=28) */}
+                  <path
+                    d="M 0,28 C 75,6 175,50 250,28 C 325,6 425,50 500,28 C 575,6 675,50 750,28"
+                    stroke="hsl(var(--primary))"
+                    strokeWidth="1.5"
+                    strokeOpacity="0.35"
+                    strokeDasharray="6 5"
+                    strokeLinecap="round"
+                  />
+                  {/* Terminal dot */}
+                  <circle cx="750" cy="28" r="3" fill="hsl(var(--primary))" fillOpacity="0.5" />
+                </svg>
+              </div>
+
+              <motion.div
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12"
+              >
+                {tt.roadmap.steps.map((step, i) => (
+                  <motion.div key={step.num} variants={fadeUp} className="flex flex-col">
+                    {/* Circle badge */}
+                    <div className="relative z-10 inline-flex size-14 shrink-0 items-center justify-center rounded-full bg-primary mb-5 self-start">
+                      <span className="font-display text-sm font-semibold text-primary-foreground">{step.num}</span>
+                    </div>
+                    <h3 className="font-display text-lg font-semibold mb-2 leading-snug">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                  </motion.div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
         {/* Past events */}
-        <section id="events" className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Past events">
+        <section id="events" className="w-full py-20 md:py-28 border-t border-border" aria-label="Past events">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-12">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.events.eyebrow}</p>
