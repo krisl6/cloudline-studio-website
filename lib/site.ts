@@ -1,4 +1,4 @@
-// Central site config — used for SEO metadata, canonical URLs, sitemap, and robots.
+// Central site config, used for SEO metadata, canonical URLs, sitemap, and robots.
 export const SITE_URL = "https://cloudline-studio.com"
 
 export const SITE_NAME = "CloudLine Studio"

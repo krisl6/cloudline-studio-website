@@ -63,7 +63,7 @@ export async function POST(request: Request) {
     if (course_url) desired.course_url = course_url
 
     // Match our keys to the table's actual column names (case-insensitive) and
-    // only send columns that exist — avoids FieldNameNotFound on partial setups.
+    // only send columns that exist, avoids FieldNameNotFound on partial setups.
     const columns = await getFieldNames(baseToken, tableId, token)
     let fields = desired
     if (columns) {

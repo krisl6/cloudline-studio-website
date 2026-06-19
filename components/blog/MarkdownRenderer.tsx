@@ -74,7 +74,7 @@ function inlineFormat(text: string): React.ReactNode[] {
       }
     }
 
-    // No match found — advance by 1
+    // No match found, advance by 1
     parts.push(remaining[0])
     remaining = remaining.slice(1)
     key++
@@ -210,7 +210,7 @@ export function MarkdownRenderer({ content }: { content: string }) {
       continue
     }
 
-    // Paragraph — collect consecutive non-special lines
+    // Paragraph, collect consecutive non-special lines
     const paraLines: string[] = []
     while (
       i < lines.length &&

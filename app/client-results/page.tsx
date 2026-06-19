@@ -25,7 +25,7 @@ export default function ClientResultsPage() {
   ]
 
   // NOTE: ClearSK, Lasus and Warung Ambo use real engagement details.
-  // The remaining entries are plausible placeholders — replace with verified copy/figures.
+  // The remaining entries are plausible placeholders, replace with verified copy/figures.
   const testimonials = [
     {
       name: "ClearSK Aesthetic Clinic",
@@ -36,7 +36,7 @@ export default function ClientResultsPage() {
       quote: "CloudLine rebuilt how our marketing and sales actually run. They consolidated our CRM and sales stack, automated lead follow-up with AI, and gave every team one source of truth. We cut over S$100K a month in redundant subscriptions and grew bookings and revenue 40% in a single quarter.",
       results: "S$100K/month saved, +40% bookings & revenue in 3 months, unified CRM & sales pipeline",
       challenge: "Disconnected CRM, booking and sales tools, duplicated data entry, and bloated overlapping subscriptions",
-      solution: "AI-enabled marketing & sales transformation — consolidated stack, automated lead scoring and follow-up, single source of truth",
+      solution: "AI-enabled marketing & sales transformation, consolidated stack, automated lead scoring and follow-up, single source of truth",
       timeline: "3 months",
       metrics: {
         before: "Fragmented tools, 6-figure monthly subscription waste, slow manual follow-up",
@@ -89,7 +89,7 @@ export default function ClientResultsPage() {
       quote: "CloudLine gave us the strategic clarity we needed. They audited our funnel, prioritised the highest-impact channels, and coached our internal team on execution so the gains kept compounding after the engagement.",
       results: "Sharper channel strategy, prioritised roadmap, upskilled internal team",
       challenge: "Spread thin across too many channels with unclear priorities",
-      solution: "Strategic consultation — funnel audit, channel prioritisation, and team enablement",
+      solution: "Strategic consultation, funnel audit, channel prioritisation, and team enablement",
       timeline: "Consultation engagement"
     },
     {
@@ -127,10 +127,10 @@ export default function ClientResultsPage() {
       role: "Pemilik",
       category: "sync",
       rating: 5,
-      quote: "Jujur saya cakap, mengurus warung ni memang kerja tak habis-habis. Dari pagi sampai malam saya sibuk di dapur, jadi hal sistem dan teknologi memang saya tak sempat nak fikir. Waktu puncak, barisan pelanggan panjang, ada je pesanan yang tertinggal, dan operasi dapur dengan depan kaunter selalu tak sekata. CloudLine datang dan terus selesaikan masalah tu. Mereka optimumkan sistem POS warung saya khas untuk F&B, pastikan tiada lagi pesanan tercicir, dan selaraskan operasi depan kaunter dengan dapur terus melalui peranti mereka. Hasilnya nampak serta-merta — kelajuan barisan laju 30%, pelanggan tak payah tunggu lama, dan jualan pun terus naik. Sekarang saya boleh fokus pada masakan, bukan kelam-kabut nak urus pesanan. Terima kasih CloudLine!",
+      quote: "Jujur saya cakap, mengurus warung ni memang kerja tak habis-habis. Dari pagi sampai malam saya sibuk di dapur, jadi hal sistem dan teknologi memang saya tak sempat nak fikir. Waktu puncak, barisan pelanggan panjang, ada je pesanan yang tertinggal, dan operasi dapur dengan depan kaunter selalu tak sekata. CloudLine datang dan terus selesaikan masalah tu. Mereka optimumkan sistem POS warung saya khas untuk F&B, pastikan tiada lagi pesanan tercicir, dan selaraskan operasi depan kaunter dengan dapur terus melalui peranti mereka. Hasilnya nampak serta-merta, kelajuan barisan laju 30%, pelanggan tak payah tunggu lama, dan jualan pun terus naik. Sekarang saya boleh fokus pada masakan, bukan kelam-kabut nak urus pesanan. Terima kasih CloudLine!",
       results: "Kelajuan barisan meningkat 30%, sifar pesanan tercicir, operasi dapur & kaunter diselaraskan, jualan meningkat",
       challenge: "Sistem POS tidak teratur, pesanan tercicir waktu puncak, operasi dapur dan kaunter tidak sekata",
-      solution: "Penyelarasan antara jabatan — POS khas F&B dengan operasi depan kaunter dan dapur diselaraskan melalui peranti",
+      solution: "Penyelarasan antara jabatan, POS khas F&B dengan operasi depan kaunter dan dapur diselaraskan melalui peranti",
       timeline: "Kesan serta-merta selepas pelaksanaan",
       metrics: {
         before: "Barisan panjang, pesanan tercicir, dapur & kaunter tak selaras",
@@ -144,10 +144,10 @@ export default function ClientResultsPage() {
       role: "Brand Manager",
       category: "branding",
       rating: 5,
-      quote: "CloudLine refreshed our digital brand and built campaigns that actually converted. Our content finally looked and sounded like us — and our customer acquisition cost dropped while order volume grew.",
+      quote: "CloudLine refreshed our digital brand and built campaigns that actually converted. Our content finally looked and sounded like us, and our customer acquisition cost dropped while order volume grew.",
       results: "Refreshed brand identity, higher-converting campaigns, lower acquisition cost",
       challenge: "Inconsistent brand presence and rising customer acquisition costs",
-      solution: "Digital marketing & branding — identity refresh plus performance-driven creative",
+      solution: "Digital marketing & branding, identity refresh plus performance-driven creative",
       timeline: "3 months"
     },
     {
@@ -156,10 +156,10 @@ export default function ClientResultsPage() {
       role: "Owner",
       category: "branding",
       rating: 5,
-      quote: "CloudLine gave our burger brand a proper digital identity — photography, social, and a funnel that brings people through the door. Weekend covers are up and our regulars keep growing.",
+      quote: "CloudLine gave our burger brand a proper digital identity, photography, social, and a funnel that brings people through the door. Weekend covers are up and our regulars keep growing.",
       results: "Distinctive digital brand, stronger social presence, more weekend covers",
       challenge: "Great food but a weak, inconsistent online brand presence",
-      solution: "Digital marketing & branding — visual identity, social content, and a local demand funnel",
+      solution: "Digital marketing & branding, visual identity, social content, and a local demand funnel",
       timeline: "2 months"
     },
     {
@@ -168,10 +168,10 @@ export default function ClientResultsPage() {
       role: "Digital Marketing Lead",
       category: "branding",
       rating: 5,
-      quote: "Our campaigns performed decently, but there was a gap between awareness and engagement. CloudLine tested new visual formats, shortened load times, and built mini-landing experiences that kept users interacting longer — and upskilled our in-house team along the way.",
+      quote: "Our campaigns performed decently, but there was a gap between awareness and engagement. CloudLine tested new visual formats, shortened load times, and built mini-landing experiences that kept users interacting longer, and upskilled our in-house team along the way.",
       results: "Reduced churn, improved user retention, enhanced in-house team knowledge",
       challenge: "Gap between campaign awareness and real user engagement",
-      solution: "Digital marketing & branding — new creative formats, faster experiences, and team enablement",
+      solution: "Digital marketing & branding, new creative formats, faster experiences, and team enablement",
       timeline: "Ongoing engagement"
     }
   ]
@@ -436,8 +436,8 @@ export default function ClientResultsPage() {
                 title: "How we helped a Malaysian interior design firm go from struggling to thriving",
                 industry: "Interior Design",
                 platforms: ["Google", "META"],
-                challenge: "Like many interior design firms, our client was caught in a frustrating cycle. Their work was beautiful, but finding new projects was a constant struggle. The sales cycle was painfully long—people would browse, get excited, then disappear for months. And since they only got paid when projects were completed, cash flow was always tight.",
-                solution: "We knew we had to play the long game here. Our Google team built a comprehensive SEO strategy that would capture people at every stage of their home renovation journey—from 'just browsing' to 'ready to hire.' Meanwhile, our META team created nurturing campaigns that stayed top-of-mind during those long decision periods. We tracked everything obsessively, constantly tweaking and optimizing to squeeze every bit of value from their budget.",
+                challenge: "Like many interior design firms, our client was caught in a frustrating cycle. Their work was beautiful, but finding new projects was a constant struggle. The sales cycle was painfully long, people would browse, get excited, then disappear for months. And since they only got paid when projects were completed, cash flow was always tight.",
+                solution: "We knew we had to play the long game here. Our Google team built a comprehensive SEO strategy that would capture people at every stage of their home renovation journey, from 'just browsing' to 'ready to hire.' Meanwhile, our META team created nurturing campaigns that stayed top-of-mind during those long decision periods. We tracked everything obsessively, constantly tweaking and optimizing to squeeze every bit of value from their budget.",
                 results: "The transformation was incredible: over 6000% increase in relevant website traffic, 300% more qualified leads coming through the door, and they cut their cost per lead by nearly half. Most importantly? They finally had predictable growth.",
                 image: "/analytics-dashboard.png",
                 metrics: [
@@ -450,8 +450,8 @@ export default function ClientResultsPage() {
                 title: "From burnout to breakthrough: how we scaled an aesthetic clinic",
                 industry: "Healthcare/Aesthetics",
                 platforms: ["Google", "META", "TikTok"],
-                challenge: "Our client was a talented aesthetic doctor, but she was exhausted. Building her practice meant being 'always on'—constantly posting on social media, networking, and trying to build her personal brand. The problem? She became a doctor to help people, not to be a full-time content creator. Word of mouth was slow, and she was burning out fast.",
-                solution: "We took the marketing burden off her shoulders completely. Our Google team got her clinic showing up when people searched for treatments. Our META team automated her social presence with engaging content that built trust without her having to be glued to her phone. And our TikTok specialists created educational content that showcased her expertise while she focused on what she loved—treating patients.",
+                challenge: "Our client was a talented aesthetic doctor, but she was exhausted. Building her practice meant being 'always on', constantly posting on social media, networking, and trying to build her personal brand. The problem? She became a doctor to help people, not to be a full-time content creator. Word of mouth was slow, and she was burning out fast.",
+                solution: "We took the marketing burden off her shoulders completely. Our Google team got her clinic showing up when people searched for treatments. Our META team automated her social presence with engaging content that built trust without her having to be glued to her phone. And our TikTok specialists created educational content that showcased her expertise while she focused on what she loved, treating patients.",
                 results: "Within months, she had 250% more new patients booking appointments, her profit margins jumped 180%, and best of all? She got her life back. She cut her personal branding time by 90% while achieving better results than ever.",
                 image: "/aesthetic-clinic-marketing-dashboard-with-patient-.jpg",
                 metrics: [

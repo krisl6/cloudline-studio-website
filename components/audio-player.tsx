@@ -63,7 +63,7 @@ export function AudioPlayer({ src }: AudioPlayerProps) {
           <span className="text-muted-foreground">{playing ? "Now playing" : "Ambient"}</span>
         </button>
 
-        {/* Mute toggle — only visible when playing */}
+        {/* Mute toggle, only visible when playing */}
         <AnimatePresence>
           {playing && (
             <motion.button

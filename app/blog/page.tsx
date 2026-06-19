@@ -5,13 +5,13 @@ import { SITE_URL } from "@/lib/site"
 import { ArrowRight, Clock, Tag } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Blog — Marketing Insights for Founders",
+  title: "Blog, Marketing Insights for Founders",
   description: "Practical guides on startup marketing, SaaS growth, online course marketing, and beauty brand strategy from the Cloudline Studio team.",
   alternates: {
     canonical: `${SITE_URL}/blog/`,
   },
   openGraph: {
-    title: "Blog — Cloudline Studio",
+    title: "Blog, Cloudline Studio",
     description: "Practical marketing guides for founders in tech, education, and beauty.",
     url: `${SITE_URL}/blog/`,
     type: "website",
@@ -24,7 +24,7 @@ export default function BlogIndexPage() {
       <section className="container px-4 md:px-6 pt-20 pb-8 md:pt-28 md:pb-12">
         <div className="mx-auto max-w-3xl">
           <p className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-            Cloudline Studio — Blog
+            CloudLine Studio | Blog
           </p>
           <h1 className="font-display text-4xl sm:text-5xl font-semibold tracking-tight text-balance leading-tight mb-4">
             Marketing guides that actually move the needle

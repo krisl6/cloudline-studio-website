@@ -36,7 +36,7 @@ export default function BeautyBrandMarketingLP() {
                 Your beauty brand deserves an audience that actually buys
               </motion.h1>
               <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-9">
-                Likes don't pay rent. We'll audit your brand's content, positioning, and conversion path — and show you what's blocking sales growth. Free, in 48 hours.
+                Likes don't pay rent. We'll audit your brand's content, positioning, and conversion path and show you what's blocking sales growth. Free, in 48 hours.
               </motion.p>
               <motion.div variants={fadeUp}>
                 <a

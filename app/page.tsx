@@ -27,7 +27,7 @@ const pillarIcons = [DoodleMegaphone, DoodleTransform, DoodleGear]
 const outcomeIcons = [DoodleCoins, DoodleTarget, DoodleGrowth, DoodleBolt, DoodleTrophy, DoodleHeart]
 const processIcons = [DoodleSearch, DoodlePen, DoodleRocket]
 
-// Hero carousel — landscape images only.
+// Hero carousel, landscape images only.
 const heroImages = [
   { src: "/pikom-iwd.webp", alt: "CloudLine Studio speaking at the PIKOM International Women's Day event" },
   { src: "/group-picture.jpg", alt: "The CloudLine Studio workshop group" },

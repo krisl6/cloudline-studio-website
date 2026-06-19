@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Meet CloudLine Studio — a boutique consultancy helping businesses grow through digital marketing, AI-enabled transformation, and operations. Led by founder Kristine Ling.",
+    "Meet CloudLine Studio, a boutique consultancy helping businesses grow through digital marketing, AI-enabled transformation, and operations. Led by founder Kristine Ling.",
   alternates: { canonical: "/about/" },
   openGraph: {
     title: "About | CloudLine Studio",

@@ -4,7 +4,7 @@ export const translations = {
       eyebrow: "Pricing",
       heading: "Investment in your growth",
       intro:
-        "Great brands aren't built overnight, but they're built with the right investment. Our transparent pricing reflects the strategic value we deliver—no hidden fees, no surprises. Choose the partnership level that matches your ambition.",
+        "Great brands aren't built overnight, but they're built with the right investment. Our transparent pricing reflects the strategic value we deliver, with no hidden fees and no surprises. Choose the partnership level that matches your ambition.",
       primaryCta: "Get My Free Revenue Audit",
       secondaryCta: "See Client Results",
     },
@@ -110,7 +110,7 @@ export const translations = {
       eyebrow: "Harga",
       heading: "Pelaburan untuk pertumbuhan anda",
       intro:
-        "Jenama hebat tidak dibina dalam sehari, tetapi ia dibina dengan pelaburan yang tepat. Harga telus kami mencerminkan nilai strategik yang kami sampaikan—tiada caj tersembunyi, tiada kejutan. Pilih tahap kerjasama yang sepadan dengan cita-cita anda.",
+        "Jenama hebat tidak dibina dalam sehari, tetapi ia dibina dengan pelaburan yang tepat. Harga telus kami mencerminkan nilai strategik yang kami sampaikan, tiada caj tersembunyi, tiada kejutan. Pilih tahap kerjasama yang sepadan dengan cita-cita anda.",
       primaryCta: "Dapatkan Audit Hasil Percuma",
       secondaryCta: "Lihat Hasil Pelanggan",
     },
@@ -216,7 +216,7 @@ export const translations = {
       eyebrow: "价格",
       heading: "为您的成长投资",
       intro:
-        "卓越的品牌并非一日建成，而是靠正确的投资打造而成。我们透明的价格体现了我们所提供的战略价值——没有隐藏费用，没有意外。选择与您的雄心相匹配的合作层级。",
+        "卓越的品牌并非一日建成，而是靠正确的投资打造而成。我们透明的价格体现了我们所提供的战略价值, 没有隐藏费用，没有意外。选择与您的雄心相匹配的合作层级。",
       primaryCta: "获取免费营收审计",
       secondaryCta: "查看客户成果",
     },

@@ -19,7 +19,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
   {
     name: "Vyne Wine",
     tag: "F&B · Wine tasting",
-    desc: "Wine tasting at To-Go Café — 10 wines, from simple to premium aged, paired with food.",
+    desc: "Wine tasting at To-Go Café, 10 wines, from simple to premium aged, paired with food.",
     people: "45",
     outcome: "RM10,000 in sales in one day",
     image: "/vyne-wine.jpg",
@@ -28,7 +28,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
   {
     name: "MonstarX",
     tag: "SaaS · AI App Builder",
-    desc: "Hands-on AI app-building — the basics of prompting, creating, and third-party connectors.",
+    desc: "Hands-on AI app-building, the basics of prompting, creating, and third-party connectors.",
     people: "35",
     outcome: "Attendees built apps live",
     image: "/group-picture.jpg",
@@ -37,7 +37,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
   {
     name: "LSIGraph / SurgeGraph",
     tag: "SaaS · SEO & AEO",
-    desc: "SEO/AEO workshop — why traffic matters, reaching the right people, and ranking your site fast.",
+    desc: "SEO/AEO workshop, why traffic matters, reaching the right people, and ranking your site fast.",
     people: "50",
     outcome: "50 marketers learned to rank faster",
     image: "/surgegraph-agencies.jpeg",
@@ -54,7 +54,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
   {
     name: "Prouvers Sdn Bhd",
     tag: "B2B · Automation workshop",
-    desc: "Prompt engineering & automation — content creation, 24/7 replies, auto-quotations, and live interdepartmental reports.",
+    desc: "Prompt engineering & automation, content creation, 24/7 replies, auto-quotations, and live interdepartmental reports.",
     people: "70",
     outcome: "Teams automated content, replies & reporting",
     image: "/prouvers.jpg",
@@ -204,7 +204,7 @@ export default function EventsPage() {
             </motion.div>
 
             <div className="relative">
-              {/* Curved SVG connector — desktop only */}
+              {/* Curved SVG connector, desktop only */}
               <div className="hidden lg:block absolute top-7 pointer-events-none" style={{ left: "12.5%", right: "12.5%" }}>
                 <svg
                   className="w-full"

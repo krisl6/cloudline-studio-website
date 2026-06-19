@@ -3,7 +3,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Real results across consultation, transformation, interdepartmental sync, and branding — featuring ClearSK, Lasus, ConnectDR, Wellnite, and more.",
+    "Real results across consultation, transformation, interdepartmental sync, and branding, featuring ClearSK, Lasus, ConnectDR, Wellnite, and more.",
   alternates: { canonical: "/case-studies/" },
   openGraph: {
     title: "Case Studies | CloudLine Studio",

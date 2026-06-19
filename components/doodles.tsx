@@ -25,7 +25,7 @@ function Svg({ children, ...props }: DoodleProps & { children: React.ReactNode }
   )
 }
 
-/* Digital Marketing — megaphone */
+/* Digital Marketing, megaphone */
 export function DoodleMegaphone(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -35,7 +35,7 @@ export function DoodleMegaphone(props: DoodleProps) {
   )
 }
 
-/* Business Transformation — circular transform arrows */
+/* Business Transformation, circular transform arrows */
 export function DoodleTransform(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -47,7 +47,7 @@ export function DoodleTransform(props: DoodleProps) {
   )
 }
 
-/* Operations — gear / settings */
+/* Operations, gear / settings */
 export function DoodleGear(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -57,7 +57,7 @@ export function DoodleGear(props: DoodleProps) {
   )
 }
 
-/* Strategy / dream clients — bullseye */
+/* Strategy / dream clients, bullseye */
 export function DoodleTarget(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -68,7 +68,7 @@ export function DoodleTarget(props: DoodleProps) {
   )
 }
 
-/* Predictable growth — rising chart */
+/* Predictable growth, rising chart */
 export function DoodleGrowth(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -79,7 +79,7 @@ export function DoodleGrowth(props: DoodleProps) {
   )
 }
 
-/* Premium pricing — stacked coins */
+/* Premium pricing, stacked coins */
 export function DoodleCoins(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -91,7 +91,7 @@ export function DoodleCoins(props: DoodleProps) {
   )
 }
 
-/* Faster sales — lightning bolt */
+/* Faster sales, lightning bolt */
 export function DoodleBolt(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -100,7 +100,7 @@ export function DoodleBolt(props: DoodleProps) {
   )
 }
 
-/* Recognition — trophy */
+/* Recognition, trophy */
 export function DoodleTrophy(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -114,7 +114,7 @@ export function DoodleTrophy(props: DoodleProps) {
   )
 }
 
-/* Referrals / loyalty — heart */
+/* Referrals / loyalty, heart */
 export function DoodleHeart(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -123,7 +123,7 @@ export function DoodleHeart(props: DoodleProps) {
   )
 }
 
-/* Diagnose — magnifier */
+/* Diagnose, magnifier */
 export function DoodleSearch(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -133,7 +133,7 @@ export function DoodleSearch(props: DoodleProps) {
   )
 }
 
-/* Design / craft — pen */
+/* Design / craft, pen */
 export function DoodlePen(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -143,7 +143,7 @@ export function DoodlePen(props: DoodleProps) {
   )
 }
 
-/* Deliver / launch — rocket */
+/* Deliver / launch, rocket */
 export function DoodleRocket(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -155,7 +155,7 @@ export function DoodleRocket(props: DoodleProps) {
   )
 }
 
-/* List checks — hand-drawn tick */
+/* List checks, hand-drawn tick */
 export function DoodleCheck(props: DoodleProps) {
   return (
     <Svg {...props}>
@@ -164,7 +164,7 @@ export function DoodleCheck(props: DoodleProps) {
   )
 }
 
-/* Quality / delight — sparkle */
+/* Quality / delight, sparkle */
 export function DoodleSparkle(props: DoodleProps) {
   return (
     <Svg {...props}>

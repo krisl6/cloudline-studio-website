@@ -13,7 +13,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "CloudLine Studio — Digital Marketing, Transformation & Operations Consultancy",
+    default: "CloudLine Studio: Digital Marketing, Transformation & Operations Consultancy",
     template: "%s | CloudLine Studio",
   },
   description: SITE_DESCRIPTION,
@@ -38,15 +38,15 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: SITE_NAME,
-    title: "CloudLine Studio — Digital Marketing, Transformation & Operations Consultancy",
+    title: "CloudLine Studio: Digital Marketing, Transformation & Operations Consultancy",
     description: SITE_DESCRIPTION,
     url: "/",
     locale: "en_MY",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "CloudLine Studio — We help businesses grow, transform, and run better." }],
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "CloudLine Studio: We help businesses grow, transform, and run better." }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CloudLine Studio — Digital Marketing, Transformation & Operations Consultancy",
+    title: "CloudLine Studio: Digital Marketing, Transformation & Operations Consultancy",
     description: SITE_DESCRIPTION,
     images: ["/og.png"],
   },

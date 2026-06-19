@@ -12,7 +12,7 @@ export function ThemeToggle() {
 
   const isDark = resolvedTheme === "dark"
 
-  // Avoid hydration mismatch — render a neutral placeholder until mounted.
+  // Avoid hydration mismatch, render a neutral placeholder until mounted.
   if (!mounted) {
     return <div className="h-7 w-[3.25rem] rounded-full border border-border bg-muted" aria-hidden />
   }

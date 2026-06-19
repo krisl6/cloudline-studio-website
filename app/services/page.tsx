@@ -154,7 +154,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Deep dive — interactive selector */}
+        {/* Deep dive, interactive selector */}
         <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Service details">
           <div className="container px-4 md:px-6">
             <motion.div
@@ -296,7 +296,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Customer funnels — B2B / B2C timeline */}
+        {/* Customer funnels, B2B / B2C timeline */}
         <FunnelTimeline />
 
         {/* FAQ */}

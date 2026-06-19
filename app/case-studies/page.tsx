@@ -22,14 +22,14 @@ export default function CaseStudiesPage() {
       name: "Consultation",
       icon: <DoodleSearch className="size-5" />,
       description:
-        "We diagnose your funnel, tooling, and operations, then advise on the highest-impact moves — and coach your team so the gains keep compounding.",
+        "We diagnose your funnel, tooling, and operations, then advise on the highest-impact moves and coach your team so the gains keep compounding.",
       color: "bg-primary/10 text-primary border-primary/20",
     },
     {
       name: "Marketing & Sales Digital Transformation",
       icon: <DoodleTransform className="size-5" />,
       description:
-        "We digitise and automate your marketing and sales — consolidating tools, unifying data, and adding AI so the whole revenue engine runs faster.",
+        "We digitise and automate your marketing and sales, consolidating tools, unifying data, and adding AI so the whole revenue engine runs faster.",
       color: "bg-primary/10 text-primary border-primary/20",
     },
     {
@@ -50,11 +50,11 @@ export default function CaseStudiesPage() {
 
   const caseStudies = [
     {
-      title: "AI Operations Overhaul & Revenue Growth — ClearSK Aesthetic Clinic, Singapore",
+      title: "AI Operations Overhaul & Revenue Growth, ClearSK Aesthetic Clinic, Singapore",
       industry: "Aesthetics · Singapore",
       platforms: ["Marketing & Sales Digital Transformation", "Interdepartmental Synchronization"],
       challenge:
-        "ClearSK was running on a patchwork of disconnected platforms — separate CRM, booking, marketing, and sales tools that didn't talk to each other. Departments worked in silos with no shared visibility, the same data was entered multiple times, and a stack of overlapping subscriptions was quietly draining six figures every month.",
+        "ClearSK was running on a patchwork of disconnected platforms: separate CRM, booking, marketing, and sales tools that didn't talk to each other. Departments worked in silos with no shared visibility, the same data was entered multiple times, and a stack of overlapping subscriptions was quietly draining six figures every month.",
       solution:
         "Our team consolidated their fragmented stack into a single AI-powered operations layer. We unified CRM, sales, and booking data into one source of truth, automated cross-department handoffs, and built live transparency dashboards so marketing, sales, and clinical teams could finally see the same numbers in real time. AI-driven lead scoring and automated follow-ups replaced manual chasing and a pile of redundant tooling.",
       results:
@@ -67,13 +67,13 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "AI CRM Consolidation & Booking Growth — Lasus Plastic Surgery Clinic, Malaysia",
+      title: "AI CRM Consolidation & Booking Growth, Lasus Plastic Surgery Clinic, Malaysia",
       industry: "Aesthetics · Malaysia",
       platforms: ["Interdepartmental Synchronization", "Marketing & Sales Digital Transformation"],
       challenge:
         "Lasus was juggling multiple overlapping marketing, CRM, and sales subscriptions with little visibility between the front desk, marketing, and surgical teams. Leads slipped through the cracks between platforms, and no one had a clear picture of what was actually driving bookings.",
       solution:
-        "We deployed the same AI operations playbook, localized for the Malaysian market — consolidating their tooling onto one unified CRM and sales platform, automating lead routing and appointment reminders, and giving every department a shared, real-time view of the pipeline. AI handled the repetitive follow-ups so the team could focus on patient care.",
+        "We deployed the same AI operations playbook, localized for the Malaysian market, consolidating their tooling onto one unified CRM and sales platform, automating lead routing and appointment reminders, and giving every department a shared, real-time view of the pipeline. AI handled the repetitive follow-ups so the team could focus on patient care.",
       results:
         "The clinic eliminated redundant subscriptions to save roughly RM 250K per month, unified previously siloed departments under one transparent dashboard, and lifted appointment bookings and sales revenue by 35% in under 4 months.",
       image: "/digital-marketing-dashboard-with-analytics-charts-.jpg",
@@ -84,13 +84,13 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "End-to-End Marketing & Sales Digitalisation — ConnectDR",
+      title: "End-to-End Marketing & Sales Digitalisation, ConnectDR",
       industry: "Healthcare Platform",
       platforms: ["Marketing & Sales Digital Transformation"],
       challenge:
         "ConnectDR's patient-acquisition process was spread across disconnected tools with no visibility from first touch to booking. Marketing and clinic-partner handoffs were manual, and the team spent hours on data entry instead of growth.",
       solution:
-        "We mapped the full acquisition funnel and digitised it end to end — automating lead capture, partner handoffs, and follow-up. A unified pipeline gave the team a single, real-time view from lead to booking, with AI handling repetitive routing.",
+        "We mapped the full acquisition funnel and digitised it end to end, automating lead capture, partner handoffs, and follow-up. A unified pipeline gave the team a single, real-time view from lead to booking, with AI handling repetitive routing.",
       results:
         "An automated lead-to-booking funnel, faster partner onboarding, materially higher conversion, and the elimination of manual data entry across the team.",
       image: "/analytics-dashboard.png",
@@ -101,13 +101,13 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "Unified Analytics & Attributable Growth — CircleDNA",
+      title: "Unified Analytics & Attributable Growth, CircleDNA",
       industry: "Consumer Genomics",
       platforms: ["Marketing & Sales Digital Transformation", "Digital Marketing & Branding"],
       challenge:
         "CircleDNA had a complex, data-heavy product but fragmented analytics and unclear marketing ROI, making it hard to know which spend actually drove revenue.",
       solution:
-        "We turned a complex product into a clean digital sales journey — unifying analytics, automating campaigns, and tightening the loop between marketing spend and revenue so every dollar was attributable.",
+        "We turned a complex product into a clean digital sales journey, unifying analytics, automating campaigns, and tightening the loop between marketing spend and revenue so every dollar was attributable.",
       results:
         "Unified analytics across channels, automated and attributable campaigns, and a clear line of sight from marketing spend to revenue.",
       image: "/ai-seo-platform-dashboard-with-global-user-analyti.jpg",
@@ -118,13 +118,13 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "International Market-Entry Strategy & Growth — Wellnite",
+      title: "International Market-Entry Strategy & Growth, Wellnite",
       industry: "Mental Health SaaS",
       platforms: ["Consultation"],
       challenge:
         "Wellnite makes mental health accessible anywhere. Based in the US and expanding internationally, they faced complex regulatory requirements and cultural sensitivities in each new market.",
       solution:
-        "We consulted on market-entry and growth strategy, then built compliant, culturally-sensitive campaigns and guided the team market by market — balancing speed with regulatory care.",
+        "We consulted on market-entry and growth strategy, then built compliant, culturally-sensitive campaigns and guided the team market by market, balancing speed with regulatory care.",
       results:
         "Expansion into 5 international markets, a 400% increase in platform registrations, an 85% improvement in retention, and trusted healthcare partnerships in new territories.",
       image: "/mental-health-app-interface-with-global-reach-anal.jpg",
@@ -135,7 +135,7 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "Growth Strategy Consultation & Channel Prioritisation — Prenetics",
+      title: "Growth Strategy Consultation & Channel Prioritisation, Prenetics",
       industry: "Health & Genomics",
       platforms: ["Consultation"],
       challenge:
@@ -152,11 +152,11 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "Early-Stage Positioning & Go-to-Market Consultation — Fokuslah",
+      title: "Early-Stage Positioning & Go-to-Market Consultation, Fokuslah",
       industry: "Startup · Malaysia",
       platforms: ["Consultation"],
       challenge:
-        "As an early-stage Malaysian startup with a limited budget, Fokuslah needed clear direction more than vanity metrics — and a way to measure what was working.",
+        "As an early-stage Malaysian startup with a limited budget, Fokuslah needed clear direction more than vanity metrics, and a way to measure what was working.",
       solution:
         "We ran founder-level consultation to sharpen positioning, choose the right channels, and stand up a simple measurement system the team could actually understand and run.",
       results:
@@ -169,7 +169,7 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "F&B Operations Sync & POS Optimisation — Warung Ambo",
+      title: "F&B Operations Sync & POS Optimisation, Warung Ambo",
       industry: "F&B · Malaysia",
       platforms: ["Interdepartmental Synchronization"],
       challenge:
@@ -186,13 +186,13 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "Brand Refresh & Performance Campaigns — Oxwhite",
+      title: "Brand Refresh & Performance Campaigns, Oxwhite",
       industry: "D2C Apparel",
       platforms: ["Digital Marketing & Branding"],
       challenge:
         "Oxwhite had an inconsistent brand presence and rising customer acquisition costs that were squeezing margins as they scaled.",
       solution:
-        "We refreshed their digital brand identity and built performance-driven campaigns whose content finally looked and sounded like them — focused on conversion, not just reach.",
+        "We refreshed their digital brand identity and built performance-driven campaigns whose content finally looked and sounded like them, focused on conversion, not just reach.",
       results:
         "A refreshed brand identity, higher-converting campaigns, lower customer acquisition cost, and growing order volume.",
       image: "/ai-seo-platform-dashboard-with-global-user-analyti.jpg",
@@ -203,13 +203,13 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "Digital Identity & Local Demand Funnel — Woodfire Gourmet Burger",
+      title: "Digital Identity & Local Demand Funnel, Woodfire Gourmet Burger",
       industry: "F&B",
       platforms: ["Digital Marketing & Branding"],
       challenge:
         "Woodfire had great food but a weak, inconsistent online brand presence that didn't bring people through the door.",
       solution:
-        "We gave the brand a proper digital identity — photography, social content, and a local demand funnel that turns online attention into covers.",
+        "We gave the brand a proper digital identity: photography, social content, and a local demand funnel that turns online attention into covers.",
       results:
         "A distinctive digital brand, a stronger social presence, more weekend covers, and a steadily growing base of regulars.",
       image: "/aesthetic-clinic-marketing-dashboard-with-patient-.jpg",
@@ -220,11 +220,11 @@ export default function CaseStudiesPage() {
       ],
     },
     {
-      title: "Engagement-Led Creative & Team Enablement — Celcom",
+      title: "Engagement-Led Creative & Team Enablement, Celcom",
       industry: "Telecommunications",
       platforms: ["Digital Marketing & Branding"],
       challenge:
-        "Celcom's campaigns performed decently, but there was a gap between awareness and real engagement — and the in-house team wanted to learn what worked and why.",
+        "Celcom's campaigns performed decently, but there was a gap between awareness and real engagement, and the in-house team wanted to learn what worked and why.",
       solution:
         "We tested new visual formats, shortened load times, and built mini-landing experiences that kept users interacting longer, while upskilling the in-house team along the way.",
       results:

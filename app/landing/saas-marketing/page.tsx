@@ -15,7 +15,7 @@ const PAIN_POINTS = [
 ]
 
 const AUDIT_DELIVERS = [
-  { icon: TrendingUp, title: "Funnel audit", desc: "Where exactly you're losing leads — top, mid, or bottom of funnel" },
+  { icon: TrendingUp, title: "Funnel audit", desc: "Where exactly you're losing leads, top, mid, or bottom of funnel" },
   { icon: Users, title: "Audience misalignment check", desc: "Whether your ICP, messaging, and channel actually match" },
   { icon: Zap, title: "Quick-win roadmap", desc: "3 specific fixes you can action within 30 days" },
 ]
@@ -36,7 +36,7 @@ export default function SaasMarketingLP() {
                 Is your SaaS marketing actually driving pipeline?
               </motion.h1>
               <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-9">
-                Most SaaS companies spend 6–12 months on marketing that doesn't compound. We'll audit your funnel in 48 hours and show you exactly where MRR is leaking — for free.
+                Most SaaS companies spend 6–12 months on marketing that doesn't compound. We'll audit your funnel in 48 hours and show you exactly where MRR is leaking, for free.
               </motion.p>
               <motion.div variants={fadeUp}>
                 <a

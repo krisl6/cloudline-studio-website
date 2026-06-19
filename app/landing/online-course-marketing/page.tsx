@@ -36,7 +36,7 @@ export default function OnlineCourseMarketingLP() {
                 Stop sitting on a course nobody knows exists
               </motion.h1>
               <motion.p variants={fadeUp} className="mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-9">
-                Most course creators have a messaging problem, not an expertise problem. We'll audit your funnel and tell you exactly why enrollment is low — for free, in 48 hours.
+                Most course creators have a messaging problem, not an expertise problem. We'll audit your funnel and tell you exactly why enrollment is low. Free audit, in 48 hours..
               </motion.p>
               <motion.div variants={fadeUp}>
                 <a

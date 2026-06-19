@@ -4,7 +4,7 @@ export const translations = {
       eyebrow: "Real Results from Real Clients",
       title: "Real stories. Real results.",
       subtitle:
-        "Behind every number is a business owner who took a leap of faith. These are their stories — real transformations from real people who trusted us to help them grow, from early-stage startups to established enterprises.",
+        "Behind every number is a business owner who took a leap of faith. These are their stories: real transformations from real people who trusted us to help them grow, from early-stage startups to established enterprises.",
       ctaPrimary: "Get a free revenue audit",
       ctaSecondary: "View detailed case studies",
     },
@@ -48,7 +48,7 @@ export const translations = {
       eyebrow: "Detailed case studies",
       title: "Proven results across industries",
       subtitle:
-        "These aren’t just numbers on a screen — they’re real businesses, run by real people, who trusted us with their growth. Here are their stories of transformation.",
+        "These aren’t just numbers on a screen, they’re real businesses, run by real people, who trusted us with their growth. Here are their stories of transformation.",
       labels: {
         challenge: "The challenge",
         howWeHelped: "How we helped",
@@ -60,7 +60,7 @@ export const translations = {
       eyebrow: "Verified results",
       title: "Every number is verified and documented",
       subtitle:
-        "We don’t just claim results — we prove them. All client results are verified through analytics, direct client reporting, and third-party tracking systems.",
+        "We don’t just claim results, we prove them. All client results are verified through analytics, direct client reporting, and third-party tracking systems.",
       cards: {
         analytics: {
           title: "Analytics verified",
@@ -90,7 +90,7 @@ export const translations = {
       eyebrow: "Hasil Sebenar daripada Pelanggan Sebenar",
       title: "Kisah sebenar. Hasil sebenar.",
       subtitle:
-        "Di sebalik setiap angka ada pemilik perniagaan yang berani mengambil risiko. Inilah kisah mereka — transformasi sebenar daripada orang sebenar yang mempercayai kami untuk membantu mereka berkembang, daripada syarikat baharu sehingga perusahaan mapan.",
+        "Di sebalik setiap angka ada pemilik perniagaan yang berani mengambil risiko. Inilah kisah mereka: transformasi sebenar daripada orang sebenar yang mempercayai kami untuk membantu mereka berkembang, daripada syarikat baharu sehingga perusahaan mapan.",
       ctaPrimary: "Dapatkan audit hasil percuma",
       ctaSecondary: "Lihat kajian kes terperinci",
     },
@@ -134,7 +134,7 @@ export const translations = {
       eyebrow: "Kajian kes terperinci",
       title: "Hasil terbukti merentas pelbagai industri",
       subtitle:
-        "Ini bukan sekadar angka pada skrin — ini perniagaan sebenar, dikendalikan oleh orang sebenar, yang mempercayai kami dengan pertumbuhan mereka. Inilah kisah transformasi mereka.",
+        "Ini bukan sekadar angka pada skrin. Ini perniagaan sebenar, dikendalikan oleh orang sebenar, yang mempercayai kami dengan pertumbuhan mereka. Inilah kisah transformasi mereka.",
       labels: {
         challenge: "Cabaran",
         howWeHelped: "Bagaimana kami membantu",
@@ -146,7 +146,7 @@ export const translations = {
       eyebrow: "Hasil disahkan",
       title: "Setiap angka disahkan dan didokumentasikan",
       subtitle:
-        "Kami bukan sekadar mendakwa hasil — kami membuktikannya. Semua hasil pelanggan disahkan melalui analitik, laporan terus daripada pelanggan, dan sistem penjejakan pihak ketiga.",
+        "Kami bukan sekadar mendakwa hasil. Kami membuktikannya. Semua hasil pelanggan disahkan melalui analitik, laporan terus daripada pelanggan, dan sistem penjejakan pihak ketiga.",
       cards: {
         analytics: {
           title: "Disahkan analitik",
@@ -176,7 +176,7 @@ export const translations = {
       eyebrow: "真实客户的真实成果",
       title: "真实故事，真实成果。",
       subtitle:
-        "每一个数字背后，都有一位勇敢迈出一步的企业主。这些是他们的故事——来自信任我们助力成长的真实客户的真实转变，涵盖从初创企业到成熟企业。",
+        "每一个数字背后，都有一位勇敢迈出一步的企业主。这些是他们的故事, 来自信任我们助力成长的真实客户的真实转变，涵盖从初创企业到成熟企业。",
       ctaPrimary: "获取免费营收审计",
       ctaSecondary: "查看详细案例研究",
     },
@@ -219,7 +219,7 @@ export const translations = {
       eyebrow: "详细案例研究",
       title: "跨行业的可验证成果",
       subtitle:
-        "这不仅仅是屏幕上的数字——它们是真实的企业，由真实的人经营，他们将增长托付给我们。以下是他们的转型故事。",
+        "这不仅仅是屏幕上的数字, 它们是真实的企业，由真实的人经营，他们将增长托付给我们。以下是他们的转型故事。",
       labels: {
         challenge: "挑战",
         howWeHelped: "我们如何提供帮助",
@@ -231,7 +231,7 @@ export const translations = {
       eyebrow: "已核实成果",
       title: "每一个数字都经过核实与记录",
       subtitle:
-        "我们不只是宣称成果——我们用事实证明。所有客户成果均通过分析工具、客户直接报告及第三方追踪系统核实。",
+        "我们不只是宣称成果, 我们用事实证明。所有客户成果均通过分析工具、客户直接报告及第三方追踪系统核实。",
       cards: {
         analytics: {
           title: "分析核实",

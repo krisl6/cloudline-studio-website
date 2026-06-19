@@ -4,7 +4,7 @@ export const LARK_DOMAIN = "https://open.larksuite.com" // Feishu (China): https
 export function larkEnv() {
   const appId = process.env.LARK_APP_ID
   const appSecret = process.env.LARK_APP_SECRET
-  // Tolerate a pasted URL fragment — keep only the token before any "?" or "&".
+  // Tolerate a pasted URL fragment, keep only the token before any "?" or "&".
   const baseToken = process.env.LARK_BASE_APP_TOKEN?.trim().split(/[?&]/)[0]
   return { appId, appSecret, baseToken }
 }

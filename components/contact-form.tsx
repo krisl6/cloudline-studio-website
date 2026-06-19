@@ -12,7 +12,7 @@ const T = {
     namePh: "Your name", emailPh: "you@company.com", phonePh: "+60…",
     messagePh: "Tell us a little about your project or goals…",
     send: "Send message", sending: "Sending…",
-    successTitle: "Thank you — we've got it.", successBody: "Our team will get back to you within 24 hours.",
+    successTitle: "Thank you, we've got it.", successBody: "Our team will get back to you within 24 hours.",
     errEmail: "Please enter a valid email.", errGeneric: "Something went wrong. Please try again.",
   },
   ms: {
@@ -20,7 +20,7 @@ const T = {
     namePh: "Nama anda", emailPh: "anda@syarikat.com", phonePh: "+60…",
     messagePh: "Ceritakan sedikit tentang projek atau matlamat anda…",
     send: "Hantar mesej", sending: "Menghantar…",
-    successTitle: "Terima kasih — kami telah menerimanya.", successBody: "Pasukan kami akan menghubungi anda dalam masa 24 jam.",
+    successTitle: "Terima kasih, kami telah menerimanya.", successBody: "Pasukan kami akan menghubungi anda dalam masa 24 jam.",
     errEmail: "Sila masukkan e-mel yang sah.", errGeneric: "Ada masalah. Sila cuba lagi.",
   },
   zh: {
@@ -28,7 +28,7 @@ const T = {
     namePh: "您的姓名", emailPh: "you@company.com", phonePh: "+60…",
     messagePh: "简单介绍一下您的项目或目标…",
     send: "发送消息", sending: "发送中…",
-    successTitle: "谢谢 — 我们已收到。", successBody: "我们的团队将在 24 小时内与您联系。",
+    successTitle: "谢谢, 我们已收到。", successBody: "我们的团队将在 24 小时内与您联系。",
     errEmail: "请输入有效的邮箱。", errGeneric: "出了点问题，请重试。",
   },
 } as const

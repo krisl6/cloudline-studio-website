@@ -4,14 +4,14 @@ export const translations = {
       eyebrow: "Our Story",
       heading: "We believe AI belongs in every workplace",
       subcopy:
-        "CloudLine Studio was built on one conviction: AI and modern growth systems shouldn't be a privilege reserved for tech giants. We create the bridge — through events, hands-on education, and AI-powered marketing — that makes these tools practical and profitable for every business in Malaysia and beyond.",
+        "CloudLine Studio was built on one conviction: AI and modern growth systems shouldn't be a privilege reserved for tech giants. We create the bridge through events, hands-on education, and AI-powered marketing, making these tools practical and profitable for every business in Malaysia and beyond.",
       ctaPrimary: "Work with us",
       ctaSecondary: "See our work",
     },
     mission: {
       eyebrow: "Our Mission",
       heading: "Increasing AI adoption across Malaysia's workforce",
-      body: "We aim to increase the adoption of AI within the workforce in Malaysia by educating those who are eager to learn. Through our events and workshops, we showcase the capabilities of AI — making it sustainable for everyday professionals to embed into their day-to-day lives.",
+      body: "We aim to increase the adoption of AI within the workforce in Malaysia by educating those who are eager to learn. Through our events and workshops, we showcase the capabilities of AI, making it sustainable for everyday professionals to embed into their day-to-day lives.",
       pillars: [
         { title: "Educate", desc: "Hands-on AI workshops that build real skills, not just awareness." },
         { title: "Showcase", desc: "Live product demos and events that make AI capabilities tangible." },
@@ -22,8 +22,8 @@ export const translations = {
       eyebrow: "Founder",
       heading: "Meet the person behind CloudLine",
       name: "Kristine Ling",
-      title: "Founder & Managing Director — Digital Marketing & AI Automation Specialist",
-      bio: "Kristine Ling is the founder of CloudLine Studio and a digital marketing and AI automation specialist with nine years of experience driving growth across five markets (Malaysia, Indonesia, Singapore, Australia, and China). She helps e-commerce, high-ticket B2B, and SaaS teams turn wasted ad spend, high cost-per-lead, and manual workflows into AI-powered systems that compound revenue. Her work spans growth strategy, performance marketing, conversion rate optimization, data and systems, and product and AI, delivering leaner operations and measurable year-over-year growth.",
+      title: "Founder & Managing Director, Digital Marketing & AI Automation Specialist",
+      bio: "Kristine Ling is the founder of CloudLine Studio and a digital marketing and AI automation specialist with nine years of experience driving growth across five markets (Malaysia, Indonesia, Singapore, Australia, and China). She helps e-commerce, high-ticket B2B, and SaaS teams turn wasted ad spend, high cost-per-lead, and manual workflows into AI-powered systems that compound revenue. Her work spans growth strategy, performance marketing, conversion rate optimization, data and systems, and product and AI, delivering leaner operations and measurable year-over-year growth. She also plans and hosts workshop tutorials for companies looking to upskill their staff with practical, hands-on AI skills.",
       highlights: [
         "9 years in digital strategy across 5 markets (Malaysia, Indonesia, Singapore, Australia, and China)",
         "Drove a peak revenue lift of 300% and a 40% manpower reduction through AI-powered automation",
@@ -48,16 +48,16 @@ export const translations = {
       problemTitle: "The gap we saw",
       problem: {
         p1Strong: "AI adoption in Malaysia's workforce is still in its early stages.",
-        p1: " Most business owners have heard of AI, tried it once, and moved on. The tools are available, but the know-how, habits, and systems are not — especially outside the tech sector.",
+        p1: " Most business owners have heard of AI, tried it once, and moved on. The tools are available, but the know-how, habits, and systems are not, especially outside the tech sector.",
         p2Strong: "Agencies sell campaigns, not capability.",
-        p2: " Most marketing and growth agencies focus on delivering ads and content. Nobody builds the internal capacity of the businesses they serve — no training, no automation, no sustainable AI habits.",
+        p2: " Most marketing and growth agencies focus on delivering ads and content. Nobody builds the internal capacity of the businesses they serve, no training, no automation, no sustainable AI habits.",
         p3Strong: "The result?",
         p3: " Businesses dependent on external agencies, duplicating manual work that AI could handle in seconds, and missing the compounding ROI that comes from AI-powered operations.",
       },
       solutionTitle: "Our answer",
       solution: {
         p1Strong: "We bring AI and growth to where business actually happens.",
-        p1: " Our Business Events put real products in front of real people — generating sales, feedback, and community in one afternoon. Our AI workshops teach teams to use AI in their actual work, not just in theory.",
+        p1: " Our Business Events put real products in front of real people, generating sales, feedback, and community in one afternoon. Our AI workshops teach teams to use AI in their actual work, not just in theory.",
         p2Strong: "We build the systems and the people together.",
         p2: " A great AI system is only as good as the team using it. Every engagement combines system-building with education so your team can sustain and grow what we build.",
         p3Strong: "We measure outcomes, not outputs.",
@@ -68,18 +68,18 @@ export const translations = {
       eyebrow: "What We Do",
       heading: "Three ways we grow your business",
       subcopy:
-        "From live events that generate same-day sales to AI systems that run while you sleep — everything we build compounds.",
+        "From live events that generate same-day sales to AI systems that run while you sleep: everything we build compounds.",
       services: [
         {
           title: "Business Events & Product Demos",
           description:
-            "Curated experiential events that put your product in real hands — generating sales, honest feedback, and a community of advocates in a single afternoon.",
+            "Curated experiential events that put your product in real hands, generating sales, honest feedback, and a community of advocates in a single afternoon.",
           features: ["Event Concept & Curation", "Venue & Logistics", "Curated Guest Lists", "Feedback Capture"],
         },
         {
           title: "AI Workshops & Education",
           description:
-            "Hands-on sessions that teach teams to use AI tools in their actual day-to-day work — from prompting and automation to content creation and reporting.",
+            "Hands-on sessions that teach teams to use AI tools in their actual day-to-day work: prompting, automation, content creation, and reporting.",
           features: ["Prompting & AI Tools", "Workflow Automation", "Content & Reporting", "Team Upskilling"],
         },
         {
@@ -98,14 +98,14 @@ export const translations = {
     },
     howWeWork: {
       eyebrow: "How We Work",
-      heading: "Our process — from first call to compounding results",
+      heading: "Our process, from first call to compounding results",
       subcopy:
         "Every engagement follows the same rhythm. We understand before we build, and we measure before we scale.",
       steps: [
         {
           title: "Understand",
           description:
-            "We start by deeply understanding your business model, your audience, and the specific outcome you want — whether that's sales, market feedback, or AI adoption across your team.",
+            "We start by deeply understanding your business model, your audience, and the specific outcome you want: sales, market feedback, or AI adoption across your team.",
         },
         {
           title: "Design",
@@ -115,12 +115,12 @@ export const translations = {
         {
           title: "Execute",
           description:
-            "We handle end-to-end delivery — from venue and logistics to live execution and data capture. You show up. We run it.",
+            "We handle end-to-end delivery: venue, logistics, live execution, and data capture. You show up. We run it.",
         },
         {
           title: "Compound",
           description:
-            "We measure results, learn from real-world data, and build on what works — so every engagement gets smarter and more effective than the last.",
+            "We measure results, learn from real-world data, and build on what works, so every engagement gets smarter and more effective than the last.",
         },
       ],
     },
@@ -158,7 +158,7 @@ export const translations = {
           phase: "Decision",
           title: "Brand Trust",
           description:
-            "Customers choose your brand confidently — driven by the trust, credibility, and professional impression we've built together.",
+            "Customers choose your brand confidently, driven by the trust, credibility, and professional impression we've built together.",
           details: [
             "Professional brand presentation that instils confidence",
             "Clear communication of benefits and outcomes",
@@ -181,7 +181,7 @@ export const translations = {
       ],
       resultTitle: "The result: a brand that grows itself",
       resultBody:
-        "When every touchpoint is strategically designed and emotionally resonant, your customers don't just buy from you — they become your most powerful marketing channel, driving organic growth through word-of-mouth and referrals.",
+        "When every touchpoint is strategically designed and emotionally resonant, your customers don't just buy from you, they become your most powerful marketing channel, driving organic growth through word-of-mouth and referrals.",
     },
     values: {
       eyebrow: "Our Values",
@@ -191,7 +191,7 @@ export const translations = {
         {
           title: "AI for Everyone",
           description:
-            "We believe AI capability shouldn't be limited to large corporations. We build and teach systems that any business — in any industry — can use sustainably.",
+            "We believe AI capability shouldn't be limited to large corporations. We build and teach systems that any business in any industry can use sustainably.",
         },
         {
           title: "Education Over Dependency",
@@ -201,7 +201,7 @@ export const translations = {
         {
           title: "Results That Compound",
           description:
-            "Every event, system, and campaign is designed with compounding in mind — so the value grows long after our engagement ends.",
+            "Every event, system, and campaign is designed with compounding in mind, so the value grows long after our engagement ends.",
         },
       ],
     },
@@ -209,7 +209,7 @@ export const translations = {
       eyebrow: "Your First Consultation",
       heading: "What to expect when we meet",
       subcopy:
-        "Your first consultation isn't a sales pitch — it's a strategic discovery session where we uncover opportunities, identify challenges, and map out a clear path forward.",
+        "Your first consultation isn't a sales pitch, it's a strategic discovery session where we uncover opportunities, identify challenges, and map out a clear path forward.",
       coverTitle: "What we'll cover together",
       cover: [
         {
@@ -230,7 +230,7 @@ export const translations = {
         {
           title: "First 90-Day Roadmap",
           description:
-            "We'll outline a practical action plan for the first 90 days — starting with what moves the needle fastest.",
+            "We'll outline a practical action plan for the first 90 days, starting with what moves the needle fastest.",
         },
       ],
       outcomesTitle: "What you'll walk away with",
@@ -249,7 +249,7 @@ export const translations = {
         },
         {
           title: "Immediate Quick Wins",
-          description: "Actions you can take today to start improving results — no waiting for a full engagement.",
+          description: "Actions you can take today to start improving results, no waiting for a full engagement.",
         },
         {
           title: "Honest Assessment",
@@ -263,7 +263,7 @@ export const translations = {
     cta: {
       heading: "Ready to put AI and growth to work?",
       subcopy:
-        "Whether you're launching a product, building an AI-ready team, or scaling your marketing — let's figure out what moves the needle first.",
+        "Whether you're launching a product, building an AI-ready team, or scaling your marketing, let's figure out what moves the needle first.",
       ctaPrimary: "Book a strategy call",
       ctaSecondary: "See our events",
       footnote: "Complimentary consultation · No obligations · Immediate value",
@@ -275,14 +275,14 @@ export const translations = {
       eyebrow: "Kisah Kami",
       heading: "Kami percaya AI sepatutnya ada di setiap tempat kerja",
       subcopy:
-        "CloudLine Studio dibina atas satu keyakinan: AI dan sistem pertumbuhan moden tidak seharusnya menjadi keistimewaan syarikat gergasi teknologi. Kami menjadi jambatan — melalui acara, pendidikan langsung, dan pemasaran berkuasa AI — yang menjadikan alat-alat ini praktikal dan menguntungkan bagi setiap perniagaan di Malaysia dan merentasi sempadan.",
+        "CloudLine Studio dibina atas satu keyakinan: AI dan sistem pertumbuhan moden tidak seharusnya menjadi keistimewaan syarikat gergasi teknologi. Kami menjadi jambatan, melalui acara, pendidikan langsung, dan pemasaran berkuasa AI, yang menjadikan alat-alat ini praktikal dan menguntungkan bagi setiap perniagaan di Malaysia dan merentasi sempadan.",
       ctaPrimary: "Bekerjasama dengan kami",
       ctaSecondary: "Lihat hasil kerja kami",
     },
     mission: {
       eyebrow: "Misi Kami",
       heading: "Meningkatkan penggunaan AI dalam tenaga kerja Malaysia",
-      body: "Kami berhasrat meningkatkan penggunaan AI dalam tenaga kerja Malaysia dengan mendidik mereka yang ingin belajar. Melalui acara dan bengkel kami, kami mempamerkan keupayaan AI — menjadikannya mampan untuk digunakan oleh profesional setiap hari dalam kehidupan kerja mereka.",
+      body: "Kami berhasrat meningkatkan penggunaan AI dalam tenaga kerja Malaysia dengan mendidik mereka yang ingin belajar. Melalui acara dan bengkel kami, kami mempamerkan keupayaan AI, menjadikannya mampan untuk digunakan oleh profesional setiap hari dalam kehidupan kerja mereka.",
       pillars: [
         { title: "Didik", desc: "Bengkel AI praktikal yang membina kemahiran sebenar, bukan sekadar kesedaran." },
         { title: "Pamerkan", desc: "Demo produk dan acara langsung yang menjadikan keupayaan AI dapat dirasai." },
@@ -293,8 +293,8 @@ export const translations = {
       eyebrow: "Pengasas",
       heading: "Kenali insan di sebalik CloudLine",
       name: "Kristine Ling",
-      title: "Pengasas & Pengarah Urusan — Pakar Pemasaran Digital & Automasi AI",
-      bio: "Kristine Ling ialah pengasas CloudLine Studio dan pakar pemasaran digital serta automasi AI dengan pengalaman sembilan tahun memacu pertumbuhan merentasi lima pasaran (Malaysia, Indonesia, Singapura, Australia, dan China). Beliau membantu pasukan e-dagang, B2B bernilai tinggi, dan SaaS menukar perbelanjaan iklan yang membazir, kos per petunjuk yang tinggi, dan aliran kerja manual kepada sistem berkuasa AI yang menggandakan hasil. Kerjayanya merangkumi strategi pertumbuhan, pemasaran prestasi, pengoptimuman kadar penukaran, data dan sistem, serta produk dan AI.",
+      title: "Pengasas & Pengarah Urusan, Pakar Pemasaran Digital & Automasi AI",
+      bio: "Kristine Ling ialah pengasas CloudLine Studio dan pakar pemasaran digital serta automasi AI dengan pengalaman sembilan tahun memacu pertumbuhan merentasi lima pasaran (Malaysia, Indonesia, Singapura, Australia, dan China). Beliau membantu pasukan e-dagang, B2B bernilai tinggi, dan SaaS menukar perbelanjaan iklan yang membazir, kos per petunjuk yang tinggi, dan aliran kerja manual kepada sistem berkuasa AI yang menggandakan hasil. Kerjayanya merangkumi strategi pertumbuhan, pemasaran prestasi, pengoptimuman kadar penukaran, data dan sistem, serta produk dan AI. Beliau turut merancang dan mengendalikan tutorial bengkel untuk syarikat-syarikat yang ingin meningkatkan kemahiran kakitangan mereka dengan kemahiran AI yang praktikal.",
       highlights: [
         "9 tahun dalam strategi digital merentasi 5 pasaran (Malaysia, Indonesia, Singapura, Australia, dan China)",
         "Memacu peningkatan hasil puncak sebanyak 300% dan pengurangan tenaga kerja 40% melalui automasi berkuasa AI",
@@ -319,16 +319,16 @@ export const translations = {
       problemTitle: "Jurang yang kami lihat",
       problem: {
         p1Strong: "Penggunaan AI dalam tenaga kerja Malaysia masih di peringkat awal.",
-        p1: " Kebanyakan pemilik perniagaan pernah mendengar tentang AI, mencubanya sekali, lalu beralih. Alat-alatnya ada, tetapi ilmu, tabiat, dan sistemnya tidak — terutamanya di luar sektor teknologi.",
+        p1: " Kebanyakan pemilik perniagaan pernah mendengar tentang AI, mencubanya sekali, lalu beralih. Alat-alatnya ada, tetapi ilmu, tabiat, dan sistemnya tidak, terutamanya di luar sektor teknologi.",
         p2Strong: "Agensi menjual kempen, bukan keupayaan.",
-        p2: " Kebanyakan agensi pemasaran dan pertumbuhan fokus pada penghantaran iklan dan kandungan. Tiada siapa membina kapasiti dalaman perniagaan yang mereka layani — tiada latihan, tiada automasi, tiada tabiat AI yang mampan.",
+        p2: " Kebanyakan agensi pemasaran dan pertumbuhan fokus pada penghantaran iklan dan kandungan. Tiada siapa membina kapasiti dalaman perniagaan yang mereka layani, tiada latihan, tiada automasi, tiada tabiat AI yang mampan.",
         p3Strong: "Hasilnya?",
         p3: " Perniagaan bergantung pada agensi luar, menduplikasi kerja manual yang boleh dikendalikan AI dalam beberapa saat, dan terlepas ROI berganda yang datang daripada operasi berkuasa AI.",
       },
       solutionTitle: "Jawapan kami",
       solution: {
         p1Strong: "Kami membawa AI dan pertumbuhan ke tempat perniagaan sebenarnya berlaku.",
-        p1: " Acara Perniagaan kami meletakkan produk sebenar di tangan orang sebenar — menjana jualan, maklum balas, dan komuniti dalam satu petang. Bengkel AI kami mengajar pasukan menggunakan AI dalam kerja sebenar mereka, bukan hanya teori.",
+        p1: " Acara Perniagaan kami meletakkan produk sebenar di tangan orang sebenar, menjana jualan, maklum balas, dan komuniti dalam satu petang. Bengkel AI kami mengajar pasukan menggunakan AI dalam kerja sebenar mereka, bukan hanya teori.",
         p2Strong: "Kami membina sistem dan orang secara serentak.",
         p2: " Sistem AI yang hebat hanya sebagus pasukan yang menggunakannya. Setiap penglibatan menggabungkan pembinaan sistem dengan pendidikan supaya pasukan anda boleh mengekalkan dan mengembangkan apa yang kami bina.",
         p3Strong: "Kami mengukur hasil, bukan output.",
@@ -339,18 +339,18 @@ export const translations = {
       eyebrow: "Apa Yang Kami Lakukan",
       heading: "Tiga cara kami mengembangkan perniagaan anda",
       subcopy:
-        "Daripada acara langsung yang menjana jualan hari yang sama hingga sistem AI yang beroperasi semasa anda tidur — semuanya yang kami bina berganda.",
+        "Daripada acara langsung yang menjana jualan hari yang sama hingga sistem AI yang beroperasi semasa anda tidur: semuanya yang kami bina berganda.",
       services: [
         {
           title: "Acara Perniagaan & Demo Produk",
           description:
-            "Acara pengalaman yang meletakkan produk anda di tangan sebenar — menjana jualan, maklum balas jujur, dan komuniti penyokong dalam satu petang.",
+            "Acara pengalaman yang meletakkan produk anda di tangan sebenar, menjana jualan, maklum balas jujur, dan komuniti penyokong dalam satu petang.",
           features: ["Konsep & Kurasi Acara", "Tempat & Logistik", "Senarai Tetamu Terpilih", "Pengumpulan Maklum Balas"],
         },
         {
           title: "Bengkel AI & Pendidikan",
           description:
-            "Sesi praktikal yang mengajar pasukan menggunakan alat AI dalam kerja harian sebenar mereka — dari prompting dan automasi hingga penciptaan kandungan dan pelaporan.",
+            "Sesi praktikal yang mengajar pasukan menggunakan alat AI dalam kerja harian sebenar mereka: prompting dan automasi hingga penciptaan kandungan dan pelaporan.",
           features: ["Prompting & Alat AI", "Automasi Aliran Kerja", "Kandungan & Pelaporan", "Peningkatan Kemahiran Pasukan"],
         },
         {
@@ -369,14 +369,14 @@ export const translations = {
     },
     howWeWork: {
       eyebrow: "Cara Kami Bekerja",
-      heading: "Proses kami — dari panggilan pertama hingga hasil berganda",
+      heading: "Proses kami, dari panggilan pertama hingga hasil berganda",
       subcopy:
         "Setiap penglibatan mengikuti rentak yang sama. Kami faham sebelum membina, dan kami ukur sebelum skala.",
       steps: [
         {
           title: "Fahami",
           description:
-            "Kami mulakan dengan memahami model perniagaan, khalayak, dan hasil spesifik yang anda mahu — sama ada jualan, maklum balas pasaran, atau penggunaan AI merentasi pasukan anda.",
+            "Kami mulakan dengan memahami model perniagaan, khalayak, dan hasil spesifik yang anda mahu: jualan, maklum balas pasaran, atau penggunaan AI merentasi pasukan anda.",
         },
         {
           title: "Reka",
@@ -386,12 +386,12 @@ export const translations = {
         {
           title: "Laksana",
           description:
-            "Kami mengendalikan penghantaran dari hujung ke hujung — dari tempat dan logistik hingga pelaksanaan langsung dan pengambilan data. Anda hadir. Kami jalankan.",
+            "Kami mengendalikan penghantaran dari hujung ke hujung: tempat, logistik, pelaksanaan langsung, dan pengambilan data. Anda hadir. Kami jalankan.",
         },
         {
           title: "Gandakan",
           description:
-            "Kami mengukur keputusan, belajar daripada data dunia sebenar, dan membina atas apa yang berjaya — supaya setiap penglibatan lebih pintar dan berkesan daripada yang sebelumnya.",
+            "Kami mengukur keputusan, belajar daripada data dunia sebenar, dan membina atas apa yang berjaya, supaya setiap penglibatan lebih pintar dan berkesan daripada yang sebelumnya.",
         },
       ],
     },
@@ -429,7 +429,7 @@ export const translations = {
           phase: "Keputusan",
           title: "Kepercayaan Jenama",
           description:
-            "Pelanggan memilih jenama anda dengan yakin — didorong oleh kepercayaan, kredibiliti, dan tanggapan profesional yang kami bina bersama.",
+            "Pelanggan memilih jenama anda dengan yakin, didorong oleh kepercayaan, kredibiliti, dan tanggapan profesional yang kami bina bersama.",
           details: [
             "Persembahan jenama profesional yang menyemai keyakinan",
             "Komunikasi jelas mengenai manfaat dan hasil",
@@ -452,7 +452,7 @@ export const translations = {
       ],
       resultTitle: "Hasilnya: jenama yang berkembang dengan sendirinya",
       resultBody:
-        "Apabila setiap titik sentuh direka secara strategik dan bergema secara emosi, pelanggan anda bukan sekadar membeli daripada anda — mereka menjadi saluran pemasaran paling berkuasa anda, memacu pertumbuhan organik.",
+        "Apabila setiap titik sentuh direka secara strategik dan bergema secara emosi, pelanggan anda bukan sekadar membeli daripada anda. Mereka menjadi saluran pemasaran paling berkuasa anda, memacu pertumbuhan organik.",
     },
     values: {
       eyebrow: "Nilai Kami",
@@ -462,7 +462,7 @@ export const translations = {
         {
           title: "AI untuk Semua",
           description:
-            "Kami percaya keupayaan AI tidak seharusnya terhad kepada syarikat besar. Kami membina dan mengajar sistem yang mana-mana perniagaan — dalam mana-mana industri — boleh gunakan secara mampan.",
+            "Kami percaya keupayaan AI tidak seharusnya terhad kepada syarikat besar. Kami membina dan mengajar sistem yang mana-mana perniagaan dalam mana-mana industri boleh gunakan secara mampan.",
         },
         {
           title: "Pendidikan Mengatasi Kebergantungan",
@@ -472,7 +472,7 @@ export const translations = {
         {
           title: "Hasil yang Berganda",
           description:
-            "Setiap acara, sistem, dan kempen direka dengan pengggandaan dalam fikiran — supaya nilainya bertumbuh lama selepas penglibatan kami tamat.",
+            "Setiap acara, sistem, dan kempen direka dengan pengggandaan dalam fikiran, supaya nilainya bertumbuh lama selepas penglibatan kami tamat.",
         },
       ],
     },
@@ -480,7 +480,7 @@ export const translations = {
       eyebrow: "Konsultasi Pertama Anda",
       heading: "Apa yang dijangka apabila kita bertemu",
       subcopy:
-        "Konsultasi pertama anda bukan tawaran jualan — ia sesi penemuan strategik di mana kami menemukan peluang, mengenal pasti cabaran, dan merancang laluan jelas ke hadapan.",
+        "Konsultasi pertama anda bukan tawaran jualan. Ia sesi penemuan strategik di mana kami menemukan peluang, mengenal pasti cabaran, dan merancang laluan jelas ke hadapan.",
       coverTitle: "Apa yang akan kita bincangkan bersama",
       cover: [
         {
@@ -501,7 +501,7 @@ export const translations = {
         {
           title: "Peta Jalan 90 Hari Pertama",
           description:
-            "Kami akan menggariskan pelan tindakan praktikal untuk 90 hari pertama — bermula dengan apa yang menggerakkan jarum dengan paling pantas.",
+            "Kami akan menggariskan pelan tindakan praktikal untuk 90 hari pertama, bermula dengan apa yang menggerakkan jarum dengan paling pantas.",
         },
       ],
       outcomesTitle: "Apa yang akan anda bawa pulang",
@@ -520,7 +520,7 @@ export const translations = {
         },
         {
           title: "Kemenangan Cepat Segera",
-          description: "Tindakan yang boleh anda ambil hari ini untuk mula menambah baik keputusan — tanpa perlu menunggu penglibatan penuh.",
+          description: "Tindakan yang boleh anda ambil hari ini untuk mula menambah baik keputusan, tanpa perlu menunggu penglibatan penuh.",
         },
         {
           title: "Penilaian Jujur",
@@ -534,7 +534,7 @@ export const translations = {
     cta: {
       heading: "Bersedia menjadikan AI dan pertumbuhan bekerja untuk anda?",
       subcopy:
-        "Sama ada anda melancarkan produk, membina pasukan sedia AI, atau menskalakan pemasaran anda — mari kita tentukan apa yang menggerakkan jarum terlebih dahulu.",
+        "Sama ada anda melancarkan produk, membina pasukan sedia AI, atau menskalakan pemasaran anda: mari kita tentukan apa yang menggerakkan jarum terlebih dahulu.",
       ctaPrimary: "Tempah panggilan strategi",
       ctaSecondary: "Lihat acara kami",
       footnote: "Konsultasi percuma · Tiada obligasi · Nilai segera",
@@ -546,14 +546,14 @@ export const translations = {
       eyebrow: "我们的故事",
       heading: "我们相信 AI 属于每一个职场",
       subcopy:
-        "CloudLine Studio 建立于一个信念：AI 和现代增长系统不应该是科技巨头的专属特权。我们搭建桥梁——通过活动、实战教育和 AI 驱动的营销——让这些工具对马来西亚及更广泛地区的每一家企业都切实可用、有利可图。",
+        "CloudLine Studio 建立于一个信念：AI 和现代增长系统不应该是科技巨头的专属特权。我们搭建桥梁，通过活动、实战教育和 AI 驱动的营销，让这些工具对马来西亚及更广泛地区的每一家企业都切实可用、有利可图。",
       ctaPrimary: "与我们合作",
       ctaSecondary: "查看我们的作品",
     },
     mission: {
       eyebrow: "我们的使命",
       heading: "推动 AI 在马来西亚劳动力中的普及",
-      body: "我们致力于通过教育有意学习的人，推动 AI 在马来西亚职场中的广泛应用。通过我们的活动和工作坊，我们展示 AI 的实际能力——让每位专业人士都能将其融入日常工作，持续可行地使用。",
+      body: "我们致力于通过教育有意学习的人，推动 AI 在马来西亚职场中的广泛应用。通过我们的活动和工作坊，我们展示 AI 的实际能力, 让每位专业人士都能将其融入日常工作，持续可行地使用。",
       pillars: [
         { title: "教育", desc: "实战 AI 工作坊，培养真实技能，而非停留于认知层面。" },
         { title: "展示", desc: "产品演示和线下活动，让 AI 能力变得可感可知。" },
@@ -564,8 +564,8 @@ export const translations = {
       eyebrow: "创始人",
       heading: "认识 CloudLine 背后的人",
       name: "Kristine Ling",
-      title: "创始人兼董事总经理 — 数字营销与 AI 自动化专家",
-      bio: "Kristine Ling 是 CloudLine Studio 的创始人，也是一位数字营销与 AI 自动化专家，拥有九年经验，曾在五个市场（马来西亚、印度尼西亚、新加坡、澳大利亚和中国）推动增长。她帮助电商、高单价 B2B 和 SaaS 团队将浪费的广告支出、过高的每线索成本和手动工作流程转化为持续创造收入的 AI 驱动系统。她的工作涵盖增长策略、效果营销、转化率优化、数据与系统以及产品与 AI。",
+      title: "创始人兼董事总经理, 数字营销与 AI 自动化专家",
+      bio: "Kristine Ling 是 CloudLine Studio 的创始人，也是一位数字营销与 AI 自动化专家，拥有九年经验，曾在五个市场（马来西亚、印度尼西亚、新加坡、澳大利亚和中国）推动增长。她帮助电商、高单价 B2B 和 SaaS 团队将浪费的广告支出、过高的每线索成本和手动工作流程转化为持续创造收入的 AI 驱动系统。她的工作涵盖增长策略、效果营销、转化率优化、数据与系统以及产品与 AI。她还为企业规划并主持工作坊教程，帮助公司员工掌握实用的 AI 技能。",
       highlights: [
         "在 5 个市场（马来西亚、印度尼西亚、新加坡、澳大利亚和中国）拥有 9 年数字策略经验",
         "通过 AI 驱动的自动化实现高达 300% 的收入提升和 40% 的人力削减",
@@ -590,16 +590,16 @@ export const translations = {
       problemTitle: "我们看到的差距",
       problem: {
         p1Strong: "AI 在马来西亚劳动力中的应用仍处于早期阶段。",
-        p1: " 大多数企业主听说过 AI，试用过一次，然后就搁置了。工具是有的，但知识、习惯和系统却没有——尤其是在科技行业之外。",
+        p1: " 大多数企业主听说过 AI，试用过一次，然后就搁置了。工具是有的，但知识、习惯和系统却没有, 尤其是在科技行业之外。",
         p2Strong: "代理机构出售的是活动，而不是能力。",
-        p2: " 大多数营销和增长代理机构专注于投放广告和生产内容。没有人在培养他们所服务企业的内部能力——没有培训、没有自动化、没有可持续的 AI 使用习惯。",
+        p2: " 大多数营销和增长代理机构专注于投放广告和生产内容。没有人在培养他们所服务企业的内部能力, 没有培训、没有自动化、没有可持续的 AI 使用习惯。",
         p3Strong: "结果呢？",
         p3: " 企业依赖外部代理机构，重复着 AI 几秒就能完成的手动工作，错过了 AI 驱动运营所带来的复利式 ROI。",
       },
       solutionTitle: "我们的答案",
       solution: {
         p1Strong: "我们把 AI 和增长带到业务真正发生的地方。",
-        p1: " 我们的商业活动把真实产品放进真实的人手中——在一个下午就能产生销售、反馈和社群。我们的 AI 工作坊教团队在实际工作中使用 AI，而不只是停留在理论层面。",
+        p1: " 我们的商业活动把真实产品放进真实的人手中, 在一个下午就能产生销售、反馈和社群。我们的 AI 工作坊教团队在实际工作中使用 AI，而不只是停留在理论层面。",
         p2Strong: "我们同步构建系统与培养人才。",
         p2: " 一个再好的 AI 系统，也取决于使用它的团队。每次参与都将系统构建与教育结合，让你的团队能够持续运营并发展我们所搭建的一切。",
         p3Strong: "我们衡量成果，而非产出。",
@@ -610,18 +610,18 @@ export const translations = {
       eyebrow: "我们的服务",
       heading: "三种方式，助力你的业务增长",
       subcopy:
-        "从当天即可产生销售的线下活动，到在你休眠时依然运转的 AI 系统——我们构建的一切都在持续复利。",
+        "从当天即可产生销售的线下活动，到在你休眠时依然运转的 AI 系统, 我们构建的一切都在持续复利。",
       services: [
         {
           title: "商业活动与产品演示",
           description:
-            "精心策划的体验式活动，让你的产品真正进入目标客户手中——在一个下午内产生销售、真实反馈和一批品牌拥护者。",
+            "精心策划的体验式活动，让你的产品真正进入目标客户手中，在一个下午内产生销售、真实反馈和一批品牌拥护者。",
           features: ["活动概念与策划", "场地与统筹", "精选嘉宾名单", "反馈收集"],
         },
         {
           title: "AI 工作坊与教育",
           description:
-            "实战培训，教团队在日常工作中真正使用 AI 工具——从提示词工程和自动化，到内容创作和报告生成。",
+            "实战培训，教团队在日常工作中真正使用 AI 工具：提示词工程、自动化、内容创作和报告生成。",
           features: ["提示词与 AI 工具", "工作流自动化", "内容与报告", "团队技能提升"],
         },
         {
@@ -640,14 +640,14 @@ export const translations = {
     },
     howWeWork: {
       eyebrow: "我们的工作方式",
-      heading: "从第一次通话到持续复利——我们的流程",
+      heading: "从第一次通话到持续复利, 我们的流程",
       subcopy:
         "每次参与都遵循同样的节奏。我们先理解，再构建；先衡量，再扩展。",
       steps: [
         {
           title: "理解",
           description:
-            "我们从深入理解你的商业模式、目标受众和具体预期成果开始——无论是销售、市场反馈，还是团队的 AI 普及。",
+            "我们从深入理解你的商业模式、目标受众和具体预期成果开始：销售、市场反馈，或团队的 AI 普及。",
         },
         {
           title: "设计",
@@ -657,12 +657,12 @@ export const translations = {
         {
           title: "执行",
           description:
-            "我们全程负责端到端交付——从场地和统筹到现场执行和数据采集。你只需出现，我们来运作。",
+            "我们全程负责端到端交付：场地、统筹、现场执行和数据采集。你只需出现，我们来运作。",
         },
         {
           title: "复利",
           description:
-            "我们衡量结果，从真实数据中学习，并在有效的基础上继续构建——让每一次参与都比上一次更智能、更有成效。",
+            "我们衡量结果，从真实数据中学习，并在有效的基础上继续构建，让每一次参与都比上一次更智能、更有成效。",
         },
       ],
     },
@@ -700,7 +700,7 @@ export const translations = {
           phase: "决策",
           title: "品牌信任",
           description:
-            "客户自信地选择你的品牌——由我们共同建立的信任、可信度和专业形象所驱动。",
+            "客户自信地选择你的品牌，由我们共同建立的信任、可信度和专业形象所驱动。",
           details: [
             "专业的品牌呈现，注入信心",
             "清晰传达利益与成果",
@@ -723,7 +723,7 @@ export const translations = {
       ],
       resultTitle: "结果：一个自我增长的品牌",
       resultBody:
-        "当每个触点都经过战略设计并引发情感共鸣时，你的客户不仅向你购买——他们成为你最强大的营销渠道，通过口碑和推荐推动有机增长。",
+        "当每个触点都经过战略设计并引发情感共鸣时，你的客户不仅向你购买, 他们成为你最强大的营销渠道，通过口碑和推荐推动有机增长。",
     },
     values: {
       eyebrow: "我们的价值观",
@@ -743,7 +743,7 @@ export const translations = {
         {
           title: "持续复利的成果",
           description:
-            "每一场活动、每个系统和每个活动都以复利为目标来设计——让价值在我们的参与结束后继续增长。",
+            "每一场活动、每个系统和每个活动都以复利为目标来设计，让价值在我们的参与结束后继续增长。",
         },
       ],
     },
@@ -751,7 +751,7 @@ export const translations = {
       eyebrow: "你的首次咨询",
       heading: "见面时你可以期待什么",
       subcopy:
-        "你的首次咨询不是推销——而是一场战略性的探索会谈，我们发掘机会、识别挑战，并规划清晰的前进路径。",
+        "你的首次咨询不是推销, 而是一场战略性的探索会谈，我们发掘机会、识别挑战，并规划清晰的前进路径。",
       coverTitle: "我们将一起探讨的内容",
       cover: [
         {
@@ -772,7 +772,7 @@ export const translations = {
         {
           title: "前 90 天路线图",
           description:
-            "我们将为前 90 天制定实操行动计划——从最能快速推动结果的事项入手。",
+            "我们将为前 90 天制定实操行动计划，从最能快速推动结果的事项入手。",
         },
       ],
       outcomesTitle: "你将带走什么",
@@ -805,7 +805,7 @@ export const translations = {
     cta: {
       heading: "准备好让 AI 和增长系统为你工作了吗？",
       subcopy:
-        "无论你是在推出产品、打造 AI 就绪团队，还是扩展营销规模——让我们先找出最能推动结果的那一件事。",
+        "无论你是在推出产品、打造 AI 就绪团队，还是扩展营销规模, 让我们先找出最能推动结果的那一件事。",
       ctaPrimary: "预约战略通话",
       ctaSecondary: "查看我们的活动",
       footnote: "免费咨询 · 无任何义务 · 即刻获得价值",
