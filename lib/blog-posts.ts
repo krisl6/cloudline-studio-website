@@ -965,7 +965,7 @@ One channel, done well, beats five channels done mediocrely. The goal of the fir
 
 Once you know what works, Cloudline Studio runs it at scale.
 
-**[Build your SaaS GTM strategy with Cloudline Studio →](/landing/saas-marketing)**
+**[Build your SaaS GTM strategy with Cloudline Studio →](/tech)**
 `
 
 const isMarketingAgencyWorthIt = `# Is a Marketing Agency Worth It for a Startup?
@@ -1232,7 +1232,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-16",
     readTime: "9 min read",
     content: saasMarketingChannels,
-    ctaHref: "/landing/saas-marketing",
+    ctaHref: "/tech",
     ctaLabel: "Get a free SaaS marketing audit",
   },
   {
@@ -1265,7 +1265,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "9 min read",
     content: saasGtm,
-    ctaHref: "/landing/saas-marketing",
+    ctaHref: "/tech",
     ctaLabel: "Get a free SaaS marketing audit",
   },
   {
@@ -1276,7 +1276,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "8 min read",
     content: isMarketingAgencyWorthIt,
-    ctaHref: "/landing/saas-marketing",
+    ctaHref: "/tech",
     ctaLabel: "Book a free growth audit",
   },
   {
