@@ -23,7 +23,7 @@ export const translations = {
       heading: "Meet the person behind CloudLine",
       name: "Kristine Ling",
       title: "Founder & Managing Director, Digital Marketing & AI Automation Specialist",
-      bio: "Kristine Ling is the founder of CloudLine Studio and a digital marketing and AI automation specialist with nine years of experience driving growth across five markets (Malaysia, Indonesia, Singapore, Australia, and China). She helps e-commerce, high-ticket B2B, and SaaS teams turn wasted ad spend, high cost-per-lead, and manual workflows into AI-powered systems that compound revenue. Her work spans growth strategy, performance marketing, conversion rate optimization, data and systems, and product and AI, delivering leaner operations and measurable year-over-year growth. She also plans and hosts workshop tutorials for companies looking to upskill their staff with practical, hands-on AI skills.",
+      bio: "Kristine has over a decade of marketing experience with multinational and innovative companies across Malaysia, Singapore, and the United States. Her portfolio includes local names such as Aisling Group and Manforce Group Sdn Bhd, as well as national brands including Petronas, CelcomDigi, Prenetics (CircleDNA), and Darlie Toothpaste. A specialist in digital marketing and AI automation, she helps businesses turn ad spend and manual workflows into AI-powered systems that compound revenue. She also plans and hosts workshop tutorials for companies looking to upskill their staff with practical AI skills. Kristine holds a Medical Degree (M.D.) and is trilingual in English, Mandarin, and Malay.",
       highlights: [
         "9 years in digital strategy across 5 markets (Malaysia, Indonesia, Singapore, Australia, and China)",
         "Drove a peak revenue lift of 300% and a 40% manpower reduction through AI-powered automation",
@@ -294,7 +294,7 @@ export const translations = {
       heading: "Kenali insan di sebalik CloudLine",
       name: "Kristine Ling",
       title: "Pengasas & Pengarah Urusan, Pakar Pemasaran Digital & Automasi AI",
-      bio: "Kristine Ling ialah pengasas CloudLine Studio dan pakar pemasaran digital serta automasi AI dengan pengalaman sembilan tahun memacu pertumbuhan merentasi lima pasaran (Malaysia, Indonesia, Singapura, Australia, dan China). Beliau membantu pasukan e-dagang, B2B bernilai tinggi, dan SaaS menukar perbelanjaan iklan yang membazir, kos per petunjuk yang tinggi, dan aliran kerja manual kepada sistem berkuasa AI yang menggandakan hasil. Kerjayanya merangkumi strategi pertumbuhan, pemasaran prestasi, pengoptimuman kadar penukaran, data dan sistem, serta produk dan AI. Beliau turut merancang dan mengendalikan tutorial bengkel untuk syarikat-syarikat yang ingin meningkatkan kemahiran kakitangan mereka dengan kemahiran AI yang praktikal.",
+      bio: "Kristine mempunyai lebih sedekad pengalaman pemasaran bersama syarikat-syarikat multinasional dan inovatif di Malaysia, Singapura, dan Amerika Syarikat. Portfolio beliau merangkumi nama-nama tempatan seperti Aisling Group dan Manforce Group Sdn Bhd, serta jenama nasional termasuk Petronas, CelcomDigi, Prenetics (CircleDNA), dan Darlie Toothpaste. Sebagai pakar pemasaran digital dan automasi AI, beliau membantu perniagaan menukar perbelanjaan iklan dan aliran kerja manual kepada sistem berkuasa AI yang menggandakan hasil. Beliau turut merancang dan mengendalikan tutorial bengkel untuk syarikat yang ingin meningkatkan kemahiran kakitangan mereka dengan kemahiran AI yang praktikal. Kristine memegang Ijazah Perubatan (M.D.) dan menguasai tiga bahasa: Inggeris, Mandarin, dan Melayu.",
       highlights: [
         "9 tahun dalam strategi digital merentasi 5 pasaran (Malaysia, Indonesia, Singapura, Australia, dan China)",
         "Memacu peningkatan hasil puncak sebanyak 300% dan pengurangan tenaga kerja 40% melalui automasi berkuasa AI",
@@ -565,7 +565,7 @@ export const translations = {
       heading: "认识 CloudLine 背后的人",
       name: "Kristine Ling",
       title: "创始人兼董事总经理, 数字营销与 AI 自动化专家",
-      bio: "Kristine Ling 是 CloudLine Studio 的创始人，也是一位数字营销与 AI 自动化专家，拥有九年经验，曾在五个市场（马来西亚、印度尼西亚、新加坡、澳大利亚和中国）推动增长。她帮助电商、高单价 B2B 和 SaaS 团队将浪费的广告支出、过高的每线索成本和手动工作流程转化为持续创造收入的 AI 驱动系统。她的工作涵盖增长策略、效果营销、转化率优化、数据与系统以及产品与 AI。她还为企业规划并主持工作坊教程，帮助公司员工掌握实用的 AI 技能。",
+      bio: "Kristine 在马来西亚、新加坡和美国的跨国及创新型企业拥有超过十年的营销经验。她的客户组合涵盖本地知名企业如 Aisling Group 和 Manforce Group Sdn Bhd，以及 Petronas、CelcomDigi、Prenetics（CircleDNA）和 Darlie 牙膏等知名品牌。作为数字营销与 AI 自动化专家，她帮助企业将广告支出和手动工作流程转化为持续复利的 AI 驱动增长系统。她还为企业规划并主持工作坊教程，帮助员工掌握实用的 AI 技能。Kristine 持有医学博士学位（M.D.），精通英语、普通话和马来语三种语言。",
       highlights: [
         "在 5 个市场（马来西亚、印度尼西亚、新加坡、澳大利亚和中国）拥有 9 年数字策略经验",
         "通过 AI 驱动的自动化实现高达 300% 的收入提升和 40% 的人力削减",
