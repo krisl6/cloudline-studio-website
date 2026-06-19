@@ -704,6 +704,142 @@ We specialize in the aesthetic niche: beauty, lifestyle, and personal care brand
 *cloudline-studio grows beauty brands with strategy-first content. Visit [/landing/beauty-brand-marketing](/landing/beauty-brand-marketing) to see how.*
 `
 
+const saasGtm = `# The SaaS Go-to-Market Strategy That Actually Works at Seed Stage
+
+Most SaaS GTM frameworks were written by analysts who've never had to hit a number with $0 in budget and 8 weeks of runway. They're abstract, comprehensive, and completely useless when you're a 3-person team trying to sign your first 10 customers.
+
+This guide is operational — built for founders with product-market fit (or a strong hypothesis of it) but no repeatable growth motion yet. Every section answers a question a seed-stage SaaS founder would ask before a board meeting.
+
+---
+
+## What is a SaaS go-to-market strategy?
+
+A SaaS go-to-market strategy is the operational plan for acquiring customers at a repeatable, scalable cost — defining who you sell to (ICP), how you reach them (channels), what you say (messaging), and how you move them from aware to paid (motion). For early-stage SaaS, the goal is not to build the optimal GTM — it's to find one channel that works and go deep before optimizing anything else.
+
+### Step 1: Lock your ICP before everything else
+
+ICP isn't a marketing exercise. It's the foundation of every decision downstream — channel selection, messaging, content topics, outbound targeting, pricing. Without a sharp ICP, you generate leads that don't close, close deals that churn, and write content no one reads.
+
+The practical seed-stage ICP isn't a demographic profile. It's a **situation**:
+
+- **Company type:** B2B SaaS, vertical SaaS, PLG, enterprise — what is the buyer's world?
+- **Trigger moment:** What just happened that makes them need your product *right now*? (New regulation, team growth, failed audit, migration, new leadership)
+- **Budget holder:** Who signs the check and what do they care about — cost, time, risk, compliance?
+
+Write it as one sentence: *"We help [job title] at [company stage/type] who are [trigger moment] to [outcome] without [tension]."*
+
+If you can't fill that in without vagueness, you haven't found your ICP yet.
+
+---
+
+## How do you build a GTM for SaaS?
+
+Building a SaaS GTM requires four sequential decisions: who to target (ICP), which acquisition motion fits the product (PLG, outbound, content, channel-led), which two or three channels to test first, and how to measure whether a channel is working before you scale it. Most founders try to run all motions in parallel — this is the fastest way to learn nothing and run out of runway.
+
+### Step 2: Choose your primary acquisition motion
+
+There are four GTM motions for SaaS. Each has a different cost structure, time-to-revenue, and ICP fit:
+
+| Motion | Best for | Time to revenue | Cost structure |
+|--------|----------|----------------|----------------|
+| **Product-led growth (PLG)** | Self-serve, high volume, low ACV | Fast if product hooks | Low CAC, high product investment |
+| **Outbound / Sales-led** | ACV $5k+, specific ICP, low volume | 30–90 day cycles | SDR/AE cost, high touch |
+| **Content / Inbound** | Mid-market, long-cycle, trust-dependent | 6–18 months to compound | Time-intensive, durable |
+| **Channel / Partner-led** | Vertical markets, marketplace ecosystems | Medium | Revenue share |
+
+**For most seed-stage SaaS:** If ACV is above $5k, start with outbound — you need revenue now. If ACV is under $2k and the product self-sells, PLG. Content is a supporting motion, not a primary one, for companies under $3M ARR.
+
+---
+
+## What channels work for early-stage SaaS?
+
+The channels that work for early-stage SaaS depend on your motion and ICP, but three consistently outperform at seed stage: direct outbound (cold email + LinkedIn) to a tightly-defined ICP list with signal-based triggers, problem-aware SEO targeting the buyer's search queries before they're evaluating solutions, and founder-led distribution via podcasts, communities, and conference speaking. Paid ads and broad content campaigns rarely produce efficient CAC before product-market fit is validated.
+
+### Step 3: Sequence your channels
+
+**Outbound (for ACV $5k+):**
+
+Cold email and LinkedIn still work when they're specific. The failure mode is 10,000 contacts with a generic pitch instead of 100 contacts with a message built around their exact situation.
+
+The seed-stage outbound formula:
+
+- 100 target accounts that match your ICP trigger moment
+- 1 specific signal per account (raised a round, posted a job, changed leadership, hit a compliance deadline)
+- 3-step sequence: signal-aware opener → specific pain point → low-friction CTA (15-min call, not a demo)
+- **Benchmark:** 8%+ reply rate = you've found ICP and message signal; below 3% = something is wrong with targeting or message
+
+**Problem-aware content for SaaS:**
+
+Don't build a content moat in year one. Own 3–5 high-intent queries your ICP types when they're evaluating:
+
+- Comparison: "[your category] vs [alternative]"
+- Problem: "how to [the problem you solve]"
+- MOFU validation: "best [your category] for [their vertical or use case]"
+
+Low traffic, high intent. These shorten sales cycles when prospects arrive already educated.
+
+**Founder-led distribution:**
+
+At pre-$1M ARR, you are often the best channel. Guest posts on industry publications, podcast appearances, community posts — trust transfers from the host to you. This doesn't scale forever, but it's often the most efficient acquisition path in the early stages.
+
+---
+
+## How do you measure SaaS go-to-market effectiveness?
+
+Measure SaaS GTM effectiveness at three levels: channel efficiency (CAC and payback period per channel), pipeline quality (conversion rates from qualified lead to closed-won, with drop-off diagnosis by stage), and cohort retention (month-1, month-3, and month-6 retention by acquisition source). The most important GTM insight is not which channel drives volume — it's which channel produces customers who stay and expand.
+
+### The only metrics that matter at seed stage
+
+**Before 20 customers:**
+
+- Reply rate on outbound sequences (ICP and message fit signal)
+- Time from first contact to close (urgency and decision clarity)
+- Reason for every lost deal (positioning and ICP accuracy)
+
+**After 20 customers:**
+
+- Net revenue retention by cohort (product-market fit signal)
+- CAC by channel (efficiency signal)
+- Referral rate (product love signal)
+
+Chasing conversion rate before you have enough volume to trust the numbers means optimizing noise. Get to 20 customers first. Then optimize.
+
+---
+
+## The GTM execution calendar: 0 to $500k ARR
+
+**Month 1–2 — ICP and message:**
+
+- 20 win/loss reviews or customer discovery interviews
+- Lock the one-line ICP and the trigger-moment narrative
+- Build a 100-account target list with specific signals
+- Run first outbound sequence; track reply rates
+
+**Month 3–4 — Channel selection:**
+
+- Double down on the channel with the best meeting-booked rate
+- Publish 2–3 SEO comparison or problem pages
+- Identify 3 communities or podcasts where your ICP is active
+
+**Month 5–6 — Systemize:**
+
+- Document the sales process that closed your first 10 customers
+- Build content briefs for the 5 highest-intent queries in your category
+- Hire your first SDR or content specialist — only once you know what's working
+
+---
+
+## The mistake most seed-stage founders make
+
+Trying to do everything at once.
+
+One channel, done well, beats five channels done mediocrely. The goal of the first GTM phase is to find one acquisition path that works and create enough repeatability to fundraise or hire against it.
+
+Once you know what works, Cloudline Studio runs it at scale.
+
+**[Build your SaaS GTM strategy with Cloudline Studio →](/landing/saas-marketing)**
+`
+
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "startup-marketing-cost",
@@ -748,6 +884,17 @@ export const BLOG_POSTS: BlogPost[] = [
     content: howToMarketBeautyBrand,
     ctaHref: "/landing/beauty-brand-marketing",
     ctaLabel: "Work with Cloudline Studio",
+  },
+  {
+    slug: "saas-gtm",
+    title: "The SaaS Go-to-Market Strategy That Actually Works at Seed Stage",
+    description: "An operational SaaS GTM playbook for seed-stage founders: ICP locking, acquisition motion selection, channel sequencing, and the only metrics that matter before 20 customers.",
+    category: "SaaS Marketing",
+    date: "2026-06-19",
+    readTime: "9 min read",
+    content: saasGtm,
+    ctaHref: "/landing/saas-marketing",
+    ctaLabel: "Get a free SaaS marketing audit",
   },
 ]
 
