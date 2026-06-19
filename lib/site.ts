@@ -27,4 +27,5 @@ export const SITE_ROUTES = [
   "blog/saas-gtm",
   "blog/startup-marketing-agency",
   "blog/how-to-price-an-online-course",
+  "blog/beauty-brand-marketing-strategy",
 ] as const
