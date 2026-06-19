@@ -50,6 +50,8 @@ const T = {
     interestedIn: "I'm interested in:",
     budget: "My Estimated Budget:",
     budgetPh: "Select a budget range",
+    message: "Anything else you'd like us to know?",
+    messagePh: "Tell us a little about your project or goals…",
     send: "Submit", sending: "Sending…",
     successTitle: "Thank you, we've got it.", successBody: "Our team will get back to you within 24 hours.",
     errEmail: "Please enter a valid email.", errGeneric: "Something went wrong. Please try again.",
@@ -60,6 +62,8 @@ const T = {
     interestedIn: "Saya berminat dengan:",
     budget: "Anggaran Bajet Saya:",
     budgetPh: "Pilih julat bajet",
+    message: "Ada lagi yang ingin anda kongsikan?",
+    messagePh: "Ceritakan sedikit tentang projek atau matlamat anda…",
     send: "Hantar", sending: "Menghantar…",
     successTitle: "Terima kasih, kami telah menerimanya.", successBody: "Pasukan kami akan menghubungi anda dalam masa 24 jam.",
     errEmail: "Sila masukkan e-mel yang sah.", errGeneric: "Ada masalah. Sila cuba lagi.",
@@ -70,6 +74,8 @@ const T = {
     interestedIn: "我感兴趣的是：",
     budget: "我的预估预算：",
     budgetPh: "选择预算范围",
+    message: "还有什么想让我们了解的吗？",
+    messagePh: "简单介绍一下您的项目或目标…",
     send: "提交", sending: "提交中…",
     successTitle: "谢谢，我们已收到。", successBody: "我们的团队将在 24 小时内与您联系。",
     errEmail: "请输入有效的邮箱。", errGeneric: "出了点问题，请重试。",
@@ -202,6 +208,12 @@ export function ContactForm() {
           </select>
           <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 size-4 text-muted-foreground" />
         </div>
+      </div>
+
+      {/* Message */}
+      <div>
+        <p className="text-sm font-medium text-center mb-1.5">{tt.message}</p>
+        <textarea name="message" rows={3} autoComplete="off" className={inputCls} placeholder={tt.messagePh} />
       </div>
 
       {error && <p className="text-sm text-destructive text-center">{error}</p>}
