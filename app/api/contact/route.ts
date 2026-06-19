@@ -8,6 +8,9 @@ export async function POST(request: Request) {
     const name = (body.name || "").trim()
     const email = (body.email || "").trim()
     const phone = (body.phone || "").trim()
+    const website = (body.website || "").trim()
+    const interests = (body.interests || "").trim()
+    const budget = (body.budget || "").trim()
     const message = (body.message || "").trim()
 
     if (!email.includes("@") || !email.includes(".")) {
@@ -27,6 +30,9 @@ export async function POST(request: Request) {
       name,
       email,
       phone,
+      website,
+      interests,
+      budget,
       message,
       submitted_at: new Date().toISOString(),
     })
