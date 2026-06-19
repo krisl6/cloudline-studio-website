@@ -704,6 +704,134 @@ We specialize in the aesthetic niche: beauty, lifestyle, and personal care brand
 *cloudline-studio grows beauty brands with strategy-first content. Visit [/landing/beauty-brand-marketing](/landing/beauty-brand-marketing) to see how.*
 `
 
+const howToPriceOnlineCourse = `# How to Price an Online Course: A Framework for Founders Who Want to Get Paid What Their Knowledge Is Worth
+
+Pricing is not a math problem. It is a positioning decision.
+
+The number you put on your course tells your audience what they are about to buy before they read a single word of the sales page. Too low, and they question the value. Too high without the right signals around it, and they bounce without converting.
+
+Most course creators price by gut feel or by copying competitors. Both approaches leave money on the table and, more often than not, attract the wrong students.
+
+Here is how to price with a framework.
+
+---
+
+**What determines online course pricing:**
+- **Outcome value** — how much is the transformation worth to your student in money, time, or career terms?
+- **Positioning level** — low-ticket, mid-tier, premium, or subscription? Each signals a different promise.
+- **Market context** — what do comparable courses cost, and where do you want to sit relative to that benchmark?
+
+---
+
+## What are the different online course pricing models?
+
+**There are five core online course pricing models: low-ticket (under $97), mid-tier ($97–$497), premium ($497–$2,000+), subscription (recurring monthly/annual), and tiered (multiple access levels at different price points). The right model depends on the transformation you deliver, the support level you offer, and the positioning you want in your market.**
+
+| Model | Price range | Best for | Support level |
+|---|---|---|---|
+| Low-ticket | Under $97 | Large volume, awareness-stage audiences, lead-in to higher-ticket offer | Self-paced, minimal |
+| Mid-tier | $97–$497 | Core signature course, established audience, clear outcome | Self-paced or cohort |
+| Premium | $497–$2,000+ | High-stakes transformation, niche expertise, included coaching | Coaching, community, live calls |
+| Subscription | $19–$99/month | Library of content, ongoing skill-building, recurring community access | Varies |
+| Tiered | Multiple price points | Capturing the full buyer spectrum; upselling core students to premium | Varies by tier |
+
+**Low-ticket** is not the same as cheap. A $27 workshop that reliably converts into a $497 course is a high-performing product. Low-ticket fails when founders treat it as their main revenue model and burn out trying to sell at volume with thin margins.
+
+**Premium** pricing works when you have: a clear, high-value outcome (time, money, career), a track record of results, and supporting assets (testimonials, case studies, visible expertise). It fails when the positioning is not in place and the price tag is the only premium signal.
+
+**Subscription** is the most structurally attractive model for course creators with enough content to sustain a library — but it comes with a churn problem. Monthly subscribers need ongoing reasons to stay. If your content is finite rather than evergreen, a one-time price is simpler and usually more profitable.
+
+**Tiered pricing** (e.g., core access at $297 / core + community at $497 / core + group coaching at $997) allows you to convert students at different investment levels and upsell naturally. It adds complexity to your sales page but increases average revenue per student when structured clearly.
+
+---
+
+## How do you calculate your course price?
+
+**To calculate your course price, start with your student's outcome value — estimate what the transformation is worth to them in financial or career terms — then set your price at 1–10% of that value depending on how certain the outcome is and how much support you provide. A course that helps a freelancer land one extra client per month (worth $12,000/year) could reasonably price between $120 and $1,200 depending on format and positioning.**
+
+### The Outcome-Value Framework
+
+**Step 1: Define the transformation**
+What is the student's life/work/revenue like after completing your course versus before? Be specific. "Better at copywriting" is not a transformation. "Can write emails that convert at 3%+ instead of 0.8%" is.
+
+**Step 2: Quantify the outcome value**
+Put a number on the transformation. If it saves 5 hours per week, what is that worth at their effective hourly rate? If it helps them get a promotion, what is the salary delta? If it helps them launch a product, what could that product generate in year one?
+
+**Step 3: Apply the 1–10% rule**
+Set your price at 1–10% of the outcome value.
+
+- 1–3%: self-paced, minimal support, uncertain outcomes
+- 4–6%: cohort-based, some live elements, clearer outcomes
+- 7–10%: coaching included, high-certainty transformation, track record of results
+
+**Example:** Your course teaches freelancers to raise their rates. Average student can charge 20% more, which on a $50k/year freelance business is $10,000 additional revenue.
+- 1% = $100 (low-ticket, self-paced)
+- 5% = $500 (mid-tier, cohort)
+- 10% = $1,000 (premium, includes coaching)
+
+All three are defensible. The question is what positioning you are ready to own.
+
+**Step 4: Sanity check against market comps**
+Search for 3–5 comparable courses. Not the cheapest ones — the ones positioned similarly to yours. Where do you want to sit? Matching, slightly above, or significantly above? (Significantly below is rarely the right move unless volume is your explicit strategy.)
+
+**Step 5: Test, then commit**
+If you are launching for the first time, run a founding member price (15–20% below your intended full price) for your first cohort. Use that cohort to collect results and testimonials. Raise to full price for cohort 2. Never offer the founding price again.
+
+---
+
+## What pricing mistakes do online course creators make?
+
+**The most common pricing mistakes online course creators make are: pricing too low out of fear (which signals low value to buyers), pricing without a supporting positioning framework (so the price tag is the only signal), and failing to raise prices as results accumulate (which leaves money on the table and caps perceived value). The single most expensive mistake is setting a permanent "launch price" that never goes up.**
+
+**Mistake 1: Pricing for the objection, not the transformation**
+
+"People won't pay $500 for an online course" is a belief, not a fact. People pay $2,000+ for courses on copywriting, photography, business, parenting — when the outcome is clear and the positioning earns the price. If you are pricing to avoid the objection, you are pricing for the students you are afraid of, not the students who are ready to invest.
+
+**Mistake 2: No pricing anchor**
+
+If your $497 course is the only thing on your sales page, buyers have nothing to compare it to. Anchoring works: a tiered offer (Core at $297 / Core + Community at $497 / Core + Coaching at $997) makes the middle tier feel like the obvious choice. Without anchoring, every price feels arbitrary.
+
+**Mistake 3: Permanent discount pricing**
+
+A perpetual "50% off" is not a discount. It is your price. Discount pricing works when it is genuinely scarce (founding cohort, early bird with a hard deadline, launch window). It destroys value when it is always available, because buyers learn to wait.
+
+**Mistake 4: Ignoring your positioning context**
+
+If your social media, website, and content signal "helpful free resource," then $997 will be a shock. Pricing is not just the number — it is the sum of every signal your brand sends. Premium pricing requires premium positioning: quality design, authority content, visible results, selective language.
+
+---
+
+## FAQ: Course pricing questions
+
+**How much should I charge for my online course?**
+Charge based on the outcome value you deliver, not the hours of content you have recorded. Use the 1–10% of outcome value framework: if your course helps a student earn an additional $10,000, a price between $100 (self-paced) and $1,000 (coaching included) is defensible. For most mid-tier courses with a clear transformation, $297–$497 is the most common and sustainable range.
+
+**What is a good price for an online course?**
+A good price for an online course is one that accurately signals the value of the transformation, attracts students who are genuinely invested in completing it, and generates enough revenue for you to keep improving the product. For a self-paced course with a clear outcome, $97–$297 is typically the floor. For courses with live elements or coaching, $497–$1,997 is common. Under $97 should be reserved for lead-in products or truly standalone workshops.
+
+**Should I offer a payment plan?**
+Yes, for courses priced above $297. A 2–3 installment payment plan (e.g., 3 x $199 instead of $497) can increase conversion by 20–40% with minimal impact to your total revenue if the plan is priced slightly above the one-time price to account for admin cost and the higher churn risk on installments.
+
+**When should I raise my course price?**
+Raise your price after your first cohort produces strong results you can document. "Strong results" means at least 3–5 student outcomes you can publish as case studies. After each major content update, after you add live coaching or community, and when you have a track record that supports the price. Most course creators wait too long. The right time is usually earlier than feels comfortable.
+
+---
+
+## Build the marketing infrastructure that turns pricing into revenue
+
+Pricing your course correctly is half the equation. The other half is building the marketing system that gets the right students in front of that price.
+
+If you are working on your course launch and want a clear enrolment funnel mapped out — cloudline-studio offers a free 20-minute session to map your enrolment funnel, channel mix, and pricing positioning.
+
+[Book a free enrolment audit → cloudline-studio](/landing/online-course-marketing)
+
+---
+
+*See also: [How to Market an Online Course](/blog/how-market-online-course) — Cycle 2 education guide on building your full enrolment funnel.*
+
+*From cloudline-studio · Education niche · MOFU · Target keyword: how to price an online course*
+`
+
 const saasGtm = `# The SaaS Go-to-Market Strategy That Actually Works at Seed Stage
 
 Most SaaS GTM frameworks were written by analysts who've never had to hit a number with $0 in budget and 8 weeks of runway. They're abstract, comprehensive, and completely useless when you're a 3-person team trying to sign your first 10 customers.
@@ -840,6 +968,123 @@ Once you know what works, Cloudline Studio runs it at scale.
 **[Build your SaaS GTM strategy with Cloudline Studio →](/landing/saas-marketing)**
 `
 
+const isMarketingAgencyWorthIt = `# Is a Marketing Agency Worth It for a Startup?
+
+**The short answer:** it depends on your stage, budget, and what you are actually buying. For most early-stage startups — pre-Series A, under $2M ARR — a full-service agency is rarely worth it. The overhead, onboarding lag, and retainer costs absorb budget better spent on direct channels. Post-Series A, when you have product-market fit and a clear ICP, an agency can accelerate what is already working — but only if you are buying specialist execution, not strategy discovery.
+
+---
+
+## What Is a Startup Marketing Agency?
+
+A **startup marketing agency** is an external team that manages some or all of your marketing function — typically content, paid ads, SEO, or brand — on a retainer or project basis.
+
+Costs range from $2,000 to $15,000+/month depending on scope and specialism. Cloudline Studio, for example, specializes in growth marketing for tech, education, and consumer brands in the $2,000–$6,000/month range, with a focus on content-led and AEO (answer engine optimization) strategies that compound over time.
+
+---
+
+## When Is a Marketing Agency Worth It for a Startup?
+
+A marketing agency earns its retainer when all three of these conditions are true:
+
+1. **You have product-market fit.** At least 20–30 customers are paying willingly, with low churn. Without PMF, no marketing will stick.
+2. **You have a meaningful budget.** At minimum $2,000–$4,000/month excluding ad spend. Below that, the economics rarely work.
+3. **You need execution, not strategy.** You know the channel. You need someone to run it faster than you can hire in-house.
+
+The third condition is the most important — and the most commonly misunderstood. Agencies are excellent at execution. They are poor at discovering your positioning, finding your ICP, or validating your offer. That work belongs to founders.
+
+---
+
+## When Is a Marketing Agency NOT Worth It?
+
+Avoid hiring an agency if:
+
+- **You have not defined your ICP.** The agency will define it for you — and get it wrong, because they have no sales call data.
+- **You are pre-revenue.** You need customer conversations, not campaigns.
+- **Your ACV is under $500.** The CAC math usually will not close. Content and brand-building can still work, but expect a 6–12 month lag before you see ROI.
+- **You expect the agency to own strategy.** A good agency needs your direction. The best agencies push back when founders want to delegate thinking.
+
+---
+
+## How to Evaluate a Startup Marketing Agency: 5 Questions to Ask
+
+Before signing a retainer, ask every candidate agency these five questions:
+
+1. **"Can you show me case studies from companies at my stage and in my vertical?"** Generic case studies are a red flag. You want proof they understand your buyer, your CAC constraints, and your sales cycle.
+
+2. **"Who will actually do the work?"** Senior team sells, junior team executes. Confirm the seniority of the people running your account day-to-day.
+
+3. **"How do you define success at day 30, 60, and 90?"** Any agency that cannot answer this with specific, measurable outputs is not ready for your account.
+
+4. **"What is your attribution model?"** If they cannot explain how they track a lead from first touch to closed revenue, they cannot prove ROI.
+
+5. **"What does your off-ramp look like?"** Good agencies are confident in their work. They offer month-to-month contracts or clear 90-day exit clauses. Long lock-ins (6–12 months) before you have validated the relationship are a structural red flag.
+
+---
+
+## How Much Does a Startup Marketing Agency Cost?
+
+| Scope | Typical Monthly Cost |
+|---|---|
+| Focused content or SEO program (1 channel) | $2,000–$4,000 |
+| Multi-channel execution (content + paid or SEO + social) | $4,000–$8,000 |
+| Full-service (brand, content, paid, analytics) | $8,000–$15,000+ |
+| Project-based (launch campaign, content strategy) | $3,000–$20,000 one-time |
+
+For startups below $500K ARR, start with a single-channel program and expand based on what you can attribute. Paying for full-service before you can measure attribution is paying for noise.
+
+---
+
+## Alternatives to a Marketing Agency for Startups
+
+Before hiring an agency, consider whether one of these fits better:
+
+- **Fractional CMO ($2,000–$5,000/month):** Better if you need strategy and internal alignment before you need execution. Sets the direction an agency then runs.
+- **Freelance specialist ($50–$150/hr):** Best for one-off deliverables — a landing page, an email sequence, a keyword map. No overhead.
+- **In-house content hire ($5,000–$8,000/month all-in):** Best when you have validated content as your primary channel and want to scale it with someone embedded in your brand voice.
+- **Performance marketing consultant:** Best if paid is your growth engine and you need CAC/LTV optimization, not brand.
+
+---
+
+## ROI Benchmark: Is Your Agency Earning Its Retainer?
+
+A useful rule of thumb: **pipeline generated should be 3–5x agency cost within 90 days.**
+
+For a $3,000/month retainer, you should be able to trace $9,000–$15,000 of influenced pipeline to agency-driven activity by month 3. Content and SEO programs compound more slowly — allow 6 months before making a final call on organic channels.
+
+If you cannot measure it, you should not be paying for it. Agree on attribution methodology at the contract stage, not when you are already questioning value.
+
+---
+
+## The Cloudline Verdict
+
+Marketing agencies are worth it for startups that are ready for them — and actively harmful for startups that are not. The tell: if you are hiring an agency to figure out your go-to-market, stop. That is founder work. If you are hiring an agency to execute a go-to-market you already understand, that is where an agency multiplies you.
+
+Ready to see if a growth marketing partnership makes sense for your stage? **[Book a 15-minute growth audit with Cloudline Studio](#)** — we will tell you honestly whether you need an agency, a fractional hire, or something else entirely.
+
+---
+
+## FAQ
+
+**Q: Is it worth hiring a marketing agency before getting customers?**
+A: No. Pre-customer, you need direct sales conversations, not a marketing funnel. An agency cannot validate your value proposition — only prospects can.
+
+**Q: How do I measure ROI on a startup marketing agency?**
+A: Set a pipeline target before you sign. At minimum, the influenced pipeline should be 3–5x the retainer cost within 90 days. For content/SEO, allow 6 months before making a final attribution call.
+
+**Q: What is the difference between a growth agency and a marketing agency?**
+A: Growth agencies tie their work to revenue metrics: CAC, activation rates, LTV ratios. Traditional marketing agencies focus on reach, impressions, and brand. Startups almost always need a growth agency.
+
+**Q: How do I know if a startup marketing agency is actually good?**
+A: Ask for case studies from companies at your stage and in my vertical. Ask who will actually do the work. Ask how they attribute results. If they cannot answer these questions precisely, move on.
+
+**Q: Should a startup hire an agency or build in-house?**
+A: Neither is universally correct. An agency is better when speed matters and you have a validated channel to scale. In-house is better when your brand voice is complex, your content volume is high, or you want institutional knowledge to compound internally. Most startups start with an agency to validate channels, then hire in-house once the playbook is proven.
+
+---
+
+*cloudline-studio is a fractional marketing studio for tech, aesthetic, and education brands. We produce content that ranks, earns AI citation, and converts, for a fraction of agency cost.*
+`
+
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "startup-marketing-cost",
@@ -886,6 +1131,17 @@ export const BLOG_POSTS: BlogPost[] = [
     ctaLabel: "Work with Cloudline Studio",
   },
   {
+    slug: "how-to-price-an-online-course",
+    title: "How to Price an Online Course: A Framework for Founders Who Want to Get Paid What Their Knowledge Is Worth",
+    description: "Five pricing models, the outcome-value calculation framework, and the mistakes that tank course pricing decisions — with examples for course creators at every level.",
+    category: "Content & Education",
+    date: "2026-06-19",
+    readTime: "9 min read",
+    content: howToPriceOnlineCourse,
+    ctaHref: "/landing/online-course-marketing",
+    ctaLabel: "Book a free enrolment audit",
+  },
+  {
     slug: "saas-gtm",
     title: "The SaaS Go-to-Market Strategy That Actually Works at Seed Stage",
     description: "An operational SaaS GTM playbook for seed-stage founders: ICP locking, acquisition motion selection, channel sequencing, and the only metrics that matter before 20 customers.",
@@ -895,6 +1151,17 @@ export const BLOG_POSTS: BlogPost[] = [
     content: saasGtm,
     ctaHref: "/landing/saas-marketing",
     ctaLabel: "Get a free SaaS marketing audit",
+  },
+  {
+    slug: "startup-marketing-agency",
+    title: "Is a Marketing Agency Worth It for a Startup?",
+    description: "Most startups hire a marketing agency too early. Here is the honest framework: when it is worth it, when it is not, and how to measure ROI in 90 days.",
+    category: "Growth & Strategy",
+    date: "2026-06-19",
+    readTime: "8 min read",
+    content: isMarketingAgencyWorthIt,
+    ctaHref: "/landing/saas-marketing",
+    ctaLabel: "Book a free growth audit",
   },
 ]
 
