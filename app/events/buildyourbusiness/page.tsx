@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, MapPin, Users, Laptop, Zap, Megaphone, ShoppingCart } from "lucide-react"
+import { ArrowRight, MapPin, Users, Laptop, Zap, Megaphone, ShoppingCart, CalendarDays } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DoodleCheck } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
@@ -75,12 +75,15 @@ export default function BuildYourBusinessPage() {
               <motion.p variants={fadeUp} className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-9">
                 {tt.hero.p2}
               </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3 mb-10 text-sm text-muted-foreground">
+              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-10 text-sm text-muted-foreground">
+                <span className="inline-flex items-center gap-1.5">
+                  <CalendarDays className="size-4 text-primary" />
+                  {tt.hero.datetime}
+                </span>
                 <span className="inline-flex items-center gap-1.5">
                   <MapPin className="size-4 text-primary" />
                   {tt.hero.location}
                 </span>
-                <span className="hidden sm:block text-border">·</span>
                 <span className="inline-flex items-center gap-1.5">
                   <Users className="size-4 text-primary" />
                   {tt.hero.audience}
