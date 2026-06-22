@@ -75,7 +75,7 @@ export const translations = {
           bio: "Growth strategist and AI-tools practitioner who has helped brands across Malaysia and Singapore scale with lean, high-output digital systems.",
         },
         {
-          name: "Brendan Beh",
+          name: "Chan Eu Vin",
           role: "Co-host",
           bio: "Product builder and vibe-coding practitioner. He turns complex ideas into working software with nothing but plain language and the right AI toolchain.",
         },
@@ -165,7 +165,7 @@ export const translations = {
           bio: "Ahli strategi pertumbuhan dan pengamal alat AI yang telah membantu jenama di seluruh Malaysia dan Singapura berkembang dengan sistem digital yang efisien dan berhasil tinggi.",
         },
         {
-          name: "Brendan Beh",
+          name: "Chan Eu Vin",
           role: "Penganjur Bersama",
           bio: "Pembina produk dan pengamal vibe-coding. Beliau menukar idea kompleks kepada perisian berfungsi hanya dengan bahasa biasa dan rantaian alat AI yang tepat.",
         },
@@ -255,7 +255,7 @@ export const translations = {
           bio: "增长策略师与 AI 工具实践者，曾帮助马来西亚和新加坡的品牌借助精简、高效的数字系统实现规模化增长。",
         },
         {
-          name: "Brendan Beh",
+          name: "Chan Eu Vin",
           role: "联合主持人",
           bio: "产品构建者与 vibe-coding 实践者。他仅凭日常语言和正确的 AI 工具链，将复杂想法转化为可运行的软件。",
         },
