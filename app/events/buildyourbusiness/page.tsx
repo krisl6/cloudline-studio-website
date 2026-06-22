@@ -7,7 +7,7 @@ import { ArrowRight, MapPin, Users, Laptop, Zap, TrendingUp, Megaphone, Shopping
 import { Button } from "@/components/ui/button"
 import { DoodleCheck } from "@/components/doodles"
 
-const LUMA_URL = "https://luma.com/i2ew5rl8"
+const WHATSAPP_URL = "https://wa.me/60112775215"
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }
 const stagger = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } }
@@ -17,19 +17,19 @@ const AGENDA = [
     icon: Zap,
     step: "01",
     title: "Vibe-code your product from scratch",
-    desc: "Refine your business idea, run quick market research, and use Claude Code or Codex to turn plain-language concepts into a working prototype — no syntax required.",
+    desc: "Refine your business idea, run quick market research, and use Claude Code or Codex to turn plain-language concepts into a working prototype. No syntax required.",
   },
   {
     icon: Laptop,
     step: "02",
     title: "Build frontend & backend",
-    desc: "Spin up databases, authentication, and security layers using free tools. You leave with a live, deployable product — not just a mockup.",
+    desc: "Spin up databases, authentication, and security layers using free tools. You leave with a live, deployable product, not just a mockup.",
   },
   {
     icon: Megaphone,
     step: "03",
     title: "Set up your marketing stack",
-    desc: "Auto-generate content, landing pages, and ad copy. Build workflows that run while you sleep — so your marketing is on from day one.",
+    desc: "Auto-generate content, landing pages, and ad copy. Build workflows that run while you sleep, so your marketing is on from day one.",
   },
   {
     icon: ShoppingCart,
@@ -69,10 +69,10 @@ export default function BuildYourBusinessPage() {
                 Build &amp; Launch Your Business with Zero Coding Skills
               </motion.h1>
               <motion.p variants={fadeUp} className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-4">
-                A full-day hands-on workshop. Arrive with an idea and a laptop — leave with a completed, deployed product, a working marketing stack, and a clear plan for your first revenue.
+                A full-day hands-on workshop. Arrive with an idea and a laptop. Leave with a completed, deployed product, a working marketing stack, and a clear plan for your first revenue.
               </motion.p>
               <motion.p variants={fadeUp} className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-9">
-                Powered by AI tools like Claude Code and Codex, this session teaches "vibe-coding" — converting plain-language thinking into real, functional applications. No developer background required.
+                Powered by AI tools like Claude Code and Codex, this session teaches "vibe-coding": converting plain-language thinking into real, functional applications. No developer background required.
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3 mb-10 text-sm text-muted-foreground">
                 <span className="inline-flex items-center gap-1.5">
@@ -87,7 +87,7 @@ export default function BuildYourBusinessPage() {
               </motion.div>
               <motion.div variants={fadeUp}>
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href={LUMA_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     Register Now <ArrowRight className="ml-1.5 size-4" />
                   </Link>
                 </Button>
@@ -118,7 +118,7 @@ export default function BuildYourBusinessPage() {
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">What you'll build</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
-                From idea to live product — in one day
+                From idea to live product, in one day
               </h2>
               <p className="text-muted-foreground md:text-lg leading-relaxed">
                 Each session builds on the last. By the end of the day you'll have a product, a marketing engine, and a distribution plan working together.
@@ -209,17 +209,17 @@ export default function BuildYourBusinessPage() {
                 </div>
                 <div className="space-y-4 text-muted-foreground leading-relaxed mb-8">
                   <p>
-                    We're proud to host this workshop at Infinity8 Reserve — one of Subang Jaya's most premium co-working and event spaces, designed for people who take their work seriously.
+                    We're proud to host this workshop at Infinity8 Reserve, one of Subang Jaya's most premium co-working and event spaces, designed for people who take their work seriously.
                   </p>
                   <p>
                     The space is striking without being distracting: high ceilings, thoughtful lighting, and a boardroom-grade setup that keeps you in the right headspace to build. It's the kind of environment that quietly raises the quality of your thinking.
                   </p>
                   <p>
-                    All registered attendees receive one week of complimentary access to Infinity8 Reserve after the workshop — so you can keep the momentum going.
+                    All registered attendees receive one week of complimentary access to Infinity8 Reserve after the workshop, so you can keep the momentum going.
                   </p>
                 </div>
                 <Button variant="outline" size="lg" className="rounded-full h-11 px-6 text-sm font-medium" asChild>
-                  <Link href={LUMA_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
                     Secure your spot <ArrowRight className="ml-1.5 size-4" />
                   </Link>
                 </Button>
@@ -264,7 +264,7 @@ export default function BuildYourBusinessPage() {
                 {
                   name: "Brendan Beh",
                   role: "Co-host",
-                  bio: "Product builder and vibe-coding practitioner — turning complex ideas into working software with nothing but plain language and the right AI toolchain.",
+                  bio: "Product builder and vibe-coding practitioner. He turns complex ideas into working software with nothing but plain language and the right AI toolchain.",
                   image: "/team-euvin.jpg",
                 },
               ].map((host) => (
@@ -315,8 +315,8 @@ export default function BuildYourBusinessPage() {
                 Spots are limited to keep the workshop hands-on and focused. Register now to secure your place.
               </p>
               <Button size="lg" className="rounded-full h-12 px-8 text-base font-medium" asChild>
-                <Link href={LUMA_URL} target="_blank" rel="noopener noreferrer">
-                  Register on Luma <ArrowRight className="ml-1.5 size-4" />
+                <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                  WhatsApp Us to Register <ArrowRight className="ml-1.5 size-4" />
                 </Link>
               </Button>
             </motion.div>
