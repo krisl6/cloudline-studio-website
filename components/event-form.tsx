@@ -11,7 +11,7 @@ const T = {
     name: "Name", email: "Email", phone: "Phone / WhatsApp", business: "Business / product",
     participants: "Number of participants", audience: "Target audience", date: "Date of event", goal: "What's your event goal?",
     single: "Single day", multi: "Multi-day", start: "Start date", end: "End date",
-    namePh: "Your name", emailPh: "you@company.com", phonePh: "+60…", businessPh: "e.g. Vyne Wine, premium wines",
+    namePh: "Your name", emailPh: "you@company.com", phonePh: "12 345 6789", businessPh: "e.g. Vyne Wine, premium wines",
     participantsPh: "e.g. 30", audiencePh: "e.g. Young professionals who enjoy wine",
     goalPh: "e.g. Let 30 people taste our wines and drive same-day sales",
     send: "Get Quote Now", sending: "Sending…",
@@ -22,7 +22,7 @@ const T = {
     name: "Nama", email: "E-mel", phone: "Telefon / WhatsApp", business: "Perniagaan / produk",
     participants: "Bilangan peserta", audience: "Audiens sasaran", date: "Tarikh acara", goal: "Apakah matlamat acara anda?",
     single: "Satu hari", multi: "Berbilang hari", start: "Tarikh mula", end: "Tarikh tamat",
-    namePh: "Nama anda", emailPh: "anda@syarikat.com", phonePh: "+60…", businessPh: "cth. Vyne Wine, wain premium",
+    namePh: "Nama anda", emailPh: "anda@syarikat.com", phonePh: "12 345 6789", businessPh: "cth. Vyne Wine, wain premium",
     participantsPh: "cth. 30", audiencePh: "cth. Profesional muda yang gemar wain",
     goalPh: "cth. Biar 30 orang mencuba wain kami dan dorong jualan hari sama",
     send: "Dapatkan Sebut Harga", sending: "Menghantar…",
@@ -33,7 +33,7 @@ const T = {
     name: "姓名", email: "邮箱", phone: "电话 / WhatsApp", business: "企业 / 产品",
     participants: "参与人数", audience: "目标受众", date: "活动日期", goal: "您的活动目标是什么？",
     single: "单日", multi: "多日", start: "开始日期", end: "结束日期",
-    namePh: "您的姓名", emailPh: "you@company.com", phonePh: "+60…", businessPh: "例如：Vyne Wine, 高端葡萄酒",
+    namePh: "您的姓名", emailPh: "you@company.com", phonePh: "12 345 6789", businessPh: "例如：Vyne Wine, 高端葡萄酒",
     participantsPh: "例如：30", audiencePh: "例如：喜爱葡萄酒的年轻专业人士",
     goalPh: "例如：让 30 位客人试饮我们的葡萄酒并带动当天销售",
     send: "立即获取报价", sending: "发送中…",
@@ -73,7 +73,7 @@ export function EventForm() {
         body: JSON.stringify({
           name: get("name"),
           email,
-          phone: get("phone"),
+          phone: [get("countryCode"), get("phone")].filter(Boolean).join(" "),
           business: get("business"),
           participants: get("participants"),
           target_audience: get("audience"),
@@ -115,7 +115,33 @@ export function EventForm() {
         </label>
         <label className="block">
           <span className="text-sm font-medium">{tt.phone}</span>
-          <input type="tel" name="phone" autoComplete="tel" className={inputCls} placeholder={tt.phonePh} />
+          <div className="mt-1.5 flex">
+            <select
+              name="countryCode"
+              defaultValue="+60"
+              className="rounded-l-xl rounded-r-none border border-r-0 border-border bg-muted px-2 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
+            >
+              <option value="+60">+60</option>
+              <option value="+65">+65</option>
+              <option value="+62">+62</option>
+              <option value="+63">+63</option>
+              <option value="+66">+66</option>
+              <option value="+84">+84</option>
+              <option value="+852">+852</option>
+              <option value="+886">+886</option>
+              <option value="+61">+61</option>
+              <option value="+1">+1</option>
+              <option value="+44">+44</option>
+              <option value="+86">+86</option>
+            </select>
+            <input
+              type="tel"
+              name="phone"
+              autoComplete="tel-national"
+              className="w-full rounded-r-xl rounded-l-none border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
+              placeholder={tt.phonePh}
+            />
+          </div>
         </label>
       </div>
       <label className="block">
