@@ -35,7 +35,7 @@ export const translations = {
     events: {
       eyebrow: "Past events",
       heading: "Events we've curated",
-      subcopy: "A few we've designed and hosted for products across F&B, SaaS, fashion, and more.",
+      subcopy: "A few we've designed and hosted for products across SaaS, MarTech, and automation.",
       peopleLabel: "Attendees",
       outcomeLabel: "Outcome",
     },
@@ -134,7 +134,7 @@ export const translations = {
     events: {
       eyebrow: "Acara lepas",
       heading: "Acara yang telah kami anjurkan",
-      subcopy: "Beberapa yang kami reka dan anjurkan untuk produk dalam F&B, SaaS, fesyen dan banyak lagi.",
+      subcopy: "Beberapa yang kami reka dan anjurkan untuk produk dalam SaaS, MarTech dan automasi.",
       peopleLabel: "Hadirin",
       outcomeLabel: "Hasil",
     },
@@ -224,7 +224,7 @@ export const translations = {
     events: {
       eyebrow: "过往活动",
       heading: "我们策划过的活动",
-      subcopy: "我们为餐饮、SaaS、时尚等产品设计并主办的部分活动。",
+      subcopy: "我们为 SaaS、MarTech 和自动化等产品设计并主办的部分活动。",
       peopleLabel: "参与人数",
       outcomeLabel: "成果",
     },

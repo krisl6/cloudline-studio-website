@@ -17,15 +17,6 @@ const stepIcons = [DoodleSearch, DoodlePen, DoodleRocket]
 // Language-neutral event data (names + specifics are real).
 const EVENTS: { name: string; tag: string; desc: string; people: string; outcome: string; image: string; video?: string; image2?: string; images?: string[] }[] = [
   {
-    name: "Vyne Wine",
-    tag: "F&B · Wine tasting",
-    desc: "Wine tasting at To-Go Café, 10 wines, from simple to premium aged, paired with food.",
-    people: "45",
-    outcome: "RM10,000 in sales in one day",
-    image: "/vyne-wine.jpg",
-    images: ["/vyne-wine-1.jpg", "/vyne-wine-2.jpg", "/vyne-wine-3.jpg", "/vyne-wine-4.jpg"],
-  },
-  {
     name: "MonstarX",
     tag: "SaaS · AI App Builder",
     desc: "Hands-on AI app-building, the basics of prompting, creating, and third-party connectors.",
@@ -36,36 +27,27 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
   },
   {
     name: "LSIGraph / SurgeGraph",
-    tag: "SaaS · SEO & AEO",
+    tag: "MarTech · SEO & AEO",
     desc: "SEO/AEO workshop, why traffic matters, reaching the right people, and ranking your site fast.",
     people: "50",
     outcome: "50 marketers learned to rank faster",
     image: "/surgegraph-agencies.jpeg",
   },
   {
-    name: "SheSeen",
-    tag: "Fashion · Pop-up",
-    desc: "Pre-loved premium designer fashion pop-up at Publika, for a specially curated audience.",
-    people: "200–350",
-    outcome: "High, well-matched foot traffic",
-    image: "/sheseen-poster.jpg",
-    video: "/sheseen.mp4",
-  },
-  {
-    name: "Prouvers Sdn Bhd",
-    tag: "B2B · Automation workshop",
-    desc: "Prompt engineering & automation, content creation, 24/7 replies, auto-quotations, and live interdepartmental reports.",
-    people: "70",
-    outcome: "Teams automated content, replies & reporting",
-    image: "/prouvers.jpg",
-    images: ["/prouvers-team-bonding.jpg", "/prouvers.jpg"],
+    name: "Claude Workshops",
+    tag: "Automation · Hands-on AI workshops",
+    desc: "Hands-on AI workshops teaching teams to build with Claude, prompting, automations, and real workflows they ship the same day.",
+    people: "150+",
+    outcome: "Teams shipped live AI workflows",
+    image: "/team-retreat.jpg",
+    images: ["/team-retreat.jpg", "/vibe-coding-workshop.webp"],
   },
 ]
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }
 const stagger = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } }
 
-// Crossfades through a set of images on an interval (e.g. Prouvers: bowling → office every 3s).
+// Crossfades through a set of images on an interval (e.g. Claude Workshops: team → workshop every 3s).
 function RotatingImage({ images, alt, intervalMs = 3000 }: { images: string[]; alt: string; intervalMs?: number }) {
   const [idx, setIdx] = useState(0)
   useEffect(() => {

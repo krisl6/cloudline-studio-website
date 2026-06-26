@@ -46,7 +46,7 @@ const founderInitials = founder.name
   .slice(0, 2)
   .toUpperCase()
 
-const hasFounderPhoto = typeof founder.photoUrl === "string" && /^https?:\/\//.test(founder.photoUrl)
+const hasFounderPhoto = typeof founder.photoUrl === "string" && founder.photoUrl.trim().length > 0
 
 const statIcons = [DoodleTrophy, DoodlePen, DoodleSparkle, DoodleHeart]
 const howWeWorkIcons = [DoodleSearch, DoodlePen, DoodleRocket, DoodleGrowth]
