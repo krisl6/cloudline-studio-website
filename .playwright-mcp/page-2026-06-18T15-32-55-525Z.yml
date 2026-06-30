@@ -1,0 +1,298 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "CloudLine Studio - Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "CloudLine Studio" [ref=e7]
+        - generic [ref=e8]: CloudLine Studio
+      - button "Toggle menu" [ref=e10] [cursor=pointer]:
+        - img
+        - generic [ref=e11]: Toggle menu
+  - main [ref=e12]:
+    - main [ref=e14]:
+      - region "Events" [ref=e15]:
+        - generic [ref=e17]:
+          - paragraph [ref=e18]: Events
+          - heading "Curated events that put your product in people's hands." [level=1] [ref=e19]
+          - paragraph [ref=e20]: We design and run experiential events so customers can try your product or service first-hand — and you walk away with sales and instant, honest feedback.
+          - generic [ref=e21]:
+            - link "Plan my event" [ref=e22] [cursor=pointer]:
+              - /url: "#event-form"
+              - text: Plan my event
+              - img
+            - link "See past events" [ref=e23] [cursor=pointer]:
+              - /url: "#events"
+      - region "What's included" [ref=e24]:
+        - generic [ref=e25]:
+          - generic [ref=e26]:
+            - paragraph [ref=e27]: What's included
+            - heading "One flat fee. Everything handled." [level=2] [ref=e28]
+            - paragraph [ref=e29]: Curated to your product, end to end — you just show up.
+          - generic [ref=e30]:
+            - generic [ref=e31]:
+              - img [ref=e32]
+              - generic [ref=e34]: Concept & curation
+            - generic [ref=e35]:
+              - img [ref=e36]
+              - generic [ref=e38]: Venue
+            - generic [ref=e39]:
+              - img [ref=e40]
+              - generic [ref=e42]: Hosting & emcee
+            - generic [ref=e43]:
+              - img [ref=e44]
+              - generic [ref=e46]: Organizing & logistics
+            - generic [ref=e47]:
+              - img [ref=e48]
+              - generic [ref=e50]: Refreshments
+            - generic [ref=e51]:
+              - img [ref=e52]
+              - generic [ref=e54]: Curated guest list
+            - generic [ref=e55]:
+              - img [ref=e56]
+              - generic [ref=e58]: Promotion
+            - generic [ref=e59]:
+              - img [ref=e60]
+              - generic [ref=e62]: Feedback capture
+      - region "How it works" [ref=e63]:
+        - generic [ref=e64]:
+          - generic [ref=e65]:
+            - paragraph [ref=e66]: How it works
+            - heading "From idea to a room full of the right people" [level=2] [ref=e67]
+          - generic [ref=e68]:
+            - generic [ref=e69]:
+              - generic [ref=e70]:
+                - img [ref=e72]
+                - generic [ref=e75]: "01"
+              - heading "Tell us your product & goal" [level=3] [ref=e76]
+              - paragraph [ref=e77]: What you're launching, who it's for, and what you want out of the day — sales, feedback, or both.
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - img [ref=e81]
+                - generic [ref=e84]: "02"
+              - heading "We curate it" [level=3] [ref=e85]
+              - paragraph [ref=e86]: We design the concept, secure the venue, and assemble an audience matched to your product.
+            - generic [ref=e87]:
+              - generic [ref=e88]:
+                - img [ref=e90]
+                - generic [ref=e95]: "03"
+              - heading "We host & run it" [level=3] [ref=e96]
+              - paragraph [ref=e97]: We manage everything on the day. You meet customers, make sales, and collect real feedback.
+      - region "How we start together" [ref=e98]:
+        - generic [ref=e99]:
+          - generic [ref=e100]:
+            - paragraph [ref=e101]: How we start together
+            - heading "Four steps to your event day" [level=2] [ref=e102]
+          - generic [ref=e104]:
+            - generic [ref=e105]:
+              - generic [ref=e107]: "01"
+              - heading "Identify your business model & ICP" [level=3] [ref=e108]
+              - paragraph [ref=e109]: We pin down your business model and Ideal Customer Profile — the exact people we need in the room.
+            - generic [ref=e110]:
+              - generic [ref=e112]: "02"
+              - heading "Choose your format" [level=3] [ref=e113]
+              - paragraph [ref=e114]: A dedicated Business Event, or a Product Feature inside an existing CloudLine workshop — pick what fits.
+            - generic [ref=e115]:
+              - generic [ref=e117]: "03"
+              - heading "Set budget, goals & timeline" [level=3] [ref=e118]
+              - paragraph [ref=e119]: We define what a win looks like, agree on the budget, and lock in a date that works.
+            - generic [ref=e120]:
+              - generic [ref=e122]: "04"
+              - heading "Confirm support & tracking" [level=3] [ref=e123]
+              - paragraph [ref=e124]: "We finalise marketing & sales support, and set up data tracking: promo codes, UTMs, and more."
+      - region "Past events" [ref=e125]:
+        - generic [ref=e126]:
+          - generic [ref=e127]:
+            - paragraph [ref=e128]: Past events
+            - heading "Events we've curated" [level=2] [ref=e129]
+            - paragraph [ref=e130]: A few we've designed and hosted for products across F&B, SaaS, fashion, and more.
+          - generic [ref=e131]:
+            - generic [ref=e132]:
+              - img "Vyne Wine" [ref=e135]
+              - generic [ref=e136]:
+                - paragraph [ref=e137]: F&B · Wine tasting
+                - heading "Vyne Wine" [level=3] [ref=e138]
+                - paragraph [ref=e139]: Wine tasting at To-Go Café — 10 wines, from simple to premium aged, paired with food.
+                - generic [ref=e140]:
+                  - generic [ref=e141]:
+                    - paragraph [ref=e142]: Attendees
+                    - paragraph [ref=e143]: "45"
+                  - generic [ref=e144]:
+                    - paragraph [ref=e145]: Outcome
+                    - paragraph [ref=e146]: RM10,000 in sales in one day
+            - generic [ref=e147]:
+              - img "MonstarX" [ref=e150]
+              - generic [ref=e151]:
+                - paragraph [ref=e152]: SaaS · AI App Builder
+                - heading "MonstarX" [level=3] [ref=e153]
+                - paragraph [ref=e154]: Hands-on AI app-building — the basics of prompting, creating, and third-party connectors.
+                - generic [ref=e155]:
+                  - generic [ref=e156]:
+                    - paragraph [ref=e157]: Attendees
+                    - paragraph [ref=e158]: "35"
+                  - generic [ref=e159]:
+                    - paragraph [ref=e160]: Outcome
+                    - paragraph [ref=e161]: Attendees built apps live
+            - generic [ref=e162]:
+              - img "LSIGraph / SurgeGraph" [ref=e164]
+              - generic [ref=e165]:
+                - paragraph [ref=e166]: SaaS · SEO & AEO
+                - heading "LSIGraph / SurgeGraph" [level=3] [ref=e167]
+                - paragraph [ref=e168]: SEO/AEO workshop — why traffic matters, reaching the right people, and ranking your site fast.
+                - generic [ref=e169]:
+                  - generic [ref=e170]:
+                    - paragraph [ref=e171]: Attendees
+                    - paragraph [ref=e172]: "50"
+                  - generic [ref=e173]:
+                    - paragraph [ref=e174]: Outcome
+                    - paragraph [ref=e175]: 50 marketers learned to rank faster
+            - generic [ref=e179]:
+              - paragraph [ref=e180]: Fashion · Pop-up
+              - heading "SheSeen" [level=3] [ref=e181]
+              - paragraph [ref=e182]: Pre-loved premium designer fashion pop-up at Publika, for a specially curated audience.
+              - generic [ref=e183]:
+                - generic [ref=e184]:
+                  - paragraph [ref=e185]: Attendees
+                  - paragraph [ref=e186]: 200–350
+                - generic [ref=e187]:
+                  - paragraph [ref=e188]: Outcome
+                  - paragraph [ref=e189]: High, well-matched foot traffic
+            - generic [ref=e190]:
+              - img "Prouvers Sdn Bhd" [ref=e193]
+              - generic [ref=e194]:
+                - paragraph [ref=e195]: B2B · Automation workshop
+                - heading "Prouvers Sdn Bhd" [level=3] [ref=e196]
+                - paragraph [ref=e197]: Prompt engineering & automation — content creation, 24/7 replies, auto-quotations, and live interdepartmental reports.
+                - generic [ref=e198]:
+                  - generic [ref=e199]:
+                    - paragraph [ref=e200]: Attendees
+                    - paragraph [ref=e201]: "70"
+                  - generic [ref=e202]:
+                    - paragraph [ref=e203]: Outcome
+                    - paragraph [ref=e204]: Teams automated content, replies & reporting
+      - region "What you'll need to book" [ref=e205]:
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - paragraph [ref=e208]: Before we start
+            - heading "What you'll need to make a booking" [level=2] [ref=e209]
+            - paragraph [ref=e210]: "To curate the right event, please have these ready:"
+          - generic [ref=e211]:
+            - generic [ref=e212]:
+              - img [ref=e213]
+              - generic [ref=e215]: Business deck — including your USPs and a product/service explanation
+            - generic [ref=e216]:
+              - img [ref=e217]
+              - generic [ref=e219]: Ideal Customer Profile / target audience demographic
+            - generic [ref=e220]:
+              - img [ref=e221]
+              - generic [ref=e223]: Timeline & expectations
+            - generic [ref=e224]:
+              - img [ref=e225]
+              - generic [ref=e227]: Event budget
+      - region "Plan your event" [ref=e228]:
+        - generic [ref=e229]:
+          - generic [ref=e230]:
+            - heading "Have a product worth experiencing?" [level=2] [ref=e231]
+            - paragraph [ref=e232]: Tell us what you're launching and we'll design an event that gets it into the right hands.
+          - generic [ref=e234]:
+            - generic [ref=e235]:
+              - generic [ref=e236]:
+                - text: Name
+                - textbox "Name" [ref=e237]:
+                  - /placeholder: Your name
+              - generic [ref=e238]:
+                - text: Phone / WhatsApp
+                - textbox "Phone / WhatsApp" [ref=e239]:
+                  - /placeholder: +60…
+            - generic [ref=e240]:
+              - generic [ref=e241]: Email *
+              - textbox "Email *" [ref=e242]:
+                - /placeholder: you@company.com
+            - generic [ref=e243]:
+              - text: Business / product
+              - textbox "Business / product" [ref=e244]:
+                - /placeholder: e.g. Vyne Wine — premium wines
+            - generic [ref=e245]:
+              - generic [ref=e246]:
+                - generic [ref=e247]: Number of participants *
+                - spinbutton "Number of participants *" [ref=e248]
+              - generic [ref=e249]:
+                - text: Target audience
+                - textbox "Target audience" [ref=e250]:
+                  - /placeholder: e.g. Young professionals who enjoy wine
+            - generic [ref=e251]:
+              - generic [ref=e252]: Date of event *
+              - generic [ref=e253]:
+                - button "Single day" [pressed] [ref=e254] [cursor=pointer]
+                - button "Multi-day" [ref=e255] [cursor=pointer]
+              - textbox [ref=e256]
+            - generic [ref=e257]:
+              - text: What's your event goal?
+              - textbox "What's your event goal?" [ref=e258]:
+                - /placeholder: e.g. Let 30 people taste our wines and drive same-day sales
+            - button "Get Quote Now" [ref=e259] [cursor=pointer]:
+              - text: Get Quote Now
+              - img
+  - contentinfo [ref=e260]:
+    - generic [ref=e261]:
+      - generic [ref=e262]:
+        - generic [ref=e263]:
+          - link "CloudLine Studio" [ref=e264] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e265]: CloudLine Studio
+          - paragraph [ref=e266]: Data-driven marketing solutions that deliver measurable results and drive business growth.
+          - link "WhatsApp" [ref=e268] [cursor=pointer]:
+            - /url: https://wa.link/fwi8af
+            - img
+        - generic [ref=e269]:
+          - heading "Services" [level=3] [ref=e270]
+          - list [ref=e271]:
+            - listitem [ref=e272]:
+              - link "Performance Marketing" [ref=e273] [cursor=pointer]:
+                - /url: /services/#performance-marketing
+            - listitem [ref=e274]:
+              - link "Website Creation" [ref=e275] [cursor=pointer]:
+                - /url: /services/#website-creation
+            - listitem [ref=e276]:
+              - link "SEO Optimization" [ref=e277] [cursor=pointer]:
+                - /url: /services/#seo
+            - listitem [ref=e278]:
+              - link "Influencer Marketing" [ref=e279] [cursor=pointer]:
+                - /url: /services/#influencer
+        - generic [ref=e280]:
+          - heading "Company" [level=3] [ref=e281]
+          - list [ref=e282]:
+            - listitem [ref=e283]:
+              - link "About Us" [ref=e284] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e285]:
+              - link "Case Studies" [ref=e286] [cursor=pointer]:
+                - /url: /case-studies/
+            - listitem [ref=e287]:
+              - link "Pricing" [ref=e288] [cursor=pointer]:
+                - /url: /pricing/
+            - listitem [ref=e289]:
+              - link "Blog" [ref=e290] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=e291]:
+              - link "Careers" [ref=e292] [cursor=pointer]:
+                - /url: /careers/
+        - generic [ref=e293]:
+          - heading "Contact" [level=3] [ref=e294]
+          - list [ref=e295]:
+            - listitem [ref=e296]: hello@cloudline-studio.com
+            - listitem [ref=e297]: "+01127755215"
+            - listitem [ref=e298]: Kuala Lumpur, Malaysia
+            - listitem [ref=e299]:
+              - link "Get in Touch" [ref=e300] [cursor=pointer]:
+                - /url: /contact/
+      - generic [ref=e301]:
+        - paragraph [ref=e302]: © 2026 CloudLine Studio. All rights reserved.
+        - generic [ref=e303]:
+          - link "Privacy Policy" [ref=e304] [cursor=pointer]:
+            - /url: /privacy/
+          - link "Terms of Service" [ref=e305] [cursor=pointer]:
+            - /url: /terms/
+  - link "Chat on WhatsApp" [ref=e307] [cursor=pointer]:
+    - /url: https://wa.link/fwi8af
+    - img [ref=e308]
+    - generic [ref=e312]: "1"

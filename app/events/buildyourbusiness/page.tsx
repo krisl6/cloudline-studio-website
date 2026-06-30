@@ -62,41 +62,59 @@ export default function BuildYourBusinessPage() {
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border" aria-label="Event overview">
           <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-24">
-            <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-4xl">
-              <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-5">
-                {tt.hero.eyebrow}
-              </motion.p>
-              <motion.h1 variants={fadeUp} className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight text-balance leading-[1.05] mb-6">
-                {tt.hero.headline}
-              </motion.h1>
-              <motion.p variants={fadeUp} className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-4">
-                {tt.hero.p1}
-              </motion.p>
-              <motion.p variants={fadeUp} className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-9">
-                {tt.hero.p2}
-              </motion.p>
-              <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-10 text-sm text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5">
-                  <CalendarDays className="size-4 text-primary" />
-                  {tt.hero.datetime}
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <MapPin className="size-4 text-primary" />
-                  {tt.hero.location}
-                </span>
-                <span className="inline-flex items-center gap-1.5">
-                  <Users className="size-4 text-primary" />
-                  {tt.hero.audience}
-                </span>
+            <div className="mx-auto max-w-6xl grid items-center gap-10 lg:gap-14 lg:grid-cols-[1fr_minmax(0,440px)]">
+              <motion.div variants={stagger} initial="hidden" animate="show">
+                <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-5">
+                  {tt.hero.eyebrow}
+                </motion.p>
+                <motion.h1 variants={fadeUp} className="font-display text-4xl sm:text-5xl lg:text-[3.5rem] font-semibold tracking-tight text-balance leading-[1.05] mb-6">
+                  {tt.hero.headline}
+                </motion.h1>
+                <motion.p variants={fadeUp} className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-4">
+                  {tt.hero.p1}
+                </motion.p>
+                <motion.p variants={fadeUp} className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-9">
+                  {tt.hero.p2}
+                </motion.p>
+                <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-10 text-sm text-muted-foreground">
+                  <span className="inline-flex items-center gap-1.5">
+                    <CalendarDays className="size-4 text-primary" />
+                    {tt.hero.datetime}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <MapPin className="size-4 text-primary" />
+                    {tt.hero.location}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Users className="size-4 text-primary" />
+                    {tt.hero.audience}
+                  </span>
+                </motion.div>
+                <motion.div variants={fadeUp}>
+                  <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
+                    <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                      {tt.hero.cta} <ArrowRight className="ml-1.5 size-4" />
+                    </Link>
+                  </Button>
+                </motion.div>
               </motion.div>
-              <motion.div variants={fadeUp}>
-                <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                    {tt.hero.cta} <ArrowRight className="ml-1.5 size-4" />
-                  </Link>
-                </Button>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="relative w-full max-w-md mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-border shadow-sm"
+              >
+                <Image
+                  src="/buildyourbusiness-poster.png"
+                  alt="Build Your Business workshop poster — 6 July 2025, 12pm to 5pm"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 440px"
+                  className="object-cover"
+                  priority
+                />
               </motion.div>
-            </motion.div>
+            </div>
           </div>
         </section>
 

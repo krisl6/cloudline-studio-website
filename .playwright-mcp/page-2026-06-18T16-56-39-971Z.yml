@@ -1,0 +1,485 @@
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "CloudLine Studio - Home" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "CloudLine Studio" [ref=e7]
+        - generic [ref=e8]: CloudLine Studio
+      - button "Toggle menu" [ref=e10] [cursor=pointer]:
+        - img
+        - generic [ref=e11]: Toggle menu
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - main [ref=e14]:
+        - region "Hero" [ref=e15]:
+          - generic [ref=e17]:
+            - paragraph [ref=e18]: Our Story
+            - heading "We believe AI belongs in every workplace" [level=1] [ref=e19]
+            - paragraph [ref=e20]: "CloudLine Studio was built on one conviction: AI and modern growth systems shouldn't be a privilege reserved for tech giants. We create the bridge — through events, hands-on education, and AI-powered marketing — that makes these tools practical and profitable for every business in Malaysia and beyond."
+            - generic [ref=e21]:
+              - link "Work with us" [ref=e22] [cursor=pointer]:
+                - /url: /contact/
+                - text: Work with us
+                - img
+              - link "See our work" [ref=e23] [cursor=pointer]:
+                - /url: /client-results/
+        - region "Our mission" [ref=e24]:
+          - generic [ref=e26]:
+            - paragraph [ref=e27]: Our Mission
+            - heading "Increasing AI adoption across Malaysia's workforce" [level=2] [ref=e28]
+            - paragraph [ref=e29]: We aim to increase the adoption of AI within the workforce in Malaysia by educating those who are eager to learn. Through our events and workshops, we showcase the capabilities of AI — making it sustainable for everyday professionals to embed into their day-to-day lives.
+            - generic [ref=e30]:
+              - generic [ref=e31]:
+                - paragraph [ref=e32]: Educate
+                - paragraph [ref=e33]: Hands-on AI workshops that build real skills, not just awareness.
+              - generic [ref=e34]:
+                - paragraph [ref=e35]: Showcase
+                - paragraph [ref=e36]: Live product demos and events that make AI capabilities tangible.
+              - generic [ref=e37]:
+                - paragraph [ref=e38]: Sustain
+                - paragraph [ref=e39]: Systems that keep working long after our engagement ends.
+        - region "Founder" [ref=e40]:
+          - generic [ref=e41]:
+            - generic [ref=e42]:
+              - paragraph [ref=e43]: Founder
+              - heading "Meet the person behind CloudLine" [level=2] [ref=e44]
+            - generic [ref=e45]:
+              - generic [ref=e48]: KL
+              - generic [ref=e49]:
+                - heading "Kristine Ling" [level=3] [ref=e50]
+                - paragraph [ref=e51]: Founder & Managing Director — Digital Marketing & AI Automation Specialist
+                - paragraph [ref=e52]: Kristine Ling is the founder of CloudLine Studio and a digital marketing and AI automation specialist with nine years of experience driving growth across five markets (Malaysia, Indonesia, Singapore, Australia, and China). She helps e-commerce, high-ticket B2B, and SaaS teams turn wasted ad spend, high cost-per-lead, and manual workflows into AI-powered systems that compound revenue. Her work spans growth strategy, performance marketing, conversion rate optimization, data and systems, and product and AI, delivering leaner operations and measurable year-over-year growth.
+                - list [ref=e53]:
+                  - listitem [ref=e54]:
+                    - img [ref=e55]
+                    - generic [ref=e57]: 9 years in digital strategy across 5 markets (Malaysia, Indonesia, Singapore, Australia, and China)
+                  - listitem [ref=e58]:
+                    - img [ref=e59]
+                    - generic [ref=e61]: Drove a peak revenue lift of 300% and a 40% manpower reduction through AI-powered automation
+                  - listitem [ref=e62]:
+                    - img [ref=e63]
+                    - generic [ref=e65]: Led cross-functional teams of up to 20 people
+                  - listitem [ref=e66]:
+                    - img [ref=e67]
+                    - generic [ref=e69]: Speaker at International Women's Day conferences and industry events
+                  - listitem [ref=e70]:
+                    - img [ref=e71]
+                    - generic [ref=e73]: "Trilingual: native English, professional Mandarin, and professional Malay"
+                - link "kristinelingg.com" [ref=e74] [cursor=pointer]:
+                  - /url: https://kristinelingg.com
+                  - text: kristinelingg.com
+                  - img
+        - region "Our team" [ref=e75]:
+          - generic [ref=e76]:
+            - paragraph [ref=e77]: Core Team
+            - generic [ref=e78]:
+              - generic [ref=e79]:
+                - img "Chan Eu Vin" [ref=e81]
+                - generic [ref=e82]:
+                  - paragraph [ref=e83]: Chan Eu Vin
+                  - paragraph [ref=e84]: Head of Operations
+              - generic [ref=e85]:
+                - img "Megan Lim" [ref=e87]
+                - generic [ref=e88]:
+                  - paragraph [ref=e89]: Megan Lim
+                  - paragraph [ref=e90]: Business Executive
+        - region "AI workshops" [ref=e91]:
+          - generic [ref=e92]:
+            - generic [ref=e93]:
+              - paragraph [ref=e94]: AI Workshops
+              - heading "AI workshops we've hosted for communities & companies" [level=2] [ref=e95]
+              - paragraph [ref=e96]: Hands-on AI and automation sessions we've run with communities and companies across Singapore and Malaysia.
+            - generic [ref=e97]:
+              - img "CloudLine Studio speaking at the PIKOM International Women's Day event" [ref=e99]
+              - img "Participants at a CloudLine Studio AI workshop" [ref=e101]
+              - img "CloudLine Studio running a vibe coding workshop" [ref=e103]
+              - img "CloudLine Studio presenting at a build-without-coding workshop" [ref=e105]
+        - region "By the numbers" [ref=e106]:
+          - generic [ref=e108]:
+            - generic [ref=e109]:
+              - img [ref=e111]
+              - generic [ref=e116]: 9+
+              - generic [ref=e117]: Years of Experience
+            - generic [ref=e118]:
+              - img [ref=e120]
+              - generic [ref=e123]: "5"
+              - generic [ref=e124]: Markets
+            - generic [ref=e125]:
+              - img [ref=e127]
+              - generic [ref=e130]: 500+
+              - generic [ref=e131]: Professionals Reached
+            - generic [ref=e132]:
+              - img [ref=e134]
+              - generic [ref=e136]: 10+
+              - generic [ref=e137]: Events Hosted
+        - region "Why CloudLine exists" [ref=e138]:
+          - generic [ref=e139]:
+            - generic [ref=e140]:
+              - paragraph [ref=e141]: Why CloudLine Exists
+              - heading "AI is transforming work. Malaysia's workforce deserves a seat at the table." [level=2] [ref=e142]
+            - generic [ref=e143]:
+              - generic [ref=e144]:
+                - heading "The gap we saw" [level=3] [ref=e145]
+                - generic [ref=e146]:
+                  - paragraph [ref=e147]:
+                    - strong [ref=e148]: AI adoption in Malaysia's workforce is still in its early stages.
+                    - text: Most business owners have heard of AI, tried it once, and moved on. The tools are available, but the know-how, habits, and systems are not — especially outside the tech sector.
+                  - paragraph [ref=e149]:
+                    - strong [ref=e150]: Agencies sell campaigns, not capability.
+                    - text: Most marketing and growth agencies focus on delivering ads and content. Nobody builds the internal capacity of the businesses they serve — no training, no automation, no sustainable AI habits.
+                  - paragraph [ref=e151]:
+                    - strong [ref=e152]: The result?
+                    - text: Businesses dependent on external agencies, duplicating manual work that AI could handle in seconds, and missing the compounding ROI that comes from AI-powered operations.
+              - generic [ref=e153]:
+                - heading "Our answer" [level=3] [ref=e154]
+                - generic [ref=e155]:
+                  - paragraph [ref=e156]:
+                    - strong [ref=e157]: We bring AI and growth to where business actually happens.
+                    - text: Our Business Events put real products in front of real people — generating sales, feedback, and community in one afternoon. Our AI workshops teach teams to use AI in their actual work, not just in theory.
+                  - paragraph [ref=e158]:
+                    - strong [ref=e159]: We build the systems and the people together.
+                    - text: A great AI system is only as good as the team using it. Every engagement combines system-building with education so your team can sustain and grow what we build.
+                  - paragraph [ref=e160]:
+                    - strong [ref=e161]: We measure outcomes, not outputs.
+                    - text: "Every event, campaign, and automation is measured by real business metrics: sales made, hours saved, leads generated, and revenue compounded."
+        - region "What we do" [ref=e162]:
+          - generic [ref=e163]:
+            - generic [ref=e164]:
+              - paragraph [ref=e165]: What We Do
+              - heading "Three ways we grow your business" [level=2] [ref=e166]
+              - paragraph [ref=e167]: From live events that generate same-day sales to AI systems that run while you sleep — everything we build compounds.
+            - generic [ref=e168]:
+              - generic [ref=e169]:
+                - heading "Business Events & Product Demos" [level=3] [ref=e170]
+                - paragraph [ref=e171]: Curated experiential events that put your product in real hands — generating sales, honest feedback, and a community of advocates in a single afternoon.
+                - generic [ref=e172]:
+                  - generic [ref=e173]:
+                    - img [ref=e174]
+                    - generic [ref=e176]: Event Concept & Curation
+                  - generic [ref=e177]:
+                    - img [ref=e178]
+                    - generic [ref=e180]: Venue & Logistics
+                  - generic [ref=e181]:
+                    - img [ref=e182]
+                    - generic [ref=e184]: Curated Guest Lists
+                  - generic [ref=e185]:
+                    - img [ref=e186]
+                    - generic [ref=e188]: Feedback Capture
+              - generic [ref=e189]:
+                - heading "AI Workshops & Education" [level=3] [ref=e190]
+                - paragraph [ref=e191]: Hands-on sessions that teach teams to use AI tools in their actual day-to-day work — from prompting and automation to content creation and reporting.
+                - generic [ref=e192]:
+                  - generic [ref=e193]:
+                    - img [ref=e194]
+                    - generic [ref=e196]: Prompting & AI Tools
+                  - generic [ref=e197]:
+                    - img [ref=e198]
+                    - generic [ref=e200]: Workflow Automation
+                  - generic [ref=e201]:
+                    - img [ref=e202]
+                    - generic [ref=e204]: Content & Reporting
+                  - generic [ref=e205]:
+                    - img [ref=e206]
+                    - generic [ref=e208]: Team Upskilling
+              - generic [ref=e209]:
+                - heading "Digital Marketing & Growth" [level=3] [ref=e210]
+                - paragraph [ref=e211]: Performance marketing, AI-powered automation, and conversion rate optimization that compounds revenue across five markets.
+                - generic [ref=e212]:
+                  - generic [ref=e213]:
+                    - img [ref=e214]
+                    - generic [ref=e216]: Performance Campaigns
+                  - generic [ref=e217]:
+                    - img [ref=e218]
+                    - generic [ref=e220]: AI Automation Systems
+                  - generic [ref=e221]:
+                    - img [ref=e222]
+                    - generic [ref=e224]: Conversion Optimisation
+                  - generic [ref=e225]:
+                    - img [ref=e226]
+                    - generic [ref=e228]: Cross-Market Growth
+              - generic [ref=e229]:
+                - heading "Brand Strategy & Positioning" [level=3] [ref=e230]
+                - paragraph [ref=e231]: Clarifying your story, defining your ideal customer, and building a market position that commands premium pricing and loyalty.
+                - generic [ref=e232]:
+                  - generic [ref=e233]:
+                    - img [ref=e234]
+                    - generic [ref=e236]: ICP Definition
+                  - generic [ref=e237]:
+                    - img [ref=e238]
+                    - generic [ref=e240]: Brand Messaging
+                  - generic [ref=e241]:
+                    - img [ref=e242]
+                    - generic [ref=e244]: Market Positioning
+                  - generic [ref=e245]:
+                    - img [ref=e246]
+                    - generic [ref=e248]: Competitive Differentiation
+        - region "How we work" [ref=e249]:
+          - generic [ref=e250]:
+            - generic [ref=e251]:
+              - paragraph [ref=e252]: How We Work
+              - heading "Our process — from first call to compounding results" [level=2] [ref=e253]
+              - paragraph [ref=e254]: Every engagement follows the same rhythm. We understand before we build, and we measure before we scale.
+            - generic [ref=e255]:
+              - generic [ref=e256]:
+                - generic [ref=e257]:
+                  - img [ref=e259]
+                  - generic [ref=e262]: "01"
+                - heading "Understand" [level=3] [ref=e263]
+                - paragraph [ref=e264]: We start by deeply understanding your business model, your audience, and the specific outcome you want — whether that's sales, market feedback, or AI adoption across your team.
+              - generic [ref=e265]:
+                - generic [ref=e266]:
+                  - img [ref=e268]
+                  - generic [ref=e271]: "02"
+                - heading "Design" [level=3] [ref=e272]
+                - paragraph [ref=e273]: We design the event, campaign, or system around what moves the needle for your specific goal. No templates, no copy-paste playbooks.
+              - generic [ref=e274]:
+                - generic [ref=e275]:
+                  - img [ref=e277]
+                  - generic [ref=e282]: "03"
+                - heading "Execute" [level=3] [ref=e283]
+                - paragraph [ref=e284]: We handle end-to-end delivery — from venue and logistics to live execution and data capture. You show up. We run it.
+              - generic [ref=e285]:
+                - generic [ref=e286]:
+                  - img [ref=e288]
+                  - generic [ref=e292]: "04"
+                - heading "Compound" [level=3] [ref=e293]
+                - paragraph [ref=e294]: We measure results, learn from real-world data, and build on what works — so every engagement gets smarter and more effective than the last.
+        - region "Customer journey" [ref=e295]:
+          - generic [ref=e296]:
+            - generic [ref=e297]:
+              - paragraph [ref=e298]: Customer Journey
+              - heading "From stranger to brand advocate" [level=2] [ref=e299]
+              - paragraph [ref=e300]: Every interaction matters. We strategically design each touchpoint to move your audience through a carefully crafted journey that builds trust, demonstrates value, and creates lasting connections.
+            - generic [ref=e301]:
+              - generic [ref=e302]:
+                - generic [ref=e303]: "01"
+                - generic [ref=e304]: Awareness
+                - heading "Brand Discovery" [level=3] [ref=e305]
+                - paragraph [ref=e306]: Your audience discovers your brand through strategic positioning and compelling storytelling that cuts through market noise.
+                - list [ref=e307]:
+                  - listitem [ref=e308]:
+                    - img [ref=e309]
+                    - generic [ref=e311]: Strategic market positioning that differentiates you from competitors
+                  - listitem [ref=e312]:
+                    - img [ref=e313]
+                    - generic [ref=e315]: Compelling brand story that captures attention instantly
+                  - listitem [ref=e316]:
+                    - img [ref=e317]
+                    - generic [ref=e319]: Consistent presence across all discovery channels
+                  - listitem [ref=e320]:
+                    - img [ref=e321]
+                    - generic [ref=e323]: Clear value proposition that resonates with target audience
+              - generic [ref=e324]:
+                - generic [ref=e325]: "02"
+                - generic [ref=e326]: Consideration
+                - heading "Brand Connection" [level=3] [ref=e327]
+                - paragraph [ref=e328]: Prospects connect emotionally with your brand story, values, and authentic messaging that speaks directly to their needs.
+                - list [ref=e329]:
+                  - listitem [ref=e330]:
+                    - img [ref=e331]
+                    - generic [ref=e333]: Authentic brand storytelling that builds emotional connection
+                  - listitem [ref=e334]:
+                    - img [ref=e335]
+                    - generic [ref=e337]: Consistent messaging that reinforces your unique value
+                  - listitem [ref=e338]:
+                    - img [ref=e339]
+                    - generic [ref=e341]: Social proof and testimonials that build credibility
+                  - listitem [ref=e342]:
+                    - img [ref=e343]
+                    - generic [ref=e345]: Content that educates and demonstrates real expertise
+              - generic [ref=e346]:
+                - generic [ref=e347]: "03"
+                - generic [ref=e348]: Decision
+                - heading "Brand Trust" [level=3] [ref=e349]
+                - paragraph [ref=e350]: Customers choose your brand confidently — driven by the trust, credibility, and professional impression we've built together.
+                - list [ref=e351]:
+                  - listitem [ref=e352]:
+                    - img [ref=e353]
+                    - generic [ref=e355]: Professional brand presentation that instils confidence
+                  - listitem [ref=e356]:
+                    - img [ref=e357]
+                    - generic [ref=e359]: Clear communication of benefits and outcomes
+                  - listitem [ref=e360]:
+                    - img [ref=e361]
+                    - generic [ref=e363]: Seamless customer experience across all touchpoints
+                  - listitem [ref=e364]:
+                    - img [ref=e365]
+                    - generic [ref=e367]: Risk-reducing elements that make the decision easy
+              - generic [ref=e368]:
+                - generic [ref=e369]: "04"
+                - generic [ref=e370]: Advocacy
+                - heading "Brand Loyalty" [level=3] [ref=e371]
+                - paragraph [ref=e372]: Delighted customers become passionate brand advocates, driving organic growth through referrals and word-of-mouth.
+                - list [ref=e373]:
+                  - listitem [ref=e374]:
+                    - img [ref=e375]
+                    - generic [ref=e377]: Exceptional brand experience that exceeds expectations
+                  - listitem [ref=e378]:
+                    - img [ref=e379]
+                    - generic [ref=e381]: Memorable interactions that customers want to share
+                  - listitem [ref=e382]:
+                    - img [ref=e383]
+                    - generic [ref=e385]: Community building that fosters long-term relationships
+                  - listitem [ref=e386]:
+                    - img [ref=e387]
+                    - generic [ref=e389]: Referral systems that reward brand advocacy
+            - generic [ref=e390]:
+              - img [ref=e392]
+              - 'heading "The result: a brand that grows itself" [level=3] [ref=e397]'
+              - paragraph [ref=e398]: When every touchpoint is strategically designed and emotionally resonant, your customers don't just buy from you — they become your most powerful marketing channel, driving organic growth through word-of-mouth and referrals.
+        - region "Our values" [ref=e399]:
+          - generic [ref=e400]:
+            - generic [ref=e401]:
+              - paragraph [ref=e402]: Our Values
+              - heading "What drives everything we do" [level=2] [ref=e403]
+              - paragraph [ref=e404]: These principles guide every decision, every project, and every relationship we build.
+            - generic [ref=e405]:
+              - generic [ref=e406]:
+                - heading "AI for Everyone" [level=3] [ref=e407]
+                - paragraph [ref=e408]: We believe AI capability shouldn't be limited to large corporations. We build and teach systems that any business — in any industry — can use sustainably.
+              - generic [ref=e409]:
+                - heading "Education Over Dependency" [level=3] [ref=e410]
+                - paragraph [ref=e411]: We'd rather teach your team to run with AI than have them rely on us forever. Sustainable adoption beats impressive deliverables every time.
+              - generic [ref=e412]:
+                - heading "Results That Compound" [level=3] [ref=e413]
+                - paragraph [ref=e414]: Every event, system, and campaign is designed with compounding in mind — so the value grows long after our engagement ends.
+        - region "Your first consultation" [ref=e415]:
+          - generic [ref=e416]:
+            - generic [ref=e417]:
+              - paragraph [ref=e418]: Your First Consultation
+              - heading "What to expect when we meet" [level=2] [ref=e419]
+              - paragraph [ref=e420]: Your first consultation isn't a sales pitch — it's a strategic discovery session where we uncover opportunities, identify challenges, and map out a clear path forward.
+            - generic [ref=e421]:
+              - generic [ref=e422]:
+                - heading "What we'll cover together" [level=3] [ref=e423]
+                - generic [ref=e424]:
+                  - generic [ref=e425]:
+                    - img [ref=e427]
+                    - generic [ref=e429]:
+                      - heading "Business Model & ICP Alignment" [level=4] [ref=e430]
+                      - paragraph [ref=e431]: We'll map your business model and Ideal Customer Profile to understand exactly who you're trying to reach and what they need to see before they buy.
+                  - generic [ref=e432]:
+                    - img [ref=e434]
+                    - generic [ref=e436]:
+                      - heading "Growth & AI Opportunity Mapping" [level=4] [ref=e437]
+                      - paragraph [ref=e438]: Together, we'll identify where AI and growth systems can have the highest immediate impact in your operations and marketing.
+                  - generic [ref=e439]:
+                    - img [ref=e441]
+                    - generic [ref=e443]:
+                      - heading "Event or Campaign Fit Assessment" [level=4] [ref=e444]
+                      - paragraph [ref=e445]: We'll assess whether a Business Event, AI workshop, digital campaign, or a combination is the right starting point for your goals.
+                  - generic [ref=e446]:
+                    - img [ref=e448]
+                    - generic [ref=e450]:
+                      - heading "First 90-Day Roadmap" [level=4] [ref=e451]
+                      - paragraph [ref=e452]: We'll outline a practical action plan for the first 90 days — starting with what moves the needle fastest.
+              - generic [ref=e453]:
+                - heading "What you'll walk away with" [level=3] [ref=e454]
+                - generic [ref=e456]:
+                  - generic [ref=e457]:
+                    - img [ref=e459]
+                    - generic [ref=e463]:
+                      - heading "Clear Growth Roadmap" [level=4] [ref=e464]
+                      - paragraph [ref=e465]: A detailed action plan outlining exactly what needs to happen to achieve your business goals.
+                  - generic [ref=e466]:
+                    - img [ref=e468]
+                    - generic [ref=e471]:
+                      - heading "AI Adoption Opportunities" [level=4] [ref=e472]
+                      - paragraph [ref=e473]: Specific areas where AI can save time, reduce cost, or compound your marketing efforts.
+                  - generic [ref=e474]:
+                    - img [ref=e476]
+                    - generic [ref=e480]:
+                      - heading "Event or Campaign Concept" [level=4] [ref=e481]
+                      - paragraph [ref=e482]: A rough concept for your first event or campaign, tailored to your product and audience.
+                  - generic [ref=e483]:
+                    - img [ref=e485]
+                    - generic [ref=e488]:
+                      - heading "Immediate Quick Wins" [level=4] [ref=e489]
+                      - paragraph [ref=e490]: Actions you can take today to start improving results — no waiting for a full engagement.
+                  - generic [ref=e491]:
+                    - img [ref=e493]
+                    - generic [ref=e496]:
+                      - heading "Honest Assessment" [level=4] [ref=e497]
+                      - paragraph [ref=e498]: A straight answer on whether we're the right fit, and what success realistically looks like.
+                - generic [ref=e499]:
+                  - heading "Our promise" [level=4] [ref=e500]
+                  - paragraph [ref=e501]: Even if we don't work together, you'll leave with valuable insights and actionable strategies. That's our commitment to every consultation.
+        - region "Contact" [ref=e502]:
+          - generic [ref=e504]:
+            - heading "Ready to put AI and growth to work?" [level=2] [ref=e505]
+            - paragraph [ref=e506]: Whether you're launching a product, building an AI-ready team, or scaling your marketing — let's figure out what moves the needle first.
+            - generic [ref=e507]:
+              - link "Book a strategy call" [ref=e508] [cursor=pointer]:
+                - /url: /contact/
+                - text: Book a strategy call
+                - img
+              - link "See our events" [ref=e509] [cursor=pointer]:
+                - /url: /client-results/
+            - paragraph [ref=e510]: Complimentary consultation · No obligations · Immediate value
+      - button "Play background music" [ref=e512] [cursor=pointer]:
+        - img [ref=e514]
+        - generic [ref=e517]: Ambient
+  - contentinfo [ref=e518]:
+    - generic [ref=e519]:
+      - generic [ref=e520]:
+        - generic [ref=e521]:
+          - link "CloudLine Studio" [ref=e522] [cursor=pointer]:
+            - /url: /
+            - generic [ref=e523]: CloudLine Studio
+          - paragraph [ref=e524]: Data-driven marketing solutions that deliver measurable results and drive business growth.
+          - link "WhatsApp" [ref=e526] [cursor=pointer]:
+            - /url: https://wa.link/fwi8af
+            - img
+        - generic [ref=e527]:
+          - heading "Services" [level=3] [ref=e528]
+          - list [ref=e529]:
+            - listitem [ref=e530]:
+              - link "Performance Marketing" [ref=e531] [cursor=pointer]:
+                - /url: /services/#performance-marketing
+            - listitem [ref=e532]:
+              - link "Website Creation" [ref=e533] [cursor=pointer]:
+                - /url: /services/#website-creation
+            - listitem [ref=e534]:
+              - link "SEO Optimization" [ref=e535] [cursor=pointer]:
+                - /url: /services/#seo
+            - listitem [ref=e536]:
+              - link "Influencer Marketing" [ref=e537] [cursor=pointer]:
+                - /url: /services/#influencer
+        - generic [ref=e538]:
+          - heading "Company" [level=3] [ref=e539]
+          - list [ref=e540]:
+            - listitem [ref=e541]:
+              - link "About Us" [ref=e542] [cursor=pointer]:
+                - /url: /about/
+            - listitem [ref=e543]:
+              - link "Case Studies" [ref=e544] [cursor=pointer]:
+                - /url: /case-studies/
+            - listitem [ref=e545]:
+              - link "Pricing" [ref=e546] [cursor=pointer]:
+                - /url: /pricing/
+            - listitem [ref=e547]:
+              - link "Blog" [ref=e548] [cursor=pointer]:
+                - /url: /blog/
+            - listitem [ref=e549]:
+              - link "Careers" [ref=e550] [cursor=pointer]:
+                - /url: /careers/
+        - generic [ref=e551]:
+          - heading "Contact" [level=3] [ref=e552]
+          - list [ref=e553]:
+            - listitem [ref=e554]: hello@cloudline-studio.com
+            - listitem [ref=e555]: "+01127755215"
+            - listitem [ref=e556]: Kuala Lumpur, Malaysia
+            - listitem [ref=e557]:
+              - link "Get in Touch" [ref=e558] [cursor=pointer]:
+                - /url: /contact/
+      - generic [ref=e559]:
+        - paragraph [ref=e560]: © 2026 CloudLine Studio. All rights reserved.
+        - generic [ref=e561]:
+          - link "Privacy Policy" [ref=e562] [cursor=pointer]:
+            - /url: /privacy/
+          - link "Terms of Service" [ref=e563] [cursor=pointer]:
+            - /url: /terms/
+  - link "Chat on WhatsApp" [ref=e565] [cursor=pointer]:
+    - /url: https://wa.link/fwi8af
+    - img [ref=e566]
+    - generic [ref=e570]: "1"

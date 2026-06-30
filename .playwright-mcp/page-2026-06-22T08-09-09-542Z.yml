@@ -1,0 +1,225 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - banner [ref=e3]:
+      - generic [ref=e4]:
+        - link "CloudLine Studio - Home" [ref=e5] [cursor=pointer]:
+          - /url: /
+          - img "CloudLine Studio" [ref=e7]
+          - generic [ref=e8]: CloudLine Studio
+        - navigation "Main navigation" [ref=e9]:
+          - link "关于我们" [ref=e10] [cursor=pointer]:
+            - /url: /about/
+          - link "服务" [ref=e11] [cursor=pointer]:
+            - /url: /#services
+          - link "活动" [ref=e12] [cursor=pointer]:
+            - /url: /events/
+          - link "客户成果" [ref=e13] [cursor=pointer]:
+            - /url: /client-results/
+          - link "联系我们" [ref=e14] [cursor=pointer]:
+            - /url: /contact/
+        - generic [ref=e16]:
+          - group "Select language" [ref=e17]:
+            - button "EN" [ref=e18] [cursor=pointer]
+            - button "MS" [ref=e19] [cursor=pointer]
+            - button "中" [pressed] [ref=e20] [cursor=pointer]
+          - switch "Toggle dark mode" [ref=e21] [cursor=pointer]:
+            - img [ref=e22]
+            - img [ref=e28]
+            - img [ref=e31]
+          - link "立即联系我们" [ref=e37] [cursor=pointer]:
+            - /url: https://wa.link/fwi8af
+    - main [ref=e38]:
+      - main [ref=e40]:
+        - region "Event overview" [ref=e41]:
+          - generic [ref=e43]:
+            - paragraph [ref=e44]: Upcoming Workshop · Subang Jaya, Selangor
+            - heading "Build & Launch Your Business with Zero Coding Skills" [level=1] [ref=e45]
+            - paragraph [ref=e46]: A full-day hands-on workshop. Arrive with an idea and a laptop — leave with a completed, deployed product, a working marketing stack, and a clear plan for your first revenue.
+            - paragraph [ref=e47]: Powered by AI tools like Claude Code and Codex, this session teaches "vibe-coding" — converting plain-language thinking into real, functional applications. No developer background required.
+            - generic [ref=e48]:
+              - generic [ref=e49]:
+                - img [ref=e50]
+                - text: Infinity8 Reserve, Sunway Square, Subang Jaya
+              - generic [ref=e53]: ·
+              - generic [ref=e54]:
+                - img [ref=e55]
+                - text: Founders, business owners & executives
+            - link "Register Now" [ref=e61] [cursor=pointer]:
+              - /url: https://luma.com/i2ew5rl8
+              - text: Register Now
+              - img
+        - img [ref=e65]
+        - region "Workshop agenda" [ref=e66]:
+          - generic [ref=e67]:
+            - generic [ref=e68]:
+              - paragraph [ref=e69]: What you'll build
+              - heading "From idea to live product — in one day" [level=2] [ref=e70]
+              - paragraph [ref=e71]: Each session builds on the last. By the end of the day you'll have a product, a marketing engine, and a distribution plan working together.
+            - generic [ref=e72]:
+              - generic [ref=e73]:
+                - img [ref=e76]
+                - generic [ref=e78]:
+                  - paragraph [ref=e79]: "01"
+                  - heading "Vibe-code your product from scratch" [level=3] [ref=e80]
+                  - paragraph [ref=e81]: Refine your business idea, run quick market research, and use Claude Code or Codex to turn plain-language concepts into a working prototype — no syntax required.
+              - generic [ref=e82]:
+                - img [ref=e85]
+                - generic [ref=e87]:
+                  - paragraph [ref=e88]: "02"
+                  - heading "Build frontend & backend" [level=3] [ref=e89]
+                  - paragraph [ref=e90]: Spin up databases, authentication, and security layers using free tools. You leave with a live, deployable product — not just a mockup.
+              - generic [ref=e91]:
+                - img [ref=e94]
+                - generic [ref=e97]:
+                  - paragraph [ref=e98]: "03"
+                  - heading "Set up your marketing stack" [level=3] [ref=e99]
+                  - paragraph [ref=e100]: Auto-generate content, landing pages, and ad copy. Build workflows that run while you sleep — so your marketing is on from day one.
+              - generic [ref=e101]:
+                - img [ref=e104]
+                - generic [ref=e108]:
+                  - paragraph [ref=e109]: "04"
+                  - heading "Distribution & first revenue" [level=3] [ref=e110]
+                  - paragraph [ref=e111]: Activate lead generation, personalised outreach, and multi-channel distribution. Walk away with a clear path to your first paying customers.
+        - region "What's included" [ref=e112]:
+          - generic [ref=e114]:
+            - generic [ref=e115]:
+              - paragraph [ref=e116]: What's included
+              - heading "Everything you need to ship" [level=2] [ref=e117]
+              - generic [ref=e118]:
+                - generic [ref=e119]:
+                  - img [ref=e120]
+                  - generic [ref=e122]: One-week complimentary Infinity8 Reserve Sunway Square access
+                - generic [ref=e123]:
+                  - img [ref=e124]
+                  - generic [ref=e126]: Refreshments throughout the day
+                - generic [ref=e127]:
+                  - img [ref=e128]
+                  - generic [ref=e130]: Live build + marketing demos
+                - generic [ref=e131]:
+                  - img [ref=e132]
+                  - generic [ref=e134]: First-revenue action plan tailored to your product
+            - generic [ref=e135]:
+              - paragraph [ref=e136]: What to bring
+              - heading "Come ready to build" [level=2] [ref=e137]
+              - generic [ref=e138]:
+                - generic [ref=e139]:
+                  - img [ref=e140]
+                  - generic [ref=e142]: Fully charged laptop + charger
+                - generic [ref=e143]:
+                  - img [ref=e144]
+                  - generic [ref=e146]: Active Claude or Codex subscription
+                - generic [ref=e147]:
+                  - img [ref=e148]
+                  - generic [ref=e150]: A business idea you want to bring to life
+                - generic [ref=e151]:
+                  - img [ref=e152]
+                  - generic [ref=e154]: Willingness to ship something real
+        - region "Venue partner" [ref=e155]:
+          - generic [ref=e157]:
+            - generic [ref=e158]:
+              - paragraph [ref=e159]: Event Space Partner
+              - generic [ref=e160]:
+                - img "Infinity8 logo" [ref=e162]
+                - heading "Infinity8 Reserve" [level=2] [ref=e163]
+                - paragraph [ref=e164]: Sunway Square, Subang Jaya
+              - generic [ref=e165]:
+                - paragraph [ref=e166]: We're proud to host this workshop at Infinity8 Reserve — one of Subang Jaya's most premium co-working and event spaces, designed for people who take their work seriously.
+                - paragraph [ref=e167]: "The space is striking without being distracting: high ceilings, thoughtful lighting, and a boardroom-grade setup that keeps you in the right headspace to build. It's the kind of environment that quietly raises the quality of your thinking."
+                - paragraph [ref=e168]: All registered attendees receive one week of complimentary access to Infinity8 Reserve after the workshop — so you can keep the momentum going.
+              - link "Secure your spot" [ref=e169] [cursor=pointer]:
+                - /url: https://luma.com/i2ew5rl8
+                - text: Secure your spot
+                - img
+            - img "Infinity8 Reserve boardroom at Sunway Square" [ref=e171]
+        - region "Your hosts" [ref=e172]:
+          - generic [ref=e173]:
+            - generic [ref=e174]:
+              - paragraph [ref=e175]: Your hosts
+              - heading "Built by founders, for founders" [level=2] [ref=e176]
+            - generic [ref=e177]:
+              - generic [ref=e178]:
+                - img "Kristine Ling" [ref=e180]
+                - generic [ref=e181]:
+                  - heading "Kristine Ling" [level=3] [ref=e182]
+                  - paragraph [ref=e183]: Co-founder, CloudLine Studio
+                  - paragraph [ref=e184]: Growth strategist and AI-tools practitioner who has helped brands across Malaysia and Singapore scale with lean, high-output digital systems.
+              - generic [ref=e185]:
+                - img "Brendan Beh" [ref=e187]
+                - generic [ref=e188]:
+                  - heading "Brendan Beh" [level=3] [ref=e189]
+                  - paragraph [ref=e190]: Co-host
+                  - paragraph [ref=e191]: Product builder and vibe-coding practitioner — turning complex ideas into working software with nothing but plain language and the right AI toolchain.
+        - region "Register" [ref=e192]:
+          - generic [ref=e194]:
+            - paragraph [ref=e195]: Limited spots
+            - heading "Ready to build something real?" [level=2] [ref=e196]
+            - paragraph [ref=e197]: Spots are limited to keep the workshop hands-on and focused. Register now to secure your place.
+            - link "Register on Luma" [ref=e198] [cursor=pointer]:
+              - /url: https://luma.com/i2ew5rl8
+              - text: Register on Luma
+              - img
+    - contentinfo [ref=e199]:
+      - generic [ref=e200]:
+        - generic [ref=e201]:
+          - generic [ref=e202]:
+            - link "CloudLine Studio" [ref=e203] [cursor=pointer]:
+              - /url: /
+              - generic [ref=e204]: CloudLine Studio
+            - paragraph [ref=e205]: 以数据驱动的营销方案，带来可衡量的成果，推动业务增长。
+            - link "WhatsApp" [ref=e207] [cursor=pointer]:
+              - /url: https://wa.link/fwi8af
+              - img
+          - generic [ref=e208]:
+            - heading "服务" [level=3] [ref=e209]
+            - list [ref=e210]:
+              - listitem [ref=e211]:
+                - link "效果营销" [ref=e212] [cursor=pointer]:
+                  - /url: /services/#performance-marketing
+              - listitem [ref=e213]:
+                - link "网站建设" [ref=e214] [cursor=pointer]:
+                  - /url: /services/#website-creation
+              - listitem [ref=e215]:
+                - link "SEO 优化" [ref=e216] [cursor=pointer]:
+                  - /url: /services/#seo
+              - listitem [ref=e217]:
+                - link "网红营销" [ref=e218] [cursor=pointer]:
+                  - /url: /services/#influencer
+          - generic [ref=e219]:
+            - heading "公司" [level=3] [ref=e220]
+            - list [ref=e221]:
+              - listitem [ref=e222]:
+                - link "关于我们" [ref=e223] [cursor=pointer]:
+                  - /url: /about/
+              - listitem [ref=e224]:
+                - link "案例研究" [ref=e225] [cursor=pointer]:
+                  - /url: /case-studies/
+              - listitem [ref=e226]:
+                - link "价格" [ref=e227] [cursor=pointer]:
+                  - /url: /pricing/
+              - listitem [ref=e228]:
+                - link "博客" [ref=e229] [cursor=pointer]:
+                  - /url: /blog/
+              - listitem [ref=e230]:
+                - link "招贤纳士" [ref=e231] [cursor=pointer]:
+                  - /url: /careers/
+          - generic [ref=e232]:
+            - heading "联系" [level=3] [ref=e233]
+            - list [ref=e234]:
+              - listitem [ref=e235]: hello@cloudline-studio.com
+              - listitem [ref=e236]: "+01127755215"
+              - listitem [ref=e237]: 吉隆坡，马来西亚
+              - listitem [ref=e238]:
+                - link "联系我们" [ref=e239] [cursor=pointer]:
+                  - /url: /contact/
+        - generic [ref=e240]:
+          - paragraph [ref=e241]: © 2026 CloudLine Studio. 版权所有。
+          - generic [ref=e242]:
+            - link "隐私政策" [ref=e243] [cursor=pointer]:
+              - /url: /privacy/
+            - link "服务条款" [ref=e244] [cursor=pointer]:
+              - /url: /terms/
+    - link "Chat on WhatsApp" [ref=e246] [cursor=pointer]:
+      - /url: https://wa.link/fwi8af
+      - img [ref=e247]
+      - generic [ref=e251]: "1"
+  - alert [ref=e253]
