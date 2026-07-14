@@ -25,7 +25,9 @@ export function Header() {
 
   const navItems = [
     { name: t.nav.about, href: "/about" },
-    { name: t.nav.services, href: "/#services" },
+    { name: t.nav.services, href: "/services" },
+    { name: t.nav.pricing, href: "/pricing" },
+    { name: t.nav.caseStudies, href: "/case-studies" },
     { name: t.nav.events, href: "/events" },
     { name: t.nav.clientResults, href: "/client-results" },
     { name: t.nav.contact, href: "/contact" },

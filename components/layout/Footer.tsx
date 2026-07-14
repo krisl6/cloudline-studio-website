@@ -8,8 +8,14 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
   const { t } = useLanguage()
 
-  const serviceLinks = ["/services#performance-marketing", "/services#website-creation", "/services#seo", "/services#influencer"]
-  const companyLinks = ["/about", "/case-studies", "/pricing", "/blog", "/careers"]
+  const serviceLinks = [
+    "/services#consultation",
+    "/services#transformation",
+    "/services#synchronization",
+    "/services#branding",
+    "/services#seo",
+  ]
+  const companyLinks = ["/about", "/case-studies", "/pricing", "/blog"]
 
   return (
     <footer className="border-t border-border bg-background/50 backdrop-blur-lg" role="contentinfo">
@@ -63,7 +69,7 @@ export function Footer() {
             <h3 className="text-sm font-semibold mb-4">{t.footer.contactTitle}</h3>
             <ul className="space-y-2">
               <li className="text-sm text-muted-foreground">hello@cloudline-studio.com</li>
-              <li className="text-sm text-muted-foreground">+01127755215</li>
+              <li className="text-sm text-muted-foreground">+60 11-2775 5215</li>
               <li className="text-sm text-muted-foreground">{t.footer.location}</li>
               <li className="pt-2">
                 <Button size="sm" className="rounded-full" asChild>
@@ -78,10 +84,6 @@ export function Footer() {
           <p className="text-sm text-muted-foreground">
             &copy; {currentYear} CloudLine Studio. {t.footer.rights}
           </p>
-          <div className="flex items-center gap-4 mt-4 md:mt-0">
-            <Link href="/privacy" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t.footer.privacy}</Link>
-            <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">{t.footer.terms}</Link>
-          </div>
         </div>
       </div>
     </footer>

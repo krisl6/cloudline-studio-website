@@ -14,6 +14,7 @@ export const translations = {
       events: "Events",
       clientResults: "Client Results",
       pricing: "Pricing",
+      caseStudies: "Case Studies",
       contact: "Contact",
       chat: "Chat with us now",
     },
@@ -30,27 +31,39 @@ export const translations = {
     },
     services: {
       eyebrow: "What we do",
-      heading: "One consultancy for the whole growth picture",
+      heading: "Five services, one growth partner",
       subcopy:
-        "Most agencies fix one slice and leave the rest. We connect marketing, transformation, and operations so growth is something your business can actually sustain.",
+        "Most agencies fix one slice and leave the rest. We connect strategy, transformation, operations, brand, and (now) AI search so growth is something your business can actually sustain.",
       pillars: [
         {
-          name: "Digital Marketing",
+          name: "Consultation",
           description:
-            "Demand that compounds. SEO, SEM, paid social, and content engineered to fill your pipeline with the right customers, not just traffic.",
-          points: ["Performance & paid media", "SEO & content systems", "Brand & positioning", "Marketing analytics"],
+            "Clarity before spend. We diagnose your funnel, tooling, and operations, then hand you a prioritised roadmap.",
+          points: ["Funnel & operations audit", "Prioritised roadmap", "Team coaching", "Clear metrics"],
         },
         {
-          name: "Business Transformation",
+          name: "Marketing & Sales Digital Transformation",
           description:
-            "AI-enabled change. We unify your tools, data, and teams so the whole business moves as one, and decisions get faster.",
-          points: ["AI workflow automation", "Systems & data consolidation", "CRM & sales enablement", "Change management"],
+            "Digitise and automate your marketing and sales motions, consolidate tools, and layer in AI where it earns its keep.",
+          points: ["Workflow automation", "Tool consolidation", "Unified data", "AI-assisted workflows"],
         },
         {
-          name: "Operations",
+          name: "Interdepartmental Synchronization",
           description:
-            "Calm, scalable systems. We streamline how work actually gets done, cut wasted spend, and remove the bottlenecks holding growth back.",
-          points: ["Process design", "Cost & subscription audits", "Reporting & dashboards", "Operating rhythms"],
+            "Connect siloed teams on shared systems and real-time dashboards so marketing, sales, and operations move as one.",
+          points: ["Shared systems", "Real-time dashboards", "Clear ownership", "Aligned KPIs"],
+        },
+        {
+          name: "Digital Marketing & Branding",
+          description:
+            "Distinctive brands and performance campaigns across search, social, and content that turn attention into revenue.",
+          points: ["Brand identity", "Performance campaigns", "Content strategy", "Transparent reporting"],
+        },
+        {
+          name: "SEO & AI Search (AEO)",
+          description:
+            "Ranked on Google, recommended by ChatGPT, Gemini, and Perplexity, with technical SEO and answer-engine optimisation on one plan.",
+          points: ["Technical SEO", "Content authority", "Answer-engine optimisation", "AI citation tracking"],
         },
       ],
     },
@@ -112,8 +125,14 @@ export const translations = {
       servicesTitle: "Services",
       companyTitle: "Company",
       contactTitle: "Contact",
-      services: ["Performance Marketing", "Website Creation", "SEO Optimization", "Influencer Marketing"],
-      company: ["About Us", "Case Studies", "Pricing", "Blog", "Careers"],
+      services: [
+        "Consultation",
+        "Marketing & Sales Digital Transformation",
+        "Interdepartmental Synchronization",
+        "Digital Marketing & Branding",
+        "SEO & AI Search (AEO)",
+      ],
+      company: ["About Us", "Case Studies", "Pricing", "Blog"],
       location: "Kuala Lumpur, Malaysia",
       getInTouch: "Get in Touch",
       rights: "All rights reserved.",
@@ -129,6 +148,7 @@ export const translations = {
       events: "Acara",
       clientResults: "Hasil Klien",
       pricing: "Harga",
+      caseStudies: "Kajian Kes",
       contact: "Hubungi",
       chat: "Hubungi kami sekarang",
     },
@@ -145,27 +165,39 @@ export const translations = {
     },
     services: {
       eyebrow: "Apa yang kami lakukan",
-      heading: "Satu firma perunding untuk keseluruhan gambaran pertumbuhan",
+      heading: "Lima perkhidmatan, satu rakan kongsi pertumbuhan",
       subcopy:
-        "Kebanyakan agensi hanya membaiki satu bahagian dan meninggalkan yang lain. Kami menghubungkan pemasaran, transformasi dan operasi supaya pertumbuhan benar-benar mampan untuk perniagaan anda.",
+        "Kebanyakan agensi hanya membaiki satu bahagian dan meninggalkan yang lain. Kami menghubungkan strategi, transformasi, operasi, jenama, dan (kini) carian AI supaya pertumbuhan benar-benar mampan untuk perniagaan anda.",
       pillars: [
         {
-          name: "Pemasaran Digital",
+          name: "Konsultasi",
           description:
-            "Permintaan yang berganda. SEO, SEM, media sosial berbayar dan kandungan yang direka untuk mengisi saluran jualan anda dengan pelanggan yang tepat, bukan sekadar trafik.",
-          points: ["Prestasi & media berbayar", "Sistem SEO & kandungan", "Penjenamaan & kedudukan", "Analitik pemasaran"],
+            "Kejelasan sebelum berbelanja. Kami mengkaji corong, peralatan, dan operasi anda, kemudian menyerahkan pelan tindakan yang diutamakan.",
+          points: ["Audit corong & operasi", "Pelan tindakan diutamakan", "Bimbingan pasukan", "Metrik yang jelas"],
         },
         {
-          name: "Transformasi Perniagaan",
+          name: "Transformasi Digital Pemasaran & Jualan",
           description:
-            "Perubahan dipacu AI. Kami menyatukan alatan, data dan pasukan anda supaya seluruh perniagaan bergerak sebagai satu, dan keputusan dibuat lebih pantas.",
-          points: ["Automasi aliran kerja AI", "Penyatuan sistem & data", "CRM & pemerkasaan jualan", "Pengurusan perubahan"],
+            "Mendigitalkan dan mengautomasikan pemasaran serta jualan anda, menyatukan peralatan, dan menerapkan AI di tempat ia memberi nilai.",
+          points: ["Automasi aliran kerja", "Penyatuan peralatan", "Data bersatu", "Aliran kerja berbantukan AI"],
         },
         {
-          name: "Operasi",
+          name: "Penyelarasan Antara Jabatan",
           description:
-            "Sistem yang tenang dan boleh berskala. Kami memperkemas cara kerja dijalankan, mengurangkan pembaziran dan menghapuskan halangan yang membantutkan pertumbuhan.",
-          points: ["Reka bentuk proses", "Audit kos & langganan", "Pelaporan & papan pemuka", "Rentak operasi"],
+            "Menghubungkan pasukan yang terasing pada sistem dikongsi dan papan pemuka masa nyata supaya pemasaran, jualan, dan operasi bergerak sebagai satu.",
+          points: ["Sistem dikongsi", "Papan pemuka masa nyata", "Pemilikan jelas", "KPI diselaraskan"],
+        },
+        {
+          name: "Pemasaran Digital & Penjenamaan",
+          description:
+            "Jenama yang tersendiri dan kempen prestasi merentas carian, media sosial, dan kandungan yang menukarkan perhatian kepada hasil.",
+          points: ["Identiti jenama", "Kempen prestasi", "Strategi kandungan", "Pelaporan telus"],
+        },
+        {
+          name: "SEO & Carian AI (AEO)",
+          description:
+            "Kedudukan di Google, disyorkan oleh ChatGPT, Gemini, dan Perplexity, dengan SEO teknikal dan pengoptimuman enjin jawapan dalam satu pelan.",
+          points: ["SEO teknikal", "Kewibawaan kandungan", "Pengoptimuman enjin jawapan", "Penjejakan petikan AI"],
         },
       ],
     },
@@ -227,8 +259,14 @@ export const translations = {
       servicesTitle: "Perkhidmatan",
       companyTitle: "Syarikat",
       contactTitle: "Hubungi",
-      services: ["Pemasaran Prestasi", "Pembinaan Laman Web", "Pengoptimuman SEO", "Pemasaran Influencer"],
-      company: ["Tentang Kami", "Kajian Kes", "Harga", "Blog", "Kerjaya"],
+      services: [
+        "Konsultasi",
+        "Transformasi Digital Pemasaran & Jualan",
+        "Penyelarasan Antara Jabatan",
+        "Pemasaran Digital & Penjenamaan",
+        "SEO & Carian AI (AEO)",
+      ],
+      company: ["Tentang Kami", "Kajian Kes", "Harga", "Blog"],
       location: "Kuala Lumpur, Malaysia",
       getInTouch: "Hubungi Kami",
       rights: "Hak cipta terpelihara.",
@@ -244,6 +282,7 @@ export const translations = {
       events: "活动",
       clientResults: "客户成果",
       pricing: "价格",
+      caseStudies: "案例研究",
       contact: "联系我们",
       chat: "立即联系我们",
     },
@@ -260,27 +299,39 @@ export const translations = {
     },
     services: {
       eyebrow: "我们的服务",
-      heading: "一家咨询公司，掌握完整的增长全局",
+      heading: "五项服务，一个增长伙伴",
       subcopy:
-        "大多数机构只解决其中一环，却忽略其余。我们将营销、转型与运营连接起来，让增长成为您企业真正可持续的能力。",
+        "大多数机构只解决其中一环，却忽略其余。我们将策略、转型、运营、品牌，以及（现在的）AI 搜索连接起来，让增长成为您企业真正可持续的能力。",
       pillars: [
         {
-          name: "数字营销",
+          name: "咨询",
           description:
-            "持续累积的需求。通过 SEO、SEM、付费社交与内容，为您的销售管道带来真正合适的客户，而不仅仅是流量。",
-          points: ["效果与付费媒体", "SEO 与内容体系", "品牌与定位", "营销分析"],
+            "投入之前先理清思路。我们诊断您的销售漏斗、工具和运营，然后交付一份优先排序的路线图。",
+          points: ["漏斗与运营审计", "优先排序路线图", "团队指导", "清晰指标"],
         },
         {
-          name: "业务转型",
+          name: "营销与销售数字化转型",
           description:
-            "AI 驱动的变革。我们整合您的工具、数据与团队，让整个企业协同运作，决策更快。",
-          points: ["AI 工作流自动化", "系统与数据整合", "CRM 与销售赋能", "变革管理"],
+            "将您的营销与销售数字化并自动化，整合工具，并在能创造价值之处引入 AI。",
+          points: ["工作流程自动化", "工具整合", "统一数据", "AI 辅助工作流"],
         },
         {
-          name: "运营优化",
+          name: "跨部门协同",
           description:
-            "从容且可扩展的体系。我们优化实际的工作方式，削减浪费的开支，消除阻碍增长的瓶颈。",
-          points: ["流程设计", "成本与订阅审计", "报表与仪表板", "运营节奏"],
+            "将各自为政的团队连接到共享系统与实时仪表板，让营销、销售与运营协同运作。",
+          points: ["共享系统", "实时仪表板", "清晰归属", "一致的 KPI"],
+        },
+        {
+          name: "数字营销与品牌建设",
+          description:
+            "打造独特的品牌，并在搜索、社交与内容渠道开展以成效为导向的营销活动，将关注转化为营收。",
+          points: ["品牌识别", "效果营销活动", "内容策略", "透明报告"],
+        },
+        {
+          name: "SEO 与 AI 搜索优化 (AEO)",
+          description:
+            "在 Google 上获得排名，并被 ChatGPT、Gemini 和 Perplexity 推荐，通过技术性 SEO 与答案引擎优化，在同一计划下运行。",
+          points: ["技术性 SEO", "内容权威建设", "答案引擎优化", "AI 引用追踪"],
         },
       ],
     },
@@ -341,8 +392,8 @@ export const translations = {
       servicesTitle: "服务",
       companyTitle: "公司",
       contactTitle: "联系",
-      services: ["效果营销", "网站建设", "SEO 优化", "网红营销"],
-      company: ["关于我们", "案例研究", "价格", "博客", "招贤纳士"],
+      services: ["咨询", "营销与销售数字化转型", "跨部门协同", "数字营销与品牌建设", "SEO 与 AI 搜索优化 (AEO)"],
+      company: ["关于我们", "案例研究", "价格", "博客"],
       location: "吉隆坡，马来西亚",
       getInTouch: "联系我们",
       rights: "版权所有。",

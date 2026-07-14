@@ -165,25 +165,12 @@ export default function PricingPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="text-center mt-14"
             >
-              <p className="text-sm text-muted-foreground mb-6">
-                {tt.plans.note}
+              <p className="text-sm text-muted-foreground">
+                {tt.plans.note}{" "}
+                <Link href="/services" className="font-medium text-primary hover:underline">
+                  {tt.plans.servicesCta}
+                </Link>
               </p>
-              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
-                    {tt.plans.customCta}
-                    <ArrowRight className="ml-1.5 size-4" />
-                  </Link>
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
-                  asChild
-                >
-                  <Link href="/services">{tt.plans.servicesCta}</Link>
-                </Button>
-              </div>
             </motion.div>
           </div>
         </section>

@@ -23,7 +23,7 @@ import {
   DoodleCheck,
 } from "@/components/doodles"
 
-const pillarIcons = [DoodleMegaphone, DoodleTransform, DoodleGear]
+const pillarIcons = [DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth]
 const outcomeIcons = [DoodleCoins, DoodleTarget, DoodleGrowth, DoodleBolt, DoodleTrophy, DoodleHeart]
 const processIcons = [DoodleSearch, DoodlePen, DoodleRocket]
 
@@ -194,7 +194,7 @@ export default function HomePage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="grid gap-6 md:grid-cols-3"
+              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             >
               {t.services.pillars.map((pillar, i) => {
                 const Icon = pillarIcons[i]
@@ -221,6 +221,16 @@ export default function HomePage() {
                 )
               })}
             </motion.div>
+
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="/pricing"
+                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+              >
+                See pricing
+                <ArrowRight className="size-4" />
+              </Link>
+            </div>
           </div>
         </section>
 

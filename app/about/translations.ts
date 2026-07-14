@@ -65,8 +65,8 @@ export const translations = {
       },
     },
     whatWeDo: {
-      eyebrow: "What We Do",
-      heading: "Three ways we grow your business",
+      eyebrow: "How We Show Up",
+      heading: "Four ways we engage the market",
       subcopy:
         "From live events that generate same-day sales to AI systems that run while you sleep: everything we build compounds.",
       services: [
@@ -336,8 +336,8 @@ export const translations = {
       },
     },
     whatWeDo: {
-      eyebrow: "Apa Yang Kami Lakukan",
-      heading: "Tiga cara kami mengembangkan perniagaan anda",
+      eyebrow: "Cara Kami Muncul",
+      heading: "Empat cara kami melibatkan pasaran",
       subcopy:
         "Daripada acara langsung yang menjana jualan hari yang sama hingga sistem AI yang beroperasi semasa anda tidur: semuanya yang kami bina berganda.",
       services: [
@@ -607,8 +607,8 @@ export const translations = {
       },
     },
     whatWeDo: {
-      eyebrow: "我们的服务",
-      heading: "三种方式，助力你的业务增长",
+      eyebrow: "我们如何展现自己",
+      heading: "我们参与市场的四种方式",
       subcopy:
         "从当天即可产生销售的线下活动，到在你休眠时依然运转的 AI 系统, 我们构建的一切都在持续复利。",
       services: [

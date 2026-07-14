@@ -157,6 +157,17 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
 
         <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Case study results">
           <div className="container px-4 md:px-6">
+            <div className="mb-10 flex flex-col items-center justify-between gap-4 rounded-2xl border border-primary/20 bg-primary/8 p-6 text-center sm:flex-row sm:text-left">
+              <p className="text-sm font-medium text-foreground/85">
+                Want results like these for your business?
+              </p>
+              <Button className="shrink-0 rounded-full font-medium" asChild>
+                <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                  {tt.study.cta}
+                  <ArrowRight className="ml-1.5 size-4" />
+                </Link>
+              </Button>
+            </div>
             <div className="grid gap-8 md:gap-10">
               {filteredStudies.map((study, i) => (
                 <motion.div
@@ -222,7 +233,11 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                           <p className="text-sm font-medium text-primary leading-relaxed">{study.results}</p>
                         </div>
                       </div>
-                      <Button className="mt-6 w-fit rounded-full font-medium" asChild>
+                      <Button
+                        variant="outline"
+                        className="mt-6 w-fit rounded-full font-medium border-border bg-transparent hover:bg-muted"
+                        asChild
+                      >
                         <Link href="https://wa.link/fwi8af" target="_blank">
                           {tt.study.cta}
                           <ArrowRight className="ml-1.5 size-4" />

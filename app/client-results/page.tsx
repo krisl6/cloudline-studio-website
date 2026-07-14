@@ -14,24 +14,13 @@ import { translations } from "./translations"
 export default function ClientResultsPage() {
   const { lang } = useLanguage()
   const tt = translations[lang]
-  const [selectedCategory, setSelectedCategory] = useState("all")
+  const [testimonialsExpanded, setTestimonialsExpanded] = useState(false)
 
-  const categories = [
-    { id: "all", name: tt.filter.categories.all, count: 11 },
-    { id: "consultation", name: tt.filter.categories.consultation, count: 3 },
-    { id: "transformation", name: tt.filter.categories.transformation, count: 3 },
-    { id: "sync", name: tt.filter.categories.sync, count: 2 },
-    { id: "branding", name: tt.filter.categories.branding, count: 3 }
-  ]
-
-  // NOTE: ClearSK, Lasus and Warung Ambo use real engagement details.
-  // The remaining entries are plausible placeholders, replace with verified copy/figures.
   const testimonials = [
     {
       name: "ClearSK Aesthetic Clinic",
       company: "Singapore",
       role: "Operations Director",
-      category: "transformation",
       rating: 5,
       quote: "CloudLine rebuilt how our marketing and sales actually run. They consolidated our CRM and sales stack, automated lead follow-up with AI, and gave every team one source of truth. We cut over S$100K a month in redundant subscriptions and grew bookings and revenue 40% in a single quarter.",
       results: "S$100K/month saved, +40% bookings & revenue in 3 months, unified CRM & sales pipeline",
@@ -45,70 +34,9 @@ export default function ClientResultsPage() {
       }
     },
     {
-      name: "ConnectDR",
-      company: "Healthcare Platform",
-      role: "Co-founder",
-      category: "transformation",
-      rating: 5,
-      quote: "We were drowning in disconnected tools. CloudLine mapped our entire patient-acquisition funnel, digitised our sales process end to end, and automated the handoffs between marketing and our clinic partners. Conversions climbed and our team stopped doing manual data entry.",
-      results: "Automated lead-to-booking funnel, faster partner onboarding, higher conversion rate",
-      challenge: "Manual, disconnected acquisition process with no visibility from lead to booking",
-      solution: "End-to-end marketing & sales digital transformation with automated funnel and partner handoffs",
-      timeline: "4 months"
-    },
-    {
-      name: "CircleDNA",
-      company: "Consumer Genomics",
-      role: "Regional Marketing Manager",
-      category: "transformation",
-      rating: 5,
-      quote: "CloudLine helped us turn a complex, data-heavy product into a clean digital sales journey. They unified our analytics, automated our campaigns, and tightened the loop between marketing spend and revenue so we always knew what was working.",
-      results: "Unified analytics, automated campaigns, clearer spend-to-revenue attribution",
-      challenge: "Complex product with fragmented analytics and unclear marketing ROI",
-      solution: "Digital sales transformation with unified analytics and automated, attributable campaigns",
-      timeline: "3 months"
-    },
-    {
-      name: "Wellnite",
-      company: "Mental Health SaaS",
-      role: "Growth Lead",
-      category: "consultation",
-      rating: 5,
-      quote: "Expanding mental-health care across borders is hard. CloudLine consulted on our market-entry and growth strategy, built compliant, culturally-sensitive campaigns, and guided our team market by market. We expanded into new regions with a major jump in registrations.",
-      results: "Expansion to 5 international markets, +400% registrations, +85% retention",
-      challenge: "International expansion with complex regulatory and cultural requirements",
-      solution: "Strategic growth consultation plus compliant, localized market-entry campaigns",
-      timeline: "Ongoing engagement"
-    },
-    {
-      name: "Prenetics",
-      company: "Health & Genomics",
-      role: "Marketing Director",
-      category: "consultation",
-      rating: 5,
-      quote: "CloudLine gave us the strategic clarity we needed. They audited our funnel, prioritised the highest-impact channels, and coached our internal team on execution so the gains kept compounding after the engagement.",
-      results: "Sharper channel strategy, prioritised roadmap, upskilled internal team",
-      challenge: "Spread thin across too many channels with unclear priorities",
-      solution: "Strategic consultation, funnel audit, channel prioritisation, and team enablement",
-      timeline: "Consultation engagement"
-    },
-    {
-      name: "Fokuslah",
-      company: "Malaysian Startup",
-      role: "Founder",
-      category: "consultation",
-      rating: 5,
-      quote: "As an early-stage Malaysian startup, we needed direction more than vanity metrics. CloudLine's consultation helped us sharpen our positioning, pick the right channels, and set up a measurement system we actually understand.",
-      results: "Clear positioning, focused channel strategy, simple measurement framework",
-      challenge: "Early-stage with limited budget and no clear go-to-market focus",
-      solution: "Founder-level consultation on positioning, channels, and measurement",
-      timeline: "Consultation engagement"
-    },
-    {
       name: "Lasus Plastic Surgery Clinic",
       company: "Malaysia",
       role: "Clinic Manager",
-      category: "sync",
       rating: 5,
       quote: "Our front desk, marketing, and surgical teams worked in silos. CloudLine consolidated everything onto one CRM, synced our departments in real time, and automated lead routing and reminders. We cut redundant subscriptions and lifted bookings and revenue 35% in under four months.",
       results: "Departments synced in real time, redundant subscriptions cut, +35% bookings & revenue",
@@ -125,7 +53,6 @@ export default function ClientResultsPage() {
       name: "Kak Tasha",
       company: "Warung Ambo",
       role: "Pemilik",
-      category: "sync",
       rating: 5,
       quote: "Jujur saya cakap, mengurus warung ni memang kerja tak habis-habis. Dari pagi sampai malam saya sibuk di dapur, jadi hal sistem dan teknologi memang saya tak sempat nak fikir. Waktu puncak, barisan pelanggan panjang, ada je pesanan yang tertinggal, dan operasi dapur dengan depan kaunter selalu tak sekata. CloudLine datang dan terus selesaikan masalah tu. Mereka optimumkan sistem POS warung saya khas untuk F&B, pastikan tiada lagi pesanan tercicir, dan selaraskan operasi depan kaunter dengan dapur terus melalui peranti mereka. Hasilnya nampak serta-merta, kelajuan barisan laju 30%, pelanggan tak payah tunggu lama, dan jualan pun terus naik. Sekarang saya boleh fokus pada masakan, bukan kelam-kabut nak urus pesanan. Terima kasih CloudLine!",
       results: "Kelajuan barisan meningkat 30%, sifar pesanan tercicir, operasi dapur & kaunter diselaraskan, jualan meningkat",
@@ -137,55 +64,19 @@ export default function ClientResultsPage() {
         after: "Barisan 30% lebih laju, sifar pesanan tercicir, operasi diselaraskan",
         improvement: "Kelajuan perkhidmatan +30%, jualan meningkat"
       }
-    },
-    {
-      name: "Oxwhite",
-      company: "D2C Apparel",
-      role: "Brand Manager",
-      category: "branding",
-      rating: 5,
-      quote: "CloudLine refreshed our digital brand and built campaigns that actually converted. Our content finally looked and sounded like us, and our customer acquisition cost dropped while order volume grew.",
-      results: "Refreshed brand identity, higher-converting campaigns, lower acquisition cost",
-      challenge: "Inconsistent brand presence and rising customer acquisition costs",
-      solution: "Digital marketing & branding, identity refresh plus performance-driven creative",
-      timeline: "3 months"
-    },
-    {
-      name: "Woodfire Gourmet Burger",
-      company: "F&B",
-      role: "Owner",
-      category: "branding",
-      rating: 5,
-      quote: "CloudLine gave our burger brand a proper digital identity, photography, social, and a funnel that brings people through the door. Weekend covers are up and our regulars keep growing.",
-      results: "Distinctive digital brand, stronger social presence, more weekend covers",
-      challenge: "Great food but a weak, inconsistent online brand presence",
-      solution: "Digital marketing & branding, visual identity, social content, and a local demand funnel",
-      timeline: "2 months"
-    },
-    {
-      name: "Farah N.",
-      company: "Celcom",
-      role: "Digital Marketing Lead",
-      category: "branding",
-      rating: 5,
-      quote: "Our campaigns performed decently, but there was a gap between awareness and engagement. CloudLine tested new visual formats, shortened load times, and built mini-landing experiences that kept users interacting longer, and upskilled our in-house team along the way.",
-      results: "Reduced churn, improved user retention, enhanced in-house team knowledge",
-      challenge: "Gap between campaign awareness and real user engagement",
-      solution: "Digital marketing & branding, new creative formats, faster experiences, and team enablement",
-      timeline: "Ongoing engagement"
     }
   ]
 
   const overallStats = [
-    { number: "Strategic", label: tt.stats.items.brandSolutions, icon: <DoodleGrowth className="size-6" /> },
+    { number: "3.5x", label: tt.stats.items.brandSolutions, icon: <DoodleGrowth className="size-6" /> },
     { number: "4.9x", label: tt.stats.items.averageGrowth, icon: <DoodleCoins className="size-6" /> },
     { number: "25+", label: tt.stats.items.happyClients, icon: <DoodleHeart className="size-6" /> },
     { number: "95%", label: tt.stats.items.successRate, icon: <DoodleTarget className="size-6" /> }
   ]
 
-  const filteredTestimonials = selectedCategory === "all"
+  const visibleTestimonials = testimonialsExpanded
     ? testimonials
-    : testimonials.filter(t => t.category === selectedCategory)
+    : testimonials.slice(0, 4)
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
@@ -238,179 +129,6 @@ export default function ClientResultsPage() {
                 <Link href="/case-studies">{tt.hero.ctaSecondary}</Link>
               </Button>
             </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Overall Stats */}
-      <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Overall results">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-14">
-            <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.stats.eyebrow}</p>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-              {tt.stats.title}
-            </h2>
-            <p className="text-muted-foreground md:text-lg">{tt.stats.subtitle}</p>
-          </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {overallStats.map((stat, index) => (
-              <motion.div
-                key={index}
-                className="rounded-2xl border border-border bg-card p-8 text-center"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="flex justify-center mb-5">
-                  <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                    {stat.icon}
-                  </span>
-                </div>
-                <div className="font-display text-3xl lg:text-4xl font-semibold tracking-tight mb-2">
-                  {stat.number}
-                </div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Category Filter */}
-      <section className="w-full py-10 bg-muted/50 border-t border-border" aria-label="Filter by service">
-        <div className="container px-4 md:px-6">
-          <div className="flex flex-wrap justify-center gap-3">
-            {categories.map((category) => (
-              <Button
-                key={category.id}
-                size="sm"
-                variant={selectedCategory === category.id ? "default" : "outline"}
-                onClick={() => setSelectedCategory(category.id)}
-                className={
-                  selectedCategory === category.id
-                    ? "rounded-full font-medium"
-                    : "rounded-full font-medium border-border bg-transparent hover:bg-muted"
-                }
-              >
-                {category.name} ({category.count})
-              </Button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Client Testimonials */}
-      <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Client testimonials">
-        <div className="container px-4 md:px-6">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-              {tt.testimonials.eyebrow}
-            </p>
-            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
-              {tt.testimonials.title}
-            </h2>
-            <p className="text-muted-foreground md:text-lg">
-              {tt.testimonials.subtitle}
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {filteredTestimonials.map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full rounded-2xl border border-border bg-card transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]">
-                  <CardContent className="p-8">
-                    {/* Profile monogram */}
-                    <div className="flex items-start gap-4 mb-6">
-                      <div className="flex w-14 h-14 items-center justify-center rounded-full bg-primary/10 text-primary font-display font-semibold text-lg flex-shrink-0">
-                        {testimonial.name
-                          .split(" ")
-                          .slice(0, 2)
-                          .map((w) => w[0])
-                          .join("")
-                          .toUpperCase()}
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-display font-semibold text-lg tracking-tight">{testimonial.name}</h4>
-                        <p className="text-primary text-sm font-medium">{testimonial.role}</p>
-                        <p className="text-sm text-muted-foreground">{testimonial.company}</p>
-                        <div className="flex items-center gap-0.5 mt-2">
-                          {[...Array(testimonial.rating)].map((_, i) => (
-                            <Star key={i} className="size-4 fill-primary text-primary" />
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Challenge */}
-                    {testimonial.challenge && (
-                      <div className="mb-4 rounded-xl border border-border bg-muted/40 p-4">
-                        <p className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground mb-1.5">
-                          {tt.testimonials.labels.challenge}
-                        </p>
-                        <p className="text-sm text-foreground/80 leading-relaxed">{testimonial.challenge}</p>
-                      </div>
-                    )}
-
-                    {/* Quote */}
-                    <div className="relative mb-6">
-                      <Quote className="absolute -top-2 -left-1 size-7 text-primary/20" />
-                      <p className="text-foreground/80 pl-6 text-base leading-relaxed">
-                        &ldquo;{testimonial.quote}&rdquo;
-                      </p>
-                    </div>
-
-                    {/* Solution & Timeline */}
-                    {testimonial.solution && (
-                      <div className="mb-4 rounded-xl border border-border bg-muted/40 p-4">
-                        <p className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground mb-1.5">
-                          {tt.testimonials.labels.solution}
-                        </p>
-                        <p className="text-sm text-foreground/80 leading-relaxed mb-2">{testimonial.solution}</p>
-                        {testimonial.timeline && (
-                          <p className="text-xs text-muted-foreground">{tt.testimonials.labels.timeline}: {testimonial.timeline}</p>
-                        )}
-                      </div>
-                    )}
-
-                    {/* Results */}
-                    <div className="rounded-xl border border-primary/20 bg-primary/8 p-4">
-                      <p className="text-xs font-medium tracking-[0.14em] uppercase text-primary mb-1.5">{tt.testimonials.labels.results}</p>
-                      <p className="text-sm text-foreground/85 leading-relaxed">{testimonial.results}</p>
-                    </div>
-
-                    {/* Detailed Metrics */}
-                    {testimonial.metrics && (
-                      <div className="mt-4 rounded-xl border border-border bg-muted/40 p-4">
-                        <p className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground mb-3">
-                          {tt.testimonials.labels.detailedMetrics}
-                        </p>
-                        <div className="space-y-2 text-sm">
-                          <div>
-                            <span className="font-medium text-foreground/70">{tt.testimonials.labels.before}</span>
-                            <span className="text-muted-foreground ml-2">{testimonial.metrics.before}</span>
-                          </div>
-                          <div>
-                            <span className="font-medium text-foreground/70">{tt.testimonials.labels.after}</span>
-                            <span className="text-muted-foreground ml-2">{testimonial.metrics.after}</span>
-                          </div>
-                          <div>
-                            <span className="font-medium text-primary">{tt.testimonials.labels.improvement}</span>
-                            <span className="text-muted-foreground ml-2">{testimonial.metrics.improvement}</span>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
           </div>
         </div>
       </section>
@@ -569,6 +287,170 @@ export default function ClientResultsPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Overall Stats */}
+      <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Overall results">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-14">
+            <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.stats.eyebrow}</p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+              {tt.stats.title}
+            </h2>
+            <p className="text-muted-foreground md:text-lg">{tt.stats.subtitle}</p>
+          </div>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {overallStats.map((stat, index) => (
+              <motion.div
+                key={index}
+                className="rounded-2xl border border-border bg-card p-8 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <div className="flex justify-center mb-5">
+                  <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                    {stat.icon}
+                  </span>
+                </div>
+                <div className="font-display text-3xl lg:text-4xl font-semibold tracking-tight mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Client Testimonials */}
+      <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Client testimonials">
+        <div className="container px-4 md:px-6">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
+              {tt.testimonials.eyebrow}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
+              {tt.testimonials.title}
+            </h2>
+            <p className="text-muted-foreground md:text-lg">
+              {tt.testimonials.subtitle}
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {visibleTestimonials.map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full rounded-2xl border border-border bg-card transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]">
+                  <CardContent className="p-8">
+                    {/* Profile monogram */}
+                    <div className="flex items-start gap-4 mb-6">
+                      <div className="flex w-14 h-14 items-center justify-center rounded-full bg-primary/10 text-primary font-display font-semibold text-lg flex-shrink-0">
+                        {testimonial.name
+                          .split(" ")
+                          .slice(0, 2)
+                          .map((w) => w[0])
+                          .join("")
+                          .toUpperCase()}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-display font-semibold text-lg tracking-tight">{testimonial.name}</h4>
+                        <p className="text-primary text-sm font-medium">{testimonial.role}</p>
+                        <p className="text-sm text-muted-foreground">{testimonial.company}</p>
+                        <div className="flex items-center gap-0.5 mt-2">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Star key={i} className="size-4 fill-primary text-primary" />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Challenge */}
+                    {testimonial.challenge && (
+                      <div className="mb-4 rounded-xl border border-border bg-muted/40 p-4">
+                        <p className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground mb-1.5">
+                          {tt.testimonials.labels.challenge}
+                        </p>
+                        <p className="text-sm text-foreground/80 leading-relaxed">{testimonial.challenge}</p>
+                      </div>
+                    )}
+
+                    {/* Quote */}
+                    <div className="relative mb-6">
+                      <Quote className="absolute -top-2 -left-1 size-7 text-primary/20" />
+                      <p className="text-foreground/80 pl-6 text-base leading-relaxed">
+                        &ldquo;{testimonial.quote}&rdquo;
+                      </p>
+                    </div>
+
+                    {/* Solution & Timeline */}
+                    {testimonial.solution && (
+                      <div className="mb-4 rounded-xl border border-border bg-muted/40 p-4">
+                        <p className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground mb-1.5">
+                          {tt.testimonials.labels.solution}
+                        </p>
+                        <p className="text-sm text-foreground/80 leading-relaxed mb-2">{testimonial.solution}</p>
+                        {testimonial.timeline && (
+                          <p className="text-xs text-muted-foreground">{tt.testimonials.labels.timeline}: {testimonial.timeline}</p>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Results */}
+                    <div className="rounded-xl border border-primary/20 bg-primary/8 p-4">
+                      <p className="text-xs font-medium tracking-[0.14em] uppercase text-primary mb-1.5">{tt.testimonials.labels.results}</p>
+                      <p className="text-sm text-foreground/85 leading-relaxed">{testimonial.results}</p>
+                    </div>
+
+                    {/* Detailed Metrics */}
+                    {testimonial.metrics && (
+                      <div className="mt-4 rounded-xl border border-border bg-muted/40 p-4">
+                        <p className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground mb-3">
+                          {tt.testimonials.labels.detailedMetrics}
+                        </p>
+                        <div className="space-y-2 text-sm">
+                          <div>
+                            <span className="font-medium text-foreground/70">{tt.testimonials.labels.before}</span>
+                            <span className="text-muted-foreground ml-2">{testimonial.metrics.before}</span>
+                          </div>
+                          <div>
+                            <span className="font-medium text-foreground/70">{tt.testimonials.labels.after}</span>
+                            <span className="text-muted-foreground ml-2">{testimonial.metrics.after}</span>
+                          </div>
+                          <div>
+                            <span className="font-medium text-primary">{tt.testimonials.labels.improvement}</span>
+                            <span className="text-muted-foreground ml-2">{testimonial.metrics.improvement}</span>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {testimonials.length > 4 && (
+            <div className="mt-10 flex justify-center">
+              <Button
+                variant="outline"
+                className="rounded-full font-medium border-border bg-transparent hover:bg-muted"
+                onClick={() => setTestimonialsExpanded((prev) => !prev)}
+              >
+                {testimonialsExpanded
+                  ? tt.testimonials.showLess
+                  : tt.testimonials.showMore.replace("{count}", String(testimonials.length))}
+              </Button>
+            </div>
+          )}
         </div>
       </section>
 

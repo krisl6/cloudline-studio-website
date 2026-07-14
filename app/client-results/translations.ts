@@ -13,19 +13,10 @@ export const translations = {
       title: "The numbers don’t lie",
       subtitle: "Average results across all our client campaigns.",
       items: {
-        brandSolutions: "Brand Solutions",
+        brandSolutions: "ROAS",
         averageGrowth: "Average Growth",
         happyClients: "Happy Clients",
         successRate: "Project Success Rate",
-      },
-    },
-    filter: {
-      categories: {
-        all: "All Services",
-        consultation: "Consultation",
-        transformation: "Marketing & Sales Digital Transformation",
-        sync: "Interdepartmental Synchronization",
-        branding: "Digital Marketing & Branding",
       },
     },
     testimonials: {
@@ -33,6 +24,8 @@ export const translations = {
       title: "Real businesses, real growth",
       subtitle:
         "Every testimonial is verified. Every number is real. Every client started exactly where you are now.",
+      showMore: "Show all {count} client stories",
+      showLess: "Show fewer stories",
       labels: {
         challenge: "Challenge",
         solution: "Solution",
@@ -57,22 +50,22 @@ export const translations = {
       cta: "Discuss your project",
     },
     socialProof: {
-      eyebrow: "Verified results",
-      title: "Every number is verified and documented",
+      eyebrow: "Real client results",
+      title: "Results reported directly by our clients",
       subtitle:
-        "We don’t just claim results, we prove them. All client results are verified through analytics, direct client reporting, and third-party tracking systems.",
+        "No composites, no borrowed case studies. Every figure above comes from client-reported metrics, tracked through their own analytics and CRM systems.",
       cards: {
         analytics: {
-          title: "Analytics verified",
-          body: "All revenue and conversion data verified through Google Analytics, Meta Analytics, and platform reporting.",
+          title: "Analytics-backed",
+          body: "Revenue and traffic figures are pulled from each client's own Google Analytics, Meta Analytics, or platform reporting.",
         },
         sales: {
-          title: "Sales verified",
-          body: "Conversion numbers and sales increases verified through direct client reporting and CRM data tracking.",
+          title: "Client-reported",
+          body: "Conversion and sales numbers come directly from client reporting and CRM data, not our own estimates.",
         },
         tracking: {
-          title: "Third-party tracking",
-          body: "Independent tracking systems confirm all performance metrics and ROI calculations.",
+          title: "Named, not anonymised",
+          body: "Every story above names the real client behind it, not a composite or anonymised example.",
         },
       },
     },
@@ -99,19 +92,10 @@ export const translations = {
       title: "Angka tidak menipu",
       subtitle: "Purata hasil merentas semua kempen pelanggan kami.",
       items: {
-        brandSolutions: "Penyelesaian Jenama",
+        brandSolutions: "ROAS",
         averageGrowth: "Purata Pertumbuhan",
         happyClients: "Pelanggan Berpuas Hati",
         successRate: "Kadar Kejayaan Projek",
-      },
-    },
-    filter: {
-      categories: {
-        all: "Semua Perkhidmatan",
-        consultation: "Perundingan",
-        transformation: "Transformasi Digital Pemasaran & Jualan",
-        sync: "Penyelarasan Antara Jabatan",
-        branding: "Pemasaran Digital & Penjenamaan",
       },
     },
     testimonials: {
@@ -119,6 +103,8 @@ export const translations = {
       title: "Perniagaan sebenar, pertumbuhan sebenar",
       subtitle:
         "Setiap testimoni disahkan. Setiap angka adalah benar. Setiap pelanggan bermula tepat di tempat anda berada sekarang.",
+      showMore: "Lihat semua {count} kisah pelanggan",
+      showLess: "Tunjukkan lebih sedikit",
       labels: {
         challenge: "Cabaran",
         solution: "Penyelesaian",
@@ -143,22 +129,22 @@ export const translations = {
       cta: "Bincang projek anda",
     },
     socialProof: {
-      eyebrow: "Hasil disahkan",
-      title: "Setiap angka disahkan dan didokumentasikan",
+      eyebrow: "Hasil pelanggan sebenar",
+      title: "Hasil dilaporkan terus oleh pelanggan kami",
       subtitle:
-        "Kami bukan sekadar mendakwa hasil. Kami membuktikannya. Semua hasil pelanggan disahkan melalui analitik, laporan terus daripada pelanggan, dan sistem penjejakan pihak ketiga.",
+        "Tiada gabungan, tiada kajian kes pinjaman. Setiap angka di atas datang daripada metrik yang dilaporkan pelanggan, dijejak melalui sistem analitik dan CRM mereka sendiri.",
       cards: {
         analytics: {
-          title: "Disahkan analitik",
-          body: "Semua data hasil dan penukaran disahkan melalui Google Analytics, Meta Analytics, dan laporan platform.",
+          title: "Disokong analitik",
+          body: "Angka hasil dan trafik diambil daripada Google Analytics, Meta Analytics, atau laporan platform milik pelanggan sendiri.",
         },
         sales: {
-          title: "Disahkan jualan",
-          body: "Angka penukaran dan peningkatan jualan disahkan melalui laporan terus pelanggan dan penjejakan data CRM.",
+          title: "Dilaporkan pelanggan",
+          body: "Angka penukaran dan jualan datang terus daripada laporan pelanggan dan data CRM, bukan anggaran kami sendiri.",
         },
         tracking: {
-          title: "Penjejakan pihak ketiga",
-          body: "Sistem penjejakan bebas mengesahkan semua metrik prestasi dan pengiraan ROI.",
+          title: "Dinamakan, bukan tanpa nama",
+          body: "Setiap kisah di atas menamakan pelanggan sebenar di sebaliknya, bukan gabungan atau contoh tanpa nama.",
         },
       },
     },
@@ -185,25 +171,18 @@ export const translations = {
       title: "数字不会说谎",
       subtitle: "我们所有客户活动的平均成果。",
       items: {
-        brandSolutions: "品牌解决方案",
+        brandSolutions: "ROAS",
         averageGrowth: "平均增长",
         happyClients: "满意客户",
         successRate: "项目成功率",
-      },
-    },
-    filter: {
-      categories: {
-        all: "全部服务",
-        consultation: "咨询",
-        transformation: "营销与销售数字化转型",
-        sync: "跨部门协同",
-        branding: "数字营销与品牌建设",
       },
     },
     testimonials: {
       eyebrow: "客户成功故事",
       title: "真实企业，真实增长",
       subtitle: "每一份评价都经过核实。每一个数字都真实可信。每一位客户都曾站在你现在的起点。",
+      showMore: "查看全部 {count} 个客户故事",
+      showLess: "收起",
       labels: {
         challenge: "挑战",
         solution: "解决方案",
@@ -228,22 +207,22 @@ export const translations = {
       cta: "讨论你的项目",
     },
     socialProof: {
-      eyebrow: "已核实成果",
-      title: "每一个数字都经过核实与记录",
+      eyebrow: "真实客户成果",
+      title: "由客户直接报告的成果",
       subtitle:
-        "我们不只是宣称成果, 我们用事实证明。所有客户成果均通过分析工具、客户直接报告及第三方追踪系统核实。",
+        "没有拼凑，没有借用的案例研究。以上每一个数字都来自客户自行报告的指标，通过他们自己的分析工具与 CRM 系统追踪。",
       cards: {
         analytics: {
-          title: "分析核实",
-          body: "所有营收与转化数据均通过 Google Analytics、Meta Analytics 及平台报告核实。",
+          title: "数据支持",
+          body: "营收与流量数据均取自客户自己的 Google Analytics、Meta Analytics 或平台报告。",
         },
         sales: {
-          title: "销售核实",
-          body: "转化数字与销售增长均通过客户直接报告及 CRM 数据追踪核实。",
+          title: "客户自行报告",
+          body: "转化与销售数字直接来自客户报告与 CRM 数据，并非我们自行估算。",
         },
         tracking: {
-          title: "第三方追踪",
-          body: "独立追踪系统确认所有绩效指标与投资回报率计算。",
+          title: "真实具名，非匿名",
+          body: "以上每个故事都指名道姓，而非拼凑或匿名的案例。",
         },
       },
     },

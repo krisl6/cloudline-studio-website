@@ -128,7 +128,7 @@ export default function ServicesPage() {
               {services.map((service, i) => {
                 const Icon = serviceIcons[i]
                 return (
-                  <motion.div key={service.id} variants={fadeUp}>
+                  <motion.div key={service.id} id={service.id} variants={fadeUp} className="scroll-mt-24">
                     <Link
                       href={`/case-studies/${service.id}`}
                       className="group flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
