@@ -9,11 +9,13 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { FunnelTimeline } from "@/components/funnel-timeline"
+import { SeoWaitlistForm } from "@/components/seo-waitlist-form"
 import {
   DoodleSearch,
   DoodleTransform,
   DoodleGear,
   DoodleMegaphone,
+  DoodleGrowth,
   DoodleCheck,
   DoodleRocket,
   DoodlePen,
@@ -29,10 +31,10 @@ const stagger = {
   show: { opacity: 1, transition: { staggerChildren: 0.12 } },
 }
 
-const serviceIcons = [DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone]
+const serviceIcons = [DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth]
 const processIcons = [DoodleSearch, DoodlePen, DoodleRocket]
 
-const serviceIds = ["consultation", "transformation", "synchronization", "branding"] as const
+const serviceIds = ["consultation", "transformation", "synchronization", "branding", "seo"] as const
 
 export default function ServicesPage() {
   const { lang } = useLanguage()
@@ -238,12 +240,21 @@ export default function ServicesPage() {
                     ))}
                   </ul>
 
-                  <Button className="rounded-full font-medium" asChild>
-                    <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
-                      {tt.deepDive.getStarted} {currentService.title}
-                      <ArrowRight className="ml-1.5 size-4" />
-                    </Link>
-                  </Button>
+                  {currentService.id === "seo" ? (
+                    <div className="mt-2">
+                      <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
+                        Coming soon
+                      </p>
+                      <SeoWaitlistForm />
+                    </div>
+                  ) : (
+                    <Button className="rounded-full font-medium" asChild>
+                      <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                        {tt.deepDive.getStarted} {currentService.title}
+                        <ArrowRight className="ml-1.5 size-4" />
+                      </Link>
+                    </Button>
+                  )}
                 </motion.div>
               </div>
             </div>

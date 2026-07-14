@@ -89,6 +89,19 @@ export const translations = {
           "Transparent reporting and optimisation",
         ],
       },
+      {
+        title: "SEO & AI Search (AEO)",
+        subtitle: "Ranked on Google, recommended by AI",
+        description:
+          "We get you ranked on Google and cited inside ChatGPT, Gemini, and Perplexity, running technical SEO, content authority, and answer-engine optimisation on one delivery plan. Our AI automation and transparent dashboard for this service are rolling out soon, join the waitlist to be first in.",
+        included: [
+          "Technical SEO and Core Web Vitals",
+          "Content authority and topic clusters",
+          "Answer-engine optimisation (AEO/GEO)",
+          "Citation tracking across ChatGPT, Gemini, Perplexity",
+          "AI automation and transparent dashboard (coming soon)",
+        ],
+      },
     ],
     processSteps: [
       {
@@ -225,6 +238,19 @@ export const translations = {
           "Pelaporan dan pengoptimuman yang telus",
         ],
       },
+      {
+        title: "SEO & Carian AI (AEO)",
+        subtitle: "Kedudukan di Google, disyorkan oleh AI",
+        description:
+          "Kami bantu anda mendapat kedudukan di Google dan disebut dalam ChatGPT, Gemini, dan Perplexity, dengan SEO teknikal, kewibawaan kandungan, dan pengoptimuman enjin jawapan berjalan dalam satu pelan penyampaian. Automasi AI dan papan pemuka telus untuk perkhidmatan ini akan dilancarkan tidak lama lagi, sertai senarai menunggu untuk menjadi yang pertama.",
+        included: [
+          "SEO teknikal dan Core Web Vitals",
+          "Kewibawaan kandungan dan kluster topik",
+          "Pengoptimuman enjin jawapan (AEO/GEO)",
+          "Penjejakan petikan merentas ChatGPT, Gemini, Perplexity",
+          "Automasi AI dan papan pemuka telus (akan datang)",
+        ],
+      },
     ],
     processSteps: [
       {
@@ -359,6 +385,19 @@ export const translations = {
           "内容策略与制作",
           "促成转化的创意",
           "透明的报告与优化",
+        ],
+      },
+      {
+        title: "SEO 与 AI 搜索优化 (AEO)",
+        subtitle: "在 Google 排名，被 AI 推荐",
+        description:
+          "我们帮助您在 Google 上获得排名，并在 ChatGPT、Gemini 和 Perplexity 中被引用，通过技术性 SEO、内容权威建设和答案引擎优化，在同一交付计划下运行。此服务的 AI 自动化与透明仪表板即将推出，加入等候名单抢先体验。",
+        included: [
+          "技术性 SEO 与 Core Web Vitals",
+          "内容权威建设与主题集群",
+          "答案引擎优化 (AEO/GEO)",
+          "跨 ChatGPT、Gemini、Perplexity 的引用追踪",
+          "AI 自动化与透明仪表板（即将推出）",
         ],
       },
     ],

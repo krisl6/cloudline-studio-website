@@ -20,6 +20,7 @@ export const translations = {
       "Marketing & Sales Digital Transformation": "Marketing & Sales Digital Transformation",
       "Interdepartmental Synchronization": "Interdepartmental Synchronization",
       "Digital Marketing & Branding": "Digital Marketing & Branding",
+      SEO: "SEO & AI Search (AEO)",
     },
     serviceDescriptions: {
       Consultation:
@@ -30,6 +31,8 @@ export const translations = {
         "We connect siloed teams onto shared systems and real-time dashboards so marketing, sales, and operations finally move as one.",
       "Digital Marketing & Branding":
         "We build distinctive brands and performance-driven campaigns across search, social, and content that turn attention into revenue.",
+      SEO:
+        "We get you ranked on Google and cited inside ChatGPT, Gemini, and Perplexity, running technical SEO, content authority, and answer-engine optimisation on one delivery plan.",
     },
     study: {
       challenge: "Challenge",
@@ -69,6 +72,7 @@ export const translations = {
       "Marketing & Sales Digital Transformation": "Transformasi Digital Pemasaran & Jualan",
       "Interdepartmental Synchronization": "Penyelarasan Antara Jabatan",
       "Digital Marketing & Branding": "Pemasaran Digital & Penjenamaan",
+      SEO: "SEO & Carian AI (AEO)",
     },
     serviceDescriptions: {
       Consultation:
@@ -79,6 +83,8 @@ export const translations = {
         "Kami menghubungkan pasukan yang terpisah ke dalam sistem dikongsi dan papan pemuka masa nyata supaya pemasaran, jualan, dan operasi akhirnya bergerak sebagai satu.",
       "Digital Marketing & Branding":
         "Kami membina jenama yang tersendiri dan kempen berasaskan prestasi merentas carian, media sosial, dan kandungan yang menukarkan perhatian kepada hasil.",
+      SEO:
+        "Kami bantu anda mendapat kedudukan di Google dan disebut dalam ChatGPT, Gemini, dan Perplexity, dengan SEO teknikal, kewibawaan kandungan, dan pengoptimuman enjin jawapan berjalan dalam satu pelan penyampaian.",
     },
     study: {
       challenge: "Cabaran",
@@ -117,6 +123,7 @@ export const translations = {
       "Marketing & Sales Digital Transformation": "营销与销售数字化转型",
       "Interdepartmental Synchronization": "跨部门协同",
       "Digital Marketing & Branding": "数字营销与品牌建设",
+      SEO: "SEO 与 AI 搜索优化 (AEO)",
     },
     serviceDescriptions: {
       Consultation:
@@ -127,6 +134,8 @@ export const translations = {
         "我们将各自为政的团队连接到共享系统与实时仪表板，让营销、销售与运营终于步调一致。",
       "Digital Marketing & Branding":
         "我们打造独特的品牌，并在搜索、社交与内容渠道开展以成效为导向的营销活动，将关注转化为营收。",
+      SEO:
+        "我们帮助您在 Google 上获得排名，并在 ChatGPT、Gemini 和 Perplexity 中被引用，通过技术性 SEO、内容权威建设和答案引擎优化，在同一交付计划下运行。",
     },
     study: {
       challenge: "挑战",

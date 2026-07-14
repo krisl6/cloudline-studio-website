@@ -6,7 +6,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone } from "@/components/doodles"
+import { DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 
@@ -44,6 +44,13 @@ export default function CaseStudiesPage() {
       icon: <DoodleMegaphone className="size-5" />,
       description:
         "We build distinctive brands and performance-driven campaigns across search, social, and content that turn attention into revenue.",
+      color: "bg-primary/10 text-primary border-primary/20",
+    },
+    {
+      name: "SEO",
+      icon: <DoodleGrowth className="size-5" />,
+      description:
+        "We get you ranked on Google and cited inside ChatGPT, Gemini, and Perplexity, running technical SEO, content authority, and answer-engine optimisation on one delivery plan.",
       color: "bg-primary/10 text-primary border-primary/20",
     },
   ]
@@ -234,6 +241,91 @@ export default function CaseStudiesPage() {
         { label: "Churn", value: "Reduced" },
         { label: "Retention", value: "Improved" },
         { label: "Team", value: "Upskilled" },
+      ],
+    },
+    {
+      title: "SEO & AI Citation Growth, CircleDNA",
+      industry: "Consumer Genomics · SEO/AEO",
+      platforms: ["SEO"],
+      challenge:
+        "50,000 organic sessions a month, with only 1 of 10 target keywords ranking in the top 10, and no tracking of AI citations yet.",
+      solution:
+        "We started AEO citation tracking and a schema audit, shipped FAQ and product schema, and rewrote key pages answer-first, given the health-claims context needs YMYL-grade E-E-A-T.",
+      results:
+        "Traffic hit 150,000 sessions a month, 3x the baseline, with 7 of 10 target keywords now ranking page one, and AI citations landing alongside the ranking gains.",
+      image: "/ai-seo-platform-dashboard-with-global-user-analyti.jpg",
+      metrics: [
+        { label: "Organic Traffic", value: "+200%" },
+        { label: "Keywords Page One", value: "7 of 10" },
+        { label: "Timeframe", value: "6 Months" },
+      ],
+    },
+    {
+      title: "Ongoing SEO Growth, Mil Design",
+      industry: "Interior Design · SEO",
+      platforms: ["SEO"],
+      challenge:
+        "1.73K search impressions and 78 clicks a month, converting almost entirely on brand-name searches with little non-brand visibility.",
+      solution:
+        "We ran continuous on-page and content optimisation, expanding coverage from brand terms into the non-brand interior-design category.",
+      results:
+        "Impressions climbed 195% to 5.11K on an ongoing engagement, with new non-brand terms now showing up in search and conversion work continuing into the next phase.",
+      image: "/interior-design-website-analytics-dashboard-showin.jpg",
+      metrics: [
+        { label: "Search Impressions", value: "+195%" },
+        { label: "Engagement", value: "Ongoing" },
+        { label: "Since", value: "Mar 2025" },
+      ],
+    },
+    {
+      title: "Continuous SEO vs. Pausing, TigerCampus",
+      industry: "EdTech · SEO",
+      platforms: ["SEO"],
+      challenge:
+        "848K search impressions a year with continuous SEO running, at an average position of 7.1, raising the question of whether those gains would hold without ongoing work.",
+      solution:
+        "We ran continuous SEO for a year, then compared the same 28-day window after a pause, as a real-world test of whether the visibility was durable or dependent on active work.",
+      results:
+        "Impressions fell 83% within weeks of the pause, from 848K to 143K, and average position slipped from 7.1 to 21.2, real-world proof that SEO visibility erodes fast once the work stops.",
+      image: "/analytics-dashboard.png",
+      metrics: [
+        { label: "Impressions/Yr", value: "848K" },
+        { label: "Drop After Pause", value: "-83%" },
+        { label: "Position Change", value: "7.1→21.2" },
+      ],
+    },
+    {
+      title: "SEO-Driven Session Growth, Oxwhite",
+      industry: "D2C Apparel · SEO",
+      platforms: ["SEO"],
+      challenge:
+        "Roughly 4.5K sessions a month, needing product-page UX work and a technical foundation before non-brand growth could compound.",
+      solution:
+        "We built out and optimised category and collection pages, rewrote titles and meta descriptions for CTR, and added a \"found us via AI\" attribution field at onboarding so AI-driven traffic could be tracked from day one.",
+      results:
+        "Sessions reached 25K-30K within 6 months, a 5-6x increase over baseline, with non-brand demand now captured and AI-referral attribution live and reporting.",
+      image: "/digital-marketing-dashboard-with-analytics-charts-.jpg",
+      metrics: [
+        { label: "Sessions Growth", value: "5-6x" },
+        { label: "Timeframe", value: "6 Months" },
+        { label: "AI Attribution", value: "Live" },
+      ],
+    },
+    {
+      title: "Core Web Vitals & Technical SEO Reset, Darlie",
+      industry: "CPG Oral Care · SEO",
+      platforms: ["SEO"],
+      challenge:
+        "Roughly 6.2K monthly visits, just as Core Web Vitals launched as a Google ranking signal and mobile page experience rolled out industry-wide, with the site's technical foundation not ready for either.",
+      solution:
+        "We built the technical SEO foundation: Core Web Vitals fixes, mobile optimisation, indexation cleanup, and brand-term coverage.",
+      results:
+        "Traffic broke out to 9.6K visits, +55% versus baseline, as the speed and indexation work compounded.",
+      image: "/aesthetic-clinic-marketing-dashboard-with-patient-.jpg",
+      metrics: [
+        { label: "Traffic", value: "+55%" },
+        { label: "Timeframe", value: "2 Months" },
+        { label: "Engagement", value: "2020-2022" },
       ],
     },
   ]
