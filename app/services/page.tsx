@@ -128,27 +128,32 @@ export default function ServicesPage() {
               {services.map((service, i) => {
                 const Icon = serviceIcons[i]
                 return (
-                  <motion.div
-                    key={service.id}
-                    variants={fadeUp}
-                    className="group flex flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
-                  >
-                    <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                      <Icon className="size-7" />
-                    </span>
-                    <h3 className="font-display text-xl font-semibold mt-6 mb-1">{service.title}</h3>
-                    <p className="text-xs font-medium tracking-[0.12em] uppercase text-muted-foreground mb-3">
-                      {service.subtitle}
-                    </p>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-                    <ul className="mt-auto space-y-2.5">
-                      {service.included.map((point) => (
-                        <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
-                          <DoodleCheck className="size-4 shrink-0 text-primary" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
+                  <motion.div key={service.id} variants={fadeUp}>
+                    <Link
+                      href={`/case-studies/${service.id}`}
+                      className="group flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                    >
+                      <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                        <Icon className="size-7" />
+                      </span>
+                      <h3 className="font-display text-xl font-semibold mt-6 mb-1">{service.title}</h3>
+                      <p className="text-xs font-medium tracking-[0.12em] uppercase text-muted-foreground mb-3">
+                        {service.subtitle}
+                      </p>
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-6">{service.description}</p>
+                      <ul className="space-y-2.5">
+                        {service.included.map((point) => (
+                          <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
+                            <DoodleCheck className="size-4 shrink-0 text-primary" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                      <span className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
+                        View case studies
+                        <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </Link>
                   </motion.div>
                 )
               })}
@@ -242,18 +247,29 @@ export default function ServicesPage() {
 
                   {currentService.id === "seo" ? (
                     <div className="mt-2">
+                      <Button variant="outline" className="mb-6 rounded-full font-medium border-border bg-transparent hover:bg-muted" asChild>
+                        <Link href={`/case-studies/${currentService.id}`}>
+                          View case studies
+                          <ArrowRight className="ml-1.5 size-4" />
+                        </Link>
+                      </Button>
                       <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
                         Coming soon
                       </p>
                       <SeoWaitlistForm />
                     </div>
                   ) : (
-                    <Button className="rounded-full font-medium" asChild>
-                      <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
-                        {tt.deepDive.getStarted} {currentService.title}
-                        <ArrowRight className="ml-1.5 size-4" />
-                      </Link>
-                    </Button>
+                    <div className="flex flex-wrap gap-3">
+                      <Button className="rounded-full font-medium" asChild>
+                        <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                          {tt.deepDive.getStarted} {currentService.title}
+                          <ArrowRight className="ml-1.5 size-4" />
+                        </Link>
+                      </Button>
+                      <Button variant="outline" className="rounded-full font-medium border-border bg-transparent hover:bg-muted" asChild>
+                        <Link href={`/case-studies/${currentService.id}`}>View case studies</Link>
+                      </Button>
+                    </div>
                   )}
                 </motion.div>
               </div>
