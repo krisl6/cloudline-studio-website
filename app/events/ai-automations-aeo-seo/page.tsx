@@ -14,10 +14,8 @@ import { translations } from "./translations"
 const VENUE_MAPS_URL = "https://maps.google.com/?q=Infinity8+Sunway+Square"
 
 // ── TICKETS ─────────────────────────────────────────────────────────
-// Both tiers currently share one Stripe Payment Link. Swap in a distinct
-// URL per tier if/when they need to charge different amounts.
-const TICKET_EARLY_BIRD_URL = "https://buy.stripe.com/cNi9AS7qZb8nfrQdJ5bZe00"
-const TICKET_STANDARD_URL = "https://buy.stripe.com/cNi9AS7qZb8nfrQdJ5bZe00"
+const TICKET_EARLY_BIRD_URL = "https://buy.stripe.com/4gM5kC26Fekz5Rg6gDbZe01"
+const TICKET_STANDARD_URL = "https://buy.stripe.com/9B6aEWbHfekz0wWfRdbZe02"
 
 const TICKET_INCLUSIONS = [
   "Full masterclass access (1pm–5pm): AI Automation + AEO tracks",
