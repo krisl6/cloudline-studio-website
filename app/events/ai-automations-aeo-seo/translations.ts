@@ -52,7 +52,7 @@ export const translations = {
         {
           name: "Kristine Ling",
           role: "Founder, CloudLine Studio",
-          bio: "Kristine leads CloudLine Studio's marketing and AI transformation practice, helping businesses across Singapore and Malaysia grow through connected strategy, automation, and operations.",
+          bio: "Kristine leads CloudLine Studio's marketing and AI transformation practice, helping businesses across Singapore and Malaysia grow through connected strategy, automation, and operations. She has hosted several hands-on AI workshops, from AI app-building with MonstarX and SEO/AEO training with LSIGraph and SurgeGraph, to Claude-powered automation sessions that brought 150+ builders hands-on with AI in a single day. Beyond the stage, she's a spokesperson for several AI-powered applications and mentors early-stage startup founders building their own products.",
           photo: "/team-kristine.jpg",
         },
         {
@@ -141,7 +141,7 @@ export const translations = {
         {
           name: "Kristine Ling",
           role: "Pengasas, CloudLine Studio",
-          bio: "Kristine mengetuai amalan transformasi pemasaran dan AI CloudLine Studio, membantu perniagaan di Singapura dan Malaysia berkembang melalui strategi, automasi, dan operasi yang bersepadu.",
+          bio: "Kristine mengetuai amalan transformasi pemasaran dan AI CloudLine Studio, membantu perniagaan di Singapura dan Malaysia berkembang melalui strategi, automasi, dan operasi yang bersepadu. Beliau telah menganjurkan beberapa bengkel AI praktikal, dari pembinaan aplikasi AI bersama MonstarX dan latihan SEO/AEO bersama LSIGraph dan SurgeGraph, hingga sesi automasi berkuasa Claude yang membawa 150+ pembina turun padang dengan AI dalam sehari. Selain itu, beliau juga jurucakap untuk beberapa aplikasi berkuasa AI dan membimbing pengasas startup peringkat awal membina produk mereka sendiri.",
           photo: "/team-kristine.jpg",
         },
         {
@@ -229,7 +229,7 @@ export const translations = {
         {
           name: "Kristine Ling",
           role: "CloudLine Studio 创始人",
-          bio: "Kristine 领导 CloudLine Studio 的营销与 AI 转型业务，帮助新加坡与马来西亚的企业通过一体化策略、自动化与运营实现增长。",
+          bio: "Kristine 领导 CloudLine Studio 的营销与 AI 转型业务，帮助新加坡与马来西亚的企业通过一体化策略、自动化与运营实现增长。她曾主办多场实操 AI 工作坊，从与 MonstarX 合作的 AI 应用搭建课程、与 LSIGraph 及 SurgeGraph 合作的 SEO/AEO 培训，到吸引 150 多位开发者亲身体验 AI 的 Claude 自动化工作坊。她同时也是多款 AI 应用的代言人，并指导早期创业者打造自己的产品。",
           photo: "/team-kristine.jpg",
         },
         {
