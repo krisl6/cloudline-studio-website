@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
+import { QUOTE_FORM_URL } from "@/lib/site"
 import { translations } from "./translations"
 import { TeamGallery } from "@/components/team-gallery"
 import { AudioPlayer } from "@/components/audio-player"
@@ -88,7 +89,7 @@ export default function AboutPage() {
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href="/contact">
+                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
                     {tt.hero.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>
@@ -99,7 +100,7 @@ export default function AboutPage() {
                   className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/client-results">{tt.hero.ctaSecondary}</Link>
+                  <Link href="/case-studies">{tt.hero.ctaSecondary}</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -666,7 +667,7 @@ export default function AboutPage() {
               <p className="text-muted-foreground md:text-lg leading-relaxed mb-9">{tt.cta.subcopy}</p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href="/contact">
+                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
                     {tt.cta.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>
@@ -677,7 +678,7 @@ export default function AboutPage() {
                   className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/client-results">{tt.cta.ctaSecondary}</Link>
+                  <Link href="/case-studies">{tt.cta.ctaSecondary}</Link>
                 </Button>
               </div>
               <p className="text-sm text-muted-foreground mt-5">{tt.cta.footnote}</p>

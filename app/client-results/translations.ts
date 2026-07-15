@@ -5,8 +5,8 @@ export const translations = {
       title: "Real stories. Real results.",
       subtitle:
         "Behind every number is a business owner who took a leap of faith. These are their stories: real transformations from real people who trusted us to help them grow, from early-stage startups to established enterprises.",
-      ctaPrimary: "Get a free revenue audit",
-      ctaSecondary: "View detailed case studies",
+      ctaPrimary: "Get a Quote",
+      ctaSecondary: "Get a Quote",
     },
     stats: {
       eyebrow: "By the numbers",
@@ -47,7 +47,7 @@ export const translations = {
         howWeHelped: "How we helped",
         results: "The results",
       },
-      cta: "Discuss your project",
+      cta: "Get a Quote",
     },
     socialProof: {
       eyebrow: "Real client results",
@@ -73,8 +73,8 @@ export const translations = {
       title: "Your competitors won’t wait. Neither should you.",
       subtitle:
         "Every day you delay is revenue lost to competitors. Get your free revenue audit and join our success stories.",
-      primary: "Claim your free audit",
-      secondary: "See detailed case studies",
+      primary: "Get a Quote",
+      secondary: "Get a Quote",
       note: "Only 3 free audits available this month.",
     },
   },
@@ -84,8 +84,8 @@ export const translations = {
       title: "Kisah sebenar. Hasil sebenar.",
       subtitle:
         "Di sebalik setiap angka ada pemilik perniagaan yang berani mengambil risiko. Inilah kisah mereka: transformasi sebenar daripada orang sebenar yang mempercayai kami untuk membantu mereka berkembang, daripada syarikat baharu sehingga perusahaan mapan.",
-      ctaPrimary: "Dapatkan audit hasil percuma",
-      ctaSecondary: "Lihat kajian kes terperinci",
+      ctaPrimary: "Dapatkan Sebut Harga",
+      ctaSecondary: "Dapatkan Sebut Harga",
     },
     stats: {
       eyebrow: "Mengikut angka",
@@ -126,7 +126,7 @@ export const translations = {
         howWeHelped: "Bagaimana kami membantu",
         results: "Hasil",
       },
-      cta: "Bincang projek anda",
+      cta: "Dapatkan Sebut Harga",
     },
     socialProof: {
       eyebrow: "Hasil pelanggan sebenar",
@@ -152,8 +152,8 @@ export const translations = {
       title: "Pesaing anda tidak menunggu. Anda juga jangan.",
       subtitle:
         "Setiap hari anda bertangguh adalah hasil yang hilang kepada pesaing. Dapatkan audit hasil percuma anda dan sertai kisah kejayaan kami.",
-      primary: "Tuntut audit percuma anda",
-      secondary: "Lihat kajian kes terperinci",
+      primary: "Dapatkan Sebut Harga",
+      secondary: "Dapatkan Sebut Harga",
       note: "Hanya 3 audit percuma tersedia bulan ini.",
     },
   },
@@ -163,8 +163,8 @@ export const translations = {
       title: "真实故事，真实成果。",
       subtitle:
         "每一个数字背后，都有一位勇敢迈出一步的企业主。这些是他们的故事, 来自信任我们助力成长的真实客户的真实转变，涵盖从初创企业到成熟企业。",
-      ctaPrimary: "获取免费营收审计",
-      ctaSecondary: "查看详细案例研究",
+      ctaPrimary: "获取报价",
+      ctaSecondary: "获取报价",
     },
     stats: {
       eyebrow: "用数据说话",
@@ -204,7 +204,7 @@ export const translations = {
         howWeHelped: "我们如何提供帮助",
         results: "成果",
       },
-      cta: "讨论你的项目",
+      cta: "获取报价",
     },
     socialProof: {
       eyebrow: "真实客户成果",
@@ -229,8 +229,8 @@ export const translations = {
     cta: {
       title: "你的竞争对手不会等待，你也不该等待。",
       subtitle: "每拖延一天，营收都在流失给竞争对手。获取你的免费营收审计，加入我们的成功故事。",
-      primary: "领取你的免费审计",
-      secondary: "查看详细案例研究",
+      primary: "获取报价",
+      secondary: "获取报价",
       note: "本月仅余 3 个免费审计名额。",
     },
   },

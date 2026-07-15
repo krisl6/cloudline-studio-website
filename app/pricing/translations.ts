@@ -5,8 +5,8 @@ export const translations = {
       heading: "Investment in your growth",
       intro:
         "Great brands aren't built overnight, but they're built with the right investment. Our transparent pricing reflects the strategic value we deliver, with no hidden fees and no surprises. Choose the partnership level that matches your ambition.",
-      primaryCta: "Get My Free Revenue Audit",
-      secondaryCta: "See Client Results",
+      primaryCta: "Get a Quote",
+      secondaryCta: "Get a Quote",
     },
     plans: {
       mostPopular: "Most Popular",
@@ -24,7 +24,7 @@ export const translations = {
             "Weekly performance reports",
             "Monthly strategy consultations",
           ],
-          cta: "Start Campaign",
+          cta: "Get a Quote",
         },
         {
           name: "Website Design",
@@ -39,7 +39,7 @@ export const translations = {
             "14-day Completion deadline",
             "Customer Journey Testing included",
           ],
-          cta: "Start Project",
+          cta: "Get a Quote",
         },
         {
           name: "Social Media Marketing",
@@ -54,7 +54,7 @@ export const translations = {
             "Brand consistency across platforms",
             "Community management and engagement",
           ],
-          cta: "Get Started",
+          cta: "Get a Quote",
         },
         {
           name: "Influencer Collaboration",
@@ -69,7 +69,7 @@ export const translations = {
             "5 reels and 10 stories per month included",
             "XHS (Xiaohongshu) KOL collaborations available",
           ],
-          cta: "Launch Campaign",
+          cta: "Get a Quote",
         },
       ],
       note: "All prices are in Malaysian Ringgit (MYR). Contact us for SGD or USD equivalents, or for custom enterprise packages.",
@@ -101,8 +101,8 @@ export const translations = {
       heading: "Ready to get started?",
       intro:
         "Choose your package and start transforming your digital presence today. No long-term contracts required.",
-      primaryCta: "Start Your Project Today",
-      secondaryCta: "Schedule a Consultation",
+      primaryCta: "Get a Quote",
+      secondaryCta: "Get a Quote",
     },
   },
   ms: {
@@ -111,8 +111,8 @@ export const translations = {
       heading: "Pelaburan untuk pertumbuhan anda",
       intro:
         "Jenama hebat tidak dibina dalam sehari, tetapi ia dibina dengan pelaburan yang tepat. Harga telus kami mencerminkan nilai strategik yang kami sampaikan, tiada caj tersembunyi, tiada kejutan. Pilih tahap kerjasama yang sepadan dengan cita-cita anda.",
-      primaryCta: "Dapatkan Audit Hasil Percuma",
-      secondaryCta: "Lihat Hasil Pelanggan",
+      primaryCta: "Dapatkan Sebut Harga",
+      secondaryCta: "Dapatkan Sebut Harga",
     },
     plans: {
       mostPopular: "Paling Popular",
@@ -130,7 +130,7 @@ export const translations = {
             "Laporan prestasi mingguan",
             "Perundingan strategi bulanan",
           ],
-          cta: "Mulakan Kempen",
+          cta: "Dapatkan Sebut Harga",
         },
         {
           name: "Reka Bentuk Laman Web",
@@ -145,7 +145,7 @@ export const translations = {
             "Tarikh siap dalam 14 hari",
             "Ujian Perjalanan Pelanggan disertakan",
           ],
-          cta: "Mulakan Projek",
+          cta: "Dapatkan Sebut Harga",
         },
         {
           name: "Pemasaran Media Sosial",
@@ -160,7 +160,7 @@ export const translations = {
             "Konsistensi jenama merentas platform",
             "Pengurusan dan penglibatan komuniti",
           ],
-          cta: "Mulakan",
+          cta: "Dapatkan Sebut Harga",
         },
         {
           name: "Kerjasama Influencer",
@@ -175,7 +175,7 @@ export const translations = {
             "5 reel dan 10 story setiap bulan disertakan",
             "Kerjasama KOL XHS (Xiaohongshu) tersedia",
           ],
-          cta: "Lancarkan Kempen",
+          cta: "Dapatkan Sebut Harga",
         },
       ],
       note: "Semua harga dalam Ringgit Malaysia (MYR). Hubungi kami untuk persamaan SGD atau USD, atau pakej korporat tersuai.",
@@ -207,8 +207,8 @@ export const translations = {
       heading: "Bersedia untuk bermula?",
       intro:
         "Pilih pakej anda dan mula mengubah kehadiran digital anda hari ini. Tiada kontrak jangka panjang diperlukan.",
-      primaryCta: "Mulakan Projek Anda Hari Ini",
-      secondaryCta: "Jadualkan Perundingan",
+      primaryCta: "Dapatkan Sebut Harga",
+      secondaryCta: "Dapatkan Sebut Harga",
     },
   },
   zh: {
@@ -217,8 +217,8 @@ export const translations = {
       heading: "为您的成长投资",
       intro:
         "卓越的品牌并非一日建成，而是靠正确的投资打造而成。我们透明的价格体现了我们所提供的战略价值, 没有隐藏费用，没有意外。选择与您的雄心相匹配的合作层级。",
-      primaryCta: "获取免费营收审计",
-      secondaryCta: "查看客户成果",
+      primaryCta: "获取报价",
+      secondaryCta: "获取报价",
     },
     plans: {
       mostPopular: "最受欢迎",
@@ -236,7 +236,7 @@ export const translations = {
             "每周效果报告",
             "每月策略咨询",
           ],
-          cta: "启动广告活动",
+          cta: "获取报价",
         },
         {
           name: "网站设计",
@@ -251,7 +251,7 @@ export const translations = {
             "14 天内完成",
             "包含客户旅程测试",
           ],
-          cta: "启动项目",
+          cta: "获取报价",
         },
         {
           name: "社交媒体营销",
@@ -266,7 +266,7 @@ export const translations = {
             "跨平台品牌一致性",
             "社群管理与互动",
           ],
-          cta: "立即开始",
+          cta: "获取报价",
         },
         {
           name: "网红合作",
@@ -281,7 +281,7 @@ export const translations = {
             "每月包含 5 条 reels 和 10 条 stories",
             "可提供小红书（XHS）KOL 合作",
           ],
-          cta: "启动活动",
+          cta: "获取报价",
         },
       ],
       note: "所有价格均以马来西亚林吉特（MYR）计价。如需新元或美元报价，或定制企业套餐，请联系我们。",
@@ -309,8 +309,8 @@ export const translations = {
     contact: {
       heading: "准备好开始了吗？",
       intro: "选择您的套餐，今天就开始转变您的数字化形象。无需签订长期合约。",
-      primaryCta: "立即启动您的项目",
-      secondaryCta: "预约咨询",
+      primaryCta: "获取报价",
+      secondaryCta: "获取报价",
     },
   },
 } as const

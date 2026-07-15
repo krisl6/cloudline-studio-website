@@ -18,7 +18,6 @@ const INTERESTS = [
 
 const BUDGETS = {
   en: [
-    { value: "0",        label: "0 – sorry, we don't do charity" },
     { value: "<10k",     label: "< 10,000" },
     { value: "10k-50k",  label: "10,000 – 50,000" },
     { value: "50k-100k", label: "50,000 – 100,000" },
@@ -26,7 +25,6 @@ const BUDGETS = {
     { value: ">500k",    label: "> 500,000" },
   ],
   ms: [
-    { value: "0",        label: "0 – maaf, kami tidak berbuat amal" },
     { value: "<10k",     label: "< 10,000" },
     { value: "10k-50k",  label: "10,000 – 50,000" },
     { value: "50k-100k", label: "50,000 – 100,000" },
@@ -34,7 +32,6 @@ const BUDGETS = {
     { value: ">500k",    label: "> 500,000" },
   ],
   zh: [
-    { value: "0",        label: "0 – 抱歉，我们不做慈善" },
     { value: "<10k",     label: "< 10,000" },
     { value: "10k-50k",  label: "10,000 – 50,000" },
     { value: "50k-100k", label: "50,000 – 100,000" },

@@ -5,7 +5,7 @@ export const translations = {
       title: "From challenge to champion",
       intro:
         "Every business faces unique challenges. See how we have helped companies across different industries overcome their obstacles and achieve remarkable growth, with the methodology, execution, and measurable results behind each engagement.",
-      ctaPrimary: "Get My Free Revenue Audit",
+      ctaPrimary: "Get a Quote",
       ctaSecondary: "View All Services",
     },
     services: {
@@ -38,13 +38,13 @@ export const translations = {
       challenge: "Challenge",
       solution: "Our Solution",
       results: "Results Achieved",
-      cta: "Discuss Your Project",
+      cta: "Get a Quote",
     },
     contact: {
       title: "Ready to become our next success story?",
       intro:
         "Join the growing list of businesses that have transformed their digital presence with CloudLine Studio's proven strategies.",
-      ctaPrimary: "Start Your Success Story",
+      ctaPrimary: "Get a Quote",
       ctaSecondary: "Explore Our Services",
     },
     footer: {
@@ -57,7 +57,7 @@ export const translations = {
       title: "Daripada cabaran kepada juara",
       intro:
         "Setiap perniagaan menghadapi cabaran yang tersendiri. Lihat bagaimana kami membantu syarikat merentas pelbagai industri mengatasi halangan mereka dan mencapai pertumbuhan yang luar biasa, lengkap dengan metodologi, pelaksanaan, dan hasil yang boleh diukur di sebalik setiap projek.",
-      ctaPrimary: "Dapatkan Audit Hasil Percuma",
+      ctaPrimary: "Dapatkan Sebut Harga",
       ctaSecondary: "Lihat Semua Perkhidmatan",
     },
     services: {
@@ -90,13 +90,13 @@ export const translations = {
       challenge: "Cabaran",
       solution: "Penyelesaian Kami",
       results: "Hasil Dicapai",
-      cta: "Bincang Projek Anda",
+      cta: "Dapatkan Sebut Harga",
     },
     contact: {
       title: "Bersedia menjadi kisah kejayaan kami yang seterusnya?",
       intro:
         "Sertai senarai perniagaan yang semakin bertambah yang telah mengubah kehadiran digital mereka dengan strategi terbukti CloudLine Studio.",
-      ctaPrimary: "Mulakan Kisah Kejayaan Anda",
+      ctaPrimary: "Dapatkan Sebut Harga",
       ctaSecondary: "Terokai Perkhidmatan Kami",
     },
     footer: {
@@ -109,7 +109,7 @@ export const translations = {
       title: "从挑战到卓越",
       intro:
         "每个企业都面临独特的挑战。了解我们如何帮助不同行业的公司克服障碍、实现卓越增长, 并附上每个项目背后的方法论、执行过程与可量化的成果。",
-      ctaPrimary: "获取免费营收审计",
+      ctaPrimary: "获取报价",
       ctaSecondary: "查看所有服务",
     },
     services: {
@@ -141,13 +141,13 @@ export const translations = {
       challenge: "挑战",
       solution: "我们的方案",
       results: "取得的成果",
-      cta: "洽谈您的项目",
+      cta: "获取报价",
     },
     contact: {
       title: "准备好成为我们的下一个成功案例了吗？",
       intro:
         "加入越来越多的企业行列，借助 CloudLine Studio 经过验证的策略，焕新您的数字化形象。",
-      ctaPrimary: "开启您的成功故事",
+      ctaPrimary: "获取报价",
       ctaSecondary: "探索我们的服务",
     },
     footer: {

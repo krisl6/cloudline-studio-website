@@ -5,8 +5,8 @@ export const translations = {
       title: "Four services that move the business forward",
       intro:
         "We help ambitious teams diagnose what is holding them back, digitise and automate the work, connect departments on shared systems, and build brands that perform. Strategy and execution under one roof, designed to compound.",
-      ctaPrimary: "Start a Conversation",
-      ctaSecondary: "View Our Work",
+      ctaPrimary: "Get a Quote",
+      ctaSecondary: "Get a Quote",
     },
     overview: {
       eyebrow: "Our Services",
@@ -18,7 +18,7 @@ export const translations = {
       eyebrow: "Explore",
       title: "A closer look at each service",
       included: "What's Included",
-      getStarted: "Get started with",
+      getStarted: "Get a Quote",
     },
     process: {
       eyebrow: "How We Work",
@@ -33,8 +33,8 @@ export const translations = {
       title: "Not sure where to start?",
       intro:
         "Begin with a Consultation. We will diagnose what is holding you back and point you to the highest-impact next move, no pressure, no jargon.",
-      ctaPrimary: "Discuss Your Project",
-      ctaSecondary: "View Our Results",
+      ctaPrimary: "Get a Quote",
+      ctaSecondary: "Get a Quote",
     },
     services: [
       {
@@ -154,8 +154,8 @@ export const translations = {
       title: "Empat perkhidmatan yang memacu perniagaan ke hadapan",
       intro:
         "Kami membantu pasukan yang bercita-cita tinggi mengenal pasti apa yang membantutkan mereka, mendigitalkan dan mengautomasikan kerja, menghubungkan jabatan pada sistem yang dikongsi, serta membina jenama yang berprestasi. Strategi dan pelaksanaan di bawah satu bumbung, direka untuk berganda.",
-      ctaPrimary: "Mulakan Perbualan",
-      ctaSecondary: "Lihat Hasil Kerja Kami",
+      ctaPrimary: "Dapatkan Sebut Harga",
+      ctaSecondary: "Dapatkan Sebut Harga",
     },
     overview: {
       eyebrow: "Perkhidmatan Kami",
@@ -167,7 +167,7 @@ export const translations = {
       eyebrow: "Terokai",
       title: "Lihat lebih dekat setiap perkhidmatan",
       included: "Apa Yang Disertakan",
-      getStarted: "Mulakan dengan",
+      getStarted: "Dapatkan Sebut Harga",
     },
     process: {
       eyebrow: "Cara Kami Bekerja",
@@ -182,8 +182,8 @@ export const translations = {
       title: "Tidak pasti di mana hendak bermula?",
       intro:
         "Mulakan dengan Konsultasi. Kami akan mengenal pasti apa yang membantutkan anda dan menunjukkan langkah seterusnya yang paling berkesan, tanpa tekanan, tanpa jargon.",
-      ctaPrimary: "Bincang Projek Anda",
-      ctaSecondary: "Lihat Hasil Kami",
+      ctaPrimary: "Dapatkan Sebut Harga",
+      ctaSecondary: "Dapatkan Sebut Harga",
     },
     services: [
       {
@@ -303,8 +303,8 @@ export const translations = {
       title: "四项推动业务前进的服务",
       intro:
         "我们帮助有抱负的团队找出阻碍他们的因素，将工作数字化和自动化，让各部门在共享系统上协同运作，并打造有成效的品牌。策略与执行同在一处，专为复利增长而设计。",
-      ctaPrimary: "开始对话",
-      ctaSecondary: "查看我们的作品",
+      ctaPrimary: "获取报价",
+      ctaSecondary: "获取报价",
     },
     overview: {
       eyebrow: "我们的服务",
@@ -316,7 +316,7 @@ export const translations = {
       eyebrow: "探索",
       title: "深入了解每项服务",
       included: "服务内容",
-      getStarted: "开始使用",
+      getStarted: "获取报价",
     },
     process: {
       eyebrow: "我们的工作方式",
@@ -331,8 +331,8 @@ export const translations = {
       title: "不确定从何开始？",
       intro:
         "从咨询开始。我们会找出阻碍您的因素，并为您指出最具成效的下一步，没有压力，没有术语。",
-      ctaPrimary: "讨论您的项目",
-      ctaSecondary: "查看我们的成果",
+      ctaPrimary: "获取报价",
+      ctaSecondary: "获取报价",
     },
     services: [
       {

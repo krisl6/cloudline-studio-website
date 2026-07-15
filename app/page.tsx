@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
+import { QUOTE_FORM_URL } from "@/lib/site"
 import {
   DoodleMegaphone,
   DoodleTransform,
@@ -109,7 +110,7 @@ export default function HomePage() {
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 2xl:h-14 px-7 2xl:px-9 text-base 2xl:text-lg font-medium" asChild>
-                  <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
                     {t.hero.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>
@@ -433,7 +434,12 @@ export default function HomePage() {
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">{t.process.heading}</h2>
             </motion.div>
 
-            <div className="grid gap-10 md:grid-cols-3">
+            <div className="relative flex flex-col gap-10 md:grid md:grid-cols-3 md:gap-8">
+              {/* Timeline connector: vertical on mobile, horizontal on desktop */}
+              <div
+                className="absolute left-6 top-6 bottom-6 w-px bg-border md:left-6 md:right-6 md:top-6 md:bottom-auto md:h-px md:w-auto"
+                aria-hidden="true"
+              />
               {t.process.steps.map((stage, i) => {
                 const Icon = processIcons[i]
                 return (
@@ -444,17 +450,18 @@ export default function HomePage() {
                     whileInView="show"
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
+                    className="relative flex gap-5 md:flex-col md:gap-0"
                   >
-                    <div className="flex items-center gap-4 mb-5">
-                      <span className="inline-flex size-12 items-center justify-center rounded-xl border border-border text-primary">
-                        <Icon className="size-7" />
+                    <span className="relative z-10 inline-flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-background text-primary md:mb-5">
+                      <Icon className="size-6" />
+                    </span>
+                    <div>
+                      <span className="font-display text-xs font-medium tracking-widest text-muted-foreground">
+                        STEP {String(i + 1).padStart(2, "0")}
                       </span>
-                      <span className="font-display text-sm font-medium tracking-widest text-muted-foreground">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
+                      <h3 className="font-display text-xl font-semibold mt-1.5 mb-2 md:mt-2 md:mb-3">{stage.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed">{stage.description}</p>
                     </div>
-                    <h3 className="font-display text-xl font-semibold mb-3">{stage.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{stage.description}</p>
                   </motion.div>
                 )
               })}
@@ -496,7 +503,7 @@ export default function HomePage() {
               <p className="text-muted-foreground md:text-lg leading-relaxed mb-9">{t.cta.subcopy}</p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href="https://wa.link/fwi8af" target="_blank" rel="noopener noreferrer">
+                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
                     {t.cta.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>
@@ -507,7 +514,7 @@ export default function HomePage() {
                   className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/client-results">{t.cta.ctaSecondary}</Link>
+                  <Link href="/case-studies">{t.cta.ctaSecondary}</Link>
                 </Button>
               </div>
             </motion.div>

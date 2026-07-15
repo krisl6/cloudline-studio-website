@@ -5,7 +5,7 @@ export const translations = {
       headline: "Let's build something worth talking about",
       subcopy:
         "Every great transformation starts with a conversation. Whether you're launching a new brand or scaling an existing business, we'd love to hear where you want to go and help you get there.",
-      cta: "Get in Touch",
+      cta: "Get a Quote",
     },
     connect: {
       eyebrow: "Ways To Connect",
@@ -44,7 +44,7 @@ export const translations = {
       headline: "Mari bina sesuatu yang berbaloi diperkatakan",
       subcopy:
         "Setiap transformasi hebat bermula dengan satu perbualan. Sama ada anda melancarkan jenama baharu atau mengembangkan perniagaan sedia ada, kami ingin mendengar ke mana anda mahu pergi dan membantu anda sampai ke sana.",
-      cta: "Hubungi Kami",
+      cta: "Dapatkan Sebut Harga",
     },
     connect: {
       eyebrow: "Cara Untuk Berhubung",
@@ -83,7 +83,7 @@ export const translations = {
       headline: "让我们打造值得被谈论的成果",
       subcopy:
         "每一次伟大的转型都始于一场对话。无论您是要推出全新品牌，还是要扩展现有业务，我们都乐意倾听您想前进的方向，并助您抵达那里。",
-      cta: "联系我们",
+      cta: "获取报价",
     },
     connect: {
       eyebrow: "联系方式",

@@ -5,8 +5,8 @@ export const translations = {
       heading: "We believe AI belongs in every workplace",
       subcopy:
         "CloudLine Studio was built on one conviction: AI and modern growth systems shouldn't be a privilege reserved for tech giants. We create the bridge through events, hands-on education, and AI-powered marketing, making these tools practical and profitable for every business in Malaysia and beyond.",
-      ctaPrimary: "Work with us",
-      ctaSecondary: "See our work",
+      ctaPrimary: "Get a Quote",
+      ctaSecondary: "Get a Quote",
     },
     mission: {
       eyebrow: "Our Mission",
@@ -264,8 +264,8 @@ export const translations = {
       heading: "Ready to put AI and growth to work?",
       subcopy:
         "Whether you're launching a product, building an AI-ready team, or scaling your marketing, let's figure out what moves the needle first.",
-      ctaPrimary: "Book a strategy call",
-      ctaSecondary: "See our events",
+      ctaPrimary: "Get a Quote",
+      ctaSecondary: "Get a Quote",
       footnote: "Complimentary consultation · No obligations · Immediate value",
     },
   },
@@ -276,8 +276,8 @@ export const translations = {
       heading: "Kami percaya AI sepatutnya ada di setiap tempat kerja",
       subcopy:
         "CloudLine Studio dibina atas satu keyakinan: AI dan sistem pertumbuhan moden tidak seharusnya menjadi keistimewaan syarikat gergasi teknologi. Kami menjadi jambatan, melalui acara, pendidikan langsung, dan pemasaran berkuasa AI, yang menjadikan alat-alat ini praktikal dan menguntungkan bagi setiap perniagaan di Malaysia dan merentasi sempadan.",
-      ctaPrimary: "Bekerjasama dengan kami",
-      ctaSecondary: "Lihat hasil kerja kami",
+      ctaPrimary: "Dapatkan Sebut Harga",
+      ctaSecondary: "Dapatkan Sebut Harga",
     },
     mission: {
       eyebrow: "Misi Kami",
@@ -535,8 +535,8 @@ export const translations = {
       heading: "Bersedia menjadikan AI dan pertumbuhan bekerja untuk anda?",
       subcopy:
         "Sama ada anda melancarkan produk, membina pasukan sedia AI, atau menskalakan pemasaran anda: mari kita tentukan apa yang menggerakkan jarum terlebih dahulu.",
-      ctaPrimary: "Tempah panggilan strategi",
-      ctaSecondary: "Lihat acara kami",
+      ctaPrimary: "Dapatkan Sebut Harga",
+      ctaSecondary: "Dapatkan Sebut Harga",
       footnote: "Konsultasi percuma · Tiada obligasi · Nilai segera",
     },
   },
@@ -547,8 +547,8 @@ export const translations = {
       heading: "我们相信 AI 属于每一个职场",
       subcopy:
         "CloudLine Studio 建立于一个信念：AI 和现代增长系统不应该是科技巨头的专属特权。我们搭建桥梁，通过活动、实战教育和 AI 驱动的营销，让这些工具对马来西亚及更广泛地区的每一家企业都切实可用、有利可图。",
-      ctaPrimary: "与我们合作",
-      ctaSecondary: "查看我们的作品",
+      ctaPrimary: "获取报价",
+      ctaSecondary: "获取报价",
     },
     mission: {
       eyebrow: "我们的使命",
@@ -806,8 +806,8 @@ export const translations = {
       heading: "准备好让 AI 和增长系统为你工作了吗？",
       subcopy:
         "无论你是在推出产品、打造 AI 就绪团队，还是扩展营销规模, 让我们先找出最能推动结果的那一件事。",
-      ctaPrimary: "预约战略通话",
-      ctaSecondary: "查看我们的活动",
+      ctaPrimary: "获取报价",
+      ctaSecondary: "获取报价",
       footnote: "免费咨询 · 无任何义务 · 即刻获得价值",
     },
   },

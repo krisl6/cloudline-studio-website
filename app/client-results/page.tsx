@@ -9,6 +9,7 @@ import { Star, ArrowRight, Quote } from "lucide-react"
 import Link from "next/link"
 import { DoodleGrowth, DoodleCoins, DoodleHeart, DoodleTarget } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
+import { QUOTE_FORM_URL } from "@/lib/site"
 import { translations } from "./translations"
 
 export default function ClientResultsPage() {
@@ -115,7 +116,7 @@ export default function ClientResultsPage() {
               transition={{ duration: 0.5, delay: 0.15 }}
             >
               <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                <Link href="/contact">
+                <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
                   {tt.hero.ctaPrimary}
                   <ArrowRight className="ml-1.5 size-4" />
                 </Link>
@@ -275,7 +276,7 @@ export default function ClientResultsPage() {
                           </div>
                         </div>
                         <Button className="mt-6 w-fit rounded-full font-medium" asChild>
-                          <Link href="/contact">
+                          <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
                             {tt.caseStudies.cta}
                             <ArrowRight className="ml-1.5 size-4" />
                           </Link>
@@ -513,7 +514,7 @@ export default function ClientResultsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
               <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                <Link href="/contact">
+                <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
                   {tt.cta.primary}
                   <ArrowRight className="ml-1.5 size-4" />
                 </Link>

@@ -1,6 +1,10 @@
 // Central site config, used for SEO metadata, canonical URLs, sitemap, and robots.
 export const SITE_URL = "https://cloudline-studio.com"
 
+// Primary "Get a Quote" CTA destination, site-wide.
+export const QUOTE_FORM_URL =
+  "https://docs.google.com/spreadsheets/d/1HJAKxWK7dV2LSjo7naNtMn9mriASNdr3pNQ3OQsuDW0/edit?usp=sharing"
+
 export const SITE_NAME = "CloudLine Studio"
 
 export const SITE_DESCRIPTION =
@@ -29,5 +33,4 @@ export const SITE_ROUTES = [
   "blog/how-to-price-an-online-course",
   "blog/beauty-brand-marketing-strategy",
   "tech",
-  "events/buildyourbusiness",
 ] as const

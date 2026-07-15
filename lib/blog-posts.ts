@@ -1,3 +1,5 @@
+import { QUOTE_FORM_URL } from "@/lib/site"
+
 export interface BlogPost {
   slug: string
   title: string
@@ -1210,8 +1212,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-16",
     readTime: "9 min read",
     content: startupMarketingCost,
-    ctaHref: "/contact",
-    ctaLabel: "Book a free growth audit",
+    ctaHref: QUOTE_FORM_URL,
+    ctaLabel: "Get a Quote",
   },
   {
     slug: "how-market-online-course",
@@ -1221,8 +1223,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-16",
     readTime: "10 min read",
     content: howMarketOnlineCourse,
-    ctaHref: "/landing/online-course-marketing",
-    ctaLabel: "Get a free course marketing audit",
+    ctaHref: QUOTE_FORM_URL,
+    ctaLabel: "Get a Quote",
   },
   {
     slug: "saas-marketing-channels",
@@ -1232,8 +1234,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-16",
     readTime: "9 min read",
     content: saasMarketingChannels,
-    ctaHref: "/tech",
-    ctaLabel: "Get a free SaaS marketing audit",
+    ctaHref: QUOTE_FORM_URL,
+    ctaLabel: "Get a Quote",
   },
   {
     slug: "how-to-market-beauty-brand",
@@ -1243,8 +1245,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-16",
     readTime: "9 min read",
     content: howToMarketBeautyBrand,
-    ctaHref: "/landing/beauty-brand-marketing",
-    ctaLabel: "Work with Cloudline Studio",
+    ctaHref: QUOTE_FORM_URL,
+    ctaLabel: "Get a Quote",
   },
   {
     slug: "how-to-price-an-online-course",
@@ -1254,8 +1256,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "9 min read",
     content: howToPriceOnlineCourse,
-    ctaHref: "/landing/online-course-marketing",
-    ctaLabel: "Book a free enrolment audit",
+    ctaHref: QUOTE_FORM_URL,
+    ctaLabel: "Get a Quote",
   },
   {
     slug: "saas-gtm",
@@ -1265,8 +1267,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "9 min read",
     content: saasGtm,
-    ctaHref: "/tech",
-    ctaLabel: "Get a free SaaS marketing audit",
+    ctaHref: QUOTE_FORM_URL,
+    ctaLabel: "Get a Quote",
   },
   {
     slug: "startup-marketing-agency",
@@ -1276,8 +1278,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "8 min read",
     content: isMarketingAgencyWorthIt,
-    ctaHref: "/tech",
-    ctaLabel: "Book a free growth audit",
+    ctaHref: QUOTE_FORM_URL,
+    ctaLabel: "Get a Quote",
   },
   {
     slug: "beauty-brand-marketing-strategy",
@@ -1287,8 +1289,8 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "9 min read",
     content: beautyBrandMarketingStrategy,
-    ctaHref: "/landing/beauty-brand-marketing",
-    ctaLabel: "Map your marketing system",
+    ctaHref: QUOTE_FORM_URL,
+    ctaLabel: "Get a Quote",
   },
 ]
 
