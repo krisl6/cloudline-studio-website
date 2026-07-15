@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageToggle } from "@/components/language-toggle"
@@ -29,7 +29,14 @@ export function Header() {
     { name: t.nav.services, href: "/services" },
     { name: t.nav.pricing, href: "/pricing" },
     { name: t.nav.caseStudies, href: "/case-studies" },
-    { name: t.nav.events, href: "/events" },
+    {
+      name: t.nav.events,
+      href: "/events",
+      dropdown: [
+        { name: "All Events", href: "/events" },
+        { name: "AI Automations, AEO & SEO: Masterclass", href: "/events/ai-automations-aeo-seo" },
+      ],
+    },
     { name: t.nav.clientResults, href: "/client-results" },
     { name: t.nav.contact, href: "/contact" },
   ]
@@ -67,15 +74,40 @@ export function Header() {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6" role="navigation" aria-label="Main navigation">
-          {navItems.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
-            >
-              {item.name}
-            </Link>
-          ))}
+          {navItems.map((item) =>
+            item.dropdown ? (
+              <div key={item.href} className="group relative">
+                <Link
+                  href={item.href}
+                  className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                >
+                  {item.name}
+                  <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+                </Link>
+                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                  <div className="w-64 rounded-xl border border-border bg-card p-1.5 shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]">
+                    {item.dropdown.map((sub) => (
+                      <Link
+                        key={sub.href}
+                        href={sub.href}
+                        className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted hover:text-primary transition-colors"
+                      >
+                        {sub.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+              >
+                {item.name}
+              </Link>
+            )
+          )}
         </nav>
 
         <div className="flex items-center gap-3">

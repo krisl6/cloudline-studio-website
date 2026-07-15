@@ -8,6 +8,12 @@ export const translations = {
       cta: "Plan my event",
       secondary: "See past events",
     },
+    upcoming: {
+      eyebrow: "Upcoming Event",
+      title: "AI Automations, AEO & SEO: The Hands-On Masterclass",
+      date: "12 August 2026 · Infinity8, Sunway Square",
+      cta: "Learn More & Get Tickets",
+    },
     included: {
       eyebrow: "What's included",
       heading: "One flat fee. Everything handled.",
@@ -107,6 +113,12 @@ export const translations = {
       cta: "Rancang acara saya",
       secondary: "Lihat acara lepas",
     },
+    upcoming: {
+      eyebrow: "Acara Akan Datang",
+      title: "AI Automations, AEO & SEO: Masterclass Praktikal",
+      date: "12 Ogos 2026 · Infinity8, Sunway Square",
+      cta: "Ketahui Lebih Lanjut & Dapatkan Tiket",
+    },
     included: {
       eyebrow: "Apa yang disertakan",
       heading: "Satu bayaran tetap. Semuanya diuruskan.",
@@ -205,6 +217,12 @@ export const translations = {
         "我们设计并运营体验式活动，让客户亲身试用您的产品或服务, 您则收获销售与即时、真实的反馈。",
       cta: "策划我的活动",
       secondary: "查看过往活动",
+    },
+    upcoming: {
+      eyebrow: "近期活动",
+      title: "AI 自动化、AEO 与 SEO：实操大师课",
+      date: "2026 年 8 月 12 日 · Infinity8, Sunway Square",
+      cta: "了解详情并获取门票",
     },
     included: {
       eyebrow: "包含内容",

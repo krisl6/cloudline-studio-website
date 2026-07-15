@@ -102,6 +102,31 @@ export default function EventsPage() {
           </div>
         </section>
 
+        {/* Upcoming Event banner */}
+        <section className="w-full border-t border-primary/20 bg-primary/[0.04]" aria-label="Upcoming event">
+          <div className="container px-4 md:px-6 py-8">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mx-auto flex max-w-4xl flex-col items-center gap-4 rounded-2xl border border-primary/30 bg-card p-6 text-center sm:flex-row sm:justify-between sm:text-left"
+            >
+              <div>
+                <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-2">{tt.upcoming.eyebrow}</p>
+                <h2 className="font-display text-lg md:text-xl font-semibold tracking-tight">{tt.upcoming.title}</h2>
+                <p className="text-sm text-muted-foreground mt-1">{tt.upcoming.date}</p>
+              </div>
+              <Button className="shrink-0 rounded-full font-medium" asChild>
+                <Link href="/events/ai-automations-aeo-seo">
+                  {tt.upcoming.cta}
+                  <ArrowRight className="ml-1.5 size-4" />
+                </Link>
+              </Button>
+            </motion.div>
+          </div>
+        </section>
+
         {/* AI Mission banner */}
         <section className="w-full border-t border-primary/20 bg-primary/[0.04]" aria-label="Our mission">
           <div className="container px-4 md:px-6 py-12 md:py-16">
