@@ -125,9 +125,10 @@ export default function AiAutomationsAeoSeoPage() {
         <section className="w-full py-20 md:py-28 border-b border-border" aria-label="What will I learn">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-6">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-3">
                 {tt.agenda.heading}
               </h2>
+              <p className="text-sm font-medium text-primary mb-6">{tt.agenda.subcopy}</p>
               <div className="space-y-4">
                 {tt.agenda.paragraphs.map((paragraph) => (
                   <p key={paragraph} className="text-muted-foreground md:text-lg leading-relaxed">
@@ -136,6 +137,58 @@ export default function AiAutomationsAeoSeoPage() {
                 ))}
               </div>
             </motion.div>
+
+            <div className="mt-12 grid gap-8 md:grid-cols-2 max-w-5xl">
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="rounded-2xl border border-border bg-card p-6 md:p-8"
+              >
+                <h3 className="font-display text-xl font-semibold mb-4">{tt.agenda.automation.heading}</h3>
+                <ul className="space-y-3">
+                  {tt.agenda.automation.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
+                      <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="rounded-2xl border border-border bg-card p-6 md:p-8"
+              >
+                <h3 className="font-display text-xl font-semibold mb-2">{tt.agenda.aeo.heading}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{tt.agenda.aeo.intro}</p>
+                <ul className="space-y-3">
+                  {tt.agenda.aeo.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
+                      <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="mt-8 text-sm font-medium text-primary max-w-3xl"
+            >
+              {tt.agenda.bonus}
+            </motion.p>
           </div>
         </section>
 
@@ -269,20 +322,20 @@ export default function AiAutomationsAeoSeoPage() {
                   transition={{ duration: 0.5 }}
                   className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card"
                 >
-                  {photo ? (
-                    <div className="relative aspect-[4/3] overflow-hidden">
-                      <Image src={photo} alt={person.name} fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover object-top" />
-                    </div>
-                  ) : (
-                    <div className="flex justify-center pt-8">
+                  <div className="flex justify-center pt-8">
+                    {photo ? (
+                      <div className="relative size-24 overflow-hidden rounded-full">
+                        <Image src={photo} alt={person.name} fill sizes="96px" className="object-cover" />
+                      </div>
+                    ) : (
                       <span className="flex size-24 items-center justify-center rounded-full bg-primary/10 text-primary font-display font-semibold text-2xl">
                         {initials(person.name)}
                       </span>
-                    </div>
-                  )}
+                    )}
+                  </div>
                   <div className="p-5">
-                    <h3 className="font-display text-lg font-semibold">{person.name}</h3>
-                    <p className="text-xs font-medium text-primary mb-3">{person.role}</p>
+                    <h3 className="font-display text-lg font-semibold text-center">{person.name}</h3>
+                    <p className="text-xs font-medium text-primary mb-3 text-center">{person.role}</p>
                     {"tagline" in person && person.tagline && (
                       <p className="text-sm font-medium text-foreground/85 leading-relaxed mb-3">&ldquo;{person.tagline}&rdquo;</p>
                     )}
@@ -302,6 +355,46 @@ export default function AiAutomationsAeoSeoPage() {
                   </div>
                 </motion.div>
               )})}
+            </div>
+          </div>
+        </section>
+
+        {/* Partners */}
+        <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="Partners">
+          <div className="container px-4 md:px-6">
+            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+              <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
+                <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-4">{tt.partners.eyebrow}</p>
+                <div className="mb-6">
+                  <div className="mb-5">
+                    <Image src="/infinity8-logo.png" alt="Infinity8 logo" width={160} height={48} className="object-contain" />
+                  </div>
+                  <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-1">
+                    {tt.partners.heading}
+                  </h2>
+                  <p className="text-lg text-muted-foreground font-medium">{tt.partners.subheading}</p>
+                </div>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>{tt.partners.p1}</p>
+                  <p>{tt.partners.p2}</p>
+                </div>
+              </motion.div>
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border"
+              >
+                <Image
+                  src="/infinity8-venue-1.jpg"
+                  alt="Infinity8 Reserve boardroom at Sunway Square"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </motion.div>
             </div>
           </div>
         </section>

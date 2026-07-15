@@ -18,6 +18,25 @@ export const translations = {
         "Then you'll go hands-on with AEO: how AI engines correlate entities, why ranking well doesn't guarantee AI inclusion, and how to structure your SEO so generative engines recommend your business instead of your competitor's.",
         "Paid ads buy you this month's customers. This workshop builds the engine that brings customers for years.",
       ],
+      automation: {
+        heading: "AI Automation with Ken Ooi",
+        items: [
+          "How to structure a news-to-video AI automation, from source URL to editable output",
+          "Scripting logic for repetitive content workflows: where to automate vs. where a human editor should stay in the loop",
+          "Building a system that multiplies one editor's output without sacrificing quality",
+          "Turning a working pipeline into a repeatable process a team can run independently",
+        ],
+      },
+      aeo: {
+        heading: "AEO with Kenny Lee",
+        intro: "The AEO Masterclass provides clarity on how AEO works.",
+        items: [
+          "Attendees learn the underlying principles that support AI inclusions so they can strategize more confidently",
+          "It covers the implications of business outcomes that AI search disruptions bring and offers ways to mitigate",
+        ],
+      },
+      subcopy: "Limited seats available so everyone gets hands-on time!",
+      bonus: "BONUS: Speakers will demonstrate projects on the spot. Refreshments and coffee/tea provided.",
     },
     schedule: {
       eyebrow: "Schedule",
@@ -52,7 +71,7 @@ export const translations = {
         {
           name: "Kristine Ling",
           role: "Founder, CloudLine Studio",
-          bio: "Kristine leads CloudLine Studio's marketing and AI transformation practice, helping businesses across Singapore and Malaysia grow through connected strategy, automation, and operations. She has hosted several hands-on AI workshops, from AI app-building with MonstarX and SEO/AEO training with LSIGraph and SurgeGraph, to Claude-powered automation sessions that brought 150+ builders hands-on with AI in a single day. Beyond the stage, she's a spokesperson for several AI-powered applications and mentors early-stage startup founders building their own products.",
+          bio: "Kristine focuses on consulting and implementing AI automations for startups and SMEs, and runs CloudLine Studio, a digital marketing agency helping businesses across Singapore and Malaysia grow through connected strategy, automation, and operations. She has hosted several hands-on AI workshops, from AI app-building with MonstarX and SEO/AEO training with LSIGraph and SurgeGraph, to Claude-powered automation sessions that brought 150+ builders hands-on with AI in a single day. Beyond the stage, she's a spokesperson for several AI-powered applications and mentors early-stage startup founders building their own products.",
           photo: "/team-kristine.jpg",
         },
         {
@@ -81,6 +100,13 @@ export const translations = {
         },
       ],
     },
+    partners: {
+      eyebrow: "With Thanks To Our Partners",
+      heading: "Hosted at Infinity8, Sunway Square",
+      subheading: "Celebrating 9 years of empowering builders in the region",
+      p1: "We're grateful to Infinity8 for hosting this masterclass at their Sunway Square space — the same flexible venue that's backed several of our past AI workshops.",
+      p2: "This year marks Infinity8's 9th anniversary: nine years building the coworking spaces and community infrastructure that founders and teams across Malaysia rely on. We're proud to celebrate that milestone here.",
+    },
     cta: {
       eyebrow: "Seats are limited",
       heading: "Save your spot for 12 August",
@@ -107,6 +133,25 @@ export const translations = {
         "Kemudian anda akan turun padang dengan AEO: cara enjin AI mengaitkan entiti, sebab kedudukan yang baik tidak menjamin kemasukan AI, dan cara menyusun SEO anda supaya enjin generatif mengesyorkan perniagaan anda dan bukannya pesaing anda.",
         "Iklan berbayar membeli pelanggan anda untuk bulan ini. Bengkel ini membina enjin yang membawa pelanggan selama bertahun-tahun.",
       ],
+      automation: {
+        heading: "Automasi AI bersama Ken Ooi",
+        items: [
+          "Cara menyusun automasi berita-kepada-video AI, dari URL sumber ke output yang boleh disunting",
+          "Logik skrip untuk aliran kerja kandungan berulang: di mana untuk automasikan berbanding di mana editor manusia perlu kekal terlibat",
+          "Membina sistem yang menggandakan output seorang editor tanpa menjejaskan kualiti",
+          "Menukar saluran paip yang berfungsi kepada proses berulang yang pasukan boleh jalankan secara bebas",
+        ],
+      },
+      aeo: {
+        heading: "AEO bersama Kenny Lee",
+        intro: "Masterclass AEO memberi kejelasan tentang cara AEO berfungsi.",
+        items: [
+          "Peserta mempelajari prinsip asas yang menyokong kemasukan AI supaya mereka boleh merancang strategi dengan lebih yakin",
+          "Ia turut merangkumi implikasi hasil perniagaan yang dibawa oleh gangguan carian AI dan menawarkan cara untuk menanganinya",
+        ],
+      },
+      subcopy: "Tempat adalah terhad supaya semua orang mendapat masa praktikal!",
+      bonus: "BONUS: Penceramah akan mendemonstrasikan projek secara langsung. Minuman ringan serta kopi/teh disediakan.",
     },
     schedule: {
       eyebrow: "Jadual",
@@ -141,7 +186,7 @@ export const translations = {
         {
           name: "Kristine Ling",
           role: "Pengasas, CloudLine Studio",
-          bio: "Kristine mengetuai amalan transformasi pemasaran dan AI CloudLine Studio, membantu perniagaan di Singapura dan Malaysia berkembang melalui strategi, automasi, dan operasi yang bersepadu. Beliau telah menganjurkan beberapa bengkel AI praktikal, dari pembinaan aplikasi AI bersama MonstarX dan latihan SEO/AEO bersama LSIGraph dan SurgeGraph, hingga sesi automasi berkuasa Claude yang membawa 150+ pembina turun padang dengan AI dalam sehari. Selain itu, beliau juga jurucakap untuk beberapa aplikasi berkuasa AI dan membimbing pengasas startup peringkat awal membina produk mereka sendiri.",
+          bio: "Kristine memberi tumpuan kepada perundingan dan pelaksanaan automasi AI untuk startup dan PKS, serta menjalankan CloudLine Studio, sebuah agensi pemasaran digital yang membantu perniagaan di Singapura dan Malaysia berkembang melalui strategi, automasi, dan operasi yang bersepadu. Beliau telah menganjurkan beberapa bengkel AI praktikal, dari pembinaan aplikasi AI bersama MonstarX dan latihan SEO/AEO bersama LSIGraph dan SurgeGraph, hingga sesi automasi berkuasa Claude yang membawa 150+ pembina turun padang dengan AI dalam sehari. Selain itu, beliau juga jurucakap untuk beberapa aplikasi berkuasa AI dan membimbing pengasas startup peringkat awal membina produk mereka sendiri.",
           photo: "/team-kristine.jpg",
         },
         {
@@ -170,6 +215,13 @@ export const translations = {
         },
       ],
     },
+    partners: {
+      eyebrow: "Dengan Penghargaan Kepada Rakan Kongsi Kami",
+      heading: "Dihoskan di Infinity8, Sunway Square",
+      subheading: "Meraikan 9 tahun memperkasakan pembina di rantau ini",
+      p1: "Kami amat menghargai Infinity8 kerana menjadi tuan rumah masterclass ini di ruang Sunway Square mereka — venue fleksibel yang sama yang telah menyokong beberapa bengkel AI kami sebelum ini.",
+      p2: "Tahun ini menandakan ulang tahun ke-9 Infinity8: sembilan tahun membina ruang kerja bersama dan infrastruktur komuniti yang menjadi sandaran pengasas dan pasukan di seluruh Malaysia. Kami bangga meraikan pencapaian ini di sini.",
+    },
     cta: {
       eyebrow: "Tempat adalah terhad",
       heading: "Tempah tempat anda untuk 12 Ogos",
@@ -196,6 +248,25 @@ export const translations = {
         "接着您将实操学习 AEO：AI 引擎如何进行实体关联、为何排名靠前不代表一定会被 AI 收录，以及如何构建您的 SEO，让生成式引擎推荐您的业务而非竞争对手。",
         "付费广告只能为您带来这个月的客户。这场工作坊将为您搭建能持续带来客户、长年累月的增长引擎。",
       ],
+      automation: {
+        heading: "与 Ken Ooi 学习 AI 自动化",
+        items: [
+          "如何构建「新闻链接到成品视频」的 AI 自动化流程，从源链接到可编辑成品",
+          "重复性内容工作流的脚本逻辑：哪些该自动化，哪些仍需人工剪辑把关",
+          "构建能让一位编辑产出倍增而不牺牲质量的系统",
+          "把可运行的流程转化为团队可独立执行的可重复流程",
+        ],
+      },
+      aeo: {
+        heading: "与 Kenny Lee 学习 AEO",
+        intro: "AEO 大师课将为您清晰讲解 AEO 的运作原理。",
+        items: [
+          "学员将学习支撑 AI 收录的底层原则，从而更有把握地制定策略",
+          "课程还将涵盖 AI 搜索变革带来的业务影响，并提供应对方法",
+        ],
+      },
+      subcopy: "座位有限，确保每位参与者都能获得实操时间！",
+      bonus: "福利：讲者将现场演示实际项目。现场提供茶点及咖啡/茶。",
     },
     schedule: {
       eyebrow: "议程",
@@ -229,7 +300,7 @@ export const translations = {
         {
           name: "Kristine Ling",
           role: "CloudLine Studio 创始人",
-          bio: "Kristine 领导 CloudLine Studio 的营销与 AI 转型业务，帮助新加坡与马来西亚的企业通过一体化策略、自动化与运营实现增长。她曾主办多场实操 AI 工作坊，从与 MonstarX 合作的 AI 应用搭建课程、与 LSIGraph 及 SurgeGraph 合作的 SEO/AEO 培训，到吸引 150 多位开发者亲身体验 AI 的 Claude 自动化工作坊。她同时也是多款 AI 应用的代言人，并指导早期创业者打造自己的产品。",
+          bio: "Kristine 专注于为初创企业与中小企业提供 AI 自动化咨询与落地实施服务，同时经营 CloudLine Studio——一家数字营销机构，帮助新加坡与马来西亚的企业通过一体化策略、自动化与运营实现增长。她曾主办多场实操 AI 工作坊，从与 MonstarX 合作的 AI 应用搭建课程、与 LSIGraph 及 SurgeGraph 合作的 SEO/AEO 培训，到吸引 150 多位开发者亲身体验 AI 的 Claude 自动化工作坊。她同时也是多款 AI 应用的代言人，并指导早期创业者打造自己的产品。",
           photo: "/team-kristine.jpg",
         },
         {
@@ -249,6 +320,13 @@ export const translations = {
           photo: "/speaker-kenny-lee.png",
         },
       ],
+    },
+    partners: {
+      eyebrow: "特别感谢我们的合作伙伴",
+      heading: "活动举办地：Infinity8, Sunway Square",
+      subheading: "庆祝 Infinity8 成立 9 周年，助力区域建造者",
+      p1: "感谢 Infinity8 在其 Sunway Square 场地为本次大师课提供场地支持——这也是我们多场往期 AI 工作坊的灵活场地。",
+      p2: "今年正值 Infinity8 成立 9 周年：九年来，他们持续打造马来西亚各地创始人与团队所依赖的共享办公空间与社区基础设施。我们很荣幸能在这里共同庆祝这一里程碑。",
     },
     cta: {
       eyebrow: "座位有限",
