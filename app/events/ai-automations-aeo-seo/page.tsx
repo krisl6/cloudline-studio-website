@@ -5,7 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, CalendarDays, Clock, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DoodleCheck, DoodleSearch, DoodleTarget, DoodlePen, DoodleBolt } from "@/components/doodles"
+import { DoodleCheck, DoodleSearch, DoodleBolt } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { MasterclassRsvpForm } from "@/components/masterclass-rsvp-form"
 import { translations } from "./translations"
@@ -19,6 +19,14 @@ const VENUE_MAPS_URL = "https://maps.google.com/?q=Infinity8+Sunway+Square"
 const TICKET_EARLY_BIRD_URL = "https://buy.stripe.com/cNi9AS7qZb8nfrQdJ5bZe00"
 const TICKET_STANDARD_URL = "https://buy.stripe.com/cNi9AS7qZb8nfrQdJ5bZe00"
 
+const TICKET_INCLUSIONS = [
+  "Full masterclass access (1pm–5pm): AI Automation + AEO tracks",
+  "Live project demos from Ken & Kenny",
+  "One week of complimentary co-working access at Infinity8, Sunway Square",
+  "Refreshments, coffee & tea",
+  "Workshop materials & templates",
+]
+
 const TICKET_TIERS = [
   {
     name: "Early Bird",
@@ -26,11 +34,7 @@ const TICKET_TIERS = [
     popular: false,
     limited: true,
     link: TICKET_EARLY_BIRD_URL,
-    features: [
-      "Full masterclass access (1pm–5pm)",
-      "Workshop materials & templates",
-      "[PLACEHOLDER — confirm exact inclusions before launch]",
-    ],
+    features: TICKET_INCLUSIONS,
   },
   {
     name: "Standard",
@@ -38,15 +42,9 @@ const TICKET_TIERS = [
     popular: true,
     limited: false,
     link: TICKET_STANDARD_URL,
-    features: [
-      "Everything in Early Bird",
-      "[PLACEHOLDER — e.g. recording / 1:1 slot / bonus resource]",
-      "[PLACEHOLDER — confirm exact inclusions before launch]",
-    ],
+    features: TICKET_INCLUSIONS,
   },
 ] as const
-
-const AGENDA_ICONS = [DoodleSearch, DoodleTarget, DoodlePen, DoodleBolt]
 
 const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }
 const stagger = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } }
@@ -136,33 +134,128 @@ export default function AiAutomationsAeoSeoPage() {
               </h2>
               <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.agenda.subcopy}</p>
             </motion.div>
+
             <div className="grid gap-8 md:grid-cols-2">
-              {tt.agenda.items.map((item, i) => {
-                const Icon = AGENDA_ICONS[i]
-                return (
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="rounded-2xl border border-border bg-card p-6 md:p-8"
+              >
+                <span className="mb-4 inline-flex size-12 items-center justify-center rounded-xl border border-border text-primary">
+                  <DoodleBolt className="size-6" />
+                </span>
+                <h3 className="font-display text-xl font-semibold mb-4">{tt.agenda.automation.heading}</h3>
+                <ul className="space-y-3">
+                  {tt.agenda.automation.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
+                      <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="rounded-2xl border border-border bg-card p-6 md:p-8"
+              >
+                <span className="mb-4 inline-flex size-12 items-center justify-center rounded-xl border border-border text-primary">
+                  <DoodleSearch className="size-6" />
+                </span>
+                <h3 className="font-display text-xl font-semibold mb-2">{tt.agenda.aeo.heading}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{tt.agenda.aeo.intro}</p>
+                <ul className="space-y-3">
+                  {tt.agenda.aeo.items.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
+                      <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="mt-10 rounded-2xl border border-primary/20 bg-primary/[0.04] p-6 text-sm md:text-base text-foreground/85 leading-relaxed"
+            >
+              {tt.agenda.pitch}
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mt-4 text-sm font-medium text-primary"
+            >
+              {tt.agenda.bonus}
+            </motion.p>
+          </div>
+        </section>
+
+        {/* Schedule */}
+        <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="Schedule">
+          <div className="container px-4 md:px-6">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.schedule.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
+                {tt.schedule.heading}
+              </h2>
+            </motion.div>
+
+            <div className="relative max-w-2xl">
+              <div className="absolute left-[4.5rem] top-2 bottom-2 w-px bg-border" aria-hidden="true" />
+              <div className="space-y-6">
+                {tt.schedule.items.map((item, i) => (
                   <motion.div
-                    key={item.step}
+                    key={item.time + item.title}
                     variants={fadeUp}
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="flex gap-5 rounded-2xl border border-border bg-card p-6"
+                    transition={{ duration: 0.4, delay: i * 0.05 }}
+                    className="relative flex items-center gap-6"
                   >
-                    <div className="shrink-0">
-                      <span className="inline-flex size-12 items-center justify-center rounded-xl border border-border text-primary">
-                        <Icon className="size-6" />
-                      </span>
-                    </div>
-                    <div>
-                      <p className="text-xs font-medium tracking-widest text-muted-foreground mb-2">{item.step}</p>
-                      <h3 className="font-display text-lg font-semibold mb-2">{item.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                    </div>
+                    <span className="w-16 shrink-0 text-right text-sm font-medium text-muted-foreground">{item.time}</span>
+                    <span className="relative z-10 size-3 shrink-0 rounded-full border-2 border-primary bg-background" />
+                    <span className="font-display text-base font-semibold">{item.title}</span>
                   </motion.div>
-                )
-              })}
+                ))}
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* Audience */}
+        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="Who this is for">
+          <div className="container px-4 md:px-6">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.audience.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
+                {tt.audience.heading}
+              </h2>
+            </motion.div>
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {tt.audience.people.map((person) => (
+                <motion.div key={person.role} variants={fadeUp} className="rounded-2xl border border-border bg-card p-5">
+                  <h3 className="font-display text-base font-semibold mb-1.5">{person.role}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{person.desc}</p>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </section>
 
@@ -217,6 +310,8 @@ export default function AiAutomationsAeoSeoPage() {
                 </motion.div>
               ))}
             </motion.div>
+
+            <p className="mt-8 max-w-3xl text-xs text-muted-foreground leading-relaxed">{tt.tickets.disclaimer}</p>
           </div>
         </section>
 

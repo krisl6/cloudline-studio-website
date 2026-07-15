@@ -13,30 +13,52 @@ export const translations = {
     },
     agenda: {
       eyebrow: "What you'll learn",
-      heading: "Four sessions, one connected system",
-      subcopy:
-        "From answer-engine visibility to automated content and marketing ops, each session builds toward a system you can run yourself.",
+      heading: "Two tracks, one connected system",
+      subcopy: "Limited seats available so everyone gets hands-on time.",
+      automation: {
+        heading: "AI Automation with Ken Ooi",
+        items: [
+          "How to structure a news-to-video AI automation, from source URL to editable output",
+          "Scripting logic for repetitive content workflows: where to automate vs. where a human editor should stay in the loop",
+          "Building a system that multiplies one editor's output without sacrificing quality",
+          "Turning a working pipeline into a repeatable process a team can run independently",
+        ],
+      },
+      aeo: {
+        heading: "AEO with Kenny Lee",
+        intro: "The AEO Masterclass provides clarity on how AEO works.",
+        items: [
+          "The underlying principles that support AI inclusions, so you can strategize more confidently",
+          "The business-outcome implications of AI search disruption, and how to mitigate them",
+          "How AI correlates entities, through hands-on activities",
+        ],
+      },
+      pitch:
+        "You'll learn how to structure your technical and on-page SEO so AI search engines recommend your business, how to build brand visibility that compounds, and how to set up organic as your long-term growth engine. Paid gets you customers this month. AEO and SEO get you customers for years.",
+      bonus: "BONUS: Speakers will demonstrate projects on the spot. Refreshments and coffee/tea provided.",
+    },
+    schedule: {
+      eyebrow: "Schedule",
+      heading: "How the afternoon runs",
       items: [
-        {
-          step: "01",
-          title: "SEO/AEO architecture",
-          desc: "How to structure content so it ranks on Google and gets cited by ChatGPT, Gemini, and Perplexity.",
-        },
-        {
-          step: "02",
-          title: "EEAT & content authority",
-          desc: "Building Experience, Expertise, Authoritativeness, and Trustworthiness signals that search engines and AI models both reward.",
-        },
-        {
-          step: "03",
-          title: "AI-assisted content creation",
-          desc: "Practical workflows for producing high-performing content faster, without losing quality or your brand voice.",
-        },
-        {
-          step: "04",
-          title: "AI automation for marketing ops",
-          desc: "Vibe-coding and automation techniques that take repetitive marketing work off your plate for good.",
-        },
+        { time: "1:00 PM", title: "Registration & Welcome" },
+        { time: "1:15 PM", title: "AI Automation with Ken Ooi" },
+        { time: "2:30 PM", title: "Break" },
+        { time: "2:45 PM", title: "AEO with Kenny Lee" },
+        { time: "4:00 PM", title: "Live Project Demos (Bonus)" },
+        { time: "4:45 PM", title: "Wrap-up & Networking" },
+      ],
+    },
+    audience: {
+      eyebrow: "Who this is for",
+      heading: "Built for anyone who needs AI to find, and recommend, their brand",
+      people: [
+        { role: "Marketers", desc: "From using SEO as a performance channel to optimizing for influence." },
+        { role: "PR Professionals", desc: "Moving from placements to entity authority." },
+        { role: "Brand Consultants", desc: "Ensuring brand identity is legible to generative AI / LLMs." },
+        { role: "Content Writers", desc: "Transitioning from SEO-copy to AI-retrievable data." },
+        { role: "Social Media Creators", desc: "Building on platforms that feed the AI signals." },
+        { role: "SEO Specialists", desc: "Learning why ranking doesn't necessarily result in AI inclusion." },
       ],
     },
     tickets: {
@@ -44,6 +66,8 @@ export const translations = {
       heading: "Reserve your seat",
       subcopy:
         "Seats are limited. Choose the tier that fits you, or RSVP below first if you'd like more details before committing.",
+      disclaimer:
+        "This event will be photographed and video recorded. Clips and photos may be used publicly on social media and in marketing material. By registering and attending, you consent to appearing in that footage.",
     },
     speakers: {
       eyebrow: "Speakers",
@@ -108,30 +132,52 @@ export const translations = {
     },
     agenda: {
       eyebrow: "Apa yang anda akan pelajari",
-      heading: "Empat sesi, satu sistem yang bersepadu",
-      subcopy:
-        "Daripada keterlihatan enjin jawapan kepada kandungan automatik dan operasi pemasaran, setiap sesi membina ke arah sistem yang boleh anda jalankan sendiri.",
+      heading: "Dua trek, satu sistem yang bersepadu",
+      subcopy: "Tempat adalah terhad supaya semua orang mendapat masa praktikal.",
+      automation: {
+        heading: "Automasi AI bersama Ken Ooi",
+        items: [
+          "Cara menyusun automasi berita-kepada-video AI, dari URL sumber ke output yang boleh disunting",
+          "Logik skrip untuk aliran kerja kandungan berulang: di mana untuk automasikan berbanding di mana editor manusia perlu kekal terlibat",
+          "Membina sistem yang menggandakan output seorang editor tanpa menjejaskan kualiti",
+          "Menukar saluran paip yang berfungsi kepada proses berulang yang pasukan boleh jalankan secara bebas",
+        ],
+      },
+      aeo: {
+        heading: "AEO bersama Kenny Lee",
+        intro: "Masterclass AEO memberi kejelasan tentang cara AEO berfungsi.",
+        items: [
+          "Prinsip asas yang menyokong kemasukan AI, supaya anda boleh merancang strategi dengan lebih yakin",
+          "Implikasi hasil perniagaan yang dibawa oleh gangguan carian AI, dan cara menanganinya",
+          "Cara AI mengaitkan entiti, melalui aktiviti praktikal",
+        ],
+      },
+      pitch:
+        "Anda akan belajar cara menyusun SEO teknikal dan on-page anda supaya enjin carian AI mengesyorkan perniagaan anda, cara membina keterlihatan jenama yang berganda, dan cara menjadikan organik sebagai enjin pertumbuhan jangka panjang anda. Iklan berbayar memberi anda pelanggan bulan ini. AEO dan SEO memberi anda pelanggan selama bertahun-tahun.",
+      bonus: "BONUS: Penceramah akan mendemonstrasikan projek secara langsung. Minuman ringan serta kopi/teh disediakan.",
+    },
+    schedule: {
+      eyebrow: "Jadual",
+      heading: "Bagaimana sesi petang berjalan",
       items: [
-        {
-          step: "01",
-          title: "Seni bina SEO/AEO",
-          desc: "Cara menyusun kandungan supaya ia mendapat kedudukan di Google dan disebut oleh ChatGPT, Gemini, dan Perplexity.",
-        },
-        {
-          step: "02",
-          title: "EEAT & kewibawaan kandungan",
-          desc: "Membina isyarat Pengalaman, Kepakaran, Kewibawaan, dan Kebolehpercayaan yang dihargai oleh enjin carian dan model AI.",
-        },
-        {
-          step: "03",
-          title: "Penciptaan kandungan berbantukan AI",
-          desc: "Aliran kerja praktikal untuk menghasilkan kandungan berprestasi tinggi dengan lebih pantas, tanpa menjejaskan kualiti atau suara jenama anda.",
-        },
-        {
-          step: "04",
-          title: "Automasi AI untuk operasi pemasaran",
-          desc: "Teknik vibe-coding dan automasi yang mengambil alih kerja pemasaran berulang daripada anda selama-lamanya.",
-        },
+        { time: "1:00 PM", title: "Pendaftaran & Alu-aluan" },
+        { time: "1:15 PM", title: "Automasi AI bersama Ken Ooi" },
+        { time: "2:30 PM", title: "Rehat" },
+        { time: "2:45 PM", title: "AEO bersama Kenny Lee" },
+        { time: "4:00 PM", title: "Demonstrasi Projek Langsung (Bonus)" },
+        { time: "4:45 PM", title: "Penutup & Rangkaian" },
+      ],
+    },
+    audience: {
+      eyebrow: "Untuk siapa acara ini",
+      heading: "Direka untuk sesiapa yang perlukan AI untuk menemui, dan mengesyorkan, jenama mereka",
+      people: [
+        { role: "Pemasar", desc: "Daripada menggunakan SEO sebagai saluran prestasi kepada mengoptimumkan untuk pengaruh." },
+        { role: "Profesional PR", desc: "Beralih daripada penempatan kepada kewibawaan entiti." },
+        { role: "Perunding Jenama", desc: "Memastikan identiti jenama boleh dibaca oleh AI generatif / LLM." },
+        { role: "Penulis Kandungan", desc: "Beralih daripada salinan SEO kepada data yang boleh diambil AI." },
+        { role: "Pencipta Media Sosial", desc: "Membina di platform yang menyalurkan isyarat kepada AI." },
+        { role: "Pakar SEO", desc: "Mempelajari sebab kedudukan tidak semestinya membawa kepada kemasukan AI." },
       ],
     },
     tickets: {
@@ -139,6 +185,8 @@ export const translations = {
       heading: "Tempah tempat anda",
       subcopy:
         "Tempat adalah terhad. Pilih peringkat yang sesuai dengan anda, atau RSVP di bawah dahulu jika anda mahukan maklumat lanjut sebelum komited.",
+      disclaimer:
+        "Acara ini akan dirakam foto dan video. Klip dan foto mungkin digunakan secara terbuka di media sosial dan bahan pemasaran. Dengan mendaftar dan menghadiri, anda bersetuju untuk muncul dalam rakaman tersebut.",
     },
     speakers: {
       eyebrow: "Penceramah",
@@ -203,19 +251,59 @@ export const translations = {
     },
     agenda: {
       eyebrow: "您将学到什么",
-      heading: "四场课程，一个互联系统",
-      subcopy: "从答案引擎可见性到自动化内容与营销运营，每场课程都将帮助您搭建可自行运行的系统。",
+      heading: "两大主线，一个互联系统",
+      subcopy: "座位有限，确保每位参与者都能获得实操时间。",
+      automation: {
+        heading: "与 Ken Ooi 学习 AI 自动化",
+        items: [
+          "如何构建「新闻链接到成品视频」的 AI 自动化流程，从源链接到可编辑成品",
+          "重复性内容工作流的脚本逻辑：哪些该自动化，哪些仍需人工剪辑把关",
+          "构建能让一位编辑产出倍增而不牺牲质量的系统",
+          "把可运行的流程转化为团队可独立执行的可重复流程",
+        ],
+      },
+      aeo: {
+        heading: "与 Kenny Lee 学习 AEO",
+        intro: "AEO 大师课将为您清晰讲解 AEO 的运作原理。",
+        items: [
+          "支撑 AI 收录的底层原则，让您更有把握地制定策略",
+          "AI 搜索变革带来的业务影响，以及应对方法",
+          "通过实操活动了解 AI 如何进行实体关联",
+        ],
+      },
+      pitch:
+        "您将学习如何构建技术性与页面级 SEO，让 AI 搜索引擎推荐您的业务；如何构建可持续累积的品牌可见度；以及如何将自然流量打造为您长期的增长引擎。付费广告只能带来这个月的客户，而 AEO 与 SEO 能为您带来长年累月的客户。",
+      bonus: "福利：讲者将现场演示实际项目。现场提供茶点及咖啡/茶。",
+    },
+    schedule: {
+      eyebrow: "议程",
+      heading: "下午流程安排",
       items: [
-        { step: "01", title: "SEO/AEO 架构", desc: "如何构建内容结构，使其在 Google 上排名并被 ChatGPT、Gemini 和 Perplexity 引用。" },
-        { step: "02", title: "EEAT 与内容权威性", desc: "建立经验、专业知识、权威性与可信度信号，让搜索引擎和 AI 模型都给予认可。" },
-        { step: "03", title: "AI 辅助内容创作", desc: "更快产出高效内容的实用工作流程，同时不牺牲质量或品牌调性。" },
-        { step: "04", title: "营销运营的 AI 自动化", desc: "Vibe-coding 与自动化技巧，从此让重复性营销工作不再占用您的时间。" },
+        { time: "1:00 PM", title: "签到与欢迎" },
+        { time: "1:15 PM", title: "与 Ken Ooi 学习 AI 自动化" },
+        { time: "2:30 PM", title: "休息时间" },
+        { time: "2:45 PM", title: "与 Kenny Lee 学习 AEO" },
+        { time: "4:00 PM", title: "现场项目演示（福利环节）" },
+        { time: "4:45 PM", title: "总结与交流" },
+      ],
+    },
+    audience: {
+      eyebrow: "适合谁参加",
+      heading: "为需要让 AI 发现并推荐其品牌的所有人打造",
+      people: [
+        { role: "营销人员", desc: "从把 SEO 当作效果渠道，转向为影响力进行优化。" },
+        { role: "公关专业人士", desc: "从争取曝光转向建立实体权威性。" },
+        { role: "品牌顾问", desc: "确保品牌形象能被生成式 AI / 大语言模型理解。" },
+        { role: "内容撰稿人", desc: "从 SEO 文案转向 AI 可检索的数据结构。" },
+        { role: "社交媒体创作者", desc: "在能够向 AI 传递信号的平台上持续经营。" },
+        { role: "SEO 专家", desc: "了解为何排名靠前不一定等于被 AI 收录。" },
       ],
     },
     tickets: {
       eyebrow: "门票",
       heading: "预留您的座位",
       subcopy: "座位有限。选择适合您的档位，或先在下方提交 RSVP 以获取更多详情。",
+      disclaimer: "本活动将进行拍照与录像。相关照片与视频片段可能用于社交媒体公开发布及营销素材。报名并出席即表示您同意可能出现在相关影像中。",
     },
     speakers: {
       eyebrow: "讲者",
