@@ -257,7 +257,7 @@ export default function ServicesPage() {
                       <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-2">
                         Coming soon
                       </p>
-                      <Link href="/cloudline-aeo-ai" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline mb-4">
+                      <Link href="/ai-aeo" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline mb-4">
                         Learn more about AEO/SEO Automation
                         <ArrowRight className="size-4" />
                       </Link>

@@ -32,7 +32,7 @@ export function Header() {
       href: "/services",
       dropdown: [
         { name: "All Services", href: "/services" },
-        { name: "AEO/SEO Automation (Waitlist)", href: "/cloudline-aeo-ai" },
+        { name: "AEO/SEO Automation (Waitlist)", href: "/ai-aeo" },
       ],
     },
     { name: t.nav.pricing, href: "/pricing" },
