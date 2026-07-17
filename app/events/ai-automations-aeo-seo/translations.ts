@@ -76,8 +76,8 @@ export const translations = {
         },
         {
           name: "Ken Ooi",
-          role: "AI Trainer & Builder · Product Manager at A47",
-          bio: "Ken is a Product Manager at AI startup A47, where he builds automation that turns a single news URL into a finished, editable video — a pipeline that lets one editor ship 10x the output of manual work. A 500 Global AI Residency alum, TEDx speaker, and ex-Shell engineer, he judged the National AI Competition 2026 and led his team to 2nd place at BEYOND Hack Day 2026 in Macau, featured by Cradle.",
+          role: "AI Trainer & Builder · Product Manager",
+          bio: "Ken is a Product Manager at an AI startup, where he builds automation that turns a single news URL into a finished, editable video — a pipeline that lets one editor ship 10x the output of manual work. A 500 Global AI Residency alum, TEDx speaker, and ex-Shell engineer, he judged the National AI Competition 2026 and led his team to 2nd place at BEYOND Hack Day 2026 in Macau, featured by Cradle.",
           topics: ["500 Global AI Residency", "TEDx Speaker", "Ex-Shell", "MEng, Southampton"],
           photo: "/speaker-ken-ooi.jpg",
         },
@@ -191,8 +191,8 @@ export const translations = {
         },
         {
           name: "Ken Ooi",
-          role: "Jurulatih AI & Pembina · Product Manager di A47",
-          bio: "Ken ialah Product Manager di syarikat permulaan AI, A47, tempat beliau membina automasi yang menukar satu URL berita kepada video siap disunting — satu saluran paip yang membolehkan seorang editor menghasilkan 10x lebih banyak output berbanding kerja manual. Alumni 500 Global AI Residency, penceramah TEDx, dan bekas jurutera Shell, beliau menjadi hakim di National AI Competition 2026 dan mengetuai pasukannya ke tempat ke-2 di BEYOND Hack Day 2026 di Macau, yang diketengahkan oleh Cradle.",
+          role: "Jurulatih AI & Pembina · Product Manager",
+          bio: "Ken ialah Product Manager di sebuah syarikat permulaan AI, tempat beliau membina automasi yang menukar satu URL berita kepada video siap disunting — satu saluran paip yang membolehkan seorang editor menghasilkan 10x lebih banyak output berbanding kerja manual. Alumni 500 Global AI Residency, penceramah TEDx, dan bekas jurutera Shell, beliau menjadi hakim di National AI Competition 2026 dan mengetuai pasukannya ke tempat ke-2 di BEYOND Hack Day 2026 di Macau, yang diketengahkan oleh Cradle.",
           topics: ["500 Global AI Residency", "Penceramah TEDx", "Bekas Shell", "MEng, Southampton"],
           photo: "/speaker-ken-ooi.jpg",
         },
@@ -305,8 +305,8 @@ export const translations = {
         },
         {
           name: "Ken Ooi",
-          role: "AI 培训师与建造者 · A47 产品经理",
-          bio: "Ken 是 AI 初创公司 A47 的产品经理，负责构建能将一条新闻链接转化为成品视频的自动化系统——这套流程让一位剪辑师的产出量提升至人工制作的 10 倍。他是 500 Global AI Residency 校友、TEDx 演讲者，也曾任职于壳牌（Shell），并担任 2026 年全国 AI 竞赛评委，带领团队在 2026 年澳门 BEYOND Hack Day 中获得第二名，获 Cradle 报道。",
+          role: "AI 培训师与建造者 · 产品经理",
+          bio: "Ken 是一家 AI 初创公司的产品经理，负责构建能将一条新闻链接转化为成品视频的自动化系统——这套流程让一位剪辑师的产出量提升至人工制作的 10 倍。他是 500 Global AI Residency 校友、TEDx 演讲者，也曾任职于壳牌（Shell），并担任 2026 年全国 AI 竞赛评委，带领团队在 2026 年澳门 BEYOND Hack Day 中获得第二名，获 Cradle 报道。",
           topics: ["500 Global AI Residency", "TEDx 演讲者", "前壳牌员工", "南安普顿大学工程硕士"],
           photo: "/speaker-ken-ooi.jpg",
         },

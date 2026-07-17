@@ -14,6 +14,7 @@ import { QUOTE_FORM_URL } from "@/lib/site"
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileExpandedHref, setMobileExpandedHref] = useState<string | null>(null)
   const { t } = useLanguage()
 
   useEffect(() => {
@@ -159,13 +160,55 @@ export function Header() {
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1, duration: 0.3 }}
                     >
-                      <Link
-                        href={item.href}
-                        className="block py-3 px-4 text-base font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-muted/50 rounded-lg border border-transparent hover:border-border"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
+                      {item.dropdown ? (
+                        <>
+                          <button
+                            type="button"
+                            className="flex w-full items-center justify-between py-3 px-4 text-base font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-muted/50 rounded-lg border border-transparent hover:border-border"
+                            onClick={() =>
+                              setMobileExpandedHref((prev) => (prev === item.href ? null : item.href))
+                            }
+                            aria-expanded={mobileExpandedHref === item.href}
+                          >
+                            {item.name}
+                            <ChevronDown
+                              className={`size-4 transition-transform ${mobileExpandedHref === item.href ? "rotate-180" : ""}`}
+                            />
+                          </button>
+                          <AnimatePresence>
+                            {mobileExpandedHref === item.href && (
+                              <motion.div
+                                initial={{ opacity: 0, height: 0 }}
+                                animate={{ opacity: 1, height: "auto" }}
+                                exit={{ opacity: 0, height: 0 }}
+                                transition={{ duration: 0.2 }}
+                                className="overflow-hidden"
+                              >
+                                <div className="flex flex-col space-y-1 py-1 pl-8 pr-4">
+                                  {item.dropdown.map((sub) => (
+                                    <Link
+                                      key={sub.href}
+                                      href={sub.href}
+                                      className="block py-2 px-4 text-sm font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-muted/50 rounded-lg"
+                                      onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                      {sub.name}
+                                    </Link>
+                                  ))}
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
+                        </>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className="block py-3 px-4 text-base font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-muted/50 rounded-lg border border-transparent hover:border-border"
+                          onClick={() => setMobileMenuOpen(false)}
+                        >
+                          {item.name}
+                        </Link>
+                      )}
                     </motion.div>
                   ))}
                   <div className="pt-4 border-t border-border mt-4 space-y-4">
