@@ -7,10 +7,11 @@ import { Button } from "@/components/ui/button"
 type Status = "idle" | "submitting" | "success" | "error"
 
 const WAITLIST_INTERESTS = [
-  "SEO Blog Automation",
+  "Blog Automation",
   "Content Refresher",
-  "User Feedback",
-  "Overall SEO Analysis (video, social & more)",
+  "Social Listening Tool",
+  "Website Improvement",
+  "UI/UX Feedback Report",
 ] as const
 
 export function SeoWaitlistForm() {

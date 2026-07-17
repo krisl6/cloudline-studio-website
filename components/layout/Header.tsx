@@ -27,7 +27,14 @@ export function Header() {
 
   const navItems = [
     { name: t.nav.about, href: "/about" },
-    { name: t.nav.services, href: "/services" },
+    {
+      name: t.nav.services,
+      href: "/services",
+      dropdown: [
+        { name: "All Services", href: "/services" },
+        { name: "AEO/SEO Automation (Waitlist)", href: "/cloudline-aeo-ai" },
+      ],
+    },
     { name: t.nav.pricing, href: "/pricing" },
     { name: t.nav.caseStudies, href: "/case-studies" },
     {

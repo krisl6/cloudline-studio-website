@@ -15,6 +15,7 @@ export const SITE_ROUTES = [
   "",
   "about",
   "services",
+  "cloudline-aeo-ai",
   "events",
   "pricing",
   "contact",
