@@ -3,8 +3,14 @@ export const translations = {
     hero: {
       eyebrow: "AEO/SEO Automation",
       headline: "AI automation for AI search visibility",
-      tagline:
-        "Blog posts written and published by CloudLine AI. Ageing content refreshed automatically. Every mention and citation tracked across the web and AI engines. Built to keep your SEO and AEO working between engagements.",
+      tagline: "CloudLine AI keeps your SEO and AEO working between engagements — automatically.",
+      whatIsHeading: "What is CloudLine AI Automation?",
+      listItems: [
+        "Blog posts written & published by AI",
+        "Ageing content refreshed automatically",
+        "Every mention & citation tracked",
+        "Redesign recommendations from real visitor data",
+      ],
       launchNote:
         "Rolling out to every CloudLine plan at no extra cost. Targeted for 31 August 2026 — join the waitlist for early access.",
       ctaWaitlist: "Join the Waitlist",
@@ -79,8 +85,14 @@ export const translations = {
     hero: {
       eyebrow: "Automasi AEO/SEO",
       headline: "Automasi AI untuk keterlihatan carian AI",
-      tagline:
-        "Catatan blog ditulis dan diterbitkan oleh CloudLine AI. Kandungan lama disegarkan secara automatik. Setiap sebutan dan petikan dijejaki merentas web dan enjin AI. Dibina untuk memastikan SEO dan AEO anda terus berfungsi di antara penglibatan.",
+      tagline: "CloudLine AI memastikan SEO dan AEO anda terus berfungsi di antara penglibatan — secara automatik.",
+      whatIsHeading: "Apakah CloudLine AI Automation?",
+      listItems: [
+        "Catatan blog ditulis & diterbitkan oleh AI",
+        "Kandungan lama disegarkan secara automatik",
+        "Setiap sebutan & petikan dijejaki",
+        "Cadangan reka bentuk semula daripada data pelawat sebenar",
+      ],
       launchNote:
         "Akan dilancarkan ke setiap pelan CloudLine tanpa kos tambahan. Disasarkan untuk 31 Ogos 2026 — sertai senarai menunggu untuk akses awal.",
       ctaWaitlist: "Sertai Senarai Menunggu",
@@ -155,7 +167,14 @@ export const translations = {
     hero: {
       eyebrow: "AEO/SEO 自动化",
       headline: "为 AI 搜索可见性打造的 AI 自动化",
-      tagline: "由 CloudLine AI 撰写并发布的博客文章。自动刷新过时内容。在全网与各大 AI 引擎追踪每一次提及与引用。专为让您的 SEO 与 AEO 在服务周期之间持续运作而打造。",
+      tagline: "CloudLine AI 让您的 SEO 与 AEO 在服务周期之间持续自动运作。",
+      whatIsHeading: "什么是 CloudLine AI 自动化？",
+      listItems: [
+        "由 AI 撰写并发布的博客文章",
+        "自动刷新过时内容",
+        "追踪每一次提及与引用",
+        "根据真实访客数据提出改版建议",
+      ],
       launchNote: "即将免费加入每个 CloudLine 套餐。目标上线日期为 2026 年 8 月 31 日——立即加入等候名单，获取优先体验资格。",
       ctaWaitlist: "加入等候名单",
     },

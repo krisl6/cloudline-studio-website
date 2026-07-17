@@ -1,12 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
-import { QUOTE_FORM_URL } from "@/lib/site"
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
   const { t } = useLanguage()
 
   const serviceLinks = [
@@ -20,32 +17,23 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-background/50 backdrop-blur-lg" role="contentinfo">
-      <div className="container px-4 md:px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-4">
+      <div className="container px-4 md:px-6 py-6">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+          <div className="space-y-1.5">
             <Link href="/" className="flex items-center gap-2 font-bold">
-              <span className="font-display text-xl font-semibold tracking-tight text-foreground">
+              <span className="font-display text-base font-semibold tracking-tight text-foreground">
                 CloudLine Studio
               </span>
             </Link>
-            <p className="text-sm text-muted-foreground">{t.footer.tagline}</p>
-            <div className="flex items-center gap-2">
-              <Button variant="outline" size="icon" className="rounded-full" asChild>
-                <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer" aria-label="Get a Quote">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-message-circle">
-                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                  </svg>
-                </Link>
-              </Button>
-            </div>
+            <p className="text-xs text-muted-foreground">{t.footer.tagline}</p>
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold mb-4">{t.footer.servicesTitle}</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xs font-semibold mb-2">{t.footer.servicesTitle}</h3>
+            <ul className="space-y-1">
               {t.footer.services.map((label, i) => (
                 <li key={label}>
-                  <Link href={serviceLinks[i]} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={serviceLinks[i]} className="text-xs text-muted-foreground hover:text-primary transition-colors">
                     {label}
                   </Link>
                 </li>
@@ -54,11 +42,11 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold mb-4">{t.footer.companyTitle}</h3>
-            <ul className="space-y-2">
+            <h3 className="text-xs font-semibold mb-2">{t.footer.companyTitle}</h3>
+            <ul className="space-y-1">
               {t.footer.company.map((label, i) => (
                 <li key={label}>
-                  <Link href={companyLinks[i]} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  <Link href={companyLinks[i]} className="text-xs text-muted-foreground hover:text-primary transition-colors">
                     {label}
                   </Link>
                 </li>
@@ -67,24 +55,13 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="text-sm font-semibold mb-4">{t.footer.contactTitle}</h3>
-            <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground">hello@cloudline-studio.com</li>
-              <li className="text-sm text-muted-foreground">+60 11-2775 5215</li>
-              <li className="text-sm text-muted-foreground">{t.footer.location}</li>
-              <li className="pt-2">
-                <Button size="sm" className="rounded-full" asChild>
-                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">{t.footer.getInTouch}</Link>
-                </Button>
-              </li>
+            <h3 className="text-xs font-semibold mb-2">{t.footer.contactTitle}</h3>
+            <ul className="space-y-1">
+              <li className="text-xs text-muted-foreground">hello@cloudline-studio.com</li>
+              <li className="text-xs text-muted-foreground">+60 11-2775 5215</li>
+              <li className="text-xs text-muted-foreground">{t.footer.location}</li>
             </ul>
           </div>
-        </div>
-
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} CloudLine Studio. {t.footer.rights}
-          </p>
         </div>
       </div>
     </footer>
