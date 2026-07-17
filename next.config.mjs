@@ -20,6 +20,15 @@ const nextConfig = {
     ],
   },
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/cloudline-aeo-ai',
+        destination: '/ai-aeo',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 export default nextConfig
