@@ -2,7 +2,7 @@ export const translations = {
   en: {
     hero: {
       eyebrow: "AEO/SEO Automation",
-      headline: "AI automation for AI search visibility",
+      headline: "Get cited by AI. Automatically.",
       tagline: "CloudLine AI keeps your SEO and AEO working between engagements — automatically.",
       whatIsHeading: "What is CloudLine AI Automation?",
       listItems: [
@@ -84,7 +84,7 @@ export const translations = {
   ms: {
     hero: {
       eyebrow: "Automasi AEO/SEO",
-      headline: "Automasi AI untuk keterlihatan carian AI",
+      headline: "Disebut oleh AI. Secara automatik.",
       tagline: "CloudLine AI memastikan SEO dan AEO anda terus berfungsi di antara penglibatan — secara automatik.",
       whatIsHeading: "Apakah CloudLine AI Automation?",
       listItems: [
@@ -166,7 +166,7 @@ export const translations = {
   zh: {
     hero: {
       eyebrow: "AEO/SEO 自动化",
-      headline: "为 AI 搜索可见性打造的 AI 自动化",
+      headline: "自动获得 AI 引用。",
       tagline: "CloudLine AI 让您的 SEO 与 AEO 在服务周期之间持续自动运作。",
       whatIsHeading: "什么是 CloudLine AI 自动化？",
       listItems: [
