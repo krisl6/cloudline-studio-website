@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
+import Image from "next/image"
+import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -16,7 +18,10 @@ import {
 } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { SeoWaitlistForm } from "@/components/seo-waitlist-form"
+import { caseStudies } from "@/lib/case-studies-data"
 import { translations } from "./translations"
+
+const SEO_CASE_STUDIES = caseStudies.filter((study) => study.platforms.includes("SEO"))
 
 const CAPABILITY_ICONS = [DoodlePen, DoodleSparkle, DoodleSearch, DoodleGear, DoodleTarget]
 const STEP_ICONS = [DoodleSearch, DoodlePen, DoodleCheck, DoodleRocket]
@@ -266,6 +271,88 @@ export default function CloudlineAeoAiPage() {
                 </motion.div>
               ))}
             </motion.div>
+          </div>
+        </section>
+
+        {/* Case Studies */}
+        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="Case studies">
+          <div className="container px-4 md:px-6">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14 mx-auto text-center">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.caseStudies.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
+                {tt.caseStudies.heading}
+              </h2>
+              <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.caseStudies.subcopy}</p>
+            </motion.div>
+
+            <div className="grid gap-8 md:gap-10 max-w-5xl mx-auto">
+              {SEO_CASE_STUDIES.map((study, i) => {
+                const hasRealImage = !study.image.includes("circledna-snapshot")
+                return (
+                  <motion.div
+                    key={study.title}
+                    initial={{ opacity: 0, y: 24 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.05 }}
+                    className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                  >
+                    <div className={hasRealImage ? "grid lg:grid-cols-2 gap-0" : "grid"}>
+                      {hasRealImage && (
+                        <div className="relative h-52 md:h-72 lg:h-auto lg:min-h-full bg-muted">
+                          <Image src={study.image} alt={study.title} fill className="object-cover" />
+                        </div>
+                      )}
+                      <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
+                        <span className="inline-flex items-center self-start rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary mb-5">
+                          {study.industry}
+                        </span>
+                        <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight mb-5">{study.title}</h3>
+
+                        <div className="grid grid-cols-3 gap-3 md:gap-4 mb-6 rounded-2xl border border-border bg-muted/40 p-4">
+                          {study.metrics.map((metric) => (
+                            <div key={metric.label} className="text-center">
+                              <div className="font-display text-lg md:text-2xl font-semibold text-primary">{metric.value}</div>
+                              <div className="text-xs md:text-sm text-muted-foreground">{metric.label}</div>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="space-y-4">
+                          <div>
+                            <h4 className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-2">
+                              {tt.caseStudies.challengeLabel}
+                            </h4>
+                            <p className="text-sm text-foreground/80 leading-relaxed">{study.challenge}</p>
+                          </div>
+                          <div>
+                            <h4 className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-2">
+                              {tt.caseStudies.solutionLabel}
+                            </h4>
+                            <p className="text-sm text-foreground/80 leading-relaxed">{study.solution}</p>
+                          </div>
+                          <div>
+                            <h4 className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-2">
+                              {tt.caseStudies.resultsLabel}
+                            </h4>
+                            <p className="text-sm font-medium text-primary leading-relaxed">{study.results}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>
+                )
+              })}
+            </div>
+
+            <div className="mt-10 text-center">
+              <Button variant="outline" className="rounded-full font-medium border-border bg-transparent hover:bg-muted" asChild>
+                <Link href="/case-studies/seo">
+                  {tt.caseStudies.viewAllCta}
+                  <ArrowRight className="ml-1.5 size-4" />
+                </Link>
+              </Button>
+            </div>
           </div>
         </section>
 

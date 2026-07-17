@@ -66,6 +66,15 @@ export const translations = {
         { value: "9 yrs", label: "CloudLine Studio in digital marketing" },
       ],
     },
+    caseStudies: {
+      eyebrow: "Case Studies",
+      heading: "Real SEO & AEO wins, straight from Search Console",
+      subcopy: "No composites, no invented numbers. Every case study below is a real CloudLine client, with the Search Console data to back it up.",
+      challengeLabel: "Challenge",
+      solutionLabel: "Our Solution",
+      resultsLabel: "Results Achieved",
+      viewAllCta: "View all case studies",
+    },
     waitlist: {
       eyebrow: "Get Early Access",
       heading: "Join the waitlist",
@@ -148,6 +157,15 @@ export const translations = {
         { value: "9 thn", label: "CloudLine Studio dalam pemasaran digital" },
       ],
     },
+    caseStudies: {
+      eyebrow: "Kajian Kes",
+      heading: "Kemenangan SEO & AEO sebenar, terus daripada Search Console",
+      subcopy: "Tiada gabungan rekaan, tiada nombor rekaan. Setiap kajian kes di bawah adalah klien CloudLine sebenar, disokong data Search Console.",
+      challengeLabel: "Cabaran",
+      solutionLabel: "Penyelesaian Kami",
+      resultsLabel: "Hasil Dicapai",
+      viewAllCta: "Lihat semua kajian kes",
+    },
     waitlist: {
       eyebrow: "Dapatkan Akses Awal",
       heading: "Sertai senarai menunggu",
@@ -213,6 +231,15 @@ export const translations = {
         { value: "5", label: "服务市场：马来西亚、新加坡、印尼、澳大利亚、中国" },
         { value: "9 年", label: "CloudLine Studio 数字营销经验" },
       ],
+    },
+    caseStudies: {
+      eyebrow: "案例研究",
+      heading: "真实的 SEO 与 AEO 成果，直接来自 Search Console",
+      subcopy: "没有虚构的综合案例，没有编造的数字。以下每一个案例都是真实的 CloudLine 客户，并附有 Search Console 数据佐证。",
+      challengeLabel: "挑战",
+      solutionLabel: "我们的方案",
+      resultsLabel: "取得的成果",
+      viewAllCta: "查看所有案例研究",
     },
     waitlist: {
       eyebrow: "获取优先体验",
