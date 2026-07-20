@@ -182,7 +182,7 @@ export default function CloudlineAeoAiPage() {
             </motion.div>
           ))}
 
-          <div className="container relative px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+          <div className="container relative px-4 md:px-6 pt-14 pb-10 md:pt-20 md:pb-16 lg:pt-24 lg:pb-20">
             <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-3xl text-center">
               <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6">
                 {tt.hero.eyebrow}
@@ -241,9 +241,9 @@ export default function CloudlineAeoAiPage() {
         </section>
 
         {/* Problem */}
-        <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="Why this matters">
+        <section className="w-full py-14 md:py-20 lg:py-24 bg-muted/50 border-b border-border" aria-label="Why this matters">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="mx-auto max-w-3xl text-center mb-12">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="mx-auto max-w-3xl text-center mb-8">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.problem.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-6">
                 {tt.problem.heading}
@@ -257,7 +257,7 @@ export default function CloudlineAeoAiPage() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="mx-auto max-w-3xl rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 text-center mb-12"
+              className="mx-auto max-w-3xl rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 text-center mb-8"
             >
               <div className="font-display text-4xl md:text-5xl font-semibold text-primary mb-2">
                 <AnimatedStatValue value={tt.problem.stat.value} />
@@ -300,9 +300,9 @@ export default function CloudlineAeoAiPage() {
         </section>
 
         {/* Capabilities */}
-        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="What you'll be able to do">
+        <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="What you'll be able to do">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.capabilities.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.capabilities.heading}
@@ -337,9 +337,9 @@ export default function CloudlineAeoAiPage() {
         </section>
 
         {/* Outcomes */}
-        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="What you gain">
+        <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="What you gain">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14 mx-auto text-center">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10 mx-auto text-center">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.outcomes.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.outcomes.heading}
@@ -364,9 +364,9 @@ export default function CloudlineAeoAiPage() {
         </section>
 
         {/* How it works */}
-        <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="How it works">
+        <section className="w-full py-14 md:py-20 lg:py-24 bg-muted/50 border-b border-border" aria-label="How it works">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.howItWorks.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.howItWorks.heading}
@@ -378,15 +378,20 @@ export default function CloudlineAeoAiPage() {
             </motion.div>
 
             <div className="relative">
+              {/* Line endpoints use calc() to hit each badge's true center: badges sit
+                  flush-left in their grid column (not centered), so the offset is
+                  half a badge width (22px) from the left, and half a badge width plus
+                  three-quarters of the column gap (22px + 24px = 46px) short of the
+                  right edge — not a naive 12.5%/12.5% guess. */}
               <motion.div
-                className="hidden lg:block absolute top-[22px] left-[12.5%] right-[12.5%] h-px bg-border origin-left"
+                className="hidden lg:block absolute top-[22px] left-[22px] right-[calc(25%-46px)] h-px bg-border origin-left"
                 initial={{ scaleX: 0 }}
                 whileInView={{ scaleX: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: "easeInOut" }}
                 aria-hidden="true"
               />
-              <div className="relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
                 {tt.howItWorks.steps.map((step, i) => {
                   const Icon = STEP_ICONS[i]
                   return (
@@ -399,7 +404,7 @@ export default function CloudlineAeoAiPage() {
                       transition={{ duration: 0.5, delay: i * 0.1 }}
                     >
                       <div className="flex items-center gap-4 mb-4">
-                        <span className="relative inline-flex size-11 items-center justify-center rounded-xl border border-border bg-background text-primary font-display text-sm font-semibold">
+                        <span className="relative inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-background text-primary font-display text-sm font-semibold">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <Icon className="size-5 text-primary/60" />
@@ -415,9 +420,9 @@ export default function CloudlineAeoAiPage() {
         </section>
 
         {/* Proof */}
-        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="Backed by real results">
+        <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="Backed by real results">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14 text-center mx-auto">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10 text-center mx-auto">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.proof.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.proof.heading}
@@ -442,9 +447,9 @@ export default function CloudlineAeoAiPage() {
         </section>
 
         {/* Case Studies */}
-        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="Case studies">
+        <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="Case studies">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14 mx-auto text-center">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10 mx-auto text-center">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.caseStudies.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.caseStudies.heading}
@@ -452,7 +457,7 @@ export default function CloudlineAeoAiPage() {
               <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.caseStudies.subcopy}</p>
             </motion.div>
 
-            <div className="grid gap-8 md:gap-10 max-w-5xl mx-auto">
+            <div className="grid gap-6 md:gap-8 max-w-5xl mx-auto">
               {SEO_CASE_STUDIES.map((study, i) => {
                 const hasRealImage = !study.image.includes("circledna-snapshot")
                 return (
@@ -552,7 +557,7 @@ export default function CloudlineAeoAiPage() {
         </section>
 
         {/* Waitlist */}
-        <section id="waitlist" className="relative w-full py-20 md:py-28 bg-muted/50 border-b border-border overflow-hidden" aria-label="Join the waitlist">
+        <section id="waitlist" className="relative w-full py-14 md:py-20 lg:py-24 bg-muted/50 border-b border-border overflow-hidden" aria-label="Join the waitlist">
           <motion.div
             className="pointer-events-none absolute top-10 right-[8%] hidden sm:block size-12 text-primary/10"
             animate={{ y: [0, -12, 0], rotate: [0, 8, 0] }}
@@ -582,7 +587,7 @@ export default function CloudlineAeoAiPage() {
         </section>
 
         {/* FAQ */}
-        <section className="w-full py-20 md:py-28" aria-label="Frequently asked questions">
+        <section className="w-full py-14 md:py-20 lg:py-24" aria-label="Frequently asked questions">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mx-auto">
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-10 text-center">
