@@ -42,7 +42,7 @@ export function Header() {
       href: "/events",
       dropdown: [
         { name: "All Events", href: "/events" },
-        { name: "Marketing MasterClass for Business Visibility with AI", href: "/events/ai-automations-aeo-seo" },
+        { name: "Marketing MasterClass for Business Visibility with AI", href: "/events/marketing-masterclass" },
       ],
     },
     { name: t.nav.clientResults, href: "/client-results" },

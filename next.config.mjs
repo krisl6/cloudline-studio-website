@@ -27,6 +27,11 @@ const nextConfig = {
         destination: '/ai-aeo',
         permanent: true,
       },
+      {
+        source: '/events/ai-automations-aeo-seo',
+        destination: '/events/marketing-masterclass',
+        permanent: true,
+      },
     ]
   },
 }
