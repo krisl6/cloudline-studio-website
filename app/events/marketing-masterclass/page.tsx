@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight, CalendarDays, Clock, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { DoodleCheck } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
@@ -69,26 +70,26 @@ export default function AiAutomationsAeoSeoPage() {
 
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border" aria-label="Event overview">
-          <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-24">
-            <div className="mx-auto max-w-6xl grid items-center gap-10 lg:gap-14 lg:grid-cols-[1fr_minmax(0,440px)]">
+          <div className="container px-4 md:px-6 pt-10 pb-8 md:pt-28 md:pb-24">
+            <div className="mx-auto max-w-6xl grid items-center gap-6 lg:gap-14 lg:grid-cols-[1fr_minmax(0,440px)]">
               <motion.div variants={stagger} initial="hidden" animate="show">
-                <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-5">
+                <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-5">
                   {tt.hero.eyebrow}
                 </motion.p>
-                <motion.h1 variants={fadeUp} className="font-display text-4xl sm:text-5xl lg:text-[3.25rem] font-semibold tracking-tight text-balance leading-[1.05] mb-6">
+                <motion.h1 variants={fadeUp} className="font-display text-3xl sm:text-5xl lg:text-[3.25rem] font-semibold tracking-tight text-balance leading-[1.1] sm:leading-[1.05] mb-3 sm:mb-6">
                   {tt.hero.headline}
                 </motion.h1>
-                <motion.p variants={fadeUp} className="max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
+                <motion.p variants={fadeUp} className="max-w-2xl text-sm sm:text-lg text-muted-foreground leading-relaxed mb-4 sm:mb-6">
                   {tt.hero.tagline}
                 </motion.p>
-                <motion.div variants={fadeUp} className="max-w-2xl space-y-3 mb-9">
+                <motion.div variants={fadeUp} className="hidden sm:block max-w-2xl space-y-3 mb-9">
                   {tt.hero.detailParagraphs.map((paragraph, i) => (
-                    <p key={i} className="text-sm sm:text-base text-muted-foreground leading-relaxed">
+                    <p key={i} className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                       {paragraph}
                     </p>
                   ))}
                 </motion.div>
-                <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-10 text-sm text-muted-foreground">
+                <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-6 sm:mb-10 text-xs sm:text-sm text-muted-foreground">
                   <span className="inline-flex items-center gap-1.5">
                     <CalendarDays className="size-4 text-primary" />
                     {tt.hero.datetime}
@@ -103,10 +104,10 @@ export default function AiAutomationsAeoSeoPage() {
                   </span>
                 </motion.div>
                 <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
-                  <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" onClick={() => scrollTo("tickets")}>
+                  <Button size="lg" className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-medium" onClick={() => scrollTo("tickets")}>
                     {tt.hero.ctaTickets} <ArrowRight className="ml-1.5 size-4" />
                   </Button>
-                  <Button size="lg" variant="outline" className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted" asChild>
+                  <Button size="lg" variant="outline" className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-medium border-border bg-transparent hover:bg-muted" asChild>
                     <Link href={VENUE_MAPS_URL} target="_blank" rel="noopener noreferrer">
                       {tt.hero.ctaDirections}
                     </Link>
@@ -118,7 +119,7 @@ export default function AiAutomationsAeoSeoPage() {
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative w-full max-w-md mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-border shadow-sm"
+                className="relative w-full max-w-[220px] sm:max-w-md mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-border shadow-sm"
               >
                 <Image
                   src="/ai-automations-aeo-seo-poster.png"
@@ -134,16 +135,16 @@ export default function AiAutomationsAeoSeoPage() {
         </section>
 
         {/* Speakers */}
-        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="Speakers">
+        <section className="w-full py-12 md:py-20 lg:py-28 border-b border-border" aria-label="Speakers">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.speakers.eyebrow}</p>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-8 sm:mb-14">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.speakers.eyebrow}</p>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.speakers.heading}
               </h2>
             </motion.div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {tt.speakers.people.map((person) => {
                 const photo: string | null = person.photo
                 return (
@@ -156,32 +157,32 @@ export default function AiAutomationsAeoSeoPage() {
                   transition={{ duration: 0.5 }}
                   className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card"
                 >
-                  <div className="flex justify-center pt-8">
+                  <div className="flex justify-center pt-6 sm:pt-8">
                     {photo ? (
-                      <div className="relative size-24 overflow-hidden rounded-full">
+                      <div className="relative size-20 sm:size-24 overflow-hidden rounded-full">
                         <Image src={photo} alt={person.name} fill sizes="96px" className="object-cover" />
                       </div>
                     ) : (
-                      <span className="flex size-24 items-center justify-center rounded-full bg-primary/10 text-primary font-display font-semibold text-2xl">
+                      <span className="flex size-20 sm:size-24 items-center justify-center rounded-full bg-primary/10 text-primary font-display font-semibold text-2xl">
                         {initials(person.name)}
                       </span>
                     )}
                   </div>
-                  <div className="p-5">
+                  <div className="p-4 sm:p-5">
                     <h3 className="font-display text-lg font-semibold text-center">{person.name}</h3>
-                    <p className="text-xs font-medium text-primary mb-3 text-center">{person.role}</p>
+                    <p className="text-xs font-medium text-primary mb-2 sm:mb-3 text-center">{person.role}</p>
                     {"tagline" in person && person.tagline && (
-                      <p className="text-sm font-medium text-foreground/85 leading-relaxed mb-3">&ldquo;{person.tagline}&rdquo;</p>
+                      <p className="text-sm font-medium text-foreground/85 leading-relaxed mb-2 sm:mb-3">&ldquo;{person.tagline}&rdquo;</p>
                     )}
-                    <p className="text-sm text-muted-foreground leading-relaxed">{person.bio}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed line-clamp-3 sm:line-clamp-none">{person.bio}</p>
                     {"bioExtra" in person && person.bioExtra && (
-                      <p className="text-sm text-muted-foreground leading-relaxed mt-3">{person.bioExtra}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-2 sm:mt-3 line-clamp-3 sm:line-clamp-none">{person.bioExtra}</p>
                     )}
                     {"speakingStyle" in person && person.speakingStyle && (
-                      <p className="text-sm text-muted-foreground leading-relaxed mt-3">{person.speakingStyle}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mt-2 sm:mt-3 line-clamp-3 sm:line-clamp-none">{person.speakingStyle}</p>
                     )}
                     {"topics" in person && person.topics && (
-                      <div className="mt-4 flex flex-wrap gap-1.5">
+                      <div className="mt-3 sm:mt-4 flex flex-wrap gap-1.5">
                         {person.topics.map((topic) => (
                           <span key={topic} className="inline-flex items-center rounded-full border border-border bg-muted px-2.5 py-1 text-xs text-muted-foreground">
                             {topic}
@@ -197,33 +198,33 @@ export default function AiAutomationsAeoSeoPage() {
         </section>
 
         {/* Agenda */}
-        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="What will I learn">
+        <section className="w-full py-12 md:py-20 lg:py-28 border-b border-border" aria-label="What will I learn">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-3">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-2 sm:mb-3">
                 {tt.agenda.heading}
               </h2>
-              <p className="text-sm font-medium text-primary mb-6">{tt.agenda.subcopy}</p>
-              <div className="space-y-4">
+              <p className="text-sm font-medium text-primary mb-4 sm:mb-6">{tt.agenda.subcopy}</p>
+              <div className="space-y-3 sm:space-y-4">
                 {tt.agenda.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className="text-muted-foreground md:text-lg leading-relaxed">
+                  <p key={paragraph} className="text-sm md:text-lg text-muted-foreground leading-relaxed">
                     {paragraph}
                   </p>
                 ))}
               </div>
             </motion.div>
 
-            <div className="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl">
+            <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl">
               <motion.div
                 variants={fadeUp}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
-                className="rounded-2xl border border-border bg-card p-6 md:p-8"
+                className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8"
               >
-                <h3 className="font-display text-xl font-semibold mb-4">{tt.agenda.automation.heading}</h3>
-                <ul className="space-y-3">
+                <h3 className="font-display text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{tt.agenda.automation.heading}</h3>
+                <ul className="space-y-2 sm:space-y-3">
                   {tt.agenda.automation.items.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
                       <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
@@ -239,11 +240,11 @@ export default function AiAutomationsAeoSeoPage() {
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.05 }}
-                className="rounded-2xl border border-border bg-card p-6 md:p-8"
+                className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8"
               >
-                <h3 className="font-display text-xl font-semibold mb-2">{tt.agenda.claude.heading}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{tt.agenda.claude.intro}</p>
-                <ul className="space-y-3">
+                <h3 className="font-display text-lg sm:text-xl font-semibold mb-2">{tt.agenda.claude.heading}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-4">{tt.agenda.claude.intro}</p>
+                <ul className="space-y-2 sm:space-y-3">
                   {tt.agenda.claude.items.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
                       <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
@@ -259,11 +260,10 @@ export default function AiAutomationsAeoSeoPage() {
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="rounded-2xl border border-border bg-card p-6 md:p-8"
+                className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8"
               >
-                <h3 className="font-display text-xl font-semibold mb-2">{tt.agenda.aeo.heading}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-4">{tt.agenda.aeo.intro}</p>
-                <ul className="space-y-3">
+                <h3 className="font-display text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{tt.agenda.aeo.heading}</h3>
+                <ul className="space-y-2 sm:space-y-3">
                   {tt.agenda.aeo.items.map((item) => (
                     <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
                       <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
@@ -280,7 +280,7 @@ export default function AiAutomationsAeoSeoPage() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.15 }}
-              className="mt-8 text-sm font-medium text-primary max-w-3xl"
+              className="mt-6 sm:mt-8 text-sm font-medium text-primary max-w-3xl"
             >
               {tt.agenda.bonus}
             </motion.p>
@@ -290,59 +290,55 @@ export default function AiAutomationsAeoSeoPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="mt-14 max-w-3xl rounded-2xl border border-border bg-muted/30 p-6 md:p-8"
+              className="mt-8 sm:mt-14 max-w-3xl rounded-2xl border border-border bg-muted/30 p-5 sm:p-6 md:p-8"
             >
               <h3 className="font-display text-lg md:text-xl font-semibold tracking-tight mb-2">
                 {tt.aeoExpress.heading}
               </h3>
-              <p className="text-sm font-medium text-muted-foreground mb-4">{tt.aeoExpress.subheading}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed mb-8">{tt.aeoExpress.intro}</p>
+              <p className="text-sm font-medium text-muted-foreground mb-3 sm:mb-4">{tt.aeoExpress.subheading}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-5">{tt.aeoExpress.intro}</p>
 
-              <div className="grid gap-8 sm:grid-cols-2 mb-8">
-                {tt.aeoExpress.chapters.map((chapter) => (
-                  <div key={chapter.title}>
-                    <h4 className="font-display text-sm font-semibold mb-3">{chapter.title}</h4>
-                    <ul className="space-y-2">
-                      {chapter.items.map((item) => (
-                        <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                          <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
-                          <span>{item}</span>
-                        </li>
+              <Accordion type="single" collapsible>
+                <AccordionItem value="syllabus" className="border-none">
+                  <AccordionTrigger className="text-sm font-medium text-primary hover:no-underline py-0 justify-start gap-1.5 [&>svg]:ml-1.5">
+                    {tt.aeoExpress.toggleLabel}
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="grid gap-5 sm:gap-8 sm:grid-cols-2 mt-5 sm:mt-6">
+                      {tt.aeoExpress.chapters.map((chapter) => (
+                        <div key={chapter.title}>
+                          <h4 className="font-display text-sm font-semibold mb-2 sm:mb-3">{chapter.title}</h4>
+                          <ul className="space-y-2">
+                            {chapter.items.map((item) => (
+                              <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                                <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-
-              <div className="rounded-xl border border-border bg-card p-5 md:p-6">
-                <h4 className="font-display text-base font-semibold mb-2">{tt.aeoExpress.outcomesHeading}</h4>
-                <p className="text-sm text-muted-foreground mb-4">{tt.aeoExpress.outcomesIntro}</p>
-                <div className="grid gap-5 sm:grid-cols-3">
-                  {tt.aeoExpress.outcomes.map((outcome) => (
-                    <div key={outcome.title}>
-                      <h5 className="text-sm font-semibold mb-1.5">{outcome.title}</h5>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{outcome.desc}</p>
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </motion.div>
           </div>
         </section>
 
         {/* Schedule */}
-        <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="Schedule">
+        <section className="w-full py-12 md:py-20 lg:py-28 bg-muted/50 border-b border-border" aria-label="Schedule">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.schedule.eyebrow}</p>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-8 sm:mb-14">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.schedule.eyebrow}</p>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.schedule.heading}
               </h2>
             </motion.div>
 
             <div className="relative max-w-2xl">
-              <div className="absolute left-[4.5rem] top-2 bottom-2 w-px bg-border" aria-hidden="true" />
-              <div className="space-y-6">
+              <div className="absolute left-[3.75rem] sm:left-[4.5rem] top-2 bottom-2 w-px bg-border" aria-hidden="true" />
+              <div className="space-y-4 sm:space-y-6">
                 {tt.schedule.items.map((item, i) => (
                   <motion.div
                     key={item.time + item.title}
@@ -351,11 +347,11 @@ export default function AiAutomationsAeoSeoPage() {
                     whileInView="show"
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: i * 0.05 }}
-                    className="relative flex items-center gap-6"
+                    className="relative flex items-center gap-4 sm:gap-6"
                   >
-                    <span className="w-16 shrink-0 text-right text-sm font-medium text-muted-foreground">{item.time}</span>
+                    <span className="w-14 sm:w-16 shrink-0 text-right text-xs sm:text-sm font-medium text-muted-foreground">{item.time}</span>
                     <span className="relative z-10 size-3 shrink-0 rounded-full border-2 border-primary bg-background" />
-                    <span className="font-display text-base font-semibold">{item.title}</span>
+                    <span className="font-display text-sm sm:text-base font-semibold">{item.title}</span>
                   </motion.div>
                 ))}
               </div>
@@ -364,15 +360,15 @@ export default function AiAutomationsAeoSeoPage() {
         </section>
 
         {/* Audience */}
-        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="Who this workshop is for">
+        <section className="w-full py-12 md:py-20 lg:py-28 border-b border-border" aria-label="Who this workshop is for">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl">
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-6">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4 sm:mb-6">
                 {tt.audience.heading}
               </h2>
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 {tt.audience.paragraphs.map((paragraph) => (
-                  <p key={paragraph} className="text-muted-foreground md:text-lg leading-relaxed">
+                  <p key={paragraph} className="text-sm md:text-lg text-muted-foreground leading-relaxed">
                     {paragraph}
                   </p>
                 ))}
@@ -382,41 +378,41 @@ export default function AiAutomationsAeoSeoPage() {
         </section>
 
         {/* Ticket pricing */}
-        <section id="tickets" className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="Ticket pricing">
+        <section id="tickets" className="w-full py-12 md:py-20 lg:py-28 bg-muted/50 border-b border-border" aria-label="Ticket pricing">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.tickets.eyebrow}</p>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-8 sm:mb-14">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.tickets.eyebrow}</p>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-3 sm:mb-4">
                 {tt.tickets.heading}
               </h2>
-              <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.tickets.subcopy}</p>
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">{tt.tickets.subcopy}</p>
             </motion.div>
 
-            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 sm:gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
               {TICKET_TIERS.map((tier) => (
                 <motion.div
                   key={tier.name}
                   variants={fadeUp}
-                  className={`relative flex h-full flex-col rounded-2xl border bg-card p-7 ${
+                  className={`relative flex h-full flex-col rounded-2xl border bg-card p-5 sm:p-7 ${
                     tier.popular ? "border-primary ring-1 ring-primary/20" : "border-border"
                   }`}
                 >
                   {tier.popular && (
-                    <span className="absolute -top-3 left-7 inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                    <span className="absolute -top-3 left-5 sm:left-7 inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
                       Most Popular
                     </span>
                   )}
                   {tier.limited && (
-                    <span className="absolute -top-3 left-7 inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-xs font-medium text-white">
+                    <span className="absolute -top-3 left-5 sm:left-7 inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-xs font-medium text-white">
                       Limited Availability
                     </span>
                   )}
-                  <h3 className="font-display text-xl font-semibold tracking-tight mb-3">{tier.name}</h3>
-                  <div className={`font-display text-2xl font-semibold tracking-tight text-foreground ${tier.limited ? "mb-2" : "mb-6"}`}>{tier.price}</div>
+                  <h3 className="font-display text-xl font-semibold tracking-tight mb-2 sm:mb-3">{tier.name}</h3>
+                  <div className={`font-display text-2xl font-semibold tracking-tight text-foreground ${tier.limited ? "mb-2" : "mb-4 sm:mb-6"}`}>{tier.price}</div>
                   {tier.limited && (
-                    <p className="text-xs font-medium text-amber-600 mb-4">Only a limited number of Early Bird tickets available</p>
+                    <p className="text-xs font-medium text-amber-600 mb-3 sm:mb-4">Only a limited number of Early Bird tickets available</p>
                   )}
-                  <ul className="space-y-2.5 mb-8 flex-grow">
+                  <ul className="space-y-2 sm:space-y-2.5 mb-6 sm:mb-8 flex-grow">
                     {tier.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2.5 text-sm text-foreground/80">
                         <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
@@ -433,26 +429,26 @@ export default function AiAutomationsAeoSeoPage() {
               ))}
             </motion.div>
 
-            <p className="mt-8 max-w-3xl mx-auto text-xs text-center text-muted-foreground leading-relaxed">{tt.tickets.disclaimer}</p>
+            <p className="mt-6 sm:mt-8 max-w-3xl mx-auto text-xs text-center text-muted-foreground leading-relaxed">{tt.tickets.disclaimer}</p>
           </div>
         </section>
 
         {/* Partners */}
-        <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="Partners">
+        <section className="w-full py-12 md:py-20 lg:py-28 bg-muted/50 border-b border-border" aria-label="Partners">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
               <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
-                <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-4">{tt.partners.eyebrow}</p>
-                <div className="mb-6">
-                  <div className="mb-5">
+                <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-3 sm:mb-4">{tt.partners.eyebrow}</p>
+                <div className="mb-4 sm:mb-6">
+                  <div className="mb-4 sm:mb-5">
                     <Image src="/infinity8-logo.png" alt="Infinity8 logo" width={160} height={48} className="object-contain" />
                   </div>
-                  <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-1">
+                  <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-1">
                     {tt.partners.heading}
                   </h2>
-                  <p className="text-lg text-muted-foreground font-medium">{tt.partners.subheading}</p>
+                  <p className="text-base sm:text-lg text-muted-foreground font-medium">{tt.partners.subheading}</p>
                 </div>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
                   <p>{tt.partners.p1}</p>
                   <p>{tt.partners.p2}</p>
                 </div>
@@ -463,7 +459,7 @@ export default function AiAutomationsAeoSeoPage() {
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border"
+                className="relative aspect-[4/3] max-h-64 sm:max-h-none overflow-hidden rounded-2xl border border-border"
               >
                 <Image
                   src="/infinity8-venue-1.jpg"
@@ -478,7 +474,7 @@ export default function AiAutomationsAeoSeoPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="w-full py-20 md:py-28" aria-label="Register">
+        <section className="w-full py-12 md:py-20 lg:py-28" aria-label="Register">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
@@ -487,13 +483,13 @@ export default function AiAutomationsAeoSeoPage() {
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-2xl text-center"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-5">{tt.cta.eyebrow}</p>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-5">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4 sm:mb-5">{tt.cta.eyebrow}</p>
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4 sm:mb-5">
                 {tt.cta.heading}
               </h2>
-              <p className="text-muted-foreground md:text-lg leading-relaxed mb-9">{tt.cta.subcopy}</p>
+              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-9">{tt.cta.subcopy}</p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Button size="lg" className="rounded-full h-12 px-8 text-base font-medium" onClick={() => scrollTo("tickets")}>
+                <Button size="lg" className="rounded-full h-11 sm:h-12 px-8 text-sm sm:text-base font-medium" onClick={() => scrollTo("tickets")}>
                   {tt.cta.ticketsButton} <ArrowRight className="ml-1.5 size-4" />
                 </Button>
               </div>

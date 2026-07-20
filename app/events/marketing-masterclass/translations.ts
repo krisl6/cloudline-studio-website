@@ -4,11 +4,10 @@ export const translations = {
       eyebrow: "Hands-On Masterclass",
       headline: "Marketing MasterClass for Business Visibility with AI",
       tagline:
-        "Be found by Google and ChatGPT. Automate the busywork. A hands-on session for marketers who want AI working for them, not against them.",
+        "Be found by Google and ChatGPT. Automate the most time consuming part of your marketing: Video Creation and Editing. A hands-on session for marketers who want AI working for them, not against them.",
       detailParagraphs: [
         "You'll build a real news-to-video pipeline live, from source URL to editable output, and learn exactly where to automate and where to keep a human editor in control.",
         "Then you'll go hands-on with AEO: how AI engines correlate entities, why ranking well doesn't guarantee AI inclusion, and how to structure your SEO so generative engines recommend your business instead of your competitor's.",
-        "Paid ads buy you this month's customers. This workshop builds the engine that brings customers for years.",
       ],
       datetime: "12 August 2026 (Wednesday)",
       time: "12:30 PM – 5:00 PM",
@@ -21,7 +20,6 @@ export const translations = {
       paragraphs: [
         "You'll build a real news-to-video pipeline live, from source URL to editable output, and learn exactly where to automate and where to keep a human editor in control.",
         "Then you'll go hands-on with AEO: how AI engines correlate entities, why ranking well doesn't guarantee AI inclusion, and how to structure your SEO so generative engines recommend your business instead of your competitor's.",
-        "Paid ads buy you this month's customers. This workshop builds the engine that brings customers for years.",
       ],
       automation: {
         heading: "AI Automation with Ken Ooi",
@@ -44,10 +42,10 @@ export const translations = {
       },
       aeo: {
         heading: "AEO with Kenny Lee",
-        intro: "The AEO Masterclass provides clarity on how AEO works.",
         items: [
-          "Attendees learn the underlying principles that support AI inclusions so they can strategize more confidently",
-          "It covers the implications of business outcomes that AI search disruptions bring and offers ways to mitigate",
+          "AI visibility clarity: Cut above misinformation and hype to understand how AEO actually works.",
+          "Diagnose vulnerability: Identify where your current strategy is failing to be retrieved by AI agents (ChatGPT, Perplexity, Claude).",
+          "Map digital entities: Correctly structure your brand profile, so LLMs recognise it as a primary source of truth.",
         ],
       },
       subcopy: "Limited seats available so everyone gets hands-on time!",
@@ -83,6 +81,7 @@ export const translations = {
       heading: "The 60-Minute AEO Express+ Syllabus",
       subheading: "Led by Kenny Lee, creator of the Signal & Source series",
       intro: "Using this proprietary framework, we transition you from traditional digital marketing to an AI-native strategy.",
+      toggleLabel: "See the full syllabus",
       chapters: [
         {
           title: "Chapter 1: Decoding the Disruption",
@@ -101,13 +100,6 @@ export const translations = {
             "Activity: Entity Mapping (defining your footprint for AI).",
           ],
         },
-      ],
-      outcomesHeading: "Core Learning Outcomes",
-      outcomesIntro: "By the end of this Signal & Source AEO Express+ session, you'll be able to:",
-      outcomes: [
-        { title: "AI visibility clarity", desc: "Cut above misinformation and hype to understand how AEO actually works." },
-        { title: "Diagnose vulnerability", desc: "Identify where your current strategy is failing to be retrieved by AI agents (ChatGPT, Perplexity, Claude)." },
-        { title: "Map digital entities", desc: "Correctly structure your brand profile, so LLMs recognise it as a primary source of truth." },
       ],
     },
     speakers: {
@@ -169,11 +161,10 @@ export const translations = {
       eyebrow: "Masterclass Praktikal",
       headline: "MasterClass Pemasaran untuk Keterlihatan Perniagaan dengan AI",
       tagline:
-        "Ditemui oleh Google dan ChatGPT. Automasikan kerja rutin. Sesi praktikal untuk pemasar yang mahu AI bekerja untuk mereka, bukan menentang mereka.",
+        "Ditemui oleh Google dan ChatGPT. Automasikan bahagian paling memakan masa dalam pemasaran anda: Penciptaan & Penyuntingan Video. Sesi praktikal untuk pemasar yang mahu AI bekerja untuk mereka, bukan menentang mereka.",
       detailParagraphs: [
         "Anda akan membina saluran paip berita-kepada-video sebenar secara langsung, dari URL sumber ke output yang boleh disunting, dan belajar dengan tepat di mana untuk automasikan dan di mana untuk mengekalkan kawalan editor manusia.",
         "Kemudian anda akan turun padang dengan AEO: cara enjin AI mengaitkan entiti, sebab kedudukan yang baik tidak menjamin kemasukan AI, dan cara menyusun SEO anda supaya enjin generatif mengesyorkan perniagaan anda dan bukannya pesaing anda.",
-        "Iklan berbayar membeli pelanggan anda untuk bulan ini. Bengkel ini membina enjin yang membawa pelanggan selama bertahun-tahun.",
       ],
       datetime: "12 Ogos 2026 (Rabu)",
       time: "12:30 PM – 5:00 PM",
@@ -186,7 +177,6 @@ export const translations = {
       paragraphs: [
         "Anda akan membina saluran paip berita-kepada-video sebenar secara langsung, dari URL sumber ke output yang boleh disunting, dan belajar dengan tepat di mana untuk automasikan dan di mana untuk mengekalkan kawalan editor manusia.",
         "Kemudian anda akan turun padang dengan AEO: cara enjin AI mengaitkan entiti, sebab kedudukan yang baik tidak menjamin kemasukan AI, dan cara menyusun SEO anda supaya enjin generatif mengesyorkan perniagaan anda dan bukannya pesaing anda.",
-        "Iklan berbayar membeli pelanggan anda untuk bulan ini. Bengkel ini membina enjin yang membawa pelanggan selama bertahun-tahun.",
       ],
       automation: {
         heading: "Automasi AI bersama Ken Ooi",
@@ -209,10 +199,10 @@ export const translations = {
       },
       aeo: {
         heading: "AEO bersama Kenny Lee",
-        intro: "Masterclass AEO memberi kejelasan tentang cara AEO berfungsi.",
         items: [
-          "Peserta mempelajari prinsip asas yang menyokong kemasukan AI supaya mereka boleh merancang strategi dengan lebih yakin",
-          "Ia turut merangkumi implikasi hasil perniagaan yang dibawa oleh gangguan carian AI dan menawarkan cara untuk menanganinya",
+          "Kejelasan keterlihatan AI: Mengatasi maklumat salah dan hype untuk memahami cara AEO sebenarnya berfungsi.",
+          "Diagnosis kelemahan: Kenal pasti di mana strategi semasa anda gagal diambil oleh ejen AI (ChatGPT, Perplexity, Claude).",
+          "Pemetaan entiti digital: Susun profil jenama anda dengan betul, supaya LLM mengiktirafnya sebagai sumber kebenaran utama.",
         ],
       },
       subcopy: "Tempat adalah terhad supaya semua orang mendapat masa praktikal!",
@@ -248,6 +238,7 @@ export const translations = {
       heading: "Sillibus AEO Express+ 60 Minit",
       subheading: "Diketuai oleh Kenny Lee, pencipta siri Signal & Source",
       intro: "Menggunakan rangka kerja eksklusif ini, kami membawa anda daripada pemasaran digital tradisional kepada strategi asli-AI (AI-native).",
+      toggleLabel: "Lihat sillibus penuh",
       chapters: [
         {
           title: "Bab 1: Memahami Gangguan (Disruption)",
@@ -266,13 +257,6 @@ export const translations = {
             "Aktiviti: Pemetaan Entiti (mentakrifkan jejak digital anda untuk AI).",
           ],
         },
-      ],
-      outcomesHeading: "Hasil Pembelajaran Utama",
-      outcomesIntro: "Menjelang akhir sesi Signal & Source AEO Express+ ini, anda akan dapat:",
-      outcomes: [
-        { title: "Kejelasan keterlihatan AI", desc: "Mengatasi maklumat salah dan hype untuk memahami cara AEO sebenarnya berfungsi." },
-        { title: "Diagnosis kelemahan", desc: "Kenal pasti di mana strategi semasa anda gagal diambil oleh ejen AI (ChatGPT, Perplexity, Claude)." },
-        { title: "Pemetaan entiti digital", desc: "Susun profil jenama anda dengan betul, supaya LLM mengiktirafnya sebagai sumber kebenaran utama." },
       ],
     },
     speakers: {
@@ -334,11 +318,10 @@ export const translations = {
       eyebrow: "实操大师课",
       headline: "借助 AI 提升商业曝光度的营销大师课",
       tagline:
-        "让 Google 和 ChatGPT 都能找到你。自动化繁琐工作。为希望 AI 为自己所用而非与自己对抗的营销人员打造的实操课程。",
+        "让 Google 和 ChatGPT 都能找到你。自动化营销中最耗时的环节：视频创作与剪辑。为希望 AI 为自己所用而非与自己对抗的营销人员打造的实操课程。",
       detailParagraphs: [
         "您将现场搭建一条真实的新闻转视频自动化流程，从源链接到可编辑成品，并准确学习哪些环节该自动化、哪些环节仍需人工编辑把控。",
         "接着您将实操学习 AEO：AI 引擎如何进行实体关联、为何排名靠前不代表一定会被 AI 收录，以及如何构建您的 SEO，让生成式引擎推荐您的业务而非竞争对手。",
-        "付费广告只能为您带来这个月的客户。这场工作坊将为您搭建能持续带来客户、长年累月的增长引擎。",
       ],
       datetime: "2026 年 8 月 12 日（星期三）",
       time: "中午 12:30 – 下午 5:00",
@@ -351,7 +334,6 @@ export const translations = {
       paragraphs: [
         "您将现场搭建一条真实的新闻转视频自动化流程，从源链接到可编辑成品，并准确学习哪些环节该自动化、哪些环节仍需人工编辑把控。",
         "接着您将实操学习 AEO：AI 引擎如何进行实体关联、为何排名靠前不代表一定会被 AI 收录，以及如何构建您的 SEO，让生成式引擎推荐您的业务而非竞争对手。",
-        "付费广告只能为您带来这个月的客户。这场工作坊将为您搭建能持续带来客户、长年累月的增长引擎。",
       ],
       automation: {
         heading: "与 Ken Ooi 学习 AI 自动化",
@@ -374,10 +356,10 @@ export const translations = {
       },
       aeo: {
         heading: "与 Kenny Lee 学习 AEO",
-        intro: "AEO 大师课将为您清晰讲解 AEO 的运作原理。",
         items: [
-          "学员将学习支撑 AI 收录的底层原则，从而更有把握地制定策略",
-          "课程还将涵盖 AI 搜索变革带来的业务影响，并提供应对方法",
+          "厘清 AI 可见度认知：摆脱错误信息与炒作，真正理解 AEO 的运作原理。",
+          "诊断潜在弱点：找出目前策略在 AI 代理（ChatGPT、Perplexity、Claude）中未能被检索到的原因。",
+          "构建数字实体：正确构建您的品牌资料，让大语言模型将其识别为权威信息来源。",
         ],
       },
       subcopy: "座位有限，确保每位参与者都能获得实操时间！",
@@ -412,6 +394,7 @@ export const translations = {
       heading: "60 分钟 AEO Express+ 课程大纲",
       subheading: "由 Signal & Source 系列创始人 Kenny Lee 主讲",
       intro: "运用这套专属框架，带您从传统数字营销思维过渡到 AI 原生策略。",
+      toggleLabel: "查看完整课程大纲",
       chapters: [
         {
           title: "第一章：解构颠覆",
@@ -430,13 +413,6 @@ export const translations = {
             "实操活动：实体映射（定义您在 AI 眼中的品牌轮廓）。",
           ],
         },
-      ],
-      outcomesHeading: "核心学习成果",
-      outcomesIntro: "完成本场 Signal & Source AEO Express+ 课程后，您将能够：",
-      outcomes: [
-        { title: "厘清 AI 可见度认知", desc: "摆脱错误信息与炒作，真正理解 AEO 的运作原理。" },
-        { title: "诊断潜在弱点", desc: "找出目前策略在 AI 代理（ChatGPT、Perplexity、Claude）中未能被检索到的原因。" },
-        { title: "构建数字实体", desc: "正确构建您的品牌资料，让大语言模型将其识别为权威信息来源。" },
       ],
     },
     speakers: {
