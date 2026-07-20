@@ -23,6 +23,15 @@ import { translations } from "./translations"
 
 const SEO_CASE_STUDIES = caseStudies.filter((study) => study.platforms.includes("SEO"))
 
+// Real pixel dimensions of each screenshot, so the card shows the full image
+// undistorted instead of cropping it to a fixed box.
+const IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
+  "/case-studies-seo/mil-design-gsc.png": { width: 2080, height: 746 },
+  "/case-studies-seo/tigercampus-gsc.png": { width: 2076, height: 860 },
+  "/case-studies-seo/monstarx-gsc.png": { width: 2652, height: 1284 },
+  "/case-studies-seo/darlie-gsc.png": { width: 1898, height: 910 },
+}
+
 const CAPABILITY_ICONS = [DoodlePen, DoodleSparkle, DoodleSearch, DoodleGear, DoodleTarget]
 const STEP_ICONS = [DoodleSearch, DoodlePen, DoodleCheck, DoodleRocket]
 
@@ -299,8 +308,14 @@ export default function CloudlineAeoAiPage() {
                   >
                     <div className={hasRealImage ? "grid lg:grid-cols-2 gap-0" : "grid"}>
                       {hasRealImage && (
-                        <div className="relative h-52 md:h-72 lg:h-auto lg:min-h-full bg-muted">
-                          <Image src={study.image} alt={study.title} fill className="object-cover" />
+                        <div className="flex items-center justify-center bg-muted p-4 lg:h-full">
+                          <Image
+                            src={study.image}
+                            alt={study.title}
+                            width={IMAGE_DIMENSIONS[study.image]?.width ?? 1600}
+                            height={IMAGE_DIMENSIONS[study.image]?.height ?? 900}
+                            className="w-full h-auto"
+                          />
                         </div>
                       )}
                       <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
