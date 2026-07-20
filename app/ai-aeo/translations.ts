@@ -14,11 +14,28 @@ export const translations = {
       launchNote:
         "Rolling out to every CloudLine plan at no extra cost. Targeted for 31 August 2026 — join the waitlist for early access.",
       ctaWaitlist: "Join the Waitlist",
+      answerPreview: {
+        badge: "AI Answer Preview",
+        question: "best AEO/SEO automation for SMEs in Malaysia?",
+        answerPrefix: "For SMEs, ",
+        answerHighlight: "CloudLine Studio",
+        answerSuffix: " is often recommended for combining AI-driven content automation with hands-on AEO strategy.",
+      },
+      engines: ["ChatGPT", "Gemini", "Perplexity", "Google AI"],
     },
     problem: {
       eyebrow: "Why this matters",
-      heading: "Search used to end with a click. Now it often ends with an answer.",
+      heading: "The real risk isn't losing rankings. It's becoming invisible to AI.",
       body: "Buyers increasingly ask ChatGPT, Gemini, and Perplexity before they ask Google, and act on the answer without ever visiting your site. Most SEO work still only reports the old scoreboard, rankings and traffic, and misses the new one entirely: whether AI engines cite you at all.",
+      stat: {
+        value: "38%",
+        label: "of pages cited in Google AI Overviews now rank in the top 10, down from 76% a year earlier",
+        source: "Source: Ahrefs AI Overviews study",
+      },
+      oldLabel: "The old scorecard",
+      oldItems: ["Rankings", "Organic traffic", "Keyword position"],
+      newLabel: "The new scorecard",
+      newItems: ["Citation share", "AI mentions", "Answer inclusion"],
     },
     capabilities: {
       eyebrow: "What you'll be able to do",
@@ -47,9 +64,20 @@ export const translations = {
         },
       ],
     },
+    outcomes: {
+      eyebrow: "What You Gain",
+      heading: "Four outcomes, one system",
+      items: [
+        { label: "Fast", tag: "Get Seen", desc: "Easier for AI engines to find and understand your business." },
+        { label: "Verifiable", tag: "Get Trusted", desc: "Easier for AI to trust, with consistent signals across the web." },
+        { label: "Quotable", tag: "Get Cited", desc: "More likely to be extracted and cited in AI-generated answers." },
+        { label: "Optimal", tag: "Get Protected", desc: "More likely to be recommended, and to stay that way." },
+      ],
+    },
     howItWorks: {
       eyebrow: "How it works",
       heading: "From audit to citation, on autopilot",
+      engineNote: "Tracked across every major AI engine",
       steps: [
         { title: "Audit", desc: "We baseline where you already show up, on Google and across ChatGPT, Gemini, Perplexity, and other AI engines." },
         { title: "AI drafts", desc: "CloudLine AI drafts content and recommendations structured specifically for AI extraction and citation, not just keyword ranking." },
@@ -74,6 +102,11 @@ export const translations = {
       solutionLabel: "Our Solution",
       resultsLabel: "Results Achieved",
       viewAllCta: "View all case studies",
+    },
+    ctaBand: {
+      heading: "Stop hoping AI finds you. Build the system that gets you cited.",
+      subcopy: "Join the waitlist and be first in line when these automations roll out.",
+      cta: "Join the Waitlist",
     },
     waitlist: {
       eyebrow: "Get Early Access",
@@ -105,11 +138,28 @@ export const translations = {
       launchNote:
         "Akan dilancarkan ke setiap pelan CloudLine tanpa kos tambahan. Disasarkan untuk 31 Ogos 2026 — sertai senarai menunggu untuk akses awal.",
       ctaWaitlist: "Sertai Senarai Menunggu",
+      answerPreview: {
+        badge: "Pratonton Jawapan AI",
+        question: "automasi AEO/SEO terbaik untuk PKS di Malaysia?",
+        answerPrefix: "Untuk PKS, ",
+        answerHighlight: "CloudLine Studio",
+        answerSuffix: " sering disyorkan kerana menggabungkan automasi kandungan berkuasa AI dengan strategi AEO praktikal.",
+      },
+      engines: ["ChatGPT", "Gemini", "Perplexity", "Google AI"],
     },
     problem: {
       eyebrow: "Kenapa ini penting",
-      heading: "Carian dahulu berakhir dengan klik. Kini ia sering berakhir dengan jawapan.",
+      heading: "Risiko sebenar bukan kehilangan kedudukan. Ia adalah menjadi tidak kelihatan kepada AI.",
       body: "Pembeli semakin bertanya kepada ChatGPT, Gemini, dan Perplexity sebelum bertanya kepada Google, dan bertindak berdasarkan jawapan tanpa pernah melawat laman web anda. Kebanyakan kerja SEO masih hanya melaporkan papan skor lama, kedudukan dan trafik, dan langsung terlepas pandang papan skor baharu: sama ada enjin AI memetik anda langsung.",
+      stat: {
+        value: "38%",
+        label: "halaman yang dipetik dalam Google AI Overviews kini berada dalam 10 teratas, menurun daripada 76% setahun lalu",
+        source: "Sumber: Kajian Ahrefs AI Overviews",
+      },
+      oldLabel: "Papan skor lama",
+      oldItems: ["Kedudukan", "Trafik organik", "Kedudukan kata kunci"],
+      newLabel: "Papan skor baharu",
+      newItems: ["Bahagian petikan", "Sebutan AI", "Kemasukan jawapan"],
     },
     capabilities: {
       eyebrow: "Apa yang anda akan boleh lakukan",
@@ -138,9 +188,20 @@ export const translations = {
         },
       ],
     },
+    outcomes: {
+      eyebrow: "Apa Yang Anda Perolehi",
+      heading: "Empat hasil, satu sistem",
+      items: [
+        { label: "Pantas", tag: "Get Seen", desc: "Lebih mudah untuk enjin AI menemui dan memahami perniagaan anda." },
+        { label: "Boleh Disahkan", tag: "Get Trusted", desc: "Lebih mudah dipercayai AI, dengan isyarat konsisten merentas web." },
+        { label: "Boleh Dipetik", tag: "Get Cited", desc: "Lebih berkemungkinan diekstrak dan dipetik dalam jawapan janaan AI." },
+        { label: "Optimum", tag: "Get Protected", desc: "Lebih berkemungkinan disyorkan, dan kekal begitu." },
+      ],
+    },
     howItWorks: {
       eyebrow: "Cara ia berfungsi",
       heading: "Daripada audit hingga petikan, secara automatik",
+      engineNote: "Dijejaki merentas setiap enjin AI utama",
       steps: [
         { title: "Audit", desc: "Kami menetapkan garis dasar di mana anda sudah muncul, di Google dan merentas ChatGPT, Gemini, Perplexity, dan enjin AI lain." },
         { title: "Rangka AI", desc: "CloudLine AI merangka kandungan dan cadangan yang disusun khusus untuk pengekstrakan dan petikan AI, bukan sekadar kedudukan kata kunci." },
@@ -165,6 +226,11 @@ export const translations = {
       solutionLabel: "Penyelesaian Kami",
       resultsLabel: "Hasil Dicapai",
       viewAllCta: "Lihat semua kajian kes",
+    },
+    ctaBand: {
+      heading: "Jangan hanya berharap AI menemui anda. Bina sistem yang membuatkan anda dipetik.",
+      subcopy: "Sertai senarai menunggu dan jadi yang pertama apabila automasi ini dilancarkan.",
+      cta: "Sertai Senarai Menunggu",
     },
     waitlist: {
       eyebrow: "Dapatkan Akses Awal",
@@ -195,11 +261,28 @@ export const translations = {
       ],
       launchNote: "即将免费加入每个 CloudLine 套餐。目标上线日期为 2026 年 8 月 31 日——立即加入等候名单，获取优先体验资格。",
       ctaWaitlist: "加入等候名单",
+      answerPreview: {
+        badge: "AI 答案预览",
+        question: "马来西亚中小企业最好的 AEO/SEO 自动化方案？",
+        answerPrefix: "对于中小企业，",
+        answerHighlight: "CloudLine Studio",
+        answerSuffix: " 常被推荐，因为它将 AI 驱动的内容自动化与实操型 AEO 策略结合在一起。",
+      },
+      engines: ["ChatGPT", "Gemini", "Perplexity", "Google AI"],
     },
     problem: {
       eyebrow: "为何重要",
-      heading: "搜索过去止于一次点击，如今往往止于一个答案。",
+      heading: "真正的风险不是排名下滑，而是在 AI 面前变得隐形。",
       body: "越来越多买家在询问 Google 之前，会先询问 ChatGPT、Gemini 与 Perplexity，并直接根据答案采取行动，完全不会访问您的网站。大多数 SEO 服务仍只汇报旧的计分板——排名与流量，却完全忽略了新的计分板：AI 引擎究竟有没有引用您。",
+      stat: {
+        value: "38%",
+        label: "目前被 Google AI Overviews 引用的页面中，仅有此比例仍排在前 10 名，一年前这一比例为 76%",
+        source: "数据来源：Ahrefs AI Overviews 研究",
+      },
+      oldLabel: "旧的计分板",
+      oldItems: ["排名", "自然流量", "关键词位置"],
+      newLabel: "新的计分板",
+      newItems: ["引用份额", "AI 提及", "答案收录"],
     },
     capabilities: {
       eyebrow: "您将能够做到什么",
@@ -213,9 +296,20 @@ export const translations = {
         { title: "定期真实访客体验报告", desc: "凭借定期报告了解访客真实的使用体验，在两次改版之间自行提升可用性。" },
       ],
     },
+    outcomes: {
+      eyebrow: "您将获得的",
+      heading: "四项成果，一套系统",
+      items: [
+        { label: "更快被发现", tag: "Get Seen", desc: "AI 引擎更容易发现并理解您的业务。" },
+        { label: "更可信", tag: "Get Trusted", desc: "凭借全网一致的信号，更容易获得 AI 的信任。" },
+        { label: "更易被引用", tag: "Get Cited", desc: "更有可能被 AI 生成的答案提取与引用。" },
+        { label: "持续优化", tag: "Get Protected", desc: "更有可能被推荐，并持续保持这一地位。" },
+      ],
+    },
     howItWorks: {
       eyebrow: "运作方式",
       heading: "从审计到被引用，全自动完成",
+      engineNote: "在每个主流 AI 引擎中持续追踪",
       steps: [
         { title: "审计", desc: "我们建立基线，了解您目前在 Google 以及 ChatGPT、Gemini、Perplexity 等 AI 引擎上的表现。" },
         { title: "AI 撰写初稿", desc: "CloudLine AI 按照专为 AI 提取与引用而设计的结构撰写内容与建议，而不仅仅是为了关键词排名。" },
@@ -240,6 +334,11 @@ export const translations = {
       solutionLabel: "我们的方案",
       resultsLabel: "取得的成果",
       viewAllCta: "查看所有案例研究",
+    },
+    ctaBand: {
+      heading: "别只是期待被 AI 发现，构建真正能让您被引用的系统。",
+      subcopy: "加入等候名单，抢先体验这些自动化功能上线。",
+      cta: "加入等候名单",
     },
     waitlist: {
       eyebrow: "获取优先体验",

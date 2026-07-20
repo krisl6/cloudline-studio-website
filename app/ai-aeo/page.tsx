@@ -15,6 +15,7 @@ import {
   DoodleTarget,
   DoodleCheck,
   DoodleRocket,
+  DoodleGrowth,
 } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { SeoWaitlistForm } from "@/components/seo-waitlist-form"
@@ -34,6 +35,7 @@ const IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
 
 const CAPABILITY_ICONS = [DoodlePen, DoodleSparkle, DoodleSearch, DoodleGear, DoodleTarget]
 const STEP_ICONS = [DoodleSearch, DoodlePen, DoodleCheck, DoodleRocket]
+const OUTCOME_ICONS = [DoodleSearch, DoodleTarget, DoodlePen, DoodleGear]
 
 const HERO_FLOATERS = [
   { Icon: DoodleSparkle, className: "top-4 left-[6%] size-10 sm:size-14", delay: 0 },
@@ -75,6 +77,74 @@ function AnimatedStatValue({ value }: { value: string }) {
       {display}
       {suffix}
     </span>
+  )
+}
+
+type AnswerPreviewCopy = {
+  badge: string
+  question: string
+  answerPrefix: string
+  answerHighlight: string
+  answerSuffix: string
+}
+
+function AnswerPreviewCard({ copy }: { copy: AnswerPreviewCopy }) {
+  const ref = useRef<HTMLDivElement>(null)
+  const inView = useInView(ref, { once: true, margin: "-80px" })
+  const fullAnswer = copy.answerPrefix + copy.answerHighlight + copy.answerSuffix
+  const [charCount, setCharCount] = useState(0)
+  const [showCursor, setShowCursor] = useState(true)
+
+  useEffect(() => {
+    if (!inView) return
+    const startDelay = setTimeout(() => {
+      const interval = setInterval(() => {
+        setCharCount((c) => {
+          if (c >= fullAnswer.length) {
+            clearInterval(interval)
+            return c
+          }
+          return c + 1
+        })
+      }, 18)
+    }, 500)
+    return () => clearTimeout(startDelay)
+  }, [inView, fullAnswer.length])
+
+  useEffect(() => {
+    const blink = setInterval(() => setShowCursor((v) => !v), 500)
+    return () => clearInterval(blink)
+  }, [])
+
+  const revealed = fullAnswer.slice(0, charCount)
+  const highlightStart = copy.answerPrefix.length
+  const highlightEnd = highlightStart + copy.answerHighlight.length
+  const done = charCount >= fullAnswer.length
+
+  return (
+    <div ref={ref} className="rounded-2xl border border-border bg-card p-5 shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]">
+      <div className="flex items-center gap-1.5 mb-4">
+        <span className="size-2.5 rounded-full bg-red-400/70" />
+        <span className="size-2.5 rounded-full bg-amber-400/70" />
+        <span className="size-2.5 rounded-full bg-green-400/70" />
+        <span className="ml-2 text-xs font-medium tracking-[0.1em] uppercase text-muted-foreground">{copy.badge}</span>
+      </div>
+      <div className="flex justify-end mb-3">
+        <p className="max-w-[85%] rounded-2xl rounded-tr-sm bg-primary px-4 py-2.5 text-sm text-primary-foreground">
+          {copy.question}
+        </p>
+      </div>
+      <div className="flex justify-start">
+        <p className="max-w-[90%] rounded-2xl rounded-tl-sm bg-muted px-4 py-2.5 text-sm text-foreground/85 leading-relaxed min-h-[4.5rem]">
+          {revealed.slice(0, Math.min(charCount, highlightStart))}
+          <span className="font-semibold text-primary">
+            {revealed.slice(Math.min(charCount, highlightStart), Math.min(charCount, highlightEnd))}
+          </span>
+          {revealed.slice(Math.min(charCount, highlightEnd))}
+          {!done && showCursor && <span className="inline-block w-[2px] h-4 bg-primary align-middle ml-0.5" />}
+        </p>
+      </div>
+    </div>
   )
 }
 
@@ -120,9 +190,20 @@ export default function CloudlineAeoAiPage() {
               <motion.h1 variants={fadeUp} className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance leading-[1.05] mb-6">
                 {tt.hero.headline}
               </motion.h1>
-              <motion.p variants={fadeUp} className="mx-auto max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-10">
+              <motion.p variants={fadeUp} className="mx-auto max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-8">
                 {tt.hero.tagline}
               </motion.p>
+
+              <motion.div variants={fadeUp} className="mx-auto max-w-md mb-4">
+                <AnswerPreviewCard copy={tt.hero.answerPreview} />
+              </motion.div>
+              <motion.div variants={fadeUp} className="mx-auto flex max-w-md flex-wrap items-center justify-center gap-2 mb-10">
+                {tt.hero.engines.map((engine) => (
+                  <span key={engine} className="rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+                    {engine}
+                  </span>
+                ))}
+              </motion.div>
 
               <motion.p variants={fadeUp} className="font-display text-base sm:text-lg font-semibold text-foreground mb-5">
                 {tt.hero.whatIsHeading}
@@ -162,12 +243,58 @@ export default function CloudlineAeoAiPage() {
         {/* Problem */}
         <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="Why this matters">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="mx-auto max-w-3xl text-center">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="mx-auto max-w-3xl text-center mb-12">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.problem.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-6">
                 {tt.problem.heading}
               </h2>
               <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.problem.body}</p>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mx-auto max-w-3xl rounded-2xl border border-primary/20 bg-primary/5 p-6 md:p-8 text-center mb-12"
+            >
+              <div className="font-display text-4xl md:text-5xl font-semibold text-primary mb-2">
+                <AnimatedStatValue value={tt.problem.stat.value} />
+              </div>
+              <p className="text-sm md:text-base text-foreground/80 leading-relaxed max-w-xl mx-auto">{tt.problem.stat.label}</p>
+              <p className="text-xs text-muted-foreground mt-3">{tt.problem.stat.source}</p>
+            </motion.div>
+
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="mx-auto grid max-w-2xl gap-4 sm:grid-cols-2"
+            >
+              <motion.div variants={fadeUp} className="rounded-2xl border border-border bg-card p-6">
+                <p className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground mb-4">{tt.problem.oldLabel}</p>
+                <ul className="space-y-2.5">
+                  {tt.problem.oldItems.map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-sm text-foreground/70">
+                      <span className="size-1.5 rounded-full bg-muted-foreground/40" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+              <motion.div variants={fadeUp} className="rounded-2xl border border-primary/30 ring-1 ring-primary/20 bg-card p-6">
+                <p className="text-xs font-medium tracking-[0.14em] uppercase text-primary mb-4">{tt.problem.newLabel}</p>
+                <ul className="space-y-2.5">
+                  {tt.problem.newItems.map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-foreground/90">
+                      <DoodleCheck className="size-3.5 text-primary" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -209,14 +336,45 @@ export default function CloudlineAeoAiPage() {
           </div>
         </section>
 
+        {/* Outcomes */}
+        <section className="w-full py-20 md:py-28 border-b border-border" aria-label="What you gain">
+          <div className="container px-4 md:px-6">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14 mx-auto text-center">
+              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.outcomes.eyebrow}</p>
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
+                {tt.outcomes.heading}
+              </h2>
+            </motion.div>
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
+              {tt.outcomes.items.map((outcome, i) => {
+                const Icon = OUTCOME_ICONS[i]
+                return (
+                  <motion.div key={outcome.label} variants={fadeUp} whileHover={{ y: -4 }} className="rounded-2xl border border-border bg-card p-6 text-center">
+                    <span className="mx-auto mb-4 inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
+                      <Icon className="size-5" />
+                    </span>
+                    <p className="text-xs font-medium tracking-[0.1em] uppercase text-muted-foreground mb-1.5">{outcome.tag}</p>
+                    <h3 className="font-display text-lg font-semibold mb-2">{outcome.label}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{outcome.desc}</p>
+                  </motion.div>
+                )
+              })}
+            </motion.div>
+          </div>
+        </section>
+
         {/* How it works */}
         <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="How it works">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.howItWorks.eyebrow}</p>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.howItWorks.heading}
               </h2>
+              <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
+                <DoodleGrowth className="size-4 text-primary/60" />
+                {tt.howItWorks.engineNote}
+              </p>
             </motion.div>
 
             <div className="relative">
@@ -368,6 +526,28 @@ export default function CloudlineAeoAiPage() {
                 </Link>
               </Button>
             </div>
+          </div>
+        </section>
+
+        {/* Dark CTA band */}
+        <section className="w-full bg-foreground py-16 md:py-20" aria-label="Get cited">
+          <div className="container px-4 md:px-6">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="mx-auto max-w-2xl text-center"
+            >
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance text-background mb-4">
+                {tt.ctaBand.heading}
+              </h2>
+              <p className="text-background/70 md:text-lg leading-relaxed mb-8">{tt.ctaBand.subcopy}</p>
+              <Button size="lg" className="rounded-full h-12 px-8 text-base font-medium bg-background text-foreground hover:bg-background/90" onClick={scrollToWaitlist}>
+                {tt.ctaBand.cta} <ArrowRight className="ml-1.5 size-4" />
+              </Button>
+            </motion.div>
           </div>
         </section>
 
