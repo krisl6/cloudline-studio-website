@@ -103,6 +103,127 @@ export const translations = {
         ],
       },
     ],
+    seoPillars: {
+      eyebrow: "How We Run It",
+      heading: "Four pillars, one AEO practice",
+      items: [
+        {
+          title: "Get Seen",
+          desc: "We baseline how AI engines and Google see you today: where you already appear, where competitors are beating you, and why, then ship the technical fixes first.",
+        },
+        {
+          title: "Get Trusted",
+          desc: "We build authority through backlinks, guest placements, and digital PR that give Google and AI engines a reason to treat you as a source worth citing.",
+        },
+        {
+          title: "Get Cited",
+          desc: "We develop topic clusters and answer-optimised pages, structured so AI systems can extract, quote, and cite them directly.",
+        },
+        {
+          title: "Get Protected",
+          desc: "We keep your knowledge graph accurate, monitor how AI engines describe your brand, and manage reviews across platforms.",
+        },
+      ],
+      closer: "Get Seen gets you found. Get Trusted gets you believed. Get Cited gets you quoted. Get Protected keeps it that way.",
+    },
+    seoTimeline: {
+      eyebrow: "The Delivery Plan",
+      heading: "Ten services, one 30/60/90-day plan",
+      subcopy: "Click a service to see what changes at each stage.",
+      dayLabels: ["Day 30", "Day 60", "Day 90"],
+      services: [
+        {
+          name: "Technical SEO",
+          category: "Foundation · fastest",
+          stages: [
+            "Speed and indexation fixes shipped; hidden pages get indexed.",
+            "Rankings on fixed pages climb as crawl efficiency improves.",
+            "A meaningful traffic lift lands once Core Web Vitals and page-speed work fully compounds.",
+          ],
+        },
+        {
+          name: "On-Page SEO",
+          category: "Foundation · fast",
+          stages: [
+            "Titles and meta rewritten on top pages; intent gaps closed.",
+            "Click-through rate climbs on refreshed pages.",
+            "Refreshed pages post double-digit traffic gains within the quarter.",
+          ],
+        },
+        {
+          name: "UX & Engagement Signals",
+          category: "Foundation",
+          stages: [
+            "Friction audit done; above-the-fold and CTA fixes shipped.",
+            "Engagement improves; bounce rate falls on reworked pages.",
+            "Traffic and lead quality both trend up as the funnel tightens.",
+          ],
+        },
+        {
+          name: "Landing Page Optimisation & CRO",
+          category: "Conversion",
+          stages: [
+            "Key pages rebuilt; attribution tracking goes live.",
+            "First test cycles read; winning variants ship.",
+            "Conversion rate climbs, with AI-referred visitors converting notably above the organic average.",
+          ],
+        },
+        {
+          name: "Blog, Pillar Content & Topic Clusters",
+          category: "Content engine · slow-burn",
+          stages: [
+            "Topic map built; first cluster and consolidations go live.",
+            "Early consolidations move underperforming pages up in rank.",
+            "Cluster traffic trends upward as topical authority compounds.",
+          ],
+        },
+        {
+          name: "Guest Posting & Link Insertions",
+          category: "Off-page authority",
+          stages: [
+            "Prospect list and outreach launched; first placements secured.",
+            "Links live; anchor-text profile kept natural.",
+            "Authority signals compound as the placement pipeline continues.",
+          ],
+        },
+        {
+          name: "Blog Outreach & Link Building",
+          category: "Off-page authority",
+          stages: [
+            "Gap analysis done; outreach targets locked in.",
+            "First authoritative links land; domain authority begins moving.",
+            "Domain authority shows a measurable, sustained lift.",
+          ],
+        },
+        {
+          name: "Off-Page SEO & Digital PR",
+          category: "Off-page authority",
+          stages: [
+            "PR asset scoped; journalist and publication list built.",
+            "Asset published; first pickups and referral traffic land.",
+            "Referring-domain growth continues as the asset keeps earning pickups.",
+          ],
+        },
+        {
+          name: "Local SEO",
+          category: "Local · fast",
+          stages: [
+            "Google Business Profile optimised; NAP fixed; citation build underway.",
+            "Map-pack visibility rises; reviews accumulate.",
+            "Local conversions and foot traffic both trend up.",
+          ],
+        },
+        {
+          name: "Answer Engine & Generative Engine Optimisation (AEO/GEO)",
+          category: "Frontier · highest margin · citations move first",
+          stages: [
+            "Baseline citation scoreboard live; schema and answer-first rewrites shipped.",
+            "Citation share rises across AI engines, often before traffic does.",
+            "A measurable share of visits and leads starts coming directly from AI answers.",
+          ],
+        },
+      ],
+    },
     processSteps: [
       {
         title: "Discover & Strategy",
@@ -252,6 +373,127 @@ export const translations = {
         ],
       },
     ],
+    seoPillars: {
+      eyebrow: "Cara Kami Menjalankannya",
+      heading: "Empat tunjang, satu amalan AEO",
+      items: [
+        {
+          title: "Get Seen",
+          desc: "Kami menetapkan garis dasar bagaimana enjin AI dan Google melihat anda hari ini: di mana anda sudah muncul, di mana pesaing mengatasi anda, dan sebabnya, sebelum menghantar pembaikan teknikal dahulu.",
+        },
+        {
+          title: "Get Trusted",
+          desc: "Kami membina kewibawaan melalui pautan balik, penempatan tamu, dan PR digital yang memberi Google serta enjin AI sebab untuk menganggap anda sumber yang berbaloi disebut.",
+        },
+        {
+          title: "Get Cited",
+          desc: "Kami membangunkan kluster topik dan halaman yang dioptimumkan untuk jawapan, disusun supaya sistem AI dapat mengekstrak, memetik, dan menyebutnya terus.",
+        },
+        {
+          title: "Get Protected",
+          desc: "Kami memastikan graf pengetahuan anda tepat, memantau bagaimana enjin AI menggambarkan jenama anda, dan menguruskan ulasan merentas platform.",
+        },
+      ],
+      closer: "Get Seen membuatkan anda ditemui. Get Trusted membuatkan anda dipercayai. Get Cited membuatkan anda dipetik. Get Protected mengekalkannya begitu.",
+    },
+    seoTimeline: {
+      eyebrow: "Pelan Penyampaian",
+      heading: "Sepuluh perkhidmatan, satu pelan 30/60/90 hari",
+      subcopy: "Klik satu perkhidmatan untuk lihat apa yang berubah pada setiap peringkat.",
+      dayLabels: ["Hari 30", "Hari 60", "Hari 90"],
+      services: [
+        {
+          name: "SEO Teknikal",
+          category: "Asas · terpantas",
+          stages: [
+            "Pembaikan kelajuan dan pengindeksan dihantar; halaman tersembunyi mula diindeks.",
+            "Kedudukan pada halaman yang dibaiki meningkat apabila kecekapan perayapan bertambah baik.",
+            "Peningkatan trafik yang ketara muncul sebaik kerja Core Web Vitals dan kelajuan halaman mula terkumpul.",
+          ],
+        },
+        {
+          name: "SEO On-Page",
+          category: "Asas · pantas",
+          stages: [
+            "Tajuk dan meta ditulis semula pada halaman utama; jurang niat ditutup.",
+            "Kadar klik-tayang meningkat pada halaman yang disegarkan.",
+            "Halaman yang disegarkan mencatat peningkatan trafik dua digit dalam suku tahun itu.",
+          ],
+        },
+        {
+          name: "UX & Isyarat Penglibatan",
+          category: "Asas",
+          stages: [
+            "Audit geseran selesai; pembaikan above-the-fold dan CTA dihantar.",
+            "Penglibatan meningkat; kadar lantunan menurun pada halaman yang dikemas semula.",
+            "Trafik dan kualiti lead kedua-duanya meningkat apabila corong menjadi lebih ketat.",
+          ],
+        },
+        {
+          name: "Pengoptimuman Halaman Pendaratan & CRO",
+          category: "Penukaran",
+          stages: [
+            "Halaman utama dibina semula; penjejakan atribusi disiarkan.",
+            "Kitaran ujian pertama dibaca; varian pemenang dilancarkan.",
+            "Kadar penukaran meningkat, dengan pelawat rujukan AI menukar jauh lebih tinggi daripada purata organik.",
+          ],
+        },
+        {
+          name: "Blog, Kandungan Tunjang & Kluster Topik",
+          category: "Enjin kandungan · perlahan tapi berterusan",
+          stages: [
+            "Peta topik dibina; kluster pertama dan penggabungan disiarkan.",
+            "Penggabungan awal menaikkan kedudukan halaman berprestasi rendah.",
+            "Trafik kluster meningkat apabila kewibawaan topikal terkumpul.",
+          ],
+        },
+        {
+          name: "Catatan Tamu & Penyisipan Pautan",
+          category: "Kewibawaan off-page",
+          stages: [
+            "Senarai prospek dan outreach dilancarkan; penempatan pertama diperoleh.",
+            "Pautan disiarkan; profil teks jangkar dikekalkan semula jadi.",
+            "Isyarat kewibawaan berganda apabila saluran penempatan terus berjalan.",
+          ],
+        },
+        {
+          name: "Outreach Blog & Pembinaan Pautan",
+          category: "Kewibawaan off-page",
+          stages: [
+            "Analisis jurang selesai; sasaran outreach dikunci.",
+            "Pautan berwibawa pertama mendarat; kewibawaan domain mula bergerak.",
+            "Kewibawaan domain menunjukkan peningkatan yang ketara dan berterusan.",
+          ],
+        },
+        {
+          name: "SEO Off-Page & PR Digital",
+          category: "Kewibawaan off-page",
+          stages: [
+            "Aset PR dirangka; senarai wartawan dan penerbitan dibina.",
+            "Aset disiarkan; liputan dan trafik rujukan pertama mendarat.",
+            "Pertumbuhan domain rujukan berterusan apabila aset itu terus mendapat liputan.",
+          ],
+        },
+        {
+          name: "SEO Tempatan",
+          category: "Tempatan · pantas",
+          stages: [
+            "Profil Perniagaan Google dioptimumkan; NAP dibaiki; pembinaan sebutan sedang berjalan.",
+            "Keterlihatan map-pack meningkat; ulasan bertambah.",
+            "Penukaran tempatan dan trafik ke kedai kedua-duanya meningkat.",
+          ],
+        },
+        {
+          name: "Pengoptimuman Enjin Jawapan & Enjin Generatif (AEO/GEO)",
+          category: "Frontier · margin tertinggi · petikan bergerak dahulu",
+          stages: [
+            "Papan skor petikan garis dasar disiarkan; penulisan semula skema dan jawapan-dahulu dihantar.",
+            "Bahagian petikan meningkat merentas enjin AI, selalunya sebelum trafik meningkat.",
+            "Sebahagian lawatan dan lead yang boleh diukur mula datang terus daripada jawapan AI.",
+          ],
+        },
+      ],
+    },
     processSteps: [
       {
         title: "Terokai & Strategi",
@@ -401,6 +643,127 @@ export const translations = {
         ],
       },
     ],
+    seoPillars: {
+      eyebrow: "我们的执行方式",
+      heading: "四大支柱，一套 AEO 实践",
+      items: [
+        {
+          title: "Get Seen",
+          desc: "我们先了解 AI 引擎与 Google 目前如何看待您：您已出现在哪里、竞争对手在哪些方面领先、原因何在，然后优先处理技术性修复。",
+        },
+        {
+          title: "Get Trusted",
+          desc: "我们通过反向链接、客座发布与数字公关建立权威度，让 Google 与 AI 引擎有理由将您视为值得引用的信息来源。",
+        },
+        {
+          title: "Get Cited",
+          desc: "我们打造主题集群与针对答案优化的页面，让 AI 系统能够直接提取、引用并转述其中内容。",
+        },
+        {
+          title: "Get Protected",
+          desc: "我们确保您的知识图谱准确，持续监测 AI 引擎如何描述您的品牌，并在各平台上管理评价。",
+        },
+      ],
+      closer: "Get Seen 让您被发现。Get Trusted 让您被信任。Get Cited 让您被引用。Get Protected 让这一切持续下去。",
+    },
+    seoTimeline: {
+      eyebrow: "交付计划",
+      heading: "十项服务，一套 30/60/90 天计划",
+      subcopy: "点击任一服务，查看每个阶段会发生什么变化。",
+      dayLabels: ["第 30 天", "第 60 天", "第 90 天"],
+      services: [
+        {
+          name: "技术性 SEO",
+          category: "基础 · 最快",
+          stages: [
+            "完成速度与索引修复；隐藏页面开始被收录。",
+            "随着抓取效率提升，已修复页面的排名上升。",
+            "Core Web Vitals 与网页速度优化的效果累积后，带来明显的流量提升。",
+          ],
+        },
+        {
+          name: "页内 SEO",
+          category: "基础 · 快",
+          stages: [
+            "重写主要页面的标题与描述；补齐搜索意图缺口。",
+            "刷新页面的点击率上升。",
+            "刷新后的页面在本季度内实现两位数的流量增长。",
+          ],
+        },
+        {
+          name: "用户体验与互动信号",
+          category: "基础",
+          stages: [
+            "完成摩擦点审查；首屏与 CTA 修复上线。",
+            "互动度提升；重新设计的页面跳出率下降。",
+            "随着转化路径收紧，流量与潜在客户质量同步上升。",
+          ],
+        },
+        {
+          name: "着陆页优化与 CRO",
+          category: "转化",
+          stages: [
+            "重建关键页面；归因追踪上线。",
+            "首轮测试出结果；获胜方案上线。",
+            "转化率提升，来自 AI 引荐的访客转化率明显高于自然流量平均水平。",
+          ],
+        },
+        {
+          name: "博客、支柱内容与主题集群",
+          category: "内容引擎 · 长线见效",
+          stages: [
+            "完成主题地图；首个集群与内容整合上线。",
+            "早期内容整合带动表现欠佳页面的排名上升。",
+            "随着主题权威度累积，集群流量呈上升趋势。",
+          ],
+        },
+        {
+          name: "客座发布与链接插入",
+          category: "站外权威",
+          stages: [
+            "潜在合作名单与外联工作启动；首批合作落实。",
+            "链接上线；锚文本组合保持自然。",
+            "随着合作管道持续运作，权威信号不断累积。",
+          ],
+        },
+        {
+          name: "博客外联与链接建设",
+          category: "站外权威",
+          stages: [
+            "完成差距分析；锁定外联目标。",
+            "首批权威链接落地；域权威开始上升。",
+            "域权威呈现明显且持续的提升。",
+          ],
+        },
+        {
+          name: "站外 SEO 与数字公关",
+          category: "站外权威",
+          stages: [
+            "确定公关素材方向；建立记者与媒体名单。",
+            "素材发布；首批媒体报道与引荐流量到位。",
+            "随着素材持续被引用，引荐域名数量持续增长。",
+          ],
+        },
+        {
+          name: "本地 SEO",
+          category: "本地 · 快",
+          stages: [
+            "优化 Google 商家资料；修正 NAP 信息；启动本地引用建设。",
+            "地图版位可见度上升；评价数量增加。",
+            "本地转化与到店客流同步上升。",
+          ],
+        },
+        {
+          name: "答案引擎与生成式引擎优化 (AEO/GEO)",
+          category: "前沿 · 利润最高 · 引用最先变化",
+          stages: [
+            "基线引用记分板上线；完成结构化数据与答案优先内容改写。",
+            "各 AI 引擎的引用份额上升，往往早于流量增长。",
+            "可衡量比例的访问与线索开始直接来自 AI 答案。",
+          ],
+        },
+      ],
+    },
     processSteps: [
       {
         title: "探索与策略",

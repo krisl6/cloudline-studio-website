@@ -34,6 +34,7 @@ const stagger = {
 
 const serviceIcons = [DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth]
 const processIcons = [DoodleSearch, DoodlePen, DoodleRocket]
+const pillarIcons = [DoodleSearch, DoodleGrowth, DoodlePen, DoodleGear]
 
 const serviceIds = ["consultation", "transformation", "synchronization", "branding", "seo"] as const
 
@@ -41,6 +42,7 @@ export default function ServicesPage() {
   const { lang } = useLanguage()
   const tt = translations[lang]
   const [activeService, setActiveService] = useState<(typeof serviceIds)[number]>("consultation")
+  const [activeTimelineIndex, setActiveTimelineIndex] = useState(0)
 
   const services = tt.services.map((service, i) => ({ id: serviceIds[i], ...service }))
   const processSteps = tt.processSteps
@@ -248,6 +250,28 @@ export default function ServicesPage() {
 
                   {currentService.id === "seo" ? (
                     <div className="mt-2">
+                      <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
+                        {tt.seoPillars.eyebrow}
+                      </p>
+                      <h4 className="font-display text-lg font-semibold tracking-tight mb-5">{tt.seoPillars.heading}</h4>
+                      <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                        {tt.seoPillars.items.map((pillar, i) => {
+                          const PillarIcon = pillarIcons[i]
+                          return (
+                            <div key={pillar.title} className="rounded-xl border border-border bg-muted/30 p-4">
+                              <div className="flex items-center gap-2.5 mb-2">
+                                <span className="inline-flex size-8 items-center justify-center rounded-lg bg-primary/8 text-primary">
+                                  <PillarIcon className="size-4" />
+                                </span>
+                                <span className="font-display text-sm font-semibold">{pillar.title}</span>
+                              </div>
+                              <p className="text-sm text-muted-foreground leading-relaxed">{pillar.desc}</p>
+                            </div>
+                          )
+                        })}
+                      </div>
+                      <p className="text-sm font-medium text-primary leading-relaxed mb-8">{tt.seoPillars.closer}</p>
+
                       <Button variant="outline" className="mb-6 rounded-full font-medium border-border bg-transparent hover:bg-muted" asChild>
                         <Link href={`/case-studies/${currentService.id}`}>
                           View case studies
@@ -281,6 +305,79 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+
+        {/* SEO/AEO delivery timeline */}
+        {activeService === "seo" && (
+          <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="SEO delivery timeline">
+            <div className="container px-4 md:px-6">
+              <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="max-w-3xl mb-12"
+              >
+                <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.seoTimeline.eyebrow}</p>
+                <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
+                  {tt.seoTimeline.heading}
+                </h2>
+                <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.seoTimeline.subcopy}</p>
+              </motion.div>
+
+              <div className="flex flex-col lg:flex-row gap-8">
+                <div className="lg:w-1/3 flex flex-col gap-2">
+                  {tt.seoTimeline.services.map((service, i) => {
+                    const isActive = i === activeTimelineIndex
+                    return (
+                      <button
+                        key={service.name}
+                        onClick={() => setActiveTimelineIndex(i)}
+                        className={`text-left rounded-xl border px-4 py-3 transition-colors ${
+                          isActive ? "border-primary/30 bg-primary/8" : "border-border bg-card hover:bg-muted"
+                        }`}
+                      >
+                        <span className="block text-sm font-semibold font-display">{service.name}</span>
+                        <span className="block text-xs text-muted-foreground">{service.category}</span>
+                      </button>
+                    )
+                  })}
+                </div>
+
+                <div className="lg:w-2/3">
+                  <motion.div
+                    key={activeTimelineIndex}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="rounded-2xl border border-border bg-card p-8 md:p-10 h-full"
+                  >
+                    <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight mb-1">
+                      {tt.seoTimeline.services[activeTimelineIndex].name}
+                    </h3>
+                    <p className="text-sm text-muted-foreground mb-8">{tt.seoTimeline.services[activeTimelineIndex].category}</p>
+
+                    <div className="grid gap-6 sm:grid-cols-3">
+                      {tt.seoTimeline.services[activeTimelineIndex].stages.map((stage, i) => (
+                        <div key={i}>
+                          <div className="flex items-center gap-3 mb-3">
+                            <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border text-primary font-display text-xs font-semibold">
+                              {String(i + 1)}
+                            </span>
+                            <span className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground">
+                              {tt.seoTimeline.dayLabels[i]}
+                            </span>
+                          </div>
+                          <p className="text-sm text-foreground/80 leading-relaxed">{stage}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* How we work */}
         <section className="w-full py-20 md:py-28 border-t border-border" aria-label="How we work">

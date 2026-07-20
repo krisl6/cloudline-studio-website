@@ -10,7 +10,7 @@ export const translations = {
     },
     upcoming: {
       eyebrow: "Upcoming Event",
-      title: "AI Automations, AEO & SEO: The Hands-On Masterclass",
+      title: "Marketing MasterClass for Business Visibility with AI",
       date: "12 August 2026 · Infinity8, Sunway Square",
       cta: "Learn More & Get Tickets",
     },
@@ -115,7 +115,7 @@ export const translations = {
     },
     upcoming: {
       eyebrow: "Acara Akan Datang",
-      title: "AI Automations, AEO & SEO: Masterclass Praktikal",
+      title: "MasterClass Pemasaran untuk Keterlihatan Perniagaan dengan AI",
       date: "12 Ogos 2026 · Infinity8, Sunway Square",
       cta: "Ketahui Lebih Lanjut & Dapatkan Tiket",
     },
@@ -220,7 +220,7 @@ export const translations = {
     },
     upcoming: {
       eyebrow: "近期活动",
-      title: "AI 自动化、AEO 与 SEO：实操大师课",
+      title: "借助 AI 提升商业曝光度的营销大师课",
       date: "2026 年 8 月 12 日 · Infinity8, Sunway Square",
       cta: "了解详情并获取门票",
     },

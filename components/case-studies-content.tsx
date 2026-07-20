@@ -170,7 +170,9 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
               </Button>
             </div>
             <div className="grid gap-8 md:gap-10">
-              {filteredStudies.map((study, i) => (
+              {filteredStudies.map((study, i) => {
+                const hasRealImage = !study.image.includes("circledna-snapshot")
+                return (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 24 }}
@@ -179,15 +181,17 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
                 >
-                  <div className="grid lg:grid-cols-2 gap-0">
-                    <div className="relative h-52 md:h-72 lg:h-auto lg:min-h-full">
-                      <Image
-                        src={study.image || "/placeholder.svg"}
-                        alt={study.title}
-                        fill
-                        className="object-cover"
-                      />
-                    </div>
+                  <div className={hasRealImage ? "grid lg:grid-cols-2 gap-0" : "grid"}>
+                    {hasRealImage && (
+                      <div className="relative h-52 md:h-72 lg:h-auto lg:min-h-full">
+                        <Image
+                          src={study.image || "/placeholder.svg"}
+                          alt={study.title}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                    )}
                     <div className="p-6 md:p-8 lg:p-10 flex flex-col justify-center">
                       <div className="flex flex-wrap gap-2 mb-5">
                         <span className="inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
@@ -247,7 +251,8 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                     </div>
                   </div>
                 </motion.div>
-              ))}
+                )
+              })}
             </div>
           </div>
         </section>
