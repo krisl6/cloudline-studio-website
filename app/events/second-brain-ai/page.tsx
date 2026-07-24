@@ -25,7 +25,7 @@ const EVENT_START = "2026-08-12T12:30:00+08:00"
 // Real capacity, shared with the marketing-masterclass page. Update by hand
 // after checking Stripe — this number is displayed as fact, never fabricate it.
 const TOTAL_SEATS = 15
-const SEATS_REMAINING = 12
+const SEATS_REMAINING = 8
 
 // ── TRUSTED BY ──────────────────────────────────────────────────────
 // Real clients named in Kristine's bio. Only listed here once a real logo
@@ -95,21 +95,10 @@ const TICKET_INCLUSIONS_VIRTUAL = [
 
 const TICKET_TIERS = [
   {
-    name: "Early Bird",
-    price: "RM 359",
-    originalPrice: "RM 499" as string | null,
-    popular: false,
-    limited: true,
-    // Verified live via checkout: "Early Bird — Build Your Second Brain with
-    // Agentic AI" for MYR 359.00.
-    stripeUrl: "https://buy.stripe.com/5kQ5kC9z77Wb5Rg7kHbZe05" as string | undefined,
-    features: TICKET_INCLUSIONS,
-  },
-  {
     name: "Early Bird Pair",
     price: "RM 659",
     originalPrice: null as string | null,
-    popular: true,
+    popular: false,
     limited: false,
     twoTickets: true,
     // Verified live via checkout: "Early Bird PAIR TICKETS" for MYR 659.00.
@@ -118,6 +107,17 @@ const TICKET_TIERS = [
     // details — Stripe's own checkout only captures the purchaser's info.
     stripeUrl: "https://buy.stripe.com/dRmcN4bHfa4jdjI6gDbZe08" as string | undefined,
     features: TICKET_INCLUSIONS_PAIR,
+  },
+  {
+    name: "Early Bird",
+    price: "RM 359",
+    originalPrice: "RM 499" as string | null,
+    popular: true,
+    limited: true,
+    // Verified live via checkout: "Early Bird — Build Your Second Brain with
+    // Agentic AI" for MYR 359.00.
+    stripeUrl: "https://buy.stripe.com/5kQ5kC9z77Wb5Rg7kHbZe05" as string | undefined,
+    features: TICKET_INCLUSIONS,
   },
   {
     name: "Virtual Pass",
@@ -588,15 +588,19 @@ export default function SecondBrainAgenticAiPage() {
                     tier.popular ? "border-primary ring-1 ring-primary/20 hover:shadow-primary/10" : "border-border hover:shadow-primary/5"
                   }`}
                 >
-                  {tier.popular && (
-                    <span className="absolute -top-3 left-5 sm:left-7 inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-                      Most Popular
-                    </span>
-                  )}
-                  {tier.limited && (
-                    <span className="absolute -top-3 left-5 sm:left-7 inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-xs font-medium text-white">
-                      Limited Availability
-                    </span>
+                  {(tier.popular || tier.limited) && (
+                    <div className="absolute -top-3 left-5 sm:left-7 flex flex-wrap gap-1.5">
+                      {tier.popular && (
+                        <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                          Most Popular
+                        </span>
+                      )}
+                      {tier.limited && (
+                        <span className="inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-xs font-medium text-white">
+                          Limited Availability
+                        </span>
+                      )}
+                    </div>
                   )}
                   <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-3">
                     <h3 className="font-display text-xl font-semibold tracking-tight">{tier.name}</h3>
