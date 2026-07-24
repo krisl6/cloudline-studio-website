@@ -1,9 +1,10 @@
 "use client"
 
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, CalendarDays, Clock, MapPin } from "lucide-react"
+import { ArrowRight, CalendarDays, Clock, MapPin, Timer, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { DoodleCheck } from "@/components/doodles"
@@ -12,16 +13,52 @@ import { translations } from "./translations"
 
 // ── EVENT DETAILS ──────────────────────────────────────────────────
 const VENUE_MAPS_URL = "https://maps.google.com/?q=Infinity8+Sunway+Square"
+const EVENT_START = "2026-08-12T12:30:00+08:00"
+
+// ── SEATS ───────────────────────────────────────────────────────────
+// Real capacity. Update SEATS_REMAINING by hand after checking Stripe — this
+// number is displayed on the page as fact, so never estimate or fabricate it.
+const TOTAL_SEATS = 15
+const SEATS_REMAINING = 12
+
+function useCountdown(targetIso: string) {
+  const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number; done: boolean } | null>(null)
+
+  useEffect(() => {
+    const target = new Date(targetIso).getTime()
+    const tick = () => {
+      const diff = target - Date.now()
+      if (diff <= 0) {
+        setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0, done: true })
+        return
+      }
+      setTimeLeft({
+        days: Math.floor(diff / 86_400_000),
+        hours: Math.floor((diff / 3_600_000) % 24),
+        minutes: Math.floor((diff / 60_000) % 60),
+        seconds: Math.floor((diff / 1_000) % 60),
+        done: false,
+      })
+    }
+    tick()
+    const id = setInterval(tick, 1000)
+    return () => clearInterval(id)
+  }, [targetIso])
+
+  return timeLeft
+}
 
 // ── TICKETS ─────────────────────────────────────────────────────────
-const TICKET_EARLY_BIRD_URL = "https://buy.stripe.com/4gM5kC26Fekz5Rg6gDbZe01"
-const TICKET_STANDARD_URL = "https://buy.stripe.com/9B6aEWbHfekz0wWfRdbZe02"
+const TICKET_EARLY_BIRD_URL = "https://buy.stripe.com/7sY5kCfXv7Wb7Zo5czbZe03"
+const TICKET_STANDARD_URL = "https://buy.stripe.com/6oU3cu7qZ90f4NcbAXbZe04"
+const TICKET_VIRTUAL_PASS_URL = "https://buy.stripe.com/aFa6oG26FgsHfrQgVhbZe07"
 
 const TICKET_INCLUSIONS = [
-  "Full masterclass access (1pm–5pm): AI Automation + AEO tracks",
+  "Full masterclass access (1pm–5pm): Video Automation + AEO tracks",
   "Live project demos from Ken & Kenny",
-  "One week of complimentary co-working access at Infinity8, Sunway Square",
-  "Refreshments, coffee & tea",
+  "One FREE week of Pro for the first 5 sign-ups",
+  "One FREE week of co-working access at INFINITY8",
+  "Lattes, cappuccinos and refreshments",
   "Workshop materials & templates",
 ]
 
@@ -30,10 +67,19 @@ const TICKET_INCLUSIONS_STANDARD = [
   "A 30-minute business consultation with Kristine Ling, available to book once your payment is confirmed",
 ]
 
+// Remote attendance — drops the in-person-only perks (co-working access,
+// refreshments) that a virtual attendee can't use.
+const TICKET_INCLUSIONS_VIRTUAL = [
+  "Live-streamed access to the full masterclass (1pm–5pm): Video Automation + AEO tracks",
+  "Recording available to rewatch afterward",
+  "Workshop materials & templates",
+]
+
 const TICKET_TIERS = [
   {
     name: "Early Bird",
-    price: "RM 359",
+    price: "RM 199",
+    originalPrice: "RM 359" as string | null,
     popular: false,
     limited: true,
     link: TICKET_EARLY_BIRD_URL,
@@ -41,11 +87,21 @@ const TICKET_TIERS = [
   },
   {
     name: "Standard",
-    price: "RM 499",
+    price: "RM 259",
+    originalPrice: "RM 499" as string | null,
     popular: true,
     limited: false,
     link: TICKET_STANDARD_URL,
     features: TICKET_INCLUSIONS_STANDARD,
+  },
+  {
+    name: "Virtual Pass",
+    price: "RM 199",
+    originalPrice: null as string | null,
+    popular: false,
+    limited: false,
+    link: TICKET_VIRTUAL_PASS_URL,
+    features: TICKET_INCLUSIONS_VIRTUAL,
   },
 ] as const
 
@@ -63,6 +119,14 @@ export default function AiAutomationsAeoSeoPage() {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
   }
+
+  const AGENDA_TRACKS = [
+    { key: "aeo", time: "1:00 PM", photo: "/speaker-kenny-lee.png", data: tt.agenda.aeo },
+    { key: "claude", time: "2:00 PM", photo: "/team-kristine.jpg", data: tt.agenda.claude },
+    { key: "automation", time: "3:30 PM", photo: "/speaker-ken-ooi.jpg", data: tt.agenda.automation },
+  ] as const
+
+  const timeLeft = useCountdown(EVENT_START)
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
@@ -101,6 +165,26 @@ export default function AiAutomationsAeoSeoPage() {
                   <span className="inline-flex items-center gap-1.5">
                     <MapPin className="size-4 text-primary" />
                     {tt.hero.location}
+                  </span>
+                </motion.div>
+                <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-2.5 mb-6 sm:mb-8">
+                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs sm:text-sm font-medium tabular-nums">
+                    <Timer className="size-4 text-primary shrink-0" />
+                    {timeLeft && !timeLeft.done ? (
+                      <span>
+                        {tt.hero.startsIn}{" "}
+                        {timeLeft.days > 0 && `${timeLeft.days}${tt.hero.seatsUnit.d} `}
+                        {timeLeft.hours}{tt.hero.seatsUnit.h} {timeLeft.minutes}{tt.hero.seatsUnit.m} {timeLeft.seconds}{tt.hero.seatsUnit.s}
+                      </span>
+                    ) : timeLeft?.done ? (
+                      <span>{tt.hero.eventStarted}</span>
+                    ) : (
+                      <span className="opacity-0">00d 00h 00m 00s</span>
+                    )}
+                  </span>
+                  <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-primary">
+                    <Users className="size-4 shrink-0" />
+                    <span>{SEATS_REMAINING} {tt.hero.seatsLeft}</span>
                   </span>
                 </motion.div>
                 <motion.div variants={fadeUp} className="flex flex-wrap gap-3">
@@ -214,64 +298,80 @@ export default function AiAutomationsAeoSeoPage() {
               </div>
             </motion.div>
 
-            <div className="mt-8 sm:mt-12 grid gap-4 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 max-w-6xl">
-              <motion.div
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8"
-              >
-                <h3 className="font-display text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{tt.agenda.automation.heading}</h3>
-                <ul className="space-y-2 sm:space-y-3">
-                  {tt.agenda.automation.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
-                      <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+            <div className="mt-10 sm:mt-16 max-w-6xl">
+              {/* Desktop timeline strip: the three tracks are real back-to-back sessions
+                  in one afternoon, so the connector reflects the actual schedule, not a
+                  decorative 01/02/03 sequence. Dots sit centered in their grid column, so
+                  the line's start/end can be plain thirds (16.6667%) instead of a pixel calc. */}
+              <div className="relative hidden lg:grid grid-cols-3 gap-8 mb-6">
+                <motion.div
+                  className="absolute top-1/2 left-[16.6667%] right-[16.6667%] h-px -translate-y-1/2 bg-border origin-left"
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  aria-hidden="true"
+                />
+                {AGENDA_TRACKS.map((track, i) => (
+                  <motion.div
+                    key={track.key}
+                    initial={{ scale: 0, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.15 + 0.35, type: "spring" }}
+                    className="flex justify-center"
+                  >
+                    <span className="relative z-10 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1">
+                      <span className="size-[7px] shrink-0 rounded-full bg-primary" />
+                      <span className="text-xs font-semibold tracking-[0.08em] text-foreground/70">{track.time}</span>
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
 
-              <motion.div
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.05 }}
-                className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8"
-              >
-                <h3 className="font-display text-lg sm:text-xl font-semibold mb-2">{tt.agenda.claude.heading}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-4">{tt.agenda.claude.intro}</p>
-                <ul className="space-y-2 sm:space-y-3">
-                  {tt.agenda.claude.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
-                      <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
-
-              <motion.div
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-8"
-              >
-                <h3 className="font-display text-lg sm:text-xl font-semibold mb-3 sm:mb-4">{tt.agenda.aeo.heading}</h3>
-                <ul className="space-y-2 sm:space-y-3">
-                  {tt.agenda.aeo.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed">
-                      <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </motion.div>
+              <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {AGENDA_TRACKS.map((track, i) => (
+                  <motion.div
+                    key={track.key}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                    whileHover={{ y: -6 }}
+                    className="group flex flex-col rounded-2xl border border-border bg-card p-5 sm:p-6 md:p-7 transition-colors duration-300 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
+                  >
+                    <div className="mb-4 sm:mb-5 flex items-center justify-between gap-3">
+                      <span className="inline-flex items-center gap-1.5 text-xs font-semibold tracking-[0.08em] uppercase text-primary lg:hidden">
+                        <Clock className="size-3.5" />
+                        {track.time}
+                      </span>
+                      <div className="relative size-10 shrink-0 overflow-hidden rounded-full ring-2 ring-background shadow-sm transition-transform duration-300 group-hover:scale-110 lg:ml-auto">
+                        <Image src={track.photo} alt="" fill sizes="40px" className="object-cover" />
+                      </div>
+                    </div>
+                    <h3 className="font-display text-lg sm:text-xl font-semibold mb-2">{track.data.heading}</h3>
+                    {"intro" in track.data && track.data.intro && (
+                      <p className="text-sm text-muted-foreground leading-relaxed mb-3 sm:mb-4">{track.data.intro}</p>
+                    )}
+                    <ul className="space-y-2 sm:space-y-3 mt-1">
+                      {track.data.items.map((item, itemIdx) => (
+                        <motion.li
+                          key={item}
+                          initial={{ opacity: 0, x: -8 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.4, delay: i * 0.1 + itemIdx * 0.06 + 0.2 }}
+                          className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed"
+                        >
+                          <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                          <span>{item}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                ))}
+              </div>
             </div>
 
             <motion.p
@@ -385,10 +485,9 @@ export default function AiAutomationsAeoSeoPage() {
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-3 sm:mb-4">
                 {tt.tickets.heading}
               </h2>
-              <p className="text-sm md:text-lg text-muted-foreground leading-relaxed">{tt.tickets.subcopy}</p>
             </motion.div>
 
-            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 sm:gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
               {TICKET_TIERS.map((tier) => (
                 <motion.div
                   key={tier.name}
@@ -408,7 +507,12 @@ export default function AiAutomationsAeoSeoPage() {
                     </span>
                   )}
                   <h3 className="font-display text-xl font-semibold tracking-tight mb-2 sm:mb-3">{tier.name}</h3>
-                  <div className={`font-display text-2xl font-semibold tracking-tight text-foreground ${tier.limited ? "mb-2" : "mb-4 sm:mb-6"}`}>{tier.price}</div>
+                  <div className={`flex items-baseline gap-2 font-display text-2xl font-semibold tracking-tight text-foreground ${tier.limited ? "mb-2" : "mb-4 sm:mb-6"}`}>
+                    {tier.originalPrice && (
+                      <span className="text-base font-normal text-muted-foreground line-through">{tier.originalPrice}</span>
+                    )}
+                    <span>{tier.price}</span>
+                  </div>
                   {tier.limited && (
                     <p className="text-xs font-medium text-amber-600 mb-3 sm:mb-4">Only a limited number of Early Bird tickets available</p>
                   )}

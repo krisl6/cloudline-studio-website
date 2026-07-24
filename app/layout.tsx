@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { GeistSans } from "geist/font/sans"
 import type { Metadata, Viewport } from "next"
 import { ThemeProvider } from "next-themes"
+import { Analytics } from "@vercel/analytics/next"
 import { LanguageProvider } from "@/components/language-provider"
 import { SiteLayout } from "@/components/layout/SiteLayout"
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site"
@@ -99,6 +100,7 @@ export default function RootLayout({
             </SiteLayout>
           </LanguageProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )

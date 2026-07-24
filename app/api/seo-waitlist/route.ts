@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server"
+import { sendEmail, waitlistConfirmationEmail } from "@/lib/email"
 
 // Posts to the same Google Sheets Apps Script webhook already used for the
 // OnlyRank contact form (see onlyrank 2.0's GOOGLE_SHEETS_SETUP.md). It only
@@ -44,6 +45,9 @@ export async function POST(request: Request) {
       // still appended the row, so this is logged, not treated as a hard failure.
       console.warn(`[seo-waitlist] Google Sheets webhook returned ${res.status}`)
     }
+
+    const { subject, html } = waitlistConfirmationEmail(name)
+    sendEmail({ to: email, subject, html }).catch((err) => console.error("[seo-waitlist] email send threw", err))
 
     return NextResponse.json({ ok: true })
   } catch (err) {

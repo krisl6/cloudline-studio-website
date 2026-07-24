@@ -42,7 +42,7 @@ export function Header() {
       href: "/events",
       dropdown: [
         { name: "All Events", href: "/events" },
-        { name: "Marketing MasterClass for Business Visibility with AI", href: "/events/marketing-masterclass" },
+        { name: "Build Your Second Brain with Agentic AI", href: "/events/second-brain-ai" },
       ],
     },
     { name: t.nav.clientResults, href: "/client-results" },
@@ -158,7 +158,7 @@ export function Header() {
             className="md:hidden overflow-hidden"
           >
             <div className="bg-background/95 backdrop-blur-lg border-t border-border">
-              <div className="container px-4 py-4">
+              <div className="container px-4 md:px-6 py-4">
                 <div className="flex flex-col space-y-2">
                   {navItems.map((item, index) => (
                     <motion.div

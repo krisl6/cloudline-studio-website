@@ -31,3 +31,6 @@ next-env.d.ts
 
 # working docs (not website assets)
 *.pptx
+
+# Playwright MCP debug artifacts
+.playwright-mcp/

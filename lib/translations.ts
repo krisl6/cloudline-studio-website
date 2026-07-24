@@ -23,7 +23,7 @@ export const translations = {
       headline: "We help businesses grow, transform, and run better.",
       subcopy:
         "CloudLine Studio is a marketing & digitalization agency with ambitious teams across Singapore and Malaysia. We improve your marketing and sales efficiency and ROI, then build the operations to sustain it.",
-      ctaPrimary: "Get a Quote",
+      ctaPrimary: "Book a Free Consultation",
       ctaSecondary: "Get a Quote",
       stat1: "marketing & sales efficiency",
       stat2Value: "7+ yrs",
@@ -117,7 +117,7 @@ export const translations = {
       heading: "Let's build what's next",
       subcopy:
         "Tell us where you want to grow. We'll show you the fastest, calmest path to get there, starting with a complimentary growth audit of your marketing, sales, and operations.",
-      ctaPrimary: "Get a Quote",
+      ctaPrimary: "Book a Free Consultation",
       ctaSecondary: "Get a Quote",
     },
     footer: {
@@ -157,7 +157,7 @@ export const translations = {
       headline: "Kami bantu perniagaan berkembang, bertransformasi dan beroperasi dengan lebih baik.",
       subcopy:
         "CloudLine Studio ialah agensi pemasaran & pendigitalan dengan pasukan berdaya saing di Singapura dan Malaysia. Kami tingkatkan kecekapan pemasaran dan jualan serta ROI anda, kemudian membina operasi untuk mengekalkannya.",
-      ctaPrimary: "Dapatkan Sebut Harga",
+      ctaPrimary: "Tempah Konsultasi Percuma",
       ctaSecondary: "Dapatkan Sebut Harga",
       stat1: "kecekapan pemasaran & jualan",
       stat2Value: "7+ thn",
@@ -251,7 +251,7 @@ export const translations = {
       heading: "Mari bina langkah seterusnya",
       subcopy:
         "Beritahu kami ke mana anda mahu berkembang. Kami akan tunjukkan laluan terpantas dan paling tenang untuk sampai ke sana, bermula dengan audit pertumbuhan percuma untuk pemasaran, jualan dan operasi anda.",
-      ctaPrimary: "Dapatkan Sebut Harga",
+      ctaPrimary: "Tempah Konsultasi Percuma",
       ctaSecondary: "Dapatkan Sebut Harga",
     },
     footer: {
@@ -291,7 +291,7 @@ export const translations = {
       headline: "我们助力企业成长、转型，并更高效地运营。",
       subcopy:
         "CloudLine Studio 是一家营销与数字化机构，拥有遍布新加坡和马来西亚的进取团队。我们提升您的营销与销售效率及投资回报，并建立可持续的运营体系。",
-      ctaPrimary: "获取报价",
+      ctaPrimary: "预约免费咨询",
       ctaSecondary: "获取报价",
       stat1: "营销与销售效率",
       stat2Value: "7+ 年",
@@ -384,7 +384,7 @@ export const translations = {
       heading: "一起打造下一步",
       subcopy:
         "告诉我们您想在哪里实现增长。我们将为您指明最快、最从容的路径, 从一次免费的营销、销售与运营增长审计开始。",
-      ctaPrimary: "获取报价",
+      ctaPrimary: "预约免费咨询",
       ctaSecondary: "获取报价",
     },
     footer: {

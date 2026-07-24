@@ -22,17 +22,16 @@ export function WhatsAppFloat() {
       className="fixed bottom-6 right-6 z-50"
     >
       <Link
-        href="https://wa.link/fwi8af"
+        href="https://wa.me/601127755215"
         target="_blank"
-        className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-foreground text-background shadow-lg shadow-foreground/20 transition-all hover:shadow-xl hover:shadow-foreground/30"
+        className="group relative flex h-7 w-7 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-foreground text-background transition-all"
         aria-label="Chat on WhatsApp"
       >
-        <WhatsAppIcon className="h-6 w-6" />
-        <span className="absolute -top-2 -right-2 flex h-5 w-5 items-center justify-center rounded-full bg-red-500 text-xs font-medium text-white">
-          <span className="absolute h-2 w-2 animate-ping rounded-full bg-red-400"></span>
+        <WhatsAppIcon className="h-3 w-3 sm:h-6 sm:w-6" />
+        <span className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 flex h-2.5 w-2.5 sm:h-5 sm:w-5 items-center justify-center rounded-full bg-red-500 text-[8px] sm:text-xs font-medium text-white">
+          <span className="absolute h-1 w-1 sm:h-2 sm:w-2 animate-ping rounded-full bg-red-400"></span>
           <span className="relative">1</span>
         </span>
-        <span className="absolute -left-2 -top-2 -z-10 h-full w-full rounded-full bg-foreground/20 transition-all duration-500 group-hover:animate-ping"></span>
       </Link>
     </motion.div>
   )

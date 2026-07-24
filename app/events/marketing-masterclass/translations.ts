@@ -4,7 +4,7 @@ export const translations = {
       eyebrow: "Hands-On Masterclass",
       headline: "Marketing MasterClass for Business Visibility with AI",
       tagline:
-        "Be found by Google and ChatGPT. Automate the most time consuming part of your marketing: Video Creation and Editing. A hands-on session for marketers who want AI working for them, not against them.",
+        "Be found by Google and ChatGPT. Automate the most time consuming part of your marketing: Video Creation and Editing. A hands-on session for marketers who want AI working for them.",
       detailParagraphs: [
         "You'll build a real news-to-video pipeline live, from source URL to editable output, and learn exactly where to automate and where to keep a human editor in control.",
         "Then you'll go hands-on with AEO: how AI engines correlate entities, why ranking well doesn't guarantee AI inclusion, and how to structure your SEO so generative engines recommend your business instead of your competitor's.",
@@ -14,6 +14,10 @@ export const translations = {
       location: "Infinity8, Sunway Square",
       ctaTickets: "Get My Ticket",
       ctaDirections: "Get Directions",
+      startsIn: "Starts in",
+      eventStarted: "Event has started",
+      seatsLeft: "of 15 seats left",
+      seatsUnit: { d: "d", h: "h", m: "m", s: "s" },
     },
     agenda: {
       heading: "What will I learn?",
@@ -22,7 +26,7 @@ export const translations = {
         "Then you'll go hands-on with AEO: how AI engines correlate entities, why ranking well doesn't guarantee AI inclusion, and how to structure your SEO so generative engines recommend your business instead of your competitor's.",
       ],
       automation: {
-        heading: "AI Automation with Ken Ooi",
+        heading: "Video Automation with Ken Ooi",
         items: [
           "How to structure a news-to-video AI automation, from source URL to editable output",
           "Scripting logic for repetitive content workflows: where to automate vs. where a human editor should stay in the loop",
@@ -59,7 +63,7 @@ export const translations = {
         { time: "1:00 PM", title: "AEO Express+ with Kenny Lee" },
         { time: "2:00 PM", title: "Claude for Daily Tasks with Kristine Ling" },
         { time: "3:00 PM", title: "Break" },
-        { time: "3:30 PM", title: "AI Automation with Ken Ooi" },
+        { time: "3:30 PM", title: "Video Automation with Ken Ooi" },
         { time: "4:30 PM", title: "Q&A and Sharing" },
       ],
     },
@@ -73,7 +77,6 @@ export const translations = {
     tickets: {
       eyebrow: "Tickets",
       heading: "Reserve your seat",
-      subcopy: "Seats are limited. Choose the tier that fits you and reserve your seat below.",
       disclaimer:
         "This event will be photographed and video recorded. Clips and photos may be used publicly on social media and in marketing material. By registering and attending, you consent to appearing in that footage.",
     },
@@ -104,22 +107,22 @@ export const translations = {
     },
     speakers: {
       eyebrow: "Speakers",
-      heading: "Learn from people doing the work",
+      heading: "Your Speakers",
       people: [
         {
           name: "Kristine Ling",
           role: "Founder, CloudLine Studio",
-          bio: "Before founding CloudLine Studio, Kristine was Head of Growth at MonstarLabs and Head of Marketing at Fokuslah and ClearSK in Singapore, where she grew e-commerce and tech companies to over 300% revenue growth year-on-year.",
+          bio: "Kristine Ling has spent the last four years building at the frontier of AI and machine learning, using that time to build and mentor five AI startups in Malaysia, including SurgeGraph, which crossed USD500,000 in annual recurring revenue in just eight months.",
           bioExtra:
-            "She now focuses on consulting and implementing AI automations for startups and SMEs, running CloudLine Studio as a digital marketing agency helping businesses across Singapore and Malaysia grow through connected strategy, automation, and operations. She has hosted several hands-on AI workshops, from AI app-building with MonstarX and SEO/AEO training with LSIGraph and SurgeGraph, to Claude-powered automation sessions that brought 150+ builders hands-on with AI in a single day. Beyond the stage, she's a spokesperson for several AI-powered applications and mentors early-stage startup founders building their own products.",
+            "Today, she runs CloudLine Studio, where a lean team paired with a fleet of AI agents delivers work for enterprise-grade clients including Petronas Lubricants and Prenetics (Circle DNA), proof that a small, AI-augmented team can operate at the scale and reliability global brands demand. This workshop pulls back the curtain on the exact systems and workflows she uses inside CloudLine Studio to cut repetitive work and run lean without sacrificing quality, the same playbook that lets her team punch well above its headcount.",
           photo: "/team-kristine.jpg",
         },
         {
           name: "Ken Ooi",
           role: "AI Trainer & Builder · Product Manager",
-          bio: "Ken is a Product Manager at an AI startup, where he builds automation that turns a single news URL into a finished, editable video — a pipeline that lets one editor ship 10x the output of manual work. A 500 Global AI Residency alum, TEDx speaker, and ex-Shell engineer, he judged the National AI Competition 2026 and led his team to 2nd place at BEYOND Hack Day 2026 in Macau, featured by Cradle.",
+          bio: "Ken is a Product Manager at A47, an AI-native news platform startup backed by USD2 million in funding. There, he builds the automation that turns a single news URL into a finished, editable video — a pipeline that lets one editor ship 10x the output of manual work.",
           bioExtra:
-            "Beyond building the pipeline, Ken judged the AI Generative Arts category at the National AI Competition 2026 (Sunway University × Rakan Tutor) and organised a live prompt-writing workshop at a BytePlus video-AI hackathon. At this masterclass, he'll walk through exactly how his automation works: the scripting logic behind it, where to automate versus where a human editor should stay in control, and how to turn a working pipeline into a process a team can run on its own.",
+            "He's a 500 Global AI Residency alum, TEDx speaker, and ex-Shell engineer. He judged the AI Generative Arts category at the National AI Competition 2026 (Sunway University × Rakan Tutor) and led his team to 2nd place at BEYOND Hack Day 2026 in Macau, featured by Cradle. He's also organised a live prompt-writing workshop at a BytePlus video-AI hackathon. In this session, Ken breaks down exactly how his automation works: the scripting logic behind it, where to automate versus where a human editor should stay in control, and how to turn a working pipeline into a process a team can run on its own.",
           topics: ["500 Global AI Residency", "TEDx Speaker", "Ex-Shell", "MEng, Southampton"],
           photo: "/speaker-ken-ooi.jpg",
         },
@@ -161,7 +164,7 @@ export const translations = {
       eyebrow: "Masterclass Praktikal",
       headline: "MasterClass Pemasaran untuk Keterlihatan Perniagaan dengan AI",
       tagline:
-        "Ditemui oleh Google dan ChatGPT. Automasikan bahagian paling memakan masa dalam pemasaran anda: Penciptaan & Penyuntingan Video. Sesi praktikal untuk pemasar yang mahu AI bekerja untuk mereka, bukan menentang mereka.",
+        "Ditemui oleh Google dan ChatGPT. Automasikan bahagian paling memakan masa dalam pemasaran anda: Penciptaan & Penyuntingan Video. Sesi praktikal untuk pemasar yang mahu AI bekerja untuk mereka.",
       detailParagraphs: [
         "Anda akan membina saluran paip berita-kepada-video sebenar secara langsung, dari URL sumber ke output yang boleh disunting, dan belajar dengan tepat di mana untuk automasikan dan di mana untuk mengekalkan kawalan editor manusia.",
         "Kemudian anda akan turun padang dengan AEO: cara enjin AI mengaitkan entiti, sebab kedudukan yang baik tidak menjamin kemasukan AI, dan cara menyusun SEO anda supaya enjin generatif mengesyorkan perniagaan anda dan bukannya pesaing anda.",
@@ -171,6 +174,10 @@ export const translations = {
       location: "Infinity8, Sunway Square",
       ctaTickets: "Dapatkan Tiket Saya",
       ctaDirections: "Dapatkan Arah",
+      startsIn: "Bermula dalam",
+      eventStarted: "Acara telah bermula",
+      seatsLeft: "daripada 15 tempat tinggal",
+      seatsUnit: { d: "h", h: "j", m: "m", s: "s" },
     },
     agenda: {
       heading: "Apa yang akan saya pelajari?",
@@ -179,7 +186,7 @@ export const translations = {
         "Kemudian anda akan turun padang dengan AEO: cara enjin AI mengaitkan entiti, sebab kedudukan yang baik tidak menjamin kemasukan AI, dan cara menyusun SEO anda supaya enjin generatif mengesyorkan perniagaan anda dan bukannya pesaing anda.",
       ],
       automation: {
-        heading: "Automasi AI bersama Ken Ooi",
+        heading: "Automasi Video bersama Ken Ooi",
         items: [
           "Cara menyusun automasi berita-kepada-video AI, dari URL sumber ke output yang boleh disunting",
           "Logik skrip untuk aliran kerja kandungan berulang: di mana untuk automasikan berbanding di mana editor manusia perlu kekal terlibat",
@@ -216,7 +223,7 @@ export const translations = {
         { time: "1:00 PM", title: "AEO Express+ bersama Kenny Lee" },
         { time: "2:00 PM", title: "Claude untuk Tugasan Harian bersama Kristine Ling" },
         { time: "3:00 PM", title: "Rehat" },
-        { time: "3:30 PM", title: "Automasi AI bersama Ken Ooi" },
+        { time: "3:30 PM", title: "Automasi Video bersama Ken Ooi" },
         { time: "4:30 PM", title: "Sesi Soal Jawab & Perkongsian" },
       ],
     },
@@ -230,7 +237,6 @@ export const translations = {
     tickets: {
       eyebrow: "Tiket",
       heading: "Tempah tempat anda",
-      subcopy: "Tempat adalah terhad. Pilih peringkat yang sesuai dengan anda dan tempah tempat anda di bawah.",
       disclaimer:
         "Acara ini akan dirakam foto dan video. Klip dan foto mungkin digunakan secara terbuka di media sosial dan bahan pemasaran. Dengan mendaftar dan menghadiri, anda bersetuju untuk muncul dalam rakaman tersebut.",
     },
@@ -261,22 +267,22 @@ export const translations = {
     },
     speakers: {
       eyebrow: "Penceramah",
-      heading: "Belajar daripada mereka yang melakukan kerja ini",
+      heading: "Penceramah Anda",
       people: [
         {
           name: "Kristine Ling",
           role: "Pengasas, CloudLine Studio",
-          bio: "Sebelum menubuhkan CloudLine Studio, Kristine adalah Head of Growth di MonstarLabs dan Head of Marketing di Fokuslah dan ClearSK di Singapura, di mana beliau berjaya mengembangkan syarikat e-dagang dan teknologi kepada pertumbuhan hasil lebih 300% tahun ke tahun.",
+          bio: "Kristine Ling telah menghabiskan empat tahun terakhir membina di barisan hadapan AI dan pembelajaran mesin, menggunakan masa itu untuk membina dan membimbing lima startup AI di Malaysia, termasuk SurgeGraph, yang mencecah hasil berulang tahunan USD500,000 dalam masa lapan bulan sahaja.",
           bioExtra:
-            "Kini beliau memberi tumpuan kepada perundingan dan pelaksanaan automasi AI untuk startup dan PKS, serta menjalankan CloudLine Studio, sebuah agensi pemasaran digital yang membantu perniagaan di Singapura dan Malaysia berkembang melalui strategi, automasi, dan operasi yang bersepadu. Beliau telah menganjurkan beberapa bengkel AI praktikal, dari pembinaan aplikasi AI bersama MonstarX dan latihan SEO/AEO bersama LSIGraph dan SurgeGraph, hingga sesi automasi berkuasa Claude yang membawa 150+ pembina turun padang dengan AI dalam sehari. Selain itu, beliau juga jurucakap untuk beberapa aplikasi berkuasa AI dan membimbing pengasas startup peringkat awal membina produk mereka sendiri.",
+            "Kini, beliau menjalankan CloudLine Studio, di mana satu pasukan yang ramping digandingkan dengan barisan ejen AI menyampaikan kerja untuk pelanggan bertaraf enterprise termasuk Petronas Lubricants dan Prenetics (Circle DNA), bukti bahawa pasukan kecil yang diperkasakan AI boleh beroperasi pada skala dan kebolehpercayaan yang dituntut oleh jenama global. Bengkel ini membuka rahsia sistem dan aliran kerja sebenar yang beliau gunakan di dalam CloudLine Studio untuk mengurangkan kerja berulang dan beroperasi secara ramping tanpa menjejaskan kualiti — playbook yang sama yang membolehkan pasukannya mencapai hasil jauh melebihi bilangan kakitangannya.",
           photo: "/team-kristine.jpg",
         },
         {
           name: "Ken Ooi",
           role: "Jurulatih AI & Pembina · Product Manager",
-          bio: "Ken ialah Product Manager di sebuah syarikat permulaan AI, tempat beliau membina automasi yang menukar satu URL berita kepada video siap disunting — satu saluran paip yang membolehkan seorang editor menghasilkan 10x lebih banyak output berbanding kerja manual. Alumni 500 Global AI Residency, penceramah TEDx, dan bekas jurutera Shell, beliau menjadi hakim di National AI Competition 2026 dan mengetuai pasukannya ke tempat ke-2 di BEYOND Hack Day 2026 di Macau, yang diketengahkan oleh Cradle.",
+          bio: "Ken ialah Product Manager di A47, sebuah startup platform berita AI-native yang disokong oleh dana USD2 juta. Di sana, beliau membina automasi yang menukar satu URL berita kepada video siap disunting — satu saluran paip yang membolehkan seorang editor menghasilkan 10x lebih banyak output berbanding kerja manual.",
           bioExtra:
-            "Selain membina saluran paip itu, Ken menjadi hakim untuk kategori AI Generative Arts di National AI Competition 2026 (Sunway University × Rakan Tutor) dan menganjurkan bengkel penulisan gesaan (prompt) langsung di sebuah hackathon video-AI BytePlus. Dalam masterclass ini, beliau akan menunjukkan dengan tepat bagaimana automasinya berfungsi: logik skrip di sebaliknya, di mana untuk automasikan berbanding di mana editor manusia perlu mengekalkan kawalan, dan cara menukar saluran paip yang berfungsi kepada proses yang boleh dijalankan sendiri oleh sesebuah pasukan.",
+            "Beliau merupakan alumni 500 Global AI Residency, penceramah TEDx, dan bekas jurutera Shell. Beliau menjadi hakim untuk kategori AI Generative Arts di National AI Competition 2026 (Sunway University × Rakan Tutor) dan mengetuai pasukannya ke tempat ke-2 di BEYOND Hack Day 2026 di Macau, yang diketengahkan oleh Cradle. Beliau turut menganjurkan bengkel penulisan gesaan (prompt) langsung di sebuah hackathon video-AI BytePlus. Dalam sesi ini, Ken akan menunjukkan dengan tepat bagaimana automasinya berfungsi: logik skrip di sebaliknya, di mana untuk automasikan berbanding di mana editor manusia perlu mengekalkan kawalan, dan cara menukar saluran paip yang berfungsi kepada proses yang boleh dijalankan sendiri oleh sesebuah pasukan.",
           topics: ["500 Global AI Residency", "Penceramah TEDx", "Bekas Shell", "MEng, Southampton"],
           photo: "/speaker-ken-ooi.jpg",
         },
@@ -318,7 +324,7 @@ export const translations = {
       eyebrow: "实操大师课",
       headline: "借助 AI 提升商业曝光度的营销大师课",
       tagline:
-        "让 Google 和 ChatGPT 都能找到你。自动化营销中最耗时的环节：视频创作与剪辑。为希望 AI 为自己所用而非与自己对抗的营销人员打造的实操课程。",
+        "让 Google 和 ChatGPT 都能找到你。自动化营销中最耗时的环节：视频创作与剪辑。为希望 AI 为自己所用的营销人员打造的实操课程。",
       detailParagraphs: [
         "您将现场搭建一条真实的新闻转视频自动化流程，从源链接到可编辑成品，并准确学习哪些环节该自动化、哪些环节仍需人工编辑把控。",
         "接着您将实操学习 AEO：AI 引擎如何进行实体关联、为何排名靠前不代表一定会被 AI 收录，以及如何构建您的 SEO，让生成式引擎推荐您的业务而非竞争对手。",
@@ -328,6 +334,10 @@ export const translations = {
       location: "Infinity8, Sunway Square",
       ctaTickets: "获取我的门票",
       ctaDirections: "获取路线",
+      startsIn: "距离开始还有",
+      eventStarted: "活动已开始",
+      seatsLeft: "个名额剩余（共15个）",
+      seatsUnit: { d: "天", h: "时", m: "分", s: "秒" },
     },
     agenda: {
       heading: "我将学到什么？",
@@ -336,7 +346,7 @@ export const translations = {
         "接着您将实操学习 AEO：AI 引擎如何进行实体关联、为何排名靠前不代表一定会被 AI 收录，以及如何构建您的 SEO，让生成式引擎推荐您的业务而非竞争对手。",
       ],
       automation: {
-        heading: "与 Ken Ooi 学习 AI 自动化",
+        heading: "与 Ken Ooi 学习视频自动化",
         items: [
           "如何构建「新闻链接到成品视频」的 AI 自动化流程，从源链接到可编辑成品",
           "重复性内容工作流的脚本逻辑：哪些该自动化，哪些仍需人工剪辑把关",
@@ -373,7 +383,7 @@ export const translations = {
         { time: "1:00 PM", title: "与 Kenny Lee 学习 AEO Express+" },
         { time: "2:00 PM", title: "与 Kristine Ling 学习 Claude 日常任务实战" },
         { time: "3:00 PM", title: "休息时间" },
-        { time: "3:30 PM", title: "与 Ken Ooi 学习 AI 自动化" },
+        { time: "3:30 PM", title: "与 Ken Ooi 学习视频自动化" },
         { time: "4:30 PM", title: "问答与交流分享" },
       ],
     },
@@ -387,7 +397,6 @@ export const translations = {
     tickets: {
       eyebrow: "门票",
       heading: "预留您的座位",
-      subcopy: "座位有限。选择适合您的档位，并在下方预留您的座位。",
       disclaimer: "本活动将进行拍照与录像。相关照片与视频片段可能用于社交媒体公开发布及营销素材。报名并出席即表示您同意可能出现在相关影像中。",
     },
     aeoExpress: {
@@ -417,22 +426,22 @@ export const translations = {
     },
     speakers: {
       eyebrow: "讲者",
-      heading: "向实践者学习",
+      heading: "您的讲者",
       people: [
         {
           name: "Kristine Ling",
           role: "CloudLine Studio 创始人",
-          bio: "在创办 CloudLine Studio 之前，Kristine 曾担任 MonstarLabs 的增长负责人（Head of Growth），以及新加坡 Fokuslah 与 ClearSK 的市场负责人（Head of Marketing），成功带领电商与科技公司实现同比超过 300% 的营收增长。",
+          bio: "Kristine Ling 过去四年一直在 AI 与机器学习的前沿深耕，并在此期间创建和指导了马来西亚的五家 AI 初创公司，其中包括 SurgeGraph——该公司仅用 8 个月便实现了 50 万美元的年经常性收入（ARR）。",
           bioExtra:
-            "如今她专注于为初创企业与中小企业提供 AI 自动化咨询与落地实施服务，同时经营 CloudLine Studio——一家数字营销机构，帮助新加坡与马来西亚的企业通过一体化策略、自动化与运营实现增长。她曾主办多场实操 AI 工作坊，从与 MonstarX 合作的 AI 应用搭建课程、与 LSIGraph 及 SurgeGraph 合作的 SEO/AEO 培训，到吸引 150 多位开发者亲身体验 AI 的 Claude 自动化工作坊。她同时也是多款 AI 应用的代言人，并指导早期创业者打造自己的产品。",
+            "如今，她经营着 CloudLine Studio，一支精简的团队配合一批 AI 智能体，为 Petronas Lubricants、Prenetics（Circle DNA）等企业级客户提供服务——证明一支精小的 AI 增强型团队，同样能够以全球品牌所要求的规模与可靠性运作。这场工作坊将揭开她在 CloudLine Studio 内部所使用的系统与工作流程：如何削减重复性工作、在不牺牲质量的前提下保持精简运作——正是这套打法，让她的团队产出远超其人数所能预期的成果。",
           photo: "/team-kristine.jpg",
         },
         {
           name: "Ken Ooi",
           role: "AI 培训师与建造者 · 产品经理",
-          bio: "Ken 是一家 AI 初创公司的产品经理，负责构建能将一条新闻链接转化为成品视频的自动化系统——这套流程让一位剪辑师的产出量提升至人工制作的 10 倍。他是 500 Global AI Residency 校友、TEDx 演讲者，也曾任职于壳牌（Shell），并担任 2026 年全国 AI 竞赛评委，带领团队在 2026 年澳门 BEYOND Hack Day 中获得第二名，获 Cradle 报道。",
+          bio: "Ken 是 A47 的产品经理——这是一家获得 200 万美元融资支持的 AI 原生新闻平台初创公司。在那里，他构建了能将一条新闻链接转化为成品视频的自动化系统——这套流程让一位剪辑师的产出量提升至人工制作的 10 倍。",
           bioExtra:
-            "除了构建这套自动化流程外，Ken 还担任 2026 年全国 AI 竞赛（Sunway University × Rakan Tutor 主办）AI 生成艺术类别的评审，并在 BytePlus 举办的视频 AI 黑客松中组织并主持了一场实操提示词撰写工作坊。在这场大师班中，他将具体拆解这套自动化系统的运作方式：背后的脚本逻辑、哪些环节该自动化、哪些环节仍需人工编辑把关，以及如何将一套可运行的流程，转化为团队能够自行运作的标准流程。",
+            "他是 500 Global AI Residency 校友、TEDx 演讲者，也曾任职于壳牌（Shell）。他担任了 2026 年全国 AI 竞赛（Sunway University × Rakan Tutor 主办）AI 生成艺术类别的评审，并带领团队在 2026 年澳门 BEYOND Hack Day 中获得第二名，获 Cradle 报道。他还在 BytePlus 举办的视频 AI 黑客松中组织并主持了一场实操提示词撰写工作坊。在本场环节中，Ken 将具体拆解他的自动化系统是如何运作的：背后的脚本逻辑、哪些环节该自动化、哪些环节仍需人工编辑把关，以及如何将一套可运行的流程，转化为团队能够自行运作的标准流程。",
           topics: ["500 Global AI Residency", "TEDx 演讲者", "前壳牌员工", "南安普顿大学工程硕士"],
           photo: "/speaker-ken-ooi.jpg",
         },

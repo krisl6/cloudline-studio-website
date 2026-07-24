@@ -130,7 +130,7 @@ export default function ContactPage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="grid gap-6 md:grid-cols-3"
+              className="grid grid-cols-1 gap-6 md:grid-cols-3"
             >
               {contactInfo.map((info) => {
                 const Icon = info.Icon
