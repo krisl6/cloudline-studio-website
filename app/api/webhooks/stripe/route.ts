@@ -13,6 +13,16 @@ const TIER_BY_AMOUNT: Record<number, string> = {
   65900: "Early Bird Pair", // second-brain-ai's 2-ticket bundle
 }
 
+const SECOND_BRAIN_AI_EVENT_NAME = "Build Your Second Brain & Automate Your Marketing with Agentic AI"
+
+// Only "Early Bird Pair" is unambiguous today — it's the one live
+// second-brain-ai tier. Once real Stripe links exist for second-brain-ai's
+// own "Early Bird" (RM 359) and "Virtual Pass" (RM 199), RM 199 will collide
+// with marketing-masterclass's existing "Early Bird" (also RM 199 = 19900
+// sen) under this amount-based lookup. At that point this needs to switch to
+// disambiguating by `session.payment_link` ID instead of amount.
+const SECOND_BRAIN_AI_TIERS = new Set(["Early Bird Pair"])
+
 export async function POST(request: Request) {
   const secretKey = process.env.STRIPE_SECRET_KEY
   const webhookSecret = process.env.STRIPE_WEBHOOK_SECRET
@@ -80,7 +90,8 @@ export async function POST(request: Request) {
   // Known accepted limitation: no dedup store for Stripe's rare duplicate
   // webhook redelivery. Given the small (15-seat) one-time scale of this
   // event, an occasional duplicate row/email is an acceptable risk.
-  const { subject, html } = ticketConfirmationEmail(name, tier)
+  const eventName = SECOND_BRAIN_AI_TIERS.has(tier) ? SECOND_BRAIN_AI_EVENT_NAME : undefined
+  const { subject, html } = ticketConfirmationEmail(name, tier, eventName)
   sendEmail({ to: email, subject, html }).catch((err) => console.error("[stripe-webhook] email send threw", err))
 
   return NextResponse.json({ ok: true })

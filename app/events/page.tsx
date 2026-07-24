@@ -118,7 +118,7 @@ export default function EventsPage() {
                 <p className="text-sm text-muted-foreground mt-1">{tt.upcoming.date}</p>
               </div>
               <Button className="shrink-0 rounded-full font-medium" asChild>
-                <Link href="/events/marketing-masterclass">
+                <Link href="/events/second-brain-ai">
                   {tt.upcoming.cta}
                   <ArrowRight className="ml-1.5 size-4" />
                 </Link>

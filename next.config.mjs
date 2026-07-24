@@ -32,6 +32,11 @@ const nextConfig = {
         destination: '/events/marketing-masterclass',
         permanent: true,
       },
+      {
+        source: '/events/marketing-masterclass',
+        destination: '/events/second-brain-ai',
+        permanent: true,
+      },
     ]
   },
 }

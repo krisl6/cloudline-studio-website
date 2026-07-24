@@ -63,6 +63,18 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
+        <div className="mt-3 pt-3 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-muted-foreground">&copy; {new Date().getFullYear()} CloudLine Studio. {t.footer.rights}</p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+              {t.footer.privacy}
+            </Link>
+            <Link href="/terms" className="text-xs text-muted-foreground hover:text-primary transition-colors">
+              {t.footer.terms}
+            </Link>
+          </div>
+        </div>
       </div>
     </footer>
   )

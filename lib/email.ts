@@ -81,13 +81,13 @@ export function waitlistConfirmationEmail(name: string) {
 
 const CONTACT_WHATSAPP_URL = "https://wa.me/601127755215"
 
-export function ticketConfirmationEmail(name: string, tier: string) {
+export function ticketConfirmationEmail(name: string, tier: string, eventName: string = "Marketing MasterClass") {
   const firstName = name.trim().split(/\s+/)[0] || "there"
   return {
-    subject: "You're registered — Marketing MasterClass, 12 August 2026",
+    subject: `You're registered — ${eventName}, 12 August 2026`,
     html: wrapper(`
       <p style="font-size: 15px; line-height: 1.6;">Thank you for registering, ${escapeHtml(firstName)}!</p>
-      <p style="font-size: 15px; line-height: 1.6;">You're confirmed for the Marketing MasterClass (${escapeHtml(tier)} ticket) on <strong>12 August 2026, 12:30 PM &ndash; 5:00 PM</strong> at Infinity8, Sunway Square.</p>
+      <p style="font-size: 15px; line-height: 1.6;">You're confirmed for ${escapeHtml(eventName)} (${escapeHtml(tier)} ticket) on <strong>12 August 2026, 12:30 PM &ndash; 5:00 PM</strong> at Infinity8, Sunway Square.</p>
       <p style="font-size: 15px; line-height: 1.6;">Contact us at <a href="${CONTACT_WHATSAPP_URL}" style="color: #2f4d73;">${CONTACT_WHATSAPP_URL.replace("https://", "")}</a> for more information.</p>
       <p style="font-size: 15px; line-height: 1.6;">Kristine &amp; the CloudLine team</p>
     `),

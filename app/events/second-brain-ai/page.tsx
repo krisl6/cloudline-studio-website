@@ -4,12 +4,11 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { ArrowRight, CalendarDays, Clock, MapPin, Navigation, Timer, Users, ShieldCheck, Sparkles } from "lucide-react"
+import { ArrowRight, CalendarDays, Clock, Download, MapPin, Navigation, Timer, Users, ShieldCheck, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { DoodleCheck } from "@/components/doodles"
-import { TicketPurchaseDialog } from "@/components/ticket-purchase-dialog"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 
@@ -19,6 +18,7 @@ import { translations } from "./translations"
 // not a different event.
 const VENUE_MAPS_URL = "https://maps.google.com/?q=Infinity8+Sunway+Square"
 const VENUE_WAZE_URL = "https://waze.com/ul?q=Infinity8%20Sunway%20Square&navigate=yes"
+const LESSON_PLAN_URL = "/second-brain-ai-lesson-plan.pdf"
 const EVENT_START = "2026-08-12T12:30:00+08:00"
 
 // ── SEATS ───────────────────────────────────────────────────────────
@@ -64,10 +64,10 @@ function useCountdown(targetIso: string) {
 }
 
 // ── TICKETS ─────────────────────────────────────────────────────────
-// Billplz replaces Stripe for this page's checkout (lower fees on
-// Malaysian FPX/card payments — see app/api/billplz/create-bill and
-// app/api/webhooks/billplz). Each tier's "billplzTier" key must match the
-// TIERS map in app/api/billplz/create-bill/route.ts exactly.
+// All tiers checkout via Stripe Payment Links (see app/api/webhooks/stripe).
+// The Early Bird Pair link's Stripe Dashboard "after payment" redirect must
+// point at /events/second-brain-ai/register-pair?session_id={CHECKOUT_SESSION_ID}
+// so both attendees' details get collected post-payment.
 
 const TICKET_INCLUSIONS = [
   "Full workshop access (12:30pm–5pm): Agentic AI Workflows + BONUS Video Automation",
@@ -100,7 +100,9 @@ const TICKET_TIERS = [
     originalPrice: "RM 499" as string | null,
     popular: false,
     limited: true,
-    billplzTier: "early-bird" as const,
+    // Verified live via checkout: "Early Bird — Build Your Second Brain with
+    // Agentic AI" for MYR 359.00.
+    stripeUrl: "https://buy.stripe.com/5kQ5kC9z77Wb5Rg7kHbZe05" as string | undefined,
     features: TICKET_INCLUSIONS,
   },
   {
@@ -109,8 +111,11 @@ const TICKET_TIERS = [
     originalPrice: null as string | null,
     popular: true,
     limited: false,
-    // This tier is a Stripe Payment Link (2-ticket bundle), not Billplz —
-    // verified live via checkout: "Early Bird PAIR TICKETS" for MYR 659.00.
+    twoTickets: true,
+    // Verified live via checkout: "Early Bird PAIR TICKETS" for MYR 659.00.
+    // After payment, Stripe redirects the buyer to /register-pair (set on the
+    // Payment Link's confirmation-page setting) to collect both attendees'
+    // details — Stripe's own checkout only captures the purchaser's info.
     stripeUrl: "https://buy.stripe.com/dRmcN4bHfa4jdjI6gDbZe08" as string | undefined,
     features: TICKET_INCLUSIONS_PAIR,
   },
@@ -120,7 +125,9 @@ const TICKET_TIERS = [
     originalPrice: null as string | null,
     popular: false,
     limited: false,
-    billplzTier: "virtual-pass" as const,
+    // Verified live via checkout: "Virtual Pass — Build Your Second Brain
+    // with Agentic AI" for MYR 199.00.
+    stripeUrl: "https://buy.stripe.com/aFa6oG26FgsHfrQgVhbZe07" as string | undefined,
     features: TICKET_INCLUSIONS_VIRTUAL,
   },
 ] as const
@@ -259,7 +266,7 @@ export default function SecondBrainAgenticAiPage() {
 
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border" aria-label="Event overview">
-          <div className="container px-4 md:px-6 pt-10 pb-8 md:pt-28 md:pb-24">
+          <div className="container px-4 md:px-6 pt-8 pb-6 md:pt-14 md:pb-14">
             <div className="mx-auto max-w-6xl grid items-center gap-6 lg:gap-14 lg:grid-cols-[1fr_minmax(0,440px)]">
               <motion.div variants={stagger} initial="hidden" animate="show">
                 <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-5">
@@ -312,14 +319,14 @@ export default function SecondBrainAgenticAiPage() {
                     </span>
                   ))}
                 </motion.div>
-                <motion.div variants={fadeUp} className="hidden sm:block max-w-2xl space-y-3 mb-9">
+                <motion.div variants={fadeUp} className="hidden sm:block max-w-2xl space-y-2 mb-5">
                   {tt.hero.detailParagraphs.map((paragraph, i) => (
                     <p key={i} className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                       {paragraph}
                     </p>
                   ))}
                 </motion.div>
-                <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-2.5 mb-6 sm:mb-8">
+                <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-2.5 mb-4 sm:mb-5">
                   <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs sm:text-sm font-medium tabular-nums">
                     <Timer className="size-4 text-primary shrink-0" />
                     {timeLeft && !timeLeft.done ? (
@@ -342,6 +349,11 @@ export default function SecondBrainAgenticAiPage() {
                 <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-3">
                   <Button size="lg" className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-medium" onClick={() => scrollTo("tickets")}>
                     {tt.hero.ctaTickets} <ArrowRight className="ml-1.5 size-4" />
+                  </Button>
+                  <Button size="lg" variant="outline" className="rounded-full h-11 sm:h-12 px-5 sm:px-6 text-sm sm:text-base font-medium border-border bg-transparent hover:bg-muted" asChild>
+                    <Link href={LESSON_PLAN_URL} target="_blank" rel="noopener noreferrer">
+                      <Download className="mr-1.5 size-4" />{tt.hero.ctaLessonPlan}
+                    </Link>
                   </Button>
                 </motion.div>
                 <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium text-primary">
@@ -374,9 +386,9 @@ export default function SecondBrainAgenticAiPage() {
             Ordered non-technical → more technical, per the workshop's real
             teaching order: Claude (chat) → safety checkpoint → Hermes Agent
             (moderate autonomy) → OpenClaw (fully self-hosted/autonomous). */}
-        <section className="w-full py-12 md:py-20 lg:py-28 border-b border-border" aria-label="Workshop timeline">
+        <section className="w-full py-8 md:py-12 lg:py-14 border-b border-border" aria-label="Workshop timeline">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-8 sm:mb-14">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.timeline.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-2 sm:mb-3">
                 {tt.timeline.heading}
@@ -453,7 +465,7 @@ export default function SecondBrainAgenticAiPage() {
         {/* Trusted by — real clients named in Kristine's bio, only shown once
             a real logo asset exists locally (never a placeholder standing in
             for a trademark). */}
-        <section className="w-full py-10 md:py-14 bg-muted/50 border-b border-border" aria-label="Trusted by">
+        <section className="w-full py-6 md:py-8 bg-muted/50 border-b border-border" aria-label="Trusted by">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0 }}
@@ -482,9 +494,9 @@ export default function SecondBrainAgenticAiPage() {
         </section>
 
         {/* Speakers */}
-        <section className="w-full py-12 md:py-20 lg:py-28 border-b border-border" aria-label="Speakers">
+        <section className="w-full py-8 md:py-12 lg:py-14 border-b border-border" aria-label="Speakers">
           <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-8 sm:mb-14">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.speakers.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.speakers.heading}
@@ -506,9 +518,9 @@ export default function SecondBrainAgenticAiPage() {
         </section>
 
         {/* Who this is for + what to bring */}
-        <section className="w-full py-12 md:py-20 lg:py-28 bg-muted/50 border-b border-border" aria-label="Who this workshop is for">
+        <section className="w-full py-8 md:py-12 lg:py-14 bg-muted/50 border-b border-border" aria-label="Who this workshop is for">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-10 sm:gap-14 md:grid-cols-2 max-w-5xl">
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 max-w-5xl">
               <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
                 <h2 className="font-display text-xl sm:text-2xl font-semibold tracking-tight mb-4 sm:mb-5">{tt.whoFor.heading}</h2>
                 <ChecklistItems items={tt.whoFor.items} />
@@ -522,7 +534,7 @@ export default function SecondBrainAgenticAiPage() {
         </section>
 
         {/* Takeaways — value recap right before the ticket decision */}
-        <section className="w-full py-12 md:py-20 lg:py-28 border-b border-border" aria-label="What you'll take away">
+        <section className="w-full py-8 md:py-12 lg:py-14 border-b border-border" aria-label="What you'll take away">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-8 sm:mb-10">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance">
@@ -541,7 +553,7 @@ export default function SecondBrainAgenticAiPage() {
         </section>
 
         {/* Ticket pricing */}
-        <section id="tickets" className="w-full py-12 md:py-20 lg:py-28 bg-muted/50 border-b border-border" aria-label="Ticket pricing">
+        <section id="tickets" className="w-full py-8 md:py-12 lg:py-14 bg-muted/50 border-b border-border" aria-label="Ticket pricing">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.tickets.eyebrow}</p>
@@ -555,7 +567,7 @@ export default function SecondBrainAgenticAiPage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="max-w-3xl mb-8 sm:mb-14 flex flex-wrap gap-x-6 gap-y-2"
+              className="max-w-3xl mb-6 sm:mb-8 flex flex-wrap gap-x-6 gap-y-2"
             >
               <p className="text-xs font-semibold tracking-[0.1em] uppercase text-muted-foreground w-full mb-1">{tt.included.heading}</p>
               {tt.included.items.map((item) => (
@@ -586,7 +598,14 @@ export default function SecondBrainAgenticAiPage() {
                       Limited Availability
                     </span>
                   )}
-                  <h3 className="font-display text-xl font-semibold tracking-tight mb-2 sm:mb-3">{tier.name}</h3>
+                  <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-3">
+                    <h3 className="font-display text-xl font-semibold tracking-tight">{tier.name}</h3>
+                    {"twoTickets" in tier && tier.twoTickets && (
+                      <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary">
+                        2 Tickets
+                      </span>
+                    )}
+                  </div>
                   <div className={`flex items-baseline gap-2 font-display text-2xl font-semibold tracking-tight text-foreground ${tier.limited ? "mb-2" : "mb-4 sm:mb-6"}`}>
                     {tier.originalPrice && (
                       <span className="text-base font-normal text-muted-foreground line-through">{tier.originalPrice}</span>
@@ -596,26 +615,27 @@ export default function SecondBrainAgenticAiPage() {
                   {tier.limited && (
                     <p className="text-xs font-medium text-amber-600 mb-3 sm:mb-4">Only a limited number of Early Bird tickets available</p>
                   )}
+                  {"twoTickets" in tier && tier.twoTickets && (
+                    <p className="text-sm font-bold text-foreground mb-3 sm:mb-4">One payment, two seats — bring a friend or colleague.</p>
+                  )}
                   <ul className="space-y-2 sm:space-y-2.5 mb-6 sm:mb-8 flex-grow">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2.5 text-sm text-foreground/80">
+                    {tier.features.map((feature, i) => (
+                      <li key={feature} className={`flex items-start gap-2.5 text-sm ${"twoTickets" in tier && tier.twoTickets && i === 0 ? "font-bold text-foreground" : "text-foreground/80"}`}>
                         <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
                         <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
-                  {"stripeUrl" in tier && tier.stripeUrl ? (
+                  {tier.stripeUrl ? (
                     <Button className={`mt-auto w-full rounded-full font-medium ${tier.popular ? "" : "border-border bg-transparent hover:bg-muted"}`} variant={tier.popular ? "default" : "outline"} asChild>
                       <Link href={tier.stripeUrl} target="_blank" rel="noopener noreferrer">
                         {tt.hero.ctaTickets}
                       </Link>
                     </Button>
                   ) : (
-                    <TicketPurchaseDialog tier={"billplzTier" in tier ? tier.billplzTier : "virtual-pass"} lang={lang}>
-                      <Button className={`mt-auto w-full rounded-full font-medium ${tier.popular ? "" : "border-border bg-transparent hover:bg-muted"}`} variant={tier.popular ? "default" : "outline"}>
-                        {tt.hero.ctaTickets}
-                      </Button>
-                    </TicketPurchaseDialog>
+                    <Button className="mt-auto w-full rounded-full font-medium" variant="outline" disabled>
+                      Coming Soon
+                    </Button>
                   )}
                 </motion.div>
               ))}
@@ -626,7 +646,7 @@ export default function SecondBrainAgenticAiPage() {
         </section>
 
         {/* Partners */}
-        <section className="w-full py-12 md:py-20 lg:py-28 border-b border-border" aria-label="Partners">
+        <section className="w-full py-8 md:py-12 lg:py-14 border-b border-border" aria-label="Partners">
           <div className="container px-4 md:px-6">
             <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
               <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
@@ -666,7 +686,7 @@ export default function SecondBrainAgenticAiPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="w-full py-12 md:py-20 lg:py-28 bg-muted/50" aria-label="Register">
+        <section className="w-full py-8 md:py-12 lg:py-14 bg-muted/50" aria-label="Register">
           <div className="container px-4 md:px-6">
             <motion.div
               initial={{ opacity: 0, y: 24 }}
