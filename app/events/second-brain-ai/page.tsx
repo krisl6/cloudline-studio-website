@@ -646,24 +646,18 @@ export default function SecondBrainAgenticAiPage() {
         </section>
 
         {/* Partners */}
-        <section className="w-full py-8 md:py-12 lg:py-14 border-b border-border" aria-label="Partners">
+        <section className="w-full py-6 md:py-8 border-b border-border" aria-label="Partners">
           <div className="container px-4 md:px-6">
-            <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
+            <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 lg:items-center max-w-4xl mx-auto">
               <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
-                <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-3 sm:mb-4">{tt.partners.eyebrow}</p>
-                <div className="mb-4 sm:mb-6">
-                  <div className="mb-4 sm:mb-5">
-                    <Image src="/infinity8-logo.png" alt="Infinity8 logo" width={160} height={48} className="object-contain" />
-                  </div>
-                  <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-1">
+                <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-2">{tt.partners.eyebrow}</p>
+                <div className="mb-3">
+                  <Image src="/infinity8-logo.png" alt="Infinity8 logo" width={112} height={34} className="object-contain mb-2" />
+                  <h2 className="font-display text-lg sm:text-xl font-semibold tracking-tight text-balance">
                     {tt.partners.heading}
                   </h2>
-                  <p className="text-base sm:text-lg text-muted-foreground font-medium">{tt.partners.subheading}</p>
                 </div>
-                <div className="space-y-3 sm:space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  <p>{tt.partners.p1}</p>
-                  <p>{tt.partners.p2}</p>
-                </div>
+                <p className="text-sm text-muted-foreground leading-relaxed">{tt.partners.p1}</p>
               </motion.div>
               <motion.div
                 variants={fadeUp}
@@ -671,7 +665,7 @@ export default function SecondBrainAgenticAiPage() {
                 whileInView="show"
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="relative aspect-[4/3] max-h-64 sm:max-h-none overflow-hidden rounded-2xl border border-border"
+                className="relative aspect-[16/9] max-h-40 overflow-hidden rounded-xl border border-border"
               >
                 <Image
                   src="/infinity8-venue-1.jpg"

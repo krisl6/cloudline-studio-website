@@ -210,9 +210,7 @@ export const translations = {
     partners: {
       eyebrow: "With Thanks To Our Partners",
       heading: "Hosted at Infinity8, Sunway Square",
-      subheading: "Celebrating Infinity8's 9th anniversary, empowering builders across the region",
-      p1: "Thank you to Infinity8 for hosting this workshop at their Sunway Square venue — the flexible space behind several of our past AI workshops.",
-      p2: "This year marks Infinity8's 9th anniversary: nine years building the coworking spaces and community infrastructure that founders and teams across Malaysia rely on. We're proud to celebrate that milestone here.",
+      p1: "Thank you to Infinity8, celebrating its 9th anniversary, for hosting this workshop at their flexible Sunway Square venue.",
     },
     cta: {
       eyebrow: "Reserve Your Spot",
@@ -432,9 +430,7 @@ export const translations = {
     partners: {
       eyebrow: "Dengan Penghargaan Kepada Rakan Kongsi Kami",
       heading: "Dihoskan di Infinity8, Sunway Square",
-      subheading: "Meraikan ulang tahun ke-9 Infinity8, memperkasakan pembina di seluruh rantau",
-      p1: "Terima kasih kepada Infinity8 kerana menjadi hos bengkel ini di lokasi Sunway Square mereka — ruang fleksibel di sebalik beberapa bengkel AI kami yang lepas.",
-      p2: "Tahun ini menandakan ulang tahun ke-9 Infinity8: sembilan tahun membina ruang coworking dan infrastruktur komuniti yang menjadi sandaran pengasas dan pasukan di seluruh Malaysia. Kami bangga meraikan pencapaian ini di sini.",
+      p1: "Terima kasih kepada Infinity8, yang meraikan ulang tahun ke-9, kerana menjadi hos bengkel ini di lokasi Sunway Square mereka yang fleksibel.",
     },
     cta: {
       eyebrow: "Tempah Tempat Anda",
@@ -654,9 +650,7 @@ export const translations = {
     partners: {
       eyebrow: "特别感谢我们的合作伙伴",
       heading: "活动举办地：Infinity8, Sunway Square",
-      subheading: "庆祝 Infinity8 成立 9 周年，助力区域建造者",
-      p1: "感谢 Infinity8 在其 Sunway Square 场地为本次工作坊提供场地支持——这也是我们多场往期 AI 工作坊的灵活场地。",
-      p2: "今年正值 Infinity8 成立 9 周年：九年来，他们持续打造马来西亚各地创始人与团队所依赖的共享办公空间与社区基础设施。我们很荣幸能在这里共同庆祝这一里程碑。",
+      p1: "感谢正值成立 9 周年的 Infinity8，在其灵活的 Sunway Square 场地为本次工作坊提供场地支持。",
     },
     cta: {
       eyebrow: "预留您的名额",
