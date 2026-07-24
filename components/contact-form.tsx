@@ -1,9 +1,9 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { ArrowRight, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DoodleCheck } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 
 const INTERESTS = [
@@ -50,7 +50,6 @@ const T = {
     message: "Anything else you'd like us to know?",
     messagePh: "Tell us a little about your project or goals…",
     send: "Submit", sending: "Sending…",
-    successTitle: "Thank you, we've got it.", successBody: "Our team will get back to you within 24 hours.",
     errEmail: "Please enter a valid email.", errGeneric: "Something went wrong. Please try again.",
   },
   ms: {
@@ -62,7 +61,6 @@ const T = {
     message: "Ada lagi yang ingin anda kongsikan?",
     messagePh: "Ceritakan sedikit tentang projek atau matlamat anda…",
     send: "Hantar", sending: "Menghantar…",
-    successTitle: "Terima kasih, kami telah menerimanya.", successBody: "Pasukan kami akan menghubungi anda dalam masa 24 jam.",
     errEmail: "Sila masukkan e-mel yang sah.", errGeneric: "Ada masalah. Sila cuba lagi.",
   },
   zh: {
@@ -74,7 +72,6 @@ const T = {
     message: "还有什么想让我们了解的吗？",
     messagePh: "简单介绍一下您的项目或目标…",
     send: "提交", sending: "提交中…",
-    successTitle: "谢谢，我们已收到。", successBody: "我们的团队将在 24 小时内与您联系。",
     errEmail: "请输入有效的邮箱。", errGeneric: "出了点问题，请重试。",
   },
 } as const
@@ -83,6 +80,7 @@ type Status = "idle" | "submitting" | "success" | "error"
 
 export function ContactForm() {
   const { lang } = useLanguage()
+  const router = useRouter()
   const tt = T[lang]
   const budgets = BUDGETS[lang]
   const [status, setStatus] = useState<Status>("idle")
@@ -121,23 +119,11 @@ export function ContactForm() {
       })
       const data = await res.json().catch(() => ({}))
       if (!res.ok || !data.ok) throw new Error(data.error || tt.errGeneric)
-      setStatus("success")
+      router.push("/contact/thank-you")
     } catch (err) {
       setStatus("error")
       setError(err instanceof Error ? err.message : tt.errGeneric)
     }
-  }
-
-  if (status === "success") {
-    return (
-      <div className="rounded-2xl border border-border bg-card p-10 text-center">
-        <span className="mx-auto mb-4 inline-flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-          <DoodleCheck className="size-7" />
-        </span>
-        <h3 className="font-display text-2xl font-semibold mb-2">{tt.successTitle}</h3>
-        <p className="text-muted-foreground">{tt.successBody}</p>
-      </div>
-    )
   }
 
   const inputCls =
