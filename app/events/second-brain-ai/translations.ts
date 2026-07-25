@@ -32,6 +32,9 @@ export const translations = {
     trustedBy: {
       label: "CloudLine's small, AI-augmented team already delivers for",
     },
+    pastEvents: {
+      label: "From past CloudLine workshops",
+    },
     timeline: {
       eyebrow: "Schedule",
       heading: "How your afternoon unfolds",
@@ -252,6 +255,9 @@ export const translations = {
     trustedBy: {
       label: "Pasukan ramping CloudLine yang diperkasakan AI sudah menyampaikan kerja untuk",
     },
+    pastEvents: {
+      label: "Daripada bengkel CloudLine yang lepas",
+    },
     timeline: {
       eyebrow: "Jadual",
       heading: "Bagaimana sesi petang anda berjalan",
@@ -471,6 +477,9 @@ export const translations = {
     },
     trustedBy: {
       label: "CloudLine 精简的 AI 增强型团队已在为以下企业提供服务",
+    },
+    pastEvents: {
+      label: "往期 CloudLine 工作坊实录",
     },
     timeline: {
       eyebrow: "议程",

@@ -7,7 +7,6 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
-import { QUOTE_FORM_URL } from "@/lib/site"
 import { translations } from "@/app/case-studies/translations"
 import { SERVICE_SLUGS, caseStudies, type PlatformName, type ServiceSlug } from "@/lib/case-studies-data"
 
@@ -65,7 +64,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href="/contact">
                     {tt.hero.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>
@@ -163,7 +162,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                 Want results like these for your business?
               </p>
               <Button className="shrink-0 rounded-full font-medium" asChild>
-                <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                <Link href="/contact">
                   {tt.study.cta}
                   <ArrowRight className="ml-1.5 size-4" />
                 </Link>
@@ -243,7 +242,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                         className="mt-6 w-fit rounded-full font-medium border-border bg-transparent hover:bg-muted"
                         asChild
                       >
-                        <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                        <Link href="/contact">
                           {tt.study.cta}
                           <ArrowRight className="ml-1.5 size-4" />
                         </Link>
@@ -272,7 +271,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
               <p className="text-muted-foreground md:text-lg leading-relaxed mb-9">{tt.contact.intro}</p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href="/contact">
                     {tt.contact.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>

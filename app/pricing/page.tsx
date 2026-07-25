@@ -6,7 +6,6 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DoodleCheck, DoodleGrowth, DoodleHeart, DoodleTrophy } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
-import { QUOTE_FORM_URL } from "@/lib/site"
 import { translations } from "./translations"
 
 const fadeUp = {
@@ -24,10 +23,10 @@ export default function PricingPage() {
   const tt = translations[lang]
 
   const planMeta = [
-    { price: "Starts From RM 1,200", period: "/month", link: QUOTE_FORM_URL, popular: false },
-    { price: "Starts From RM 2,560", period: "", link: QUOTE_FORM_URL, popular: false },
-    { price: "Starts From RM 2,080", period: "/month", link: QUOTE_FORM_URL, popular: true },
-    { price: "Starts From RM 6,000", period: "/month", link: QUOTE_FORM_URL, popular: false },
+    { price: "Starts From RM 1,200", period: "/month", link: "/contact", popular: false },
+    { price: "Starts From RM 2,560", period: "", link: "/contact", popular: false },
+    { price: "Starts From RM 2,080", period: "/month", link: "/contact", popular: true },
+    { price: "Starts From RM 6,000", period: "/month", link: "/contact", popular: false },
   ]
 
   const pricingPlans = tt.plans.items.map((plan, i) => ({
@@ -85,7 +84,7 @@ export default function PricingPage() {
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center"
               >
                 <Button size="lg" className="rounded-full h-12 2xl:h-14 px-7 2xl:px-9 text-base 2xl:text-lg font-medium" asChild>
-                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href="/contact">
                     {tt.hero.primaryCta}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>
@@ -238,7 +237,7 @@ export default function PricingPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href="/contact">
                     {tt.contact.primaryCta}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>

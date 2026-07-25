@@ -1,4 +1,3 @@
-import { QUOTE_FORM_URL } from "@/lib/site"
 
 export interface BlogPost {
   slug: string
@@ -1212,7 +1211,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-16",
     readTime: "9 min read",
     content: startupMarketingCost,
-    ctaHref: QUOTE_FORM_URL,
+    ctaHref: "/contact",
     ctaLabel: "Get a Quote",
   },
   {
@@ -1223,7 +1222,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-16",
     readTime: "10 min read",
     content: howMarketOnlineCourse,
-    ctaHref: QUOTE_FORM_URL,
+    ctaHref: "/contact",
     ctaLabel: "Get a Quote",
   },
   {
@@ -1234,7 +1233,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-16",
     readTime: "9 min read",
     content: saasMarketingChannels,
-    ctaHref: QUOTE_FORM_URL,
+    ctaHref: "/contact",
     ctaLabel: "Get a Quote",
   },
   {
@@ -1245,7 +1244,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-16",
     readTime: "9 min read",
     content: howToMarketBeautyBrand,
-    ctaHref: QUOTE_FORM_URL,
+    ctaHref: "/contact",
     ctaLabel: "Get a Quote",
   },
   {
@@ -1256,7 +1255,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "9 min read",
     content: howToPriceOnlineCourse,
-    ctaHref: QUOTE_FORM_URL,
+    ctaHref: "/contact",
     ctaLabel: "Get a Quote",
   },
   {
@@ -1267,7 +1266,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "9 min read",
     content: saasGtm,
-    ctaHref: QUOTE_FORM_URL,
+    ctaHref: "/contact",
     ctaLabel: "Get a Quote",
   },
   {
@@ -1278,7 +1277,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "8 min read",
     content: isMarketingAgencyWorthIt,
-    ctaHref: QUOTE_FORM_URL,
+    ctaHref: "/contact",
     ctaLabel: "Get a Quote",
   },
   {
@@ -1289,7 +1288,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-06-19",
     readTime: "9 min read",
     content: beautyBrandMarketingStrategy,
-    ctaHref: QUOTE_FORM_URL,
+    ctaHref: "/contact",
     ctaLabel: "Get a Quote",
   },
 ]

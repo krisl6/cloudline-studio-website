@@ -7,7 +7,6 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { useLanguage } from "@/components/language-provider"
-import { QUOTE_FORM_URL } from "@/lib/site"
 import { translations } from "./translations"
 import { FunnelTimeline } from "@/components/funnel-timeline"
 import { SeoWaitlistForm } from "@/components/seo-waitlist-form"
@@ -83,7 +82,7 @@ export default function ServicesPage() {
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 2xl:h-14 px-7 2xl:px-9 text-base 2xl:text-lg font-medium" asChild>
-                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href="/contact">
                     {tt.hero.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>
@@ -290,7 +289,7 @@ export default function ServicesPage() {
                   ) : (
                     <div className="flex flex-wrap gap-3">
                       <Button className="rounded-full font-medium" asChild>
-                        <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                        <Link href="/contact">
                           {tt.deepDive.getStarted}
                           <ArrowRight className="ml-1.5 size-4" />
                         </Link>
@@ -481,7 +480,7 @@ export default function ServicesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href="/contact">
                     {tt.cta.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>

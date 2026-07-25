@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { LanguageToggle } from "@/components/language-toggle"
 import { useLanguage } from "@/components/language-provider"
-import { QUOTE_FORM_URL } from "@/lib/site"
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -126,7 +125,7 @@ export function Header() {
               className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
               asChild
             >
-              <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+              <Link href="/contact">
                 {t.nav.chat}
               </Link>
             </Button>
@@ -224,7 +223,7 @@ export function Header() {
                       <ThemeToggle />
                     </div>
                     <Button className="w-full rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium" asChild>
-                      <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                      <Link href="/contact">
                         {t.nav.chat}
                       </Link>
                     </Button>

@@ -7,7 +7,6 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
-import { QUOTE_FORM_URL } from "@/lib/site"
 import {
   DoodleMegaphone,
   DoodleTransform,
@@ -110,7 +109,7 @@ export default function HomePage() {
               </motion.p>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 2xl:h-14 px-7 2xl:px-9 text-base 2xl:text-lg font-medium" asChild>
-                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href="/contact">
                     {t.hero.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>
@@ -503,7 +502,7 @@ export default function HomePage() {
               <p className="text-muted-foreground md:text-lg leading-relaxed mb-9">{t.cta.subcopy}</p>
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
-                  <Link href={QUOTE_FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <Link href="/contact">
                     {t.cta.ctaPrimary}
                     <ArrowRight className="ml-1.5 size-4" />
                   </Link>

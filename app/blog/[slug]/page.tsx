@@ -80,8 +80,6 @@ export default async function BlogPostPage({ params }: Props) {
             </p>
             <Link
               href={post.ctaHref}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-primary text-primary-foreground h-11 px-7 text-sm font-medium hover:bg-primary/90 transition-colors"
             >
               {post.ctaLabel}

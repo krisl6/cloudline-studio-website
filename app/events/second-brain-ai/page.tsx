@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, CalendarDays, Clock, Download, MapPin, Navigation, Timer, Users, ShieldCheck, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -35,6 +35,52 @@ const TRUSTED_BY_LOGOS = [
   { name: "Prenetics", logo: "/prenetics-logo.png" },
   { name: "CircleDNA", logo: "/circle-dna-logo.png" },
 ] as const
+
+// ── PAST EVENTS ────────────────────────────────────────────────────
+// Real photos from CloudLine-run workshops (MonstarX "Build without coding",
+// an AI Build Workshop, and a wellness/product event), supplied directly —
+// never stock or placeholder images.
+const PAST_EVENT_PHOTOS = [
+  { src: "/event-photo-monstarx-group.jpg", alt: "Attendees at CloudLine's MonstarX AI app-building workshop" },
+  { src: "/event-photo-ai-build-1.jpg", alt: "Attendees working hands-on at CloudLine's AI Build Workshop" },
+  { src: "/event-photo-ai-workshop-1.jpg", alt: "Attendees collaborating at a CloudLine AI workshop" },
+  { src: "/event-photo-wellness-1.jpg", alt: "Attendees at a CloudLine-run product sampling event" },
+  { src: "/event-photo-ai-build-closeup.jpg", alt: "Attendees at CloudLine's AI Build Workshop" },
+  { src: "/event-photo-ai-workshop-2.jpg", alt: "Attendees at a CloudLine AI workshop" },
+  { src: "/event-photo-wellness-2.jpg", alt: "Large outdoor turnout at a CloudLine-run event" },
+] as const
+
+function EventPhotoCarousel() {
+  const [idx, setIdx] = useState(0)
+  useEffect(() => {
+    const id = setInterval(() => setIdx((i) => (i + 1) % PAST_EVENT_PHOTOS.length), 2500)
+    return () => clearInterval(id)
+  }, [])
+
+  return (
+    <div className="relative aspect-[16/7] sm:aspect-[21/8] w-full overflow-hidden rounded-2xl border border-border">
+      <AnimatePresence mode="sync">
+        <motion.div
+          key={idx}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={PAST_EVENT_PHOTOS[idx].src}
+            alt={PAST_EVENT_PHOTOS[idx].alt}
+            fill
+            sizes="(max-width: 1024px) 100vw, 1200px"
+            className="object-cover"
+            priority={idx === 0}
+          />
+        </motion.div>
+      </AnimatePresence>
+    </div>
+  )
+}
 
 function useCountdown(targetIso: string) {
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number; done: boolean } | null>(null)
@@ -377,6 +423,17 @@ export default function SecondBrainAgenticAiPage() {
                 />
               </motion.div>
             </div>
+          </div>
+        </section>
+
+        {/* Past events carousel — real photos from CloudLine-run workshops,
+            crossfading every 2.5s. */}
+        <section className="w-full py-8 md:py-10 border-b border-border" aria-label="Past events">
+          <div className="container px-4 md:px-6">
+            <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 text-center">
+              {tt.pastEvents.label}
+            </p>
+            <EventPhotoCarousel />
           </div>
         </section>
 
