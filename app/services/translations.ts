@@ -6,7 +6,7 @@ export const translations = {
       intro:
         "We help ambitious teams diagnose what is holding them back, digitise and automate the work, connect departments on shared systems, and build brands that perform. Strategy and execution under one roof, designed to compound.",
       ctaPrimary: "Get a Quote",
-      ctaSecondary: "Get a Quote",
+      ctaSecondary: "View Case Studies",
     },
     overview: {
       eyebrow: "Our Services",
@@ -34,7 +34,7 @@ export const translations = {
       intro:
         "Begin with a Consultation. We will diagnose what is holding you back and point you to the highest-impact next move, no pressure, no jargon.",
       ctaPrimary: "Get a Quote",
-      ctaSecondary: "Get a Quote",
+      ctaSecondary: "View Case Studies",
     },
     services: [
       {
@@ -276,7 +276,7 @@ export const translations = {
       intro:
         "Kami membantu pasukan yang bercita-cita tinggi mengenal pasti apa yang membantutkan mereka, mendigitalkan dan mengautomasikan kerja, menghubungkan jabatan pada sistem yang dikongsi, serta membina jenama yang berprestasi. Strategi dan pelaksanaan di bawah satu bumbung, direka untuk berganda.",
       ctaPrimary: "Dapatkan Sebut Harga",
-      ctaSecondary: "Dapatkan Sebut Harga",
+      ctaSecondary: "Lihat Kajian Kes",
     },
     overview: {
       eyebrow: "Perkhidmatan Kami",
@@ -304,7 +304,7 @@ export const translations = {
       intro:
         "Mulakan dengan Konsultasi. Kami akan mengenal pasti apa yang membantutkan anda dan menunjukkan langkah seterusnya yang paling berkesan, tanpa tekanan, tanpa jargon.",
       ctaPrimary: "Dapatkan Sebut Harga",
-      ctaSecondary: "Dapatkan Sebut Harga",
+      ctaSecondary: "Lihat Kajian Kes",
     },
     services: [
       {
@@ -546,7 +546,7 @@ export const translations = {
       intro:
         "我们帮助有抱负的团队找出阻碍他们的因素，将工作数字化和自动化，让各部门在共享系统上协同运作，并打造有成效的品牌。策略与执行同在一处，专为复利增长而设计。",
       ctaPrimary: "获取报价",
-      ctaSecondary: "获取报价",
+      ctaSecondary: "查看案例研究",
     },
     overview: {
       eyebrow: "我们的服务",
@@ -574,7 +574,7 @@ export const translations = {
       intro:
         "从咨询开始。我们会找出阻碍您的因素，并为您指出最具成效的下一步，没有压力，没有术语。",
       ctaPrimary: "获取报价",
-      ctaSecondary: "获取报价",
+      ctaSecondary: "查看案例研究",
     },
     services: [
       {

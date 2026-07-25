@@ -10,6 +10,7 @@ import Link from "next/link"
 import { DoodleGrowth, DoodleCoins, DoodleHeart, DoodleTarget } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
+import { WHATSAPP_URL } from "@/lib/site"
 
 export default function ClientResultsPage() {
   const { lang } = useLanguage()
@@ -126,7 +127,7 @@ export default function ClientResultsPage() {
                 className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
                 asChild
               >
-                <Link href="/case-studies">{tt.hero.ctaSecondary}</Link>
+                <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{tt.hero.ctaSecondary}</Link>
               </Button>
             </motion.div>
           </div>
@@ -524,7 +525,7 @@ export default function ClientResultsPage() {
                 className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
                 asChild
               >
-                <Link href="/case-studies">{tt.cta.secondary}</Link>
+                <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{tt.cta.secondary}</Link>
               </Button>
             </div>
             <p className="text-sm text-muted-foreground mt-5">{tt.cta.note}</p>

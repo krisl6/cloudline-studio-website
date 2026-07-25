@@ -9,6 +9,7 @@ import { DoodleMegaphone, DoodleBolt, DoodleTarget } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { ContactForm } from "@/components/contact-form"
+import { WHATSAPP_URL } from "@/lib/site"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -36,8 +37,8 @@ export default function ContactPage() {
       Icon: DoodleBolt,
       key: "phone" as const,
       title: tt.connect.labels.phone,
-      value: "+01127755215",
-      link: "https://wa.me/60112775215"
+      value: "+60 11-2775 5215",
+      link: WHATSAPP_URL
     },
     {
       Icon: DoodleTarget,

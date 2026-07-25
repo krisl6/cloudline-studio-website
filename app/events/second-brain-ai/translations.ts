@@ -4,7 +4,7 @@ export const translations = {
       "This is a non-profit event — ticket prices cover venue, speaker fees, and logistics costs only.",
     hero: {
       eyebrow: "Hands-On Workshop",
-      headline: "Build Your Second Brain & Automate Your Marketing with Agentic AI (BONUS: AI Video Automation)",
+      headline: "Build Your Second Brain & Automate Your Marketing with Agentic AI",
       bonusBadge: "+ BONUS Video Automation Workshop",
       tagline: "Agentic AI Workflows with Claude, Hermes & OpenClaw",
       detailParagraphs: [
@@ -227,7 +227,7 @@ export const translations = {
       "Ini ialah acara bukan untung — harga tiket hanya menampung kos tempat, yuran penceramah, dan logistik.",
     hero: {
       eyebrow: "Bengkel Praktikal",
-      headline: "Bina Otak Kedua Anda & Automatikkan Pemasaran Anda dengan Agentic AI (BONUS: Automasi Video AI)",
+      headline: "Bina Otak Kedua Anda & Automatikkan Pemasaran Anda dengan Agentic AI",
       bonusBadge: "+ BONUS Bengkel Automasi Video",
       tagline: "Aliran Kerja Agentic AI dengan Claude, Hermes & OpenClaw",
       detailParagraphs: [
@@ -450,7 +450,7 @@ export const translations = {
       "本活动为非营利性质——门票价格仅用于支付场地、讲者费用及相关物流成本。",
     hero: {
       eyebrow: "实操工作坊",
-      headline: "用 Agentic AI 打造你的第二大脑，自动化你的营销（福利：AI 视频自动化）",
+      headline: "用 Agentic AI 打造你的第二大脑，自动化你的营销",
       bonusBadge: "+ 福利：视频自动化工作坊",
       tagline: "使用 Claude、Hermes 与 OpenClaw 的 Agentic AI 工作流",
       detailParagraphs: [

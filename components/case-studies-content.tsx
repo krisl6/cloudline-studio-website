@@ -9,6 +9,7 @@ import { DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowt
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "@/app/case-studies/translations"
 import { SERVICE_SLUGS, caseStudies, type PlatformName, type ServiceSlug } from "@/lib/case-studies-data"
+import { WHATSAPP_URL } from "@/lib/site"
 
 const PLATFORM_ICONS: Record<PlatformName, React.ComponentType<{ className?: string }>> = {
   Consultation: DoodleSearch,
@@ -161,12 +162,19 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
               <p className="text-sm font-medium text-foreground/85">
                 Want results like these for your business?
               </p>
-              <Button className="shrink-0 rounded-full font-medium" asChild>
-                <Link href="/contact">
-                  {tt.study.cta}
-                  <ArrowRight className="ml-1.5 size-4" />
-                </Link>
-              </Button>
+              <div className="flex shrink-0 gap-3">
+                <Button className="rounded-full font-medium" asChild>
+                  <Link href="/contact">
+                    {tt.study.cta}
+                    <ArrowRight className="ml-1.5 size-4" />
+                  </Link>
+                </Button>
+                <Button variant="outline" className="rounded-full font-medium border-border bg-transparent hover:bg-muted" asChild>
+                  <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                    {tt.study.ctaWhatsapp}
+                  </Link>
+                </Button>
+              </div>
             </div>
             <div className="grid gap-8 md:gap-10">
               {filteredStudies.map((study, i) => {
@@ -237,16 +245,25 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                           <p className="text-sm font-medium text-primary leading-relaxed">{study.results}</p>
                         </div>
                       </div>
-                      <Button
-                        variant="outline"
-                        className="mt-6 w-fit rounded-full font-medium border-border bg-transparent hover:bg-muted"
-                        asChild
-                      >
-                        <Link href="/contact">
-                          {tt.study.cta}
-                          <ArrowRight className="ml-1.5 size-4" />
-                        </Link>
-                      </Button>
+                      <div className="mt-6 flex flex-wrap gap-3">
+                        <Button
+                          variant="outline"
+                          className="w-fit rounded-full font-medium border-border bg-transparent hover:bg-muted"
+                          asChild
+                        >
+                          <Link href="/contact">
+                            {tt.study.cta}
+                            <ArrowRight className="ml-1.5 size-4" />
+                          </Link>
+                        </Button>
+                        <Button
+                          variant="outline"
+                          className="w-fit rounded-full font-medium border-border bg-transparent hover:bg-muted"
+                          asChild
+                        >
+                          <Link href="/pricing">{tt.study.ctaPricing}</Link>
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </motion.div>

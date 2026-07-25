@@ -44,10 +44,8 @@ const PAST_EVENT_PHOTOS = [
   { src: "/event-photo-monstarx-group.jpg", alt: "Attendees at CloudLine's MonstarX AI app-building workshop" },
   { src: "/event-photo-ai-build-1.jpg", alt: "Attendees working hands-on at CloudLine's AI Build Workshop" },
   { src: "/event-photo-ai-workshop-1.jpg", alt: "Attendees collaborating at a CloudLine AI workshop" },
-  { src: "/event-photo-wellness-1.jpg", alt: "Attendees at a CloudLine-run product sampling event" },
   { src: "/event-photo-ai-build-closeup.jpg", alt: "Attendees at CloudLine's AI Build Workshop" },
   { src: "/event-photo-ai-workshop-2.jpg", alt: "Attendees at a CloudLine AI workshop" },
-  { src: "/event-photo-wellness-2.jpg", alt: "Large outdoor turnout at a CloudLine-run event" },
 ] as const
 
 function EventPhotoCarousel() {

@@ -6,7 +6,7 @@ export const translations = {
       intro:
         "Great brands aren't built overnight, but they're built with the right investment. Our transparent pricing reflects the strategic value we deliver, with no hidden fees and no surprises. Choose the partnership level that matches your ambition.",
       primaryCta: "Get a Quote",
-      secondaryCta: "Get a Quote",
+      secondaryCta: "Chat on WhatsApp",
     },
     plans: {
       mostPopular: "Most Popular",
@@ -102,7 +102,7 @@ export const translations = {
       intro:
         "Choose your package and start transforming your digital presence today. No long-term contracts required.",
       primaryCta: "Get a Quote",
-      secondaryCta: "Get a Quote",
+      secondaryCta: "Chat on WhatsApp",
     },
   },
   ms: {
@@ -112,7 +112,7 @@ export const translations = {
       intro:
         "Jenama hebat tidak dibina dalam sehari, tetapi ia dibina dengan pelaburan yang tepat. Harga telus kami mencerminkan nilai strategik yang kami sampaikan, tiada caj tersembunyi, tiada kejutan. Pilih tahap kerjasama yang sepadan dengan cita-cita anda.",
       primaryCta: "Dapatkan Sebut Harga",
-      secondaryCta: "Dapatkan Sebut Harga",
+      secondaryCta: "Chat di WhatsApp",
     },
     plans: {
       mostPopular: "Paling Popular",
@@ -208,7 +208,7 @@ export const translations = {
       intro:
         "Pilih pakej anda dan mula mengubah kehadiran digital anda hari ini. Tiada kontrak jangka panjang diperlukan.",
       primaryCta: "Dapatkan Sebut Harga",
-      secondaryCta: "Dapatkan Sebut Harga",
+      secondaryCta: "Chat di WhatsApp",
     },
   },
   zh: {
@@ -218,7 +218,7 @@ export const translations = {
       intro:
         "卓越的品牌并非一日建成，而是靠正确的投资打造而成。我们透明的价格体现了我们所提供的战略价值, 没有隐藏费用，没有意外。选择与您的雄心相匹配的合作层级。",
       primaryCta: "获取报价",
-      secondaryCta: "获取报价",
+      secondaryCta: "WhatsApp 咨询",
     },
     plans: {
       mostPopular: "最受欢迎",
@@ -310,7 +310,7 @@ export const translations = {
       heading: "准备好开始了吗？",
       intro: "选择您的套餐，今天就开始转变您的数字化形象。无需签订长期合约。",
       primaryCta: "获取报价",
-      secondaryCta: "获取报价",
+      secondaryCta: "WhatsApp 咨询",
     },
   },
 } as const

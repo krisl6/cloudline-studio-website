@@ -39,6 +39,8 @@ export const translations = {
       solution: "Our Solution",
       results: "Results Achieved",
       cta: "Get a Quote",
+      ctaWhatsapp: "Chat on WhatsApp",
+      ctaPricing: "See Pricing",
     },
     contact: {
       title: "Ready to become our next success story?",
@@ -91,6 +93,8 @@ export const translations = {
       solution: "Penyelesaian Kami",
       results: "Hasil Dicapai",
       cta: "Dapatkan Sebut Harga",
+      ctaWhatsapp: "Chat di WhatsApp",
+      ctaPricing: "Lihat Harga",
     },
     contact: {
       title: "Bersedia menjadi kisah kejayaan kami yang seterusnya?",
@@ -142,6 +146,8 @@ export const translations = {
       solution: "我们的方案",
       results: "取得的成果",
       cta: "获取报价",
+      ctaWhatsapp: "WhatsApp 咨询",
+      ctaPricing: "查看价格",
     },
     contact: {
       title: "准备好成为我们的下一个成功案例了吗？",

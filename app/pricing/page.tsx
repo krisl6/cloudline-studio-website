@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button"
 import { DoodleCheck, DoodleGrowth, DoodleHeart, DoodleTrophy } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
+import { WHATSAPP_URL } from "@/lib/site"
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -95,7 +96,7 @@ export default function PricingPage() {
                   className="rounded-full h-12 2xl:h-14 px-7 2xl:px-9 text-base 2xl:text-lg font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/case-studies">{tt.hero.secondaryCta}</Link>
+                  <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{tt.hero.secondaryCta}</Link>
                 </Button>
               </motion.div>
             </motion.div>
@@ -248,7 +249,7 @@ export default function PricingPage() {
                   className="rounded-full h-12 px-7 text-base font-medium border-border bg-transparent hover:bg-muted"
                   asChild
                 >
-                  <Link href="/case-studies">{tt.contact.secondaryCta}</Link>
+                  <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">{tt.contact.secondaryCta}</Link>
                 </Button>
               </div>
             </motion.div>

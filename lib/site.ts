@@ -3,6 +3,8 @@ export const SITE_URL = "https://cloudline-studio.com"
 
 export const SITE_NAME = "CloudLine Studio"
 
+export const WHATSAPP_URL = "https://wa.me/601127755215"
+
 export const SITE_DESCRIPTION =
   "CloudLine Studio is a consultancy that helps businesses grow through digital marketing, AI-enabled business transformation, and operational excellence across Singapore and Malaysia."
 

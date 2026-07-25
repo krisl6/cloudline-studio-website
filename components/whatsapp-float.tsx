@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import type { SVGProps } from "react"
+import { WHATSAPP_URL } from "@/lib/site"
 
 function WhatsAppIcon(props: SVGProps<SVGSVGElement>) {
   return (
@@ -22,7 +23,7 @@ export function WhatsAppFloat() {
       className="fixed bottom-6 right-6 z-50"
     >
       <Link
-        href="https://wa.me/601127755215"
+        href={WHATSAPP_URL}
         target="_blank"
         className="group relative flex h-7 w-7 sm:h-14 sm:w-14 items-center justify-center rounded-full bg-foreground text-background transition-all"
         aria-label="Chat on WhatsApp"
