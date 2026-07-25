@@ -13,6 +13,7 @@ export const SITE_ROUTES = [
   "",
   "about",
   "services",
+  "services/website",
   "ai-aeo",
   "events",
   "pricing",

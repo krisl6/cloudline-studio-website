@@ -31,6 +31,7 @@ export function Header() {
       href: "/services",
       dropdown: [
         { name: "All Services", href: "/services" },
+        { name: "Website Design", href: "/services/website" },
         { name: "AEO/SEO Automation (Waitlist)", href: "/ai-aeo" },
       ],
     },
