@@ -10,19 +10,19 @@ const T = {
     eyebrow: "Almost done",
     heading: "One more step — register both attendees",
     subcopy:
-      "Your Early Bird Pair payment is confirmed. Since it covers 2 seats, we just need each attendee's name, email, and contact number to issue both tickets.",
+      "Your Early Bird Buddy payment is confirmed. Since it covers 2 seats, we just need each attendee's name, email, and contact number to issue both tickets.",
   },
   ms: {
     eyebrow: "Hampir siap",
     heading: "Satu langkah lagi — daftarkan kedua-dua peserta",
     subcopy:
-      "Pembayaran Early Bird Pair anda telah disahkan. Oleh kerana ia meliputi 2 tempat duduk, kami hanya perlukan nama, e-mel, dan nombor telefon setiap peserta untuk mengeluarkan kedua-dua tiket.",
+      "Pembayaran Early Bird Buddy anda telah disahkan. Oleh kerana ia meliputi 2 tempat duduk, kami hanya perlukan nama, e-mel, dan nombor telefon setiap peserta untuk mengeluarkan kedua-dua tiket.",
   },
   zh: {
     eyebrow: "只差一步",
     heading: "还差一步 — 请为两位参加者完成注册",
     subcopy:
-      "您的 Early Bird Pair 付款已确认。由于这份票包含 2 个名额，我们需要每位参加者的姓名、电子邮箱与联络电话，才能签发两张门票。",
+      "您的 Early Bird Buddy 付款已确认。由于这份票包含 2 个名额，我们需要每位参加者的姓名、电子邮箱与联络电话，才能签发两张门票。",
   },
 } as const
 

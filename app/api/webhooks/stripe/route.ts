@@ -10,18 +10,19 @@ import { sendEmail, ticketConfirmationEmail } from "@/lib/email"
 const TIER_BY_AMOUNT: Record<number, string> = {
   19900: "Early Bird",
   25900: "Standard",
-  65900: "Early Bird Pair", // second-brain-ai's 2-ticket bundle
+  59900: "Early Bird Buddy", // second-brain-ai's 2-ticket bundle
 }
 
 const SECOND_BRAIN_AI_EVENT_NAME = "Build Your Second Brain & Automate Your Marketing with Agentic AI"
 
-// Only "Early Bird Pair" is unambiguous today — it's the one live
-// second-brain-ai tier. Once real Stripe links exist for second-brain-ai's
-// own "Early Bird" (RM 359) and "Virtual Pass" (RM 199), RM 199 will collide
-// with marketing-masterclass's existing "Early Bird" (also RM 199 = 19900
-// sen) under this amount-based lookup. At that point this needs to switch to
-// disambiguating by `session.payment_link` ID instead of amount.
-const SECOND_BRAIN_AI_TIERS = new Set(["Early Bird Pair"])
+// Only "Early Bird Buddy" is unambiguous today — it's the one tier whose
+// amount is actually wired into TIER_BY_AMOUNT above. second-brain-ai's own
+// "Early Bird" (RM 359) and "Virtual Pass" (RM 199) tiers are live on the
+// page but not yet mapped here (pre-existing gap, not introduced by this
+// change) — a purchase there currently falls through to `Unknown (RM ...)`
+// instead of a real tier name, and RM 199 would additionally collide with
+// marketing-masterclass's own Early Bird amount if added naively.
+const SECOND_BRAIN_AI_TIERS = new Set(["Early Bird Buddy"])
 
 export async function POST(request: Request) {
   const secretKey = process.env.STRIPE_SECRET_KEY

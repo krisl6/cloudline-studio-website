@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, CalendarDays, Clock, Download, MapPin, Navigation, Timer, Users, ShieldCheck, Sparkles } from "lucide-react"
+import { ArrowRight, CalendarDays, Clock, Download, MapPin, Navigation, Users, ShieldCheck, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -80,6 +80,85 @@ function EventPhotoCarousel() {
   )
 }
 
+// ── ROLLING COUNTDOWN ─────────────────────────────────────────────
+// Odometer-style digit roll (each digit slides out/in on change) instead of
+// a plain text pill — CloudLine's own card/border styling, not a generic
+// flip-clock skin.
+function RollingDigit({ value }: { value: number }) {
+  return (
+    <span className="relative inline-block h-6 w-3.5 sm:h-8 sm:w-5 overflow-hidden">
+      <AnimatePresence mode="popLayout" initial={false}>
+        <motion.span
+          key={value}
+          initial={{ y: "100%", opacity: 0 }}
+          animate={{ y: "0%", opacity: 1 }}
+          exit={{ y: "-100%", opacity: 0 }}
+          transition={{ duration: 0.35, ease: "easeInOut" }}
+          className="absolute inset-0 flex items-center justify-center font-display text-sm sm:text-lg font-bold text-foreground tabular-nums"
+        >
+          {value}
+        </motion.span>
+      </AnimatePresence>
+    </span>
+  )
+}
+
+function RollingNumber({ value }: { value: number }) {
+  return (
+    <span className="flex">
+      {String(value).padStart(2, "0").split("").map((d, i) => (
+        <RollingDigit key={i} value={Number(d)} />
+      ))}
+    </span>
+  )
+}
+
+function CountdownPager({
+  timeLeft,
+  units,
+  startsInLabel,
+  eventStartedLabel,
+}: {
+  timeLeft: { days: number; hours: number; minutes: number; seconds: number; done: boolean } | null
+  units: { d: string; h: string; m: string; s: string }
+  startsInLabel: string
+  eventStartedLabel: string
+}) {
+  if (!timeLeft) return <div className="h-[52px] sm:h-[64px]" aria-hidden="true" />
+
+  if (timeLeft.done) {
+    return (
+      <span className="inline-flex items-center gap-2 rounded-xl border border-border bg-card px-4 py-2.5 text-sm font-medium">
+        {eventStartedLabel}
+      </span>
+    )
+  }
+
+  const segments = [
+    { value: timeLeft.days, label: units.d },
+    { value: timeLeft.hours, label: units.h },
+    { value: timeLeft.minutes, label: units.m },
+    { value: timeLeft.seconds, label: units.s },
+  ]
+
+  return (
+    <div className="inline-flex flex-col items-start gap-1.5">
+      <span className="text-[10px] sm:text-xs font-medium uppercase tracking-[0.15em] text-muted-foreground">{startsInLabel}</span>
+      <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-xl border border-border bg-card px-3 sm:px-4 py-2 sm:py-2.5">
+        {segments.map((seg, i) => (
+          <div key={i} className="flex items-center gap-1.5 sm:gap-2">
+            <div className="flex flex-col items-center">
+              <RollingNumber value={seg.value} />
+              <span className="text-[8px] sm:text-[9px] font-medium uppercase tracking-wide text-muted-foreground mt-0.5">{seg.label}</span>
+            </div>
+            {i < segments.length - 1 && <span className="text-muted-foreground/30 font-bold">:</span>}
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 function useCountdown(targetIso: string) {
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number; seconds: number; done: boolean } | null>(null)
 
@@ -109,7 +188,7 @@ function useCountdown(targetIso: string) {
 
 // ── TICKETS ─────────────────────────────────────────────────────────
 // All tiers checkout via Stripe Payment Links (see app/api/webhooks/stripe).
-// The Early Bird Pair link's Stripe Dashboard "after payment" redirect must
+// The Early Bird Buddy link's Stripe Dashboard "after payment" redirect must
 // point at /events/second-brain-ai/register-pair?session_id={CHECKOUT_SESSION_ID}
 // so both attendees' details get collected post-payment.
 
@@ -139,17 +218,17 @@ const TICKET_INCLUSIONS_VIRTUAL = [
 
 const TICKET_TIERS = [
   {
-    name: "Early Bird Pair",
-    price: "RM 659",
+    name: "Early Bird Buddy",
+    price: "RM 599",
     originalPrice: null as string | null,
     popular: false,
     limited: false,
     twoTickets: true,
-    // Verified live via checkout: "Early Bird PAIR TICKETS" for MYR 659.00.
+    // Verified live via checkout: "Early Bird Buddy Tickets" for MYR 599.00.
     // After payment, Stripe redirects the buyer to /register-pair (set on the
     // Payment Link's confirmation-page setting) to collect both attendees'
     // details — Stripe's own checkout only captures the purchaser's info.
-    stripeUrl: "https://buy.stripe.com/dRmcN4bHfa4jdjI6gDbZe08" as string | undefined,
+    stripeUrl: "https://buy.stripe.com/3cIaEW7qZ0tJ93s34rbZe09" as string | undefined,
     features: TICKET_INCLUSIONS_PAIR,
   },
   {
@@ -370,25 +449,13 @@ export default function SecondBrainAgenticAiPage() {
                     </p>
                   ))}
                 </motion.div>
-                <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-2.5 mb-4 sm:mb-5">
-                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3.5 py-1.5 text-xs sm:text-sm font-medium tabular-nums">
-                    <Timer className="size-4 text-primary shrink-0" />
-                    {timeLeft && !timeLeft.done ? (
-                      <span>
-                        {tt.hero.startsIn}{" "}
-                        {timeLeft.days > 0 && `${timeLeft.days}${tt.hero.seatsUnit.d} `}
-                        {timeLeft.hours}{tt.hero.seatsUnit.h} {timeLeft.minutes}{tt.hero.seatsUnit.m} {timeLeft.seconds}{tt.hero.seatsUnit.s}
-                      </span>
-                    ) : timeLeft?.done ? (
-                      <span>{tt.hero.eventStarted}</span>
-                    ) : (
-                      <span className="opacity-0">00d 00h 00m 00s</span>
-                    )}
-                  </span>
-                  <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-primary">
-                    <Users className="size-4 shrink-0" />
-                    <span>{SEATS_REMAINING} {tt.hero.seatsLeft}</span>
-                  </span>
+                <motion.div variants={fadeUp} className="mb-4 sm:mb-5">
+                  <CountdownPager
+                    timeLeft={timeLeft}
+                    units={tt.hero.seatsUnit}
+                    startsInLabel={tt.hero.startsIn}
+                    eventStartedLabel={tt.hero.eventStarted}
+                  />
                 </motion.div>
                 <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-3">
                   <Button size="lg" className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-medium" onClick={() => scrollTo("tickets")}>
@@ -700,7 +767,14 @@ export default function SecondBrainAgenticAiPage() {
               ))}
             </motion.div>
 
-            <p className="mt-6 sm:mt-8 max-w-3xl mx-auto text-xs text-center text-muted-foreground leading-relaxed">{tt.tickets.disclaimer}</p>
+            <div className="mt-6 sm:mt-8 flex justify-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-primary">
+                <Users className="size-4 shrink-0" />
+                <span>{SEATS_REMAINING} {tt.hero.seatsLeft}</span>
+              </span>
+            </div>
+
+            <p className="mt-4 max-w-3xl mx-auto text-xs text-center text-muted-foreground leading-relaxed">{tt.tickets.disclaimer}</p>
           </div>
         </section>
 

@@ -2,8 +2,8 @@ import { NextResponse } from "next/server"
 import { sendEmail, ticketConfirmationEmail } from "@/lib/email"
 
 const EVENT_NAME = "Build Your Second Brain & Automate Your Marketing with Agentic AI"
-const TIER = "Early Bird Pair"
-const AMOUNT_LABEL = "659.00 (pair — 2 tickets)"
+const TIER = "Early Bird Buddy"
+const AMOUNT_LABEL = "599.00 (pair — 2 tickets)"
 
 type Attendee = { name: string; email: string; phone: string }
 
