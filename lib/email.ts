@@ -41,6 +41,14 @@ export async function sendEmail(opts: { to: string; subject: string; html: strin
   }
 }
 
+const SIGNATURE = `
+  <p style="font-size: 15px; line-height: 1.6;">
+    Warmest regards,<br/>
+    Cloudline Studio Team<br/>
+    P: +60 11 2775 5215
+  </p>
+`
+
 function wrapper(bodyHtml: string): string {
   return `
     <div style="font-family: -apple-system, 'Helvetica Neue', Arial, sans-serif; max-width: 560px; margin: 0 auto; color: #1a1d29;">
@@ -63,7 +71,7 @@ export function contactConfirmationEmail(name: string) {
     html: wrapper(`
       <p style="font-size: 15px; line-height: 1.6;">Hi ${escapeHtml(name) || "there"},</p>
       <p style="font-size: 15px; line-height: 1.6;">Thanks for reaching out to CloudLine Studio. We've received your message and will get back to you shortly.</p>
-      <p style="font-size: 15px; line-height: 1.6;">Talk soon,<br/>Kristine &amp; the CloudLine team</p>
+      ${SIGNATURE}
     `),
   }
 }
@@ -74,7 +82,7 @@ export function waitlistConfirmationEmail(name: string) {
     html: wrapper(`
       <p style="font-size: 15px; line-height: 1.6;">Hi ${escapeHtml(name) || "there"},</p>
       <p style="font-size: 15px; line-height: 1.6;">You're on the waitlist for CloudLine's AEO/SEO Automation. We'll email you as soon as a spot opens up.</p>
-      <p style="font-size: 15px; line-height: 1.6;">Talk soon,<br/>Kristine &amp; the CloudLine team</p>
+      ${SIGNATURE}
     `),
   }
 }
@@ -89,7 +97,7 @@ export function ticketConfirmationEmail(name: string, tier: string, eventName: s
       <p style="font-size: 15px; line-height: 1.6;">Thank you for registering, ${escapeHtml(firstName)}!</p>
       <p style="font-size: 15px; line-height: 1.6;">You're confirmed for ${escapeHtml(eventName)} (${escapeHtml(tier)} ticket) on <strong>12 August 2026, 12:30 PM &ndash; 5:00 PM</strong> at Infinity8, Sunway Square.</p>
       <p style="font-size: 15px; line-height: 1.6;">Contact us at <a href="${CONTACT_WHATSAPP_URL}" style="color: #2f4d73;">${CONTACT_WHATSAPP_URL.replace("https://", "")}</a> for more information.</p>
-      <p style="font-size: 15px; line-height: 1.6;">Kristine &amp; the CloudLine team</p>
+      ${SIGNATURE}
     `),
   }
 }
