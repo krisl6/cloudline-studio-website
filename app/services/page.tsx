@@ -109,7 +109,7 @@ export default function ServicesPage() {
               whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="max-w-3xl mb-14"
+              className="max-w-3xl mb-14 md:mb-20"
             >
               <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.overview.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
@@ -120,46 +120,65 @@ export default function ServicesPage() {
               </p>
             </motion.div>
 
-            <motion.div
-              variants={stagger}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="grid gap-6 md:grid-cols-2"
-            >
-              {services.map((service, i) => {
-                const Icon = serviceIcons[i]
-                return (
-                  <motion.div key={service.id} id={service.id} variants={fadeUp} className="scroll-mt-24">
-                    <Link
-                      href={`/case-studies/${service.id}`}
-                      className="group flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
-                    >
-                      <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                        <Icon className="size-7" />
+            {/* Connected vertical timeline — numbered stages, no card boxes.
+                Line grows in via scroll-triggered scaleY, same technique
+                already proven at FunnelTimeline/ai-aeo's "How It Works". */}
+            <div className="relative mx-auto max-w-3xl">
+              <motion.div
+                className="absolute left-[23px] top-2 bottom-2 w-px bg-border origin-top"
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2, ease: "easeInOut" }}
+                aria-hidden="true"
+              />
+
+              <motion.div
+                variants={stagger}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
+                className="flex flex-col gap-14 md:gap-16"
+              >
+                {services.map((service, i) => {
+                  const Icon = serviceIcons[i]
+                  return (
+                    <motion.div key={service.id} id={service.id} variants={fadeUp} className="relative flex gap-6 scroll-mt-24">
+                      <span className="relative z-10 inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary shadow-sm">
+                        <Icon className="size-6" />
                       </span>
-                      <h3 className="font-display text-xl font-semibold mt-6 mb-1">{service.title}</h3>
-                      <p className="text-xs font-medium tracking-[0.12em] uppercase text-muted-foreground mb-3">
-                        {service.subtitle}
-                      </p>
-                      <p className="text-sm text-muted-foreground leading-relaxed mb-6">{service.description}</p>
-                      <ul className="space-y-2.5">
-                        {service.included.map((point) => (
-                          <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
-                            <DoodleCheck className="size-4 shrink-0 text-primary" />
-                            {point}
-                          </li>
-                        ))}
-                      </ul>
-                      <span className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                        View case studies
-                        <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-                      </span>
-                    </Link>
-                  </motion.div>
-                )
-              })}
-            </motion.div>
+                      <div className="flex-1 pt-1.5">
+                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                          <span className="font-display text-sm font-bold text-primary">{String(i + 1).padStart(2, "0")}</span>
+                          <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight">{service.title}</h3>
+                        </div>
+                        <p className="text-xs font-medium tracking-[0.12em] uppercase text-muted-foreground mb-3">
+                          {service.subtitle}
+                        </p>
+                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5 max-w-2xl">
+                          {service.description}
+                        </p>
+                        <ul className="flex flex-wrap gap-x-6 gap-y-2 mb-5">
+                          {service.included.map((point) => (
+                            <li key={point} className="flex items-center gap-2 text-sm text-foreground/80">
+                              <DoodleCheck className="size-4 shrink-0 text-primary" />
+                              {point}
+                            </li>
+                          ))}
+                        </ul>
+                        <Link
+                          href={`/case-studies/${service.id}`}
+                          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
+                        >
+                          View case studies
+                          <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+                        </Link>
+                      </div>
+                    </motion.div>
+                  )
+                })}
+              </motion.div>
+            </div>
           </div>
         </section>
 
