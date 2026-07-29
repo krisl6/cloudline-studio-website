@@ -8,6 +8,13 @@ export const WHATSAPP_URL = "https://wa.me/601127755215"
 export const SITE_DESCRIPTION =
   "CloudLine Studio is a consultancy that helps businesses grow through digital marketing, AI-enabled business transformation, and operational excellence across Singapore and Malaysia."
 
+// Real, already-published contact facts (match Footer.tsx) — centralized
+// here so structured data (lib/json-ld.ts) has one source, not a 4th copy.
+export const SITE_EMAIL = "hello@cloudline-studio.com"
+export const SITE_PHONE = "+60 11-2775 5215"
+export const SITE_LOCALITY = "Kuala Lumpur"
+export const SITE_COUNTRY = "MY"
+
 // Routes that exist in the site (used by sitemap). Keep in sync with app/ routes.
 export const SITE_ROUTES = [
   "",

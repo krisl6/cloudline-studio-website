@@ -8,6 +8,8 @@ import { Analytics } from "@vercel/analytics/next"
 import { LanguageProvider } from "@/components/language-provider"
 import { SiteLayout } from "@/components/layout/SiteLayout"
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site"
+import { JsonLd } from "@/components/seo/json-ld"
+import { buildOrganizationJsonLd } from "@/lib/json-ld"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 
@@ -101,6 +103,7 @@ export default function RootLayout({
           </LanguageProvider>
         </ThemeProvider>
         <Analytics />
+        <JsonLd data={buildOrganizationJsonLd()} />
       </body>
     </html>
   )

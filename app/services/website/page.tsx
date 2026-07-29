@@ -5,6 +5,7 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { DoodleCheck } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
@@ -252,6 +253,30 @@ export default function WebsiteServicePage() {
                 </motion.li>
               ))}
             </motion.ul>
+          </div>
+        </section>
+
+        {/* FAQ — real, grounded Q&A (14-day turnaround, RM 2,560 pricing,
+            MonstarX numbers), doubles as FAQPage JSON-LD source (layout.tsx) */}
+        <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="Frequently asked questions">
+          <div className="container px-4 md:px-6">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mb-8 md:mb-10 mx-auto text-center">
+              <div className="mb-4 flex justify-center"><Eyebrow>{tt.faqSection.eyebrow}</Eyebrow></div>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance">
+                {tt.faqSection.title}
+              </h2>
+              <p className="text-muted-foreground md:text-lg mt-3">{tt.faqSection.intro}</p>
+            </motion.div>
+            <div className="mx-auto max-w-3xl">
+              <Accordion type="single" collapsible className="w-full">
+                {tt.faqs.map((faq, i) => (
+                  <AccordionItem key={i} value={`item-${i}`} className="border-b border-border py-2">
+                    <AccordionTrigger className="text-left font-medium hover:no-underline text-foreground">{faq.question}</AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground leading-relaxed">{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
           </div>
         </section>
 

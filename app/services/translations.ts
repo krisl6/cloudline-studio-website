@@ -2,7 +2,7 @@ export const translations = {
   en: {
     hero: {
       eyebrow: "What We Do",
-      title: "Four services that move the business forward",
+      title: "Five services that move the business forward",
       intro:
         "We help ambitious teams diagnose what is holding them back, digitise and automate the work, connect departments on shared systems, and build brands that perform. Strategy and execution under one roof, designed to compound.",
       ctaPrimary: "Get a Quote",
@@ -248,9 +248,9 @@ export const translations = {
           "Start with a Consultation. We diagnose your funnel, tooling, and operations, then recommend the highest-impact next step, whether that is transformation, synchronization, branding, or a mix. You only invest in what will actually move the needle.",
       },
       {
-        question: "Can you work across all four services at once?",
+        question: "Can you work across all five services at once?",
         answer:
-          "Yes. The four services are designed to compound. Many clients begin with Consultation, then move into Digital Transformation and Interdepartmental Synchronization, with Digital Marketing & Branding running alongside to drive demand.",
+          "Yes. The five services are designed to compound. Many clients begin with Consultation, then move into Digital Transformation and Interdepartmental Synchronization, with Digital Marketing & Branding and SEO & AI Search (AEO) running alongside to drive demand and visibility.",
       },
       {
         question: "How quickly will we see results?",
@@ -272,7 +272,7 @@ export const translations = {
   ms: {
     hero: {
       eyebrow: "Apa Yang Kami Lakukan",
-      title: "Empat perkhidmatan yang memacu perniagaan ke hadapan",
+      title: "Lima perkhidmatan yang memacu perniagaan ke hadapan",
       intro:
         "Kami membantu pasukan yang bercita-cita tinggi mengenal pasti apa yang membantutkan mereka, mendigitalkan dan mengautomasikan kerja, menghubungkan jabatan pada sistem yang dikongsi, serta membina jenama yang berprestasi. Strategi dan pelaksanaan di bawah satu bumbung, direka untuk berganda.",
       ctaPrimary: "Dapatkan Sebut Harga",
@@ -518,9 +518,9 @@ export const translations = {
           "Mulakan dengan Konsultasi. Kami mengkaji corong, peralatan, dan operasi anda, kemudian mengesyorkan langkah seterusnya yang paling berkesan, sama ada transformasi, penyelarasan, penjenamaan, atau gabungan. Anda hanya melabur dalam apa yang benar-benar memberi kesan.",
       },
       {
-        question: "Bolehkah anda mengendalikan keempat-empat perkhidmatan serentak?",
+        question: "Bolehkah anda mengendalikan kelima-lima perkhidmatan serentak?",
         answer:
-          "Ya. Keempat-empat perkhidmatan direka untuk berganda. Ramai pelanggan bermula dengan Konsultasi, kemudian beralih ke Transformasi Digital dan Penyelarasan Antara Jabatan, dengan Pemasaran Digital & Penjenamaan berjalan seiring untuk memacu permintaan.",
+          "Ya. Kelima-lima perkhidmatan direka untuk berganda. Ramai pelanggan bermula dengan Konsultasi, kemudian beralih ke Transformasi Digital dan Penyelarasan Antara Jabatan, dengan Pemasaran Digital & Penjenamaan serta SEO & Carian AI (AEO) berjalan seiring untuk memacu permintaan dan keterlihatan.",
       },
       {
         question: "Berapa cepat kami akan melihat hasil?",
@@ -542,7 +542,7 @@ export const translations = {
   zh: {
     hero: {
       eyebrow: "我们的服务",
-      title: "四项推动业务前进的服务",
+      title: "五项推动业务前进的服务",
       intro:
         "我们帮助有抱负的团队找出阻碍他们的因素，将工作数字化和自动化，让各部门在共享系统上协同运作，并打造有成效的品牌。策略与执行同在一处，专为复利增长而设计。",
       ctaPrimary: "获取报价",
@@ -788,9 +788,9 @@ export const translations = {
           "从咨询开始。我们诊断您的销售漏斗、工具和运营，然后推荐最具影响力的下一步，无论是转型、协同、品牌塑造，还是多者结合。您只需投入真正能带来成效的部分。",
       },
       {
-        question: "你们能同时开展全部四项服务吗？",
+        question: "你们能同时开展全部五项服务吗？",
         answer:
-          "可以。这四项服务旨在产生复利效应。许多客户从咨询开始，然后进入数字化转型和跨部门协同，同时配合数字营销与品牌塑造来推动需求。",
+          "可以。这五项服务旨在产生复利效应。许多客户从咨询开始，然后进入数字化转型和跨部门协同，同时配合数字营销与品牌塑造以及 SEO 与 AI 搜索优化（AEO）来共同推动需求与曝光。",
       },
       {
         question: "我们多久能看到成果？",

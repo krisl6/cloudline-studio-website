@@ -1,4 +1,7 @@
 import type { Metadata } from "next"
+import { JsonLd } from "@/components/seo/json-ld"
+import { buildFaqJsonLd } from "@/lib/json-ld"
+import { translations } from "./translations"
 
 export const metadata: Metadata = {
   title: "Website Design & CRO | CloudLine Studio",
@@ -14,5 +17,10 @@ export const metadata: Metadata = {
 }
 
 export default function WebsiteServiceLayout({ children }: { children: React.ReactNode }) {
-  return children
+  return (
+    <>
+      {children}
+      <JsonLd data={buildFaqJsonLd(translations.en.faqs)} />
+    </>
+  )
 }
