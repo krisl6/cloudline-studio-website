@@ -147,13 +147,13 @@ export const caseStudies: CaseStudy[] = [
     ],
   },
   {
-    title: "F&B Operations Sync & POS Optimisation, Warung Ambo",
+    title: "Real-Time Front-of-House & Kitchen Sync, Warung Ambo, Malaysia",
     industry: "F&B · Malaysia",
     platforms: ["Interdepartmental Synchronization"],
     challenge:
       "At peak hours Warung Ambo had long queues, orders slipping through the cracks, and front-of-house and kitchen operations that were constantly out of step.",
     solution:
-      "We optimised the POS specifically for F&B, ensured no orders were missed, and synced front-of-house and kitchen operations in real time through their devices.",
+      "We synced front-of-house and kitchen operations in real time through their devices, closing the gap that let orders slip through during peak hours.",
     results:
       "Queue speed improved 30% almost immediately, zero missed orders, synced kitchen and counter operations, and a direct lift in sales.",
     image: "/digital-marketing-dashboard-with-analytics-charts-.jpg",

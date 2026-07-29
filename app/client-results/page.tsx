@@ -55,10 +55,10 @@ export default function ClientResultsPage() {
       company: "Warung Ambo",
       role: "Pemilik",
       rating: 5,
-      quote: "Jujur saya cakap, mengurus warung ni memang kerja tak habis-habis. Dari pagi sampai malam saya sibuk di dapur, jadi hal sistem dan teknologi memang saya tak sempat nak fikir. Waktu puncak, barisan pelanggan panjang, ada je pesanan yang tertinggal, dan operasi dapur dengan depan kaunter selalu tak sekata. CloudLine datang dan terus selesaikan masalah tu. Mereka optimumkan sistem POS warung saya khas untuk F&B, pastikan tiada lagi pesanan tercicir, dan selaraskan operasi depan kaunter dengan dapur terus melalui peranti mereka. Hasilnya nampak serta-merta, kelajuan barisan laju 30%, pelanggan tak payah tunggu lama, dan jualan pun terus naik. Sekarang saya boleh fokus pada masakan, bukan kelam-kabut nak urus pesanan. Terima kasih CloudLine!",
+      quote: "Jujur saya cakap, mengurus warung ni memang kerja tak habis-habis. Dari pagi sampai malam saya sibuk di dapur, jadi hal sistem dan teknologi memang saya tak sempat nak fikir. Waktu puncak, barisan pelanggan panjang, ada je pesanan yang tertinggal, dan operasi dapur dengan depan kaunter selalu tak sekata. CloudLine datang dan terus selesaikan masalah tu. Mereka selaraskan operasi kaunter depan dengan dapur secara terus melalui peranti, pastikan tiada lagi pesanan tercicir walaupun waktu paling sibuk. Hasilnya nampak serta-merta, kelajuan barisan laju 30%, pelanggan tak payah tunggu lama, dan jualan pun terus naik. Sekarang saya boleh fokus pada masakan, bukan kelam-kabut nak urus pesanan. Terima kasih CloudLine!",
       results: "Kelajuan barisan meningkat 30%, sifar pesanan tercicir, operasi dapur & kaunter diselaraskan, jualan meningkat",
-      challenge: "Sistem POS tidak teratur, pesanan tercicir waktu puncak, operasi dapur dan kaunter tidak sekata",
-      solution: "Penyelarasan antara jabatan, POS khas F&B dengan operasi depan kaunter dan dapur diselaraskan melalui peranti",
+      challenge: "Operasi tidak teratur waktu puncak, pesanan tercicir, kaunter dan dapur tidak sekata",
+      solution: "Penyelarasan antara jabatan — operasi kaunter depan dan dapur diselaraskan secara langsung melalui peranti, memastikan tiada pesanan tercicir",
       timeline: "Kesan serta-merta selepas pelaksanaan",
       metrics: {
         before: "Barisan panjang, pesanan tercicir, dapur & kaunter tak selaras",
