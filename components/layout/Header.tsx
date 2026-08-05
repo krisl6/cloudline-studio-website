@@ -35,7 +35,6 @@ export function Header() {
         { name: "AEO/SEO Automation (Waitlist)", href: "/ai-aeo" },
       ],
     },
-    { name: t.nav.pricing, href: "/pricing" },
     { name: t.nav.caseStudies, href: "/case-studies" },
     {
       name: t.nav.events,

@@ -25,7 +25,7 @@ const EVENT_START = "2026-08-12T12:30:00+08:00"
 // Real capacity, shared with the marketing-masterclass page. Update by hand
 // after checking Stripe — this number is displayed as fact, never fabricate it.
 const TOTAL_SEATS = 15
-const SEATS_REMAINING = 8
+const SEATS_REMAINING = 6
 
 // ── TRUSTED BY ──────────────────────────────────────────────────────
 // Real clients named in Kristine's bio. Only listed here once a real logo
@@ -243,13 +243,13 @@ const TICKET_TIERS = [
   },
   {
     name: "Virtual Pass",
-    price: "RM 199",
+    price: "RM 99",
     originalPrice: null as string | null,
     popular: false,
     limited: false,
-    // Verified live via checkout: "Virtual Pass — Build Your Second Brain
-    // with Agentic AI" for MYR 199.00.
-    stripeUrl: "https://buy.stripe.com/aFa6oG26FgsHfrQgVhbZe07" as string | undefined,
+    // Stripe link updated 2026-08-05 for new MYR 99.00 price — not yet
+    // re-verified live via checkout (see previous RM199 link's verification note).
+    stripeUrl: "https://buy.stripe.com/cNibJ0bHf1xN1B0awTbZe0a" as string | undefined,
     features: TICKET_INCLUSIONS_VIRTUAL,
   },
 ] as const
@@ -391,9 +391,6 @@ export default function SecondBrainAgenticAiPage() {
           <div className="container px-4 md:px-6 pt-8 pb-6 md:pt-14 md:pb-14">
             <div className="mx-auto max-w-6xl grid items-center gap-6 lg:gap-14 lg:grid-cols-[1fr_minmax(0,440px)]">
               <motion.div variants={stagger} initial="hidden" animate="show">
-                <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-5">
-                  {tt.hero.eyebrow}
-                </motion.p>
                 <motion.h1 variants={fadeUp} className="font-display text-3xl sm:text-5xl lg:text-[3rem] font-semibold tracking-tight text-balance leading-[1.1] sm:leading-[1.05] mb-3 sm:mb-4">
                   {tt.hero.headline}
                 </motion.h1>
@@ -510,7 +507,6 @@ export default function SecondBrainAgenticAiPage() {
         <section className="w-full py-8 md:py-12 lg:py-14 border-b border-border" aria-label="Workshop timeline">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.timeline.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-2 sm:mb-3">
                 {tt.timeline.heading}
               </h2>
@@ -618,7 +614,6 @@ export default function SecondBrainAgenticAiPage() {
         <section className="w-full py-8 md:py-12 lg:py-14 border-b border-border" aria-label="Speakers">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.speakers.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.speakers.heading}
               </h2>
@@ -677,7 +672,6 @@ export default function SecondBrainAgenticAiPage() {
         <section id="tickets" className="w-full py-8 md:py-12 lg:py-14 bg-muted/50 border-b border-border" aria-label="Ticket pricing">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.tickets.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-3 sm:mb-4">
                 {tt.tickets.heading}
               </h2>
@@ -782,7 +776,6 @@ export default function SecondBrainAgenticAiPage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 sm:gap-8 lg:grid-cols-2 lg:items-center max-w-4xl mx-auto">
               <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
-                <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-2">{tt.partners.eyebrow}</p>
                 <div className="mb-3">
                   <Image src="/infinity8-logo.png" alt="Infinity8 logo" width={112} height={34} className="object-contain mb-2" />
                   <h2 className="font-display text-lg sm:text-xl font-semibold tracking-tight text-balance">
@@ -821,7 +814,6 @@ export default function SecondBrainAgenticAiPage() {
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-2xl text-center"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4 sm:mb-5">{tt.cta.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4 sm:mb-5">
                 {tt.cta.heading}
               </h2>
