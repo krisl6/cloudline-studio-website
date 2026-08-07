@@ -20,7 +20,8 @@ const config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["var(--font-geist-sans)", "var(--font-inter)", "ui-sans-serif", "sans-serif"],
+        display: ["var(--font-inter)", "ui-sans-serif", "sans-serif"],
+        serif: ["var(--font-fraunces)", "Georgia", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -28,6 +29,11 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        cream: "hsl(var(--cream))",
+        cloud: "hsl(var(--cloud))",
+        ink: "hsl(var(--ink))",
+        navy: "hsl(var(--navy))",
+        sky: "hsl(var(--sky))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",

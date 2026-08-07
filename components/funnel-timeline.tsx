@@ -106,7 +106,6 @@ export function FunnelTimeline() {
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-10"
         >
-          <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.eyebrow}</p>
           <h2 className="font-display text-3xl md:text-4xl 2xl:text-5xl font-semibold tracking-tight text-balance mb-4">
             {tt.heading}
           </h2>
@@ -133,7 +132,7 @@ export function FunnelTimeline() {
         {/* Timeline, vertical on mobile, horizontal on desktop */}
         <div className="relative">
           {/* connector line */}
-          <div className="pointer-events-none absolute left-4 top-2 bottom-2 w-px bg-border lg:left-0 lg:right-0 lg:top-4 lg:bottom-auto lg:h-px lg:w-full" />
+          <div className="pointer-events-none absolute left-4 top-2 bottom-2 w-px bg-sky lg:left-0 lg:right-0 lg:top-4 lg:bottom-auto lg:h-px lg:w-full" />
 
           <motion.div
             key={audience}

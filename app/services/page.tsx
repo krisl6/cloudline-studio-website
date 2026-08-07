@@ -40,15 +40,12 @@ const serviceIds = ["consultation", "transformation", "synchronization", "brandi
 export default function ServicesPage() {
   const { lang } = useLanguage()
   const tt = translations[lang]
-  const [activeService, setActiveService] = useState<(typeof serviceIds)[number]>("consultation")
+  const [openServices, setOpenServices] = useState<string[]>([])
   const [activeTimelineIndex, setActiveTimelineIndex] = useState(0)
 
   const services = tt.services.map((service, i) => ({ id: serviceIds[i], ...service }))
   const processSteps = tt.processSteps
   const faqs = tt.faqs
-
-  const currentService = services.find((service) => service.id === activeService) || services[0]
-  const CurrentIcon = serviceIcons[services.findIndex((s) => s.id === currentService.id)] || DoodleSearch
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
@@ -62,15 +59,9 @@ export default function ServicesPage() {
               animate="show"
               className="mx-auto max-w-3xl 2xl:max-w-4xl text-center"
             >
-              <motion.p
-                variants={fadeUp}
-                className="text-xs sm:text-sm 2xl:text-base font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6"
-              >
-                {tt.hero.eyebrow}
-              </motion.p>
               <motion.h1
                 variants={fadeUp}
-                className="font-display text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
+                className="font-serif text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
               >
                 {tt.hero.title}
               </motion.h1>
@@ -100,7 +91,10 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Service overview grid */}
+        {/* Our services — one merged timeline. Each service is an accordion
+            item on a sky-blue "horizon line" (callback to the logo's accent
+            bar); collapsed by default, expanding in place instead of
+            repeating the same content in a second tab-selector section. */}
         <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Our services">
           <div className="container px-4 md:px-6">
             <motion.div
@@ -111,7 +105,6 @@ export default function ServicesPage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14 md:mb-20"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.overview.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.overview.title}
               </h2>
@@ -120,12 +113,9 @@ export default function ServicesPage() {
               </p>
             </motion.div>
 
-            {/* Connected vertical timeline — numbered stages, no card boxes.
-                Line grows in via scroll-triggered scaleY, same technique
-                already proven at FunnelTimeline/ai-aeo's "How It Works". */}
             <div className="relative mx-auto max-w-3xl">
               <motion.div
-                className="absolute left-[23px] top-2 bottom-2 w-px bg-border origin-top"
+                className="absolute left-[23px] top-2 bottom-2 w-px bg-sky origin-top"
                 initial={{ scaleY: 0 }}
                 whileInView={{ scaleY: 1 }}
                 viewport={{ once: true }}
@@ -138,264 +128,138 @@ export default function ServicesPage() {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="flex flex-col gap-14 md:gap-16"
               >
-                {services.map((service, i) => {
-                  const Icon = serviceIcons[i]
-                  return (
-                    <motion.div key={service.id} id={service.id} variants={fadeUp} className="relative flex gap-6 scroll-mt-24">
-                      <span className="relative z-10 inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary shadow-sm">
-                        <Icon className="size-6" />
-                      </span>
-                      <div className="flex-1 pt-1.5">
-                        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
-                          <span className="font-display text-sm font-bold text-primary">{String(i + 1).padStart(2, "0")}</span>
-                          <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight">{service.title}</h3>
-                        </div>
-                        <p className="text-xs font-medium tracking-[0.12em] uppercase text-muted-foreground mb-3">
-                          {service.subtitle}
-                        </p>
-                        <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-5 max-w-2xl">
-                          {service.description}
-                        </p>
-                        <ul className="flex flex-wrap gap-x-6 gap-y-2 mb-5">
-                          {service.included.map((point) => (
-                            <li key={point} className="flex items-center gap-2 text-sm text-foreground/80">
-                              <DoodleCheck className="size-4 shrink-0 text-primary" />
-                              {point}
-                            </li>
-                          ))}
-                        </ul>
-                        <Link
-                          href={`/case-studies/${service.id}`}
-                          className="group inline-flex items-center gap-1.5 text-sm font-semibold text-primary"
-                        >
-                          View case studies
-                          <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
-                        </Link>
-                      </div>
-                    </motion.div>
-                  )
-                })}
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Deep dive, interactive selector */}
-        <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Service details">
-          <div className="container px-4 md:px-6">
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="max-w-3xl mb-12"
-            >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.deepDive.eyebrow}</p>
-              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
-                {tt.deepDive.title}
-              </h2>
-            </motion.div>
-
-            <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
-              <div className="lg:w-1/3 space-y-3">
-                {services.map((service, i) => {
-                  const Icon = serviceIcons[i]
-                  const isActive = activeService === service.id
-                  return (
-                    <button
-                      key={service.id}
-                      type="button"
-                      onClick={() => setActiveService(service.id)}
-                      aria-pressed={isActive}
-                      className={`w-full text-left flex items-center gap-3 rounded-2xl border p-4 transition-all duration-300 ${
-                        isActive
-                          ? "border-primary/30 bg-primary/8"
-                          : "border-border bg-card hover:bg-muted"
-                      }`}
-                    >
-                      <span
-                        className={`inline-flex size-10 shrink-0 items-center justify-center rounded-xl ${
-                          isActive ? "bg-primary text-primary-foreground" : "bg-primary/8 text-primary"
-                        }`}
-                      >
-                        <Icon className="size-6" />
-                      </span>
-                      <span>
-                        <span className="block font-display text-sm font-semibold">{service.title}</span>
-                        <span className="block text-xs text-muted-foreground">{service.subtitle}</span>
-                      </span>
-                    </button>
-                  )
-                })}
-              </div>
-
-              <div className="lg:w-2/3">
-                <motion.div
-                  key={activeService}
-                  initial={{ opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3 }}
-                  className="rounded-2xl border border-border bg-card p-8 md:p-10"
+                <Accordion
+                  type="multiple"
+                  value={openServices}
+                  onValueChange={setOpenServices}
+                  className="flex flex-col gap-10 md:gap-12"
                 >
-                  <div className="flex items-center gap-4 mb-6">
-                    <span className="inline-flex size-14 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                      <CurrentIcon className="size-8" />
-                    </span>
-                    <div>
-                      <h3 className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
-                        {currentService.title}
-                      </h3>
-                      <p className="text-sm text-muted-foreground">{currentService.subtitle}</p>
-                    </div>
-                  </div>
-
-                  <p className="text-muted-foreground md:text-lg leading-relaxed mb-8">{currentService.description}</p>
-
-                  <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                    {tt.deepDive.included}
-                  </p>
-                  <ul className="grid sm:grid-cols-2 gap-x-6 gap-y-3 mb-8">
-                    {currentService.included.map((point) => (
-                      <li key={point} className="flex items-start gap-2.5 text-sm text-foreground/85">
-                        <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-
-                  {currentService.id === "seo" ? (
-                    <div className="mt-2">
-                      <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                        {tt.seoPillars.eyebrow}
-                      </p>
-                      <h4 className="font-display text-lg font-semibold tracking-tight mb-5">{tt.seoPillars.heading}</h4>
-                      <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                        {tt.seoPillars.items.map((pillar, i) => {
-                          const PillarIcon = pillarIcons[i]
-                          return (
-                            <div key={pillar.title} className="rounded-xl border border-border bg-muted/30 p-4">
-                              <div className="flex items-center gap-2.5 mb-2">
-                                <span className="inline-flex size-8 items-center justify-center rounded-lg bg-primary/8 text-primary">
-                                  <PillarIcon className="size-4" />
-                                </span>
-                                <span className="font-display text-sm font-semibold">{pillar.title}</span>
-                              </div>
-                              <p className="text-sm text-muted-foreground leading-relaxed">{pillar.desc}</p>
-                            </div>
-                          )
-                        })}
-                      </div>
-                      <p className="text-sm font-medium text-primary leading-relaxed mb-8">{tt.seoPillars.closer}</p>
-
-                      <Button variant="outline" className="mb-6 rounded-full font-medium border-border bg-transparent hover:bg-muted" asChild>
-                        <Link href={`/case-studies/${currentService.id}`}>
-                          View case studies
-                          <ArrowRight className="ml-1.5 size-4" />
-                        </Link>
-                      </Button>
-                      <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-2">
-                        Coming soon
-                      </p>
-                      <Link href="/ai-aeo" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline mb-4">
-                        Learn more about AEO/SEO Automation
-                        <ArrowRight className="size-4" />
-                      </Link>
-                      <SeoWaitlistForm />
-                    </div>
-                  ) : (
-                    <div className="flex flex-wrap gap-3">
-                      <Button className="rounded-full font-medium" asChild>
-                        <Link href="/contact">
-                          {tt.deepDive.getStarted}
-                          <ArrowRight className="ml-1.5 size-4" />
-                        </Link>
-                      </Button>
-                      <Button variant="outline" className="rounded-full font-medium border-border bg-transparent hover:bg-muted" asChild>
-                        <Link href={`/case-studies/${currentService.id}`}>View case studies</Link>
-                      </Button>
-                    </div>
-                  )}
-                </motion.div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* SEO/AEO delivery timeline */}
-        {activeService === "seo" && (
-          <section className="w-full py-20 md:py-28 bg-muted/50 border-b border-border" aria-label="SEO delivery timeline">
-            <div className="container px-4 md:px-6">
-              <motion.div
-                variants={fadeUp}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                className="max-w-3xl mb-12"
-              >
-                <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.seoTimeline.eyebrow}</p>
-                <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
-                  {tt.seoTimeline.heading}
-                </h2>
-                <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.seoTimeline.subcopy}</p>
-              </motion.div>
-
-              <div className="flex flex-col lg:flex-row gap-8">
-                <div className="lg:w-1/3 flex flex-col gap-2">
-                  {tt.seoTimeline.services.map((service, i) => {
-                    const isActive = i === activeTimelineIndex
+                  {services.map((service, i) => {
+                    const Icon = serviceIcons[i]
                     return (
-                      <button
-                        key={service.name}
-                        onClick={() => setActiveTimelineIndex(i)}
-                        className={`text-left rounded-xl border px-4 py-3 transition-colors ${
-                          isActive ? "border-primary/30 bg-primary/8" : "border-border bg-card hover:bg-muted"
-                        }`}
-                      >
-                        <span className="block text-sm font-semibold font-display">{service.name}</span>
-                        <span className="block text-xs text-muted-foreground">{service.category}</span>
-                      </button>
+                      <motion.div key={service.id} id={service.id} variants={fadeUp} className="relative flex gap-6 scroll-mt-24">
+                        <span className="relative z-10 inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary shadow-sm">
+                          <Icon className="size-6" />
+                        </span>
+                        <AccordionItem value={service.id} className="flex-1 border-none">
+                          <AccordionTrigger className="items-start py-0 pt-1.5 font-normal hover:no-underline [&>svg]:mt-2 [&>svg]:text-primary">
+                            <div className="text-left pr-4">
+                              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                                <span className="font-display text-sm font-bold text-primary">{String(i + 1).padStart(2, "0")}</span>
+                                <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight">{service.title}</h3>
+                              </div>
+                              <p className="text-xs font-medium tracking-[0.12em] uppercase text-muted-foreground mb-3">
+                                {service.subtitle}
+                              </p>
+                              <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-2xl">
+                                {service.description}
+                              </p>
+                            </div>
+                          </AccordionTrigger>
+                          <AccordionContent className="pt-5">
+                            <ul className="flex flex-wrap gap-x-6 gap-y-2 mb-5">
+                              {service.included.map((point) => (
+                                <li key={point} className="flex items-center gap-2 text-sm text-foreground/80">
+                                  <DoodleCheck className="size-4 shrink-0 text-primary" />
+                                  {point}
+                                </li>
+                              ))}
+                            </ul>
+
+                            {service.id === "seo" && (
+                              <div className="mb-6">
+                                <h4 className="font-display text-lg font-semibold tracking-tight mb-5">{tt.seoPillars.heading}</h4>
+                                <div className="grid sm:grid-cols-2 gap-4 mb-6">
+                                  {tt.seoPillars.items.map((pillar, i) => {
+                                    const PillarIcon = pillarIcons[i]
+                                    return (
+                                      <div key={pillar.title} className="rounded-xl border border-border bg-card p-4">
+                                        <div className="flex items-center gap-2.5 mb-2">
+                                          <span className="inline-flex size-8 items-center justify-center rounded-lg bg-primary/8 text-primary">
+                                            <PillarIcon className="size-4" />
+                                          </span>
+                                          <span className="font-display text-sm font-semibold">{pillar.title}</span>
+                                        </div>
+                                        <p className="text-sm text-muted-foreground leading-relaxed">{pillar.desc}</p>
+                                      </div>
+                                    )
+                                  })}
+                                </div>
+                                <p className="text-sm font-medium text-primary leading-relaxed mb-6">{tt.seoPillars.closer}</p>
+
+                                <div className="rounded-2xl bg-card p-6 md:p-8 mb-6">
+                                  <h4 className="font-display text-lg font-semibold tracking-tight mb-1">{tt.seoTimeline.heading}</h4>
+                                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{tt.seoTimeline.subcopy}</p>
+                                  <div className="flex flex-col sm:flex-row gap-2 mb-6">
+                                    {tt.seoTimeline.services.map((s, si) => {
+                                      const isActive = si === activeTimelineIndex
+                                      return (
+                                        <button
+                                          key={s.name}
+                                          type="button"
+                                          onClick={() => setActiveTimelineIndex(si)}
+                                          className={`flex-1 text-left rounded-xl border px-4 py-3 transition-colors ${
+                                            isActive ? "border-primary/30 bg-primary/8" : "border-border bg-background hover:bg-muted"
+                                          }`}
+                                        >
+                                          <span className="block text-sm font-semibold font-display">{s.name}</span>
+                                          <span className="block text-xs text-muted-foreground">{s.category}</span>
+                                        </button>
+                                      )
+                                    })}
+                                  </div>
+                                  <div className="grid gap-6 sm:grid-cols-3">
+                                    {tt.seoTimeline.services[activeTimelineIndex].stages.map((stage, si) => (
+                                      <div key={si}>
+                                        <div className="flex items-center gap-3 mb-3">
+                                          <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border text-primary font-display text-xs font-semibold">
+                                            {String(si + 1)}
+                                          </span>
+                                          <span className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground">
+                                            {tt.seoTimeline.dayLabels[si]}
+                                          </span>
+                                        </div>
+                                        <p className="text-sm text-foreground/80 leading-relaxed">{stage}</p>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-2">
+                                  Coming soon
+                                </p>
+                                <Link href="/ai-aeo" className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline mb-4">
+                                  Learn more about AEO/SEO Automation
+                                  <ArrowRight className="size-4" />
+                                </Link>
+                                <SeoWaitlistForm />
+                              </div>
+                            )}
+
+                            <div className="flex flex-wrap gap-3">
+                              {service.id !== "seo" && (
+                                <Button className="rounded-full font-medium" asChild>
+                                  <Link href="/contact">
+                                    {tt.deepDive.getStarted}
+                                    <ArrowRight className="ml-1.5 size-4" />
+                                  </Link>
+                                </Button>
+                              )}
+                              <Button variant="outline" className="rounded-full font-medium border-border bg-transparent hover:bg-muted" asChild>
+                                <Link href={`/case-studies/${service.id}`}>View case studies</Link>
+                              </Button>
+                            </div>
+                          </AccordionContent>
+                        </AccordionItem>
+                      </motion.div>
                     )
                   })}
-                </div>
-
-                <div className="lg:w-2/3">
-                  <motion.div
-                    key={activeTimelineIndex}
-                    initial={{ opacity: 0, y: 16 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="rounded-2xl border border-border bg-card p-8 md:p-10 h-full"
-                  >
-                    <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight mb-1">
-                      {tt.seoTimeline.services[activeTimelineIndex].name}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-8">{tt.seoTimeline.services[activeTimelineIndex].category}</p>
-
-                    <div className="grid gap-6 sm:grid-cols-3">
-                      {tt.seoTimeline.services[activeTimelineIndex].stages.map((stage, i) => (
-                        <div key={i}>
-                          <div className="flex items-center gap-3 mb-3">
-                            <span className="inline-flex size-9 items-center justify-center rounded-lg border border-border text-primary font-display text-xs font-semibold">
-                              {String(i + 1)}
-                            </span>
-                            <span className="text-xs font-medium tracking-[0.14em] uppercase text-muted-foreground">
-                              {tt.seoTimeline.dayLabels[i]}
-                            </span>
-                          </div>
-                          <p className="text-sm text-foreground/80 leading-relaxed">{stage}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </motion.div>
-                </div>
-              </div>
+                </Accordion>
+              </motion.div>
             </div>
-          </section>
-        )}
+          </div>
+        </section>
 
         {/* How we work */}
         <section className="w-full py-20 md:py-28 border-t border-border" aria-label="How we work">
@@ -408,7 +272,6 @@ export default function ServicesPage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.process.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.process.title}
               </h2>
@@ -457,7 +320,6 @@ export default function ServicesPage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-2xl mx-auto mb-12"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.faqSection.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.faqSection.title}
               </h2>
