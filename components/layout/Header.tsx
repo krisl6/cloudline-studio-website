@@ -57,9 +57,13 @@ export function Header() {
       }`}
       role="banner"
     >
-      <div className="container flex h-16 items-center justify-between px-4 md:px-6">
-        <Link href="/" className="flex items-center gap-2 font-bold" aria-label="CloudLine Studio - Home">
-          <div className="size-8 rounded-lg overflow-hidden">
+      <div className="container flex h-16 items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
+        <Link
+          href="/"
+          className="flex shrink-0 items-center gap-2 font-bold"
+          aria-label="CloudLine Studio - Home"
+        >
+          <div className="size-8 shrink-0 rounded-lg overflow-hidden">
             {/* Light mode: white-bg mark (bg blends with header) */}
             <Image
               src="/cloudline_logo.png"
@@ -77,19 +81,25 @@ export function Header() {
               className="w-full h-full object-cover hidden dark:block"
             />
           </div>
-          <span className="font-display font-semibold tracking-tight text-foreground">CloudLine Studio</span>
+          <span className="whitespace-nowrap font-display font-semibold tracking-tight text-foreground">
+            CloudLine Studio
+          </span>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-6" role="navigation" aria-label="Main navigation">
+        <nav
+          className="hidden min-w-0 items-center gap-5 xl:flex"
+          role="navigation"
+          aria-label="Main navigation"
+        >
           {navItems.map((item) =>
             item.dropdown ? (
-              <div key={item.href} className="group relative">
+              <div key={item.href} className="group relative shrink-0">
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                  className="flex items-center gap-1 whitespace-nowrap text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
                 >
                   {item.name}
-                  <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
+                  <ChevronDown className="size-3.5 shrink-0 transition-transform group-hover:rotate-180" />
                 </Link>
                 <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
                   <div className="w-64 rounded-xl border border-border bg-card p-1.5 shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]">
@@ -109,7 +119,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="shrink-0 whitespace-nowrap text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
               >
                 {item.name}
               </Link>
@@ -117,12 +127,12 @@ export function Header() {
           )}
         </nav>
 
-        <div className="flex items-center gap-3">
-          <div className="hidden md:flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <div className="hidden shrink-0 items-center gap-3 xl:flex">
             <LanguageToggle />
             <ThemeToggle />
             <Button
-              className="rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+              className="whitespace-nowrap rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
               asChild
             >
               <Link href="/contact">
@@ -130,11 +140,11 @@ export function Header() {
               </Link>
             </Button>
           </div>
-          
+
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="shrink-0 xl:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -154,10 +164,10 @@ export function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="md:hidden overflow-hidden"
+            className="xl:hidden overflow-hidden"
           >
             <div className="bg-background/95 backdrop-blur-lg border-t border-border">
-              <div className="container px-4 md:px-6 py-4">
+              <div className="container px-4 sm:px-6 py-4">
                 <div className="flex flex-col space-y-2">
                   {navItems.map((item, index) => (
                     <motion.div
