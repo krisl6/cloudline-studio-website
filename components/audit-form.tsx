@@ -4,12 +4,17 @@ import { useState } from "react"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-type Niche = "tech" | "aesthetic" | "education"
+type Niche = "tech" | "aesthetic" | "education" | "business"
 type Status = "idle" | "submitting" | "success" | "error"
 
 interface AuditFormProps {
   niche: Niche
   abVariant?: "A" | "B"
+  // Distinguishes which of several same-niche landing pages a lead came
+  // from (e.g. the 3 generic "business" pages — branding/operations/aeo).
+  // Optional and additive — omitted by existing pages, so their payload
+  // shape is unchanged.
+  interest?: string
 }
 
 const NICHE_LABELS: Record<Niche, { websiteLabel: string; websitePlaceholder: string; extraField: "website_url" | "instagram_handle" | "course_url" }> = {
@@ -28,9 +33,14 @@ const NICHE_LABELS: Record<Niche, { websiteLabel: string; websitePlaceholder: st
     websitePlaceholder: "https://yourcourse.com",
     extraField: "course_url",
   },
+  business: {
+    websiteLabel: "Business name / website",
+    websitePlaceholder: "https://yourbusiness.com",
+    extraField: "website_url",
+  },
 }
 
-export function AuditForm({ niche, abVariant = "A" }: AuditFormProps) {
+export function AuditForm({ niche, abVariant = "A", interest }: AuditFormProps) {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [challenge, setChallenge] = useState("")
@@ -53,6 +63,7 @@ export function AuditForm({ niche, abVariant = "A" }: AuditFormProps) {
       ab_variant: abVariant,
       [extraField]: extra,
     }
+    if (interest) payload.interest = interest
 
     try {
       const res = await fetch("/api/audit-request", {

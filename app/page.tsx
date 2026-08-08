@@ -89,15 +89,9 @@ export default function HomePage() {
         <section className="relative overflow-hidden" aria-label="Hero">
           <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-24 2xl:pt-36 2xl:pb-32">
             <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-4xl 2xl:max-w-5xl text-center">
-              <motion.p
-                variants={fadeUp}
-                className="text-xs sm:text-sm 2xl:text-base font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6"
-              >
-                {t.hero.eyebrow}
-              </motion.p>
               <motion.h1
                 variants={fadeUp}
-                className="font-display text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
+                className="font-serif text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
               >
                 {t.hero.headline}
               </motion.h1>
@@ -167,6 +161,20 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
+
+              {/* Floating stat card — real, existing figure (also shown
+                  below the client logos), not a new claim. */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="absolute -bottom-6 left-6 hidden sm:flex items-center gap-3 rounded-2xl border border-border bg-card/95 backdrop-blur px-5 py-4 shadow-[0_20px_50px_-20px_rgba(20,30,55,0.35)]"
+              >
+                <span className="font-serif text-2xl font-semibold text-primary">4.9/5</span>
+                <span className="max-w-[9rem] text-xs leading-snug text-muted-foreground">
+                  average client satisfaction · 120+ projects delivered
+                </span>
+              </motion.div>
             </motion.div>
           </div>
         </section>
@@ -182,7 +190,6 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{t.services.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {t.services.heading}
               </h2>
@@ -245,7 +252,6 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-2xl mx-auto mb-12"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{t.work.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">{t.work.heading}</h2>
               <p className="text-muted-foreground md:text-lg">{t.work.subcopy}</p>
             </motion.div>
@@ -257,16 +263,13 @@ export default function HomePage() {
                 transition={{ x: { repeat: Number.POSITIVE_INFINITY, repeatType: "loop", duration: 30, ease: "linear" } }}
               >
                 {[...clients.slice(0, 12), ...clients.slice(0, 12)].map((client, i) => (
-                  <div
-                    key={`row1-${i}`}
-                    className="flex-shrink-0 w-36 h-20 bg-card rounded-xl border border-border flex items-center justify-center"
-                  >
+                  <div key={`row1-${i}`} className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
                     <Image
                       src={client.logo || "/placeholder.svg"}
                       alt={client.name}
-                      width={110}
-                      height={55}
-                      className="max-w-[70%] max-h-[55%] object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+                      width={120}
+                      height={60}
+                      className="max-w-full max-h-full object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                 ))}
@@ -278,16 +281,13 @@ export default function HomePage() {
                 transition={{ x: { repeat: Number.POSITIVE_INFINITY, repeatType: "loop", duration: 30, ease: "linear" } }}
               >
                 {[...clients.slice(11, 23), ...clients.slice(11, 23)].map((client, i) => (
-                  <div
-                    key={`row2-${i}`}
-                    className="flex-shrink-0 w-36 h-20 bg-card rounded-xl border border-border flex items-center justify-center"
-                  >
+                  <div key={`row2-${i}`} className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
                     <Image
                       src={client.logo || "/placeholder.svg"}
                       alt={client.name}
-                      width={110}
-                      height={55}
-                      className="max-w-[70%] max-h-[55%] object-contain opacity-60 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+                      width={120}
+                      height={60}
+                      className="max-w-full max-h-full object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                 ))}
@@ -310,7 +310,6 @@ export default function HomePage() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
               >
-                <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{t.about.eyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-6">
                   {t.about.heading}
                 </h2>
@@ -388,7 +387,6 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{t.outcomes.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {t.outcomes.heading}
               </h2>
@@ -429,14 +427,13 @@ export default function HomePage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{t.process.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">{t.process.heading}</h2>
             </motion.div>
 
             <div className="relative flex flex-col gap-10 md:grid md:grid-cols-3 md:gap-8">
               {/* Timeline connector: vertical on mobile, horizontal on desktop */}
               <div
-                className="absolute left-6 top-6 bottom-6 w-px bg-border md:left-6 md:right-6 md:top-6 md:bottom-auto md:h-px md:w-auto"
+                className="absolute left-6 top-6 bottom-6 w-px bg-sky md:left-6 md:right-6 md:top-6 md:bottom-auto md:h-px md:w-auto"
                 aria-hidden="true"
               />
               {t.process.steps.map((stage, i) => {
@@ -478,7 +475,7 @@ export default function HomePage() {
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-3xl text-center"
             >
-              <blockquote className="font-display text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight leading-snug text-balance">
+              <blockquote className="font-serif italic text-2xl md:text-3xl lg:text-4xl font-medium tracking-tight leading-snug text-balance">
                 {t.quote.text}
               </blockquote>
               <figcaption className="mt-8 text-sm text-muted-foreground">{t.quote.attribution}</figcaption>
