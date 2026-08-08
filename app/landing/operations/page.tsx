@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { CheckCircle2, ClipboardList, Handshake, Layers, ListChecks, RadioTower, Zap } from "lucide-react"
 import { AuditForm } from "@/components/audit-form"
@@ -56,7 +57,17 @@ export default function OperationsLP() {
 
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-24">
+          <Image
+            src="/lp-operations-bg.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover"
+            aria-hidden="true"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/95 via-background/90 to-background" aria-hidden="true" />
+          <div className="container relative px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-24">
             <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-3xl text-center">
               <motion.h1 variants={fadeUp} className="font-serif text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance leading-[1.05] mb-6">
                 Is your business losing revenue to disconnected systems?
