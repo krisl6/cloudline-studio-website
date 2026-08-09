@@ -242,7 +242,7 @@ const TICKET_TIERS = [
     features: TICKET_INCLUSIONS,
   },
   {
-    name: "Virtual Pass",
+    name: "Special Pass (INFINITY8 Clients)",
     price: "RM 99",
     originalPrice: null as string | null,
     popular: false,
@@ -487,6 +487,109 @@ export default function SecondBrainAgenticAiPage() {
           </div>
         </section>
 
+        {/* Ticket pricing */}
+        <section id="tickets" className="w-full py-8 md:py-12 lg:py-14 bg-muted/50 border-b border-border" aria-label="Ticket pricing">
+          <div className="container px-4 md:px-6">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
+              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-3 sm:mb-4">
+                {tt.tickets.heading}
+              </h2>
+            </motion.div>
+
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="max-w-3xl mb-6 sm:mb-8 flex flex-wrap gap-x-6 gap-y-2"
+            >
+              <p className="text-xs font-semibold tracking-[0.1em] uppercase text-muted-foreground w-full mb-1">{tt.included.heading}</p>
+              {tt.included.items.map((item) => (
+                <span key={item} className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-foreground/70">
+                  <DoodleCheck className="size-3.5 shrink-0 text-primary" />
+                  {item}
+                </span>
+              ))}
+            </motion.div>
+
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+              {TICKET_TIERS.map((tier) => (
+                <motion.div
+                  key={tier.name}
+                  variants={fadeUp}
+                  whileHover={{ y: -6 }}
+                  className={`relative flex h-full flex-col rounded-2xl border bg-card p-5 sm:p-7 transition-shadow duration-300 hover:shadow-lg ${
+                    tier.popular ? "border-primary ring-1 ring-primary/20 hover:shadow-primary/10" : "border-border hover:shadow-primary/5"
+                  }`}
+                >
+                  {(tier.popular || tier.limited) && (
+                    <div className="absolute -top-3 left-5 sm:left-7 flex flex-wrap gap-1.5">
+                      {tier.popular && (
+                        <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                          Most Popular
+                        </span>
+                      )}
+                      {tier.limited && (
+                        <span className="inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-xs font-medium text-white">
+                          Limited Availability
+                        </span>
+                      )}
+                    </div>
+                  )}
+                  <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-3">
+                    <h3 className="font-display text-xl font-semibold tracking-tight">{tier.name}</h3>
+                    {"twoTickets" in tier && tier.twoTickets && (
+                      <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary">
+                        2 Tickets
+                      </span>
+                    )}
+                  </div>
+                  <div className={`flex items-baseline gap-2 font-display text-2xl font-semibold tracking-tight text-foreground ${tier.limited ? "mb-2" : "mb-4 sm:mb-6"}`}>
+                    {tier.originalPrice && (
+                      <span className="text-base font-normal text-muted-foreground line-through">{tier.originalPrice}</span>
+                    )}
+                    <span>{tier.price}</span>
+                  </div>
+                  {tier.limited && (
+                    <p className="text-xs font-medium text-amber-600 mb-3 sm:mb-4">Only a limited number of Early Bird tickets available</p>
+                  )}
+                  {"twoTickets" in tier && tier.twoTickets && (
+                    <p className="text-sm font-bold text-foreground mb-3 sm:mb-4">One payment, two seats — bring a friend or colleague.</p>
+                  )}
+                  <ul className="space-y-2 sm:space-y-2.5 mb-6 sm:mb-8 flex-grow">
+                    {tier.features.map((feature, i) => (
+                      <li key={feature} className={`flex items-start gap-2.5 text-sm ${"twoTickets" in tier && tier.twoTickets && i === 0 ? "font-bold text-foreground" : "text-foreground/80"}`}>
+                        <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  {tier.stripeUrl ? (
+                    <Button className={`mt-auto w-full rounded-full font-medium ${tier.popular ? "" : "border-border bg-transparent hover:bg-muted"}`} variant={tier.popular ? "default" : "outline"} asChild>
+                      <Link href={tier.stripeUrl} target="_blank" rel="noopener noreferrer">
+                        {tt.hero.ctaTickets}
+                      </Link>
+                    </Button>
+                  ) : (
+                    <Button className="mt-auto w-full rounded-full font-medium" variant="outline" disabled>
+                      Coming Soon
+                    </Button>
+                  )}
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <div className="mt-6 sm:mt-8 flex justify-center">
+              <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-primary">
+                <Users className="size-4 shrink-0" />
+                <span>{SEATS_REMAINING} {tt.hero.seatsLeft}</span>
+              </span>
+            </div>
+
+            <p className="mt-4 max-w-3xl mx-auto text-xs text-center text-muted-foreground leading-relaxed">{tt.tickets.disclaimer}</p>
+          </div>
+        </section>
+
         {/* Past events carousel — real photos from CloudLine-run workshops,
             crossfading every 2.5s. */}
         <section className="w-full py-8 md:py-10 border-b border-border" aria-label="Past events">
@@ -665,109 +768,6 @@ export default function SecondBrainAgenticAiPage() {
                 </motion.div>
               ))}
             </motion.div>
-          </div>
-        </section>
-
-        {/* Ticket pricing */}
-        <section id="tickets" className="w-full py-8 md:py-12 lg:py-14 bg-muted/50 border-b border-border" aria-label="Ticket pricing">
-          <div className="container px-4 md:px-6">
-            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
-              <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-3 sm:mb-4">
-                {tt.tickets.heading}
-              </h2>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
-              className="max-w-3xl mb-6 sm:mb-8 flex flex-wrap gap-x-6 gap-y-2"
-            >
-              <p className="text-xs font-semibold tracking-[0.1em] uppercase text-muted-foreground w-full mb-1">{tt.included.heading}</p>
-              {tt.included.items.map((item) => (
-                <span key={item} className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-foreground/70">
-                  <DoodleCheck className="size-3.5 shrink-0 text-primary" />
-                  {item}
-                </span>
-              ))}
-            </motion.div>
-
-            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-              {TICKET_TIERS.map((tier) => (
-                <motion.div
-                  key={tier.name}
-                  variants={fadeUp}
-                  whileHover={{ y: -6 }}
-                  className={`relative flex h-full flex-col rounded-2xl border bg-card p-5 sm:p-7 transition-shadow duration-300 hover:shadow-lg ${
-                    tier.popular ? "border-primary ring-1 ring-primary/20 hover:shadow-primary/10" : "border-border hover:shadow-primary/5"
-                  }`}
-                >
-                  {(tier.popular || tier.limited) && (
-                    <div className="absolute -top-3 left-5 sm:left-7 flex flex-wrap gap-1.5">
-                      {tier.popular && (
-                        <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
-                          Most Popular
-                        </span>
-                      )}
-                      {tier.limited && (
-                        <span className="inline-flex items-center rounded-full bg-amber-500 px-3 py-1 text-xs font-medium text-white">
-                          Limited Availability
-                        </span>
-                      )}
-                    </div>
-                  )}
-                  <div className="flex flex-wrap items-center gap-2 mb-2 sm:mb-3">
-                    <h3 className="font-display text-xl font-semibold tracking-tight">{tier.name}</h3>
-                    {"twoTickets" in tier && tier.twoTickets && (
-                      <span className="inline-flex items-center rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-bold text-primary">
-                        2 Tickets
-                      </span>
-                    )}
-                  </div>
-                  <div className={`flex items-baseline gap-2 font-display text-2xl font-semibold tracking-tight text-foreground ${tier.limited ? "mb-2" : "mb-4 sm:mb-6"}`}>
-                    {tier.originalPrice && (
-                      <span className="text-base font-normal text-muted-foreground line-through">{tier.originalPrice}</span>
-                    )}
-                    <span>{tier.price}</span>
-                  </div>
-                  {tier.limited && (
-                    <p className="text-xs font-medium text-amber-600 mb-3 sm:mb-4">Only a limited number of Early Bird tickets available</p>
-                  )}
-                  {"twoTickets" in tier && tier.twoTickets && (
-                    <p className="text-sm font-bold text-foreground mb-3 sm:mb-4">One payment, two seats — bring a friend or colleague.</p>
-                  )}
-                  <ul className="space-y-2 sm:space-y-2.5 mb-6 sm:mb-8 flex-grow">
-                    {tier.features.map((feature, i) => (
-                      <li key={feature} className={`flex items-start gap-2.5 text-sm ${"twoTickets" in tier && tier.twoTickets && i === 0 ? "font-bold text-foreground" : "text-foreground/80"}`}>
-                        <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {tier.stripeUrl ? (
-                    <Button className={`mt-auto w-full rounded-full font-medium ${tier.popular ? "" : "border-border bg-transparent hover:bg-muted"}`} variant={tier.popular ? "default" : "outline"} asChild>
-                      <Link href={tier.stripeUrl} target="_blank" rel="noopener noreferrer">
-                        {tt.hero.ctaTickets}
-                      </Link>
-                    </Button>
-                  ) : (
-                    <Button className="mt-auto w-full rounded-full font-medium" variant="outline" disabled>
-                      Coming Soon
-                    </Button>
-                  )}
-                </motion.div>
-              ))}
-            </motion.div>
-
-            <div className="mt-6 sm:mt-8 flex justify-center">
-              <span className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/8 px-3.5 py-1.5 text-xs sm:text-sm font-medium text-primary">
-                <Users className="size-4 shrink-0" />
-                <span>{SEATS_REMAINING} {tt.hero.seatsLeft}</span>
-              </span>
-            </div>
-
-            <p className="mt-4 max-w-3xl mx-auto text-xs text-center text-muted-foreground leading-relaxed">{tt.tickets.disclaimer}</p>
           </div>
         </section>
 
