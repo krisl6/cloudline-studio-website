@@ -507,6 +507,28 @@ export default function SecondBrainAgenticAiPage() {
               ))}
             </motion.div>
 
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="max-w-3xl mb-6 sm:mb-8 flex items-center gap-4 rounded-2xl border border-border bg-card p-3 sm:p-4"
+            >
+              <div className="relative size-16 sm:size-20 shrink-0 overflow-hidden rounded-xl border border-border">
+                <Image
+                  src="/burgerlab-party-box.png"
+                  alt="BurgerLab party box — beef and chicken burgers"
+                  fill
+                  sizes="80px"
+                  className="object-cover"
+                />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-foreground">Lunch is provided</p>
+                <p className="text-xs sm:text-sm text-muted-foreground">BurgerLab party box — beef & chicken burgers</p>
+              </div>
+            </motion.div>
+
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
               {TICKET_TIERS.map((tier) => {
                 const isExclusive = "exclusive" in tier && tier.exclusive

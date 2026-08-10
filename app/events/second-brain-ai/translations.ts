@@ -201,6 +201,7 @@ export const translations = {
       items: [
         "Free-flow refreshments, coffee & tea",
         "Sufficient charging plugs",
+        "Lunch provided (BurgerLab party box)",
         "1-week complimentary coworking pass at Infinity8",
       ],
     },
@@ -424,6 +425,7 @@ export const translations = {
       items: [
         "Minuman ringan, kopi & teh tanpa had",
         "Palam pengecasan yang mencukupi",
+        "Makan tengah hari disediakan (BurgerLab party box)",
         "Pas coworking percuma seminggu di Infinity8",
       ],
     },
@@ -647,6 +649,7 @@ export const translations = {
       items: [
         "无限量茶点、咖啡与茶饮",
         "充足的充电插座",
+        "提供午餐（BurgerLab 派对餐盒）",
         "Infinity8 一周免费联合办公通行证",
       ],
     },
