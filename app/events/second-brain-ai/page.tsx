@@ -192,26 +192,20 @@ function useCountdown(targetIso: string) {
 // so both attendees' details get collected post-payment.
 
 const TICKET_INCLUSIONS = [
-  "Full workshop access (12:30pm–5pm): Agentic AI Workflows + BONUS Video Automation",
+  "Full workshop access: Agentic AI + Video Automation",
   "Live project demos from Kristine & Ken",
-  "One FREE week of Pro for the first 5 sign-ups",
-  "One FREE week of co-working access at INFINITY8",
-  "Free-flow refreshments, coffee & tea",
+  "1 FREE week of Pro (first 5 sign-ups)",
+  "1 FREE week of co-working at INFINITY8",
+  "Free-flow refreshments",
   "Workshop materials & templates",
 ]
 
 const TICKET_INCLUSIONS_PAIR = [
-  "Full workshop access (12:30pm–5pm) for 2 attendees: Agentic AI Workflows + BONUS Video Automation",
+  "Full workshop access for 2: Agentic AI + Video Automation",
   "Live project demos from Kristine & Ken",
-  "One FREE week of Pro for the first 5 sign-ups",
-  "One FREE week of co-working access at INFINITY8 (both attendees)",
-  "Free-flow refreshments, coffee & tea for both attendees",
-  "Workshop materials & templates",
-]
-
-const TICKET_INCLUSIONS_VIRTUAL = [
-  "Live-streamed access to the full workshop (12:30pm–5pm): Agentic AI Workflows + BONUS Video Automation",
-  "Recording available to rewatch afterward",
+  "1 FREE week of Pro (first 5 sign-ups)",
+  "1 FREE week of co-working (both attendees)",
+  "Free-flow refreshments for both",
   "Workshop materials & templates",
 ]
 
@@ -247,10 +241,11 @@ const TICKET_TIERS = [
     originalPrice: null as string | null,
     popular: false,
     limited: false,
+    exclusive: true,
     // Stripe link updated 2026-08-05 for new MYR 99.00 price — not yet
     // re-verified live via checkout (see previous RM199 link's verification note).
     stripeUrl: "https://buy.stripe.com/cNibJ0bHf1xN1B0awTbZe0a" as string | undefined,
-    features: TICKET_INCLUSIONS_VIRTUAL,
+    features: TICKET_INCLUSIONS,
   },
 ] as const
 
@@ -513,20 +508,28 @@ export default function SecondBrainAgenticAiPage() {
             </motion.div>
 
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-4 sm:gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
-              {TICKET_TIERS.map((tier) => (
+              {TICKET_TIERS.map((tier) => {
+                const isExclusive = "exclusive" in tier && tier.exclusive
+                const isHighlighted = tier.popular || isExclusive
+                return (
                 <motion.div
                   key={tier.name}
                   variants={fadeUp}
                   whileHover={{ y: -6 }}
                   className={`relative flex h-full flex-col rounded-2xl border bg-card p-5 sm:p-7 transition-shadow duration-300 hover:shadow-lg ${
-                    tier.popular ? "border-primary ring-1 ring-primary/20 hover:shadow-primary/10" : "border-border hover:shadow-primary/5"
+                    isHighlighted ? "border-primary ring-1 ring-primary/20 hover:shadow-primary/10" : "border-border hover:shadow-primary/5"
                   }`}
                 >
-                  {(tier.popular || tier.limited) && (
+                  {(tier.popular || tier.limited || isExclusive) && (
                     <div className="absolute -top-3 left-5 sm:left-7 flex flex-wrap gap-1.5">
                       {tier.popular && (
                         <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
                           Most Popular
+                        </span>
+                      )}
+                      {isExclusive && (
+                        <span className="inline-flex items-center rounded-full bg-primary px-3 py-1 text-xs font-medium text-primary-foreground">
+                          INFINITY8 Exclusive
                         </span>
                       )}
                       {tier.limited && (
@@ -565,7 +568,7 @@ export default function SecondBrainAgenticAiPage() {
                     ))}
                   </ul>
                   {tier.stripeUrl ? (
-                    <Button className={`mt-auto w-full rounded-full font-medium ${tier.popular ? "" : "border-border bg-transparent hover:bg-muted"}`} variant={tier.popular ? "default" : "outline"} asChild>
+                    <Button className={`mt-auto w-full rounded-full font-medium ${isHighlighted ? "" : "border-border bg-transparent hover:bg-muted"}`} variant={isHighlighted ? "default" : "outline"} asChild>
                       <Link href={tier.stripeUrl} target="_blank" rel="noopener noreferrer">
                         {tt.hero.ctaTickets}
                       </Link>
@@ -576,7 +579,8 @@ export default function SecondBrainAgenticAiPage() {
                     </Button>
                   )}
                 </motion.div>
-              ))}
+                )
+              })}
             </motion.div>
 
             <div className="mt-6 sm:mt-8 flex justify-center">

@@ -201,7 +201,7 @@ export const translations = {
       items: [
         "Free-flow refreshments, coffee & tea",
         "Sufficient charging plugs",
-        "A one-week complimentary coworking pass for every attendee at Infinity8, Sunway Square",
+        "1-week complimentary coworking pass at Infinity8",
       ],
     },
     tickets: {
@@ -424,7 +424,7 @@ export const translations = {
       items: [
         "Minuman ringan, kopi & teh tanpa had",
         "Palam pengecasan yang mencukupi",
-        "Pas coworking percuma selama seminggu untuk setiap peserta di Infinity8, Sunway Square",
+        "Pas coworking percuma seminggu di Infinity8",
       ],
     },
     tickets: {
@@ -647,7 +647,7 @@ export const translations = {
       items: [
         "无限量茶点、咖啡与茶饮",
         "充足的充电插座",
-        "每位参与者可获得 Infinity8, Sunway Square 一周免费联合办公通行证",
+        "Infinity8 一周免费联合办公通行证",
       ],
     },
     tickets: {
