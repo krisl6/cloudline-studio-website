@@ -193,7 +193,7 @@ function useCountdown(targetIso: string) {
 
 const TICKET_INCLUSIONS = [
   "Full workshop access: Agentic AI + Video Automation",
-  "Live project demos from Kristine & Ken",
+  "Live project demos",
   "1 FREE week of Pro (first 5 sign-ups)",
   "1 FREE week of co-working at INFINITY8",
   "Free-flow refreshments",
@@ -202,7 +202,7 @@ const TICKET_INCLUSIONS = [
 
 const TICKET_INCLUSIONS_PAIR = [
   "Full workshop access for 2: Agentic AI + Video Automation",
-  "Live project demos from Kristine & Ken",
+  "Live project demos",
   "1 FREE week of Pro (first 5 sign-ups)",
   "1 FREE week of co-working (both attendees)",
   "Free-flow refreshments for both",
