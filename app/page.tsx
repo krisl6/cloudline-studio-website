@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
+import { Marquee } from "@/components/marquee"
 import {
   DoodleMegaphone,
   DoodleTransform,
@@ -61,15 +62,7 @@ const clients = [
   { name: "Vyne", logo: "/vyne-logo.png" },
 ]
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
-}
-
-const stagger = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.12 } },
-}
+import { fadeUp, stagger } from "@/components/motion"
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -257,13 +250,12 @@ export default function HomePage() {
             </motion.div>
 
             <div className="relative overflow-hidden space-y-6">
-              <motion.div
-                className="flex gap-6 items-center"
-                animate={{ x: [0, -1920] }}
-                transition={{ x: { repeat: Number.POSITIVE_INFINITY, repeatType: "loop", duration: 30, ease: "linear" } }}
-              >
-                {[...clients.slice(0, 12), ...clients.slice(0, 12)].map((client, i) => (
-                  <div key={`row1-${i}`} className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+              <Marquee
+                items={clients.slice(0, 12)}
+                duration={30}
+                trackClassName="flex w-max gap-6 items-center"
+                renderItem={(client) => (
+                  <div className="w-32 h-16 flex items-center justify-center">
                     <Image
                       src={client.logo || "/placeholder.svg"}
                       alt={client.name}
@@ -272,16 +264,16 @@ export default function HomePage() {
                       className="max-w-full max-h-full object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
-                ))}
-              </motion.div>
+                )}
+              />
 
-              <motion.div
-                className="flex gap-6 items-center"
-                animate={{ x: [-1920, 0] }}
-                transition={{ x: { repeat: Number.POSITIVE_INFINITY, repeatType: "loop", duration: 30, ease: "linear" } }}
-              >
-                {[...clients.slice(11, 23), ...clients.slice(11, 23)].map((client, i) => (
-                  <div key={`row2-${i}`} className="flex-shrink-0 w-32 h-16 flex items-center justify-center">
+              <Marquee
+                items={clients.slice(11, 23)}
+                direction="right"
+                duration={30}
+                trackClassName="flex w-max gap-6 items-center"
+                renderItem={(client) => (
+                  <div className="w-32 h-16 flex items-center justify-center">
                     <Image
                       src={client.logo || "/placeholder.svg"}
                       alt={client.name}
@@ -290,8 +282,8 @@ export default function HomePage() {
                       className="max-w-full max-h-full object-contain opacity-50 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
-                ))}
-              </motion.div>
+                )}
+              />
             </div>
 
             <div className="text-center mt-10">

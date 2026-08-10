@@ -9,15 +9,7 @@ import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { WHATSAPP_URL } from "@/lib/site"
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
-}
-
-const stagger = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.12 } },
-}
+import { fadeUp, stagger } from "@/components/motion"
 
 export default function PricingPage() {
   const { lang } = useLanguage()

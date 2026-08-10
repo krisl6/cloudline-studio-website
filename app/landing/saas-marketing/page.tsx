@@ -4,8 +4,7 @@ import { motion } from "framer-motion"
 import { CheckCircle2, TrendingUp, Users, Zap } from "lucide-react"
 import { AuditForm } from "@/components/audit-form"
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }
-const stagger = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } }
+import { fadeUp, staggerFast as stagger } from "@/components/motion"
 
 const PAIN_POINTS = [
   "Burning ad budget on traffic that never converts to trials",

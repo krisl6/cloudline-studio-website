@@ -6,8 +6,7 @@ import { CheckCircle2, ClipboardList, Handshake, Layers, ListChecks, RadioTower,
 import { AuditForm } from "@/components/audit-form"
 import { WHATSAPP_URL } from "@/lib/site"
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }
-const stagger = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } }
+import { fadeUp, staggerFast as stagger } from "@/components/motion"
 
 const WHATSAPP_LINK = `${WHATSAPP_URL}?text=${encodeURIComponent(
   "Hi, I'd like a free operations & automation audit for my business."

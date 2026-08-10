@@ -44,8 +44,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
   },
 ]
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }
-const stagger = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } }
+import { fadeUp, staggerFast as stagger } from "@/components/motion"
 
 // Crossfades through a set of images on an interval (e.g. Claude Workshops: team → workshop every 3s).
 function RotatingImage({ images, alt, intervalMs = 3000 }: { images: string[]; alt: string; intervalMs?: number }) {

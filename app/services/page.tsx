@@ -21,15 +21,7 @@ import {
   DoodlePen,
 } from "@/components/doodles"
 
-const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0 },
-}
-
-const stagger = {
-  hidden: { opacity: 0 },
-  show: { opacity: 1, transition: { staggerChildren: 0.12 } },
-}
+import { fadeUp, stagger } from "@/components/motion"
 
 const serviceIcons = [DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth]
 const processIcons = [DoodleSearch, DoodlePen, DoodleRocket]

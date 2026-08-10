@@ -44,8 +44,7 @@ const HERO_FLOATERS = [
   { Icon: DoodleTarget, className: "bottom-4 right-[11%] size-12 sm:size-14", delay: 1.5 },
 ]
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }
-const stagger = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } }
+import { fadeUp, staggerFast as stagger } from "@/components/motion"
 
 function AnimatedStatValue({ value }: { value: string }) {
   const match = value.match(/^(\d+)(.*)$/)

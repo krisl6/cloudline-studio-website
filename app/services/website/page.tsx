@@ -26,27 +26,8 @@ const TRUSTED_BY_LOGOS = [
 // mockup — presented honestly as that in the Proof section below.
 const MONSTARX_IMAGE_DIMENSIONS = { width: 2652, height: 1284 }
 
-const fadeUp = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }
-const stagger = { hidden: { opacity: 0 }, show: { opacity: 1, transition: { staggerChildren: 0.1 } } }
-
-function MarqueeStrip({ items }: { items: readonly string[] }) {
-  const doubled = [...items, ...items]
-  return (
-    <div className="w-full overflow-hidden border-y border-border bg-muted/40 py-3">
-      <motion.div
-        className="flex w-max items-center gap-10"
-        animate={{ x: [0, -1920] }}
-        transition={{ x: { repeat: Number.POSITIVE_INFINITY, repeatType: "loop", duration: 22, ease: "linear" } }}
-      >
-        {doubled.map((item, i) => (
-          <span key={i} className="shrink-0 text-xs sm:text-sm font-bold tracking-wide text-primary">
-            {item}
-          </span>
-        ))}
-      </motion.div>
-    </div>
-  )
-}
+import { fadeUp, staggerFast as stagger } from "@/components/motion"
+import { Marquee } from "@/components/marquee"
 
 
 export default function WebsiteServicePage() {
@@ -89,7 +70,13 @@ export default function WebsiteServicePage() {
               </motion.div>
             </motion.div>
           </div>
-          <MarqueeStrip items={tt.hero.marquee} />
+          <Marquee
+            items={tt.hero.marquee}
+            className="border-y border-border bg-muted/40 py-3"
+            renderItem={(item) => (
+              <span className="text-xs sm:text-sm font-bold tracking-wide text-primary">{item}</span>
+            )}
+          />
         </section>
 
         {/* Trust bar — reused component, no new copy */}
