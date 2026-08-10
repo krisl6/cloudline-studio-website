@@ -23,7 +23,7 @@ import {
   DoodleTransform,
 } from "@/components/doodles"
 
-import { fadeUp, stagger } from "@/components/motion"
+import { fadeUp, stagger, hoverLift } from "@/components/motion"
 
 const founder = {
   name: "Kristine Ling",
@@ -291,7 +291,8 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="rounded-2xl border border-border bg-card p-8"
+                whileHover={hoverLift}
+                className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
               >
                 <h3 className="font-display text-xl font-semibold mb-5">{tt.whyExist.problemTitle}</h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -315,7 +316,8 @@ export default function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
-                className="rounded-2xl border border-border bg-card p-8"
+                whileHover={hoverLift}
+                className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
               >
                 <h3 className="font-display text-xl font-semibold mb-5">{tt.whyExist.solutionTitle}</h3>
                 <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -365,6 +367,7 @@ export default function AboutPage() {
                 <motion.div
                   key={service.title}
                   variants={fadeUp}
+                  whileHover={hoverLift}
                   className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
                 >
                   <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
@@ -457,6 +460,7 @@ export default function AboutPage() {
                 <motion.div
                   key={phase.title}
                   variants={fadeUp}
+                  whileHover={hoverLift}
                   className="flex flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
                 >
                   <span className="font-display text-sm font-medium tracking-widest text-muted-foreground mb-4">
@@ -525,6 +529,7 @@ export default function AboutPage() {
                 <motion.div
                   key={value.title}
                   variants={fadeUp}
+                  whileHover={hoverLift}
                   className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
                 >
                   <h3 className="font-display text-xl font-semibold mb-3">{value.title}</h3>

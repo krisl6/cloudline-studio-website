@@ -11,6 +11,8 @@ import { DoodleGrowth, DoodleCoins, DoodleHeart, DoodleTarget } from "@/componen
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { WHATSAPP_URL } from "@/lib/site"
+import { hoverLift } from "@/components/motion"
+import { AnimatedStatValue } from "@/components/animated-stat"
 
 export default function ClientResultsPage() {
   const { lang } = useLanguage()
@@ -293,11 +295,12 @@ export default function ClientResultsPage() {
             {overallStats.map((stat, index) => (
               <motion.div
                 key={index}
-                className="rounded-2xl border border-border bg-card p-8 text-center"
+                className="rounded-2xl border border-border bg-card p-8 text-center transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={hoverLift}
               >
                 <div className="flex justify-center mb-5">
                   <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
@@ -305,7 +308,7 @@ export default function ClientResultsPage() {
                   </span>
                 </div>
                 <div className="font-display text-3xl lg:text-4xl font-semibold tracking-tight mb-2">
-                  {stat.number}
+                  <AnimatedStatValue value={stat.number} />
                 </div>
                 <div className="text-sm text-muted-foreground">{stat.label}</div>
               </motion.div>
@@ -334,6 +337,7 @@ export default function ClientResultsPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={hoverLift}
               >
                 <Card className="h-full rounded-2xl border border-border bg-card transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]">
                   <CardContent className="p-8">
@@ -470,7 +474,11 @@ export default function ClientResultsPage() {
                 body: tt.socialProof.cards.tracking.body,
               },
             ].map(({ Icon, title, body }) => (
-              <div key={title} className="rounded-2xl border border-border bg-card p-8 text-center">
+              <motion.div
+                key={title}
+                whileHover={hoverLift}
+                className="rounded-2xl border border-border bg-card p-8 text-center transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+              >
                 <div className="flex justify-center mb-5">
                   <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
                     <Icon className="size-6" />
@@ -478,7 +486,7 @@ export default function ClientResultsPage() {
                 </div>
                 <h3 className="font-display text-lg font-semibold tracking-tight mb-2">{title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

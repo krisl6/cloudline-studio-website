@@ -10,6 +10,7 @@ import { useLanguage } from "@/components/language-provider"
 import { translations } from "@/app/case-studies/translations"
 import { SERVICE_SLUGS, caseStudies, type PlatformName, type ServiceSlug } from "@/lib/case-studies-data"
 import { WHATSAPP_URL } from "@/lib/site"
+import { hoverLift } from "@/components/motion"
 
 const PLATFORM_ICONS: Record<PlatformName, React.ComponentType<{ className?: string }>> = {
   Consultation: DoodleSearch,
@@ -105,6 +106,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
+                    whileHover={hoverLift}
                   >
                     <Link
                       href={`/case-studies/${platform.slug}`}
@@ -185,6 +187,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
+                  whileHover={hoverLift}
                   className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
                 >
                   <div className={hasRealImage ? "grid lg:grid-cols-2 gap-0" : "grid"}>

@@ -96,7 +96,7 @@ export function Header() {
               <div key={item.href} className="group relative shrink-0">
                 <Link
                   href={item.href}
-                  className="flex items-center gap-1 whitespace-nowrap text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                  className="relative flex items-center gap-1 whitespace-nowrap text-sm font-medium text-foreground/80 hover:text-primary transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
                 >
                   {item.name}
                   <ChevronDown className="size-3.5 shrink-0 transition-transform group-hover:rotate-180" />
@@ -119,7 +119,7 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="shrink-0 whitespace-nowrap text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="relative shrink-0 whitespace-nowrap text-sm font-medium text-foreground/80 hover:text-primary transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {item.name}
               </Link>

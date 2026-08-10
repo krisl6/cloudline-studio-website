@@ -21,7 +21,7 @@ import {
   DoodlePen,
 } from "@/components/doodles"
 
-import { fadeUp, stagger } from "@/components/motion"
+import { fadeUp, stagger, hoverLift } from "@/components/motion"
 
 const serviceIcons = [DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth]
 const processIcons = [DoodleSearch, DoodlePen, DoodleRocket]
@@ -130,7 +130,7 @@ export default function ServicesPage() {
                   {services.map((service, i) => {
                     const Icon = serviceIcons[i]
                     return (
-                      <motion.div key={service.id} id={service.id} variants={fadeUp} className="relative flex gap-6 scroll-mt-24">
+                      <motion.div key={service.id} id={service.id} variants={fadeUp} whileHover={hoverLift} className="relative flex gap-6 scroll-mt-24">
                         <span className="relative z-10 inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary shadow-sm">
                           <Icon className="size-6" />
                         </span>

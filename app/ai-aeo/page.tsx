@@ -19,6 +19,7 @@ import {
 } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 import { SeoWaitlistForm } from "@/components/seo-waitlist-form"
+import { AnimatedStatValue } from "@/components/animated-stat"
 import { caseStudies } from "@/lib/case-studies-data"
 import { translations } from "./translations"
 
@@ -46,38 +47,6 @@ const HERO_FLOATERS = [
 
 import { fadeUp, staggerFast as stagger } from "@/components/motion"
 
-function AnimatedStatValue({ value }: { value: string }) {
-  const match = value.match(/^(\d+)(.*)$/)
-  const target = match ? parseInt(match[1], 10) : null
-  const suffix = match ? match[2] : ""
-  const ref = useRef<HTMLSpanElement>(null)
-  const inView = useInView(ref, { once: true })
-  const [display, setDisplay] = useState(0)
-
-  useEffect(() => {
-    if (!inView || target === null) return
-    const duration = 1200
-    const start = performance.now()
-    let frame: number
-    const tick = (now: number) => {
-      const progress = Math.min((now - start) / duration, 1)
-      setDisplay(Math.round(progress * target))
-      if (progress < 1) frame = requestAnimationFrame(tick)
-    }
-    frame = requestAnimationFrame(tick)
-    return () => cancelAnimationFrame(frame)
-  }, [inView, target])
-
-  if (target === null) {
-    return <span ref={ref}>{value}</span>
-  }
-  return (
-    <span ref={ref}>
-      {display}
-      {suffix}
-    </span>
-  )
-}
 
 type AnswerPreviewCopy = {
   badge: string

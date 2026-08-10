@@ -9,7 +9,7 @@ import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { WHATSAPP_URL } from "@/lib/site"
 
-import { fadeUp, stagger } from "@/components/motion"
+import { fadeUp, stagger, hoverLift } from "@/components/motion"
 
 export default function PricingPage() {
   const { lang } = useLanguage()
@@ -103,6 +103,7 @@ export default function PricingPage() {
                 <motion.div
                   key={plan.name}
                   variants={fadeUp}
+                  whileHover={hoverLift}
                   className={`group relative flex h-full flex-col rounded-2xl border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)] ${
                     plan.popular ? "border-primary ring-1 ring-primary/20" : "border-border"
                   }`}
@@ -191,6 +192,7 @@ export default function PricingPage() {
                   <motion.div
                     key={benefit.title}
                     variants={fadeUp}
+                    whileHover={hoverLift}
                     className="flex flex-col rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
                   >
                     <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">

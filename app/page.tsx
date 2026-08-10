@@ -1,9 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
@@ -62,11 +62,17 @@ const clients = [
   { name: "Vyne", logo: "/vyne-logo.png" },
 ]
 
-import { fadeUp, stagger } from "@/components/motion"
+import { fadeUp, stagger, hoverLift } from "@/components/motion"
 
 export default function HomePage() {
   const { t } = useLanguage()
   const [heroIndex, setHeroIndex] = useState(0)
+  const heroImageRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress: heroScrollProgress } = useScroll({
+    target: heroImageRef,
+    offset: ["start start", "end start"],
+  })
+  const heroImageScale = useTransform(heroScrollProgress, [0, 1], [1, 1.08])
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -119,7 +125,11 @@ export default function HomePage() {
               transition={{ duration: 0.7, delay: 0.3 }}
               className="relative mx-auto mt-16 max-w-5xl 2xl:max-w-6xl"
             >
-              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-border shadow-[0_24px_70px_-30px_rgba(20,30,55,0.35)] bg-muted">
+              <motion.div
+                ref={heroImageRef}
+                style={{ scale: heroImageScale }}
+                className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-border shadow-[0_24px_70px_-30px_rgba(20,30,55,0.35)] bg-muted"
+              >
                 <AnimatePresence mode="sync">
                   <motion.div
                     key={heroIndex}
@@ -153,7 +163,7 @@ export default function HomePage() {
                     />
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
               {/* Floating stat card — real, existing figure (also shown
                   below the client logos), not a new claim. */}
@@ -202,6 +212,7 @@ export default function HomePage() {
                   <motion.div
                     key={pillar.name}
                     variants={fadeUp}
+                    whileHover={hoverLift}
                     className="group flex flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
                   >
                     <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
@@ -395,7 +406,12 @@ export default function HomePage() {
               {t.outcomes.items.map((outcome, i) => {
                 const Icon = outcomeIcons[i]
                 return (
-                  <motion.div key={outcome.title} variants={fadeUp} className="rounded-2xl border border-border bg-card p-7">
+                  <motion.div
+                    key={outcome.title}
+                    variants={fadeUp}
+                    whileHover={hoverLift}
+                    className="rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                  >
                     <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
                       <Icon className="size-6" />
                     </span>
