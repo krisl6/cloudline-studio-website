@@ -60,12 +60,6 @@ export default function PricingPage() {
               animate="show"
               className="mx-auto max-w-3xl 2xl:max-w-4xl text-center"
             >
-              <motion.p
-                variants={fadeUp}
-                className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6"
-              >
-                {tt.hero.eyebrow}
-              </motion.p>
               <motion.h1
                 variants={fadeUp}
                 className="font-display text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
@@ -187,7 +181,6 @@ export default function PricingPage() {
               transition={{ duration: 0.5 }}
               className="max-w-2xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.benefitsSection.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.benefitsSection.heading}
               </h2>

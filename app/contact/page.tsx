@@ -71,12 +71,6 @@ export default function ContactPage() {
         <section className="relative overflow-hidden" aria-label="Hero">
           <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-24 2xl:pt-36 2xl:pb-32">
             <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-4xl 2xl:max-w-5xl text-center">
-              <motion.p
-                variants={fadeUp}
-                className="text-xs sm:text-sm 2xl:text-base font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6"
-              >
-                {tt.hero.eyebrow}
-              </motion.p>
               <motion.h1
                 variants={fadeUp}
                 className="font-display text-4xl sm:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
@@ -117,7 +111,6 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-2xl mx-auto mb-12"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.connect.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
                 {tt.connect.headline}
               </h2>
@@ -174,7 +167,6 @@ export default function ContactPage() {
               className="max-w-2xl mx-auto"
             >
               <div className="text-center mb-10">
-                <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.form.eyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">{tt.form.headline}</h2>
                 <p className="text-muted-foreground md:text-lg">{tt.form.intro}</p>
               </div>
@@ -195,7 +187,6 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-2xl mx-auto mb-12"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.social.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
                 {tt.social.headline}
               </h2>
@@ -233,7 +224,6 @@ export default function ContactPage() {
               transition={{ duration: 0.5 }}
               className="text-center max-w-2xl mx-auto mb-12"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.map.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
                 {tt.map.headline}
               </h2>

@@ -44,7 +44,6 @@ export function TeamGallery() {
           transition={{ duration: 0.5 }}
           className="max-w-2xl mb-12"
         >
-          <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.eyebrow}</p>
           <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4 text-balance">{tt.heading}</h2>
           <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.subcopy}</p>
         </motion.div>

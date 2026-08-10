@@ -184,9 +184,6 @@ export default function CloudlineAeoAiPage() {
 
           <div className="container relative px-4 md:px-6 pt-14 pb-10 md:pt-20 md:pb-16 lg:pt-24 lg:pb-20">
             <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-3xl text-center">
-              <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6">
-                {tt.hero.eyebrow}
-              </motion.p>
               <motion.h1 variants={fadeUp} className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance leading-[1.05] mb-6">
                 {tt.hero.headline}
               </motion.h1>
@@ -244,7 +241,6 @@ export default function CloudlineAeoAiPage() {
         <section className="w-full py-14 md:py-20 lg:py-24 bg-muted/50 border-b border-border" aria-label="Why this matters">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="mx-auto max-w-3xl text-center mb-8">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.problem.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-6">
                 {tt.problem.heading}
               </h2>
@@ -303,7 +299,6 @@ export default function CloudlineAeoAiPage() {
         <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="What you'll be able to do">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.capabilities.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.capabilities.heading}
               </h2>
@@ -340,7 +335,6 @@ export default function CloudlineAeoAiPage() {
         <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="What you gain">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10 mx-auto text-center">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.outcomes.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.outcomes.heading}
               </h2>
@@ -367,7 +361,6 @@ export default function CloudlineAeoAiPage() {
         <section className="w-full py-14 md:py-20 lg:py-24 bg-muted/50 border-b border-border" aria-label="How it works">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.howItWorks.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.howItWorks.heading}
               </h2>
@@ -423,7 +416,6 @@ export default function CloudlineAeoAiPage() {
         <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="Backed by real results">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10 text-center mx-auto">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.proof.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.proof.heading}
               </h2>
@@ -450,7 +442,6 @@ export default function CloudlineAeoAiPage() {
         <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="Case studies">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10 mx-auto text-center">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.caseStudies.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.caseStudies.heading}
               </h2>
@@ -577,7 +568,6 @@ export default function CloudlineAeoAiPage() {
           <div className="container relative px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mx-auto">
               <div className="text-center mb-10">
-                <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.waitlist.eyebrow}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">{tt.waitlist.heading}</h2>
                 <p className="text-muted-foreground md:text-lg">{tt.waitlist.subcopy}</p>
               </div>

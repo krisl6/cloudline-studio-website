@@ -85,14 +85,6 @@ export default function ClientResultsPage() {
       <section className="w-full py-20 md:py-28 2xl:py-36" aria-label="Client results hero">
         <div className="container px-4 md:px-6">
           <div className="mx-auto max-w-3xl 2xl:max-w-4xl text-center">
-            <motion.p
-              className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
-            >
-              {tt.hero.eyebrow}
-            </motion.p>
             <motion.h1
               className="font-display text-4xl md:text-5xl lg:text-6xl 2xl:text-7xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
               initial={{ opacity: 0, y: 20 }}
@@ -138,9 +130,6 @@ export default function ClientResultsPage() {
       <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Detailed case studies">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-              {tt.caseStudies.eyebrow}
-            </p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
               {tt.caseStudies.title}
             </h2>
@@ -295,7 +284,6 @@ export default function ClientResultsPage() {
       <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Overall results">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-14">
-            <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.stats.eyebrow}</p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
               {tt.stats.title}
             </h2>
@@ -330,9 +318,6 @@ export default function ClientResultsPage() {
       <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Client testimonials">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-              {tt.testimonials.eyebrow}
-            </p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
               {tt.testimonials.title}
             </h2>
@@ -459,9 +444,6 @@ export default function ClientResultsPage() {
       <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Verified results">
         <div className="container px-4 md:px-6">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-              {tt.socialProof.eyebrow}
-            </p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-4">
               {tt.socialProof.title}
             </h2>

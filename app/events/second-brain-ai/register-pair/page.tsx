@@ -36,7 +36,6 @@ function RegisterPairContent() {
     <section className="w-full py-14 md:py-20" aria-label="Register both attendees">
       <div className="container px-4 md:px-6">
         <div className="mx-auto max-w-2xl">
-          <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 text-center">{tt.eyebrow}</p>
           <h1 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight text-balance mb-3 text-center">
             {tt.heading}
           </h1>

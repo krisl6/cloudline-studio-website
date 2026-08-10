@@ -81,9 +81,6 @@ export default function EventsPage() {
         <section className="relative overflow-hidden" aria-label="Events">
           <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-24 2xl:pt-36">
             <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-4xl text-center">
-              <motion.p variants={fadeUp} className="text-xs sm:text-sm 2xl:text-base font-medium tracking-[0.18em] uppercase text-muted-foreground mb-6">
-                {tt.hero.eyebrow}
-              </motion.p>
               <motion.h1 variants={fadeUp} className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance leading-[1.05] mb-6">
                 {tt.hero.headline}
               </motion.h1>
@@ -113,7 +110,6 @@ export default function EventsPage() {
               className="mx-auto flex max-w-4xl flex-col items-center gap-4 rounded-2xl border border-primary/30 bg-card p-6 text-center sm:flex-row sm:justify-between sm:text-left"
             >
               <div>
-                <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-2">{tt.upcoming.eyebrow}</p>
                 <h2 className="font-display text-lg md:text-xl font-semibold tracking-tight">{tt.upcoming.title}</h2>
                 <p className="text-sm text-muted-foreground mt-1">{tt.upcoming.date}</p>
               </div>
@@ -137,7 +133,6 @@ export default function EventsPage() {
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-4xl"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-4">{tt.mission.eyebrow}</p>
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-balance mb-5 max-w-2xl">
                 {tt.mission.heading}
               </h2>
@@ -162,7 +157,6 @@ export default function EventsPage() {
         <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="What's included">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-12">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.included.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">{tt.included.heading}</h2>
               <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.included.subcopy}</p>
             </motion.div>
@@ -181,7 +175,6 @@ export default function EventsPage() {
         <section className="w-full py-20 md:py-28 border-t border-border" aria-label="How it works">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-14">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.how.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">{tt.how.heading}</h2>
             </motion.div>
             <div className="grid gap-10 md:grid-cols-3">
@@ -206,7 +199,6 @@ export default function EventsPage() {
         <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="How we start together">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-16">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.roadmap.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">{tt.roadmap.heading}</h2>
             </motion.div>
 
@@ -261,7 +253,6 @@ export default function EventsPage() {
         <section id="events" className="w-full py-20 md:py-28 border-t border-border" aria-label="Past events">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-12">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.events.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">{tt.events.heading}</h2>
               <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.events.subcopy}</p>
             </motion.div>
@@ -315,7 +306,6 @@ export default function EventsPage() {
         <section className="w-full py-20 md:py-28 border-t border-border" aria-label="What you'll need to book">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-10">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">{tt.requirements.eyebrow}</p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">{tt.requirements.heading}</h2>
               <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.requirements.subcopy}</p>
             </motion.div>

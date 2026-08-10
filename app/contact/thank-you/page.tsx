@@ -38,7 +38,6 @@ export default function ContactThankYouPage() {
           <span className="mx-auto mb-5 inline-flex size-14 items-center justify-center rounded-full bg-primary/10 text-primary">
             <DoodleCheck className="size-8" />
           </span>
-          <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3">{tt.eyebrow}</p>
           <h1 className="font-display text-2xl sm:text-3xl font-semibold tracking-tight mb-3">{tt.heading}</h1>
           <p className="text-muted-foreground mb-8">{tt.body}</p>
           <Button className="rounded-full h-11 px-6 font-medium" asChild>

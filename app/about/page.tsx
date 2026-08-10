@@ -68,12 +68,6 @@ export default function AboutPage() {
               animate="show"
               className="mx-auto max-w-3xl text-center"
             >
-              <motion.p
-                variants={fadeUp}
-                className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4"
-              >
-                {tt.hero.eyebrow}
-              </motion.p>
               <motion.h1
                 variants={fadeUp}
                 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-balance leading-[1.05] mb-6"
@@ -116,7 +110,6 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-4xl"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-4">{tt.mission.eyebrow}</p>
               <h2 className="font-display text-2xl md:text-3xl lg:text-4xl font-semibold tracking-tight text-balance mb-5 max-w-2xl">
                 {tt.mission.heading}
               </h2>
@@ -144,9 +137,6 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="max-w-2xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                {tt.founder.eyebrow}
-              </p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.founder.heading}
               </h2>
@@ -298,9 +288,6 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="max-w-2xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                {tt.whyExist.eyebrow}
-              </p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.whyExist.heading}
               </h2>
@@ -369,9 +356,6 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                {tt.whatWeDo.eyebrow}
-              </p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.whatWeDo.heading}
               </h2>
@@ -418,9 +402,6 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                {tt.howWeWork.eyebrow}
-              </p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.howWeWork.heading}
               </h2>
@@ -467,9 +448,6 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                {tt.journey.eyebrow}
-              </p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.journey.heading}
               </h2>
@@ -538,9 +516,6 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                {tt.values.eyebrow}
-              </p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.values.heading}
               </h2>
@@ -579,9 +554,6 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mb-14"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4">
-                {tt.consultation.eyebrow}
-              </p>
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.consultation.heading}
               </h2>

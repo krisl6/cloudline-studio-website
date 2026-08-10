@@ -48,13 +48,6 @@ function MarqueeStrip({ items }: { items: readonly string[] }) {
   )
 }
 
-function Eyebrow({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center rounded-full border border-primary/25 bg-primary/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide text-primary">
-      {children}
-    </span>
-  )
-}
 
 export default function WebsiteServicePage() {
   const { lang } = useLanguage()
@@ -72,9 +65,6 @@ export default function WebsiteServicePage() {
         <section className="relative overflow-hidden border-b border-border" aria-label="Overview">
           <div className="container px-4 md:px-6 pt-14 pb-12 md:pt-24 md:pb-16">
             <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-3xl text-center">
-              <motion.div variants={fadeUp} className="mb-5 flex justify-center">
-                <Eyebrow>{tt.hero.eyebrow}</Eyebrow>
-              </motion.div>
               <motion.h1
                 variants={fadeUp}
                 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold tracking-tight text-balance leading-[1.02] mb-6"
@@ -135,7 +125,6 @@ export default function WebsiteServicePage() {
         <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="How it works">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mb-10 md:mb-14">
-              <div className="mb-4"><Eyebrow>{tt.process.eyebrow}</Eyebrow></div>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance mb-3">
                 {tt.process.heading}
               </h2>
@@ -170,7 +159,6 @@ export default function WebsiteServicePage() {
         <section className="w-full py-14 md:py-20 lg:py-24 bg-muted/50 border-b border-border" aria-label="Real results">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mb-10 md:mb-14 mx-auto text-center">
-              <div className="mb-4 flex justify-center"><Eyebrow>{tt.proof.eyebrow}</Eyebrow></div>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance">
                 {tt.proof.heading}
               </h2>
@@ -233,7 +221,6 @@ export default function WebsiteServicePage() {
         <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="What you get">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mb-8 md:mb-10 mx-auto text-center">
-              <div className="mb-4 flex justify-center"><Eyebrow>{tt.included.eyebrow}</Eyebrow></div>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance">
                 {tt.included.heading}
               </h2>
@@ -261,7 +248,6 @@ export default function WebsiteServicePage() {
         <section className="w-full py-14 md:py-20 lg:py-24 border-b border-border" aria-label="Frequently asked questions">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mb-8 md:mb-10 mx-auto text-center">
-              <div className="mb-4 flex justify-center"><Eyebrow>{tt.faqSection.eyebrow}</Eyebrow></div>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-balance">
                 {tt.faqSection.title}
               </h2>

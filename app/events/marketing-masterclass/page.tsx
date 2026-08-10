@@ -137,9 +137,6 @@ export default function AiAutomationsAeoSeoPage() {
           <div className="container px-4 md:px-6 pt-10 pb-8 md:pt-28 md:pb-24">
             <div className="mx-auto max-w-6xl grid items-center gap-6 lg:gap-14 lg:grid-cols-[1fr_minmax(0,440px)]">
               <motion.div variants={stagger} initial="hidden" animate="show">
-                <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-5">
-                  {tt.hero.eyebrow}
-                </motion.p>
                 <motion.h1 variants={fadeUp} className="font-display text-3xl sm:text-5xl lg:text-[3.25rem] font-semibold tracking-tight text-balance leading-[1.1] sm:leading-[1.05] mb-3 sm:mb-6">
                   {tt.hero.headline}
                 </motion.h1>
@@ -222,7 +219,6 @@ export default function AiAutomationsAeoSeoPage() {
         <section className="w-full py-12 md:py-20 lg:py-28 border-b border-border" aria-label="Speakers">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-8 sm:mb-14">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.speakers.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.speakers.heading}
               </h2>
@@ -430,7 +426,6 @@ export default function AiAutomationsAeoSeoPage() {
         <section className="w-full py-12 md:py-20 lg:py-28 bg-muted/50 border-b border-border" aria-label="Schedule">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-8 sm:mb-14">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.schedule.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance">
                 {tt.schedule.heading}
               </h2>
@@ -481,7 +476,6 @@ export default function AiAutomationsAeoSeoPage() {
         <section id="tickets" className="w-full py-12 md:py-20 lg:py-28 bg-muted/50 border-b border-border" aria-label="Ticket pricing">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-8 sm:mb-14">
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-3 sm:mb-4">{tt.tickets.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-3 sm:mb-4">
                 {tt.tickets.heading}
               </h2>
@@ -542,7 +536,6 @@ export default function AiAutomationsAeoSeoPage() {
           <div className="container px-4 md:px-6">
             <div className="grid gap-8 sm:gap-12 lg:grid-cols-2 lg:items-center">
               <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
-                <p className="text-xs font-medium tracking-[0.18em] uppercase text-primary mb-3 sm:mb-4">{tt.partners.eyebrow}</p>
                 <div className="mb-4 sm:mb-6">
                   <div className="mb-4 sm:mb-5">
                     <Image src="/infinity8-logo.png" alt="Infinity8 logo" width={160} height={48} className="object-contain" />
@@ -587,7 +580,6 @@ export default function AiAutomationsAeoSeoPage() {
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-2xl text-center"
             >
-              <p className="text-xs font-medium tracking-[0.18em] uppercase text-muted-foreground mb-4 sm:mb-5">{tt.cta.eyebrow}</p>
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4 sm:mb-5">
                 {tt.cta.heading}
               </h2>
