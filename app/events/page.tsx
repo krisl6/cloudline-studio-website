@@ -9,10 +9,9 @@ import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { EventForm } from "@/components/event-form"
-import { DoodleCheck, DoodleSearch, DoodlePen, DoodleRocket } from "@/components/doodles"
+import { ListDot } from "@/components/sections/list-dot"
+import { NumberedIndex } from "@/components/sections/numbered-index"
 import { AudioPlayer } from "@/components/audio-player"
-
-const stepIcons = [DoodleSearch, DoodlePen, DoodleRocket]
 
 // Language-neutral event data (names + specifics are real).
 const EVENTS: { name: string; tag: string; desc: string; people: string; outcome: string; image: string; video?: string; image2?: string; images?: string[] }[] = [
@@ -113,7 +112,7 @@ export default function EventsPage() {
                 <p className="text-sm text-muted-foreground mt-1">{tt.upcoming.date}</p>
               </div>
               <Button className="shrink-0 rounded-full font-medium" asChild>
-                <Link href="/events/second-brain-ai">
+                <Link href="/events/vibe-code">
                   {tt.upcoming.cta}
                   <ArrowRight className="ml-1.5 size-4" />
                 </Link>
@@ -162,7 +161,7 @@ export default function EventsPage() {
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {tt.included.items.map((item) => (
                 <motion.div key={item} variants={fadeUp} className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3">
-                  <DoodleCheck className="size-4 shrink-0 text-primary" />
+                  <ListDot />
                   <span className="text-sm font-medium">{item}</span>
                 </motion.div>
               ))}
@@ -177,19 +176,13 @@ export default function EventsPage() {
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance">{tt.how.heading}</h2>
             </motion.div>
             <div className="grid gap-10 md:grid-cols-3">
-              {tt.how.steps.map((step, i) => {
-                const Icon = stepIcons[i]
-                return (
-                  <motion.div key={step.title} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
-                    <div className="flex items-center gap-4 mb-5">
-                      <span className="inline-flex size-12 items-center justify-center rounded-xl border border-border text-primary"><Icon className="size-7" /></span>
-                      <span className="font-display text-sm font-medium tracking-widest text-muted-foreground">{String(i + 1).padStart(2, "0")}</span>
-                    </div>
-                    <h3 className="font-display text-xl font-semibold mb-3">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{step.desc}</p>
-                  </motion.div>
-                )
-              })}
+              {tt.how.steps.map((step, i) => (
+                <motion.div key={step.title} variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }}>
+                  <NumberedIndex index={i} className="mb-5 rounded-xl border border-border bg-transparent" />
+                  <h3 className="font-display text-xl font-semibold mb-3">{step.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{step.desc}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -311,7 +304,7 @@ export default function EventsPage() {
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-3 sm:grid-cols-2 max-w-3xl">
               {tt.requirements.items.map((item) => (
                 <motion.div key={item} variants={fadeUp} className="flex items-start gap-3 rounded-xl border border-border bg-card px-4 py-3.5">
-                  <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <ListDot className="mt-1.5" />
                   <span className="text-sm font-medium">{item}</span>
                 </motion.div>
               ))}

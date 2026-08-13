@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
-import { ArrowRight, CalendarDays, Clock, Download, MapPin, Navigation, ShieldCheck, Sparkles } from "lucide-react"
+import { ArrowRight, CalendarDays, Clock, MapPin, Navigation } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -14,15 +14,11 @@ import { WHATSAPP_URL } from "@/lib/site"
 import { translations } from "./translations"
 
 // ── EVENT DETAILS ──────────────────────────────────────────────────
-// Same real event as /events/marketing-masterclass (same date/time/venue) —
-// this page is an A/B test of a different headline, framing, and design,
-// not a different event.
-const VENUE_MAPS_URL = "https://maps.google.com/?q=Infinity8+Sunway+Square"
-const VENUE_WAZE_URL = "https://waze.com/ul?q=Infinity8%20Sunway%20Square&navigate=yes"
-const LESSON_PLAN_URL = "/second-brain-ai-lesson-plan.pdf"
-const EVENT_START = "2026-08-12T12:30:00+08:00"
+const VENUE_MAPS_URL = "https://maps.google.com/?q=Infinity8+Reserve+Sunway+Square"
+const VENUE_WAZE_URL = "https://waze.com/ul?q=Infinity8%20Reserve%20Sunway%20Square&navigate=yes"
+const EVENT_START = "2026-08-24T12:00:00+08:00"
 const RESERVE_WHATSAPP_URL = `${WHATSAPP_URL}?text=${encodeURIComponent(
-  "Hi! I'd like to ask about Build Your Second Brain & Automate Your Marketing with Agentic AI."
+  "Hi! I'd like to reserve a seat for Build Your Application: Vibe Coding with Claude on 24 August."
 )}`
 
 // ── TRUSTED BY ──────────────────────────────────────────────────────
@@ -293,7 +289,7 @@ function ChecklistItems({ items, delayBase = 0, twoCol = false }: { items: reado
   )
 }
 
-export default function SecondBrainAgenticAiPage() {
+export default function VibeCodingWithClaudePage() {
   const { lang } = useLanguage()
   const tt = translations[lang]
 
@@ -306,13 +302,6 @@ export default function SecondBrainAgenticAiPage() {
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
       <main className="flex-1" role="main">
-
-        {/* Non-profit disclosure banner */}
-        <div className="w-full bg-primary/8 border-b border-primary/15">
-          <div className="container px-4 md:px-6 py-2">
-            <p className="text-center text-xs sm:text-sm font-medium text-primary">{tt.nonProfitNote}</p>
-          </div>
-        </div>
 
         {/* Hero */}
         <section className="relative overflow-hidden border-b border-border" aria-label="Event overview">
@@ -350,22 +339,9 @@ export default function SecondBrainAgenticAiPage() {
                     </DropdownMenuContent>
                   </DropdownMenu>
                 </motion.div>
-                <motion.div variants={fadeUp} className="mb-4 sm:mb-5">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/12 px-3 py-1 text-xs sm:text-sm font-semibold text-amber-700 dark:text-amber-400">
-                    <Sparkles className="size-3.5 shrink-0" />
-                    {tt.hero.bonusBadge}
-                  </span>
-                </motion.div>
                 <motion.p variants={fadeUp} className="max-w-2xl text-sm sm:text-lg font-medium text-foreground/80 leading-relaxed mb-3 sm:mb-4">
                   {tt.hero.tagline}
                 </motion.p>
-                <motion.div variants={fadeUp} className="flex flex-wrap gap-2 mb-4 sm:mb-6">
-                  {tt.hero.toolStack.map((tool) => (
-                    <span key={tool.name} className="relative h-9 w-24 sm:h-10 sm:w-28 shrink-0 overflow-hidden rounded-lg border border-border bg-[#0d0d0d]">
-                      <Image src={tool.logo} alt={tool.name} fill sizes="112px" className="object-contain p-1" />
-                    </span>
-                  ))}
-                </motion.div>
                 <motion.div variants={fadeUp} className="hidden sm:block max-w-2xl space-y-2 mb-5">
                   {tt.hero.detailParagraphs.map((paragraph, i) => (
                     <p key={i} className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
@@ -382,13 +358,8 @@ export default function SecondBrainAgenticAiPage() {
                   />
                 </motion.div>
                 <motion.div variants={fadeUp} className="flex flex-wrap gap-3 mb-3">
-                  <Button size="lg" className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-medium" onClick={() => scrollTo("tickets")}>
+                  <Button size="lg" className="rounded-full h-11 sm:h-12 px-6 sm:px-7 text-sm sm:text-base font-medium" onClick={() => scrollTo("reserve")}>
                     {tt.hero.ctaTickets} <ArrowRight className="ml-1.5 size-4" />
-                  </Button>
-                  <Button size="lg" variant="outline" className="rounded-full h-11 sm:h-12 px-5 sm:px-6 text-sm sm:text-base font-medium border-border bg-transparent hover:bg-muted" asChild>
-                    <Link href={LESSON_PLAN_URL} target="_blank" rel="noopener noreferrer">
-                      <Download className="mr-1.5 size-4" />{tt.hero.ctaLessonPlan}
-                    </Link>
                   </Button>
                 </motion.div>
                 <motion.p variants={fadeUp} className="text-xs sm:text-sm font-medium text-primary">
@@ -403,8 +374,8 @@ export default function SecondBrainAgenticAiPage() {
                 className="relative w-full max-w-[220px] sm:max-w-md mx-auto lg:mx-0 aspect-square overflow-hidden rounded-2xl border border-border shadow-sm"
               >
                 <Image
-                  src="/second-brain-ai-poster.png"
-                  alt="Vibe Coding Workshop — Claude, OpenClaw, Hermes — 12 August 2026, no coding skills required"
+                  src="/vibe-coding-workshop.webp"
+                  alt="Kristine Ling leading a hands-on Claude vibe-coding workshop at Infinity8"
                   fill
                   sizes="(max-width: 1024px) 100vw, 440px"
                   className="object-cover"
@@ -415,13 +386,14 @@ export default function SecondBrainAgenticAiPage() {
           </div>
         </section>
 
-        {/* Ticket pricing */}
-        <section id="tickets" className="w-full py-8 md:py-12 lg:py-14 bg-muted/50 border-b border-border" aria-label="Ticket pricing">
+        {/* Reserve a seat */}
+        <section id="reserve" className="w-full py-8 md:py-12 lg:py-14 bg-muted/50 border-b border-border" aria-label="Reserve your seat">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
               <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-3 sm:mb-4">
                 {tt.tickets.heading}
               </h2>
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{tt.tickets.subcopy}</p>
             </motion.div>
 
             <motion.div
@@ -445,33 +417,11 @@ export default function SecondBrainAgenticAiPage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="max-w-3xl mb-6 sm:mb-8 flex items-center gap-4 rounded-2xl border border-border bg-card p-3 sm:p-4"
-            >
-              <div className="relative size-16 sm:size-20 shrink-0 overflow-hidden rounded-xl border border-border">
-                <Image
-                  src="/burgerlab-party-box.png"
-                  alt="BurgerLab party box — beef and chicken burgers"
-                  fill
-                  sizes="80px"
-                  className="object-cover"
-                />
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-foreground">Lunch is provided</p>
-                <p className="text-xs sm:text-sm text-muted-foreground">BurgerLab party box — beef & chicken burgers</p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true }}
               className="max-w-xl mx-auto flex flex-col items-center gap-4 rounded-2xl border border-primary/30 bg-card p-6 sm:p-8 text-center"
             >
               <Button size="lg" className="rounded-full h-11 sm:h-12 px-8 text-sm sm:text-base font-medium" asChild>
                 <Link href={RESERVE_WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                  {tt.hero.ctaTickets} <ArrowRight className="ml-1.5 size-4" />
+                  {tt.tickets.whatsappCta} <ArrowRight className="ml-1.5 size-4" />
                 </Link>
               </Button>
             </motion.div>
@@ -493,10 +443,7 @@ export default function SecondBrainAgenticAiPage() {
 
         {/* Timeline — the page's interactive spine. Each step is independently
             expandable (Accordion type="multiple") so visitors can open several
-            at once rather than being forced to close one to read another.
-            Ordered non-technical → more technical, per the workshop's real
-            teaching order: Claude (chat) → safety checkpoint → Hermes Agent
-            (moderate autonomy) → OpenClaw (fully self-hosted/autonomous). */}
+            at once rather than being forced to close one to read another. */}
         <section className="w-full py-8 md:py-12 lg:py-14 border-b border-border" aria-label="Workshop timeline">
           <div className="container px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-3xl mb-6 sm:mb-8">
@@ -527,11 +474,6 @@ export default function SecondBrainAgenticAiPage() {
                           <AccordionTrigger className="flex-1 rounded-xl border border-border bg-card px-4 py-3 hover:no-underline hover:border-primary/40 [&>svg]:text-muted-foreground">
                             <div className="flex flex-1 flex-wrap items-center gap-x-2.5 gap-y-1 text-left">
                               <span className="font-display text-sm sm:text-base font-semibold">{step.title}</span>
-                              {"badge" in step && step.badge && (
-                                <span className="inline-flex items-center rounded-full bg-amber-500/12 px-2 py-0.5 text-[11px] font-semibold text-amber-700 dark:text-amber-400">
-                                  {step.badge}
-                                </span>
-                              )}
                               {"level" in step && step.level && (
                                 <span className="inline-flex items-center rounded-full border border-border px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
                                   {step.level}
@@ -547,12 +489,6 @@ export default function SecondBrainAgenticAiPage() {
                             )}
                             {"description" in step && step.description && (
                               <p className="text-sm text-muted-foreground leading-relaxed mb-4">{step.description}</p>
-                            )}
-                            {"intro" in step && step.intro && (
-                              <p className="flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-primary mb-3">
-                                <ShieldCheck className="size-3.5 shrink-0" />
-                                {step.intro}
-                              </p>
                             )}
                             <ChecklistItems items={step.items} />
                           </div>
@@ -612,7 +548,7 @@ export default function SecondBrainAgenticAiPage() {
               </h2>
             </motion.div>
 
-            <div className="grid gap-4 sm:gap-6 sm:grid-cols-2 max-w-3xl mx-auto">
+            <div className="grid gap-4 sm:gap-6 max-w-sm mx-auto">
               {tt.speakers.people.map((person, i) => (
                 <SpeakerCard
                   key={person.name}
@@ -709,7 +645,7 @@ export default function SecondBrainAgenticAiPage() {
               </h2>
               <p className="text-sm md:text-lg text-muted-foreground leading-relaxed mb-6 sm:mb-9">{tt.cta.subcopy}</p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Button size="lg" className="rounded-full h-11 sm:h-12 px-8 text-sm sm:text-base font-medium" onClick={() => scrollTo("tickets")}>
+                <Button size="lg" className="rounded-full h-11 sm:h-12 px-8 text-sm sm:text-base font-medium" onClick={() => scrollTo("reserve")}>
                   {tt.cta.ticketsButton} <ArrowRight className="ml-1.5 size-4" />
                 </Button>
               </div>

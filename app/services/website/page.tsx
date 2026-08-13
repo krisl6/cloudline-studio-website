@@ -13,7 +13,7 @@ import { translations as pricingTranslations } from "@/app/pricing/translations"
 import { caseStudies } from "@/lib/case-studies-data"
 import { WHATSAPP_URL } from "@/lib/site"
 
-// Real clients only — same trust set used on /events/second-brain-ai, never
+// Real clients only — same trust set used on /events/vibe-code, never
 // a placeholder standing in for a trademark.
 const TRUSTED_BY_LOGOS = [
   { name: "Petronas Lubricants", logo: "/petronas-logo.png" },

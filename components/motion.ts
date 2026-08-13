@@ -20,6 +20,5 @@ export const staggerFast: Variants = {
   show: { opacity: 1, transition: { staggerChildren: 0.1 } },
 }
 
-/** Tactile hover-lift for cards, matching the treatment already proven on
- * the second-brain-ai ticket cards. */
+/** Tactile hover-lift for cards. */
 export const hoverLift = { y: -6 }

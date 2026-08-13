@@ -10,19 +10,7 @@ import { sendEmail, ticketConfirmationEmail } from "@/lib/email"
 const TIER_BY_AMOUNT: Record<number, string> = {
   19900: "Early Bird",
   25900: "Standard",
-  59900: "Early Bird Buddy", // second-brain-ai's 2-ticket bundle
 }
-
-const SECOND_BRAIN_AI_EVENT_NAME = "Build Your Second Brain & Automate Your Marketing with Agentic AI"
-
-// Only "Early Bird Buddy" is unambiguous today — it's the one tier whose
-// amount is actually wired into TIER_BY_AMOUNT above. second-brain-ai's own
-// "Early Bird" (RM 359) and "Virtual Pass" (RM 199) tiers are live on the
-// page but not yet mapped here (pre-existing gap, not introduced by this
-// change) — a purchase there currently falls through to `Unknown (RM ...)`
-// instead of a real tier name, and RM 199 would additionally collide with
-// marketing-masterclass's own Early Bird amount if added naively.
-const SECOND_BRAIN_AI_TIERS = new Set(["Early Bird Buddy"])
 
 export async function POST(request: Request) {
   const secretKey = process.env.STRIPE_SECRET_KEY
@@ -91,8 +79,7 @@ export async function POST(request: Request) {
   // Known accepted limitation: no dedup store for Stripe's rare duplicate
   // webhook redelivery. Given the small (15-seat) one-time scale of this
   // event, an occasional duplicate row/email is an acceptable risk.
-  const eventName = SECOND_BRAIN_AI_TIERS.has(tier) ? SECOND_BRAIN_AI_EVENT_NAME : undefined
-  const { subject, html } = ticketConfirmationEmail(name, tier, eventName)
+  const { subject, html } = ticketConfirmationEmail(name, tier)
   sendEmail({ to: email, subject, html }).catch((err) => console.error("[stripe-webhook] email send threw", err))
 
   return NextResponse.json({ ok: true })

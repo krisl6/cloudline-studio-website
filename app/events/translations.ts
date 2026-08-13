@@ -10,9 +10,9 @@ export const translations = {
     },
     upcoming: {
       eyebrow: "Upcoming Event",
-      title: "Marketing MasterClass for Business Visibility with AI",
-      date: "12 August 2026 · Infinity8, Sunway Square",
-      cta: "Learn More & Get Tickets",
+      title: "Build Your Application: Vibe Coding with Claude",
+      date: "24 August 2026 · INFINITY8 Reserve, Sunway Square",
+      cta: "Learn More & Reserve Your Seat",
     },
     included: {
       eyebrow: "What's included",
@@ -115,9 +115,9 @@ export const translations = {
     },
     upcoming: {
       eyebrow: "Acara Akan Datang",
-      title: "MasterClass Pemasaran untuk Keterlihatan Perniagaan dengan AI",
-      date: "12 Ogos 2026 · Infinity8, Sunway Square",
-      cta: "Ketahui Lebih Lanjut & Dapatkan Tiket",
+      title: "Bina Aplikasi Anda: Vibe Coding dengan Claude",
+      date: "24 Ogos 2026 · INFINITY8 Reserve, Sunway Square",
+      cta: "Ketahui Lebih Lanjut & Tempah Tempat",
     },
     included: {
       eyebrow: "Apa yang disertakan",
@@ -220,9 +220,9 @@ export const translations = {
     },
     upcoming: {
       eyebrow: "近期活动",
-      title: "借助 AI 提升商业曝光度的营销大师课",
-      date: "2026 年 8 月 12 日 · Infinity8, Sunway Square",
-      cta: "了解详情并获取门票",
+      title: "打造你的应用：用 Claude 进行 Vibe Coding",
+      date: "2026 年 8 月 24 日 · INFINITY8 Reserve, Sunway Square",
+      cta: "了解详情并预留名额",
     },
     included: {
       eyebrow: "包含内容",

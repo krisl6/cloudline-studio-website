@@ -41,7 +41,7 @@ export function Header() {
       href: "/events",
       dropdown: [
         { name: "All Events", href: "/events" },
-        { name: "Build Your Second Brain with Agentic AI", href: "/events/second-brain-ai" },
+        { name: "Build Your Application: Vibe Coding with Claude", href: "/events/vibe-code" },
       ],
     },
     { name: t.nav.clientResults, href: "/client-results" },
