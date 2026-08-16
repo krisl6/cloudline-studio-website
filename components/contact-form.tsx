@@ -114,7 +114,7 @@ export function ContactForm() {
           website: get("website"),
           interests: Array.from(checked).join(", "),
           budget,
-          message: "",
+          message: get("message"),
         }),
       })
       const data = await res.json().catch(() => ({}))

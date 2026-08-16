@@ -76,6 +76,30 @@ export function contactConfirmationEmail(name: string) {
   }
 }
 
+export function eventRequestConfirmationEmail(name: string) {
+  const firstName = name.trim().split(/\s+/)[0] || "there"
+  return {
+    subject: "We've got your event request — CloudLine Studio",
+    html: wrapper(`
+      <p style="font-size: 15px; line-height: 1.6;">Hi ${escapeHtml(firstName)},</p>
+      <p style="font-size: 15px; line-height: 1.6;">Thanks for telling us about your event. We'll review the details and get back to you within 24 hours with your quote.</p>
+      ${SIGNATURE}
+    `),
+  }
+}
+
+export function auditRequestConfirmationEmail(name: string) {
+  const firstName = name.trim().split(/\s+/)[0] || "there"
+  return {
+    subject: "Your free audit request is in — CloudLine Studio",
+    html: wrapper(`
+      <p style="font-size: 15px; line-height: 1.6;">Hi ${escapeHtml(firstName)},</p>
+      <p style="font-size: 15px; line-height: 1.6;">We've got your free audit request. We'll review your submission and reach out within 1 business day with your results.</p>
+      ${SIGNATURE}
+    `),
+  }
+}
+
 export function waitlistConfirmationEmail(name: string) {
   return {
     subject: "You're on the SEO/AEO waitlist — CloudLine Studio",

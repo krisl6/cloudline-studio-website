@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server"
 import { randomUUID } from "crypto"
+import { sendEmail, auditRequestConfirmationEmail } from "@/lib/email"
 
 // Lark (international). For Feishu (China) use https://open.feishu.cn instead.
 const LARK_DOMAIN = "https://open.larksuite.com"
@@ -90,6 +91,11 @@ export async function POST(request: Request) {
       console.error("[audit-request] Lark error:", res.status, data)
       return NextResponse.json({ ok: false, error: "Failed to save submission." }, { status: 500 })
     }
+
+    // Best-effort: the Lark record above is the source of truth, so an email
+    // failure here shouldn't fail the whole submission.
+    const { subject, html } = auditRequestConfirmationEmail(name)
+    sendEmail({ to: email, subject, html }).catch((err) => console.error("[audit-request] email send threw", err))
 
     return NextResponse.json({ ok: true })
   } catch (err) {

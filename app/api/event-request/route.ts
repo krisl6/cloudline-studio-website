@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import { randomUUID } from "crypto"
 import { larkEnv, getTenantToken, createRecord } from "@/lib/lark"
+import { sendEmail, eventRequestConfirmationEmail } from "@/lib/email"
 
 export async function POST(request: Request) {
   try {
@@ -42,6 +43,12 @@ export async function POST(request: Request) {
     })
 
     if (!ok) return NextResponse.json({ ok: false, error: "Failed to save your request." }, { status: 500 })
+
+    // Best-effort: the Lark record above is the source of truth, so an email
+    // failure here shouldn't fail the whole submission.
+    const { subject, html } = eventRequestConfirmationEmail(name)
+    sendEmail({ to: email, subject, html }).catch((err) => console.error("[event-request] email send threw", err))
+
     return NextResponse.json({ ok: true })
   } catch (err) {
     console.error("[event-request] Unexpected error:", err)

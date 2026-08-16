@@ -134,8 +134,6 @@ export default function PricingPage() {
                   >
                     <Link
                       href={plan.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
                       className={plan.popular ? "" : "border-border bg-transparent hover:bg-muted"}
                     >
                       {plan.cta}

@@ -23,9 +23,7 @@ export const translations = {
       eyebrow: "Client success stories",
       title: "Real businesses, real growth",
       subtitle:
-        "Every testimonial is verified. Every number is real. Every client started exactly where you are now.",
-      showMore: "Show all {count} client stories",
-      showLess: "Show fewer stories",
+        "Real clients, named and specific. Here's what changed for their business, in their own words.",
       labels: {
         challenge: "Challenge",
         solution: "Solution",
@@ -36,18 +34,6 @@ export const translations = {
         after: "After:",
         improvement: "Improvement:",
       },
-    },
-    caseStudies: {
-      eyebrow: "Detailed case studies",
-      title: "Proven results across industries",
-      subtitle:
-        "These aren’t just numbers on a screen, they’re real businesses, run by real people, who trusted us with their growth. Here are their stories of transformation.",
-      labels: {
-        challenge: "The challenge",
-        howWeHelped: "How we helped",
-        results: "The results",
-      },
-      cta: "Get a Quote",
     },
     socialProof: {
       eyebrow: "Real client results",
@@ -102,9 +88,7 @@ export const translations = {
       eyebrow: "Kisah kejayaan pelanggan",
       title: "Perniagaan sebenar, pertumbuhan sebenar",
       subtitle:
-        "Setiap testimoni disahkan. Setiap angka adalah benar. Setiap pelanggan bermula tepat di tempat anda berada sekarang.",
-      showMore: "Lihat semua {count} kisah pelanggan",
-      showLess: "Tunjukkan lebih sedikit",
+        "Pelanggan sebenar, dinamakan dan terperinci. Inilah yang berubah untuk perniagaan mereka, dalam kata-kata mereka sendiri.",
       labels: {
         challenge: "Cabaran",
         solution: "Penyelesaian",
@@ -115,18 +99,6 @@ export const translations = {
         after: "Selepas:",
         improvement: "Penambahbaikan:",
       },
-    },
-    caseStudies: {
-      eyebrow: "Kajian kes terperinci",
-      title: "Hasil terbukti merentas pelbagai industri",
-      subtitle:
-        "Ini bukan sekadar angka pada skrin. Ini perniagaan sebenar, dikendalikan oleh orang sebenar, yang mempercayai kami dengan pertumbuhan mereka. Inilah kisah transformasi mereka.",
-      labels: {
-        challenge: "Cabaran",
-        howWeHelped: "Bagaimana kami membantu",
-        results: "Hasil",
-      },
-      cta: "Dapatkan Sebut Harga",
     },
     socialProof: {
       eyebrow: "Hasil pelanggan sebenar",
@@ -180,9 +152,7 @@ export const translations = {
     testimonials: {
       eyebrow: "客户成功故事",
       title: "真实企业，真实增长",
-      subtitle: "每一份评价都经过核实。每一个数字都真实可信。每一位客户都曾站在你现在的起点。",
-      showMore: "查看全部 {count} 个客户故事",
-      showLess: "收起",
+      subtitle: "真实客户，具名详述。以下是他们业务的真实转变，出自他们自己的话。",
       labels: {
         challenge: "挑战",
         solution: "解决方案",
@@ -193,18 +163,6 @@ export const translations = {
         after: "之后：",
         improvement: "提升：",
       },
-    },
-    caseStudies: {
-      eyebrow: "详细案例研究",
-      title: "跨行业的可验证成果",
-      subtitle:
-        "这不仅仅是屏幕上的数字, 它们是真实的企业，由真实的人经营，他们将增长托付给我们。以下是他们的转型故事。",
-      labels: {
-        challenge: "挑战",
-        howWeHelped: "我们如何提供帮助",
-        results: "成果",
-      },
-      cta: "获取报价",
     },
     socialProof: {
       eyebrow: "真实客户成果",
