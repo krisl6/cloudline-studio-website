@@ -9,6 +9,8 @@ import { SiteLayout } from "@/components/layout/SiteLayout"
 import { SITE_URL, SITE_NAME, SITE_DESCRIPTION } from "@/lib/site"
 import { JsonLd } from "@/components/seo/json-ld"
 import { buildOrganizationJsonLd } from "@/lib/json-ld"
+import { PostHogProvider } from "@/components/analytics/posthog-provider"
+import { PostHogPageviewTracker } from "@/components/analytics/posthog-pageview"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const fraunces = Fraunces({ subsets: ["latin"], variable: "--font-fraunces", weight: ["400", "500", "600"] })
@@ -90,18 +92,21 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${fraunces.variable} ${inter.variable}`}>
       <body className={`${inter.className} font-sans bg-background`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          disableTransitionOnChange
-        >
-          <LanguageProvider>
-            <SiteLayout>
-              {children}
-            </SiteLayout>
-          </LanguageProvider>
-        </ThemeProvider>
+        <PostHogProvider>
+          <PostHogPageviewTracker />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            disableTransitionOnChange
+          >
+            <LanguageProvider>
+              <SiteLayout>
+                {children}
+              </SiteLayout>
+            </LanguageProvider>
+          </ThemeProvider>
+        </PostHogProvider>
         <Analytics />
         <JsonLd data={buildOrganizationJsonLd()} />
       </body>

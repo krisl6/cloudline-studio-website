@@ -7,16 +7,8 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import {
-  DoodlePen,
-  DoodleSparkle,
-  DoodleSearch,
-  DoodleGear,
-  DoodleTarget,
-  DoodleCheck,
-  DoodleRocket,
-  DoodleGrowth,
-} from "@/components/doodles"
+import { NumberedIndex } from "@/components/sections/numbered-index"
+import { ListDot } from "@/components/sections/list-dot"
 import { useLanguage } from "@/components/language-provider"
 import { SeoWaitlistForm } from "@/components/seo-waitlist-form"
 import { AnimatedStatValue } from "@/components/animated-stat"
@@ -33,17 +25,6 @@ const IMAGE_DIMENSIONS: Record<string, { width: number; height: number }> = {
   "/case-studies-seo/monstarx-gsc.png": { width: 2652, height: 1284 },
   "/case-studies-seo/darlie-gsc.png": { width: 1898, height: 910 },
 }
-
-const CAPABILITY_ICONS = [DoodlePen, DoodleSparkle, DoodleSearch, DoodleGear, DoodleTarget]
-const STEP_ICONS = [DoodleSearch, DoodlePen, DoodleCheck, DoodleRocket]
-const OUTCOME_ICONS = [DoodleSearch, DoodleTarget, DoodlePen, DoodleGear]
-
-const HERO_FLOATERS = [
-  { Icon: DoodleSparkle, className: "top-4 left-[6%] size-10 sm:size-14", delay: 0 },
-  { Icon: DoodleSearch, className: "top-20 right-[6%] size-12 sm:size-16", delay: 0.5 },
-  { Icon: DoodlePen, className: "bottom-16 left-[9%] size-10 sm:size-12", delay: 1 },
-  { Icon: DoodleTarget, className: "bottom-4 right-[11%] size-12 sm:size-14", delay: 1.5 },
-]
 
 import { fadeUp, staggerFast as stagger } from "@/components/motion"
 
@@ -138,18 +119,6 @@ export default function CloudlineAeoAiPage() {
             className="absolute -bottom-24 -right-20 size-72 rounded-full bg-primary/10 blur-3xl [animation-duration:7s] animate-pulse -z-10"
             aria-hidden="true"
           />
-          {HERO_FLOATERS.map(({ Icon, className, delay }, i) => (
-            <motion.div
-              key={i}
-              className={`pointer-events-none absolute hidden sm:block text-primary/10 ${className}`}
-              animate={{ y: [0, -14, 0], rotate: [0, 6, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay }}
-              aria-hidden="true"
-            >
-              <Icon className="size-full" />
-            </motion.div>
-          ))}
-
           <div className="container relative px-4 md:px-6 pt-14 pb-10 md:pt-20 md:pb-16 lg:pt-24 lg:pb-20">
             <motion.div variants={stagger} initial="hidden" animate="show" className="mx-auto max-w-3xl text-center">
               <motion.h1 variants={fadeUp} className="font-display text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-balance leading-[1.05] mb-6">
@@ -175,22 +144,17 @@ export default function CloudlineAeoAiPage() {
               </motion.p>
 
               <motion.div variants={stagger} className="mx-auto grid max-w-xl gap-3 sm:grid-cols-2 mb-10 text-left">
-                {tt.hero.listItems.map((item, i) => {
-                  const Icon = CAPABILITY_ICONS[i]
-                  return (
-                    <motion.div
-                      key={item}
-                      variants={fadeUp}
-                      whileHover={{ x: 3 }}
-                      className="flex items-start gap-2.5 rounded-xl px-3 py-2"
-                    >
-                      <span className="mt-0.5 inline-flex size-7 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
-                        <Icon className="size-3.5" />
-                      </span>
-                      <span className="text-sm sm:text-[0.95rem] font-medium text-foreground/90 leading-snug">{item}</span>
-                    </motion.div>
-                  )
-                })}
+                {tt.hero.listItems.map((item) => (
+                  <motion.div
+                    key={item}
+                    variants={fadeUp}
+                    whileHover={{ x: 3 }}
+                    className="flex items-start gap-2.5 rounded-xl px-3 py-2"
+                  >
+                    <ListDot className="mt-2.5" />
+                    <span className="text-sm sm:text-[0.95rem] font-medium text-foreground/90 leading-snug">{item}</span>
+                  </motion.div>
+                ))}
               </motion.div>
 
               <motion.div variants={fadeUp}>
@@ -253,7 +217,7 @@ export default function CloudlineAeoAiPage() {
                 <ul className="space-y-2.5">
                   {tt.problem.newItems.map((item) => (
                     <li key={item} className="flex items-center gap-2.5 text-sm font-medium text-foreground/90">
-                      <DoodleCheck className="size-3.5 text-primary" />
+                      <ListDot />
                       {item}
                     </li>
                   ))}
@@ -274,27 +238,19 @@ export default function CloudlineAeoAiPage() {
             </motion.div>
 
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {tt.capabilities.items.map((item, i) => {
-                const Icon = CAPABILITY_ICONS[i]
-                return (
-                  <motion.div
-                    key={item.title}
-                    variants={fadeUp}
-                    whileHover={{ y: -6 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                    className={`group relative overflow-hidden flex flex-col rounded-2xl border border-border bg-card p-7 ${i === 0 ? "sm:col-span-2 lg:col-span-1 border-primary/30 ring-1 ring-primary/20" : ""}`}
-                  >
-                    <span aria-hidden="true" className="absolute top-3 right-5 font-display text-5xl font-bold text-foreground/[0.04] select-none">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/8 text-primary transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110">
-                      <Icon className="size-6" />
-                    </span>
-                    <h3 className="font-display text-lg font-semibold mt-5 mb-2">{item.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
-                  </motion.div>
-                )
-              })}
+              {tt.capabilities.items.map((item, i) => (
+                <motion.div
+                  key={item.title}
+                  variants={fadeUp}
+                  whileHover={{ y: -6 }}
+                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  className={`group relative overflow-hidden flex flex-col rounded-2xl border border-border bg-card p-7 ${i === 0 ? "sm:col-span-2 lg:col-span-1 border-primary/30 ring-1 ring-primary/20" : ""}`}
+                >
+                  <NumberedIndex index={i} className="transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110" />
+                  <h3 className="font-display text-lg font-semibold mt-5 mb-2">{item.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -308,19 +264,14 @@ export default function CloudlineAeoAiPage() {
               </h2>
             </motion.div>
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
-              {tt.outcomes.items.map((outcome, i) => {
-                const Icon = OUTCOME_ICONS[i]
-                return (
-                  <motion.div key={outcome.label} variants={fadeUp} whileHover={{ y: -4 }} className="rounded-2xl border border-border bg-card p-6 text-center">
-                    <span className="mx-auto mb-4 inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                      <Icon className="size-5" />
-                    </span>
-                    <p className="text-xs font-medium tracking-[0.1em] uppercase text-muted-foreground mb-1.5">{outcome.tag}</p>
-                    <h3 className="font-display text-lg font-semibold mb-2">{outcome.label}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{outcome.desc}</p>
-                  </motion.div>
-                )
-              })}
+              {tt.outcomes.items.map((outcome, i) => (
+                <motion.div key={outcome.label} variants={fadeUp} whileHover={{ y: -4 }} className="rounded-2xl border border-border bg-card p-6 text-center">
+                  <NumberedIndex index={i} className="mx-auto mb-4 size-11 text-base" />
+                  <p className="text-xs font-medium tracking-[0.1em] uppercase text-muted-foreground mb-1.5">{outcome.tag}</p>
+                  <h3 className="font-display text-lg font-semibold mb-2">{outcome.label}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{outcome.desc}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -332,10 +283,7 @@ export default function CloudlineAeoAiPage() {
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
                 {tt.howItWorks.heading}
               </h2>
-              <p className="inline-flex items-center gap-2 text-sm text-muted-foreground">
-                <DoodleGrowth className="size-4 text-primary/60" />
-                {tt.howItWorks.engineNote}
-              </p>
+              <p className="text-sm text-muted-foreground">{tt.howItWorks.engineNote}</p>
             </motion.div>
 
             <div className="relative">
@@ -353,28 +301,22 @@ export default function CloudlineAeoAiPage() {
                 aria-hidden="true"
               />
               <div className="relative grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-                {tt.howItWorks.steps.map((step, i) => {
-                  const Icon = STEP_ICONS[i]
-                  return (
-                    <motion.div
-                      key={step.title}
-                      variants={fadeUp}
-                      initial="hidden"
-                      whileInView="show"
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: i * 0.1 }}
-                    >
-                      <div className="flex items-center gap-4 mb-4">
-                        <span className="relative inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-background text-primary font-display text-sm font-semibold">
-                          {String(i + 1).padStart(2, "0")}
-                        </span>
-                        <Icon className="size-5 text-primary/60" />
-                      </div>
-                      <h3 className="font-display text-lg font-semibold mb-2">{step.title}</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
-                    </motion.div>
-                  )
-                })}
+                {tt.howItWorks.steps.map((step, i) => (
+                  <motion.div
+                    key={step.title}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: i * 0.1 }}
+                  >
+                    <span className="relative mb-4 inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-border bg-background text-primary font-display text-sm font-semibold">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <h3 className="font-display text-lg font-semibold mb-2">{step.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
@@ -517,22 +459,6 @@ export default function CloudlineAeoAiPage() {
 
         {/* Waitlist */}
         <section id="waitlist" className="relative w-full py-14 md:py-20 lg:py-24 bg-muted/50 border-b border-border overflow-hidden" aria-label="Join the waitlist">
-          <motion.div
-            className="pointer-events-none absolute top-10 right-[8%] hidden sm:block size-12 text-primary/10"
-            animate={{ y: [0, -12, 0], rotate: [0, 8, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            aria-hidden="true"
-          >
-            <DoodleSparkle className="size-full" />
-          </motion.div>
-          <motion.div
-            className="pointer-events-none absolute bottom-10 left-[8%] hidden sm:block size-10 text-primary/10"
-            animate={{ y: [0, -10, 0], rotate: [0, -8, 0] }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.6 }}
-            aria-hidden="true"
-          >
-            <DoodleTarget className="size-full" />
-          </motion.div>
           <div className="container relative px-4 md:px-6">
             <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.5 }} className="max-w-2xl mx-auto">
               <div className="text-center mb-10">

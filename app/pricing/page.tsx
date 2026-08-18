@@ -4,7 +4,8 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DoodleCheck, DoodleGrowth, DoodleHeart, DoodleTrophy } from "@/components/doodles"
+import { NumberedIndex } from "@/components/sections/numbered-index"
+import { ListDot } from "@/components/sections/list-dot"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { WHATSAPP_URL } from "@/lib/site"
@@ -33,9 +34,7 @@ export default function PricingPage() {
     popular: planMeta[i].popular,
   }))
 
-  const benefitIcons = [DoodleGrowth, DoodleHeart, DoodleTrophy]
-  const benefits = tt.benefitsSection.items.map((benefit, i) => ({
-    icon: benefitIcons[i],
+  const benefits = tt.benefitsSection.items.map((benefit) => ({
     title: benefit.title,
     description: benefit.description,
   }))
@@ -122,7 +121,7 @@ export default function PricingPage() {
                   <ul className="space-y-2.5 mb-8 flex-grow">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                        <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <ListDot className="mt-2" />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -184,23 +183,18 @@ export default function PricingPage() {
               viewport={{ once: true }}
               className="grid gap-6 md:grid-cols-3"
             >
-              {benefits.map((benefit) => {
-                const Icon = benefit.icon
-                return (
-                  <motion.div
-                    key={benefit.title}
-                    variants={fadeUp}
-                    whileHover={hoverLift}
-                    className="flex flex-col rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
-                  >
-                    <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                      <Icon className="size-6" />
-                    </span>
-                    <h3 className="font-display text-lg font-semibold mt-5 mb-2">{benefit.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
-                  </motion.div>
-                )
-              })}
+              {benefits.map((benefit, i) => (
+                <motion.div
+                  key={benefit.title}
+                  variants={fadeUp}
+                  whileHover={hoverLift}
+                  className="flex flex-col rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                >
+                  <NumberedIndex index={i} className="size-11 text-base" />
+                  <h3 className="font-display text-lg font-semibold mt-5 mb-2">{benefit.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{benefit.description}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>

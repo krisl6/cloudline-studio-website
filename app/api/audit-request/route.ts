@@ -32,7 +32,7 @@ async function getFieldNames(baseToken: string, tableId: string, token: string):
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, niche, challenge, ab_variant, website_url, instagram_handle, course_url } = body
+    const { name, email, niche, challenge, ab_variant, website_url, instagram_handle, course_url, interest } = body
 
     if (!name || !email) {
       return NextResponse.json({ ok: false, error: "Name and email are required." }, { status: 400 })
@@ -62,6 +62,7 @@ export async function POST(request: Request) {
     if (website_url) desired.website_url = website_url
     if (instagram_handle) desired.instagram_handle = instagram_handle
     if (course_url) desired.course_url = course_url
+    if (interest) desired.interest = interest
 
     // Match our keys to the table's actual column names (case-insensitive) and
     // only send columns that exist, avoids FieldNameNotFound on partial setups.

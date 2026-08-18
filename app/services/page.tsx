@@ -10,22 +10,10 @@ import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { FunnelTimeline } from "@/components/funnel-timeline"
 import { SeoWaitlistForm } from "@/components/seo-waitlist-form"
-import {
-  DoodleSearch,
-  DoodleTransform,
-  DoodleGear,
-  DoodleMegaphone,
-  DoodleGrowth,
-  DoodleCheck,
-  DoodleRocket,
-  DoodlePen,
-} from "@/components/doodles"
+import { NumberedIndex } from "@/components/sections/numbered-index"
+import { ListDot } from "@/components/sections/list-dot"
 
 import { fadeUp, stagger, hoverLift } from "@/components/motion"
-
-const serviceIcons = [DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth]
-const processIcons = [DoodleSearch, DoodlePen, DoodleRocket]
-const pillarIcons = [DoodleSearch, DoodleGrowth, DoodlePen, DoodleGear]
 
 const serviceIds = ["consultation", "transformation", "synchronization", "branding", "seo"] as const
 
@@ -128,17 +116,13 @@ export default function ServicesPage() {
                   className="flex flex-col gap-10 md:gap-12"
                 >
                   {services.map((service, i) => {
-                    const Icon = serviceIcons[i]
                     return (
                       <motion.div key={service.id} id={service.id} variants={fadeUp} whileHover={hoverLift} className="relative flex gap-6 scroll-mt-24">
-                        <span className="relative z-10 inline-flex size-12 shrink-0 items-center justify-center rounded-full border border-border bg-background text-primary shadow-sm">
-                          <Icon className="size-6" />
-                        </span>
+                        <NumberedIndex index={i} variant="outline-circle" className="shadow-sm md:mb-0" />
                         <AccordionItem value={service.id} className="flex-1 border-none">
                           <AccordionTrigger className="items-start py-0 pt-1.5 font-normal hover:no-underline [&>svg]:mt-2 [&>svg]:text-primary">
                             <div className="text-left pr-4">
                               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
-                                <span className="font-display text-sm font-bold text-primary">{String(i + 1).padStart(2, "0")}</span>
                                 <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight">{service.title}</h3>
                               </div>
                               <p className="text-xs font-medium tracking-[0.12em] uppercase text-muted-foreground mb-3">
@@ -153,7 +137,7 @@ export default function ServicesPage() {
                             <ul className="flex flex-wrap gap-x-6 gap-y-2 mb-5">
                               {service.included.map((point) => (
                                 <li key={point} className="flex items-center gap-2 text-sm text-foreground/80">
-                                  <DoodleCheck className="size-4 shrink-0 text-primary" />
+                                  <ListDot />
                                   {point}
                                 </li>
                               ))}
@@ -163,20 +147,18 @@ export default function ServicesPage() {
                               <div className="mb-6">
                                 <h4 className="font-display text-lg font-semibold tracking-tight mb-5">{tt.seoPillars.heading}</h4>
                                 <div className="grid sm:grid-cols-2 gap-4 mb-6">
-                                  {tt.seoPillars.items.map((pillar, i) => {
-                                    const PillarIcon = pillarIcons[i]
-                                    return (
-                                      <div key={pillar.title} className="rounded-xl border border-border bg-card p-4">
-                                        <div className="flex items-center gap-2.5 mb-2">
-                                          <span className="inline-flex size-8 items-center justify-center rounded-lg bg-primary/8 text-primary">
-                                            <PillarIcon className="size-4" />
-                                          </span>
-                                          <span className="font-display text-sm font-semibold">{pillar.title}</span>
-                                        </div>
-                                        <p className="text-sm text-muted-foreground leading-relaxed">{pillar.desc}</p>
+                                  {tt.seoPillars.items.map((pillar, i) => (
+                                    <div key={pillar.title} className="rounded-xl border border-border bg-card p-4">
+                                      <div className="flex items-center gap-2.5 mb-2">
+                                        <NumberedIndex
+                                          index={i}
+                                          className="size-8 rounded-lg font-display text-xs font-semibold"
+                                        />
+                                        <span className="font-display text-sm font-semibold">{pillar.title}</span>
                                       </div>
-                                    )
-                                  })}
+                                      <p className="text-sm text-muted-foreground leading-relaxed">{pillar.desc}</p>
+                                    </div>
+                                  ))}
                                 </div>
                                 <p className="text-sm font-medium text-primary leading-relaxed mb-6">{tt.seoPillars.closer}</p>
 
@@ -270,30 +252,20 @@ export default function ServicesPage() {
             </motion.div>
 
             <div className="grid gap-10 md:grid-cols-3">
-              {processSteps.map((stage, i) => {
-                const Icon = processIcons[i]
-                return (
-                  <motion.div
-                    key={stage.title}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <div className="flex items-center gap-4 mb-5">
-                      <span className="inline-flex size-12 items-center justify-center rounded-xl border border-border text-primary">
-                        <Icon className="size-7" />
-                      </span>
-                      <span className="font-display text-sm font-medium tracking-widest text-muted-foreground">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <h3 className="font-display text-xl font-semibold mb-3">{stage.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{stage.description}</p>
-                  </motion.div>
-                )
-              })}
+              {processSteps.map((stage, i) => (
+                <motion.div
+                  key={stage.title}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <NumberedIndex index={i} className="mb-5 rounded-xl border border-border bg-transparent" />
+                  <h3 className="font-display text-xl font-semibold mb-3">{stage.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed">{stage.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 import { ArrowRight, CalendarDays, Clock, MapPin, Timer, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { DoodleCheck } from "@/components/doodles"
+import { ListDot } from "@/components/sections/list-dot"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 
@@ -359,7 +359,7 @@ export default function AiAutomationsAeoSeoPage() {
                           transition={{ duration: 0.4, delay: i * 0.1 + itemIdx * 0.06 + 0.2 }}
                           className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed"
                         >
-                          <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                          <ListDot className="mt-2" />
                           <span>{item}</span>
                         </motion.li>
                       ))}
@@ -406,7 +406,7 @@ export default function AiAutomationsAeoSeoPage() {
                           <ul className="space-y-2">
                             {chapter.items.map((item) => (
                               <li key={item} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                                <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                                <ListDot className="mt-2" />
                                 <span>{item}</span>
                               </li>
                             ))}
@@ -512,7 +512,7 @@ export default function AiAutomationsAeoSeoPage() {
                   <ul className="space-y-2 sm:space-y-2.5 mb-6 sm:mb-8 flex-grow">
                     {tier.features.map((feature) => (
                       <li key={feature} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                        <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <ListDot className="mt-2" />
                         <span>{feature}</span>
                       </li>
                     ))}

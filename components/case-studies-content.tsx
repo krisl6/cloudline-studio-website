@@ -5,20 +5,12 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth } from "@/components/doodles"
+import { NumberedIndex } from "@/components/sections/numbered-index"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "@/app/case-studies/translations"
 import { SERVICE_SLUGS, caseStudies, type PlatformName, type ServiceSlug } from "@/lib/case-studies-data"
 import { WHATSAPP_URL } from "@/lib/site"
 import { hoverLift } from "@/components/motion"
-
-const PLATFORM_ICONS: Record<PlatformName, React.ComponentType<{ className?: string }>> = {
-  Consultation: DoodleSearch,
-  "Marketing & Sales Digital Transformation": DoodleTransform,
-  "Interdepartmental Synchronization": DoodleGear,
-  "Digital Marketing & Branding": DoodleMegaphone,
-  SEO: DoodleGrowth,
-}
 
 const PLATFORM_SLUGS: Record<PlatformName, ServiceSlug> = Object.fromEntries(
   Object.entries(SERVICE_SLUGS).map(([slug, name]) => [name, slug]),
@@ -32,7 +24,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
 
   const platforms = (Object.keys(SERVICE_SLUGS) as ServiceSlug[]).map((slug) => {
     const name = SERVICE_SLUGS[slug]
-    return { slug, name, icon: PLATFORM_ICONS[name] }
+    return { slug, name }
   })
 
   const filteredStudies =
@@ -97,7 +89,6 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
               {platforms.map((platform, i) => {
-                const Icon = platform.icon
                 const isActive = platformFilter === platform.name
                 return (
                   <motion.div
@@ -114,9 +105,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                         isActive ? "border-primary/40 ring-1 ring-primary/20" : "border-border"
                       }`}
                     >
-                      <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                        <Icon className="size-5" />
-                      </span>
+                      <NumberedIndex index={i} className="size-11 text-base" />
                       <h3 className="font-display text-base md:text-lg font-semibold mt-5 mb-2">
                         {tt.serviceLabels[platform.name as ServiceKey]}
                       </h3>

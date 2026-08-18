@@ -8,25 +8,8 @@ import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
 import { Marquee } from "@/components/marquee"
-import {
-  DoodleMegaphone,
-  DoodleTransform,
-  DoodleGear,
-  DoodleTarget,
-  DoodleGrowth,
-  DoodleCoins,
-  DoodleBolt,
-  DoodleTrophy,
-  DoodleHeart,
-  DoodleSearch,
-  DoodlePen,
-  DoodleRocket,
-  DoodleCheck,
-} from "@/components/doodles"
-
-const pillarIcons = [DoodleSearch, DoodleTransform, DoodleGear, DoodleMegaphone, DoodleGrowth]
-const outcomeIcons = [DoodleCoins, DoodleTarget, DoodleGrowth, DoodleBolt, DoodleTrophy, DoodleHeart]
-const processIcons = [DoodleSearch, DoodlePen, DoodleRocket]
+import { NumberedIndex } from "@/components/sections/numbered-index"
+import { ListDot } from "@/components/sections/list-dot"
 
 // Hero carousel, landscape images only.
 const heroImages = [
@@ -206,31 +189,26 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             >
-              {t.services.pillars.map((pillar, i) => {
-                const Icon = pillarIcons[i]
-                return (
-                  <motion.div
-                    key={pillar.name}
-                    variants={fadeUp}
-                    whileHover={hoverLift}
-                    className="group flex flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
-                  >
-                    <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                      <Icon className="size-7" />
-                    </span>
-                    <h3 className="font-display text-xl font-semibold mt-6 mb-3">{pillar.name}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed mb-6">{pillar.description}</p>
-                    <ul className="mt-auto space-y-2.5">
-                      {pillar.points.map((point) => (
-                        <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
-                          <DoodleCheck className="size-4 shrink-0 text-primary" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                )
-              })}
+              {t.services.pillars.map((pillar, i) => (
+                <motion.div
+                  key={pillar.name}
+                  variants={fadeUp}
+                  whileHover={hoverLift}
+                  className="group flex flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                >
+                  <NumberedIndex index={i} />
+                  <h3 className="font-display text-xl font-semibold mt-6 mb-3">{pillar.name}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-6">{pillar.description}</p>
+                  <ul className="mt-auto space-y-2.5">
+                    {pillar.points.map((point) => (
+                      <li key={point} className="flex items-center gap-2.5 text-sm text-foreground/80">
+                        <ListDot />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              ))}
             </motion.div>
 
             <div className="mt-10 flex justify-center">
@@ -320,7 +298,7 @@ export default function HomePage() {
                 <ul className="space-y-3">
                   {t.about.points.map((point) => (
                     <li key={point} className="flex items-start gap-3 text-foreground/85">
-                      <DoodleCheck className="mt-1 size-4 shrink-0 text-primary" />
+                      <ListDot className="mt-2" />
                       <span>{point}</span>
                     </li>
                   ))}
@@ -403,23 +381,18 @@ export default function HomePage() {
               viewport={{ once: true }}
               className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
             >
-              {t.outcomes.items.map((outcome, i) => {
-                const Icon = outcomeIcons[i]
-                return (
-                  <motion.div
-                    key={outcome.title}
-                    variants={fadeUp}
-                    whileHover={hoverLift}
-                    className="rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
-                  >
-                    <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                      <Icon className="size-6" />
-                    </span>
-                    <h3 className="font-display text-lg font-semibold mt-5 mb-2">{outcome.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{outcome.description}</p>
-                  </motion.div>
-                )
-              })}
+              {t.outcomes.items.map((outcome, i) => (
+                <motion.div
+                  key={outcome.title}
+                  variants={fadeUp}
+                  whileHover={hoverLift}
+                  className="rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                >
+                  <NumberedIndex index={i} className="size-11 text-base" />
+                  <h3 className="font-display text-lg font-semibold mt-5 mb-2">{outcome.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{outcome.description}</p>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -444,31 +417,23 @@ export default function HomePage() {
                 className="absolute left-6 top-6 bottom-6 w-px bg-sky md:left-6 md:right-6 md:top-6 md:bottom-auto md:h-px md:w-auto"
                 aria-hidden="true"
               />
-              {t.process.steps.map((stage, i) => {
-                const Icon = processIcons[i]
-                return (
-                  <motion.div
-                    key={stage.title}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="relative flex gap-5 md:flex-col md:gap-0"
-                  >
-                    <span className="relative z-10 inline-flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-background text-primary md:mb-5">
-                      <Icon className="size-6" />
-                    </span>
-                    <div>
-                      <span className="font-display text-xs font-medium tracking-widest text-muted-foreground">
-                        STEP {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <h3 className="font-display text-xl font-semibold mt-1.5 mb-2 md:mt-2 md:mb-3">{stage.title}</h3>
-                      <p className="text-muted-foreground leading-relaxed">{stage.description}</p>
-                    </div>
-                  </motion.div>
-                )
-              })}
+              {t.process.steps.map((stage, i) => (
+                <motion.div
+                  key={stage.title}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5 }}
+                  className="relative flex gap-5 md:flex-col md:gap-0"
+                >
+                  <NumberedIndex index={i} variant="outline-circle" />
+                  <div>
+                    <h3 className="font-display text-xl font-semibold mt-1.5 mb-2 md:mt-2 md:mb-3">{stage.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{stage.description}</p>
+                  </div>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>

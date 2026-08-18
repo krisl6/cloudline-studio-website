@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DoodleCheck } from "@/components/doodles"
 import { useLanguage } from "@/components/language-provider"
 
 const T = {
@@ -94,9 +93,6 @@ export function EventForm() {
   if (status === "success") {
     return (
       <div className="rounded-2xl border border-border bg-card p-10 text-center">
-        <span className="mx-auto mb-4 inline-flex size-12 items-center justify-center rounded-full bg-primary/10 text-primary">
-          <DoodleCheck className="size-7" />
-        </span>
         <h3 className="font-display text-2xl font-semibold mb-2">{tt.successTitle}</h3>
         <p className="text-muted-foreground">{tt.successBody}</p>
       </div>

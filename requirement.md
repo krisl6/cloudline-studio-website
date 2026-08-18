@@ -120,3 +120,99 @@ one without a real FX data source.
   to have/create a profile first.
 - A calendar-booking CTA (Calendly-style) alongside WhatsApp — needs the client's scheduling
   account/link.
+
+---
+
+## 8. Design System — Visual Identity
+
+2026-08 pass: the site was deliberately restyled toward a cleaner, more restrained, "professional
+agency" look (structural cues from monstar-lab.com, motion cues from igloo.inc, typographic
+confidence from bikebear.com.my — without adopting bikebear's mascot/icon playfulness, which was
+explicitly ruled out, see §9). This section documents the resulting system so new pages match it
+without re-deriving it from scratch.
+
+**Color** — five brand HSL tokens defined in `styles/globals.css`, drawn from the real logo
+(cloud mark + horizon-line accent bar). Same absolute values in light and dark mode; only which
+token maps to `--background`/`--foreground`/`--primary` etc. flips:
+
+| Token | Value | Role |
+|---|---|---|
+| `--cream` | `42.9 41.2% 96.7%` | Light-mode canvas (`--background`), dark-mode text |
+| `--cloud` | `37.5 23.5% 93.3%` | Light-mode surface (`--card`/`--muted`) |
+| `--ink` | `220 47% 16.3%` | Light-mode text (`--foreground`), dark-mode canvas |
+| `--navy` | `217.4 44.5% 30.4%` | The single accent (`--primary` in light mode) |
+| `--sky` | `208.5 59.2% 59.6%` | Focus ring, timeline connector accent |
+
+Don't introduce new brand colors — the palette is intentionally minimal (per the monstar-lab/
+bikebear reference sites' restraint). If a new state color is needed (success/warning), derive it
+from `--destructive`'s pattern (a new HSL pair, light+dark), don't reach for an arbitrary hex.
+
+**Typography** — `font-sans`/`font-display` (Inter, via `--font-inter`) for all UI and most
+headings; `font-serif` (Fraunces, via `--font-fraunces`) reserved for a few specific display
+moments: the homepage hero `h1`, the client quote blockquote, and stat numerals — not general
+heading use. Match this convention rather than defaulting every `h1`/`h2` to serif.
+
+**Spacing/rhythm** — sections use `w-full py-20 md:py-28 border-t border-border`, alternating
+plain (`bg-background`) and `bg-muted/50` tone between adjacent sections down the page. Container:
+`tailwind.config.ts`'s `container` (`padding: 2rem`, `2xl: 1400px`).
+
+## 9. Design System — No Decorative Icons
+
+Decorative iconography is out, site-wide, for the 8 primary pages (home, about, services,
+pricing, case-studies, client-results, contact, events). This replaced the old hand-drawn
+"doodle" icon set (`components/doodles.tsx`) that illustrated every service/outcome/process card
+and checklist item.
+
+Replacements, both in `components/sections/`:
+- **`numbered-index.tsx`** — a plain "01"/"02" numeral (`variant="default"` for card headers,
+  `variant="outline-circle"` for the numeral-in-a-circle timeline/step pattern). Used for service
+  pillars, outcome cards, process/how-we-work steps, platform-specialist cards, and similar
+  card grids that previously had a per-item icon.
+- **`list-dot.tsx`** — a plain filled dot, replacing the old checkmark (`DoodleCheck`) as a
+  checklist bullet. Deliberately not a checkmark: "check" implies a verification claim, and this
+  site's proof policy (§4) is specifically careful about not implying verification that hasn't
+  happened. A neutral dot avoids that reading entirely.
+
+Where a numbered card grid already displayed a number elsewhere (e.g. a "STEP 01" label next to
+an icon), the separate label was removed once the numeral moved into the icon's old slot — don't
+show the same index twice in one card.
+
+**Functional UI icons are unaffected and still fine to use**: `lucide-react`'s `ArrowRight` on
+CTA buttons, shadcn primitives' built-in chevrons/carets (`Select`, `Accordion`, `DropdownMenu`)
+and close buttons (`Dialog`). Those are interactive affordances, not illustration — the no-icons
+policy is about decoration, not standard UI conventions.
+
+The remaining pages outside the original 8-page scope — `app/ai-aeo`, `app/services/website`,
+`app/events/marketing-masterclass`, `app/events/second-brain-ai`, `app/events/vibe-code`,
+`components/event-form.tsx` — have since been migrated too, so the no-icons policy now applies
+site-wide. `components/doodles.tsx` had no remaining imports and was deleted.
+
+## 10. Design System — Animation
+
+Motion lives in three shared files, not redefined per page:
+- **`components/motion.ts`** — `fadeUp`/`stagger` (0.12s stagger, primary marketing pages) and
+  `staggerFast` (0.1s, event/PPC landing pages) framer-motion variants, plus `hoverLift` (a `y:
+  -6` tactile hover applied to the shared card pattern site-wide).
+- **`components/marquee.tsx`** — the infinite horizontal-scroll strip used for the homepage's
+  client-logo rows (contained inside an `overflow-hidden` wrapper — this is a self-contained
+  internal animation, not page-level horizontal scroll, and should stay that way).
+- **`components/animated-stat.tsx`** — count-up-on-scroll-into-view for stat numbers (used on
+  `/client-results`), decimal-aware, animates once.
+
+The homepage hero photo (still present — kept, not removed, in the 2026-08 pass) has a subtle
+scroll-linked scale (`useScroll`/`useTransform`, no new dependency) as its one igloo.inc-style
+depth cue. Don't add parallax/scroll-linked effects to every section — this system uses them
+sparingly, on one or two focal elements, not as a blanket treatment across the page. No
+scroll-jacking, scroll-snap, or programmatic `scrollTo` tied to any of this.
+
+`html, body { overflow-x: hidden }` is set in `styles/globals.css` as a defensive backstop against
+page-level horizontal scroll — new full-bleed or animated elements should still be checked at
+narrow viewports rather than relying on this alone.
+
+## 11. Design System — No Eyebrow Kickers
+
+Small uppercase "kicker" labels above `h1`/`h2` headings were deliberately removed site-wide
+(2026-08). Bold headline-first typography, with no label above it, is the current convention —
+don't reintroduce eyebrow text above headings on new pages. This does not apply to functional
+labels that aren't decorative kickers (e.g. "Also Included," "Challenge/Solution/Results," a
+platform-filter's active-service label) — those stay.

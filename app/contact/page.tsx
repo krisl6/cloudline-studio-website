@@ -5,7 +5,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { DoodleMegaphone, DoodleBolt, DoodleTarget } from "@/components/doodles"
+import { NumberedIndex } from "@/components/sections/numbered-index"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { ContactForm } from "@/components/contact-form"
@@ -19,21 +19,18 @@ export default function ContactPage() {
 
   const contactInfo = [
     {
-      Icon: DoodleMegaphone,
       key: "email" as const,
       title: tt.connect.labels.email,
       value: "hello@cloudline-studio.com",
       link: "mailto:hello@cloudline-studio.com"
     },
     {
-      Icon: DoodleBolt,
       key: "phone" as const,
       title: tt.connect.labels.phone,
       value: "+60 11-2775 5215",
       link: WHATSAPP_URL
     },
     {
-      Icon: DoodleTarget,
       key: "office" as const,
       title: tt.connect.labels.office,
       value: "Pavilion Bukit Jalil",
@@ -118,31 +115,26 @@ export default function ContactPage() {
               viewport={{ once: true }}
               className="grid grid-cols-1 gap-6 md:grid-cols-3"
             >
-              {contactInfo.map((info) => {
-                const Icon = info.Icon
-                return (
-                  <motion.div
-                    key={info.key}
-                    variants={fadeUp}
-                    className="group flex flex-col rounded-2xl border border-border bg-card p-8 text-center transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+              {contactInfo.map((info, i) => (
+                <motion.div
+                  key={info.key}
+                  variants={fadeUp}
+                  className="group flex flex-col rounded-2xl border border-border bg-card p-8 text-center transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                >
+                  <NumberedIndex index={i} className="mx-auto" />
+                  <h3 className="font-display text-xl font-semibold mt-6 mb-2">{info.title}</h3>
+                  <p className="text-sm text-muted-foreground mb-6">{info.value}</p>
+                  <Button
+                    variant="outline"
+                    className="mt-auto rounded-full font-medium border-border bg-transparent hover:bg-muted"
+                    asChild
                   >
-                    <span className="mx-auto inline-flex size-12 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                      <Icon className="size-7" />
-                    </span>
-                    <h3 className="font-display text-xl font-semibold mt-6 mb-2">{info.title}</h3>
-                    <p className="text-sm text-muted-foreground mb-6">{info.value}</p>
-                    <Button
-                      variant="outline"
-                      className="mt-auto rounded-full font-medium border-border bg-transparent hover:bg-muted"
-                      asChild
-                    >
-                      <Link href={info.link} target={info.link.startsWith('http') ? '_blank' : undefined}>
-                        {tt.connect.contactVia} {info.title}
-                      </Link>
-                    </Button>
-                  </motion.div>
-                )
-              })}
+                    <Link href={info.link} target={info.link.startsWith('http') ? '_blank' : undefined}>
+                      {tt.connect.contactVia} {info.title}
+                    </Link>
+                  </Button>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -248,7 +240,6 @@ export default function ContactPage() {
               <div className="mt-10 text-center">
                 <div className="inline-block rounded-2xl border border-border bg-card p-8">
                   <div className="flex items-center justify-center gap-3 mb-3">
-                    <DoodleTarget className="size-6 text-primary" />
                     <h3 className="font-display text-lg font-semibold">{tt.map.addressTitle}</h3>
                   </div>
                   <p className="text-sm text-muted-foreground">

@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { DoodleCheck } from "@/components/doodles"
+import { ListDot } from "@/components/sections/list-dot"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { translations as pricingTranslations } from "@/app/pricing/translations"
@@ -222,7 +222,7 @@ export default function WebsiteServicePage() {
             >
               {pricingFeatures.map((feature) => (
                 <motion.li key={feature} variants={fadeUp} className="flex items-start gap-2.5 text-sm sm:text-base text-foreground/80 leading-relaxed">
-                  <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <ListDot className="mt-2" />
                   <span>{feature}</span>
                 </motion.li>
               ))}

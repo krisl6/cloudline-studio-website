@@ -8,7 +8,7 @@ import { ArrowRight, CalendarDays, Clock, MapPin, Navigation } from "lucide-reac
 import { Button } from "@/components/ui/button"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { DoodleCheck } from "@/components/doodles"
+import { ListDot } from "@/components/sections/list-dot"
 import { useLanguage } from "@/components/language-provider"
 import { WHATSAPP_URL } from "@/lib/site"
 import { translations } from "./translations"
@@ -281,7 +281,7 @@ function ChecklistItems({ items, delayBase = 0, twoCol = false }: { items: reado
           transition={{ duration: 0.4, delay: delayBase + i * 0.05 }}
           className="flex items-start gap-2.5 text-sm text-foreground/80 leading-relaxed"
         >
-          <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+          <ListDot className="mt-2" />
           <span>{item}</span>
         </motion.li>
       ))}
@@ -406,7 +406,7 @@ export default function VibeCodingWithClaudePage() {
               <p className="text-xs font-semibold tracking-[0.1em] uppercase text-muted-foreground w-full mb-1">{tt.included.heading}</p>
               {tt.included.items.map((item) => (
                 <span key={item} className="inline-flex items-center gap-1.5 text-xs sm:text-sm text-foreground/70">
-                  <DoodleCheck className="size-3.5 shrink-0 text-primary" />
+                  <ListDot />
                   {item}
                 </span>
               ))}
@@ -589,7 +589,7 @@ export default function VibeCodingWithClaudePage() {
             <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-3 sm:grid-cols-2 max-w-3xl">
               {tt.takeaways.items.map((item) => (
                 <motion.div key={item} variants={fadeUp} whileHover={{ y: -3 }} className="flex items-start gap-3 rounded-xl border border-border bg-card px-4 py-3.5 transition-shadow hover:shadow-md">
-                  <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                  <ListDot className="mt-1.5" />
                   <span className="text-sm font-medium">{item}</span>
                 </motion.div>
               ))}

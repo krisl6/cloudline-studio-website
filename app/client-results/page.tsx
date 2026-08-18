@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Star, ArrowRight, Quote } from "lucide-react"
 import Link from "next/link"
-import { DoodleGrowth, DoodleCoins, DoodleHeart, DoodleTarget } from "@/components/doodles"
+import { NumberedIndex } from "@/components/sections/numbered-index"
 import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { WHATSAPP_URL } from "@/lib/site"
@@ -69,10 +69,10 @@ export default function ClientResultsPage() {
   ]
 
   const overallStats = [
-    { number: "3.5x", label: tt.stats.items.brandSolutions, icon: <DoodleGrowth className="size-6" /> },
-    { number: "4.9x", label: tt.stats.items.averageGrowth, icon: <DoodleCoins className="size-6" /> },
-    { number: "25+", label: tt.stats.items.happyClients, icon: <DoodleHeart className="size-6" /> },
-    { number: "95%", label: tt.stats.items.successRate, icon: <DoodleTarget className="size-6" /> }
+    { number: "3.5x", label: tt.stats.items.brandSolutions },
+    { number: "4.9x", label: tt.stats.items.averageGrowth },
+    { number: "25+", label: tt.stats.items.happyClients },
+    { number: "95%", label: tt.stats.items.successRate }
   ]
 
   return (
@@ -142,11 +142,6 @@ export default function ClientResultsPage() {
                 viewport={{ once: true }}
                 whileHover={hoverLift}
               >
-                <div className="flex justify-center mb-5">
-                  <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                    {stat.icon}
-                  </span>
-                </div>
                 <div className="font-display text-3xl lg:text-4xl font-semibold tracking-tight mb-2">
                   <AnimatedStatValue value={stat.number} />
                 </div>
@@ -285,30 +280,25 @@ export default function ClientResultsPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                Icon: DoodleGrowth,
                 title: tt.socialProof.cards.analytics.title,
                 body: tt.socialProof.cards.analytics.body,
               },
               {
-                Icon: DoodleCoins,
                 title: tt.socialProof.cards.sales.title,
                 body: tt.socialProof.cards.sales.body,
               },
               {
-                Icon: DoodleTarget,
                 title: tt.socialProof.cards.tracking.title,
                 body: tt.socialProof.cards.tracking.body,
               },
-            ].map(({ Icon, title, body }) => (
+            ].map(({ title, body }, i) => (
               <motion.div
                 key={title}
                 whileHover={hoverLift}
                 className="rounded-2xl border border-border bg-card p-8 text-center transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
               >
                 <div className="flex justify-center mb-5">
-                  <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary">
-                    <Icon className="size-6" />
-                  </span>
+                  <NumberedIndex index={i} className="size-11 text-base" />
                 </div>
                 <h3 className="font-display text-lg font-semibold tracking-tight mb-2">{title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{body}</p>

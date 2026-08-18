@@ -9,19 +9,8 @@ import { useLanguage } from "@/components/language-provider"
 import { translations } from "./translations"
 import { TeamGallery } from "@/components/team-gallery"
 import { AudioPlayer } from "@/components/audio-player"
-import {
-  DoodleTrophy,
-  DoodlePen,
-  DoodleSparkle,
-  DoodleHeart,
-  DoodleSearch,
-  DoodleRocket,
-  DoodleGrowth,
-  DoodleTarget,
-  DoodleGear,
-  DoodleCheck,
-  DoodleTransform,
-} from "@/components/doodles"
+import { NumberedIndex } from "@/components/sections/numbered-index"
+import { ListDot } from "@/components/sections/list-dot"
 
 import { fadeUp, stagger, hoverLift } from "@/components/motion"
 
@@ -39,10 +28,6 @@ const founderInitials = founder.name
   .toUpperCase()
 
 const hasFounderPhoto = typeof founder.photoUrl === "string" && founder.photoUrl.trim().length > 0
-
-const statIcons = [DoodleTrophy, DoodlePen, DoodleSparkle, DoodleHeart]
-const howWeWorkIcons = [DoodleSearch, DoodlePen, DoodleRocket, DoodleGrowth]
-const outcomeIcons = [DoodleTarget, DoodleSparkle, DoodleGrowth, DoodleGear, DoodlePen]
 
 export default function AboutPage() {
   const { lang } = useLanguage()
@@ -178,7 +163,7 @@ export default function AboutPage() {
                 <ul className="space-y-3.5 mb-9">
                   {tt.founder.highlights.map((highlight) => (
                     <li key={highlight} className="flex items-start gap-3 text-foreground/85">
-                      <DoodleCheck className="mt-1 size-4 shrink-0 text-primary" />
+                      <ListDot className="mt-2" />
                       <span className="leading-relaxed">{highlight}</span>
                     </li>
                   ))}
@@ -247,24 +232,18 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="grid grid-cols-2 lg:grid-cols-4 gap-6"
             >
-              {tt.stats.items.map((stat, i) => {
-                const Icon = statIcons[i]
-                return (
-                  <motion.div
-                    key={stat.label}
-                    variants={fadeUp}
-                    className="rounded-2xl border border-border bg-card p-7 text-center"
-                  >
-                    <span className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary mb-5">
-                      <Icon className="size-6" />
-                    </span>
-                    <div className="font-display text-3xl lg:text-4xl font-semibold tracking-tight mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
-                  </motion.div>
-                )
-              })}
+              {tt.stats.items.map((stat) => (
+                <motion.div
+                  key={stat.label}
+                  variants={fadeUp}
+                  className="rounded-2xl border border-border bg-card p-7 text-center"
+                >
+                  <div className="font-display text-3xl lg:text-4xl font-semibold tracking-tight mb-2">
+                    {stat.number}
+                  </div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </section>
@@ -375,7 +354,7 @@ export default function AboutPage() {
                   <div className="grid grid-cols-2 gap-2.5">
                     {service.features.map((feature) => (
                       <div key={feature} className="flex items-center gap-2.5 text-sm text-foreground/80">
-                        <DoodleCheck className="size-4 shrink-0 text-primary" />
+                        <ListDot />
                         <span>{feature}</span>
                       </div>
                     ))}
@@ -404,30 +383,20 @@ export default function AboutPage() {
             </motion.div>
 
             <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
-              {tt.howWeWork.steps.map((step, i) => {
-                const Icon = howWeWorkIcons[i]
-                return (
-                  <motion.div
-                    key={step.title}
-                    variants={fadeUp}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: i * 0.1 }}
-                  >
-                    <div className="flex items-center gap-4 mb-5">
-                      <span className="inline-flex size-12 items-center justify-center rounded-xl border border-border text-primary">
-                        <Icon className="size-7" />
-                      </span>
-                      <span className="font-display text-sm font-medium tracking-widest text-muted-foreground">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <h3 className="font-display text-lg font-semibold mb-3">{step.title}</h3>
-                    <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
-                  </motion.div>
-                )
-              })}
+              {tt.howWeWork.steps.map((step, i) => (
+                <motion.div
+                  key={step.title}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: i * 0.1 }}
+                >
+                  <NumberedIndex index={i} className="mb-5 rounded-xl border border-border bg-transparent" />
+                  <h3 className="font-display text-lg font-semibold mb-3">{step.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{step.description}</p>
+                </motion.div>
+              ))}
             </div>
           </div>
         </section>
@@ -474,7 +443,7 @@ export default function AboutPage() {
                   <ul className="mt-auto space-y-2.5">
                     {phase.details.map((detail) => (
                       <li key={detail} className="flex items-start gap-2.5 text-sm text-foreground/80">
-                        <DoodleCheck className="mt-0.5 size-4 shrink-0 text-primary" />
+                        <ListDot className="mt-1.5" />
                         <span>{detail}</span>
                       </li>
                     ))}
@@ -490,9 +459,6 @@ export default function AboutPage() {
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-3xl text-center mt-14 rounded-2xl border border-border bg-card p-8"
             >
-              <div className="inline-flex size-11 items-center justify-center rounded-xl bg-primary/8 text-primary mb-5">
-                <DoodleTransform className="size-6" />
-              </div>
               <h3 className="font-display text-xl md:text-2xl font-semibold tracking-tight mb-3">
                 {tt.journey.resultTitle}
               </h3>
@@ -570,9 +536,7 @@ export default function AboutPage() {
                 <div className="space-y-6">
                   {tt.consultation.cover.map((item) => (
                     <div key={item.title} className="flex gap-4">
-                      <span className="inline-flex size-8 items-center justify-center rounded-full bg-primary/8 text-primary shrink-0 mt-0.5">
-                        <DoodleCheck className="size-4" />
-                      </span>
+                      <ListDot className="mt-2.5 shrink-0" />
                       <div>
                         <h4 className="font-display font-semibold mb-1.5">{item.title}</h4>
                         <p className="text-muted-foreground leading-relaxed">{item.description}</p>
@@ -593,20 +557,15 @@ export default function AboutPage() {
                 </h3>
                 <div className="rounded-2xl border border-border bg-card p-8">
                   <div className="space-y-6">
-                    {tt.consultation.outcomes.map((outcome, i) => {
-                      const Icon = outcomeIcons[i]
-                      return (
-                        <div key={outcome.title} className="flex gap-4 items-start">
-                          <span className="inline-flex size-9 items-center justify-center rounded-xl bg-primary/8 text-primary shrink-0">
-                            <Icon className="size-5" />
-                          </span>
-                          <div>
-                            <h4 className="font-display font-semibold mb-1">{outcome.title}</h4>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{outcome.description}</p>
-                          </div>
+                    {tt.consultation.outcomes.map((outcome, i) => (
+                      <div key={outcome.title} className="flex gap-4 items-start">
+                        <NumberedIndex index={i} className="size-9 shrink-0 text-sm" />
+                        <div>
+                          <h4 className="font-display font-semibold mb-1">{outcome.title}</h4>
+                          <p className="text-sm text-muted-foreground leading-relaxed">{outcome.description}</p>
                         </div>
-                      )
-                    })}
+                      </div>
+                    ))}
                   </div>
                 </div>
 
