@@ -45,6 +45,8 @@ const clients = [
   { name: "Vyne", logo: "/vyne-logo.png" },
 ]
 
+const NICHE_LINKS = ["/case-studies/branding", "/case-studies/branding", "/case-studies/seo", "/case-studies"]
+
 import { fadeUp, stagger, hoverLift } from "@/components/motion"
 
 export default function HomePage() {
@@ -391,6 +393,54 @@ export default function HomePage() {
                   <NumberedIndex index={i} className="size-11 text-base" />
                   <h3 className="font-display text-lg font-semibold mt-5 mb-2">{outcome.title}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">{outcome.description}</p>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Niches */}
+        <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Industries we work with">
+          <div className="container px-4 md:px-6">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="max-w-3xl mb-14"
+            >
+              <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">
+                {t.niches.heading}
+              </h2>
+              <p className="text-muted-foreground md:text-lg leading-relaxed">{t.niches.subcopy}</p>
+            </motion.div>
+
+            <motion.div
+              variants={stagger}
+              initial="hidden"
+              whileInView="show"
+              viewport={{ once: true }}
+              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+            >
+              {t.niches.items.map((niche, i) => (
+                <motion.div
+                  key={niche.title}
+                  variants={fadeUp}
+                  whileHover={hoverLift}
+                  className="flex flex-col rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                >
+                  <NumberedIndex index={i} className="size-11 text-base" />
+                  <h3 className="font-display text-lg font-semibold mt-5 mb-2">{niche.title}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed mb-4">{niche.description}</p>
+                  <p className="text-sm text-foreground/80 leading-relaxed mb-4">{niche.proof}</p>
+                  <Link
+                    href={NICHE_LINKS[i]}
+                    className="mt-auto inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:underline"
+                  >
+                    {niche.linkLabel}
+                    <ArrowRight className="size-4" />
+                  </Link>
                 </motion.div>
               ))}
             </motion.div>

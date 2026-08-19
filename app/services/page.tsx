@@ -270,7 +270,7 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        {/* Customer funnels, B2B / B2C timeline */}
+        {/* Customer funnel timeline */}
         <FunnelTimeline />
 
         {/* FAQ */}

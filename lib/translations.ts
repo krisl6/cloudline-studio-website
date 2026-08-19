@@ -99,6 +99,42 @@ export const translations = {
         { title: "Effortless referrals", description: "When the experience is excellent end to end, your customers do the selling for you." },
       ],
     },
+    niches: {
+      heading: "Built for how your industry actually sells",
+      subcopy:
+        "The same five services flex to fit how your buyers decide, whether that's a checkout button or a six-month procurement cycle.",
+      items: [
+        {
+          title: "Ecommerce & D2C",
+          description:
+            "From performance campaigns to checkout and post-purchase lifecycle, we apply Digital Marketing & Branding and Marketing & Sales Digital Transformation to turn traffic into repeat revenue.",
+          proof: "Oxwhite refreshed their brand identity and lowered acquisition cost working with us.",
+          linkLabel: "See ecommerce work",
+        },
+        {
+          title: "B2B Enterprise",
+          description:
+            "Longer sales cycles and more stakeholders call for Interdepartmental Synchronization and Marketing & Sales Digital Transformation: shared systems, clear ownership, and one pipeline every team can see.",
+          proof: "We've run engagement-led work inside enterprise organizations, including Celcom.",
+          linkLabel: "See enterprise work",
+        },
+        {
+          title: "Education",
+          description:
+            "For course platforms and EdTech, SEO & AI Search (AEO) paired with Digital Marketing & Branding builds visibility that compounds, so students find you before they compare you.",
+          proof: "TigerCampus's year on continuous SEO shows how fast that visibility erodes the moment work stops.",
+          linkLabel: "See education work",
+        },
+        {
+          title: "Healthcare & Aesthetics",
+          description:
+            "Clinics run on trust and operations. Consultation and Interdepartmental Synchronization unify booking, CRM, and follow-up so patient experience and revenue grow together.",
+          proof:
+            "Lasus Plastic Surgery Clinic cut roughly RM 250K in redundant subscriptions a month while lifting bookings and revenue 35% in under 4 months.",
+          linkLabel: "See healthcare work",
+        },
+      ],
+    },
     process: {
       eyebrow: "How we work",
       heading: "A clear, three-step path from diagnosis to results",
@@ -233,6 +269,42 @@ export const translations = {
         { title: "Rujukan tanpa usaha", description: "Apabila pengalaman cemerlang dari mula hingga akhir, pelanggan anda yang menjual untuk anda." },
       ],
     },
+    niches: {
+      heading: "Dibina mengikut cara industri anda benar-benar menjual",
+      subcopy:
+        "Lima perkhidmatan yang sama menyesuaikan diri dengan cara pembeli anda membuat keputusan, sama ada butang bayar sekarang atau kitaran perolehan enam bulan.",
+      items: [
+        {
+          title: "E-dagang & D2C",
+          description:
+            "Dari kempen berprestasi hingga bayaran dan kitaran hayat selepas pembelian, kami menggunakan Pemasaran Digital & Penjenamaan serta Transformasi Digital Pemasaran & Jualan untuk menukar trafik kepada hasil berulang.",
+          proof: "Oxwhite menyegarkan identiti jenama dan menurunkan kos perolehan pelanggan bersama kami.",
+          linkLabel: "Lihat kerja e-dagang",
+        },
+        {
+          title: "B2B Perusahaan",
+          description:
+            "Kitaran jualan yang lebih panjang dan lebih ramai pihak berkepentingan memerlukan Penyegerakan Antara Jabatan serta Transformasi Digital Pemasaran & Jualan: sistem dikongsi, pemilikan jelas, dan satu saluran jualan yang setiap pasukan dapat lihat.",
+          proof: "Kami telah menjalankan kerja penglibatan dalam organisasi perusahaan, termasuk Celcom.",
+          linkLabel: "Lihat kerja perusahaan",
+        },
+        {
+          title: "Pendidikan",
+          description:
+            "Untuk platform kursus dan EdTech, SEO & Carian AI (AEO) bersama Pemasaran Digital & Penjenamaan membina keterlihatan yang berganda, supaya pelajar menemui anda sebelum membandingkan.",
+          proof: "Setahun TigerCampus pada SEO berterusan menunjukkan betapa cepat keterlihatan itu pupus sebaik sahaja kerja dihentikan.",
+          linkLabel: "Lihat kerja pendidikan",
+        },
+        {
+          title: "Penjagaan Kesihatan & Estetik",
+          description:
+            "Klinik bergantung pada kepercayaan dan operasi. Konsultasi serta Penyegerakan Antara Jabatan menyatukan tempahan, CRM, dan susulan supaya pengalaman pesakit dan hasil berkembang bersama.",
+          proof:
+            "Klinik Pembedahan Plastik Lasus mengurangkan sekitar RM 250K langganan berlebihan sebulan sambil meningkatkan tempahan dan hasil sebanyak 35% dalam masa kurang 4 bulan.",
+          linkLabel: "Lihat kerja penjagaan kesihatan",
+        },
+      ],
+    },
     process: {
       eyebrow: "Cara kami bekerja",
       heading: "Laluan tiga langkah yang jelas dari diagnosis ke hasil",
@@ -364,6 +436,41 @@ export const translations = {
         { title: "更快的销售周期", description: "当价值清晰、销售漏斗自动化时，潜在客户决策更快。" },
         { title: "行业认可", description: "成为您领域中的不二之选, 人们引用并推荐的名字。" },
         { title: "轻松的口碑转介", description: "当全程体验都出色时，您的客户会主动为您带来新客户。" },
+      ],
+    },
+    niches: {
+      heading: "贴合您所在行业真实的销售方式而打造",
+      subcopy: "同样的五项服务会灵活调整，以匹配买家的决策方式，无论是一次结账，还是长达六个月的采购流程。",
+      items: [
+        {
+          title: "电商与 D2C",
+          description:
+            "从效果广告到结账与购后生命周期，我们运用数字营销与品牌建设及营销与销售数字化转型，把流量转化为复购营收。",
+          proof: "Oxwhite 与我们一起焕新了品牌形象并降低了获客成本。",
+          linkLabel: "查看电商案例",
+        },
+        {
+          title: "B2B 企业",
+          description:
+            "更长的销售周期与更多利益相关方，需要跨部门协同与营销与销售数字化转型: 共享系统、明确的责任归属，以及每个团队都能看到的同一条销售管道。",
+          proof: "我们已在包括 Celcom 在内的企业组织内开展过深度合作项目。",
+          linkLabel: "查看企业案例",
+        },
+        {
+          title: "教育",
+          description:
+            "对课程平台与 EdTech 而言，SEO 与 AI 搜索优化 (AEO) 搭配数字营销与品牌建设，能建立持续累积的曝光，让学生在比较之前先找到您。",
+          proof: "TigerCampus 一年的持续 SEO 投入证明了，一旦停止投入，曝光度会迅速流失。",
+          linkLabel: "查看教育案例",
+        },
+        {
+          title: "医疗与美容",
+          description:
+            "诊所依赖信任与运营。咨询与跨部门协同统一了预约、CRM 与跟进流程，让患者体验与营收同步增长。",
+          proof:
+            "Lasus 整形外科诊所每月削减约 RM 250K 的冗余订阅费用，同时在不到 4 个月内将预约量与营收提升了 35%。",
+          linkLabel: "查看医疗案例",
+        },
       ],
     },
     process: {
