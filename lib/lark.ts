@@ -29,7 +29,8 @@ async function getFieldNames(baseToken: string, tableId: string, token: string):
   )
   const data = await res.json().catch(() => ({}))
   if (data.code !== 0) return null
-  return (data.data?.items || []).map((f: any) => f.field_name as string)
+  const items = (data.data?.items || []) as { field_name: string }[]
+  return items.map((f) => f.field_name)
 }
 
 // Creates a record, matching keys to the table's real columns case-insensitively
