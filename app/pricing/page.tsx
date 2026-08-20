@@ -11,6 +11,7 @@ import { translations } from "./translations"
 import { WHATSAPP_URL } from "@/lib/site"
 
 import { fadeUp, stagger, hoverLift } from "@/components/motion"
+import { carouselTrack, carouselItem } from "@/components/carousel"
 
 export default function PricingPage() {
   const { lang } = useLanguage()
@@ -96,14 +97,14 @@ export default function PricingPage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
+              className={`${carouselTrack} sm:gap-6 sm:grid-cols-2 xl:grid-cols-4`}
             >
               {pricingPlans.map((plan) => (
                 <motion.div
                   key={plan.name}
                   variants={fadeUp}
                   whileHover={hoverLift}
-                  className={`group relative flex h-full flex-col rounded-2xl border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)] ${
+                  className={`${carouselItem} w-[85%] max-w-xs group relative flex h-full flex-col rounded-2xl border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)] ${
                     plan.popular ? "border-primary ring-1 ring-primary/20" : "border-border"
                   }`}
                 >

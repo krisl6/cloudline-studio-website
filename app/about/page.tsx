@@ -1,8 +1,9 @@
 "use client"
 
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion"
 import { ArrowRight, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useLanguage } from "@/components/language-provider"
@@ -11,14 +12,24 @@ import { TeamGallery } from "@/components/team-gallery"
 import { AudioPlayer } from "@/components/audio-player"
 import { NumberedIndex } from "@/components/sections/numbered-index"
 import { ListDot } from "@/components/sections/list-dot"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 import { fadeUp, stagger, hoverLift } from "@/components/motion"
+import { carouselTrack, carouselItem } from "@/components/carousel"
 
 const founder = {
   name: "Kristine Ling",
   website: "https://kristinelingg.com",
   photoUrl: "/team-kristine.jpg",
 }
+
+// Hero carousel — real event/workshop photos, distinct from the homepage's set.
+const heroImages = [
+  { src: "/team-retreat.jpg", alt: "The CloudLine Studio team offsite" },
+  { src: "/event-photo-ai-workshop-1.jpg", alt: "CloudLine Studio running an AI workshop" },
+  { src: "/workshop-infinity8-1.jpg", alt: "CloudLine Studio hosting a workshop at Infinity8" },
+  { src: "/event-photo-ai-build-1.jpg", alt: "Participants building with AI at a CloudLine Studio workshop" },
+]
 
 const founderInitials = founder.name
   .split(" ")
@@ -32,6 +43,20 @@ const hasFounderPhoto = typeof founder.photoUrl === "string" && founder.photoUrl
 export default function AboutPage() {
   const { lang } = useLanguage()
   const tt = translations[lang]
+  const [heroIndex, setHeroIndex] = useState(0)
+  const heroImageRef = useRef<HTMLDivElement>(null)
+  const { scrollYProgress: heroScrollProgress } = useScroll({
+    target: heroImageRef,
+    offset: ["start start", "end start"],
+  })
+  const heroImageScale = useTransform(heroScrollProgress, [0, 1], [1, 1.08])
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setHeroIndex((i) => (i + 1) % heroImages.length)
+    }, 4500)
+    return () => clearInterval(id)
+  }, [])
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-background text-foreground">
@@ -53,10 +78,20 @@ export default function AboutPage() {
               </motion.h1>
               <motion.p
                 variants={fadeUp}
-                className="mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-9"
+                className="mx-auto max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed mb-6"
               >
                 {tt.hero.subcopy}
               </motion.p>
+              <motion.div variants={fadeUp} className="flex flex-wrap justify-center gap-2 mb-9">
+                {tt.whatWeDo.services.map((service) => (
+                  <span
+                    key={service.title}
+                    className="rounded-full border border-border bg-muted px-3.5 py-1.5 text-xs font-medium text-foreground/80"
+                  >
+                    {service.title}
+                  </span>
+                ))}
+              </motion.div>
               <motion.div variants={fadeUp} className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
                 <Button size="lg" className="rounded-full h-12 px-7 text-base font-medium" asChild>
                   <Link href="/contact">
@@ -72,6 +107,68 @@ export default function AboutPage() {
                 >
                   <Link href="/case-studies">{tt.hero.ctaSecondary}</Link>
                 </Button>
+              </motion.div>
+            </motion.div>
+
+            {/* Feature image */}
+            <motion.div
+              initial={{ opacity: 0, y: 32 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="relative mx-auto mt-16 max-w-5xl"
+            >
+              <motion.div
+                ref={heroImageRef}
+                style={{ scale: heroImageScale }}
+                className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-border shadow-[0_24px_70px_-30px_rgba(20,30,55,0.35)] bg-muted"
+              >
+                <AnimatePresence mode="sync">
+                  <motion.div
+                    key={heroIndex}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1.1, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                  >
+                    <Image
+                      src={heroImages[heroIndex].src}
+                      alt={heroImages[heroIndex].alt}
+                      fill
+                      sizes="(max-width: 1024px) 100vw, 1024px"
+                      className="object-cover"
+                      priority={heroIndex === 0}
+                    />
+                  </motion.div>
+                </AnimatePresence>
+                {/* Carousel dots */}
+                <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+                  {heroImages.map((img, i) => (
+                    <button
+                      key={img.src}
+                      type="button"
+                      aria-label={`Show slide ${i + 1}`}
+                      onClick={() => setHeroIndex(i)}
+                      className={`h-1.5 rounded-full transition-all duration-300 ${
+                        i === heroIndex ? "w-6 bg-white" : "w-1.5 bg-white/60 hover:bg-white/80"
+                      }`}
+                    />
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Floating stat card — real, existing figures (also shown
+                  below in the Stats section), not a new claim. */}
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="absolute -bottom-6 left-6 hidden sm:flex items-center gap-3 rounded-2xl border border-border bg-card/95 backdrop-blur px-5 py-4 shadow-[0_20px_50px_-20px_rgba(20,30,55,0.35)]"
+              >
+                <span className="font-serif text-2xl font-semibold text-primary">{tt.stats.items[0].number}</span>
+                <span className="max-w-[9rem] text-xs leading-snug text-muted-foreground">
+                  {tt.stats.items[0].label.toLowerCase()} · {tt.stats.items[1].number} {tt.stats.items[1].label.toLowerCase()}
+                </span>
               </motion.div>
             </motion.div>
           </div>
@@ -342,14 +439,14 @@ export default function AboutPage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="grid gap-6 md:grid-cols-2"
+              className={`${carouselTrack} sm:gap-6 md:grid-cols-2`}
             >
               {tt.whatWeDo.services.map((service) => (
                 <motion.div
                   key={service.title}
                   variants={fadeUp}
                   whileHover={hoverLift}
-                  className="rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                  className={`${carouselItem} w-[82%] max-w-xs rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]`}
                 >
                   <h3 className="font-display text-xl font-semibold mb-3">{service.title}</h3>
                   <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
@@ -536,17 +633,21 @@ export default function AboutPage() {
                 <h3 className="font-display text-2xl font-semibold tracking-tight mb-8">
                   {tt.consultation.coverTitle}
                 </h3>
-                <div className="space-y-6">
-                  {tt.consultation.cover.map((item) => (
-                    <div key={item.title} className="flex gap-4">
-                      <ListDot className="mt-2.5 shrink-0" />
-                      <div>
-                        <h4 className="font-display font-semibold mb-1.5">{item.title}</h4>
-                        <p className="text-muted-foreground leading-relaxed">{item.description}</p>
-                      </div>
-                    </div>
+                <Accordion type="multiple" className="w-full">
+                  {tt.consultation.cover.map((item, i) => (
+                    <AccordionItem key={item.title} value={`cover-${i}`} className="border-b border-border">
+                      <AccordionTrigger className="text-left font-display font-semibold hover:no-underline text-foreground">
+                        <span className="flex items-center gap-3">
+                          <ListDot className="shrink-0" />
+                          {item.title}
+                        </span>
+                      </AccordionTrigger>
+                      <AccordionContent className="pl-[1.375rem] text-muted-foreground leading-relaxed">
+                        {item.description}
+                      </AccordionContent>
+                    </AccordionItem>
                   ))}
-                </div>
+                </Accordion>
               </motion.div>
 
               <motion.div
@@ -559,17 +660,25 @@ export default function AboutPage() {
                   {tt.consultation.outcomesTitle}
                 </h3>
                 <div className="rounded-2xl border border-border bg-card p-8">
-                  <div className="space-y-6">
+                  <Accordion type="multiple" className="w-full">
                     {tt.consultation.outcomes.map((outcome, i) => (
-                      <div key={outcome.title} className="flex gap-4 items-start">
-                        <NumberedIndex index={i} className="size-9 shrink-0 text-sm" />
-                        <div>
-                          <h4 className="font-display font-semibold mb-1">{outcome.title}</h4>
-                          <p className="text-sm text-muted-foreground leading-relaxed">{outcome.description}</p>
-                        </div>
-                      </div>
+                      <AccordionItem
+                        key={outcome.title}
+                        value={`outcome-${i}`}
+                        className={i === tt.consultation.outcomes.length - 1 ? "border-b-0" : "border-b border-border"}
+                      >
+                        <AccordionTrigger className="text-left font-display font-semibold hover:no-underline text-foreground">
+                          <span className="flex items-center gap-3">
+                            <NumberedIndex index={i} className="size-9 shrink-0 text-sm" />
+                            {outcome.title}
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="pl-[2.875rem] text-sm text-muted-foreground leading-relaxed">
+                          {outcome.description}
+                        </AccordionContent>
+                      </AccordionItem>
                     ))}
-                  </div>
+                  </Accordion>
                 </div>
 
                 <div className="mt-8 rounded-2xl border border-primary/20 bg-primary/8 p-6">

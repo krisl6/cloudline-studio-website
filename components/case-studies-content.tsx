@@ -11,6 +11,7 @@ import { translations } from "@/app/case-studies/translations"
 import { SERVICE_SLUGS, caseStudies, type PlatformName, type ServiceSlug } from "@/lib/case-studies-data"
 import { WHATSAPP_URL } from "@/lib/site"
 import { fadeUp, hoverLift } from "@/components/motion"
+import { carouselTrack, carouselItem } from "@/components/carousel"
 
 const PLATFORM_SLUGS: Record<PlatformName, ServiceSlug> = Object.fromEntries(
   Object.entries(SERVICE_SLUGS).map(([slug, name]) => [name, slug]),
@@ -88,7 +89,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
               <p className="text-muted-foreground md:text-lg">{tt.services.intro}</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            <div className={`${carouselTrack} sm:gap-6 sm:grid-cols-2 lg:grid-cols-4 mb-10`}>
               {platforms.map((platform, i) => {
                 const isActive = platformFilter === platform.name
                 return (
@@ -100,6 +101,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     whileHover={hoverLift}
+                    className={`${carouselItem} w-[82%] max-w-xs`}
                   >
                     <Link
                       href={`/case-studies/${platform.slug}`}

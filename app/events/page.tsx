@@ -44,6 +44,7 @@ const EVENTS: { name: string; tag: string; desc: string; people: string; outcome
 ]
 
 import { fadeUp, staggerFast as stagger } from "@/components/motion"
+import { carouselTrack, carouselItem } from "@/components/carousel"
 
 // Crossfades through a set of images on an interval (e.g. Claude Workshops: team → workshop every 3s).
 function RotatingImage({ images, alt, intervalMs = 3000 }: { images: string[]; alt: string; intervalMs?: number }) {
@@ -158,9 +159,9 @@ export default function EventsPage() {
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">{tt.included.heading}</h2>
               <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.included.subcopy}</p>
             </motion.div>
-            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className={`${carouselTrack} sm:gap-3 sm:grid-cols-2 lg:grid-cols-4`}>
               {tt.included.items.map((item) => (
-                <motion.div key={item} variants={fadeUp} className="flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3">
+                <motion.div key={item} variants={fadeUp} className={`${carouselItem} w-[65%] max-w-[220px] flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-3`}>
                   <ListDot />
                   <span className="text-sm font-medium">{item}</span>
                 </motion.div>
@@ -248,9 +249,9 @@ export default function EventsPage() {
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">{tt.events.heading}</h2>
               <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.events.subcopy}</p>
             </motion.div>
-            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <motion.div variants={stagger} initial="hidden" whileInView="show" viewport={{ once: true }} className={`${carouselTrack} sm:gap-6 md:grid-cols-2 lg:grid-cols-3`}>
               {EVENTS.map((ev) => (
-                <motion.div key={ev.name} variants={fadeUp} className="flex flex-col overflow-hidden rounded-2xl border border-border bg-card">
+                <motion.div key={ev.name} variants={fadeUp} className={`${carouselItem} w-[85%] max-w-sm flex flex-col overflow-hidden rounded-2xl border border-border bg-card`}>
                   <div className="relative aspect-[4/3] overflow-hidden">
                     {ev.images ? (
                       <RotatingImage images={ev.images} alt={ev.name} />

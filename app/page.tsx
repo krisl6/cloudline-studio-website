@@ -48,6 +48,7 @@ const clients = [
 const NICHE_LINKS = ["/case-studies/branding", "/case-studies/branding", "/case-studies/seo", "/case-studies"]
 
 import { fadeUp, stagger, hoverLift } from "@/components/motion"
+import { carouselTrack, carouselItem } from "@/components/carousel"
 
 export default function HomePage() {
   const { t } = useLanguage()
@@ -189,14 +190,14 @@ export default function HomePage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              className={`${carouselTrack} sm:gap-6 sm:grid-cols-2 lg:grid-cols-3`}
             >
               {t.services.pillars.map((pillar, i) => (
                 <motion.div
                   key={pillar.name}
                   variants={fadeUp}
                   whileHover={hoverLift}
-                  className="group flex flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                  className={`${carouselItem} w-[82%] max-w-xs group flex flex-col rounded-2xl border border-border bg-card p-8 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]`}
                 >
                   <NumberedIndex index={i} />
                   <h3 className="font-display text-xl font-semibold mt-6 mb-3">{pillar.name}</h3>
@@ -381,14 +382,14 @@ export default function HomePage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
+              className={`${carouselTrack} sm:gap-6 sm:grid-cols-2 lg:grid-cols-3`}
             >
               {t.outcomes.items.map((outcome, i) => (
                 <motion.div
                   key={outcome.title}
                   variants={fadeUp}
                   whileHover={hoverLift}
-                  className="rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                  className={`${carouselItem} w-[82%] max-w-xs rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]`}
                 >
                   <NumberedIndex index={i} className="size-11 text-base" />
                   <h3 className="font-display text-lg font-semibold mt-5 mb-2">{outcome.title}</h3>
@@ -421,14 +422,14 @@ export default function HomePage() {
               initial="hidden"
               whileInView="show"
               viewport={{ once: true }}
-              className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+              className={`${carouselTrack} sm:gap-6 sm:grid-cols-2 lg:grid-cols-4`}
             >
               {t.niches.items.map((niche, i) => (
                 <motion.div
                   key={niche.title}
                   variants={fadeUp}
                   whileHover={hoverLift}
-                  className="flex flex-col rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"
+                  className={`${carouselItem} w-[82%] max-w-xs flex flex-col rounded-2xl border border-border bg-card p-7 transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]`}
                 >
                   <NumberedIndex index={i} className="size-11 text-base" />
                   <h3 className="font-display text-lg font-semibold mt-5 mb-2">{niche.title}</h3>
