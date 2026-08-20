@@ -127,7 +127,7 @@ export function ContactForm() {
   }
 
   const inputCls =
-    "mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
+    "mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-base outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
   const labelCls = "block text-sm font-medium text-center mb-0.5"
 
   return (
@@ -182,7 +182,7 @@ export function ContactForm() {
           <select
             value={budget}
             onChange={e => setBudget(e.target.value)}
-            className="w-full appearance-none rounded-xl border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30 pr-10"
+            className="w-full appearance-none rounded-xl border border-border bg-background px-4 py-2.5 text-base outline-none focus:border-primary focus:ring-2 focus:ring-ring/30 pr-10"
           >
             <option value="" disabled>{tt.budgetPh}</option>
             {budgets.map(b => (

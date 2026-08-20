@@ -100,7 +100,7 @@ export function EventForm() {
   }
 
   const inputCls =
-    "mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
+    "mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-base outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
 
   return (
     <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-6 sm:p-8 space-y-5">
@@ -115,7 +115,7 @@ export function EventForm() {
             <select
               name="countryCode"
               defaultValue="+60"
-              className="rounded-l-xl rounded-r-none border border-r-0 border-border bg-muted px-2 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
+              className="rounded-l-xl rounded-r-none border border-r-0 border-border bg-muted px-2 py-2.5 text-base outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
             >
               <option value="+60">+60</option>
               <option value="+65">+65</option>
@@ -134,7 +134,7 @@ export function EventForm() {
               type="tel"
               name="phone"
               autoComplete="tel-national"
-              className="w-full rounded-r-xl rounded-l-none border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
+              className="w-full rounded-r-xl rounded-l-none border border-border bg-background px-4 py-2.5 text-base outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
               placeholder={tt.phonePh}
             />
           </div>

@@ -18,8 +18,8 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-background/50 backdrop-blur-lg" role="contentinfo">
       <div className="container px-4 md:px-6 py-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
-          <div className="space-y-1">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-x-3 gap-y-4 md:gap-4">
+          <div className="col-span-2 md:col-span-1 space-y-1">
             <Link href="/" className="flex items-center gap-2 font-bold">
               <span className="font-display text-base font-semibold tracking-tight text-foreground">
                 CloudLine Studio
@@ -28,12 +28,15 @@ export function Footer() {
             <p className="text-xs text-muted-foreground">{t.footer.tagline}</p>
           </div>
 
-          <div className="hidden md:block">
+          <div>
             <h3 className="text-xs font-semibold mb-1.5">{t.footer.servicesTitle}</h3>
-            <ul className="space-y-0.5">
+            <ul className="space-y-1.5 md:space-y-0.5">
               {t.footer.services.map((label, i) => (
                 <li key={label}>
-                  <Link href={serviceLinks[i]} className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                  <Link
+                    href={serviceLinks[i]}
+                    className="inline-block py-0.5 text-xs text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {label}
                   </Link>
                 </li>
@@ -41,12 +44,15 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="hidden md:block">
+          <div>
             <h3 className="text-xs font-semibold mb-1.5">{t.footer.companyTitle}</h3>
-            <ul className="space-y-0.5">
+            <ul className="space-y-1.5 md:space-y-0.5">
               {t.footer.company.map((label, i) => (
                 <li key={label}>
-                  <Link href={companyLinks[i]} className="text-xs text-muted-foreground hover:text-primary transition-colors">
+                  <Link
+                    href={companyLinks[i]}
+                    className="inline-block py-0.5 text-xs text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {label}
                   </Link>
                 </li>

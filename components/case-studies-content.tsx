@@ -189,6 +189,7 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                           src={study.image || "/placeholder.svg"}
                           alt={study.title}
                           fill
+                          sizes="(max-width: 1024px) 100vw, 50vw"
                           className="object-cover"
                         />
                       </div>

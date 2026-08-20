@@ -92,7 +92,7 @@ export function AuditForm({ niche, abVariant = "A", interest }: AuditFormProps) 
     )
   }
 
-  const inputClass = "mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-sm outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
+  const inputClass = "mt-1.5 w-full rounded-xl border border-border bg-background px-4 py-2.5 text-base outline-none focus:border-primary focus:ring-2 focus:ring-ring/30"
 
   return (
     <form onSubmit={onSubmit} className="rounded-2xl border border-border bg-card p-6 sm:p-8 space-y-5">

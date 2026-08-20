@@ -18,7 +18,7 @@ export function LanguageToggle() {
           type="button"
           onClick={() => setLang(l.code)}
           aria-pressed={lang === l.code}
-          className={`rounded-full px-2.5 py-1 transition-colors duration-200 ${
+          className={`rounded-full px-3 py-2 transition-colors duration-200 ${
             lang === l.code
               ? "bg-card text-foreground shadow-sm"
               : "text-muted-foreground hover:text-foreground"
