@@ -203,8 +203,9 @@ export default function PricingPage() {
         <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Contact">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-2xl text-center"

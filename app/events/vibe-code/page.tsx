@@ -634,8 +634,9 @@ export default function VibeCodingWithClaudePage() {
         <section className="w-full py-8 md:py-12 lg:py-14 bg-muted/50" aria-label="Register">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-2xl text-center"

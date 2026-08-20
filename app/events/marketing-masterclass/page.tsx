@@ -381,8 +381,9 @@ export default function AiAutomationsAeoSeoPage() {
             </motion.p>
 
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="mt-8 sm:mt-14 max-w-3xl rounded-2xl border border-border bg-muted/30 p-5 sm:p-6 md:p-8"
@@ -573,8 +574,9 @@ export default function AiAutomationsAeoSeoPage() {
         <section className="w-full py-12 md:py-20 lg:py-28" aria-label="Register">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-2xl text-center"

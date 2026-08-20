@@ -10,7 +10,7 @@ import { useLanguage } from "@/components/language-provider"
 import { translations } from "@/app/case-studies/translations"
 import { SERVICE_SLUGS, caseStudies, type PlatformName, type ServiceSlug } from "@/lib/case-studies-data"
 import { WHATSAPP_URL } from "@/lib/site"
-import { hoverLift } from "@/components/motion"
+import { fadeUp, hoverLift } from "@/components/motion"
 
 const PLATFORM_SLUGS: Record<PlatformName, ServiceSlug> = Object.fromEntries(
   Object.entries(SERVICE_SLUGS).map(([slug, name]) => [name, slug]),
@@ -36,8 +36,9 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
         <section className="relative overflow-hidden" aria-label="Case studies overview">
           <div className="container px-4 md:px-6 pt-20 pb-16 md:pt-28 md:pb-20 2xl:pt-36">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              animate="show"
               transition={{ duration: 0.5 }}
               className="text-center max-w-3xl 2xl:max-w-4xl mx-auto"
             >
@@ -93,8 +94,9 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                 return (
                   <motion.div
                     key={platform.name}
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     whileHover={hoverLift}
@@ -172,8 +174,9 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
                 return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                  variants={fadeUp}
+                  initial="hidden"
+                  whileInView="show"
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   whileHover={hoverLift}
@@ -267,8 +270,9 @@ export function CaseStudiesContent({ platformFilter = "all" }: { platformFilter?
         <section className="w-full py-20 md:py-28 border-t border-border bg-muted/50" aria-label="Contact">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-2xl text-center"

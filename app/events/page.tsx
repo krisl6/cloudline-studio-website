@@ -315,7 +315,7 @@ export default function EventsPage() {
         {/* CTA + form */}
         <section id="event-form" className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="Plan your event">
           <div className="container px-4 md:px-6">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="mx-auto max-w-2xl text-center mb-10">
+            <motion.div variants={fadeUp} initial="hidden" whileInView="show" viewport={{ once: true }} transition={{ duration: 0.6 }} className="mx-auto max-w-2xl text-center mb-10">
               <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight text-balance mb-4">{tt.cta.heading}</h2>
               <p className="text-muted-foreground md:text-lg leading-relaxed">{tt.cta.subcopy}</p>
             </motion.div>

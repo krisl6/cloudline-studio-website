@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { useLanguage } from "@/components/language-provider"
+import { fadeUp, staggerFast } from "@/components/motion"
 
 // AI workshop / event photos we've hosted for communities and companies.
 const PHOTOS = [
@@ -38,8 +39,9 @@ export function TeamGallery() {
     <section className="w-full py-20 md:py-28 bg-muted/50 border-t border-border" aria-label="AI workshops">
       <div className="container px-4 md:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="max-w-2xl mb-12"
@@ -52,7 +54,7 @@ export function TeamGallery() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
+          variants={staggerFast}
           className="grid grid-cols-2 gap-4 lg:grid-cols-4"
         >
           {PHOTOS.map((photo) => (

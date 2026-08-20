@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import { useLanguage } from "@/components/language-provider"
+import { fadeUp, stagger } from "@/components/motion"
 
 // Language-neutral data (platform names are proper nouns, kept in English across locales).
 const STAGES = [
@@ -61,8 +62,9 @@ export function FunnelTimeline() {
     <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Customer funnels">
       <div className="container px-4 md:px-6">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="max-w-3xl mb-10"
@@ -81,7 +83,7 @@ export function FunnelTimeline() {
           <motion.div
             initial="hidden"
             animate="show"
-            variants={{ hidden: {}, show: { transition: { staggerChildren: 0.12 } } }}
+            variants={stagger}
             className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-6"
           >
             {STAGES.map((stage, i) => {
@@ -89,7 +91,7 @@ export function FunnelTimeline() {
               return (
                 <motion.div
                   key={stage.key}
-                  variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
+                  variants={fadeUp}
                   transition={{ duration: 0.5 }}
                   className="relative flex gap-5 lg:flex-1 lg:flex-col lg:gap-5"
                 >

@@ -266,8 +266,9 @@ export default function AboutPage() {
 
             <div className="grid lg:grid-cols-2 gap-8">
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
                 whileHover={hoverLift}
@@ -291,8 +292,9 @@ export default function AboutPage() {
               </motion.div>
 
               <motion.div
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="show"
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.15 }}
                 whileHover={hoverLift}
@@ -453,8 +455,9 @@ export default function AboutPage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-3xl text-center mt-14 rounded-2xl border border-border bg-card p-8"
@@ -582,8 +585,9 @@ export default function AboutPage() {
         <section className="w-full py-20 md:py-28 border-t border-border" aria-label="Contact">
           <div className="container px-4 md:px-6">
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="mx-auto max-w-2xl text-center"

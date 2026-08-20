@@ -364,8 +364,9 @@ export default function CloudlineAeoAiPage() {
                 return (
                   <motion.div
                     key={study.title}
-                    initial={{ opacity: 0, y: 24 }}
-                    whileInView={{ opacity: 1, y: 0 }}
+                    variants={fadeUp}
+                    initial="hidden"
+                    whileInView="show"
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.05 }}
                     className="overflow-hidden rounded-2xl border border-border bg-card transition-shadow duration-300 hover:shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]"

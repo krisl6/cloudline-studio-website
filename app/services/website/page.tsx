@@ -152,8 +152,9 @@ export default function WebsiteServicePage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="show"
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="mx-auto max-w-5xl overflow-hidden rounded-2xl border border-border bg-card"
