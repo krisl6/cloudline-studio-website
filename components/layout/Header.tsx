@@ -3,6 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { usePathname } from "next/navigation"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -15,6 +16,7 @@ export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mobileExpandedHref, setMobileExpandedHref] = useState<string | null>(null)
   const { t } = useLanguage()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,6 +43,7 @@ export function Header() {
       href: "/events",
       dropdown: [
         { name: "All Events", href: "/events" },
+        { name: "Build Your Business with AI", href: "/events/buildyourbusiness" },
         { name: "Build Your Application: Vibe Coding with Claude", href: "/events/vibe-code" },
       ],
     },
@@ -57,13 +60,13 @@ export function Header() {
       }`}
       role="banner"
     >
-      <div className="container flex h-16 items-center justify-between gap-2 px-4 sm:px-6 lg:px-8">
+      <div className="container flex h-[4.5rem] items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex shrink-0 items-center gap-2 font-bold"
+          className="flex shrink-0 items-center gap-2.5 font-bold"
           aria-label="CloudLine Studio - Home"
         >
-          <div className="size-8 shrink-0 rounded-lg overflow-hidden">
+          <div className="size-9 shrink-0 rounded-xl overflow-hidden ring-1 ring-border/70 shadow-sm">
             {/* Light mode: white-bg mark (bg blends with header) */}
             <Image
               src="/cloudline_logo.png"
@@ -81,13 +84,13 @@ export function Header() {
               className="w-full h-full object-cover hidden dark:block"
             />
           </div>
-          <span className="whitespace-nowrap font-display font-semibold tracking-tight text-foreground">
+          <span className="hidden whitespace-nowrap font-display font-semibold tracking-tight text-foreground sm:inline">
             CloudLine Studio
           </span>
         </Link>
 
         <nav
-          className="hidden min-w-0 items-center gap-5 xl:flex"
+          className="hidden min-w-0 items-center gap-1 rounded-full border border-border/70 bg-card/55 p-1 shadow-sm xl:flex"
           role="navigation"
           aria-label="Main navigation"
         >
@@ -96,18 +99,19 @@ export function Header() {
               <div key={item.href} className="group relative shrink-0">
                 <Link
                   href={item.href}
-                  className="relative flex items-center gap-1 whitespace-nowrap text-sm font-medium text-foreground/80 hover:text-primary transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
+                  aria-current={pathname === item.href || pathname.startsWith(`${item.href}/`) ? "page" : undefined}
+                  className={`relative flex items-center gap-1 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium transition-colors ${pathname === item.href || pathname.startsWith(`${item.href}/`) ? "bg-background text-foreground shadow-sm" : "text-foreground/70 hover:bg-background/70 hover:text-foreground"}`}
                 >
                   {item.name}
                   <ChevronDown className="size-3.5 shrink-0 transition-transform group-hover:rotate-180" />
                 </Link>
-                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                <div className="invisible absolute left-0 top-full pt-2 opacity-0 transition-all duration-150 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
                   <div className="w-64 rounded-xl border border-border bg-card p-1.5 shadow-[0_20px_50px_-30px_rgba(20,30,55,0.4)]">
                     {item.dropdown.map((sub) => (
                       <Link
                         key={sub.href}
                         href={sub.href}
-                        className="block rounded-lg px-3 py-2 text-sm font-medium text-foreground/80 hover:bg-muted hover:text-primary transition-colors"
+                        className={`block rounded-lg px-3 py-2 text-sm font-medium transition-colors ${pathname === sub.href ? "bg-muted text-primary" : "text-foreground/80 hover:bg-muted hover:text-primary"}`}
                       >
                         {sub.name}
                       </Link>
@@ -119,7 +123,8 @@ export function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="relative shrink-0 whitespace-nowrap text-sm font-medium text-foreground/80 hover:text-primary transition-colors after:absolute after:-bottom-1 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-primary after:transition-transform after:duration-300 hover:after:scale-x-100"
+                aria-current={pathname === item.href ? "page" : undefined}
+                className={`relative shrink-0 whitespace-nowrap rounded-full px-3 py-2 text-sm font-medium transition-colors ${pathname === item.href ? "bg-background text-foreground shadow-sm" : "text-foreground/70 hover:bg-background/70 hover:text-foreground"}`}
               >
                 {item.name}
               </Link>
@@ -132,7 +137,7 @@ export function Header() {
             <LanguageToggle />
             <ThemeToggle />
             <Button
-              className="whitespace-nowrap rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-medium"
+              className="whitespace-nowrap rounded-full bg-primary px-5 text-primary-foreground font-medium shadow-sm hover:bg-primary/90"
               asChild
             >
               <Link href="/contact">
@@ -146,6 +151,8 @@ export function Header() {
             size="icon"
             className="shrink-0 xl:hidden"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileMenuOpen ? (
               <X className="size-6" />
@@ -164,6 +171,7 @@ export function Header() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
+            id="mobile-navigation"
             className="xl:hidden overflow-hidden"
           >
             <div className="bg-background/95 backdrop-blur-lg border-t border-border">

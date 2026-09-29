@@ -88,6 +88,18 @@ export function eventRequestConfirmationEmail(name: string) {
   }
 }
 
+export function eventSignupConfirmationEmail(name: string) {
+  const firstName = name.trim().split(/\s+/)[0] || "there"
+  return {
+    subject: "You’re on the list — Build Your Business with AI",
+    html: wrapper(`
+      <p style="font-size: 15px; line-height: 1.6;">Hi ${escapeHtml(firstName)},</p>
+      <p style="font-size: 15px; line-height: 1.6;">Thanks for signing up for updates about Build Your Business with AI. We’ll send you the next event details as soon as they’re confirmed.</p>
+      ${SIGNATURE}
+    `),
+  }
+}
+
 export function auditRequestConfirmationEmail(name: string) {
   const firstName = name.trim().split(/\s+/)[0] || "there"
   return {
