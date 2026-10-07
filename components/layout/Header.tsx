@@ -41,6 +41,7 @@ export function Header() {
       href: "/events",
       dropdown: [
         { name: "All Events", href: "/events" },
+        { name: "Build Your Business with AI", href: "/events/buildyourbusiness" },
         { name: "Build Your Application: Vibe Coding with Claude", href: "/events/vibe-code" },
       ],
     },
